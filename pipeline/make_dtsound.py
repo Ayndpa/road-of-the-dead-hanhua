@@ -927,10 +927,82 @@ def split_sentences(text: str) -> list[str]:
     return [p.strip() for p in SENT_RE.findall(text) if p.strip()]
 
 
+def _linear_times(
+    sents: list[str], total: int, dur: float
+) -> list[tuple[float, float, str]]:
+    """Distribute lines evenly across the whole clip (fallback)."""
+    acc = 0.0
+    timed: list[tuple[float, float, str]] = []
+    for s in sents:
+        st = acc / total * dur
+        acc += len(s)
+        en = acc / total * dur
+        timed.append((round(st, 2), round(en, 2), s))
+    return timed
+
+
+def _warped_times(
+    sents: list[str], total: int, segments: list[dict], dur: float
+) -> list[tuple[float, float, str]]:
+    """Distribute lines over the *spoken* parts of the clip.
+
+    The ASR pass gives the real speech segments (start/end) of the English
+    track. Allocating the Chinese text in proportion to each spoken segment's
+    English length and stretching it across that segment's real time keeps the
+    subtitles on the voice instead of spreading them evenly over the whole clip
+    (which includes silence and made lines appear early / advance too fast).
+    """
+    lens = [max(1.0, float(len(str(s.get("text") or "").strip()))) for s in segments]
+    total_len = sum(lens)
+    bounds: list[tuple[float, float, float, float]] = []
+    acc = 0.0
+    for i, seg in enumerate(segments):
+        f0 = acc / total_len
+        acc += lens[i]
+        f1 = acc / total_len
+        a = max(0.0, float(seg.get("start") or 0.0))
+        b = float(seg.get("end") or 0.0)
+        if b <= a:
+            b = a + 0.01
+        bounds.append((f0, f1, a, b))
+
+    def t_of(f: float) -> float:
+        if f <= 0.0:
+            return bounds[0][2]
+        if f >= 1.0:
+            return bounds[-1][3]
+        for f0, f1, a, b in bounds:
+            if f <= f1:
+                r = 0.0 if f1 <= f0 else (f - f0) / (f1 - f0)
+                return a + r * (b - a)
+        return bounds[-1][3]
+
+    timed: list[tuple[float, float, str]] = []
+    cum = 0.0
+    prev_end = 0.0
+    for s in sents:
+        st = t_of(cum / total)
+        cum += len(s)
+        en = t_of(cum / total)
+        if st < prev_end:
+            st = prev_end
+        if en <= st:
+            en = st + 0.2
+        if dur > 0 and en > dur:
+            en = dur
+        prev_end = en
+        timed.append((round(st, 2), round(en, 2), s))
+    return timed
+
+
 def build_timed_chunks(
-    subs: dict[str, str], durations: dict[str, float], min_secs: float = 7.5
+    subs: dict[str, str],
+    durations: dict[str, float],
+    min_secs: float = 7.5,
+    segments: dict[str, list[dict]] | None = None,
 ) -> tuple[list[tuple[str, list[tuple[float, float, str]]]], str]:
     """Long lines become several timed sub-lines so they aren't one wall of text."""
+    segments = segments or {}
     entries: list[tuple[str, list[tuple[float, float, str]]]] = []
     for cls, text in sorted(subs.items()):
         dur = float(durations.get(cls, 0.0))
@@ -940,13 +1012,16 @@ def build_timed_chunks(
         if len(sents) < 2:
             continue
         total = sum(len(s) for s in sents) or 1
-        acc = 0.0
-        timed: list[tuple[float, float, str]] = []
-        for s in sents:
-            st = acc / total * dur
-            acc += len(s)
-            en = acc / total * dur
-            timed.append((round(st, 2), round(en, 2), s))
+        segs = [
+            s
+            for s in (segments.get(cls) or [])
+            if float(s.get("end") or 0.0) > float(s.get("start") or 0.0)
+        ]
+        timed = (
+            _warped_times(sents, total, segs, dur)
+            if segs
+            else _linear_times(sents, total, dur)
+        )
         entries.append((cls, timed))
 
     pieces: list[str] = []
@@ -988,10 +1063,17 @@ def main() -> int:
     print(f"subtitle entries: {len(items)}; stream entries: ", end="")
 
     durations: dict[str, float] = {}
+    segments: dict[str, list[dict]] = {}
     if args.durations and Path(args.durations).exists():
         for v in json.loads(Path(args.durations).read_text(encoding="utf-8")).values():
-            durations[str(v.get("cls"))] = float(v.get("duration") or 0.0)
-    timed, timed_chunks = build_timed_chunks(subs, durations, args.min_split_secs)
+            cls = str(v.get("cls"))
+            durations[cls] = float(v.get("duration") or 0.0)
+            segs = v.get("segments")
+            if segs:
+                segments[cls] = segs
+    timed, timed_chunks = build_timed_chunks(
+        subs, durations, args.min_split_secs, segments
+    )
     print(f"{len(timed)} timed clips; stream entries: ", end="")
 
     stream_chunks = '""'

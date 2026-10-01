@@ -475,6 +475,19 @@
   ],
   "hallucination": false
  },
+ "SND_PlayerDeathCrash1": {
+  "file": "1196_SND_PlayerDeathCrash1.mp3",
+  "text": "The highway will be filled with debris. I need to take that into account.",
+  "duration": 4.1,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 3.78,
+    "text": "The highway will be filled with debris. I need to take that into account."
+   }
+  ],
+  "hallucination": false
+ },
  "SND_GarageChatter05": {
   "file": "1206_SND_GarageChatter05.mp3",
   "text": "WE HAVE HUNDREDS OF CIVILIANS REQUESTING TO LEAVE THE CHECKPOINT! PERMISSION DENIED! Permission denied. Secure position. No one gets out. BUT SIR! THE HORNS ARE CLOSING IN AND... OH GOD! Secure the position. No one leaves, you understand? Your orders are to neutralize the civilians. YES SIR! FIRE! FIRE!",
@@ -563,6 +576,19 @@
     "start": 4.66,
     "end": 7.24,
     "text": "Damn it! Return to base. Over."
+   }
+  ],
+  "hallucination": false
+ },
+ "SND_PlayerDeathCrash2": {
+  "file": "1212_SND_PlayerDeathCrash2.mp3",
+  "text": "I'll need mad skills to get through the highway with all that chaos.",
+  "duration": 4.02,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 3.52,
+    "text": "I'll need mad skills to get through the highway with all that chaos."
    }
   ],
   "hallucination": false
@@ -684,6 +710,19 @@
   ],
   "hallucination": false
  },
+ "SND_PlayerDeathCrash3": {
+  "file": "1228_SND_PlayerDeathCrash3.mp3",
+  "text": "It's a highway. There's gonna be tons of abandoned cars and accidents when I get there.",
+  "duration": 4.44,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 4.2,
+    "text": "It's a highway. There's gonna be tons of abandoned cars and accidents when I get there."
+   }
+  ],
+  "hallucination": false
+ },
  "SND_GarageChatter07": {
   "file": "1236_SND_GarageChatter07.mp3",
   "text": "Unit 10 to base! We're surrounded on the east side factory! Requesting airlift now! Over! Denied. Secure position and await orders. Requesting airlift ASAP! We're getting in with...",
@@ -767,6 +806,19 @@
     "start": 5.48,
     "end": 6.1,
     "text": "Roger that."
+   }
+  ],
+  "hallucination": false
+ },
+ "SND_PlayerDeathCrash4": {
+  "file": "1242_SND_PlayerDeathCrash4.mp3",
+  "text": "Cars, people, and chaos. That's what I must expect. I just can't crash my car out there or I'm dead.",
+  "duration": 6.58,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 6.16,
+    "text": "Cars, people, and chaos. That's what I must expect. I just can't crash my car out there or I'm dead."
    }
   ],
   "hallucination": false
@@ -898,6 +950,19 @@
   ],
   "hallucination": false
  },
+ "SND_PlayerDeathHelicopter1": {
+  "file": "1257_SND_PlayerDeathHelicopter1.mp3",
+  "text": "They're going to send everything they've got at me. Even helicopters. That's going to be tough.",
+  "duration": 4.86,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 4.52,
+    "text": "They're going to send everything they've got at me. Even helicopters. That's going to be tough."
+   }
+  ],
+  "hallucination": false
+ },
  "SND_HelicopterDefeated01": {
   "file": "1261_SND_HelicopterDefeated01.mp3",
   "text": "This is Hellfire. My chopper is heavily damaged. I must abort. Return to base immediately. Over.",
@@ -1014,6 +1079,24 @@
     "start": 5.22,
     "end": 5.74,
     "text": "Affirmative."
+   }
+  ],
+  "hallucination": false
+ },
+ "SND_PlayerDeathHelicopter2": {
+  "file": "1272_SND_PlayerDeathHelicopter2.mp3",
+  "text": "They're going to have choppers. I'll need to dodge them or destroy them. It's not going to be a walk in the park.",
+  "duration": 5.43,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 3.06,
+    "text": "They're going to have choppers. I'll need to dodge them or destroy them."
+   },
+   {
+    "start": 3.42,
+    "end": 5.1,
+    "text": "It's not going to be a walk in the park."
    }
   ],
   "hallucination": false
@@ -1145,6 +1228,19 @@
   ],
   "hallucination": false
  },
+ "SND_PlayerDeathJet1": {
+  "file": "1286_SND_PlayerDeathJet1.mp3",
+  "text": "If they can't stop me, they'll send bombing jets. Gotta keep that in mind.",
+  "duration": 4.05,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 3.74,
+    "text": "If they can't stop me, they'll send bombing jets. Gotta keep that in mind."
+   }
+  ],
+  "hallucination": false
+ },
  "SND_HelicopterMissileRequest01": {
   "file": "1290_SND_HelicopterMissileRequest01.mp3",
   "text": "Hellfire to base! I request permission to use air-to-ground missiles! Granted. Over.",
@@ -1218,6 +1314,19 @@
     "start": 19.0,
     "end": 20.8,
     "text": "Uh, yes! Yes, sir!"
+   }
+  ],
+  "hallucination": false
+ },
+ "SND_PlayerDeathJet2": {
+  "file": "1299_SND_PlayerDeathJet2.mp3",
+  "text": "I'm pretty sure they'll send jets if I get too far. I gotta be ready for that.",
+  "duration": 4.18,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 4.0,
+    "text": "I'm pretty sure they'll send jets if I get too far. I gotta be ready for that."
    }
   ],
   "hallucination": false
@@ -1360,6 +1469,19 @@
   ],
   "hallucination": false
  },
+ "SND_PlayerDeathMilitary1": {
+  "file": "1313_SND_PlayerDeathMilitary1.mp3",
+  "text": "With the military involved, I'd better be prepared.",
+  "duration": 2.82,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 2.44,
+    "text": "With the military involved, I'd better be prepared."
+   }
+  ],
+  "hallucination": false
+ },
  "SND_HelicopterWarning01": {
   "file": "1317_SND_HelicopterWarning01.mp3",
   "text": "This is futile! Your escape attempt will get you killed!",
@@ -1466,6 +1588,19 @@
     "start": 13.44,
     "end": 15.74,
     "text": "What? What the hell is going on?"
+   }
+  ],
+  "hallucination": false
+ },
+ "SND_PlayerDeathMilitary2": {
+  "file": "1326_SND_PlayerDeathMilitary2.mp3",
+  "text": "The military will do everything they can to stop me. I must be better prepared.",
+  "duration": 4.65,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 4.4,
+    "text": "The military will do everything they can to stop me. I must be better prepared."
    }
   ],
   "hallucination": false
@@ -1595,6 +1730,19 @@
   ],
   "hallucination": false
  },
+ "SND_PlayerDeathMilitary3": {
+  "file": "1340_SND_PlayerDeathMilitary3.mp3",
+  "text": "They're gonna blast me to pieces if I let them.",
+  "duration": 2.38,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 2.16,
+    "text": "They're gonna blast me to pieces if I let them."
+   }
+  ],
+  "hallucination": false
+ },
  "SND_HelicopterWarning03": {
   "file": "1344_SND_HelicopterWarning03.mp3",
   "text": "Stop, or your vehicle will be destroyed!",
@@ -1696,6 +1844,19 @@
     "start": 12.5,
     "end": 14.5,
     "text": "Yes, sir!"
+   }
+  ],
+  "hallucination": false
+ },
+ "SND_PlayerDeathMilitary4": {
+  "file": "1354_SND_PlayerDeathMilitary4.mp3",
+  "text": "I know they'll bring all they've got for me. Can't let them get me, though.",
+  "duration": 3.5,
+  "segments": [
+   {
+    "start": 0.02,
+    "end": 3.28,
+    "text": "I know they'll bring all they've got for me. Can't let them get me, though."
    }
   ],
   "hallucination": false
@@ -1820,6 +1981,24 @@
   ],
   "hallucination": false
  },
+ "SND_PlayerDeathNuke1": {
+  "file": "1368_SND_PlayerDeathNuke1.mp3",
+  "text": "When the shit hits the fan, they'll nuke the place. I'm sure of it. I better get my ass out of here as fast as I can.",
+  "duration": 6.32,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 3.2,
+    "text": "When the shit hits the fan, they'll nuke the place. I'm sure of it."
+   },
+   {
+    "start": 3.6,
+    "end": 5.98,
+    "text": "I better get my ass out of here as fast as I can."
+   }
+  ],
+  "hallucination": false
+ },
  "SND_HelicopterWarning05": {
   "file": "1372_SND_HelicopterWarning05.mp3",
   "text": "Stop now! This is a matter of national security!",
@@ -1893,6 +2072,19 @@
     "start": 6.68,
     "end": 7.52,
     "text": "Sir, yes sir!"
+   }
+  ],
+  "hallucination": false
+ },
+ "SND_PlayerDeathNuke2": {
+  "file": "1381_SND_PlayerDeathNuke2.mp3",
+  "text": "Ah, that's not gonna work. If they decide to drop a nuke, I need to haul my ass out of there.",
+  "duration": 4.91,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 4.61,
+    "text": "Ah, that's not gonna work. If they decide to drop a nuke, I need to haul my ass out of there."
    }
   ],
   "hallucination": false
@@ -2012,6 +2204,19 @@
   ],
   "hallucination": false
  },
+ "SND_PlayerDeathZombie1": {
+  "file": "1393_SND_PlayerDeathZombie1.mp3",
+  "text": "This is not going to work with all those zombies.",
+  "duration": 2.9,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 2.42,
+    "text": "This is not going to work with all those zombies."
+   }
+  ],
+  "hallucination": false
+ },
  "SND_HelicopterWarning07": {
   "file": "1397_SND_HelicopterWarning07.mp3",
   "text": "STOP YOUR CAR NOW!",
@@ -2126,6 +2331,19 @@
     "start": 14.78,
     "end": 15.78,
     "text": "Sir, yes sir!"
+   }
+  ],
+  "hallucination": false
+ },
+ "SND_PlayerDeathZombie2": {
+  "file": "1405_SND_PlayerDeathZombie2.mp3",
+  "text": "These things will fill the road. I need to be more prepared.",
+  "duration": 3.24,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 2.94,
+    "text": "These things will fill the road. I need to be more prepared."
    }
   ],
   "hallucination": false
@@ -2295,6 +2513,19 @@
   ],
   "hallucination": false
  },
+ "SND_PlayerDeathZombie3": {
+  "file": "1416_SND_PlayerDeathZombie3.mp3",
+  "text": "I bet there are tons of dead people walking around out there. I need to plan this better.",
+  "duration": 4.65,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 4.24,
+    "text": "I bet there are tons of dead people walking around out there. I need to plan this better."
+   }
+  ],
+  "hallucination": false
+ },
  "SND_HelicopterWarning09": {
   "file": "1419_SND_HelicopterWarning09.mp3",
   "text": "Stop your vehicle immediately!",
@@ -2391,6 +2622,19 @@
     "start": 16.76,
     "end": 20.26,
     "text": "Roger that. Do it fast. We're pulling out, now."
+   }
+  ],
+  "hallucination": false
+ },
+ "SND_PlayerDeathZombie4": {
+  "file": "1426_SND_PlayerDeathZombie4.mp3",
+  "text": "Zombies. Freaking zombies, man. How can I survive this nightmare?",
+  "duration": 5.09,
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 4.62,
+    "text": "Zombies. Freaking zombies, man. How can I survive this nightmare?"
    }
   ],
   "hallucination": false

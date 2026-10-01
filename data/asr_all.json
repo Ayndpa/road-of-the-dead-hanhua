@@ -2184,6 +2184,19 @@
   "duration": 6.43,
   "elapsed": 5.11
  },
+ "1257_SND_PlayerDeathHelicopter1.mp3": {
+  "cls": "SND_PlayerDeathHelicopter1",
+  "text": "They're going to send everything they've got at me. Even helicopters. That's going to be tough.",
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 4.52,
+    "text": "They're going to send everything they've got at me. Even helicopters. That's going to be tough."
+   }
+  ],
+  "duration": 4.86,
+  "elapsed": 6.52
+ },
  "1261_SND_HelicopterDefeated01.mp3": {
   "cls": "SND_HelicopterDefeated01",
   "text": "This is Hellfire. My chopper is heavily damaged. I must abort. Return to base immediately. Over.",
@@ -2316,6 +2329,24 @@
   ],
   "duration": 6.09,
   "elapsed": 5.2
+ },
+ "1272_SND_PlayerDeathHelicopter2.mp3": {
+  "cls": "SND_PlayerDeathHelicopter2",
+  "text": "They're going to have choppers. I'll need to dodge them or destroy them. It's not going to be a walk in the park.",
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 3.06,
+    "text": "They're going to have choppers. I'll need to dodge them or destroy them."
+   },
+   {
+    "start": 3.42,
+    "end": 5.1,
+    "text": "It's not going to be a walk in the park."
+   }
+  ],
+  "duration": 5.43,
+  "elapsed": 8.93
  },
  "1276_SND_HelicopterDefeated02.mp3": {
   "cls": "SND_HelicopterDefeated02",
@@ -2457,6 +2488,19 @@
   "duration": 48.72,
   "elapsed": 18.29
  },
+ "1286_SND_PlayerDeathJet1.mp3": {
+  "cls": "SND_PlayerDeathJet1",
+  "text": "If they can't stop me, they'll send bombing jets. Gotta keep that in mind.",
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 3.74,
+    "text": "If they can't stop me, they'll send bombing jets. Gotta keep that in mind."
+   }
+  ],
+  "duration": 4.05,
+  "elapsed": 6.4
+ },
  "1290_SND_HelicopterMissileRequest01.mp3": {
   "cls": "SND_HelicopterMissileRequest01",
   "text": "Hellfire to base! I request permission to use air-to-ground missiles! Granted. Over.",
@@ -2546,6 +2590,19 @@
   ],
   "duration": 21.13,
   "elapsed": 8.14
+ },
+ "1299_SND_PlayerDeathJet2.mp3": {
+  "cls": "SND_PlayerDeathJet2",
+  "text": "I'm pretty sure they'll send jets if I get too far. I gotta be ready for that.",
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 4.0,
+    "text": "I'm pretty sure they'll send jets if I get too far. I gotta be ready for that."
+   }
+  ],
+  "duration": 4.18,
+  "elapsed": 9.0
  },
  "1303_SND_HelicopterMissileRequest02.mp3": {
   "cls": "SND_HelicopterMissileRequest02",
@@ -2685,6 +2742,19 @@
   "duration": 35.76,
   "elapsed": 14.41
  },
+ "1313_SND_PlayerDeathMilitary1.mp3": {
+  "cls": "SND_PlayerDeathMilitary1",
+  "text": "With the military involved, I'd better be prepared.",
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 2.44,
+    "text": "With the military involved, I'd better be prepared."
+   }
+  ],
+  "duration": 2.82,
+  "elapsed": 7.55
+ },
  "1317_SND_HelicopterWarning01.mp3": {
   "cls": "SND_HelicopterWarning01",
   "text": "This is futile! Your escape attempt will get you killed!",
@@ -2794,6 +2864,19 @@
   ],
   "duration": 16.04,
   "elapsed": 7.43
+ },
+ "1326_SND_PlayerDeathMilitary2.mp3": {
+  "cls": "SND_PlayerDeathMilitary2",
+  "text": "The military will do everything they can to stop me. I must be better prepared.",
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 4.4,
+    "text": "The military will do everything they can to stop me. I must be better prepared."
+   }
+  ],
+  "duration": 4.65,
+  "elapsed": 6.83
  },
  "1330_SND_HelicopterWarning02.mp3": {
   "cls": "SND_HelicopterWarning02",
@@ -2933,6 +3016,19 @@
   "duration": 35.13,
   "elapsed": 16.3
  },
+ "1340_SND_PlayerDeathMilitary3.mp3": {
+  "cls": "SND_PlayerDeathMilitary3",
+  "text": "They're gonna blast me to pieces if I let them.",
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 2.16,
+    "text": "They're gonna blast me to pieces if I let them."
+   }
+  ],
+  "duration": 2.38,
+  "elapsed": 5.64
+ },
  "1344_SND_HelicopterWarning03.mp3": {
   "cls": "SND_HelicopterWarning03",
   "text": "Stop, or your vehicle will be destroyed!",
@@ -3050,6 +3146,19 @@
   ],
   "duration": 13.95,
   "elapsed": 10.03
+ },
+ "1354_SND_PlayerDeathMilitary4.mp3": {
+  "cls": "SND_PlayerDeathMilitary4",
+  "text": "I know they'll bring all they've got for me. Can't let them get me, though.",
+  "segments": [
+   {
+    "start": 0.02,
+    "end": 3.28,
+    "text": "I know they'll bring all they've got for me. Can't let them get me, though."
+   }
+  ],
+  "duration": 3.5,
+  "elapsed": 6.88
  },
  "1358_SND_HelicopterWarning04.mp3": {
   "cls": "SND_HelicopterWarning04",
@@ -3178,6 +3287,24 @@
   "duration": 23.35,
   "elapsed": 4.89
  },
+ "1368_SND_PlayerDeathNuke1.mp3": {
+  "cls": "SND_PlayerDeathNuke1",
+  "text": "When the shit hits the fan, they'll nuke the place. I'm sure of it. I better get my ass out of here as fast as I can.",
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 3.2,
+    "text": "When the shit hits the fan, they'll nuke the place. I'm sure of it."
+   },
+   {
+    "start": 3.6,
+    "end": 5.98,
+    "text": "I better get my ass out of here as fast as I can."
+   }
+  ],
+  "duration": 6.32,
+  "elapsed": 12.74
+ },
  "1372_SND_HelicopterWarning05.mp3": {
   "cls": "SND_HelicopterWarning05",
   "text": "Stop now! This is a matter of national security!",
@@ -3261,6 +3388,19 @@
   ],
   "duration": 7.76,
   "elapsed": 2.34
+ },
+ "1381_SND_PlayerDeathNuke2.mp3": {
+  "cls": "SND_PlayerDeathNuke2",
+  "text": "Ah, that's not gonna work. If they decide to drop a nuke, I need to haul my ass out of there.",
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 4.61,
+    "text": "Ah, that's not gonna work. If they decide to drop a nuke, I need to haul my ass out of there."
+   }
+  ],
+  "duration": 4.91,
+  "elapsed": 13.38
  },
  "1385_SND_HelicopterWarning06.mp3": {
   "cls": "SND_HelicopterWarning06",
@@ -3376,6 +3516,19 @@
   ],
   "duration": 38.27,
   "elapsed": 8.65
+ },
+ "1393_SND_PlayerDeathZombie1.mp3": {
+  "cls": "SND_PlayerDeathZombie1",
+  "text": "This is not going to work with all those zombies.",
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 2.42,
+    "text": "This is not going to work with all those zombies."
+   }
+  ],
+  "duration": 2.9,
+  "elapsed": 6.08
  },
  "1397_SND_HelicopterWarning07.mp3": {
   "cls": "SND_HelicopterWarning07",
@@ -3494,6 +3647,19 @@
   ],
   "duration": 16.09,
   "elapsed": 3.91
+ },
+ "1405_SND_PlayerDeathZombie2.mp3": {
+  "cls": "SND_PlayerDeathZombie2",
+  "text": "These things will fill the road. I need to be more prepared.",
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 2.94,
+    "text": "These things will fill the road. I need to be more prepared."
+   }
+  ],
+  "duration": 3.24,
+  "elapsed": 5.76
  },
  "1408_SND_HelicopterWarning08.mp3": {
   "cls": "SND_HelicopterWarning08",
@@ -3667,6 +3833,19 @@
   "duration": 56.84,
   "elapsed": 11.8
  },
+ "1416_SND_PlayerDeathZombie3.mp3": {
+  "cls": "SND_PlayerDeathZombie3",
+  "text": "I bet there are tons of dead people walking around out there. I need to plan this better.",
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 4.24,
+    "text": "I bet there are tons of dead people walking around out there. I need to plan this better."
+   }
+  ],
+  "duration": 4.65,
+  "elapsed": 7.55
+ },
  "1419_SND_HelicopterWarning09.mp3": {
   "cls": "SND_HelicopterWarning09",
   "text": "Stop your vehicle immediately!",
@@ -3766,6 +3945,19 @@
   ],
   "duration": 20.32,
   "elapsed": 4.67
+ },
+ "1426_SND_PlayerDeathZombie4.mp3": {
+  "cls": "SND_PlayerDeathZombie4",
+  "text": "Zombies. Freaking zombies, man. How can I survive this nightmare?",
+  "segments": [
+   {
+    "start": 0.0,
+    "end": 4.62,
+    "text": "Zombies. Freaking zombies, man. How can I survive this nightmare?"
+   }
+  ],
+  "duration": 5.09,
+  "elapsed": 5.78
  },
  "1429_SND_HelicopterDispatch01.mp3": {
   "cls": "SND_HelicopterDispatch01",

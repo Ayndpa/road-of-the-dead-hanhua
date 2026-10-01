@@ -148,6 +148,24 @@ SND_NukeRunCountStart	3.9	Phantom Eagle to base. The drop is airborne. Detonatio
 SND_PlayerBlownTires01	2.7	Ah, great! Driving on rails!
 SND_PlayerBlownTires02	2.1	Just grinding metal now.
 SND_PlayerBlownTires03	2.8	I can't control this piece of junk!
+SND_PlayerDeathCrash1	4.1	The highway will be filled with debris. I need to take that into account.
+SND_PlayerDeathCrash2	4.0	I'll need mad skills to get through the highway with all that chaos.
+SND_PlayerDeathCrash3	4.4	It's a highway. There's gonna be tons of abandoned cars and accidents when I get there.
+SND_PlayerDeathCrash4	6.6	Cars, people, and chaos. That's what I must expect. I just can't crash my car out there or I'm dead.
+SND_PlayerDeathHelicopter1	4.9	They're going to send everything they've got at me. Even helicopters. That's going to be tough.
+SND_PlayerDeathHelicopter2	5.4	They're going to have choppers. I'll need to dodge them or destroy them. It's not going to be a walk in the park.
+SND_PlayerDeathJet1	4.0	If they can't stop me, they'll send bombing jets. Gotta keep that in mind.
+SND_PlayerDeathJet2	4.2	I'm pretty sure they'll send jets if I get too far. I gotta be ready for that.
+SND_PlayerDeathMilitary1	2.8	With the military involved, I'd better be prepared.
+SND_PlayerDeathMilitary2	4.7	The military will do everything they can to stop me. I must be better prepared.
+SND_PlayerDeathMilitary3	2.4	They're gonna blast me to pieces if I let them.
+SND_PlayerDeathMilitary4	3.5	I know they'll bring all they've got for me. Can't let them get me, though.
+SND_PlayerDeathNuke1	6.3	When the shit hits the fan, they'll nuke the place. I'm sure of it. I better get my ass out of here as fast as I can.
+SND_PlayerDeathNuke2	4.9	Ah, that's not gonna work. If they decide to drop a nuke, I need to haul my ass out of there.
+SND_PlayerDeathZombie1	2.9	This is not going to work with all those zombies.
+SND_PlayerDeathZombie2	3.2	These things will fill the road. I need to be more prepared.
+SND_PlayerDeathZombie3	4.7	I bet there are tons of dead people walking around out there. I need to plan this better.
+SND_PlayerDeathZombie4	5.1	Zombies. Freaking zombies, man. How can I survive this nightmare?
 SND_PlayerDevoured01	7.8	I did it! I did it!
 SND_PlayerDevoured02	6.2	AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
 SND_PlayerDevoured03	6.2	YOU KNEW THE CREATURE!
