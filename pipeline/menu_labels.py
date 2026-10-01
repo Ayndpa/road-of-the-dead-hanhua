@@ -44,28 +44,51 @@ ROOT = Path(__file__).resolve().parent.parent
 FFDEC = ROOT / "tools" / "ffdec" / "ffdec-cli.jar"
 DEFAULT_FONT = ROOT / "work" / "fonts" / "ui_cjk.ttf"
 
-# shape id -> (chinese text, fill colour, fill opacity)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from translations import MENU  # noqa: E402
+
+# The Chinese label text itself comes from the ParaTranz export (menu.csv); only
+# the visual styling stays here.
+#
+# shape id -> menu.csv key
+MENU_LABEL_KEYS: dict[int, str] = {
+    4307: "StoryMode", 4308: "StoryMode",
+    4303: "StoryHardcore", 4304: "StoryHardcore",
+    4295: "MilitaryMode", 4296: "MilitaryMode",
+    4299: "TimeMode", 4300: "TimeMode",
+    4311: "Options", 4312: "Options",
+    4315: "Achievements", 4316: "Achievements",
+    4319: "HighScores", 4320: "HighScores",
+}
+
+# shape id -> (fill colour, fill opacity)
 #
 # Opacities are the original shapes' own fill alphas, read from the exported
 # shape PNGs: every idle white label is alpha 102/255 = 0.40 and the idle red
 # "THE GREAT ESCAPE" is 153/255 = 0.60; the hover shapes are fully opaque.
 # (The previous values were dimmer than the English originals, which made the
 # Chinese labels look washed out next to everything else on the menu.)
+MENU_LABEL_STYLE: dict[int, tuple[str, float]] = {
+    4307: ("#cb0000", 0.60),   # StoryMode   THE GREAT ESCAPE
+    4308: ("#aa0000", 1.00),
+    4303: ("#ffffff", 0.40),   # StoryHardcore  HIGHWAY TO HELL
+    4304: ("#ffffff", 1.00),
+    4295: ("#ffffff", 0.40),   # MilitaryMode   POLICE STATE
+    4296: ("#ffffff", 1.00),
+    4299: ("#ffffff", 0.40),   # TimeMode       DEAD ON TIME
+    4300: ("#ffffff", 1.00),
+    4311: ("#ffffff", 0.40),   # Options
+    4312: ("#ffffff", 1.00),
+    4315: ("#ffffff", 0.40),   # Achievements
+    4316: ("#ffffff", 1.00),
+    4319: ("#ffffff", 0.40),   # HighScores
+    4320: ("#ffffff", 1.00),
+}
+
+# shape id -> (chinese text, fill colour, fill opacity)
 MENU_LABELS: dict[int, tuple[str, str, float]] = {
-    4307: ("亡命大逃亡", "#cb0000", 0.60),   # StoryMode   THE GREAT ESCAPE
-    4308: ("亡命大逃亡", "#aa0000", 1.00),
-    4303: ("地狱公路", "#ffffff", 0.40),     # StoryHardcore  HIGHWAY TO HELL
-    4304: ("地狱公路", "#ffffff", 1.00),
-    4295: ("警察国家", "#ffffff", 0.40),     # MilitaryMode   POLICE STATE
-    4296: ("警察国家", "#ffffff", 1.00),
-    4299: ("死亡倒计时", "#ffffff", 0.40),   # TimeMode       DEAD ON TIME
-    4300: ("死亡倒计时", "#ffffff", 1.00),
-    4311: ("选项", "#ffffff", 0.40),         # Options
-    4312: ("选项", "#ffffff", 1.00),
-    4315: ("成就", "#ffffff", 0.40),         # Achievements
-    4316: ("成就", "#ffffff", 1.00),
-    4319: ("排行榜", "#ffffff", 0.40),       # HighScores
-    4320: ("排行榜", "#ffffff", 1.00),
+    sid: (MENU[MENU_LABEL_KEYS[sid]], colour, opacity)
+    for sid, (colour, opacity) in MENU_LABEL_STYLE.items()
 }
 
 # Perspective per label, normalised to the label box; order TL, TR, BR, BL.

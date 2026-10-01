@@ -31,13 +31,18 @@ dist/                游戏文件（统一放这里）
   rotl-zh-full.swf     汉化版（构建产物）
 pipeline/            所有脚本（分析 + 构建）
 data/                人工产物 / 缓存 / 翻译数据（可复用）
-  subtitles.json       对白字幕（类名 → 中文）
-  stream_subs.json     时间轴流式音轨字幕（起止秒 → 中文）
+  paratranz/           翻译数据（ParaTranz 平台格式，构建直接读取）
+    voice.csv            对白字幕（SND_* 类名 → 中文）
+    stream.csv           开场流式音轨字幕（stream_NN → 中文）
+    ui.csv               烘焙 UI 文本（DefineText id → 中文）
+    as3.csv              运行时文本（文件名 → {英文 → 中文}）
+    menu.csv             主菜单矢量按钮标签文本
+  stream_timing.json   开场流式音轨逐段起止时间（结构数据，非翻译）
   stream_segments.json 流式音轨的逐段 ASR（含时间戳）
-  asr_all.json         全部语音的 ASR 缓存
-  voice_lines.json/.tsv  ASR 出的英文原始台词
-  ui_segments.json     烘焙 UI 文本的分段结构
-  as3_strings.json     AS3 里的候选用户可见字符串
+  asr_all.json         全部语音的 ASR 缓存（时长 / 语音分段）
+  voice_lines.json/.tsv  ASR 出的英文原始台词（来源）
+  ui_segments.json     烘焙 UI 文本的分段结构（来源）
+  as3_strings.json     AS3 里的候选用户可见字符串（来源）
   orig_texts/          SWF 导出的原始 UI 文本（224 个）
   fonts/               中文字体（RoadOfTheDeadCN.ttf 等，构建时裁子集）
 tools/               第三方工具（FFDec，用 pipeline/fetch-tools.ps1 下载）
@@ -75,6 +80,31 @@ uv run python pipeline/build.py
 ```
 
 依次执行：FFDec 导出 → 生成带字幕的 `DTSound.as` → 生成汉化后的玩法脚本 → 生成汉化 UI 文本 + 两个中文字体子集（展示体 RoadOfTheDeadCN + 正文思源宋体）→ 合并回 SWF。
+
+---
+
+## 翻译平台（ParaTranz）
+
+所有中文翻译都放在 **ParaTranz** 项目里，仓库只保留平台导出的 CSV（`data/paratranz/*.csv`），构建**直接读取**这些文件 —— 源码里不再内嵌任何翻译（没有 `ui_text.py` / `patch_as3.py` 里的中英对照表，也没有单独的 `subtitles.json`）。
+
+- 项目地址：<https://paratranz.cn/projects/20958>
+- 平台 CSV 格式：`key,original,translation,context`（无表头），与上传 / 下载的文件完全一致。
+
+工作流：
+
+1. 在 ParaTranz 上翻译 / 校对；
+2. 从平台下载文件（或导出的压缩包），把 `voice.csv`、`stream.csv`、`ui.csv`、`as3.csv`、`menu.csv` 放回 `data/paratranz/`（也可用环境变量 `ROT_TRANSLATIONS` 指向导出目录，不动仓库里的文件）；
+3. `uv run python pipeline/build.py` 重新构建 —— 字幕、UI、运行时文本、主菜单矢量标签都会按平台内容更新。
+
+| 文件 | 对应内容 | key | 原文列 |
+|---|---|---|---|
+| `voice.csv` | 语音字幕（`DTSound.Play` 查表） | `SND_*` 声音类名 | 英文台词 |
+| `stream.csv` | 开场流式音轨字幕 | `stream_NN` | 英文原文（时间来自 `stream_timing.json`） |
+| `ui.csv` | 烘焙 `DefineText`（多段用换行分隔，段数须与原版一致） | `ui_<DefineText id>` | 原英文 |
+| `as3.csv` | 成就 / 提示 / 关卡等运行时文本 | `as3_<文件>_<序号>` | FFDec 反编译出的字面量 |
+| `menu.csv` | 主菜单手绘按钮标签 | 标签名（如 `StoryMode`） | 按钮英文 |
+
+> `ui.csv` 里一条词条就是整段 UI 文本，多段用换行分隔，翻译时**段数必须与原版一致**（对应下文 `--- RECORDSEPARATOR ---`）。
 
 ---
 
@@ -125,7 +155,7 @@ UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
 - **font 20（"Dirty Ego"）本身不动**：标题 logo、制作名单、HUD 数字等未被翻译的 text 保持字节一致。
 
 ### 5. 运行时文本
-成就、提示框、关卡介绍、地点名等在 AS3 字符串里，用 `pipeline/patch_as3.py` 按**字面量精确替换**（用词法扫描提取，避免正则把代码当成字符串）。
+成就、提示框、关卡介绍、地点名等在 AS3 字符串里，用 `pipeline/patch_as3.py` 按**字面量精确替换**（用词法扫描提取，避免正则把代码当成字符串）。中英对照表来自 `data/paratranz/as3.csv`（`context` 列即文件名），只替换在反编译源码里实际存在的字面量，对不上的条目会打印告警而不是改坏代码。
 
 ---
 

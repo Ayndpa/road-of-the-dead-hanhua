@@ -1,0 +1,464 @@
+ui_23,please wait for,请稍候,DefineText 角色 23
+ui_24,please wait for,请稍候,DefineText 角色 24
+ui_33,Newgrounds API Connector,Newgrounds API 连接器,DefineText 角色 33
+ui_34,Connecting to the Newgrounds Gateway...,正在连接 Newgrounds 网关……,DefineText 角色 34
+ui_36,Connection Established!,连接已建立！,DefineText 角色 36
+ui_40,YOU ARE NOT LOGGED IN!,你尚未登录！,DefineText 角色 40
+ui_43,"You will not be able to use any
+
+members-only features!","你将无法使用任何
+会员专属功能！",DefineText 角色 43
+ui_45,"Some features may be 
+
+temporarily unavailable.","部分功能可能
+暂时不可用。",DefineText 角色 45
+ui_47,API CONNECTION FAILED,API 连接失败,DefineText 角色 47
+ui_75,NOTICE!,通知！,DefineText 角色 75
+ui_76,"A new version is now available!
+
+Click the button below to check it out.","有新版本可用！
+点击下方按钮查看。",DefineText 角色 76
+ui_81,View latest version,查看最新版本,DefineText 角色 81
+ui_82,UNAUTHORIZED USE!!,未经授权使用！！,DefineText 角色 82
+ui_83,"This website is hosting this file without proper consent! 
+
+Click the button below to view a legal version.","本站未经许可托管了本文件！
+点击下方按钮查看合法版本。",DefineText 角色 83
+ui_84,View authorized version,查看授权版本,DefineText 角色 84
+ui_89,"Medal Popup
+
+Place this clip on the root of your movie, 
+
+spanning any frames where medals are 
+
+called. (this clip is hidden)","勋章弹窗
+把此剪辑放在影片根目录，
+覆盖所有会调用勋章的帧。
+（此剪辑默认隐藏）",DefineText 角色 89
+ui_95,MEDAL GET!,获得勋章！,DefineText 角色 95
+ui_96,100pts,100 分,DefineText 角色 96
+ui_1098,"If you're not driving fast enough, zombies and soldiers will get a chance to cling to your hood when you hit them.  You'll have to shake them off by hitting the side walls HARD (by using the hand brake) or by hitting abandoned cars.  A pistol is also a great way to get them off your hood quickly.",如果你开得不够快，撞上僵尸和士兵时，他们就有机会扒住你的引擎盖。你必须用手刹猛烈撞击侧墙，或者撞上废弃车辆，才能把他们甩下去。用手枪也是快速清掉引擎盖上敌人的好办法。,DefineText 角色 1098
+ui_1099,Enemies On Hood,引擎盖上的敌人,DefineText 角色 1099
+ui_1100,Press Space To Continue,按空格键继续,DefineText 角色 1100
+ui_1104,High Scores,排行榜,DefineText 角色 1104
+ui_1108,UserName,用户名,DefineText 角色 1108
+ui_1109,Score,分数,DefineText 角色 1109
+ui_1113,Today,今日,DefineText 角色 1113
+ui_1119,Today,今日,DefineText 角色 1119
+ui_1120,Today,今日,DefineText 角色 1120
+ui_1122,This Week,本周,DefineText 角色 1122
+ui_1123,This Week,本周,DefineText 角色 1123
+ui_1125,This Month,本月,DefineText 角色 1125
+ui_1126,This Month,本月,DefineText 角色 1126
+ui_1128,This Year,今年,DefineText 角色 1128
+ui_1129,This Year,今年,DefineText 角色 1129
+ui_1131,All-Time,总榜,DefineText 角色 1131
+ui_1132,All-Time,总榜,DefineText 角色 1132
+ui_1762,click here to play,点击此处开始游戏,DefineText 角色 1762
+ui_1763,click here to play,点击此处开始游戏,DefineText 角色 1763
+ui_1768,Shoot a soldier while he's pointing his gun at you and before he shoots,在士兵举枪瞄准你、还没开枪时射杀他,DefineText 角色 1768
+ui_1770,Story,剧情,DefineText 角色 1770
+ui_1774,Story,剧情,DefineText 角色 1774
+ui_1778,You failed 3 times.,你已经失败了 3 次。,DefineText 角色 1778
+ui_1779,W,W,DefineText 角色 1779
+ui_1782,"Are you sure?
+It's recommended to play The Great Escape first",你确定吗？建议先玩《大逃亡》,DefineText 角色 1782
+ui_1783,YES,是,DefineText 角色 1783
+ui_1784,YES,是,DefineText 角色 1784
+ui_1786,NO,否,DefineText 角色 1786
+ui_1787,NO,否,DefineText 角色 1787
+ui_1789,Beginning,从头开始,DefineText 角色 1789
+ui_1790,Beginning,从头开始,DefineText 角色 1790
+ui_1792,Last Checkpoint,上一个检查点,DefineText 角色 1792
+ui_1793,Last Checkpoint,上一个检查点,DefineText 角色 1793
+ui_1796,Press Space To Continue,按空格键继续,DefineText 角色 1796
+ui_1798,Distance Reached,已行驶距离,DefineText 角色 1798
+ui_1800,3423499.99 KM,3423499.99 公里,DefineText 角色 1800
+ui_1802,Your Farthest Distance Reached,你的最远距离,DefineText 角色 1802
+ui_3354,Abort,中止,DefineText 角色 3354
+ui_3355,Abort,中止,DefineText 角色 3355
+ui_3357,3 Zombies Killed:,已击杀 3 只僵尸：,DefineText 角色 3357
+ui_3358,100% RP Bonus,100% RP 奖励,DefineText 角色 3358
+ui_3360,3 Zombies Killed:,已击杀 3 只僵尸：,DefineText 角色 3360
+ui_3953,Perception,感知,DefineText 角色 3953
+ui_3954,Windshield,挡风玻璃,DefineText 角色 3954
+ui_3955,Engine,引擎,DefineText 角色 3955
+ui_3956,Tires,轮胎,DefineText 角色 3956
+ui_3957,Body Armor,防弹衣,DefineText 角色 3957
+ui_3958,Firearm,枪械,DefineText 角色 3958
+ui_3959,Bumper,保险杠,DefineText 角色 3959
+ui_3967,Horn,喇叭,DefineText 角色 3967
+ui_3970,Main Menu,主菜单,DefineText 角色 3970
+ui_3971,Back To,返回,DefineText 角色 3971
+ui_3975,Main Menu,主菜单,DefineText 角色 3975
+ui_3976,Back To,返回,DefineText 角色 3976
+ui_3981,Windshield,挡风玻璃,DefineText 角色 3981
+ui_3982,"Upgrade 1
+
+You will spot soldiers, oil spills and 
+
+feeding zombies in the distance.","升级 1
+你将能在远处发现士兵、漏油
+以及正在进食的僵尸。",DefineText 角色 3982
+ui_3983,"Upgrade 2
+
+You will spot water jugs, spike strips and 
+
+hidden soldiers in the distance.","升级 2
+你将能在远处发现水壶、钉刺带以及
+埋伏的士兵。",DefineText 角色 3983
+ui_3984,"Upgrade 3
+
+You will spot mutated zombies and 
+
+explosives in the distance.","升级 3
+你将能在远处发现变异僵尸和
+炸药。",DefineText 角色 3984
+ui_3985,"Upgrade 1
+
+The kevlar vest will give you body 
+
+protection and will reduce direct damage 
+
+from bullets and explosions.","升级 1
+凯夫拉防弹衣能为你提供身体防护，
+并减少子弹和爆炸造成的
+直接伤害。",DefineText 角色 3985
+ui_3986,"Upgrade 2
+
+The upgraded kevlar vest gives you extra 
+
+protection against direct bullet hits and 
+
+explosions once your windshield is gone.","升级 2
+升级版凯夫拉防弹衣能提供额外防护，
+在挡风玻璃破碎后，抵御子弹
+直击和爆炸。",DefineText 角色 3986
+ui_3987,"Upgrade 3
+
+The best body armor on the market will 
+
+make you much tougher against direct 
+
+bullet hits and explosions.  This could 
+
+save your life when everything else fails.","升级 3
+市面上最好的防弹衣会让你
+更能扛住子弹直击和爆炸。
+当其他一切都失效时，
+它可能救你一命。",DefineText 角色 3987
+ui_3988,"Upgrade 1
+
+A pistol will give you a fighting chance 
+
+against zombies and soldiers clinging to 
+
+your hood.  With only a few bullets, use 
+
+it wisely.","升级 1
+手枪能让你在面对扒住引擎盖的
+僵尸和士兵时有一战之力。
+子弹不多，
+要省着用。",DefineText 角色 3988
+ui_3989,"Upgrade 2
+
+Extra bullets for your pistol can make 
+
+the difference between life and death.  
+
+Use them with caution and don't blow up 
+
+your windshield for an instant kill.","升级 2
+额外的子弹对手枪而言，
+可能就是生与死的差别。
+谨慎使用，别为了秒杀
+把自己的挡风玻璃打爆。",DefineText 角色 3989
+ui_3990,"Upgrade 3
+
+A full ammo belt is the best way to make 
+
+sure nothing stays on your hood.  You'll 
+
+still be outnumbered and outgunned.  Use 
+
+them as a last resort.","升级 3
+装满弹药带是确保引擎盖上
+什么都不留下的最好办法。
+但你的敌人依然更多更强，
+把它当作最后手段。",DefineText 角色 3990
+ui_3991,"Upgrade 1
+
+This stronger glass is a good protection 
+
+against all outside danger.  It can sustain 
+
+more damage before breaking.","升级 1
+更坚固的玻璃能有效抵御
+来自外部的各种危险，
+在破碎前能承受更多伤害。",DefineText 角色 3991
+ui_3992,"Upgrade 2
+
+This reinforced windshield will give you 
+
+extra protection from the outside world.  
+
+It's still glass, do not let zombies bash it 
+
+in and soldiers blast it to pieces!","升级 2
+强化挡风玻璃能为你
+提供额外的外部防护。
+但它终究是玻璃，别让僵尸砸进来，
+也别让士兵把它打碎！",DefineText 角色 3992
+ui_3993,"Upgrade 3
+
+This windshield is the best and toughest 
+
+you can get and will keep you safe for a 
+
+longer time.  Your life is still hanging by 
+
+a tread out there.","升级 3
+这是你能弄到的最好、
+最坚固的挡风玻璃，能让你
+支撑更久。
+但在外面，你的命依然悬于一线。",DefineText 角色 3993
+ui_3994,"Upgrade 1
+
+With more horse power, your 
+
+acceleration and maximum speed will be 
+
+improved.","升级 1
+马力更大，你的加速性能
+和最高速度都会
+得到提升。",DefineText 角色 3994
+ui_3995,"Upgrade 2
+
+A better engine with better acceleration 
+
+and maximum speed.  The faster you get 
+
+the hell out of this city, the better it will 
+
+be.","升级 2
+更好的引擎带来更好的加速
+和最高速度。你越快
+逃离这座城市，
+就越好。",DefineText 角色 3995
+ui_3996,"Upgrade 3
+
+This monster engine will give you the 
+
+best possible acceleration and maximum 
+
+speed.  It's time to get out of this mess 
+
+and fast!","升级 3
+这台怪物级引擎会给你
+最好的加速和最高速度。
+是时候离开这烂摊子了，
+而且要快！",DefineText 角色 3996
+ui_3997,"Upgrade 1
+
+The road will be littered with debris.  
+
+This metal reinforcement will take the 
+
+impacts for a little while.","升级 1
+路上会堆满残骸。
+这层金属加固能替你
+抵挡一阵冲击。",DefineText 角色 3997
+ui_3998,"Upgrade 2
+
+With this metal plating, you'll be able to 
+
+take a lot more frontal damage before 
+
+getting in trouble.  You should still avoid 
+
+colliding with abandoned cars.","升级 2
+有了这层金属装甲，你就能
+在出问题前承受更多正面损伤。
+但仍然要避免
+撞上废弃车辆。",DefineText 角色 3998
+ui_3999,"Upgrade 3
+
+This massive armor plate can withstand a 
+
+LOT of damage.  You can just plow 
+
+through most of the smaller obstacles.  
+
+Beware of abandoned cars still.","升级 3
+这块厚重装甲板能承受
+大量伤害。你可以直接碾过
+大多数较小的障碍物。
+不过还是要小心废弃车辆。",DefineText 角色 3999
+ui_4000,"Upgrade 1
+
+Tougher tires with more grip will give 
+
+you better control and resistance against 
+
+spike strips.","升级 1
+更结实、抓地更好的轮胎
+能让你更好地操控，
+并抵御钉刺带。",DefineText 角色 4000
+ui_4001,"Upgrade 2
+
+These reinforced sports wheels will give 
+
+you a lot of control and can also 
+
+withstand a couple of spike strips, if 
+
+necessary.","升级 2
+这些强化运动轮胎提供
+极佳的操控性，必要时
+还能扛住几次钉刺带。
+如果必要的话。",DefineText 角色 4001
+ui_4002,"Upgrade 3
+
+These are the toughest, most advanced 
+
+tires you got.  They will resist multiple 
+
+spike strips and give you insane control 
+
+over your car.","升级 3
+这是你手上最结实、最先进的
+轮胎。它们能抵抗多次
+钉刺带，并给你
+对车辆近乎疯狂的操控力。",DefineText 角色 4002
+ui_4003,"Upgrade 1
+
+With the chaos on the street, a louder 
+
+horn will help you get the civilians out of 
+
+the way and attract the zombies if you're 
+
+crazy enough to want that.","升级 1
+街上已经够乱了，
+更响的喇叭能帮你把平民
+赶开，同时也会吸引僵尸——
+如果你真想要那样的话。",DefineText 角色 4003
+ui_4004,"Upgrade 2
+
+With the civilians going crazy, this loud 
+
+horn will warn them from farther.  Don't 
+
+let them get in your way.  On the other 
+
+hand, it will attract farther zombies.","升级 2
+平民已经疯了，这响亮的喇叭
+能更远地警告他们。
+别让他们挡住你的路。
+另一方面，它也会引来更远处的僵尸。",DefineText 角色 4004
+ui_4005,"Upgrade 3
+
+This is the most powerful horn you can 
+
+install.  It will blow the civilians away 
+
+and rally up the zombies from a great 
+
+distance.","升级 3
+这是你能装的最强喇叭。
+它能把平民吹得四散，
+也能从极远处
+把僵尸聚拢过来。",DefineText 角色 4005
+ui_4007,Upgrade for,升级费用,DefineText 角色 4007
+ui_4008,Upgrade for,升级费用,DefineText 角色 4008
+ui_4014,More games at,更多游戏：,DefineText 角色 4014
+ui_4015,More games at,更多游戏：,DefineText 角色 4015
+ui_4017,North Side park,北区公园,DefineText 角色 4017
+ui_4019,Drive To,前往,DefineText 角色 4019
+ui_4020,Drive To,前往,DefineText 角色 4020
+ui_4025,"Road Of The Dead contains graphic
+
+violence that may not be suited
+
+for a younger audience.","《死亡之路》包含
+可能不适合
+年轻观众的暴力内容。",DefineText 角色 4025
+ui_4026,Warning,警告,DefineText 角色 4026
+ui_4084,POWERED BY,技术支持,DefineText 角色 4084
+ui_4086,FLASH GAME ENGINE,FLASH 游戏引擎,DefineText 角色 4086
+ui_4095,Skip,跳过,DefineText 角色 4095
+ui_4096,Skip,跳过,DefineText 角色 4096
+ui_4214,Programing,程序,DefineText 角色 4214
+ui_4216,Artwork,美术,DefineText 角色 4216
+ui_4218,Music,音乐,DefineText 角色 4218
+ui_4220,Voices,配音,DefineText 角色 4220
+ui_4222,Sound,音效,DefineText 角色 4222
+ui_4224,Sponsor,赞助,DefineText 角色 4224
+ui_4225,Special Thanks,特别鸣谢,DefineText 角色 4225
+ui_4227,for their undying support,感谢他们始终不变的支持,DefineText 角色 4227
+ui_4229,for the disclaimer scary cue,感谢提供免责声明音效,DefineText 角色 4229
+ui_4231,for stepping up in the good fight against zombies,感谢挺身而出，加入对抗僵尸的战斗,DefineText 角色 4231
+ui_4232,Thanks for playing,感谢游玩,DefineText 角色 4232
+ui_4335,Music by,音乐,DefineText 角色 4335
+ui_4338,Music by,音乐,DefineText 角色 4338
+ui_4340,Speed through the zombie apocalypse and escape the quarantined city!Normal difficulty Checkpoints enabled,在僵尸末日中疾驰，逃出被隔离的城市！普通难度 检查点已开启,DefineText 角色 4340
+ui_4351,Achievements,成就,DefineText 角色 4351
+ui_4355,Back,返回,DefineText 角色 4355
+ui_4356,Back,返回,DefineText 角色 4356
+ui_4359,High Scores,排行榜,DefineText 角色 4359
+ui_4362,KM,公里,DefineText 角色 4362
+ui_4364,"Kongregate.com
+
+Score boards
+
+are located
+
+in the right panel","Kongregate.com
+排行榜
+位于
+右侧面板",DefineText 角色 4364
+ui_4366,Dead On Time,准时赴死,DefineText 角色 4366
+ui_4367,Dead On Time,准时赴死,DefineText 角色 4367
+ui_4369,Police State,警察国家,DefineText 角色 4369
+ui_4370,Police State,警察国家,DefineText 角色 4370
+ui_4372,Hit Combo,连击,DefineText 角色 4372
+ui_4373,Hit Combo,连击,DefineText 角色 4373
+ui_4375,Flip Flop,翻个底朝天,DefineText 角色 4375
+ui_4376,Flip Flop,翻个底朝天,DefineText 角色 4376
+ui_4383,Steer Left,左转,DefineText 角色 4383
+ui_4384,Steer Right,右转,DefineText 角色 4384
+ui_4385,Accelerate,加速,DefineText 角色 4385
+ui_4386,Hand Brake,手刹,DefineText 角色 4386
+ui_4387,Horn,喇叭,DefineText 角色 4387
+ui_4391,Numpad Center,小键盘中键,DefineText 角色 4391
+ui_4392,Space,空格,DefineText 角色 4392
+ui_4393,Right,右键,DefineText 角色 4393
+ui_4394,Quality,画质,DefineText 角色 4394
+ui_4395,Space,空格,DefineText 角色 4395
+ui_4396,Space,空格,DefineText 角色 4396
+ui_4397,Wiper,雨刷,DefineText 角色 4397
+ui_4398,Attack,攻击,DefineText 角色 4398
+ui_4399,Brake,刹车,DefineText 角色 4399
+ui_4400,Numpad Center,小键盘中键,DefineText 角色 4400
+ui_4401,Right,右键,DefineText 角色 4401
+ui_4402,Perception,感知,DefineText 角色 4402
+ui_4403,Controls,操作,DefineText 角色 4403
+ui_4406,Options,选项,DefineText 角色 4406
+ui_4407,Buildings,建筑,DefineText 角色 4407
+ui_4408,On,开,DefineText 角色 4408
+ui_4409,On,开,DefineText 角色 4409
+ui_4411,Off,关,DefineText 角色 4411
+ui_4412,Off,关,DefineText 角色 4412
+ui_4414,Quality,画质,DefineText 角色 4414
+ui_4415,Medium,中,DefineText 角色 4415
+ui_4416,Medium,中,DefineText 角色 4416
+ui_4418,Low,低,DefineText 角色 4418
+ui_4419,Low,低,DefineText 角色 4419
+ui_4421,High,高,DefineText 角色 4421
+ui_4422,High,高,DefineText 角色 4422
+ui_4424,Save Data,存档数据,DefineText 角色 4424
+ui_4425,Delete,删除,DefineText 角色 4425
+ui_4426,Delete,删除,DefineText 角色 4426
+ui_4428,Music,音乐,DefineText 角色 4428
+ui_4429,Sounds,音效,DefineText 角色 4429
+ui_4432,This version of the game is site locked,此版本的游戏有站点限制,DefineText 角色 4432

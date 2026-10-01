@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from align_controls import build_formatted, export_formatted, parse_formatted  # noqa: E402
 from remap_font import edit_text_font_offset, load_swf_raw, text_font_offsets  # noqa: E402
-from ui_text import UI_TRANSLATIONS  # noqa: E402
+from translations import UI_TRANSLATIONS  # noqa: E402
 
 FFDEC = ROOT / "tools" / "ffdec" / "ffdec-cli.jar"
 ORIG = ROOT / "dist" / "Road-Of-The-Dead.swf"

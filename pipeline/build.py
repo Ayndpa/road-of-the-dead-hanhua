@@ -2,10 +2,13 @@
 
 Steps
   1. export scripts / texts / symbol classes with FFDec
-  2. generate the subtitle-instrumented DTSound.as from data/subtitles.json
+  2. generate the subtitle-instrumented DTSound.as from the ParaTranz export
   3. generate the translated gameplay ActionScript
   4. generate the translated baked UI text tags + the CJK font subsets
   5. splice everything back into the SWF and compile
+
+Translations are read from `data/paratranz/*.csv` (see pipeline/translations.py);
+drop the files downloaded from the ParaTranz project in there to rebuild.
 
 Usage:
     uv run python pipeline/build.py [--orig <game.swf>]

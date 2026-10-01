@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from ui_text import UI_TRANSLATIONS  # noqa: E402
+from translations import UI_TRANSLATIONS  # noqa: E402
 from menu_labels import MENU_LABELS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent

@@ -37,7 +37,7 @@ from fontTools.ttLib import TTFont
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from remap_font import Bits, load_swf_raw  # noqa: E402
-from ui_text import UI_TRANSLATIONS  # noqa: E402
+from translations import UI_TRANSLATIONS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 FFDEC = ROOT / "tools" / "ffdec" / "ffdec-cli.jar"

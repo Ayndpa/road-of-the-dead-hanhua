@@ -8,18 +8,27 @@ for the duration of the clip.
 Subtitles are injected as a pure-ASCII AS3 string literal (``\\uXXXX`` escapes)
 so the source never depends on the compiler's text encoding.
 
+The Chinese lines come from the ParaTranz export (``data/paratranz/voice.csv`` and
+``stream.csv``); clip durations / speech segments still come from the ASR cache
+(``data/asr_all.json``) and the streamed-audio timing from
+``data/stream_timing.json``.
+
 Usage:
-    python pipeline/make_dtsound.py --subs work/subtitles.json --out patch/DTSound.as
+    python pipeline/make_dtsound.py --out patch/DTSound.as
 """
 from __future__ import annotations
 
 import argparse
 import json
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 ORIGINAL = ROOT / "work" / "scripts" / "scripts" / "DTSound.as"
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from translations import STREAM, VOICE  # noqa: E402
 
 REC_SEP = "\x02"   # between entries
 FLD_SEP = "\x01"   # between class name and text
@@ -1044,10 +1053,10 @@ def build_timed_chunks(
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--subs", default=str(ROOT / "data" / "subtitles.json"))
-    ap.add_argument("--stream-subs", default=str(ROOT / "data" / "stream_subs.json"))
     ap.add_argument("--durations", default=str(ROOT / "data" / "asr_all.json"),
-                    help="asr_all.json for clip durations")
+                    help="asr_all.json for clip durations / speech segments")
+    ap.add_argument("--stream-timing", default=str(ROOT / "data" / "stream_timing.json"),
+                    help="opening streamed-audio segment start/end")
     ap.add_argument("--min-split-secs", type=float, default=7.5)
     ap.add_argument("--out", required=True)
     ap.add_argument("--original", default=str(ORIGINAL))
@@ -1056,11 +1065,10 @@ def main() -> int:
     ap.add_argument("--debug", action="store_true")
     args = ap.parse_args()
 
-    subs = json.loads(Path(args.subs).read_text(encoding="utf-8"))
-    items = [(k, v) for k, v in subs.items() if v]
-    items.sort()
+    subs = VOICE
+    items = sorted((k, v) for k, v in subs.items() if v)
     chunks = build_chunks(items)
-    print(f"subtitle entries: {len(items)}; stream entries: ", end="")
+    print(f"voice subtitle entries: {len(items)}; ", end="")
 
     durations: dict[str, float] = {}
     segments: dict[str, list[dict]] = {}
@@ -1074,15 +1082,17 @@ def main() -> int:
     timed, timed_chunks = build_timed_chunks(
         subs, durations, args.min_split_secs, segments
     )
-    print(f"{len(timed)} timed clips; stream entries: ", end="")
+    print(f"{len(timed)} timed clips; ", end="")
 
-    stream_chunks = '""'
-    if args.stream_subs:
-        stream = json.loads(Path(args.stream_subs).read_text(encoding="utf-8"))
-        stream_chunks = build_stream_chunks(stream)
-        print(len(stream))
-    else:
-        print(0)
+    stream: list[dict] = []
+    if args.stream_timing and Path(args.stream_timing).exists():
+        timing = json.loads(Path(args.stream_timing).read_text(encoding="utf-8"))
+        for i, seg in enumerate(timing):
+            zh = STREAM.get(f"stream_{i:02d}")
+            if zh:
+                stream.append({"start": seg["start"], "end": seg["end"], "zh": zh})
+    stream_chunks = build_stream_chunks(stream) if stream else '""'
+    print(f"{len(stream)} stream entries")
 
     src = Path(args.original).read_text(encoding="utf-8")
 
