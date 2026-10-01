@@ -1,0 +1,7 @@
+Upgrade 1
+--- RECORDSEPARATOR ---
+The kevlar vest will give you body 
+--- RECORDSEPARATOR ---
+protection and will reduce direct damage 
+--- RECORDSEPARATOR ---
+from bullets and explosions.

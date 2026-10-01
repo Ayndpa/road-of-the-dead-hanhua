@@ -1,0 +1,1598 @@
+{
+ "BasicGame.as": [
+  {
+   "line": 21,
+   "text": "Event_Paused"
+  },
+  {
+   "line": 23,
+   "text": "Event_UnPaused"
+  },
+  {
+   "line": 143,
+   "text": "SiteLocked"
+  },
+  {
+   "line": 164,
+   "text": "EngineIntro"
+  },
+  {
+   "line": 322,
+   "text": "Game"
+  },
+  {
+   "line": 331,
+   "text": "Menu"
+  },
+  {
+   "line": 444,
+   "text": "DogTek"
+  },
+  {
+   "line": 485,
+   "text": "Error"
+  },
+  {
+   "line": 485,
+   "text": "Could not load the Kongregate API!\\nChallenges are disabled."
+  },
+  {
+   "line": 509,
+   "text": "Error"
+  },
+  {
+   "line": 509,
+   "text": "Could not load the ArmorGames Interface!\\nArmorGames features are disabled."
+  }
+ ],
+ "Input.as": [
+  {
+   "line": 213,
+   "text": "Caps Lock"
+  },
+  {
+   "line": 214,
+   "text": "Shift"
+  },
+  {
+   "line": 215,
+   "text": "Ctrl"
+  },
+  {
+   "line": 216,
+   "text": "Space"
+  },
+  {
+   "line": 217,
+   "text": "Left Arrow"
+  },
+  {
+   "line": 218,
+   "text": "Down Arrow"
+  },
+  {
+   "line": 219,
+   "text": "Right Arrow"
+  },
+  {
+   "line": 220,
+   "text": "Up Arrow"
+  },
+  {
+   "line": 229,
+   "text": "Backspace"
+  },
+  {
+   "line": 230,
+   "text": "Enter"
+  },
+  {
+   "line": 234,
+   "text": "Numpad /"
+  },
+  {
+   "line": 235,
+   "text": "Numpad *"
+  },
+  {
+   "line": 236,
+   "text": "Numpad -"
+  },
+  {
+   "line": 237,
+   "text": "Numpad +"
+  },
+  {
+   "line": 238,
+   "text": "Home"
+  },
+  {
+   "line": 239,
+   "text": "Page Up"
+  },
+  {
+   "line": 240,
+   "text": "Numpad Center"
+  },
+  {
+   "line": 241,
+   "text": "End"
+  },
+  {
+   "line": 242,
+   "text": "Page Down"
+  },
+  {
+   "line": 243,
+   "text": "Insert"
+  },
+  {
+   "line": 244,
+   "text": "Delete"
+  },
+  {
+   "line": 245,
+   "text": "Numpad ."
+  },
+  {
+   "line": 246,
+   "text": "Numpad 1"
+  },
+  {
+   "line": 247,
+   "text": "Numpad 2"
+  },
+  {
+   "line": 248,
+   "text": "Numpad 3"
+  },
+  {
+   "line": 249,
+   "text": "Numpad 4"
+  },
+  {
+   "line": 250,
+   "text": "Numpad 5"
+  },
+  {
+   "line": 251,
+   "text": "Numpad 6"
+  },
+  {
+   "line": 252,
+   "text": "Numpad 7"
+  },
+  {
+   "line": 253,
+   "text": "Numpad 8"
+  },
+  {
+   "line": 254,
+   "text": "Numpad 9"
+  },
+  {
+   "line": 255,
+   "text": "Numpad 0"
+  },
+  {
+   "line": 256,
+   "text": "None"
+  }
+ ],
+ "RDAchievement.as": [
+  {
+   "line": 117,
+   "text": "Survivor"
+  },
+  {
+   "line": 117,
+   "text": "Beat The Great Escape"
+  },
+  {
+   "line": 118,
+   "text": "Hell\\'s Angel"
+  },
+  {
+   "line": 118,
+   "text": "Beat Highway To Hell"
+  },
+  {
+   "line": 119,
+   "text": "Dead On Time"
+  },
+  {
+   "line": 119,
+   "text": "Drive "
+  },
+  {
+   "line": 119,
+   "text": " KM in Dead On Time"
+  },
+  {
+   "line": 120,
+   "text": "One Man Army"
+  },
+  {
+   "line": 120,
+   "text": "Drive "
+  },
+  {
+   "line": 120,
+   "text": " KM in Police State"
+  },
+  {
+   "line": 121,
+   "text": "Tank"
+  },
+  {
+   "line": 121,
+   "text": "Buy all the upgrades"
+  },
+  {
+   "line": 122,
+   "text": "Hood Shaker"
+  },
+  {
+   "line": 122,
+   "text": "Knock an enemy off your hood by hitting the side walls"
+  },
+  {
+   "line": 123,
+   "text": "Gunslinger"
+  },
+  {
+   "line": 123,
+   "text": "Shoot an enemy off your hood with the pistol"
+  },
+  {
+   "line": 124,
+   "text": "Hydroficial Intelligence"
+  },
+  {
+   "line": 124,
+   "text": "Use a water jug to put off your burning engine"
+  },
+  {
+   "line": 125,
+   "text": "Road Warrior"
+  },
+  {
+   "line": 125,
+   "text": "Defeat a helicopter"
+  },
+  {
+   "line": 126,
+   "text": "Blunt Force Trauma"
+  },
+  {
+   "line": 126,
+   "text": " hits combo with zombies only"
+  },
+  {
+   "line": 127,
+   "text": "Flip Flop"
+  },
+  {
+   "line": 127,
+   "text": "Hit "
+  },
+  {
+   "line": 127,
+   "text": " enemies, alternating between zombie and soldier or vice versa"
+  },
+  {
+   "line": 128,
+   "text": "Meticulous"
+  },
+  {
+   "line": 128,
+   "text": "Kill "
+  },
+  {
+   "line": 128,
+   "text": " zombies at low speed in a single run"
+  },
+  {
+   "line": 129,
+   "text": "Quick Draw"
+  },
+  {
+   "line": 129,
+   "text": "Shoot a soldier while he\\'s pointing his gun at you and before he shoots"
+  },
+  {
+   "line": 130,
+   "text": "Speed Racer"
+  },
+  {
+   "line": 130,
+   "text": "Drive "
+  },
+  {
+   "line": 130,
+   "text": " KM at maximum speed"
+  },
+  {
+   "line": 131,
+   "text": "Don\\'t Need Wheels"
+  },
+  {
+   "line": 131,
+   "text": "Drive "
+  },
+  {
+   "line": 131,
+   "text": " KM with all 4 tires blown"
+  },
+  {
+   "line": 132,
+   "text": "Pinball"
+  },
+  {
+   "line": 132,
+   "text": " hits vehicle collision combo"
+  },
+  {
+   "line": 133,
+   "text": "Nuke Watcher"
+  },
+  {
+   "line": 133,
+   "text": "Exit the city with at least "
+  },
+  {
+   "line": 133,
+   "text": " seconds to spare"
+  },
+  {
+   "line": 134,
+   "text": "Time To Spare"
+  },
+  {
+   "line": 134,
+   "text": "Reach up to "
+  },
+  {
+   "line": 134,
+   "text": " seconds bonus time in Dead On Time"
+  },
+  {
+   "line": 135,
+   "text": "Road Dominator"
+  },
+  {
+   "line": 135,
+   "text": "Hit "
+  },
+  {
+   "line": 135,
+   "text": " highway soldiers"
+  },
+  {
+   "line": 136,
+   "text": "Zombie Sniper"
+  },
+  {
+   "line": 136,
+   "text": " zombie splatter hits"
+  },
+  {
+   "line": 137,
+   "text": "No Mercy"
+  },
+  {
+   "line": 137,
+   "text": "Hit "
+  },
+  {
+   "line": 137,
+   "text": " civilians"
+  },
+  {
+   "line": 138,
+   "text": "Close Encounters"
+  },
+  {
+   "line": 138,
+   "text": "Get all 5 enemy types off your hood"
+  },
+  {
+   "line": 139,
+   "text": "Wise Man"
+  },
+  {
+   "line": 139,
+   "text": "Avoid "
+  },
+  {
+   "line": 139,
+   "text": " mutated zombies"
+  },
+  {
+   "line": 140,
+   "text": "Top Gun"
+  },
+  {
+   "line": 140,
+   "text": "Dodge "
+  },
+  {
+   "line": 140,
+   "text": " carpet bombings"
+  }
+ ],
+ "RDGame.as": [
+  {
+   "line": 53,
+   "text": "Highway 65\\n\\nWelcome To Evans City\\n\\nCity Exit\\n60km"
+  },
+  {
+   "line": 268,
+   "text": "NGIntro"
+  },
+  {
+   "line": 299,
+   "text": "NGIntro"
+  },
+  {
+   "line": 301,
+   "text": "EngineIntro"
+  },
+  {
+   "line": 303,
+   "text": "EngineIntro"
+  },
+  {
+   "line": 305,
+   "text": "Disclaimer"
+  },
+  {
+   "line": 307,
+   "text": "Disclaimer"
+  },
+  {
+   "line": 311,
+   "text": "GameIntro"
+  },
+  {
+   "line": 327,
+   "text": "NGIntro"
+  },
+  {
+   "line": 329,
+   "text": "EngineIntro"
+  },
+  {
+   "line": 331,
+   "text": "EngineIntro"
+  },
+  {
+   "line": 333,
+   "text": "Disclaimer"
+  },
+  {
+   "line": 335,
+   "text": "Disclaimer"
+  },
+  {
+   "line": 339,
+   "text": "GameIntro"
+  },
+  {
+   "line": 459,
+   "text": "GameIntro"
+  },
+  {
+   "line": 473,
+   "text": "GameIntro"
+  },
+  {
+   "line": 631,
+   "text": "Dead On Time Distance"
+  },
+  {
+   "line": 638,
+   "text": "Dead On Time Distance"
+  },
+  {
+   "line": 644,
+   "text": "Police State Distance"
+  },
+  {
+   "line": 650,
+   "text": "Highest Hit Combo"
+  },
+  {
+   "line": 656,
+   "text": "Highest Flip Flop"
+  },
+  {
+   "line": 687,
+   "text": "Speed through the zombie apocalypse and escape the quarantined city!\\n\\nNormal difficulty"
+  },
+  {
+   "line": 693,
+   "text": "This is the road for survivors with something to prove!\\n\\nHard difficulty"
+  },
+  {
+   "line": 697,
+   "text": "This is for survivors with something to prove!\\n\\nHard difficulty\\nComplete The Great Escape to unlock this mode!"
+  },
+  {
+   "line": 702,
+   "text": "You\\'re living on borrowed time.\\n\\nGet as far as you can by killing zombies to earn extra time!"
+  },
+  {
+   "line": 706,
+   "text": "This is war and you are a one man army on wheels!\\n\\nGet as far as you can while facing brutal military resistance!"
+  },
+  {
+   "line": 710,
+   "text": "Play more games at newgrounds.com, where artists, programmers, musicians, writers and voice actors join forces to make pure awesomeness!"
+  },
+  {
+   "line": 714,
+   "text": "Evil-Dog.com\\n\\nCheck out my other games, my music and my movies on my official website!"
+  },
+  {
+   "line": 718,
+   "text": "SickDeathFiend.com\\n\\nCheck out more movies and art by SickDeathFiend on his official website!"
+  },
+  {
+   "line": 722,
+   "text": "Music made by\\nSymphony of Specters\\n\\nVisit their website for more amazing music!"
+  },
+  {
+   "line": 726,
+   "text": "Surviving the zombie apocalypse requires a complete set of skills.\\nDo You have what it takes to complete all the achievements?"
+  },
+  {
+   "line": 730,
+   "text": "In options, you can:\\nCustomize your controls\\nToggle sound and music\\nSet graphic quality\\nEnable/Disable buildings\\nDelete your save data"
+  },
+  {
+   "line": 734,
+   "text": "Are you trying to be the greatest survivor?\\n\\nCheck the high scores for the Dead On Time and Police State modes!"
+  },
+  {
+   "line": 846,
+   "text": "autoAlpha"
+  },
+  {
+   "line": 847,
+   "text": "ease"
+  },
+  {
+   "line": 907,
+   "text": "Well done!"
+  },
+  {
+   "line": 931,
+   "text": "delay"
+  },
+  {
+   "line": 932,
+   "text": "onStart"
+  },
+  {
+   "line": 933,
+   "text": "onComplete"
+  },
+  {
+   "line": 934,
+   "text": "ease"
+  },
+  {
+   "line": 948,
+   "text": "alpha"
+  },
+  {
+   "line": 949,
+   "text": "delay"
+  },
+  {
+   "line": 950,
+   "text": "onComplete"
+  },
+  {
+   "line": 951,
+   "text": "ease"
+  },
+  {
+   "line": 964,
+   "text": "Error"
+  },
+  {
+   "line": 998,
+   "text": "delay"
+  },
+  {
+   "line": 999,
+   "text": "onStart"
+  },
+  {
+   "line": 1000,
+   "text": "onComplete"
+  },
+  {
+   "line": 1001,
+   "text": "ease"
+  },
+  {
+   "line": 1023,
+   "text": "alpha"
+  },
+  {
+   "line": 1024,
+   "text": "onComplete"
+  },
+  {
+   "line": 1025,
+   "text": "ease"
+  },
+  {
+   "line": 1056,
+   "text": "Delete your save data?\\nYou will lose all your progress"
+  },
+  {
+   "line": 1060,
+   "text": "Where do you wanna start\\nThe Great Escape?"
+  },
+  {
+   "line": 1064,
+   "text": "Where do you wanna start\\nHighway To Hell?"
+  },
+  {
+   "line": 1068,
+   "text": "Abort your escape and\\nreturn to the garage?"
+  },
+  {
+   "line": 1072,
+   "text": "It\\'s recommended to play The Great Escape first.\\nAre you sure you want to continue?"
+  },
+  {
+   "line": 1076,
+   "text": "It\\'s recommended to play The Great Escape first.\\nAre you sure you want to continue?"
+  },
+  {
+   "line": 1148,
+   "text": "GameIntro"
+  },
+  {
+   "line": 1209,
+   "text": "Global Pandemic"
+  },
+  {
+   "line": 1211,
+   "text": "Basic Survival"
+  },
+  {
+   "line": 1213,
+   "text": "Killing Methods"
+  },
+  {
+   "line": 1215,
+   "text": "Pushing The Limits"
+  },
+  {
+   "line": 1217,
+   "text": "Veteran"
+  },
+  {
+   "line": 1223,
+   "text": "ease"
+  },
+  {
+   "line": 1228,
+   "text": "ease"
+  },
+  {
+   "line": 1233,
+   "text": "ease"
+  },
+  {
+   "line": 1330,
+   "text": "ease"
+  },
+  {
+   "line": 1335,
+   "text": "ease"
+  },
+  {
+   "line": 1340,
+   "text": "ease"
+  },
+  {
+   "line": 1345,
+   "text": "ease"
+  },
+  {
+   "line": 1392,
+   "text": "Press a key..."
+  },
+  {
+   "line": 1492,
+   "text": "ease"
+  },
+  {
+   "line": 1497,
+   "text": "ease"
+  },
+  {
+   "line": 1502,
+   "text": "ease"
+  },
+  {
+   "line": 1519,
+   "text": "Dead On Time Distance"
+  },
+  {
+   "line": 1524,
+   "text": "Police State Distance"
+  },
+  {
+   "line": 1529,
+   "text": "Highest Hit Combo"
+  },
+  {
+   "line": 1534,
+   "text": "Highest Flip Flop"
+  },
+  {
+   "line": 1553,
+   "text": "onClose"
+  },
+  {
+   "line": 1555,
+   "text": "Dead On Time Distance"
+  },
+  {
+   "line": 1556,
+   "text": "custom"
+  },
+  {
+   "line": 1560,
+   "text": "Police State Distance"
+  },
+  {
+   "line": 1561,
+   "text": "custom"
+  },
+  {
+   "line": 1635,
+   "text": "Could not save!"
+  },
+  {
+   "line": 1635,
+   "text": "Make sure flash local storage is enabled."
+  }
+ ],
+ "RDGameModeGameplay.as": [
+  {
+   "line": 250,
+   "text": " KM Reached:"
+  },
+  {
+   "line": 250,
+   "text": " Zombies Hit:"
+  },
+  {
+   "line": 250,
+   "text": " Zombie Hit:"
+  },
+  {
+   "line": 250,
+   "text": " Soldiers Hit:"
+  },
+  {
+   "line": 250,
+   "text": " Soldier Hit:"
+  },
+  {
+   "line": 250,
+   "text": " Clinging Enemies Shook Off:"
+  },
+  {
+   "line": 250,
+   "text": " Clinging Enemy Shook Off:"
+  },
+  {
+   "line": 250,
+   "text": " Clinging Enemies Shot Down:"
+  },
+  {
+   "line": 250,
+   "text": " Clinging Enemy Shot Down:"
+  },
+  {
+   "line": 250,
+   "text": " Helicopters Defeated:"
+  },
+  {
+   "line": 250,
+   "text": " Helicopter Defeated:"
+  },
+  {
+   "line": 250,
+   "text": "Combo Points:"
+  },
+  {
+   "line": 251,
+   "text": " Splatter Hits:"
+  },
+  {
+   "line": 251,
+   "text": " Splatter Hit:"
+  },
+  {
+   "line": 251,
+   "text": " RP Bonus"
+  },
+  {
+   "line": 251,
+   "text": " Civilians Hit:"
+  },
+  {
+   "line": 251,
+   "text": " Civilian Hit:"
+  },
+  {
+   "line": 251,
+   "text": " RP Penalty"
+  },
+  {
+   "line": 251,
+   "text": "Total Road Points:"
+  },
+  {
+   "line": 415,
+   "text": "Basic Controls"
+  },
+  {
+   "line": 415,
+   "text": "Accelerate Key: "
+  },
+  {
+   "line": 415,
+   "text": "\\nBrake Key: "
+  },
+  {
+   "line": 415,
+   "text": "\\nSteer Left Key: "
+  },
+  {
+   "line": 415,
+   "text": "\\nSteer Right Key: "
+  },
+  {
+   "line": 415,
+   "text": "\\n\\nAll the controls can be changed in the options."
+  },
+  {
+   "line": 416,
+   "text": "Aborting"
+  },
+  {
+   "line": 416,
+   "text": "If at any time, you want to abort your current escape, just move your mouse in the top center area and use the Abort button to return to the garage to plan your escape better."
+  },
+  {
+   "line": 417,
+   "text": "Quality"
+  },
+  {
+   "line": 417,
+   "text": "Quality Key: "
+  },
+  {
+   "line": 417,
+   "text": "\\n\\nIf the game runs slow, try cycling through the quality settings to find the best one for you.  You can also disable the buildings in the options."
+  },
+  {
+   "line": 420,
+   "text": "Hand Brake"
+  },
+  {
+   "line": 420,
+   "text": "Hand Brake Key: "
+  },
+  {
+   "line": 420,
+   "text": "\\n\\nIn order to survive this nightmare, you\\'ll need to use your hand brake to avoid object with better control."
+  },
+  {
+   "line": 423,
+   "text": "Wipers"
+  },
+  {
+   "line": 423,
+   "text": "Wipers Key: "
+  },
+  {
+   "line": 423,
+   "text": "\\n\\nBetter get ready to get bloody!  With all these zombies, soldiers and civilians splattering their blood in your windshield, it\\'s a good idea to use your wipers once in a while."
+  },
+  {
+   "line": 426,
+   "text": "Horn"
+  },
+  {
+   "line": 426,
+   "text": "Horn Key: "
+  },
+  {
+   "line": 426,
+   "text": "\\n\\nThere is chaos on the highway and the civilians are running scared.  Running over civilians is bad so you should warn them with your horn to get them out of the way."
+  },
+  {
+   "line": 429,
+   "text": "Punching"
+  },
+  {
+   "line": 429,
+   "text": "Punch Key: "
+  },
+  {
+   "line": 429,
+   "text": "\\n\\nThrough your escape, you\\'ll end up with a shattered windshield.  If it\\'s ruining your vision, you can punch it off.  You can\\'t punch zombies, the risk of being infected is too great."
+  },
+  {
+   "line": 432,
+   "text": "Splatter Hits"
+  },
+  {
+   "line": 432,
+   "text": "When you hit someone, dead or alive, right in the center of your car and at high speed, you will get a splatter hit.  They will give you an extra Road Point multiplier.  Use the horn for easier zombie splatter hits!  Civilians will NOT give a bonus."
+  },
+  {
+   "line": 435,
+   "text": "Hit Combos"
+  },
+  {
+   "line": 435,
+   "text": "A good way to earn Road Points is to make hit combos.  By hitting multiple enemies in a row in a timely fashion, you will get more Road Points than regular hits.  The bigger the combo, the more points you get!  Be careful, hitting a civilian will break your combo."
+  },
+  {
+   "line": 446,
+   "text": "Pistol"
+  },
+  {
+   "line": 446,
+   "text": "Pistol Key: "
+  },
+  {
+   "line": 446,
+   "text": "\\nYou have brought a pistol with you.  When there is an enemy clinging to your hood, you can get it off quickly by shooting it.  Be aware that using the pistol will blast the windshield to pieces in a couple shots."
+  },
+  {
+   "line": 451,
+   "text": "Helicopters"
+  },
+  {
+   "line": 451,
+   "text": "If you really piss the military off, they\\'ll send helicopters to take you down for sure.  When a helicopter is after you, you\\'ll have to make it crash into the big highway signs a couple of times to take it down.  Nobody said it would be easy!"
+  },
+  {
+   "line": 456,
+   "text": "Mutated Zombies"
+  },
+  {
+   "line": 456,
+   "text": "What caused the zombie outbreak is still unknown but it could be chemical since mutations have occured.  Mutated zombies are extremely strong and resistant.  They will cling to your hood no matter how hard you hit them.  It\\'s better to avoid them if you don\\'t want to have a lousy afternoon."
+  },
+  {
+   "line": 461,
+   "text": "Water Jugs"
+  },
+  {
+   "line": 461,
+   "text": "When you\\'re on the verge of exploding and your car is on fire, try to hit these big blue water jugs to put out the fire and give you a chance at surviving this hell a little longer.  Hitting water jugs also washes the blood off your windshield."
+  },
+  {
+   "line": 466,
+   "text": "Enemies On Hood"
+  },
+  {
+   "line": 466,
+   "text": "If you\\'re not driving fast enough, zombies and soldiers will get a chance to cling to your hood when you hit them.  You\\'ll have to shake them off by hitting the side walls HARD (by using the hand brake) or by hitting abandoned cars.  A pistol is also a great way to get them off your hood quickly."
+  },
+  {
+   "line": 471,
+   "text": "No Windshield"
+  },
+  {
+   "line": 471,
+   "text": "Without a windshield, a zombie on your hood is a very bad thing.  Without anything to stop it, a zombie will get in and then you\\'re dead.  Get them off your hood, quick!"
+  },
+  {
+   "line": 476,
+   "text": "Perception"
+  },
+  {
+   "line": 476,
+   "text": "Perception Toggle Key: "
+  },
+  {
+   "line": 476,
+   "text": "\\nWith perception, you will see a fixed top down view of the road, yourself as the white icon and the icons for the incoming hazards and enemies.\\nKeep an eye on your perceptions to survive the day."
+  },
+  {
+   "line": 772,
+   "text": "Highest Hit Combo"
+  },
+  {
+   "line": 773,
+   "text": "Highest Flip Flop"
+  },
+  {
+   "line": 779,
+   "text": "Highest Hit Combo"
+  },
+  {
+   "line": 780,
+   "text": "Highest Flip Flop"
+  }
+ ],
+ "RDGameModeGarage.as": [
+  {
+   "line": 214,
+   "text": "Dead On Time"
+  },
+  {
+   "line": 218,
+   "text": "Police State"
+  },
+  {
+   "line": 286,
+   "text": "Talking"
+  },
+  {
+   "line": 300,
+   "text": "Blink"
+  },
+  {
+   "line": 436,
+   "text": "Perception"
+  },
+  {
+   "line": 440,
+   "text": "Body Armor"
+  },
+  {
+   "line": 444,
+   "text": "Firearm"
+  },
+  {
+   "line": 448,
+   "text": "Windshield"
+  },
+  {
+   "line": 452,
+   "text": "Engine"
+  },
+  {
+   "line": 456,
+   "text": "Bumper"
+  },
+  {
+   "line": 460,
+   "text": "Tires"
+  },
+  {
+   "line": 464,
+   "text": "Horn"
+  }
+ ],
+ "RDGameModeMilitary.as": [
+  {
+   "line": 533,
+   "text": "Police State Distance"
+  },
+  {
+   "line": 539,
+   "text": "Police State Distance"
+  },
+  {
+   "line": 548,
+   "text": "Police State Distance"
+  },
+  {
+   "line": 575,
+   "text": "delay"
+  },
+  {
+   "line": 576,
+   "text": "ease"
+  },
+  {
+   "line": 581,
+   "text": "delay"
+  },
+  {
+   "line": 582,
+   "text": "ease"
+  },
+  {
+   "line": 587,
+   "text": "delay"
+  },
+  {
+   "line": 588,
+   "text": "ease"
+  },
+  {
+   "line": 593,
+   "text": "delay"
+  },
+  {
+   "line": 594,
+   "text": "ease"
+  },
+  {
+   "line": 599,
+   "text": "delay"
+  },
+  {
+   "line": 600,
+   "text": "onComplete"
+  },
+  {
+   "line": 601,
+   "text": "ease"
+  },
+  {
+   "line": 609,
+   "text": "delay"
+  },
+  {
+   "line": 610,
+   "text": "ease"
+  },
+  {
+   "line": 620,
+   "text": "onClose"
+  },
+  {
+   "line": 622,
+   "text": "Dead On Time Distance"
+  },
+  {
+   "line": 623,
+   "text": "custom"
+  },
+  {
+   "line": 627,
+   "text": "Police State Distance"
+  },
+  {
+   "line": 628,
+   "text": "custom"
+  },
+  {
+   "line": 635,
+   "text": "Police State Distance"
+  }
+ ],
+ "RDGameModeStory.as": [
+  {
+   "line": 36,
+   "text": "Evans City"
+  },
+  {
+   "line": 36,
+   "text": "Monroeville"
+  },
+  {
+   "line": 36,
+   "text": "Red Ridge"
+  },
+  {
+   "line": 36,
+   "text": "Burgony Street"
+  },
+  {
+   "line": 36,
+   "text": "Central City"
+  },
+  {
+   "line": 36,
+   "text": "Down Town"
+  },
+  {
+   "line": 36,
+   "text": "Chinatown"
+  },
+  {
+   "line": 36,
+   "text": "Brighton Square"
+  },
+  {
+   "line": 36,
+   "text": "North Side Park"
+  },
+  {
+   "line": 36,
+   "text": "West Ridge"
+  },
+  {
+   "line": 36,
+   "text": "Tunnel Drive"
+  },
+  {
+   "line": 524,
+   "text": "Progress Saved..."
+  },
+  {
+   "line": 642,
+   "text": "GameEnding"
+  },
+  {
+   "line": 764,
+   "text": "Game"
+  }
+ ],
+ "RDGameModeTime.as": [
+  {
+   "line": 598,
+   "text": "Dead On Time Distance"
+  },
+  {
+   "line": 604,
+   "text": "Dead On Time Distance"
+  },
+  {
+   "line": 613,
+   "text": "Dead On Time Distance"
+  },
+  {
+   "line": 640,
+   "text": "delay"
+  },
+  {
+   "line": 641,
+   "text": "ease"
+  },
+  {
+   "line": 646,
+   "text": "delay"
+  },
+  {
+   "line": 647,
+   "text": "ease"
+  },
+  {
+   "line": 652,
+   "text": "delay"
+  },
+  {
+   "line": 653,
+   "text": "ease"
+  },
+  {
+   "line": 658,
+   "text": "delay"
+  },
+  {
+   "line": 659,
+   "text": "ease"
+  },
+  {
+   "line": 664,
+   "text": "delay"
+  },
+  {
+   "line": 665,
+   "text": "onComplete"
+  },
+  {
+   "line": 666,
+   "text": "ease"
+  },
+  {
+   "line": 674,
+   "text": "delay"
+  },
+  {
+   "line": 675,
+   "text": "ease"
+  },
+  {
+   "line": 685,
+   "text": "onClose"
+  },
+  {
+   "line": 687,
+   "text": "Dead On Time Distance"
+  },
+  {
+   "line": 688,
+   "text": "custom"
+  },
+  {
+   "line": 692,
+   "text": "Police State Distance"
+  },
+  {
+   "line": 693,
+   "text": "custom"
+  },
+  {
+   "line": 700,
+   "text": "Dead On Time Distance"
+  },
+  {
+   "line": 738,
+   "text": "Dead On Time"
+  },
+  {
+   "line": 738,
+   "text": "Horn Key: "
+  },
+  {
+   "line": 738,
+   "text": "\\n\\nIn Dead On Time, the horn is an essential way to attract the zombies in your way and get the civilians out of the way."
+  }
+ ],
+ "RDUnlockItem.as": [
+  {
+   "line": 93,
+   "text": "Perception 1"
+  },
+  {
+   "line": 94,
+   "text": "Perception 2"
+  },
+  {
+   "line": 95,
+   "text": "Perception 3"
+  },
+  {
+   "line": 96,
+   "text": "Body Armor 1"
+  },
+  {
+   "line": 97,
+   "text": "Body Armor 2"
+  },
+  {
+   "line": 98,
+   "text": "Body Armor 3"
+  },
+  {
+   "line": 99,
+   "text": "Firearm 1"
+  },
+  {
+   "line": 100,
+   "text": "Firearm 2"
+  },
+  {
+   "line": 101,
+   "text": "Firearm 3"
+  },
+  {
+   "line": 102,
+   "text": "Windshield 1"
+  },
+  {
+   "line": 103,
+   "text": "Windshield 2"
+  },
+  {
+   "line": 104,
+   "text": "Windshield 3"
+  },
+  {
+   "line": 105,
+   "text": "Engine 1"
+  },
+  {
+   "line": 106,
+   "text": "Engine 2"
+  },
+  {
+   "line": 107,
+   "text": "Engine 3"
+  },
+  {
+   "line": 108,
+   "text": "Bumper 1"
+  },
+  {
+   "line": 109,
+   "text": "Bumper 2"
+  },
+  {
+   "line": 110,
+   "text": "Bumper 3"
+  },
+  {
+   "line": 111,
+   "text": "Tires 1"
+  },
+  {
+   "line": 112,
+   "text": "Tires 2"
+  },
+  {
+   "line": 113,
+   "text": "Tires 3"
+  },
+  {
+   "line": 114,
+   "text": "Horn 1"
+  },
+  {
+   "line": 115,
+   "text": "Horn 2"
+  },
+  {
+   "line": 116,
+   "text": "Horn 3"
+  }
+ ],
+ "RDPlayerInfo.as": [
+  {
+   "line": 10,
+   "text": "RoadOfTheDead1"
+  }
+ ],
+ "RDHud.as": [
+  {
+   "line": 68,
+   "text": "RDEventWorldEntityAdded"
+  },
+  {
+   "line": 69,
+   "text": "RDEventWorldEntityRemoved"
+  },
+  {
+   "line": 161,
+   "text": "RDEventBlood"
+  },
+  {
+   "line": 168,
+   "text": "RDEventBlood"
+  },
+  {
+   "line": 239,
+   "text": "FadeToRed"
+  },
+  {
+   "line": 243,
+   "text": "WhiteScreen"
+  },
+  {
+   "line": 248,
+   "text": "FlashToRed"
+  },
+  {
+   "line": 252,
+   "text": "FadeToBlack"
+  },
+  {
+   "line": 363,
+   "text": "scaleX"
+  },
+  {
+   "line": 364,
+   "text": "scaleY"
+  },
+  {
+   "line": 365,
+   "text": "ease"
+  },
+  {
+   "line": 374,
+   "text": "ease"
+  },
+  {
+   "line": 382,
+   "text": "ease"
+  },
+  {
+   "line": 417,
+   "text": "delay"
+  },
+  {
+   "line": 418,
+   "text": "ease"
+  },
+  {
+   "line": 423,
+   "text": "delay"
+  },
+  {
+   "line": 424,
+   "text": "ease"
+  },
+  {
+   "line": 429,
+   "text": "delay"
+  },
+  {
+   "line": 430,
+   "text": "ease"
+  },
+  {
+   "line": 435,
+   "text": "delay"
+  },
+  {
+   "line": 436,
+   "text": "ease"
+  },
+  {
+   "line": 441,
+   "text": "delay"
+  },
+  {
+   "line": 442,
+   "text": "ease"
+  },
+  {
+   "line": 447,
+   "text": "delay"
+  },
+  {
+   "line": 448,
+   "text": "ease"
+  },
+  {
+   "line": 453,
+   "text": "delay"
+  },
+  {
+   "line": 454,
+   "text": "ease"
+  },
+  {
+   "line": 459,
+   "text": "delay"
+  },
+  {
+   "line": 460,
+   "text": "ease"
+  },
+  {
+   "line": 465,
+   "text": "delay"
+  },
+  {
+   "line": 466,
+   "text": "ease"
+  },
+  {
+   "line": 471,
+   "text": "delay"
+  },
+  {
+   "line": 472,
+   "text": "ease"
+  },
+  {
+   "line": 477,
+   "text": "delay"
+  },
+  {
+   "line": 478,
+   "text": "ease"
+  },
+  {
+   "line": 517,
+   "text": "scaleX"
+  },
+  {
+   "line": 518,
+   "text": "scaleY"
+  },
+  {
+   "line": 519,
+   "text": "alpha"
+  },
+  {
+   "line": 520,
+   "text": "ease"
+  }
+ ]
+}

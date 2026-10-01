@@ -1,0 +1,15 @@
+# normalise line endings for text, keep binaries untouched
+* text=auto eol=lf
+
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.swf  binary
+*.ttf  binary
+*.ttc  binary
+*.jar  binary
+*.zip  binary
+*.exe  binary
+
+# generated / vendored trees are excluded via .gitignore
+data/orig_texts/*.txt text eol=lf

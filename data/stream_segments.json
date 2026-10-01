@@ -1,0 +1,242 @@
+[
+ {
+  "start": 48.33,
+  "end": 53.4,
+  "text": "This is an emergency alert system broadcast. This is not a test.",
+  "sub": [
+   {
+    "start": 48.33,
+    "end": 50.71,
+    "text": "This is an emergency alert system broadcast."
+   },
+   {
+    "start": 51.39,
+    "end": 52.79,
+    "text": "This is not a test."
+   }
+  ]
+ },
+ {
+  "start": 58.41,
+  "end": 59.96,
+  "text": "Hello, citizen.",
+  "sub": [
+   {
+    "start": 58.41,
+    "end": 59.25,
+    "text": "Hello, citizen."
+   }
+  ]
+ },
+ {
+  "start": 59.66,
+  "end": 65.4,
+  "text": "Due to unforeseen and unexplained events, the city has been quarantined. Please stay home.",
+  "sub": [
+   {
+    "start": 59.66,
+    "end": 63.52,
+    "text": "Due to unforeseen and unexplained events, the city has been quarantined."
+   },
+   {
+    "start": 64.12,
+    "end": 64.86,
+    "text": "Please stay home."
+   }
+  ]
+ },
+ {
+  "start": 64.9,
+  "end": 70.8,
+  "text": "Lock all your doors and windows. Stay out of sight until further notice. Repeat.",
+  "sub": [
+   {
+    "start": 64.9,
+    "end": 67.06,
+    "text": "Lock all your doors and windows."
+   },
+   {
+    "start": 67.6,
+    "end": 69.16,
+    "text": "Stay out of sight until further notice."
+   },
+   {
+    "start": 69.68,
+    "end": 70.14,
+    "text": "Repeat."
+   }
+  ]
+ },
+ {
+  "start": 70.38,
+  "end": 79.4,
+  "text": "It is crucial that you stay in your home and out of sight. Martial law is now in effect, and anyone trying to exit the city will be shot on sight.",
+  "sub": [
+   {
+    "start": 70.38,
+    "end": 73.7,
+    "text": "It is crucial that you stay in your home and out of sight."
+   },
+   {
+    "start": 74.3,
+    "end": 78.82,
+    "text": "Martial law is now in effect, and anyone trying to exit the city will be shot on sight."
+   }
+  ]
+ },
+ {
+  "start": 78.9,
+  "end": 83.7,
+  "text": "This is not an exercise. Stay home until further notice.",
+  "sub": [
+   {
+    "start": 78.9,
+    "end": 82.86,
+    "text": "This is not an exercise. Stay home until further notice."
+   }
+  ]
+ },
+ {
+  "start": 92.62,
+  "end": 93.94,
+  "text": "This is bad.",
+  "sub": [
+   {
+    "start": 92.62,
+    "end": 93.92,
+    "text": "This is bad."
+   }
+  ]
+ },
+ {
+  "start": 100.08,
+  "end": 102.77,
+  "text": "It's not an isolated cave.",
+  "sub": [
+   {
+    "start": 100.08,
+    "end": 102.76,
+    "text": "It's not an isolated cave."
+   }
+  ]
+ },
+ {
+  "start": 105.26,
+  "end": 119.16,
+  "text": "It just got up and started walking. Uniform to base. Sector C was already overwhelmed. What do you want us to do? They're freaking dead and still walking, goddammit. Get a hold of yourself. We're trained to handle anything. Just like...",
+  "sub": [
+   {
+    "start": 105.26,
+    "end": 107.52,
+    "text": "It just got up and started walking."
+   },
+   {
+    "start": 108.86,
+    "end": 109.72,
+    "text": "Uniform to base."
+   },
+   {
+    "start": 110.14,
+    "end": 111.44,
+    "text": "Sector C was already overwhelmed."
+   },
+   {
+    "start": 111.88,
+    "end": 112.82,
+    "text": "What do you want us to do?"
+   },
+   {
+    "start": 113.34,
+    "end": 115.28,
+    "text": "They're freaking dead and still walking, goddammit."
+   },
+   {
+    "start": 115.32,
+    "end": 116.28,
+    "text": "Get a hold of yourself."
+   },
+   {
+    "start": 116.72,
+    "end": 118.58,
+    "text": "We're trained to handle anything."
+   },
+   {
+    "start": 118.82,
+    "end": 119.14,
+    "text": "Just like..."
+   }
+  ]
+ },
+ {
+  "start": 118.83,
+  "end": 124.37,
+  "text": "What the hell? Walking dead? Shit, I'm not staying here.",
+  "sub": [
+   {
+    "start": 118.83,
+    "end": 123.75,
+    "text": "What the hell? Walking dead? Shit, I'm not staying here."
+   }
+  ]
+ },
+ {
+  "start": 139.69,
+  "end": 140.92,
+  "text": "Confirmed.",
+  "sub": [
+   {
+    "start": 139.69,
+    "end": 140.45,
+    "text": "Confirmed."
+   }
+  ]
+ },
+ {
+  "start": 141.68,
+  "end": 144.08,
+  "text": "the status on the undead activity.",
+  "sub": [
+   {
+    "start": 141.68,
+    "end": 143.34,
+    "text": "the status on the undead activity."
+   }
+  ]
+ },
+ {
+  "start": 144.65,
+  "end": 147.0,
+  "text": "Radiations are still too high, sir.",
+  "sub": [
+   {
+    "start": 144.65,
+    "end": 146.39,
+    "text": "Radiations are still too high, sir."
+   }
+  ]
+ },
+ {
+  "start": 146.51,
+  "end": 149.08,
+  "text": "Status ETA, 10 seconds.",
+  "sub": [
+   {
+    "start": 146.51,
+    "end": 148.63,
+    "text": "Status ETA, 10 seconds."
+   }
+  ]
+ },
+ {
+  "start": 160.72,
+  "end": 162.1,
+  "text": "of undead movement",
+  "sub": [
+   {
+    "start": 160.72,
+    "end": 161.48,
+    "text": "of undead movement"
+   }
+  ]
+ }
+]
