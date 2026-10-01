@@ -19,6 +19,7 @@ dist/
 serve/
 build/
 wheels/
+patch/
 
 # --- OS / editor --------------------------------------------------------
 Thumbs.db
