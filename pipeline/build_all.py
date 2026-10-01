@@ -19,7 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from remap_font import edit_text_font_offset, load_swf_raw, text_font_offsets  # noqa: E402
 
 FFDEC = ROOT / "tools" / "ffdec" / "ffdec-cli.jar"
-ORIG = Path(r"D:\Dev\Codes\Test\road-of-the-dead.swf")
+ORIG = ROOT / "dist" / "Road-Of-The-Dead.swf"
 
 
 def texts_using_font(swf: str, font_id: int) -> set[int]:
@@ -53,6 +53,36 @@ def texts_using_font(swf: str, font_id: int) -> set[int]:
     return found
 
 
+def text_tag_fonts(swf: str) -> dict[int, tuple[bool, set[int]]]:
+    """char id -> (is_edittext, fonts) for DefineText/2/EditText tags."""
+    data, _ = load_swf_raw(swf)
+    buf = data
+    pos = 8
+    nbits = buf[pos] >> 3
+    pos += (5 + nbits * 4 + 7) // 8
+    pos += 4
+    out: dict[int, tuple[bool, set[int]]] = {}
+    while pos < len(buf):
+        code_len = struct.unpack_from("<H", buf, pos)[0]
+        p = pos + 2
+        code = code_len >> 6
+        length = code_len & 0x3F
+        if length == 0x3F:
+            length = struct.unpack_from("<I", buf, p)[0]
+            p += 4
+        body = buf[p : p + length]
+        if code in (11, 33) and len(body) >= 2:
+            cid = struct.unpack_from("<H", body, 0)[0]
+            out[cid] = (False, {struct.unpack_from("<H", body, o)[0]
+                                for o in text_font_offsets(body, code)})
+        elif code == 37 and len(body) >= 2:
+            cid = struct.unpack_from("<H", body, 0)[0]
+            off = edit_text_font_offset(body)
+            out[cid] = (True, {struct.unpack_from("<H", body, off)[0]} if off else set())
+        pos = p + length
+    return out
+
+
 def run(args: list[str]) -> None:
     proc = subprocess.run(args, capture_output=True, text=True)
     if proc.returncode != 0:
@@ -68,13 +98,21 @@ def main() -> int:
     ap.add_argument("--orig", default=str(ORIG))
     ap.add_argument("--out", default=str(ROOT / "dist" / "rotl-zh-full.swf"))
     ap.add_argument("--texts", default=str(ROOT / "work" / "ui_texts"))
-    ap.add_argument("--ui-font", default=str(ROOT / "work" / "fonts" / "ui_cjk.ttf"))
+    ap.add_argument("--display-font", default=str(ROOT / "work" / "fonts" / "ui_cjk.ttf"))
+    ap.add_argument("--body-font", default=str(ROOT / "work" / "fonts" / "ui_body.ttf"))
     ap.add_argument("--decor-font-id", type=int, default=20)
-    ap.add_argument("--cjk-font-id", type=int, default=88)
-    ap.add_argument("--bold-font-ids", default="46,558")
+    # Spare slots that receive the two CJK faces.  Both must be slots whose
+    # *original* DefineFont has a layout (advance) table: FFDec keeps that tag's
+    # HasLayout flag when it swaps the glyphs, and a DefineEditText lays its text
+    # out from the referenced font's advances.  A layout-less slot (e.g. 88) makes
+    # every dynamic string (the garage "Drive To <city>" line, tooltips, HUD
+    # counters, ...) collapse to zero width and vanish.  92 is a free, layout-
+    # capable Verdana slot.
+    ap.add_argument("--display-font-id", type=int, default=92)
+    ap.add_argument("--body-font-id", type=int, default=22)
     ap.add_argument(
-        "--regular-font-ids",
-        default="22,26,32,87,88,92,94,1103,1106,1758,2819,4013",
+        "--body-font-ids",
+        default="22,26,32,46,87,88,94,558,1103,1106,1758,2819,4013",
     )
     args = ap.parse_args()
 
@@ -83,29 +121,39 @@ def main() -> int:
 
     translated = {int(k) for k in UI_TRANSLATIONS if int(k) in all_texts}
 
-    source_ids = [args.decor_font_id]
-    source_ids += [int(x) for x in args.bold_font_ids.split(",") if x]
-    source_ids += [int(x) for x in args.regular_font_ids.split(",")
-                   if x and int(x) != args.cjk_font_id]
-    source_ids = sorted(set(source_ids))
+    # The original uses two faces: Dirty Ego (font 20) for menus/HUD/titles and
+    # Modern No. 20 (font 22) for body text.  Font 20 is shared with the logo, so
+    # it is never replaced; only the *translated* font-20 tags are moved to the
+    # display slot.  Everything else lands on the single body slot.
+    tagfonts = text_tag_fonts(args.orig)
+    decor = texts_using_font(args.orig, args.decor_font_id)
+    display_ids = sorted(decor & translated)
+    body_src = {int(x) for x in args.body_font_ids.split(",") if x.strip()}
+    body_ids = sorted(
+        cid for cid, (_is_edit, fonts) in tagfonts.items()
+        if fonts & body_src and cid not in set(display_ids)
+    )
+    print(f"display: font {args.decor_font_id} -> slot {args.display_font_id}, "
+          f"{len(display_ids)} texts")
+    print(f"body: fonts {sorted(body_src)} -> slot {args.body_font_id}, "
+          f"{len(body_ids)} texts")
 
-    remap: set[int] = set()
-    for fid in source_ids:
-        remap |= texts_using_font(args.orig, fid) & translated
-    remap_ids = sorted(remap)
-    print(f"fonts {source_ids} -> slot {args.cjk_font_id}; "
-          f"remap {len(remap_ids)} texts, others stay original")
-
-    base = ROOT / "work" / "base_remap.swf"
     (ROOT / "work").mkdir(parents=True, exist_ok=True)
     (ROOT / "dist").mkdir(parents=True, exist_ok=True)
+    remap = ROOT / "pipeline" / "remap_font.py"
+    base1 = ROOT / "work" / "base_remap1.swf"
+    base = ROOT / "work" / "base_remap.swf"
     run([
-        "uv", "run", "python",
-        str(ROOT / "pipeline" / "remap_font.py"),
-        args.orig, str(base),
-        "--old", ",".join(str(x) for x in source_ids),
-        "--new", str(args.cjk_font_id),
-        "--only", ",".join(str(x) for x in remap_ids),
+        "uv", "run", "python", str(remap), args.orig, str(base1),
+        "--old", str(args.decor_font_id),
+        "--new", str(args.display_font_id),
+        "--only", ",".join(str(x) for x in display_ids),
+    ])
+    run([
+        "uv", "run", "python", str(remap), str(base1), str(base),
+        "--old", ",".join(str(x) for x in sorted(body_src)),
+        "--new", str(args.body_font_id),
+        "--only", ",".join(str(x) for x in body_ids),
     ])
 
     texts = [p for p in sorted(Path(args.texts).glob("*.txt"), key=lambda q: int(q.stem))
@@ -115,8 +163,11 @@ def main() -> int:
     tmp_ui = ROOT / "work" / "build_ui.swf"
     tmp_sub = ROOT / "dist" / "build_sub.swf"
 
+    # Replace only the two CJK slots, so each face is embedded once: font 92 is
+    # the Dirty Ego style, font 22 the serif body face.
     repl = ["-replace", str(base), str(tmp_ui),
-            str(args.cjk_font_id), args.ui_font]
+            str(args.display_font_id), args.display_font,
+            str(args.body_font_id), args.body_font]
     for p in texts:
         repl += [p.stem, str(p)]
     run(["java", "-Xmx4g", "-jar", str(FFDEC), *repl])

@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 OUT = ROOT / "menu-shapes"
+ORIG = ROOT / "dist" / "Road-Of-The-Dead.swf"
 SRC_PNG = ROOT / "work" / "shapepng"
 SPRITES = ROOT / "work" / "sprites"
 
@@ -21,7 +22,7 @@ def leaves(root_ids: list[str]) -> list[tuple[str, str]]:
     res = subprocess.run(
         [sys.executable if False else "uv", "run", "python",
          str(ROOT / "pipeline" / "walk_sprite.py"),
-         r"D:\Dev\Codes\Test\road-of-the-dead.swf", *root_ids],
+         str(ORIG), *root_ids],
         capture_output=True, text=True, cwd=str(ROOT),
     )
     out = []

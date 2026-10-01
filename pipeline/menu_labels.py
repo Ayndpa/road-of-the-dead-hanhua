@@ -5,12 +5,24 @@ The main menu buttons ("THE GREAT ESCAPE", "HIGHWAY TO HELL", ...) are hand-draw
 drawn in **perspective** (text looks like it lies on a road receding away: the top
 edge is narrower and the glyphs lean).
 
-Rather than fitting a transform to each shape on its own -- which is unstable for
-the short labels (OPTIONS / ACHIEVEMENTS / HIGH SCORES) -- we fit the reliable,
-long labels once, normalise the result to the label box and reuse that single
-perspective for every label.  Chinese glyph outlines are then pushed through the
-homography, flattened to polylines and emitted as a vector SVG at exactly the
-original shape's bounds (FFDec maps an SVG viewport 1:1 onto the shape box).
+Each label sits at a different spot on the road and therefore has its **own**
+keystone -- measured per label from the original shape's per-row ink edge with a
+robust line fit (``LABEL_NORM``).  A single averaged perspective over-slanted the
+lower, short labels, whose left edge is almost vertical in the original.
+
+Chinese glyph outlines are pushed through that homography -- but **per glyph**, so
+a wide (stretched) character is stamped with the affine sampled at its own centre
+instead of being twisted by the varying shear of the full perspective -- flattened
+to polylines and emitted as a vector SVG at exactly the original shape's bounds
+(FFDec maps an SVG viewport 1:1 onto the shape box).
+
+Chinese is far more compact than the Latin originals (5 字 replacing 14 letters),
+so drawing at the original glyph height leaves a short label filling only a small
+slice of the button.  The glyphs are scaled so their ink fills the full label
+**height**, then widened horizontally (up to ``MAX_H_STRETCH``) and spread with
+even, capped tracking so the run spans the button -- but never flung out to the
+box edges one character at a time, which is what made the short labels
+(OPTIONS / ACHIEVEMENTS / HIGH SCORES) look broken.
 
 Usage:
     python pipeline/menu_labels.py --swf <in.swf> --out <out.swf>
@@ -33,27 +45,69 @@ FFDEC = ROOT / "tools" / "ffdec" / "ffdec-cli.jar"
 DEFAULT_FONT = ROOT / "work" / "fonts" / "ui_cjk.ttf"
 
 # shape id -> (chinese text, fill colour, fill opacity)
+#
+# Opacities are the original shapes' own fill alphas, read from the exported
+# shape PNGs: every idle white label is alpha 102/255 = 0.40 and the idle red
+# "THE GREAT ESCAPE" is 153/255 = 0.60; the hover shapes are fully opaque.
+# (The previous values were dimmer than the English originals, which made the
+# Chinese labels look washed out next to everything else on the menu.)
 MENU_LABELS: dict[int, tuple[str, str, float]] = {
     4307: ("亡命大逃亡", "#cb0000", 0.60),   # StoryMode   THE GREAT ESCAPE
     4308: ("亡命大逃亡", "#aa0000", 1.00),
-    4303: ("地狱公路", "#ffffff", 0.38),     # StoryHardcore  HIGHWAY TO HELL
-    4304: ("地狱公路", "#ffffff", 0.95),
-    4295: ("警察国家", "#ffffff", 0.27),     # MilitaryMode   POLICE STATE
-    4296: ("警察国家", "#ffffff", 0.67),
-    4299: ("死亡倒计时", "#ffffff", 0.35),   # TimeMode       DEAD ON TIME
-    4300: ("死亡倒计时", "#ffffff", 0.86),
-    4311: ("选项", "#ffffff", 0.25),         # Options
-    4312: ("选项", "#ffffff", 0.61),
-    4315: ("成就", "#ffffff", 0.25),         # Achievements
-    4316: ("成就", "#ffffff", 0.61),
-    4319: ("排行榜", "#ffffff", 0.24),       # HighScores
-    4320: ("排行榜", "#ffffff", 0.59),
+    4303: ("地狱公路", "#ffffff", 0.40),     # StoryHardcore  HIGHWAY TO HELL
+    4304: ("地狱公路", "#ffffff", 1.00),
+    4295: ("警察国家", "#ffffff", 0.40),     # MilitaryMode   POLICE STATE
+    4296: ("警察国家", "#ffffff", 1.00),
+    4299: ("死亡倒计时", "#ffffff", 0.40),   # TimeMode       DEAD ON TIME
+    4300: ("死亡倒计时", "#ffffff", 1.00),
+    4311: ("选项", "#ffffff", 0.40),         # Options
+    4312: ("选项", "#ffffff", 1.00),
+    4315: ("成就", "#ffffff", 0.40),         # Achievements
+    4316: ("成就", "#ffffff", 1.00),
+    4319: ("排行榜", "#ffffff", 0.40),       # HighScores
+    4320: ("排行榜", "#ffffff", 1.00),
 }
 
-# Shared perspective, normalised to the label box (x, y in 0..1 of box width/height).
-# Averaged from the reliable long-label fits: top edge narrower than the bottom,
-# left/right edges leaning outward -> the "receding on a road" keystone.
-SHARED_NORM = [(0.107, 0.0), (0.921, 0.0), (1.036, 1.0), (-0.023, 1.0)]
+# Perspective per label, normalised to the label box; order TL, TR, BR, BL.
+#
+# The original labels sit at different places on the road, so each one has its
+# own keystone -- it is NOT one shared transform.  Measured from each original
+# shape's per-row ink edge with a robust (Theil-Sen) line fit: the left edge of
+# the lower labels is almost vertical (OPTIONS 0.00, HIGH SCORES 0.01) while the
+# upper ones lean in hard (POLICE STATE 0.15), and the right edge does the
+# opposite.  Reusing one averaged keystone (the old `SHARED_NORM`) therefore
+# over-slanted the lower labels' left side and read as "歪" next to the English.
+# Corners are kept within 0..1 so the SVG viewport (mapped 1:1 onto the original
+# shape box by FFDec) never clips a glyph.
+LABEL_NORM: dict[int, list[tuple[float, float]]] = {
+    4307: [(0.100, 0.0), (0.888, 0.0), (0.974, 1.0), (0.000, 1.0)],  # THE GREAT ESCAPE
+    4303: [(0.109, 0.0), (0.868, 0.0), (0.985, 1.0), (0.000, 1.0)],  # HIGHWAY TO HELL
+    4295: [(0.145, 0.0), (0.864, 0.0), (0.958, 1.0), (0.000, 1.0)],  # POLICE STATE
+    4299: [(0.127, 0.0), (0.851, 0.0), (0.972, 1.0), (0.000, 1.0)],  # DEAD ON TIME
+    4311: [(0.000, 0.0), (0.882, 0.0), (0.978, 1.0), (0.000, 1.0)],  # OPTIONS
+    4315: [(0.036, 0.0), (0.922, 0.0), (1.000, 1.0), (0.000, 1.0)],  # ACHIEVEMENTS
+    4319: [(0.005, 0.0), (0.931, 0.0), (1.000, 1.0), (0.000, 1.0)],  # HIGH SCORES
+}
+
+# hover shape id -> idle shape id (same geometry)
+HOVER_SHAPES = {4308: 4307, 4304: 4303, 4296: 4295, 4300: 4299,
+                4312: 4311, 4316: 4315, 4320: 4319}
+
+# Fallback for any label without its own measurement.
+SHARED_NORM = [(0.100, 0.0), (0.910, 0.0), (0.990, 1.0), (0.000, 1.0)]
+
+
+def label_norm(sid: int) -> list[tuple[float, float]]:
+    base = HOVER_SHAPES.get(sid, sid)
+    return LABEL_NORM.get(base, SHARED_NORM)
+
+# Widest a glyph may be stretched horizontally, as a multiple of its natural
+# (height-matched) width.  Chinese is compact next to the Latin originals, so
+# short labels are widened to fill the button instead of being flung to the
+# edges; the cap keeps the strokes from looking smeared.
+MAX_H_STRETCH = 2.5
+# Largest inter-character gap, as a fraction of the label height.
+MAX_GAP_RATIO = 0.6
 
 
 class FlattenPen(BasePen):
@@ -88,27 +142,32 @@ class FlattenPen(BasePen):
         self._closePath()
 
 
-def glyph_polylines(font: TTFont, text: str, size_px: float):
+def glyph_data(font: TTFont, text: str):
+    """Per-character flattened outlines, in font units with y up and the origin
+    on the baseline.
+
+    Returns ``(items, upm)`` where each item is ``(contours, advance, xmin, xmax)``.
+    """
     gs = font.getGlyphSet()
     cmap = font.getBestCmap()
     hmtx = font["hmtx"].metrics
     upm = font["head"].unitsPerEm
-    s = size_px / upm
-    contours: list[list[tuple[float, float]]] = []
-    penx = 0.0
+    items: list[tuple[list[list[tuple[float, float]]], float, float, float]] = []
     for ch in text:
         g = cmap.get(ord(ch))
         if g is None:
             continue
         fp = FlattenPen(gs)
         gs[g].draw(fp)
-        contours += [[(x * s + penx * s, y * s) for x, y in c] for c in fp.contours]
-        penx += hmtx[g][0] if g in hmtx else upm
-    if not contours:
-        return []
-    xs = [p[0] for c in contours for p in c]
-    cx = (min(xs) + max(xs)) / 2
-    return [[(x - cx, y) for x, y in c] for c in contours]
+        adv = hmtx[g][0] if g in hmtx else upm
+        if not fp.contours:
+            items.append(([], adv, 0.0, 0.0))
+            continue
+        xs = [p[0] for c in fp.contours for p in c]
+        items.append((fp.contours, adv, min(xs), max(xs)))
+    if not items:
+        raise ValueError(f"no glyphs for {text!r}")
+    return items, upm
 
 
 def export_bounds(orig: str, ids: list[int]) -> dict[int, tuple[int, int]]:
@@ -132,23 +191,82 @@ def export_bounds(orig: str, ids: list[int]) -> dict[int, tuple[int, int]]:
         return out
 
 
-def make_svg(text: str, color: str, opacity: float, W: int, H: int, font: TTFont) -> str:
-    src = np.float32([[0, 0], [W - 1, 0], [W - 1, H - 1], [0, H - 1]])
-    corners = np.float32([[nx * W, ny * H] for nx, ny in SHARED_NORM])
+def make_svg(text: str, color: str, opacity: float, W: int, H: int, font: TTFont,
+             norm: list[tuple[float, float]]) -> str:
+    src = np.float32([[0, 0], [W, 0], [W, H], [0, H]])
+    corners = np.float32([[nx * W, ny * H] for nx, ny in norm])
     Hm = cv2.getPerspectiveTransform(src, corners)
 
     def proj(x, y):
         v = Hm @ np.array([x, y, 1.0])
         return (v[0] / v[2], v[1] / v[2])
 
+    def local_affine(cx, cy, eps=0.25):
+        """Homography linearised at (cx, cy): the glyph-local affine.
+
+        The full perspective *twists* anything wider than a Latin letter: across
+        one stretched Chinese glyph the local shear varies by tens of degrees, so
+        the strokes on one side lean much more than on the other and the
+        character reads as crooked.  The original hand-drawn letters only ever
+        show a constant italic lean, so each glyph is placed by the perspective
+        but stamped with the affine sampled at its own centre -- it keeps the
+        road-perspective layout without warping the strokes.
+        """
+        ox, oy = proj(cx, cy)
+        px, py = proj(cx + eps, cy)
+        qx, qy = proj(cx, cy + eps)
+        return (ox, oy,
+                (px - ox) / eps, (qx - ox) / eps,   # d x'/dx, d x'/dy
+                (py - oy) / eps, (qy - oy) / eps)   # d y'/dx, d y'/dy
+
+    items, _upm = glyph_data(font, text)
+
+    # Vertical: scale the tallest piece of ink to fill the label height.
+    ys = [pt[1] for contours, *_ in items for c in contours for pt in c]
+    scale = H / (max(ys) - min(ys))          # font units -> px (vertical)
+    baseline = max(ys) * scale               # top of the ink lands on the top edge
+
+    # Horizontal: rather than open huge gaps between a couple of square Chinese
+    # glyphs, widen the glyphs themselves toward the button width (up to
+    # MAX_H_STRETCH), then absorb what's left as evenly spaced tracking (capped),
+    # and centre the whole run.  The run therefore spans the original English
+    # button instead of collapsing to a few tiny characters at the box edges.
+    n = len(items)
+    natural = [(xmax - xmin) * scale for _, _adv, xmin, xmax in items]
+    total = sum(natural)
+    extra = 0.0
+    if n and total < W:
+        extra = min((W - total) / n, (MAX_H_STRETCH - 1.0) * (total / n))
+    total += extra * n
+    if n == 1 or total >= W:
+        gap, cursor = 0.0, (W - total) / 2
+    else:
+        gap = min((W - total) / (n - 1), MAX_GAP_RATIO * H)
+        cursor = (W - (total + gap * (n - 1))) / 2
+
     parts = []
-    for c in glyph_polylines(font, text, 0.88 * H):
-        pts = [proj(W / 2 + x, 0.90 * H - y) for x, y in c]   # baseline near the bottom
-        if len(pts) < 3:
-            continue
-        d = f"M{pts[0][0]:.2f} {pts[0][1]:.2f} " + " ".join(
-            f"L{p[0]:.2f} {p[1]:.2f}" for p in pts[1:]) + "Z"
-        parts.append(d)
+    for (contours, _adv, xmin, _xmax), nat in zip(items, natural):
+        ink_w = _xmax - xmin
+        sx = (nat + extra) / ink_w if ink_w else 0.0
+        x0 = cursor - xmin * sx              # put this glyph's ink at `cursor`
+        # Glyph outline in flat label space, then stamped with its local affine.
+        flat = [[(x0 + x * sx, baseline - y * scale) for x, y in c] for c in contours]
+        pts_all = [p for c in flat for p in c]
+        if pts_all:
+            gx = [p[0] for p in pts_all]
+            gy = [p[1] for p in pts_all]
+            cx = (min(gx) + max(gx)) / 2.0
+            cy = (min(gy) + max(gy)) / 2.0
+            ox, oy, j00, j01, j10, j11 = local_affine(cx, cy)
+            for c in flat:
+                pts = [(ox + j00 * (p[0] - cx) + j01 * (p[1] - cy),
+                        oy + j10 * (p[0] - cx) + j11 * (p[1] - cy)) for p in c]
+                if len(pts) < 3:
+                    continue
+                d = f"M{pts[0][0]:.2f} {pts[0][1]:.2f} " + " ".join(
+                    f"L{p[0]:.2f} {p[1]:.2f}" for p in pts[1:]) + "Z"
+                parts.append(d)
+        cursor += nat + extra + gap
     if not parts:
         raise ValueError(f"empty glyphs for {text!r}")
     return (
@@ -184,7 +302,7 @@ def main() -> int:
             continue
         text, color, opacity = MENU_LABELS[sid]
         W, H = bounds[sid]
-        svg = make_svg(text, color, opacity, W, H, font)
+        svg = make_svg(text, color, opacity, W, H, font, label_norm(sid))
         p = svg_dir / f"shape_{sid}.svg"
         p.write_text(svg, encoding="utf-8")
         repl += [str(sid), str(p)]

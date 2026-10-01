@@ -19,15 +19,18 @@
 | 标题 logo、制作名单、数字保持原始字体设计 | ✅ 逐字节未改动 |
 | 主菜单按钮（矢量图形文字） | ✅ 已用 Dirty Ego 风格中文矢量重绘 |
 
-构建产物：`release/rotl-zh-full.swf`
+构建产物：`dist/rotl-zh-full.swf`
 
 ---
 
 ## 目录结构
 
 ```
+dist/                游戏文件（统一放这里）
+  Road-Of-The-Dead.swf 原版游戏
+  rotl-zh-full.swf     汉化版（构建产物）
 pipeline/            所有脚本（分析 + 构建）
-data/                人工产物 / 缓存（可复用）
+data/                人工产物 / 缓存 / 翻译数据（可复用）
   subtitles.json       对白字幕（类名 → 中文）
   stream_subs.json     时间轴流式音轨字幕（起止秒 → 中文）
   stream_segments.json 流式音轨的逐段 ASR（含时间戳）
@@ -37,12 +40,10 @@ data/                人工产物 / 缓存（可复用）
   as3_strings.json     AS3 里的候选用户可见字符串
   orig_texts/          SWF 导出的原始 UI 文本（224 个）
   fonts/               中文字体（RoadOfTheDeadCN.ttf 等，构建时裁子集）
-menu-labels/         主菜单按钮标签的矢量 SVG（构建生成，可重新生成）
-release/             构建产物
-patch/               生成物（构建中间件，可重新生成）
+tools/               第三方工具（FFDec，用 pipeline/fetch-tools.ps1 下载）
 ```
 
-`work/`、`dist/`、`tools/`、虚拟环境都在 `.gitignore` 里，属于过程文件。
+`work/`、`menu-labels/`、`patch/` 与虚拟环境是构建中间件，**可重新生成，默认不保留**；`dist/`、`tools/`、虚拟环境都在 `.gitignore` 里（仓库不包含游戏本体与第三方工具）。
 
 ---
 
@@ -53,7 +54,7 @@ uv sync                       # 主环境：FFDec 调用 / 导出分析 / 构建
 pwsh -File pipeline/fetch-tools.ps1 -Proxy http://127.0.0.1:7897   # 下载 FFDec
 ```
 
-需要原版游戏 SWF（默认路径 `D:\Dev\Codes\Test\road-of-the-dead.swf`，可用 `--orig` 指定）。
+需要原版游戏 SWF（默认路径 `dist/Road-Of-The-Dead.swf`，可用 `--orig` 指定）。
 
 ASR 相关（可选，只在需要重新转写时用）：
 
@@ -73,7 +74,7 @@ uv venv gpuenv && uv pip install --python gpuenv\.venv torch-directml openai-whi
 uv run python pipeline/build.py
 ```
 
-依次执行：FFDec 导出 → 生成带字幕的 `DTSound.as` → 生成汉化后的玩法脚本 → 生成汉化 UI 文本 + 中文字体子集（雅黑常规/粗体 + Dirty Ego 风格中文）→ 合并回 SWF。
+依次执行：FFDec 导出 → 生成带字幕的 `DTSound.as` → 生成汉化后的玩法脚本 → 生成汉化 UI 文本 + 两个中文字体子集（展示体 RoadOfTheDeadCN + 正文思源宋体）→ 合并回 SWF。
 
 ---
 
@@ -108,9 +109,19 @@ UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
 
 文本里 `--- RECORDSEPARATOR ---` 是记录分隔符，翻译时**段数必须一致**。
 
-### 4. 字体
-- 中文字体直接用 `data/fonts/RoadOfTheDeadCN.ttf`（Dirty Ego 风格的中文游戏字体），构建时用 `pyftsubset` 裁成 UI 子集（字符集 = UI 文本 ∪ AS3 运行时中文 ∪ ASCII）→ `work/fonts/ui_cjk.ttf`。
-- 所有需要显示中文的文本标签，用 `pipeline/remap_font.py` **统一改指向空字体槽 88**，然后只替换槽 88 一个字体（避免同一字体被嵌入十几份）。
+### 4. 字体（还原原版的两种字形）
+原版 UI 用了两种字形，汉化也对应两种 —— 不是全用一种字体：
+
+| 原版 | 用在哪 | 汉化字体 |
+|---|---|---|
+| **Dirty Ego**（font 20，手绘做旧） | 菜单 / HUD / 标题 / 提示 | `data/fonts/RoadOfTheDeadCN.ttf` |
+| **Modern No. 20**（font 22，Didone 衬线） | 升级说明 / 操作·选项列表 / 成就等正文 | `data/fonts/NotoSerifSC-SemiBold.ttf`（思源宋体 SemiBold，OFL） |
+
+两个字体都在构建时用 `pyftsubset` 裁成同一字符集（= UI 文本 ∪ AS3 运行时中文 ∪ ASCII）的子集，各嵌入一次：
+
+- `pipeline/remap_font.py` 把**翻译过的 font-20 文本**改指到展示槽 **92**，其余用正文字体的文本统一改指到正文槽 **22**；
+- 最后只替换槽 92（展示体）和槽 22（正文）两个字体，避免同一字体被嵌入十几份把 SWF 撑大；
+- **槽必须自带 layout（advance）表**：FFDec 换字形时会保留原 `DefineFont` 的 `HasLayout` 标志，而 `DefineEditText` 靠它排版；用无 layout 的槽（如 88）会让运行时动态文本（车库的 "Drive To …"、提示框、HUD 计数）宽度塌成 0 而消失。92 原本是一个空闲、带 layout 的 Verdana 槽；
 - **font 20（"Dirty Ego"）本身不动**：标题 logo、制作名单、HUD 数字等未被翻译的 text 保持字节一致。
 
 ### 5. 运行时文本
@@ -147,10 +158,13 @@ UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
 `pipeline/menu_labels.py` 把这些标签用**透视投影后**的中文字体轮廓生成矢量 SVG，再让 FFDec 替换对应 shape：
 
 - 原版按钮文字是**手绘透视字**（像铺在路面上由近及远：上边窄、笔画后仰），不是简单斜体；
-- 程序用一套从原版实测、**归一化到标签框**的共用透视（`SHARED_NORM`）应用到所有标签 —— 单个短标签（OPTIONS/ACHIEVEMENTS）单独拟合会不稳定、甚至拟合出反向的梯形；
+- **每个标签的透视都不一样**：按钮分布在路面不同位置，越靠下（越近）左边越接近竖直（OPTIONS `L 0.00`、HIGH SCORES `0.01`），越靠上（越远）内收越强（POLICE STATE `0.15`）。所以程序和原版一样**逐标签**取透视（`LABEL_NORM`，用 Theil–Sen 对原版逐行墨迹边界做稳健拟合），不再共用一套平均透视 —— 旧做法（单一 `SHARED_NORM`）会把下方短标签的左边过度倾斜，看起来比英文更「歪」；
+- 每个标签的透视四角都落在 `0..1` 内，SVG viewport 边缘不会裁掉最外侧笔画；
+- 中文字形投影时**以单个字为单位**取局部仿射（`local_affine`）：整字按自己中心处的仿射「盖章」，而不是逐点走完整单应 —— 一个被拉宽的字左右两侧的局部剪切角能差几十度，逐点投影会把整字扭歪；这样每个字只有一致的倾斜，和英文手绘字一样；
 - 中文按该透视投影，字形轮廓**展平成折线**烘焙进 SVG；已核对所有标签「上窄下宽」一致；
+- **字号**：中文比英文紧凑得多（5 字顶 14 个字母），若只按原字高绘制，标签只占按钮宽的 20–36%，看起来比英文小很多。现在**字形按标签高度放大后，再横向加宽（上限 `MAX_H_STRETCH = 2.5` 倍自然宽）**去接近按钮宽度，剩下的用**有上限的字距**（`MAX_GAP_RATIO = 0.6` × 高）补足并整体居中 —— 短词会占满按钮框，且不会把两个字甩到按钮两端（旧做法是「按墨迹盒子均分铺满整宽」，2 字标签会变成左右两个几乎贴边的小字，看起来是坏的）；
 - **关键**：FFDec 会把替换 SVG 的 *viewport* 按原始 shape 的包围盒 1:1 映射，所以 SVG 的 `width/height` 必须与原始 shape 完全一致；已用实验验证；
-- 保留每个状态原本的**颜色和透明度**（Story 是红色、其余白色；常态半透明、悬停更亮）；
+- 保留每个状态原本的**颜色和透明度**（Story 是红色 `#cb0000`、其余白色；常态透明度直接取自原版 shape 的填充 alpha：白色 `0.40`、红色 `0.60`，悬停为 `1.0` —— 旧值偏暗，会让中文比旁边英文更淡）；
 - 纯矢量，缩放不糊。用例：`python pipeline/menu_labels.py --swf in.swf --out out.swf --orig 原版.swf`
 
 品牌字样（Newgrounds / Evil-Dog / SickDeathFiend）保持原样。
@@ -178,4 +192,4 @@ UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
 ## 说明
 
 - 仅用于个人学习与汉化交流；游戏版权归 Evil-Dog / SickDeathFiend 所有，仓库不包含原始游戏文件。
-- 中文字体为 `data/fonts/RoadOfTheDeadCN.ttf`（Dirty Ego 风格中文游戏字体）；公开发布前请自行确认其授权。
+- 中文字体为 `data/fonts/RoadOfTheDeadCN.ttf`（Dirty Ego 风格中文游戏字体）与 `data/fonts/NotoSerifSC-SemiBold.ttf`（思源宋体，SIL OFL 1.1）；公开发布前请自行确认授权。

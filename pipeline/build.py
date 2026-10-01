@@ -19,7 +19,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 FFDEC = ROOT / "tools" / "ffdec" / "ffdec-cli.jar"
-DEFAULT_ORIG = Path(r"D:\Dev\Codes\Test\road-of-the-dead.swf")
+DEFAULT_ORIG = ROOT / "dist" / "Road-Of-The-Dead.swf"
 WORK = ROOT / "work"
 
 
@@ -59,18 +59,26 @@ def main() -> int:
     run(py("pipeline/build_ui.py"), "UI text tags")
 
     charset = WORK / "ui_charset.txt"
-    ui_font = ROOT / "data" / "fonts" / "RoadOfTheDeadCN.ttf"
-    if not ui_font.exists():
-        raise SystemExit(
-            f"UI font not found: {ui_font}\n"
-            "put the Chinese game font there (Road of the Dead CN style)"
-        )
+    # Two faces, matching the two faces the original uses: Dirty Ego for the
+    # decorative menu/HUD text, Modern No. 20 (a high-contrast didone) for body.
+    display_font = ROOT / "data" / "fonts" / "RoadOfTheDeadCN.ttf"
+    body_font = ROOT / "data" / "fonts" / "NotoSerifSC-SemiBold.ttf"
+    for label, path in (("display (Dirty Ego)", display_font),
+                        ("body (Modern No. 20)", body_font)):
+        if not path.exists():
+            raise SystemExit(f"{label} font not found: {path}")
     (WORK / "fonts").mkdir(parents=True, exist_ok=True)
     run(
-        ["uv", "run", "pyftsubset", str(ui_font),
+        ["uv", "run", "pyftsubset", str(display_font),
          f"--text-file={charset}", f"--output-file={WORK / 'fonts' / 'ui_cjk.ttf'}",
          "--no-hinting", "--desubroutinize", "--drop-tables+=DSIG"],
-        "CJK subset ui_cjk.ttf",
+        "display CJK subset ui_cjk.ttf",
+    )
+    run(
+        ["uv", "run", "pyftsubset", str(body_font),
+         f"--text-file={charset}", f"--output-file={WORK / 'fonts' / 'ui_body.ttf'}",
+         "--no-hinting", "--desubroutinize", "--drop-tables+=DSIG"],
+        "body CJK subset ui_body.ttf",
     )
 
     run(py("pipeline/build_all.py", "--orig", args.orig), "splice + compile")
