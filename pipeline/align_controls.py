@@ -1,13 +1,23 @@
 """Re-align translated UI labels that lost their original alignment.
 
-Some UI labels were drawn right-aligned in the original (the controls list: each
-action name ends at a common right edge).  FFDec's text import lays the shorter
-Chinese out from the tag's *left* origin, so those rows come out ragged.
+FFDec's text import lays the shorter Chinese out from the tag's *left* origin, so
+labels the original centred (the options list, the panel titles) or right-aligned
+(the controls list) come out off-axis once the text is shorter.
 
-This module exports each affected text tag in FFDec's "formatted" form, keeps its
-original geometry, and rewrites ``translatex`` so the new Chinese ends where the
-English did (right-aligned).  Only static ``DefineText`` tags are touched; dynamic
-text fields (which carry their own ``align``) are left alone.
+This module exports each affected static ``DefineText`` tag in FFDec's
+"formatted" form and rewrites its ``translatex`` so the Chinese ink lands on the
+original English ink axis:
+
+* ``TARGET_IDS`` - labels that were centred; the Chinese is centred on the
+  measured original ink centre.
+* ``LIST_CENTER_IDS`` - the controls list, whose original names were right
+  aligned on one edge; the Chinese is centred on a single shared column axis
+  instead (per the localisation request).
+* ``RIGHT_ALIGN_IDS`` - labels kept right-aligned, shifted so the right edges
+  line the original English ones up.
+
+Only static tags are touched; dynamic text fields (which carry their own
+``align``) are left alone.
 
 Usage:
     python pipeline/align_controls.py --swf <in.swf> --out <out.swf> --orig <orig.swf>
@@ -16,6 +26,7 @@ from __future__ import annotations
 
 import argparse
 import re
+import struct
 import subprocess
 import sys
 import tempfile
@@ -25,43 +36,42 @@ from fontTools.pens.boundsPen import BoundsPen
 from fontTools.ttLib import TTFont
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from remap_font import Bits, load_swf_raw  # noqa: E402
 from ui_text import UI_TRANSLATIONS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 FFDEC = ROOT / "tools" / "ffdec" / "ffdec-cli.jar"
-# The labels re-centred by ink metrics are body text (Modern No. 20 -> serif);
-# MULTI_TARGET_IDS (the warning title) keeps the decorative Dirty Ego face.
+# The two embedded CJK faces: display = Dirty Ego style (menus/titles/HUD),
+# body = serif (Modern No. 20 replacement).  Only the multi-record fallback still
+# needs a face by name; the single-record passes measure rendered ink directly.
 DISPLAY_FONT = ROOT / "work" / "fonts" / "ui_cjk.ttf"
 BODY_FONT = ROOT / "work" / "fonts" / "ui_body.ttf"
 
-# Static single-record UI labels that are centred inside their own original box.
-# The original English was centred for these, so centring the Chinese keeps the
-# look; the box is wide enough that the shorter Chinese never clips.
+# Static single-record UI labels that the original drew centred on a known
+# optical axis.  The stored tag bounds are wider than the drawn text (and for
+# the options headings the bounds centre sits ~5-20px off the visual centre), so
+# the Chinese is centred on the original English *ink* axis measured from an
+# FFDec SVG dump, not on the bounds.  Measuring both renders the same way is
+# font-agnostic (works for both the serif body face and the Dirty Ego titles)
+# and stays correct even when FFDec adds per-pair kerning to the CJK glyphs.
 TARGET_IDS = [
     # options panel (sprite 4430)
     4407, 4414, 4424, 4428, 4429, 4408, 4409, 4411, 4412,
     4415, 4416, 4418, 4419, 4421, 4422, 4425, 4426,
+    # panel titles ("CONTROLS" / "OPTIONS") - decorative Dirty Ego face
+    4403, 4406,
     # warning screen title
     4026,
-]
-COMMON_CENTRE_GROUPS = [
-    [4407, 4414, 4424],  # options centre (same sprite matrix -> common screen axis)
-]
-
-# Multi-record static labels.  Each record is one drawn line; FFDec re-imports
-# them all at the tag's left origin, so the shorter Chinese rows come out ragged.
-# Every record is re-centred on the centre of the original English block.
-MULTI_TARGET_IDS = [
-    4025,  # warning body: three red lines, centred as a block
+    # loading screen "click here to play" (PlayButton idle / hover)
+    1762, 1763,
 ]
 
-# Labels anchored to the right edge.  The original English was right-aligned
-# (the controls list: every action name ends on one common screen edge) and the
-# Chinese is imported at the tag's left origin, so it must be shifted to line the
-# right edges back up.  These are right-aligned on the original ink, and their
-# stored bounds are widened because Flash clips static text to that rect.
-RIGHT_ALIGN_IDS = [
-    # controls list (sprite 4404)
+# Controls list (sprite 4404).  The original English action names were all
+# right-aligned on one common edge, which leaves the shorter Chinese hugging the
+# key column with a wide gap on the left.  Instead the Chinese is centred on the
+# common *column* axis: one screen axis midway between the widest English label's
+# left edge and the common right edge, shared by every row.
+LIST_CENTER_IDS = [
     4383,  # 左转
     4384,  # 右转
     4385,  # 加速
@@ -72,6 +82,21 @@ RIGHT_ALIGN_IDS = [
     4398,  # 攻击
     4399,  # 刹车
     4402,  # 感知
+]
+LIST_SPRITE_ID = 4404
+
+# Multi-record static labels.  Each record is one drawn line; FFDec re-imports
+# them all at the tag's left origin, so the shorter Chinese rows come out ragged.
+# Every record is re-centred on the centre of the original English block.
+MULTI_TARGET_IDS = [
+    4025,  # warning body: three red lines, centred as a block
+]
+
+# Labels anchored to the right edge.  The original English was right-aligned and
+# the Chinese is imported at the tag's left origin, so it must be shifted to line
+# the right edges back up.  These are right-aligned on the original ink, and their
+# stored bounds are widened because Flash clips static text to that rect.
+RIGHT_ALIGN_IDS = [
     # in-game "SKIP" button
     4095,  # idle
     4096,  # over
@@ -147,6 +172,113 @@ def export_svg_ink(swf: str, ids: list[int]) -> dict[int, tuple[float, float, fl
         return out
 
 
+def export_svg_raw(swf: str, ids: list[int]) -> dict[int, str]:
+    with tempfile.TemporaryDirectory() as td:
+        subprocess.run(
+            ["java", "-jar", str(FFDEC), "-selectid", ",".join(map(str, ids)),
+             "-format", "text:svg", "-export", "text", td, swf],
+            capture_output=True, text=True, cwd=str(ROOT))
+        return {int(p.stem): p.read_text(encoding="utf-8")
+                for p in Path(td).glob("*.svg")}
+
+
+def sprite_placements(swf: str, sprite_id: int) -> dict[int, tuple[float, float]]:
+    """Direct children of ``sprite_id`` as ``char id -> (translateX twips, scaleX)``.
+
+    A static text record stores its own ``translatex`` in the tag, so an SVG ink
+    measured for that tag is relative to its own text matrix.  Comparing several
+    tags on screen (the controls list shares one column axis) therefore needs the
+    tag's placement matrix inside the sprite as well.
+    """
+    data, _ = load_swf_raw(swf)
+    pos = 8
+    nbits = data[pos] >> 3
+    pos += (5 + nbits * 4 + 7) // 8
+    pos += 4
+    while pos < len(data):
+        code_len = struct.unpack_from("<H", data, pos)[0]
+        p = pos + 2
+        code = code_len >> 6
+        length = code_len & 0x3F
+        if length == 0x3F:
+            length = struct.unpack_from("<I", data, p)[0]
+            p += 4
+        body = data[p : p + length]
+        if (code == 39 and len(body) >= 4
+                and struct.unpack_from("<H", body, 0)[0] == sprite_id):
+            return _sprite_children(body)
+        pos = p + length
+    return {}
+
+
+def _sprite_children(body: bytes) -> dict[int, tuple[float, float]]:
+    out: dict[int, tuple[float, float]] = {}
+    pos = 4                       # skip the sprite's char id + frame count
+    while pos < len(body):
+        code_len = struct.unpack_from("<H", body, pos)[0]
+        pos += 2
+        code = code_len >> 6
+        length = code_len & 0x3F
+        if length == 0x3F:
+            length = struct.unpack_from("<I", body, pos)[0]
+            pos += 4
+        tb = body[pos : pos + length]
+        pos += length
+        if code != 26 or len(tb) < 5:        # PlaceObject2 only
+            continue
+        flags = tb[0]
+        if not flags & 0x02 or not flags & 0x04:
+            continue                          # needs a character + a matrix
+        cid = struct.unpack_from("<H", tb, 3)[0]
+        b = Bits(tb, 5)
+        sx = 1.0
+        if b.u(1):
+            n = b.u(5)
+            sx = b.si(n) / 65536.0
+            b.si(n)
+        if b.u(1):
+            n = b.u(5)
+            b.si(n)
+            b.si(n)
+        n = b.u(5)
+        tx = b.si(n)
+        out[cid] = (float(tx), sx)
+    return out
+
+
+def svg_line_boxes(txt: str) -> list[tuple[float, float]]:
+    """Per-line ink boxes ``(left, right)`` of an FFDec ``text:svg`` dump.
+
+    The dump renders every record (line) in one coordinate space, so glyphs are
+    grouped by their vertical placement; this survives per-record kerning /
+    letterspacing that the ``formatted`` geometry does not reflect.
+    """
+    glyphs: dict[str, tuple[float, float]] = {}
+    for m in re.finditer(r'<g id="([^"]+)">\s*<path d="([^"]+)"', txt):
+        xs = [float(v) for v in _NUM.findall(m.group(2))][0::2]
+        if xs:
+            glyphs[m.group(1)] = (min(xs), max(xs))
+    gs = re.findall(r'<g transform="matrix\(([^)]*)\)"', txt)[:2]
+    gx = sum(float(g.split(",")[4]) for g in gs)
+    lines: dict[int, list[float]] = {}
+    for use in re.findall(r'<use\b[^>]*>', txt):
+        m = re.search(r'transform="matrix\(([^)]*)\)"', use)
+        href = re.search(r'xlink:href="#([^"]+)"', use)
+        if not m or not href:
+            continue
+        nums = [float(v) for v in m.group(1).split(",")]
+        sx, ex, ey = nums[0], nums[4], nums[5]
+        b = glyphs.get(href.group(1))
+        if b is None:
+            continue
+        left = gx + ex + sx * b[0]
+        right = gx + ex + sx * b[1]
+        d = lines.setdefault(round(ey / 10), [None, None])  # type: ignore[arg-type]
+        d[0] = left if d[0] is None else min(d[0], left)
+        d[1] = right if d[1] is None else max(d[1], right)
+    return [(v[0], v[1]) for _k, v in sorted(lines.items())]
+
+
 def ink_metrics(font: TTFont, text: str) -> tuple[float, float]:
     """Return (xmin, width) of the text's ink in font units."""
     gs = font.getGlyphSet()
@@ -220,6 +352,23 @@ def set_header_int(header: str, key: str, value: int) -> str:
     return header + f"{key} {value}\n"
 
 
+def widen_bounds(famt: str, bxmin: int, bxmax: int, bymin: int, bymax: int,
+                 ink_left: float, ink_right: float,
+                 ink_top: float, ink_bottom: float, pad: int = 20) -> str:
+    """Grow the tag's stored clip rect to enclose the (moved) ink.
+
+    Flash clips static ``DefineText`` to ``xmin/xmax/ymin/ymax``.  The original
+    bounds hug the English text; centring the shorter Chinese moves it left of
+    the old ``xmin`` (or right of ``xmax``) and the glyphs get cut, so the rect is
+    widened to the new ink box plus ``pad`` twips.
+    """
+    famt = re.sub(r"(?m)^xmin -?\d+", f"xmin {min(bxmin, int(ink_left) - pad)}", famt)
+    famt = re.sub(r"(?m)^xmax -?\d+", f"xmax {max(bxmax, int(ink_right) + pad)}", famt)
+    famt = re.sub(r"(?m)^ymin -?\d+", f"ymin {min(bymin, int(ink_top) - pad)}", famt)
+    famt = re.sub(r"(?m)^ymax -?\d+", f"ymax {max(bymax, int(ink_bottom) + pad)}", famt)
+    return famt
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--swf", required=True)
@@ -231,62 +380,117 @@ def main() -> int:
     args = ap.parse_args()
 
     ids = [int(x) for x in args.ids.split(",") if x.strip()]
-    texts = export_formatted(args.orig, ids)
-    body_font = TTFont(args.body_font)
     display_font = TTFont(args.display_font)
-    font = body_font
-    upm = body_font["head"].unitsPerEm
     outdir = ROOT / "work" / "aligned"
     outdir.mkdir(parents=True, exist_ok=True)
 
-    info: dict[int, tuple] = {}
-    for sid in ids:
-        famt = texts.get(sid, "")
-        segs = UI_TRANSLATIONS.get(str(sid))
-        if not famt or not segs or "align" in famt or len(segs) != 1:
-            continue                      # dynamic / multi-record: leave alone
-        info[sid] = (
-            famt,
-            int(re.search(r"xmin (-?\d+)", famt).group(1)),
-            int(re.search(r"xmax (-?\d+)", famt).group(1)),
-            int(re.search(r"translatex (-?\d+)", famt).group(1)),
-            int(re.search(r"\nheight (\d+)", famt).group(1)),
-            segs[0],
-        )
-
-    common_centre: dict[int, int] = {}
-    for members in COMMON_CENTRE_GROUPS:
-        present = [i for i in members if i in info]
-        if present:
-            # tag bounds are ~20px right of the visual bounds -> shift back
-            c = sum((info[i][1] + info[i][2]) // 2 for i in present) // len(present)
-            c -= 400
-            for i in present:
-                common_centre[i] = c
-
+    centre_ids = [i for i in ids if str(i) in UI_TRANSLATIONS]
     repl = ["-replace", args.swf, args.out]
-    for sid, (famt, xmin, xmax, tx, height, body) in info.items():
-        scale = height / upm
-        xmin_u, ink_u = ink_metrics(font, body)
-        ink_centre_tw = (xmin_u + ink_u / 2) * scale
-        centre_tw = common_centre.get(sid, (xmin + xmax) // 2)
-        new_tx = int(round(centre_tw - ink_centre_tw))   # put ink centre on the axis
-        famt2 = re.sub(r"translatex (-?\d+)", f"translatex {new_tx}", famt)
-        famt2 = re.sub(r"\]\s*[^\]]*$", "]" + body, famt2)
-        p = outdir / f"{sid}.txt"
-        p.write_text(famt2, encoding="utf-8")
-        repl += [str(sid), str(p)]
-        print(f"  {sid}: {body!r} tx {tx}->{new_tx}")
+
+    # Single-record labels centred on the original English ink axis.  Both the
+    # original and the localised renders are measured from SVG dumps, so the
+    # comparison lives in the tag's own text-matrix space and is unaffected by
+    # the stored bounds, the font face or FFDec's CJK kerning.  Anchoring on the
+    # tag's *current* translatex keeps the pass idempotent.
+    if centre_ids:
+        cur = export_formatted(args.swf, centre_ids)
+        orig_fmt = export_formatted(args.orig, centre_ids)
+        orig_ink = export_svg_ink(args.orig, centre_ids)
+        built_ink = export_svg_ink(args.swf, centre_ids)
+        for sid in centre_ids:
+            famt = cur.get(sid, "")
+            ofamt = orig_fmt.get(sid, "")
+            segs = UI_TRANSLATIONS[str(sid)]
+            o, b = orig_ink.get(sid), built_ink.get(sid)
+            if (not famt or not ofamt or "align" in famt
+                    or len(segs) != 1 or o is None or b is None):
+                continue                  # dynamic / multi-record: leave alone
+            bxmin = header_int(famt, "xmin")
+            bxmax = header_int(famt, "xmax")
+            bymin = header_int(famt, "ymin")
+            bymax = header_int(famt, "ymax")
+            oxmin = header_int(ofamt, "xmin")
+            tx = header_int(famt, "translatex")
+            if None in (bxmin, bxmax, bymin, bymax, oxmin, tx):
+                continue
+            desired = oxmin + (o[0] + o[1]) / 2 * 20   # original English ink axis
+            built_c = bxmin + (b[0] + b[1]) / 2 * 20   # current Chinese ink axis
+            new_tx = int(round(tx - (built_c - desired)))
+            s = new_tx - tx
+            famt2 = re.sub(r"translatex (-?\d+)", f"translatex {new_tx}", famt)
+            famt2 = re.sub(r"\]\s*[^\]]*$", "]" + segs[0], famt2)
+            famt2 = widen_bounds(famt2, bxmin, bxmax, bymin, bymax,
+                                 bxmin + b[0] * 20 + s, bxmin + b[1] * 20 + s,
+                                 bymin + b[2] * 20, bymin + b[3] * 20)
+            p = outdir / f"{sid}.txt"
+            p.write_text(famt2, encoding="utf-8")
+            repl += [str(sid), str(p)]
+            print(f"  {sid}: {segs[0]!r} centred tx {tx}->{new_tx}")
+
+    # Controls list: centre every row on the common column axis.  The original
+    # English names were right-aligned on one edge, so the axis is the midpoint
+    # of the union of their on-stage ink; each row is put there individually via
+    # its placement matrix inside the sprite (the rows use different placements).
+    if LIST_CENTER_IDS:
+        place = sprite_placements(args.orig, LIST_SPRITE_ID)
+        list_ids = [i for i in LIST_CENTER_IDS if str(i) in UI_TRANSLATIONS]
+        ofmt = export_formatted(args.orig, list_ids)
+        bfmt = export_formatted(args.swf, list_ids)
+        oink = export_svg_ink(args.orig, list_ids)
+        bink = export_svg_ink(args.swf, list_ids)
+        boxes: list[tuple[float, float]] = []
+        for sid in list_ids:
+            t = place.get(sid)
+            o = oink.get(sid)
+            oxmin = header_int(ofmt.get(sid, ""), "xmin")
+            if t is None or o is None or oxmin is None:
+                continue
+            sp_tx, sp_s = t
+            boxes.append((sp_tx + sp_s * (oxmin + o[0] * 20),
+                          sp_tx + sp_s * (oxmin + o[1] * 20)))
+        if boxes:
+            axis = (min(lo for lo, _ in boxes) + max(hi for _, hi in boxes)) / 2
+            for sid in list_ids:
+                famt = bfmt.get(sid, "")
+                b = bink.get(sid)
+                t = place.get(sid)
+                if not famt or "align" in famt or b is None or t is None:
+                    continue
+                bxmin = header_int(famt, "xmin")
+                bxmax = header_int(famt, "xmax")
+                bymin = header_int(famt, "ymin")
+                bymax = header_int(famt, "ymax")
+                btx = header_int(famt, "translatex")
+                if None in (bxmin, bxmax, bymin, bymax, btx):
+                    continue
+                sp_tx, sp_s = t
+                built_tl = bxmin + (b[0] + b[1]) / 2 * 20   # Chinese ink axis (tag)
+                want_tl = (axis - sp_tx) / sp_s             # common axis in tag space
+                new_tx = int(round(btx - (built_tl - want_tl)))
+                s = new_tx - btx
+                famt2 = re.sub(r"translatex (-?\d+)", f"translatex {new_tx}", famt)
+                text = UI_TRANSLATIONS[str(sid)][0]
+                famt2 = re.sub(r"\]\s*[^\]]*$", "]" + text, famt2)
+                famt2 = widen_bounds(famt2, bxmin, bxmax, bymin, bymax,
+                                     bxmin + b[0] * 20 + s, bxmin + b[1] * 20 + s,
+                                     bymin + b[2] * 20, bymin + b[3] * 20)
+                p = outdir / f"{sid}.txt"
+                p.write_text(famt2, encoding="utf-8")
+                repl += [str(sid), str(p)]
+                print(f"  {sid}: {text!r} centred tx {btx}->{new_tx}")
 
     # Multi-record labels (e.g. the warning body): the tag keeps its own box, but
     # each record is an independent line whose x offset places it inside that box.
-    # Re-centre every line's advance box on the centre of the original English
-    # block.  Export from the localised SWF so the records keep their current
-    # (CJK) font slot; a formatted dump that names the original Latin font would
-    # make FFDec fail to find the Chinese glyphs.
+    # Centre every line's *rendered ink* on the original English block's optical
+    # axis.  The formatted advance box misses full-width CJK punctuation («《»,
+    # trailing «。») and any per-record letterspacing FFDec emits, so the actual
+    # renders are measured from SVG dumps instead; each record's x is a pure
+    # translation, so shifting it by the measured delta re-centres the line.
     if MULTI_TARGET_IDS:
         display_upm = display_font["head"].unitsPerEm
         multi_texts = export_formatted(args.swf, MULTI_TARGET_IDS)
+        built_svg = export_svg_raw(args.swf, MULTI_TARGET_IDS)
+        orig_svg = export_svg_raw(args.orig, MULTI_TARGET_IDS)
         for sid in MULTI_TARGET_IDS:
             famt = multi_texts.get(sid, "")
             segs = UI_TRANSLATIONS.get(str(sid))
@@ -305,19 +509,31 @@ def main() -> int:
                 (h for h in rec_heights if h), None)
             if tag_h is None:
                 continue
-            centre = (xmin + xmax) / 2
+            orig_lines = svg_line_boxes(orig_svg.get(sid, ""))
+            built_lines = svg_line_boxes(built_svg.get(sid, ""))
+            use_ink = bool(orig_lines) and len(built_lines) == len(records)
+            if use_ink:
+                axis = sum((l + r) / 2 for l, r in orig_lines) / len(orig_lines)
+            else:
+                centre = (xmin + xmax) / 2   # fallback: advance box in the tag
             new_records = []
-            for (header, _old), body in zip(records, segs):
+            for i, ((header, _old), body) in enumerate(zip(records, segs)):
                 body = body.strip("\r\n")
-                height = header_int(header, "height") or tag_h
-                adv_tw = advance_units(display_font, body) * height / display_upm
-                new_x = int(round(centre - tx - adv_tw / 2))
+                if use_ink:
+                    bl, br = built_lines[i]
+                    shift = int(round((axis - (bl + br) / 2) * 20))
+                    new_x = (header_int(header, "x") or 0) + shift
+                else:
+                    height = header_int(header, "height") or tag_h
+                    adv_tw = advance_units(display_font, body) * height / display_upm
+                    new_x = int(round(centre - tx - adv_tw / 2))
                 new_records.append((set_header_int(header, "x", new_x), body))
             famt2 = build_formatted(tag, preamble, new_records)
             p = outdir / f"{sid}.txt"
             p.write_text(famt2, encoding="utf-8")
             repl += [str(sid), str(p)]
-            print(f"  {sid}: re-centred {len(records)} records")
+            print(f"  {sid}: re-centred {len(records)} records "
+                  f"({'ink' if use_ink else 'advance'})")
 
     # Right-anchored labels: shift the Chinese left by exactly the amount its ink
     # overshoots the original English ink, so the right edges line up.  Both inks
