@@ -8,6 +8,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from ui_text import UI_TRANSLATIONS  # noqa: E402
+from menu_labels import MENU_LABELS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SEP = "--- RECORDSEPARATOR ---"
@@ -67,6 +68,9 @@ def main() -> int:
     # runtime text drawn by ActionScript uses the same embedded fonts
     for p in (ROOT / "patch" / "as3").glob("*.as"):
         chars |= set(p.read_text(encoding="utf-8"))
+    # main-menu vector labels redrawn with the CJK UI font
+    for text, _color, _opacity in MENU_LABELS.values():
+        chars |= set(text)
     ascii_extra = set(chr(c) for c in range(0x20, 0x7F))
     chars |= ascii_extra
     chars.discard("\n")

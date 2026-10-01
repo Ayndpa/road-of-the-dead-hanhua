@@ -68,8 +68,7 @@ def main() -> int:
     ap.add_argument("--orig", default=str(ORIG))
     ap.add_argument("--out", default=str(ROOT / "dist" / "rotl-zh-full.swf"))
     ap.add_argument("--texts", default=str(ROOT / "work" / "ui_texts"))
-    ap.add_argument("--bold-font", default=str(ROOT / "work" / "fonts" / "ui_bold.ttf"))
-    ap.add_argument("--regular-font", default=str(ROOT / "work" / "fonts" / "ui_regular.ttf"))
+    ap.add_argument("--ui-font", default=str(ROOT / "work" / "fonts" / "ui_cjk.ttf"))
     ap.add_argument("--decor-font-id", type=int, default=20)
     ap.add_argument("--cjk-font-id", type=int, default=88)
     ap.add_argument("--bold-font-ids", default="46,558")
@@ -84,11 +83,18 @@ def main() -> int:
 
     translated = {int(k) for k in UI_TRANSLATIONS if int(k) in all_texts}
 
-    decor = texts_using_font(args.orig, args.decor_font_id)
-    remap_ids = sorted(decor & translated)
-    keep_ids = sorted(decor - translated)
-    print(f"decor font {args.decor_font_id}: {len(decor)} texts; "
-          f"remap {len(remap_ids)}; keep original {len(keep_ids)}")
+    source_ids = [args.decor_font_id]
+    source_ids += [int(x) for x in args.bold_font_ids.split(",") if x]
+    source_ids += [int(x) for x in args.regular_font_ids.split(",")
+                   if x and int(x) != args.cjk_font_id]
+    source_ids = sorted(set(source_ids))
+
+    remap: set[int] = set()
+    for fid in source_ids:
+        remap |= texts_using_font(args.orig, fid) & translated
+    remap_ids = sorted(remap)
+    print(f"fonts {source_ids} -> slot {args.cjk_font_id}; "
+          f"remap {len(remap_ids)} texts, others stay original")
 
     base = ROOT / "work" / "base_remap.swf"
     (ROOT / "work").mkdir(parents=True, exist_ok=True)
@@ -97,22 +103,20 @@ def main() -> int:
         "uv", "run", "python",
         str(ROOT / "pipeline" / "remap_font.py"),
         args.orig, str(base),
-        "--old", str(args.decor_font_id), "--new", str(args.cjk_font_id),
+        "--old", ",".join(str(x) for x in source_ids),
+        "--new", str(args.cjk_font_id),
         "--only", ",".join(str(x) for x in remap_ids),
     ])
 
-    texts = sorted(Path(args.texts).glob("*.txt"), key=lambda p: int(p.stem))
-    texts = [p for p in texts if int(p.stem) not in keep_ids]
-    print(f"text tags to import: {len(texts)} (skipping {len(keep_ids)} original-font texts)")
+    texts = [p for p in sorted(Path(args.texts).glob("*.txt"), key=lambda q: int(q.stem))
+             if int(p.stem) in translated]
+    print(f"text tags to import: {len(texts)} (translated only)")
 
     tmp_ui = ROOT / "work" / "build_ui.swf"
     tmp_sub = ROOT / "dist" / "build_sub.swf"
 
-    repl = ["-replace", str(base), str(tmp_ui)]
-    for fid in (int(x) for x in args.bold_font_ids.split(",") if x):
-        repl += [str(fid), args.bold_font]
-    for fid in (int(x) for x in args.regular_font_ids.split(",") if x):
-        repl += [str(fid), args.regular_font]
+    repl = ["-replace", str(base), str(tmp_ui),
+            str(args.cjk_font_id), args.ui_font]
     for p in texts:
         repl += [p.stem, str(p)]
     run(["java", "-Xmx4g", "-jar", str(FFDEC), *repl])
@@ -125,7 +129,15 @@ def main() -> int:
 
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_bytes(tmp_sub.read_bytes())
+    tmp_menu = tmp_sub.with_name("tmp_menu.swf")
+    run([
+        "uv", "run", "python", str(ROOT / "pipeline" / "menu_labels.py"),
+        "--swf", str(tmp_sub), "--out", str(tmp_menu), "--orig", args.orig,
+    ])
+    run([
+        "uv", "run", "python", str(ROOT / "pipeline" / "align_controls.py"),
+        "--swf", str(tmp_menu), "--out", str(out), "--orig", args.orig,
+    ])
     print(f"built {out} ({out.stat().st_size} bytes)")
     return 0
 

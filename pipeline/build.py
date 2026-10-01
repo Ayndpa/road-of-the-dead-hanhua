@@ -59,17 +59,19 @@ def main() -> int:
     run(py("pipeline/build_ui.py"), "UI text tags")
 
     charset = WORK / "ui_charset.txt"
-    for src_font, out in (
-        (r"C:\Windows\Fonts\msyh.ttc", WORK / "fonts" / "ui_regular.ttf"),
-        (r"C:\Windows\Fonts\msyhbd.ttc", WORK / "fonts" / "ui_bold.ttf"),
-    ):
-        out.parent.mkdir(parents=True, exist_ok=True)
-        run(
-            ["uv", "run", "pyftsubset", src_font, "--font-number=0",
-             f"--text-file={charset}", f"--output-file={out}",
-             "--no-hinting", "--desubroutinize", "--drop-tables+=DSIG"],
-            f"CJK subset {out.name}",
+    ui_font = ROOT / "data" / "fonts" / "RoadOfTheDeadCN.ttf"
+    if not ui_font.exists():
+        raise SystemExit(
+            f"UI font not found: {ui_font}\n"
+            "put the Chinese game font there (Road of the Dead CN style)"
         )
+    (WORK / "fonts").mkdir(parents=True, exist_ok=True)
+    run(
+        ["uv", "run", "pyftsubset", str(ui_font),
+         f"--text-file={charset}", f"--output-file={WORK / 'fonts' / 'ui_cjk.ttf'}",
+         "--no-hinting", "--desubroutinize", "--drop-tables+=DSIG"],
+        "CJK subset ui_cjk.ttf",
+    )
 
     run(py("pipeline/build_all.py", "--orig", args.orig), "splice + compile")
     print(f"\ndone -> {ROOT / 'dist' / 'rotl-zh-full.swf'}")

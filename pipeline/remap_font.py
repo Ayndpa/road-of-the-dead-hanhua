@@ -127,7 +127,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("infile")
     ap.add_argument("outfile")
-    ap.add_argument("--old", type=int, required=True)
+    ap.add_argument("--old", required=True, help="comma separated font ids to replace")
     ap.add_argument("--new", type=int, required=True)
     ap.add_argument("--keep", default="", help="comma separated char ids to leave alone")
     ap.add_argument("--only", default="", help="if set, only remap these char ids")
@@ -135,6 +135,7 @@ def main() -> int:
 
     keep = {int(x) for x in args.keep.split(",") if x.strip()}
     only = {int(x) for x in args.only.split(",") if x.strip()}
+    old = {int(x) for x in args.old.split(",") if x.strip()}
     data, _ = load_swf_raw(args.infile)
     buf = bytearray(data)
     pos = 8
@@ -160,7 +161,7 @@ def main() -> int:
                 offs = text_font_offsets(body, code)
                 hit = False
                 for off in offs:
-                    if struct.unpack_from("<H", body, off)[0] == args.old:
+                    if struct.unpack_from("<H", body, off)[0] in old:
                         struct.pack_into("<H", buf, p + off, args.new)
                         changed_refs += 1
                         hit = True
@@ -170,7 +171,7 @@ def main() -> int:
             cid = struct.unpack_from("<H", body, 0)[0]
             if (not only or cid in only) and cid not in keep:
                 off = edit_text_font_offset(body)
-                if off is not None and struct.unpack_from("<H", body, off)[0] == args.old:
+                if off is not None and struct.unpack_from("<H", body, off)[0] in old:
                     struct.pack_into("<H", buf, p + off, args.new)
                     changed_refs += 1
                     changed_tags += 1
