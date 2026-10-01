@@ -25,6 +25,65 @@ REC_SEP = "\x02"   # between entries
 FLD_SEP = "\x01"   # between class name and text
 SUB_SEP = "\x03"   # between timed sub-lines
 
+
+def swf_stage_size(path: Path) -> tuple[float, float]:
+    """Native (design) stage size of a SWF, in pixels.
+
+    This is the coordinate space the movie is authored in (e.g. 600x400 for
+    Road of the Dead). It is *not* the player window size: after the player
+    window is resized/maximised, ``Stage.stageWidth/Height`` can report the
+    scaled window instead, which is why overlays anchored to those values end
+    up off-screen. Layout uses this fixed design size instead.
+    """
+    try:
+        data = path.read_bytes()
+    except OSError:
+        return 0.0, 0.0
+    if len(data) < 9:
+        return 0.0, 0.0
+    sig = data[:3]
+    body = data[8:]
+    if sig == b"CWS":
+        import zlib
+        try:
+            body = zlib.decompress(body)
+        except zlib.error:
+            return 0.0, 0.0
+    elif sig == b"ZWS":
+        import lzma
+        try:
+            body = lzma.decompress(body)
+        except lzma.LZMAError:
+            return 0.0, 0.0
+    elif sig != b"FWS":
+        return 0.0, 0.0
+
+    bit = 0
+
+    def read_bits(n: int) -> int:
+        nonlocal bit
+        v = 0
+        for _ in range(n):
+            byte = body[bit >> 3]
+            v = (v << 1) | ((byte >> (7 - (bit & 7))) & 1)
+            bit += 1
+        return v
+
+    def read_sbits(n: int) -> int:
+        v = read_bits(n)
+        if v & (1 << (n - 1)):
+            v -= 1 << n
+        return v
+
+    nbits = read_bits(5)
+    if nbits == 0:
+        return 0.0, 0.0
+    xmin = read_sbits(nbits)
+    xmax = read_sbits(nbits)
+    ymin = read_sbits(nbits)
+    ymax = read_sbits(nbits)
+    return (xmax - xmin) / 20.0, (ymax - ymin) / 20.0
+
 IMPORT_BLOCK = """package
 {
    import flash.display.MovieClip;
@@ -104,6 +163,14 @@ STATIC_VARS = """
       internal static var m_Subs:Array = null;
       
       internal static var m_iSubCount:int = 0;
+      
+      internal static var m_fStageW:Number = -1;
+      
+      internal static var m_fStageH:Number = -1;
+      
+      internal static var m_fDesignW:Number = __DESIGN_W__;
+      
+      internal static var m_fDesignH:Number = __DESIGN_H__;
 """
 
 METHODS = r"""
@@ -277,6 +344,7 @@ METHODS = r"""
          var i:int = 0;
          m_iTick++;
          TickSubtitles();
+         CheckStageResize();
          if(m_SubRoot == null)
          {
             return;
@@ -385,7 +453,22 @@ METHODS = r"""
          }
          st = rootMC.stage;
          m_SubStage = st;
+         m_fStageW = st.stageWidth;
+         m_fStageH = st.stageHeight;
          m_SubRoot = rootMC;
+         if(m_fDesignW <= 0 || m_fDesignH <= 0)
+         {
+            m_fDesignW = rootMC.loaderInfo.width;
+            m_fDesignH = rootMC.loaderInfo.height;
+         }
+         if(m_fDesignW <= 0)
+         {
+            m_fDesignW = st.stageWidth;
+         }
+         if(m_fDesignH <= 0)
+         {
+            m_fDesignH = st.stageHeight;
+         }
          m_fFps = st.frameRate;
          if(m_fFps < 1)
          {
@@ -402,7 +485,7 @@ METHODS = r"""
          m_SubText.wordWrap = true;
          m_SubText.embedFonts = false;
          m_SubText.antiAliasType = "advanced";
-         m_SubText.width = st.stageWidth - 56;
+         m_SubText.width = m_fDesignW - 56;
          m_SubText.height = 150;
          m_SubContainer.addChild(m_SubText);
          m_SubFormat = new TextFormat();
@@ -419,6 +502,7 @@ METHODS = r"""
          st.addChild(m_SubContainer);
          st.addEventListener(KeyboardEvent.KEY_DOWN,OnSubtitleKeyDown);
          st.addEventListener(Event.ENTER_FRAME,OnStreamFrame);
+         st.addEventListener(Event.RESIZE,OnSubtitleResize);
          if(m_bDbgMode)
          {
             m_DbgTimer = new Timer(1000,0);
@@ -555,21 +639,72 @@ METHODS = r"""
          joined = parts.join(String.fromCharCode(10));
          m_SubText.text = joined;
          m_SubText.setTextFormat(m_SubFormat);
-         m_SubText.width = m_SubStage.stageWidth - 56;
+         m_SubText.width = m_fDesignW - 56;
          m_SubText.height = 240;
          fTextH = m_SubText.textHeight + 12;
          if(fTextH > 150)
          {
             fTextH = 150;
          }
-         m_SubContainer.y = m_SubStage.stageHeight - fTextH - 24;
+         m_SubContainer.y = m_fDesignH - fTextH - 24;
          m_SubText.x = 28;
          m_SubText.y = 6;
          m_SubBg.graphics.clear();
          m_SubBg.graphics.beginFill(0,0.45);
-         m_SubBg.graphics.drawRoundRect(18,0,m_SubStage.stageWidth - 36,fTextH,8,8);
+         m_SubBg.graphics.drawRoundRect(18,0,m_fDesignW - 36,fTextH,8,8);
          m_SubBg.graphics.endFill();
          m_SubContainer.visible = true;
+      }
+      
+      internal static function ReflowSubtitles() : *
+      {
+         var bg:Shape = null;
+         var st:Stage = null;
+         if(m_SubStage == null)
+         {
+            return;
+         }
+         st = m_SubStage;
+         m_fStageW = st.stageWidth;
+         m_fStageH = st.stageHeight;
+         if(m_SubContainer != null)
+         {
+            RenderSubtitles();
+         }
+         if(m_bToastReady && m_ToastBox != null)
+         {
+            if(m_ToastBox.numChildren > 0 && m_ToastBox.getChildAt(0) is Shape)
+            {
+               bg = Shape(m_ToastBox.getChildAt(0));
+               bg.graphics.clear();
+               bg.graphics.beginFill(0,0.75);
+               bg.graphics.drawRect(0,0,m_fDesignW,26);
+               bg.graphics.endFill();
+            }
+            if(m_ToastText != null)
+            {
+               m_ToastText.width = m_fDesignW;
+            }
+         }
+      }
+      
+      internal static function CheckStageResize() : Boolean
+      {
+         if(m_SubStage == null)
+         {
+            return false;
+         }
+         if(m_SubStage.stageWidth == m_fStageW && m_SubStage.stageHeight == m_fStageH)
+         {
+            return false;
+         }
+         ReflowSubtitles();
+         return true;
+      }
+      
+      internal static function OnSubtitleResize(e:Event) : *
+      {
+         ReflowSubtitles();
       }
       
       internal static function Toast(szText:String) : *
@@ -592,13 +727,13 @@ METHODS = r"""
             m_ToastBox.mouseEnabled = false;
             bg = new Shape();
             bg.graphics.beginFill(0,0.75);
-            bg.graphics.drawRect(0,0,rootMC.stage.stageWidth,26);
+            bg.graphics.drawRect(0,0,m_fDesignW,26);
             bg.graphics.endFill();
             m_ToastBox.addChild(bg);
             m_ToastText = new TextField();
             m_ToastText.mouseEnabled = false;
             m_ToastText.selectable = false;
-            m_ToastText.width = rootMC.stage.stageWidth;
+            m_ToastText.width = m_fDesignW;
             m_ToastText.height = 22;
             m_ToastText.y = 2;
             fmt = new TextFormat();
@@ -841,6 +976,8 @@ def main() -> int:
     ap.add_argument("--min-split-secs", type=float, default=7.5)
     ap.add_argument("--out", required=True)
     ap.add_argument("--original", default=str(ORIGINAL))
+    ap.add_argument("--swf", default=str(ROOT / "dist" / "Road-Of-The-Dead.swf"),
+                    help="original SWF, used to read the native design stage size")
     ap.add_argument("--debug", action="store_true")
     args = ap.parse_args()
 
@@ -884,6 +1021,11 @@ def main() -> int:
     methods = methods.replace("__STREAM_CHUNKS__", stream_chunks)
     methods = methods.replace("__TIMED_CHUNKS__", timed_chunks)
     src = src[:idx] + methods + src[idx:]
+
+    design_w, design_h = swf_stage_size(Path(args.swf))
+    src = src.replace("__DESIGN_W__", f"{design_w:.1f}")
+    src = src.replace("__DESIGN_H__", f"{design_h:.1f}")
+    print(f"design stage size: {design_w:g}x{design_h:g}")
 
     src = src.replace("__DBG_MODE__", "true" if args.debug else "false")
 
