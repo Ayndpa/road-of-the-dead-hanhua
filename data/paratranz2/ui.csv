@@ -1410,7 +1410,7 @@ ui_8672,8 FPS,8 FPS,DefineText 8672
 ui_8673,This campaign was made witha more recent versionof the game.make sure you play the latest version of the gameto load this campaign.,此战役是用更新版本的游戏制作的。请确保你使用最新版本的游戏来加载此战役。,DefineText 8673
 ui_8678,"Are you sure?
 It's recommended to play The Great Escape first","确定吗？
-建议先游玩《大逃亡》",DefineText 8678
+建议先游玩《亡命大逃亡》",DefineText 8678
 ui_8679,YES,是,DefineText 8679
 ui_8680,YES,是,DefineText 8680
 ui_8682,NO,否,DefineText 8682
@@ -1549,5 +1549,5 @@ Tom Fulp
 
 Freesound.org",DefineText 11040
 ui_11041,Thanks for playing,感谢游玩,DefineText 11041
-ui_11042,Road of the Dead 2,死亡之路2,DefineText 11042
+ui_11042,Road of the Dead 2,Road of the Dead 2,DefineText 11042
 ui_11165,To be continued,未完待续,DefineText 11165

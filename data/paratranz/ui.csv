@@ -62,7 +62,7 @@ ui_1774,Story,剧情,DefineText 角色 1774
 ui_1778,You failed 3 times.,你已经失败了 3 次。,DefineText 角色 1778
 ui_1779,W,W,DefineText 角色 1779
 ui_1782,"Are you sure?
-It's recommended to play The Great Escape first",你确定吗？建议先玩《大逃亡》,DefineText 角色 1782
+It's recommended to play The Great Escape first",你确定吗？建议先玩《亡命大逃亡》,DefineText 角色 1782
 ui_1783,YES,是,DefineText 角色 1783
 ui_1784,YES,是,DefineText 角色 1784
 ui_1786,NO,否,DefineText 角色 1786
@@ -380,7 +380,7 @@ ui_4025,"Road Of The Dead contains graphic
 
 violence that may not be suited
 
-for a younger audience.","《死亡之路》包含
+for a younger audience.","《Road of the dead》包含
 可能不适合
 年轻观众的暴力内容。",DefineText 角色 4025
 ui_4026,Warning,警告,DefineText 角色 4026

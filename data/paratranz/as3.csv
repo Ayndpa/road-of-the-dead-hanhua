@@ -35,7 +35,7 @@ as3_Input_031,Numpad 9,小键盘 9,Input.as
 as3_Input_032,None,无,Input.as
 as3_RDAchievement_000,Survivor,幸存者,RDAchievement.as
 as3_RDAchievement_001,Hell\'s Angel,地狱天使,RDAchievement.as
-as3_RDAchievement_002,Beat The Great Escape,通关《大逃亡》,RDAchievement.as
+as3_RDAchievement_002,Beat The Great Escape,通关《亡命大逃亡》,RDAchievement.as
 as3_RDAchievement_003,Beat Highway To Hell,通关《地狱公路》,RDAchievement.as
 as3_RDAchievement_004,"""Dead On Time""","""准时赴死""",RDAchievement.as
 as3_RDAchievement_005,One Man Army,孤胆英雄,RDAchievement.as
@@ -97,7 +97,7 @@ as3_RDGame_003,Highest Hit Combo,最高连击,RDGame.as
 as3_RDGame_004,Highest Flip Flop,最多翻转,RDGame.as
 as3_RDGame_005,Speed through the zombie apocalypse and escape the quarantined city!\n\nNormal difficulty,在僵尸末日中疾驰，逃出被隔离的城市！\n\n普通难度,RDGame.as
 as3_RDGame_006,This is the road for survivors with something to prove!\n\nHard difficulty,这条路属于想要证明自己的幸存者！\n\n困难难度,RDGame.as
-as3_RDGame_007,This is for survivors with something to prove!\n\nHard difficulty\nComplete The Great Escape to unlock this mode!,这是为想要证明自己的幸存者准备的！\n\n困难难度\n通关《大逃亡》即可解锁此模式！,RDGame.as
+as3_RDGame_007,This is for survivors with something to prove!\n\nHard difficulty\nComplete The Great Escape to unlock this mode!,这是为想要证明自己的幸存者准备的！\n\n困难难度\n通关《亡命大逃亡》即可解锁此模式！,RDGame.as
 as3_RDGame_008,You\'re living on borrowed time.\n\nGet as far as you can by killing zombies to earn extra time!,你已经时日无多。\n\n尽可能走得更远，靠杀僵尸换取额外时间！,RDGame.as
 as3_RDGame_009,This is war and you are a one man army on wheels!\n\nGet as far as you can while facing brutal military resistance!,这是战争，而你是车轮上的一人军团！\n\n在军队的残酷阻击下尽可能走得更远！,RDGame.as
 as3_RDGame_010,"Play more games at newgrounds.com, where artists, programmers, musicians, writers and voice actors join forces to make pure awesomeness!",在 newgrounds.com 玩更多游戏——画家、程序员、音乐人、作者和配音演员在这里合力创造纯粹的好东西！,RDGame.as
@@ -109,10 +109,10 @@ as3_RDGame_015,"In options, you can:\nCustomize your controls\nToggle sound and 
 as3_RDGame_016,Are you trying to be the greatest survivor?\n\nCheck the high scores for the Dead On Time and Police State modes!,想成为最伟大的幸存者吗？\n\n来看看《准时赴死》和《警察国家》模式的排行榜！,RDGame.as
 as3_RDGame_017,Well done!,干得漂亮！,RDGame.as
 as3_RDGame_018,Delete your save data?\nYou will lose all your progress,要删除存档数据吗？\n你将失去全部进度,RDGame.as
-as3_RDGame_019,Where do you wanna start\nThe Great Escape?,要从哪里开始\n《大逃亡》？,RDGame.as
+as3_RDGame_019,Where do you wanna start\nThe Great Escape?,要从哪里开始\n《亡命大逃亡》？,RDGame.as
 as3_RDGame_020,Where do you wanna start\nHighway To Hell?,要从哪里开始\n《地狱公路》？,RDGame.as
 as3_RDGame_021,Abort your escape and\nreturn to the garage?,要中止本次逃亡\n返回车库吗？,RDGame.as
-as3_RDGame_022,It\'s recommended to play The Great Escape first.\nAre you sure you want to continue?,建议先玩《大逃亡》。\n你确定要继续吗？,RDGame.as
+as3_RDGame_022,It\'s recommended to play The Great Escape first.\nAre you sure you want to continue?,建议先玩《亡命大逃亡》。\n你确定要继续吗？,RDGame.as
 as3_RDGame_023,Global Pandemic,全球疫情,RDGame.as
 as3_RDGame_024,Basic Survival,基础生存,RDGame.as
 as3_RDGame_025,Killing Methods,杀戮技巧,RDGame.as
