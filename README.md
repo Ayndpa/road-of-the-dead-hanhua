@@ -14,6 +14,7 @@
 | 开场流式音轨字幕（紧急广播 + 电台混音，26 段） | ✅ 按主时间轴帧同步 |
 | 多行堆叠字幕（电台与主角同时说话各占一行） | ✅ |
 | F2 字幕开关（带屏幕提示） | ✅ |
+| F3 字幕设置面板（仅英文 / 仅中文 / 中英双语、字号小中大、背景显示/隐藏，自动保存） | ✅ |
 | UI 文本汉化（224 个烘焙文本中的 174 个） | ✅ |
 | 运行时文本汉化（成就 / 提示框 / 关卡介绍 / 地点 / 结算，233 处） | ✅ |
 | 标题 logo、制作名单、数字保持原始字体设计 | ✅ 逐字节未改动 |
@@ -124,8 +125,20 @@ SubtitleOnPlay(this);          // 用 getQualifiedClassName(m_SoundClass) 查表
 
 - 字幕表以 `\uXXXX` 纯 ASCII 形式编译进 ABC，避免编译器编码问题。
 - 长台词按句子拆分、分段显示：优先用 `data/asr_all.json` 的**真实语音分段**（每段的 start/end）做时间对齐 —— 中文按各段英文长度分配、拉伸到该段的实际时长，因此字幕只会说一句显一句、不会在静音里提前/空转；没有 ASR 分段时才退回按整段时间比例均分。
+- 中英**两种语言都按各自句子拆分**：英文原文按 `.` / `!` / `?` 断句（中文按 `。！？`），分段数量取两者中切得更细的一方，另一方在多余的分段里保持同一句不跳动，因此不会再出现「中文切了、英文还是一整段」。
 - 多行堆叠：不同来源各占一行，同一来源重开一句只替换自己那行。
+- 每条字幕同时带上英文原文与中文翻译（取自平台 CSV 的 `original` / `translation` 两列），运行时按设置只显示其中一种或上下两行全显示；长台词分段的每个小段也各自成对，保证中英逐句对齐。
 - 初始化挂在 `BasicGame.Init()`，否则开场（无对白音效）阶段系统不会启动。
+
+#### 字幕设置面板（F3）
+字幕显示方式全部在运行时的 `DTSound` 覆盖层里绘制，不依赖原始 SWF 的菜单资源：
+
+- 按 `F3`（或关闭时再次按 `F3` / `Esc`）开关面板；面板列出三行设置，鼠标点击该行即切换取值，键盘用 `↑↓` 选择行、`←→`（或回车）修改；
+- **显示模式**：仅英文 / 仅中文 / 中英双语（默认仅中文，双语时英文在上、中文在下）；
+- **字号**：小 / 中 / 大（默认中）；
+- **背景**：显示 / 隐藏（默认显示，隐藏后仅保留描边发光，方便看画面）；背景框宽度按当前字幕实际渲染宽度自适应（居中、左右留白），不再是固定满宽；
+- 打开面板时，底部会用**真正的字幕渲染路径**显示一条示例字幕（与游戏内字幕同一套字体、字号、描边与背景），随显示模式 / 字号 / 背景的改动立即变化，所见即所得；
+- 设置写入 SharedObject `rotd_zh_subtitles`，下次启动自动恢复；`F2` 仍是总开关。
 
 ### 2. 开场流式音轨
 开场旁白在主时间轴的**流式音轨**（`-1.mp3`）里，不经过 `DTSound`。用 `Event.ENTER_FRAME` 把主时间轴帧号换算成音轨时间：
@@ -143,20 +156,22 @@ UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
 
 文本里 `--- RECORDSEPARATOR ---` 是记录分隔符，翻译时**段数必须一致**。
 
-### 4. 字体（还原原版的两种字形）
-原版 UI 用了两种字形，汉化也对应两种 —— 不是全用一种字体：
+### 4. 字体（按原版字形逐个适配）
+原版 UI 不止两种字形：15 个 `DefineFont` 标签、约 10 种字形名，其中**有译文**的就有 Dirty Ego、Modern No. 20、Arial（26/32/1758）、Arial Black（46/558）、Verdana（87/88/94）、Arial Narrow（4013）、FFF Calypso（1103）、FFF Business Bold（1106）。汉化按每个字形的视觉角色各配一套中文字形（`pipeline/build_all.py` 的 `G1_FONT_MAP`）：
 
-| 原版 | 用在哪 | 汉化字体 |
-|---|---|---|
-| **Dirty Ego**（font 20，手绘做旧） | 菜单 / HUD / 标题 / 提示 | `data/fonts/RoadOfTheDeadCN.ttf` |
-| **Modern No. 20**（font 22，Didone 衬线） | 升级说明 / 操作·选项列表 / 成就等正文 | `data/fonts/NotoSerifSC-SemiBold.ttf`（思源宋体 SemiBold，OFL） |
+| 原版字形 | 用在哪 | 中文槽 | 汉化字体 |
+|---|---|---|---|
+| Dirty Ego（20，手绘做旧） | 菜单 / HUD / 标题 / 提示 | 92 | `data/fonts/RoadOfTheDeadCN.ttf` |
+| Modern No. 20（22，Didone 衬线） | 升级说明 / 操作·选项列表 / 成就等正文 | 22 | `data/fonts/NotoSerifSC-SemiBold.ttf`（思源宋体，OFL） |
+| Arial（26/32/1758）/ Verdana（87/88/94）/ Arial Narrow（4013） | NG 提示、勋章弹窗、更多游戏等 | 94 | Noto Sans SC |
+| FFF Calypso（1103）/ FFF Business Bold（1106） | 排行榜标题 / 高分榜标签 | 1106 | Noto Sans SC Bold |
+| Arial Black（46/558） | 制作名单标题 | 1758 | Noto Sans SC Black |
 
-两个字体都在构建时用 `pyftsubset` 裁成同一字符集（= UI 文本 ∪ AS3 运行时中文 ∪ ASCII）的子集，各嵌入一次：
-
-- `pipeline/remap_font.py` 把**翻译过的 font-20 文本**改指到展示槽 **92**，其余用正文字体的文本统一改指到正文槽 **22**；
-- 最后只替换槽 92（展示体）和槽 22（正文）两个字体，避免同一字体被嵌入十几份把 SWF 撑大；
-- **槽必须自带 layout（advance）表**：FFDec 换字形时会保留原 `DefineFont` 的 `HasLayout` 标志，而 `DefineEditText` 靠它排版；用无 layout 的槽（如 88）会让运行时动态文本（车库的 "Drive To …"、提示框、HUD 计数）宽度塌成 0 而消失。92 原本是一个空闲、带 layout 的 Verdana 槽；
-- **font 20（"Dirty Ego"）本身不动**：标题 logo、制作名单、HUD 数字等未被翻译的 text 保持字节一致。
+- 每个字体只包含**它自己那些标签会画到的字**（再加 ASCII 与 AS3 运行时可能赋给任意文本框的中文），用 `pyftsubset` 逐字体裁剪并丢弃 `GSUB/GPOS/GDEF` 等 SWF 用不到的表；
+- **槽必须自带 layout（advance）表**：FFDec 换字形时会保留原 `DefineFont` 的 `HasLayout` 标志，而 `DefineEditText` 靠它排版；无 layout 的槽会让运行时动态文本（车库的 "Drive To …"、提示框、HUD 计数）宽度塌成 0 而消失。展示/正文/无衬线/粗体四个槽都带 layout；Arial Black 槽只承载静态文本；
+- **font 20（"Dirty Ego"）本身不动**：标题 logo、制作名单、HUD 数字等未被翻译的 text 保持字节一致；
+- 与二代相同的两个坑：FFDec 换字体时会按字符重映射已有 `DefineText` 的字形索引（原字体有无 Unicode 映射的字形时会越界崩溃），且新中文更短时会残留尾部空格，所以构建同样**先把静态标签截成空记录、再用 `text:formatted` 逐记录写回**；
+- 成品最后 `compress_swf()` 重新 zlib 压缩成 CWS（中间步骤输出的是未压缩 FWS）：30.19MB → 27.43MB。
 
 ### 5. 运行时文本
 成就、提示框、关卡介绍、地点名等在 AS3 字符串里，用 `pipeline/patch_as3.py` 按**字面量精确替换**（用词法扫描提取，避免正则把代码当成字符串）。中英对照表来自 `data/paratranz/as3.csv`（`context` 列即文件名），只替换在反编译源码里实际存在的字面量，对不上的条目会打印告警而不是改坏代码。
@@ -208,6 +223,35 @@ UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
 
 ---
 
+## 二代（ROTD2）多字体适配
+
+一代 UI 的原版字形其实也不止两种（见上一节，已按 5 套中文字形适配），二代的 `DefineFont` 里更有 **12 种真实字形**（Arial 常规/粗体/黑体/斜体/粗斜体、Verdana、Typenoksidi、Euromode Bold、Dirty Ego、DESTRUCCION、DS-Digital）。二代按每个原版字形的**视觉角色**各配一套中文字形，不能像旧版那样把 Arial 正文塞进思源宋体、斜体新闻稿变正体。`pipeline/build_rotd2_ui.py` 的映射：
+
+| 原版字形 | 用在哪 | 中文槽 | 中文字体 |
+|---|---|---|---|
+| Dirty Ego (93) | 菜单 / HUD / 提示（占绝大多数） | 8705 | `RoadOfTheDeadCN.ttf`（展示体） |
+| DESTRUCCION (10419) / DS-Digital (10315) | 制作名单 / 节日提示 | 8705 | 同上（做旧展示体） |
+| Arial (95) / Verdana (134) | 加载 / 提示 / 帮助正文 | 95 | Noto Sans SC |
+| Arial Black (1) | "Day N" 大标题 | 1 | Noto Sans SC Black |
+| Arial Bold (3066, 10082) / Euromode Bold (8705) | 关卡名 / 帮助 | 3066 | Noto Sans SC Bold |
+| Arial Italic (3) | 新闻稿正文 | 3 | Noto Sans SC + 合成斜体 |
+| Arial Bold Italic (132) | 分数 / Page 1 | 132 | Noto Sans SC Bold + 合成斜体 |
+| Typenoksidi (3099) | 生存手册正文 | 3099 | `NotoSerifSC-SemiBold.ttf`（思源宋体） |
+
+- 每个槽都是原版一个**低占用**字形改指而来（二代没有空闲槽），构建时用 `pyftsubset` 逐字体裁剪，只嵌入一次；
+- 每个字体只包含**它自己那些标签会画到的字**（再加 ASCII 与 AS3 运行时可能赋给任意文本框的中文），不再把整份字集塞进全部字体；同时丢弃 `GSUB/GPOS/GDEF/post` 等 SWF 用不到的表；
+- 只有**翻译过的标签**才改指到中文槽；原版 Dirty Ego 的标题 logo / HUD 数字 / 制作名单保持字节一致；
+- 斜体槽（3、132）**保留 italic 标志**，FFDec 会把中文字形烘焙成斜体，与被替换的英文斜体一致；其余槽清掉 bold/italic，避免叠加合成样式；
+- 槽必须自带 layout（advance）表（`DefineEditText` 靠它排版），所选的 7 个原版槽都满足。
+
+**构建注意**：FFDec 换字体时会**按字符**把已有 `DefineText` 的字形索引重映射到新字体，遇到没有 Unicode 映射的字形（Dirty Ego 里有几个）会算出越界索引并让整个导入崩溃；新中文比英文短时还会在标签里留下多余的旧字形（显示为尾部空格）。因此构建先把静态标签**截成空记录（保留每条记录的样式与条数）**，再用 `-format text:formatted` 逐记录写回译文 —— 多行文本的分行原样保留。
+
+**体积**：构建的中间步骤都用未压缩 SWF（FWS）读写，最后的 `compress_swf()` 会把成品重新 zlib 压缩成游戏原版的 CWS——这一步就把 57.6MB 降到 49.1MB，再叠加逐字体裁剪才算回到接近原版的体积；中文多字体本身仍会比英文原版多几 MB 的字形数据。
+
+- 重新拉取字体：`pwsh -File pipeline/fetch-fonts.ps1 -Proxy http://127.0.0.1:7897`（Noto Sans SC 可变字体，构建时实例化为 Regular/Bold/Black）。
+
+---
+
 ## 分析与调试工具
 
 | 脚本 | 用途 |
@@ -229,4 +273,4 @@ UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
 ## 说明
 
 - 仅用于个人学习与汉化交流；游戏版权归 Evil-Dog / SickDeathFiend 所有，仓库不包含原始游戏文件。
-- 中文字体为 `data/fonts/RoadOfTheDeadCN.ttf`（Dirty Ego 风格中文游戏字体）与 `data/fonts/NotoSerifSC-SemiBold.ttf`（思源宋体，SIL OFL 1.1）；公开发布前请自行确认授权。
+- 中文字体为 `data/fonts/RoadOfTheDeadCN.ttf`（Dirty Ego 风格中文游戏字体）、`data/fonts/NotoSerifSC-SemiBold.ttf`（思源宋体，SIL OFL 1.1）与 `data/fonts/NotoSansSC-VF.ttf`（Noto Sans SC 可变字体，SIL OFL 1.1，二代用）；公开发布前请自行确认授权。

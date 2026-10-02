@@ -61,29 +61,8 @@ def main() -> int:
     run(py("pipeline/patch_as3.py"), "gameplay ActionScript")
     run(py("pipeline/build_ui.py"), "UI text tags")
 
-    charset = WORK / "ui_charset.txt"
-    # Two faces, matching the two faces the original uses: Dirty Ego for the
-    # decorative menu/HUD text, Modern No. 20 (a high-contrast didone) for body.
-    display_font = ROOT / "data" / "fonts" / "RoadOfTheDeadCN.ttf"
-    body_font = ROOT / "data" / "fonts" / "NotoSerifSC-SemiBold.ttf"
-    for label, path in (("display (Dirty Ego)", display_font),
-                        ("body (Modern No. 20)", body_font)):
-        if not path.exists():
-            raise SystemExit(f"{label} font not found: {path}")
-    (WORK / "fonts").mkdir(parents=True, exist_ok=True)
-    run(
-        ["uv", "run", "pyftsubset", str(display_font),
-         f"--text-file={charset}", f"--output-file={WORK / 'fonts' / 'ui_cjk.ttf'}",
-         "--no-hinting", "--desubroutinize", "--drop-tables+=DSIG"],
-        "display CJK subset ui_cjk.ttf",
-    )
-    run(
-        ["uv", "run", "pyftsubset", str(body_font),
-         f"--text-file={charset}", f"--output-file={WORK / 'fonts' / 'ui_body.ttf'}",
-         "--no-hinting", "--desubroutinize", "--drop-tables+=DSIG"],
-        "body CJK subset ui_body.ttf",
-    )
-
+    # build_all.py now derives the per-face charsets, instantiates the Noto Sans
+    # SC weights and subsets every CJK face itself (see the font map there).
     run(py("pipeline/build_all.py", "--orig", args.orig), "splice + compile")
     print(f"\ndone -> {ROOT / 'dist' / 'rotl-zh-full.swf'}")
     return 0

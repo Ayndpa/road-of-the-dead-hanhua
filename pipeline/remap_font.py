@@ -124,6 +124,54 @@ def edit_text_font_offset(body: bytes) -> int | None:
     return None
 
 
+def clear_font_style(infile: str, outfile: str,
+                     ids: set[int] | dict[int, tuple[bool, bool]],
+                     bold: bool = True, italic: bool = True) -> dict[int, tuple[int, int]]:
+    """Clear chosen bold/italic FONTFLAGS bits on the given DefineFont2/3 tags.
+
+    FFDec's ``-replace <fontId> <ttf>`` keeps the repurposed tag's existing
+    style flags and *bakes* that style into the imported glyph outlines: a slot
+    that was "Arial Bold Italic" makes the CJK glyphs slanted, and a "Bold" slot
+    makes them synthetic-bold.  Clearing the bits on the input SWF before the
+    font import makes FFDec embed the face exactly as drawn in the TTF.
+
+    ``ids`` may be a plain set (clear both bits on each) or a ``{id: (bold,
+    italic)}`` mapping that clears per slot -- the italic slots keep their
+    italic bit so the CJK face still renders oblique.
+    """
+    if isinstance(ids, dict):
+        spec = dict(ids)
+    else:
+        spec = {i: (bold, italic) for i in ids}
+    data, _ = load_swf_raw(infile)
+    buf = bytearray(data)
+    pos = 8
+    nbits = buf[pos] >> 3
+    pos += (5 + nbits * 4 + 7) // 8
+    pos += 4
+    touched: dict[int, tuple[int, int]] = {}
+    while pos < len(buf):
+        code_len = struct.unpack_from("<H", buf, pos)[0]
+        p = pos + 2
+        code = code_len >> 6
+        length = code_len & 0x3F
+        if length == 0x3F:
+            length = struct.unpack_from("<I", buf, p)[0]
+            p += 4
+        if code in (48, 62, 75) and length >= 3:
+            fid = struct.unpack_from("<H", buf, p)[0]
+            if fid in spec:
+                cb, ci = spec[fid]
+                mask = (0x01 if cb else 0) | (0x02 if ci else 0)
+                if mask and (buf[p + 2] & mask):
+                    old = buf[p + 2]
+                    buf[p + 2] = old & ~mask
+                    touched[fid] = (old, buf[p + 2])
+        pos = p + length
+    write_swf_fws(bytes(buf), outfile)
+    return touched
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("infile")

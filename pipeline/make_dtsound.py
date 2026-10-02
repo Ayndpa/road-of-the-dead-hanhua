@@ -28,7 +28,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ORIGINAL = ROOT / "work" / "scripts" / "scripts" / "DTSound.as"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from translations import STREAM, VOICE  # noqa: E402
+from translations import pairs  # noqa: E402
 
 REC_SEP = "\x02"   # between entries
 FLD_SEP = "\x01"   # between class name and text
@@ -101,12 +101,14 @@ IMPORT_BLOCK = """package
    import flash.display.Stage;
    import flash.events.Event;
    import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
    import flash.events.SampleDataEvent;
    import flash.events.TimerEvent;
    import flash.filters.GlowFilter;
    import flash.media.Sound;
    import flash.media.SoundChannel;
    import flash.media.SoundTransform;
+   import flash.net.SharedObject;
    import flash.text.Font;
    import flash.text.TextField;
    import flash.text.TextFormat;
@@ -182,6 +184,26 @@ STATIC_VARS = """
       internal static var m_fDesignW:Number = __DESIGN_W__;
       
       internal static var m_fDesignH:Number = __DESIGN_H__;
+      
+      internal static var m_iSubLang:int = 1;
+      
+      internal static var m_iSubSize:int = 1;
+      
+      internal static var m_bSubBg:Boolean = true;
+      
+      internal static var m_SubSO:SharedObject = null;
+      
+      internal static var m_SettingsRoot:Sprite = null;
+      
+      internal static var m_bSettingsOpen:Boolean = false;
+      
+      internal static var m_iSetSel:int = 0;
+      
+      internal static var m_SetRows:Array = null;
+      
+      internal static var m_SetFormat:TextFormat = null;
+      
+      internal static var m_SubSizes:Array = null;
 """
 
 METHODS = r"""
@@ -211,6 +233,7 @@ METHODS = r"""
          var ln:String = null;
          var p1:int = 0;
          var p2:int = 0;
+         var p3:int = 0;
          var cls:String = null;
          var f:Array = null;
          var arr:Array = null;
@@ -239,12 +262,14 @@ METHODS = r"""
                   ln = String(subs[j]);
                   p1 = ln.indexOf(String.fromCharCode(1));
                   p2 = p1 >= 0 ? ln.indexOf(String.fromCharCode(1),p1 + 1) : -1;
-                  if(p2 > p1)
+                  p3 = p2 >= 0 ? ln.indexOf(String.fromCharCode(1),p2 + 1) : -1;
+                  if(p3 > p2)
                   {
                      f = new Array();
                      f.push(Number(ln.substring(0,p1)));
                      f.push(Number(ln.substring(p1 + 1,p2)));
-                     f.push(ln.substring(p2 + 1));
+                     f.push(ln.substring(p2 + 1,p3));
+                     f.push(ln.substring(p3 + 1));
                      arr.push(f);
                   }
                }
@@ -291,7 +316,7 @@ METHODS = r"""
             return;
          }
          seg = m_TimedClip[j];
-         ShowSubtitleOn("_clip",String(seg[2]),(Number(seg[1]) - Number(seg[0]) + 0.45) * 1000);
+         ShowSubtitleOn("_clip",String(seg[2]),String(seg[3]),(Number(seg[1]) - Number(seg[0]) + 0.45) * 1000);
       }
       
       internal static function GetStreamSegments() : Array
@@ -304,6 +329,7 @@ METHODS = r"""
          var ln:String = null;
          var p1:int = 0;
          var p2:int = 0;
+         var p3:int = 0;
          if(m_StreamSegs != null)
          {
             return m_StreamSegs;
@@ -320,12 +346,14 @@ METHODS = r"""
                if(p1 > 0)
                {
                   p2 = ln.indexOf(String.fromCharCode(1),p1 + 1);
-                  if(p2 > p1)
+                  p3 = p2 >= 0 ? ln.indexOf(String.fromCharCode(1),p2 + 1) : -1;
+                  if(p3 > p2)
                   {
                      f = new Array();
                      f.push(Number(ln.substring(0,p1)));
                      f.push(Number(ln.substring(p1 + 1,p2)));
-                     f.push(ln.substring(p2 + 1));
+                     f.push(ln.substring(p2 + 1,p3));
+                     f.push(ln.substring(p3 + 1));
                      m_StreamSegs.push(f);
                   }
                }
@@ -384,7 +412,7 @@ METHODS = r"""
          {
             return;
          }
-         ShowSubtitleOn("_stream",String(GetStreamSegments()[i][2]),(Number(GetStreamSegments()[i][1]) - Number(GetStreamSegments()[i][0]) + 0.5) * 1000);
+         ShowSubtitleOn("_stream",String(GetStreamSegments()[i][2]),String(GetStreamSegments()[i][3]),(Number(GetStreamSegments()[i][1]) - Number(GetStreamSegments()[i][0]) + 0.5) * 1000);
       }
       
       internal static function GetSubtitleTable() : Object
@@ -394,6 +422,9 @@ METHODS = r"""
          var i:int = 0;
          var ln:String = null;
          var p:int = 0;
+         var p2:int = 0;
+         var zh:String = null;
+         var en:String = null;
          if(m_SubTable != null)
          {
             return m_SubTable;
@@ -409,7 +440,18 @@ METHODS = r"""
                p = ln.indexOf(String.fromCharCode(1));
                if(p > 0)
                {
-                  m_SubTable[ln.substring(0,p)] = ln.substring(p + 1);
+                  p2 = ln.indexOf(String.fromCharCode(1),p + 1);
+                  if(p2 > p)
+                  {
+                     zh = ln.substring(p + 1,p2);
+                     en = ln.substring(p2 + 1);
+                  }
+                  else
+                  {
+                     zh = ln.substring(p + 1);
+                     en = "";
+                  }
+                  m_SubTable[ln.substring(0,p)] = [zh,en];
                }
             }
          }
@@ -485,6 +527,7 @@ METHODS = r"""
          {
             m_fFps = 30;
          }
+         LoadSubSettings();
          m_SubContainer = new Sprite();
          m_SubContainer.mouseEnabled = false;
          m_SubBg = new Shape();
@@ -501,7 +544,7 @@ METHODS = r"""
          m_SubContainer.addChild(m_SubText);
          m_SubFormat = new TextFormat();
          m_SubFormat.font = PickSubtitleFont();
-         m_SubFormat.size = 18;
+         m_SubFormat.size = SubSizePx();
          m_SubFormat.bold = true;
          m_SubFormat.color = 16777215;
          m_SubFormat.align = TextFormatAlign.CENTER;
@@ -539,12 +582,12 @@ METHODS = r"""
          }
       }
       
-      internal static function ShowSubtitle(szText:String, fDurationMs:Number) : *
+      internal static function ShowSubtitle(szZh:String, szEn:String, fDurationMs:Number) : *
       {
-         ShowSubtitleOn("_voice",szText,fDurationMs);
+         ShowSubtitleOn("_voice",szZh,szEn,fDurationMs);
       }
       
-      internal static function ShowSubtitleOn(szSlot:String, szText:String, fDurationMs:Number) : *
+      internal static function ShowSubtitleOn(szSlot:String, szZh:String, szEn:String, fDurationMs:Number) : *
       {
          var i:int = 0;
          var o:Object = null;
@@ -552,7 +595,15 @@ METHODS = r"""
          {
             return;
          }
-         if(szText == null || szText == "")
+         if(szZh == null)
+         {
+            szZh = "";
+         }
+         if(szEn == null)
+         {
+            szEn = "";
+         }
+         if(szZh == "" && szEn == "")
          {
             return;
          }
@@ -581,7 +632,8 @@ METHODS = r"""
          }
          o = new Object();
          o.slot = szSlot;
-         o.text = szText;
+         o.zh = szZh;
+         o.en = szEn;
          o.end = getTimer() + fDurationMs;
          m_Subs.push(o);
          while(m_Subs.length > 3)
@@ -589,6 +641,37 @@ METHODS = r"""
             m_Subs.shift();
          }
          RenderSubtitles();
+      }
+      
+      internal static function SubtitleDisplay(o:Object) : String
+      {
+         var zh:String = o.zh == null ? "" : String(o.zh);
+         var en:String = o.en == null ? "" : String(o.en);
+         if(m_iSubLang == 0)
+         {
+            return en != "" ? en : zh;
+         }
+         if(m_iSubLang == 1)
+         {
+            return zh != "" ? zh : en;
+         }
+         if(en == "")
+         {
+            return zh;
+         }
+         if(zh == "" || zh == en)
+         {
+            return en;
+         }
+         return en + String.fromCharCode(10) + zh;
+      }
+      
+      internal static function PreviewSubtitleText() : String
+      {
+         var o:Object = new Object();
+         o.zh = "这是字幕预览效果。";
+         o.en = "This is a subtitle preview.";
+         return SubtitleDisplay(o);
       }
       
       internal static function TickSubtitles() : *
@@ -619,6 +702,10 @@ METHODS = r"""
          var i:int = 0;
          var parts:Array = null;
          var fTextH:Number = 0;
+         var fMaxH:Number = 0;
+         var bgW:Number = 0;
+         var bgX:Number = 0;
+         var bgMax:Number = 0;
          var joined:String = null;
          if(m_SubContainer == null)
          {
@@ -637,34 +724,368 @@ METHODS = r"""
             }
          }
          m_iSubCount = m_Subs.length;
-         if(m_iSubCount == 0)
+         parts = new Array();
+         for(i = 0; i < m_Subs.length; i++)
+         {
+            parts.push(SubtitleDisplay(m_Subs[i]));
+         }
+         if(m_bSettingsOpen)
+         {
+            parts.push(PreviewSubtitleText());
+         }
+         if(parts.length == 0)
          {
             m_SubContainer.visible = false;
             return;
          }
-         parts = new Array();
-         for(i = 0; i < m_Subs.length; i++)
-         {
-            parts.push(String(m_Subs[i].text));
-         }
          joined = parts.join(String.fromCharCode(10));
+         m_SubFormat.size = SubSizePx();
+         m_SubText.defaultTextFormat = m_SubFormat;
          m_SubText.text = joined;
          m_SubText.setTextFormat(m_SubFormat);
          m_SubText.width = m_fDesignW - 56;
-         m_SubText.height = 240;
-         fTextH = m_SubText.textHeight + 12;
-         if(fTextH > 150)
+         m_SubText.height = 500;
+         fTextH = m_SubText.textHeight + 16;
+         fMaxH = m_fDesignH - 40;
+         if(fMaxH > 320)
          {
-            fTextH = 150;
+            fMaxH = 320;
+         }
+         if(fMaxH < 80)
+         {
+            fMaxH = 80;
+         }
+         if(fTextH > fMaxH)
+         {
+            fTextH = fMaxH;
          }
          m_SubContainer.y = m_fDesignH - fTextH - 24;
          m_SubText.x = 28;
          m_SubText.y = 6;
          m_SubBg.graphics.clear();
-         m_SubBg.graphics.beginFill(0,0.45);
-         m_SubBg.graphics.drawRoundRect(18,0,m_fDesignW - 36,fTextH,8,8);
-         m_SubBg.graphics.endFill();
+         if(m_bSubBg)
+         {
+            bgW = m_SubText.textWidth + 36;
+            if(bgW < 140)
+            {
+               bgW = 140;
+            }
+            bgMax = m_fDesignW - 36;
+            if(bgW > bgMax)
+            {
+               bgW = bgMax;
+            }
+            bgX = (m_fDesignW - bgW) / 2;
+            m_SubBg.graphics.beginFill(0,0.45);
+            m_SubBg.graphics.drawRoundRect(bgX,0,bgW,fTextH,8,8);
+            m_SubBg.graphics.endFill();
+         }
          m_SubContainer.visible = true;
+      }
+      
+      internal static function SubSizePx() : int
+      {
+         if(m_SubSizes == null)
+         {
+            m_SubSizes = [13,17,22];
+         }
+         if(m_iSubSize < 0)
+         {
+            m_iSubSize = 0;
+         }
+         if(m_iSubSize > m_SubSizes.length - 1)
+         {
+            m_iSubSize = m_SubSizes.length - 1;
+         }
+         return int(m_SubSizes[m_iSubSize]);
+      }
+      
+      internal static function SubLangName(i:int) : String
+      {
+         if(i == 0)
+         {
+            return "英文 English";
+         }
+         if(i == 1)
+         {
+            return "中文 Chinese";
+         }
+         return "中英双语 Bilingual";
+      }
+      
+      internal static function SubSizeName(i:int) : String
+      {
+         if(i == 0)
+         {
+            return "小 Small";
+         }
+         if(i == 1)
+         {
+            return "中 Medium";
+         }
+         return "大 Large";
+      }
+      
+      internal static function LoadSubSettings() : *
+      {
+         try
+         {
+            m_SubSO = SharedObject.getLocal("rotd_zh_subtitles","/");
+            if(m_SubSO != null && m_SubSO.data != null)
+            {
+               if(m_SubSO.data.lang != undefined)
+               {
+                  m_iSubLang = int(m_SubSO.data.lang);
+               }
+               if(m_SubSO.data.size != undefined)
+               {
+                  m_iSubSize = int(m_SubSO.data.size);
+               }
+               if(m_SubSO.data.bg != undefined)
+               {
+                  m_bSubBg = Boolean(m_SubSO.data.bg);
+               }
+            }
+         }
+         catch(e:Error)
+         {
+            m_SubSO = null;
+         }
+         if(m_iSubLang < 0 || m_iSubLang > 2)
+         {
+            m_iSubLang = 1;
+         }
+         if(m_iSubSize < 0 || m_iSubSize > 2)
+         {
+            m_iSubSize = 1;
+         }
+      }
+      
+      internal static function SaveSubSettings() : *
+      {
+         if(m_SubSO == null)
+         {
+            return;
+         }
+         try
+         {
+            m_SubSO.data.lang = m_iSubLang;
+            m_SubSO.data.size = m_iSubSize;
+            m_SubSO.data.bg = m_bSubBg;
+            m_SubSO.flush();
+         }
+         catch(e:Error)
+         {
+         }
+      }
+      
+      internal static function ApplySubSettings() : *
+      {
+         if(m_iSubLang < 0 || m_iSubLang > 2)
+         {
+            m_iSubLang = 1;
+         }
+         if(m_iSubSize < 0 || m_iSubSize > 2)
+         {
+            m_iSubSize = 1;
+         }
+         if(m_SubFormat != null)
+         {
+            m_SubFormat.size = SubSizePx();
+         }
+         SaveSubSettings();
+         if(m_SubContainer != null)
+         {
+            RenderSubtitles();
+         }
+         if(m_bSettingsOpen)
+         {
+            RenderSettings();
+         }
+      }
+      
+      internal static function CycleSetting(i:int, dir:int) : *
+      {
+         if(i == 0)
+         {
+            m_iSubLang = (m_iSubLang + dir + 3) % 3;
+         }
+         else if(i == 1)
+         {
+            m_iSubSize = (m_iSubSize + dir + 3) % 3;
+         }
+         else
+         {
+            m_bSubBg = !m_bSubBg;
+         }
+         ApplySubSettings();
+      }
+      
+      internal static function ToggleSettings() : *
+      {
+         m_bSettingsOpen = !m_bSettingsOpen;
+         EnsureSettings();
+         if(m_SettingsRoot == null)
+         {
+            return;
+         }
+         m_SettingsRoot.visible = m_bSettingsOpen;
+         if(m_bSettingsOpen)
+         {
+            m_iSetSel = 0;
+            RenderSettings();
+         }
+         if(m_SubContainer != null)
+         {
+            RenderSubtitles();
+         }
+      }
+      
+      internal static function EnsureSettings() : *
+      {
+         var i:int = 0;
+         var tf:TextField = null;
+         var title:TextField = null;
+         var hint:TextField = null;
+         if(m_SettingsRoot != null)
+         {
+            return;
+         }
+         if(m_SubStage == null)
+         {
+            return;
+         }
+         m_SettingsRoot = new Sprite();
+         m_SettingsRoot.mouseEnabled = true;
+         m_SetFormat = new TextFormat();
+         m_SetFormat.font = PickSubtitleFont();
+         m_SetFormat.color = 16777215;
+         m_SetFormat.align = TextFormatAlign.CENTER;
+         m_SetFormat.bold = true;
+         m_SetRows = new Array();
+         title = new TextField();
+         title.mouseEnabled = false;
+         title.selectable = false;
+         title.name = "title";
+         title.embedFonts = false;
+         m_SettingsRoot.addChild(title);
+         for(i = 0; i < 3; i++)
+         {
+            tf = new TextField();
+            tf.mouseEnabled = false;
+            tf.selectable = false;
+            tf.embedFonts = false;
+            m_SettingsRoot.addChild(tf);
+            m_SetRows.push(tf);
+         }
+         hint = new TextField();
+         hint.mouseEnabled = false;
+         hint.selectable = false;
+         hint.name = "hint";
+         hint.embedFonts = false;
+         m_SettingsRoot.addChild(hint);
+         m_SettingsRoot.addEventListener(MouseEvent.CLICK,OnSettingsClick);
+         m_SubStage.addChild(m_SettingsRoot);
+         m_SettingsRoot.visible = false;
+      }
+      
+      internal static function RenderSettings() : *
+      {
+         var pw:Number = 0;
+         var ph:Number = 0;
+         var px:Number = 0;
+         var py:Number = 0;
+         var rowH:Number = 0;
+         var y0:Number = 0;
+         var i:int = 0;
+         var title:TextField = null;
+         var hint:TextField = null;
+         var tf:TextField = null;
+         var labels:Array = null;
+         var vals:Array = null;
+         if(m_SettingsRoot == null || m_SetRows == null)
+         {
+            return;
+         }
+         pw = m_fDesignW - 80;
+         if(pw > 440)
+         {
+            pw = 440;
+         }
+         ph = 210;
+         px = (m_fDesignW - pw) / 2;
+         py = (m_fDesignH - ph) / 2 - 55;
+         if(py < 10)
+         {
+            py = 10;
+         }
+         m_SettingsRoot.graphics.clear();
+         m_SettingsRoot.graphics.beginFill(0,0.82);
+         m_SettingsRoot.graphics.lineStyle(2,16777215,0.55);
+         m_SettingsRoot.graphics.drawRoundRect(px,py,pw,ph,10,10);
+         m_SettingsRoot.graphics.endFill();
+         title = TextField(m_SettingsRoot.getChildByName("title"));
+         m_SetFormat.size = 18;
+         m_SetFormat.color = 16777215;
+         title.width = pw;
+         title.height = 26;
+         title.x = px;
+         title.y = py + 12;
+         title.text = "字幕设置 SUBTITLE SETTINGS";
+         title.setTextFormat(m_SetFormat);
+         rowH = 38;
+         y0 = py + 50;
+         labels = ["显示模式 Type","字号 Size","背景 Background"];
+         vals = [SubLangName(m_iSubLang),SubSizeName(m_iSubSize),m_bSubBg ? "显示 On" : "隐藏 Off"];
+         for(i = 0; i < 3; i++)
+         {
+            tf = TextField(m_SetRows[i]);
+            m_SetFormat.size = 16;
+            m_SetFormat.color = i == m_iSetSel ? 16776960 : 16777215;
+            tf.width = pw;
+            tf.height = rowH - 4;
+            tf.x = px;
+            tf.y = y0 + i * rowH;
+            tf.text = labels[i] + "：" + String(vals[i]);
+            tf.setTextFormat(m_SetFormat);
+         }
+         hint = TextField(m_SettingsRoot.getChildByName("hint"));
+         m_SetFormat.size = 12;
+         m_SetFormat.color = 13421772;
+         hint.width = pw;
+         hint.height = 20;
+         hint.x = px;
+         hint.y = py + ph - 26;
+         hint.text = "F3 / 点击行 切换   ↑↓ 选择   ←→ 修改   F2 字幕开关";
+         hint.setTextFormat(m_SetFormat);
+      }
+      
+      internal static function OnSettingsClick(e:MouseEvent) : *
+      {
+         var ph:Number = 0;
+         var py:Number = 0;
+         var rowH:Number = 0;
+         var y0:Number = 0;
+         var idx:int = 0;
+         if(m_SettingsRoot == null)
+         {
+            return;
+         }
+         ph = 210;
+         py = (m_fDesignH - ph) / 2 - 55;
+         if(py < 10)
+         {
+            py = 10;
+         }
+         rowH = 38;
+         y0 = py + 50;
+         idx = int(Math.floor((e.localY - y0) / rowH));
+         if(idx < 0 || idx > 2)
+         {
+            return;
+         }
+         m_iSetSel = idx;
+         CycleSetting(idx,1);
       }
       
       internal static function ReflowSubtitles() : *
@@ -681,6 +1102,10 @@ METHODS = r"""
          if(m_SubContainer != null)
          {
             RenderSubtitles();
+         }
+         if(m_bSettingsOpen)
+         {
+            RenderSettings();
          }
          if(m_bToastReady && m_ToastBox != null)
          {
@@ -781,7 +1206,7 @@ METHODS = r"""
             t = (frm - 1) / m_fFps - m_fStreamOffset;
          }
          n = GetStreamSegments().length;
-         ShowSubtitleOn("_dbg","DBG f=" + frm + " t=" + Math.round(t * 10) / 10 + " seg=" + m_iStreamSeg + " n=" + n + " tick=" + m_iTick + " on=" + (m_bSubOn ? 1 : 0) + " subs=" + m_iSubCount,1000);
+         ShowSubtitleOn("_dbg","DBG f=" + frm + " t=" + Math.round(t * 10) / 10 + " seg=" + m_iStreamSeg + " n=" + n + " tick=" + m_iTick + " on=" + (m_bSubOn ? 1 : 0) + " subs=" + m_iSubCount,"",1000);
       }
       
       internal static function OnToastTimer(e:TimerEvent) : *
@@ -816,7 +1241,38 @@ METHODS = r"""
             }
             if(m_bDbgMode)
             {
-               ShowSubtitleOn("_dbg","F2 OK, subtitles " + (m_bSubOn ? "ON" : "OFF"),1500);
+               ShowSubtitleOn("_dbg","F2 OK, subtitles " + (m_bSubOn ? "ON" : "OFF"),"",1500);
+            }
+            return;
+         }
+         if(e.keyCode == 114)
+         {
+            ToggleSettings();
+            return;
+         }
+         if(m_bSettingsOpen)
+         {
+            if(e.keyCode == 27)
+            {
+               ToggleSettings();
+            }
+            else if(e.keyCode == 38)
+            {
+               m_iSetSel = m_iSetSel > 0 ? m_iSetSel - 1 : 2;
+               RenderSettings();
+            }
+            else if(e.keyCode == 40)
+            {
+               m_iSetSel = m_iSetSel < 2 ? m_iSetSel + 1 : 0;
+               RenderSettings();
+            }
+            else if(e.keyCode == 37)
+            {
+               CycleSetting(m_iSetSel,-1);
+            }
+            else if(e.keyCode == 39 || e.keyCode == 13)
+            {
+               CycleSetting(m_iSetSel,1);
             }
          }
       }
@@ -824,10 +1280,12 @@ METHODS = r"""
       internal static function SubtitleOnPlay(sound:DTSound) : *
       {
          var szName:String = null;
-         var szText:String = null;
+         var zh:String = null;
+         var en:String = null;
          var fDur:Number = 0;
          var table:Object = null;
          var timed:Object = null;
+         var row:Array = null;
          InitSubtitles();
          if(sound == null || sound.m_SoundClass == null)
          {
@@ -835,11 +1293,13 @@ METHODS = r"""
          }
          table = GetSubtitleTable();
          szName = getQualifiedClassName(sound.m_SoundClass);
-         szText = table[szName];
-         if(szText == null)
+         row = table[szName] as Array;
+         if(row == null)
          {
             return;
          }
+         zh = String(row[0]);
+         en = row.length > 1 ? String(row[1]) : "";
          timed = GetTimedTable();
          if(timed[szName] != null && m_bSubOn)
          {
@@ -857,7 +1317,7 @@ METHODS = r"""
          {
             fDur = 2500;
          }
-         ShowSubtitleOn(szName,String(szText),fDur);
+         ShowSubtitleOn(szName,zh,en,fDur);
       }
 """
 
@@ -887,13 +1347,17 @@ def as3_literal(text: str) -> str:
     return "".join(out)
 
 
-def build_chunks(entries: list[tuple[str, str]], chunk_chars: int = 200) -> str:
-    """Build a '+'-joined list of AS3 string literals, splitting on char count."""
+def build_chunks(entries: list[tuple[str, str, str]], chunk_chars: int = 200) -> str:
+    """Build a '+'-joined list of AS3 string literals, splitting on char count.
+
+    Each record is ``class \\x01 zh \\x01 en``; both languages are carried so the
+    player can switch between English, Chinese and bilingual display at runtime.
+    """
     pieces: list[str] = []
     cur: list[str] = []
     n = 0
-    for cls, text in entries:
-        piece = as3_literal(cls + FLD_SEP + text + REC_SEP)
+    for cls, zh, en in entries:
+        piece = as3_literal(cls + FLD_SEP + zh + FLD_SEP + en + REC_SEP)
         cur.append(piece)
         n += len(piece)
         if n >= chunk_chars:
@@ -908,17 +1372,19 @@ def build_chunks(entries: list[tuple[str, str]], chunk_chars: int = 200) -> str:
 
 
 def build_stream_chunks(entries: list[dict], chunk_chars: int = 200) -> str:
-    """Build AS3 literals for streamed-audio segments: start|end|text records."""
+    """Build AS3 literals for streamed-audio segments: start|end|zh|en records."""
     pieces: list[str] = []
     cur: list[str] = []
     n = 0
     for e in entries:
-        rec = "%.3f%s%.3f%s%s%s" % (
+        rec = "%.3f%s%.3f%s%s%s%s%s" % (
             float(e["start"]),
             FLD_SEP,
             float(e["end"]),
             FLD_SEP,
             e["zh"],
+            FLD_SEP,
+            e["en"],
             REC_SEP,
         )
         piece = as3_literal(rec)
@@ -936,10 +1402,18 @@ def build_stream_chunks(entries: list[dict], chunk_chars: int = 200) -> str:
 
 
 SENT_RE = re.compile(r"[^。！？!?…]*[。！？!?…]+|[^。！？!?…]+$")
+# English originals break on the ASCII full stop too; without this a whole
+# paragraph of English stays one "sentence" and never gets time-split like the
+# Chinese translation does.
+EN_SENT_RE = re.compile(r"[^.!?…]*[.!?…]+|[^.!?…]+$")
 
 
 def split_sentences(text: str) -> list[str]:
     return [p.strip() for p in SENT_RE.findall(text) if p.strip()]
+
+
+def split_sentences_en(text: str) -> list[str]:
+    return [p.strip() for p in EN_SENT_RE.findall(text) if p.strip()]
 
 
 def _linear_times(
@@ -1013,38 +1487,67 @@ def _warped_times(
 def build_timed_chunks(
     subs: dict[str, str],
     durations: dict[str, float],
+    originals: dict[str, str] | None = None,
     min_secs: float = 7.5,
     segments: dict[str, list[dict]] | None = None,
-) -> tuple[list[tuple[str, list[tuple[float, float, str]]]], str]:
-    """Long lines become several timed sub-lines so they aren't one wall of text."""
+) -> tuple[list[tuple[str, list[tuple[float, float, str, str]]]], str]:
+    """Long lines become several timed sub-lines so they aren't one wall of text.
+
+    Each sub-line carries the Chinese sentence *and* the matching English
+    sentence, so bilingual display stays aligned line-for-line.  The number of
+    sub-lines is driven by whichever language splits into more sentences (English
+    often has more, e.g. several short sentences the Chinese merges into one), so
+    neither language is left as a single block; the coarser language repeats its
+    sentence across the extra slots instead of dropping it.
+    """
     segments = segments or {}
-    entries: list[tuple[str, list[tuple[float, float, str]]]] = []
+    originals = originals or {}
+    entries: list[tuple[str, list[tuple[float, float, str, str]]]] = []
     for cls, text in sorted(subs.items()):
         dur = float(durations.get(cls, 0.0))
         if not text or dur < min_secs:
             continue
-        sents = split_sentences(text)
-        if len(sents) < 2:
+        zh_sents = split_sentences(text)
+        if not zh_sents:
             continue
-        total = sum(len(s) for s in sents) or 1
+        en = str(originals.get(cls) or "").strip()
+        en_sents = split_sentences_en(en) if en else []
+        # Drive the timeline with the language that has finer sentences so both
+        # sides advance; if they are equal this is an exact 1:1 pairing.
+        driver = en_sents if len(en_sents) > len(zh_sents) else zh_sents
+        if len(driver) < 2:
+            continue
+        total = sum(len(s) for s in driver) or 1
         segs = [
             s
             for s in (segments.get(cls) or [])
             if float(s.get("end") or 0.0) > float(s.get("start") or 0.0)
         ]
         timed = (
-            _warped_times(sents, total, segs, dur)
+            _warped_times(driver, total, segs, dur)
             if segs
-            else _linear_times(sents, total, dur)
+            else _linear_times(driver, total, dur)
         )
-        entries.append((cls, timed))
+        n = len(timed)
+        pairs: list[tuple[float, float, str, str]] = []
+        for i, (st, en_t, _driver_text) in enumerate(timed):
+            zi = i * len(zh_sents) // n
+            if zi > len(zh_sents) - 1:
+                zi = len(zh_sents) - 1
+            ei = i * len(en_sents) // n if en_sents else -1
+            if ei > len(en_sents) - 1:
+                ei = len(en_sents) - 1
+            pairs.append((st, en_t, zh_sents[zi],
+                          en_sents[ei] if ei >= 0 else ""))
+        entries.append((cls, pairs))
 
     pieces: list[str] = []
     cur: list[str] = []
     n = 0
     for cls, timed in entries:
         rec = cls + FLD_SEP + SUB_SEP.join(
-            "%.2f%s%.2f%s%s" % (st, FLD_SEP, en, FLD_SEP, tx) for st, en, tx in timed
+            "%.2f%s%.2f%s%s%s%s" % (st, FLD_SEP, en, FLD_SEP, tx, FLD_SEP, tx_en)
+            for st, en, tx, tx_en in timed
         ) + REC_SEP
         piece = as3_literal(rec)
         cur.append(piece)
@@ -1060,8 +1563,9 @@ def build_timed_chunks(
 def generate(original, out, durations=None, stream_timing=None, swf=None,
              min_split_secs: float = 7.5, debug: bool = False,
              stream_offset: float = 1.58) -> Path:
-    subs = VOICE
-    items = sorted((k, v) for k, v in subs.items() if v)
+    subs = pairs("voice")            # {cls: (english, chinese)}
+    stream_subs = pairs("stream")    # {stream_NN: (english, chinese)}
+    items = sorted((k, zh, en) for k, (en, zh) in subs.items() if zh)
     chunks = build_chunks(items)
     print(f"voice subtitle entries: {len(items)}; ", end="")
 
@@ -1075,7 +1579,11 @@ def generate(original, out, durations=None, stream_timing=None, swf=None,
             if segs:
                 segments[cls] = segs
     timed, timed_chunks = build_timed_chunks(
-        subs, durations_map, min_split_secs, segments
+        {k: zh for k, (_en, zh) in subs.items()},
+        durations_map,
+        {k: en for k, (en, _zh) in subs.items()},
+        min_split_secs,
+        segments,
     )
     print(f"{len(timed)} timed clips; ", end="")
 
@@ -1083,9 +1591,11 @@ def generate(original, out, durations=None, stream_timing=None, swf=None,
     if stream_timing and Path(stream_timing).exists():
         timing = json.loads(Path(stream_timing).read_text(encoding="utf-8"))
         for i, seg in enumerate(timing):
-            zh = STREAM.get(f"stream_{i:02d}")
-            if zh:
-                stream.append({"start": seg["start"], "end": seg["end"], "zh": zh})
+            pair = stream_subs.get(f"stream_{i:02d}")
+            if pair:
+                en, zh = pair
+                stream.append({"start": seg["start"], "end": seg["end"],
+                               "zh": zh, "en": en})
     stream_chunks = build_stream_chunks(stream) if stream else '""'
     print(f"{len(stream)} stream entries")
 

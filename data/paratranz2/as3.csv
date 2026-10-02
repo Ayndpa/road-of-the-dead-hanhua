@@ -831,3 +831,196 @@ as3_RoadOfTheDead_fla_HighScoreDeadOnTime_2559_1,High Scores,最高分,RoadOfThe
 as3_RoadOfTheDead_fla_HighScoreDeadOnTime_2559_2,Out Of Time Distance,限时距离,RoadOfTheDead_fla\HighScoreDeadOnTime_2559.as
 as3_RoadOfTheDead_fla_MainTimeline_1,Flash Ad Only,仅 Flash 广告,RoadOfTheDead_fla\MainTimeline.as
 as3_RoadOfTheDead_fla_MainTimeline_2,Simulate Logged-in User,模拟已登录用户,RoadOfTheDead_fla\MainTimeline.as
+as3_Input_8,Space,空格,Input.as
+as3_Input_9,Up Arrow,上方向键,Input.as
+as3_Input_10,Backspace,退格,Input.as
+as3_Input_11,Enter,回车,Input.as
+as3_Input_12,Numpad /,小键盘 /,Input.as
+as3_Input_13,Numpad *,小键盘 *,Input.as
+as3_Input_14,Numpad -,小键盘 -,Input.as
+as3_Input_15,Numpad +,小键盘 +,Input.as
+as3_Input_16,Home,起始键,Input.as
+as3_Input_17,End,结束键,Input.as
+as3_Input_18,Insert,插入键,Input.as
+as3_Input_19,Delete,删除键,Input.as
+as3_Input_20,Numpad .,小键盘 .,Input.as
+as3_Input_21,Numpad 0,小键盘 0,Input.as
+as3_Input_22,Numpad 1,小键盘 1,Input.as
+as3_Input_23,Numpad 2,小键盘 2,Input.as
+as3_Input_24,Numpad 3,小键盘 3,Input.as
+as3_Input_25,Numpad 4,小键盘 4,Input.as
+as3_Input_26,Numpad 5,小键盘 5,Input.as
+as3_Input_27,Numpad 6,小键盘 6,Input.as
+as3_Input_28,Numpad 7,小键盘 7,Input.as
+as3_Input_29,Numpad 8,小键盘 8,Input.as
+as3_Input_30,Numpad 9,小键盘 9,Input.as
+as3_Input_31,Escape,Esc,Input.as
+as3_Input_32,None,无,Input.as
+as3_RDGame_98,Accelerate,加速,RDGame.as
+as3_RDGame_99,Brake,刹车,RDGame.as
+as3_RDGame_100,Swerve/Interact,急转/互动,RDGame.as
+as3_RDGame_101,Horn,喇叭,RDGame.as
+as3_RDGame_102,Reload,装弹,RDGame.as
+as3_RDGame_103,Sounds,音效,RDGame.as
+as3_RDGame_104,Music,音乐,RDGame.as
+as3_RDGame_105,Quality,画质,RDGame.as
+as3_RDGame_106,Low,低,RDGame.as
+as3_RDGame_107,Medium,中,RDGame.as
+as3_RDGame_108,High,高,RDGame.as
+as3_RDGame_109,On,开,RDGame.as
+as3_RDGame_110,Off,关,RDGame.as
+as3_RDHud_31,Low,低,RDHud.as
+as3_RDHud_32,Medium,中,RDHud.as
+as3_RDHud_33,High,高,RDHud.as
+as3_RDHud_34,On,开,RDHud.as
+as3_RDHud_35,Off,关,RDHud.as
+as3_RDGameModeDriverSelection_4,Driving,驾驶,RDGameModeDriverSelection.as
+as3_RDGameModeDriverSelection_5,Toughness,坚韧,RDGameModeDriverSelection.as
+as3_RDGameModeDriverSelection_6,Damage,伤害,RDGameModeDriverSelection.as
+as3_RDGameModeDriverSelection_7,Accuracy,精准度,RDGameModeDriverSelection.as
+as3_RDGameModeDriverSelection_8,Capacity,容量,RDGameModeDriverSelection.as
+as3_RDGameModeDriverSelection_9,Aiming,瞄准,RDGameModeDriverSelection.as
+as3_RDGameModeDriverSelection_10,Handling,操控,RDGameModeDriverSelection.as
+as3_RDGameModeDriverSelection_11,Reloading,装弹,RDGameModeDriverSelection.as
+as3_RDGameModeStory_4,Thornhill Road,桑希尔路,RDGameModeStory.as
+as3_RDGameModeStory_5,Woodmere,伍德米尔,RDGameModeStory.as
+as3_RDGameModeStory_6,North Logan,北洛根,RDGameModeStory.as
+as3_RDGameModeStory_7,Greater Renton,大伦顿,RDGameModeStory.as
+as3_RDGameModeStory_8,Bonaventure Plaza,博纳文图拉广场,RDGameModeStory.as
+as3_RDGameModeStory_9,Burnaby Street,本拿比街,RDGameModeStory.as
+as3_RDGameModeStory_10,Clifton Square,克利夫顿广场,RDGameModeStory.as
+as3_RDGameModeStory_11,Juneau Street,朱诺街,RDGameModeStory.as
+as3_RDGameModeStory_12,West Middletown,西米德尔敦,RDGameModeStory.as
+as3_RDGameModeStory_13,Madera District,马德拉区,RDGameModeStory.as
+as3_RDGameModeStory_14,Down Town,市中心,RDGameModeStory.as
+as3_RDGameModeStory_15,Chinatown,唐人街,RDGameModeStory.as
+as3_RDGameModeStory_16,Brighton Square,布莱顿广场,RDGameModeStory.as
+as3_RDGameModeStory_17,Sylmar Avenue,西尔玛大道,RDGameModeStory.as
+as3_RDGameModeStory_18,Northside Park,北区公园,RDGameModeStory.as
+as3_RDGameModeStory_19,Northside Cemetery,北区公墓,RDGameModeStory.as
+as3_RDGameModeStory_20,East Entrance,东入口,RDGameModeStory.as
+as3_RDGameModeStory_21,Clearwater,克利尔沃特,RDGameModeStory.as
+as3_RDGameModeStory_22,East Finchley,东芬奇利,RDGameModeStory.as
+as3_RDGameModeStory_23,Fairview Mall,费尔维尤购物中心,RDGameModeStory.as
+as3_RDGameModeStory_24,Flyboy One,飞行小子一号,RDGameModeStory.as
+as3_RDUpgradeScreen_30,Damage,伤害,RDUpgradeScreen.as
+as3_RDUpgradeScreen_31,Accuracy,精准度,RDUpgradeScreen.as
+as3_RDUpgradeScreen_32,Capacity,容量,RDUpgradeScreen.as
+as3_RDUpgradeScreen_33,Acquire,获取,RDUpgradeScreen.as
+as3_RDUpgradeScreen_34,Acquire Weapon,获取武器,RDUpgradeScreen.as
+as3_RDUpgradeScreen_35,Upgrade,升级,RDUpgradeScreen.as
+as3_RDUpgradeScreen_36,Pistol,手枪,RDUpgradeScreen.as
+as3_RDUpgradeScreen_37,Shotgun,霰弹枪,RDUpgradeScreen.as
+as3_RDUpgradeScreen_38,LMG,轻机枪,RDUpgradeScreen.as
+as3_BasicGame_4,Error,错误,BasicGame.as
+as3_RDAchievement_76,F@#K Wheels!,去他妈的轮子！,RDAchievement.as
+as3_RDAchievement_77,Kill 50 civilians,撞死 50 名平民,RDAchievement.as
+as3_RDAchievement_78,Get a 70m headshot,完成一次 70 米爆头,RDAchievement.as
+as3_RDAchievement_79,Demolitionist,爆破专家,RDAchievement.as
+as3_RDAchievement_80,Reach 20km in F.U.B.A.R.,在 F.U.B.A.R. 中达到 20 公里,RDAchievement.as
+as3_RDAchievement_81,Gibs n Gravy,血肉横飞,RDAchievement.as
+as3_RDAchievement_82,Mastermind,幕后黑手,RDAchievement.as
+as3_RDGame_111,\nComplete Lost Guns to unlock.,\n完成“亡命孤军”以解锁。,RDGame.as
+as3_RDGame_112,\nEncounter the mutants in Lost Guns to unlock.,\n在“亡命孤军”中遭遇变异体以解锁。,RDGame.as
+as3_RDGame_113, (NEW),（新）,RDGame.as
+as3_RDGame_114,Page ,第 ,RDGame.as
+as3_RDGame_115,No Weapons,无武器,RDGame.as
+as3_RDGame_116,No Steering,无法转向,RDGame.as
+as3_RDGame_117,No Braking,无法刹车,RDGame.as
+as3_RDGame_118,No Swerving,无法急转,RDGame.as
+as3_RDGame_119,Friday 13th,13 号星期五,RDGame.as
+as3_RDGame_120,Valentine\'s Day,情人节,RDGame.as
+as3_RDGame_121,Saint-Patrick\'s Day,圣帕特里克节,RDGame.as
+as3_RDGame_122,Mother\'s Day,母亲节,RDGame.as
+as3_RDGame_123,Father\'s Day,父亲节,RDGame.as
+as3_RDGameModeGameplay_23,Aiming,瞄准,RDGameModeGameplay.as
+as3_RDGameModeGameplay_24,Handling,操控,RDGameModeGameplay.as
+as3_RDGameModeGameplay_25,Reloading,装弹,RDGameModeGameplay.as
+as3_RDGameModeGameplay_26,Diane,黛安,RDGameModeGameplay.as
+as3_RDGameModeGameplay_27,Cocheta,科切塔,RDGameModeGameplay.as
+as3_RDGameModeGameplay_28,Driving,驾驶,RDGameModeGameplay.as
+as3_RDGameModeGameplay_29,Toughness,坚韧,RDGameModeGameplay.as
+as3_RDHud_36,Headshots,爆头,RDHud.as
+as3_RDHud_37,RP Earned,获得 RP,RDHud.as
+as3_RDHud_38,"\""\nadded!","\""\n已添加！",RDHud.as
+as3_RDGameModeStory_25,Progress Saved...,进度已保存……,RDGameModeStory.as
+as3_RDGameModeChopperRescue_5, Civilian, 名平民,RDGameModeChopperRescue.as
+as3_RDGameModeChopperRescue_6, Rescued.,获救。,RDGameModeChopperRescue.as
+as3_RDGameModeChopperRescue_7,s,​,RDGameModeChopperRescue.as
+as3_RDPlayer_36,Radio,无线电,RDPlayer.as
+as3_RDPlayer_37,Civilian,平民,RDPlayer.as
+as3_RDPlayer_38,Damage,伤害,RDPlayer.as
+as3_RDPlayer_39,Accuracy,精准度,RDPlayer.as
+as3_RDPlayer_40,Capacity,容量,RDPlayer.as
+as3_RDPlayer_41,Ammo,弹药,RDPlayer.as
+as3_RDPlayer_42,Steroids,兴奋剂,RDPlayer.as
+as3_RDPlayer_43,RP Costs,RP 花费,RDPlayer.as
+as3_RDPlayer_44,Tires,轮胎,RDPlayer.as
+as3_RDPlayer_45,Engine,引擎,RDPlayer.as
+as3_RDPlayer_46,Armor,装甲,RDPlayer.as
+as3_RDPlayer_47,Repaired,已修复,RDPlayer.as
+as3_RDPlayer_48,Secured,已营救,RDPlayer.as
+as3_RDPlayer_49,Acquired,已获得,RDPlayer.as
+as3_RDPlayer_50,Replenished,已补充,RDPlayer.as
+as3_RDPlayer_51,Improved,已提升,RDPlayer.as
+as3_RDPlayer_52,Lowered,已降低,RDPlayer.as
+as3_RDPlayer_53,Increased,已提升,RDPlayer.as
+as3_RDPlayer_54,Installed,已安装,RDPlayer.as
+as3_RDPlayer_55,Upgraded,已升级,RDPlayer.as
+as3_RDPlayer_56,Gathered,已收集,RDPlayer.as
+as3_RDPlayer_57,Upgrading ,正在升级 ,RDPlayer.as
+as3_RDPlayer_58, Damage, 伤害,RDPlayer.as
+as3_RDPlayer_59, Accuracy, 精准度,RDPlayer.as
+as3_RDPlayer_60, Capacity, 容量,RDPlayer.as
+as3_RDPlayer_61,Acquiring ,正在获取 ,RDPlayer.as
+as3_RDUnlockData_35,Cocheta\'s Weapons,科切塔的武器,RDUnlockData.as
+as3_RDUnlockData_36,Diane\'s Weapons,黛安的武器,RDUnlockData.as
+as3_RDAreaInfo_8,No Ending,无结局,RDAreaInfo.as
+as3_RDEditorInterface_317,F.U.B.A.R. Mode,F.U.B.A.R. 模式,RDEditorInterface.as
+as3_RDEditorInterface_318,Fog,雾,RDEditorInterface.as
+as3_RDEditorInterface_319,Spike,尖刺,RDEditorInterface.as
+as3_RDEditorInterface_320,Zombie,丧尸,RDEditorInterface.as
+as3_RDEditorInterface_321,Grub,蛆虫,RDEditorInterface.as
+as3_RDEditorInterface_322,Randomized,随机化,RDEditorInterface.as
+as3_RDEditorInterface_323,No Weapons,无武器,RDEditorInterface.as
+as3_RDEditorInterface_324,No Steering,无法转向,RDEditorInterface.as
+as3_RDEditorInterface_325,No Braking,无法刹车,RDEditorInterface.as
+as3_RDEditorInterface_326,No Swerving,无法急转,RDEditorInterface.as
+as3_RDEditorInterface_327,Garage,车库,RDEditorInterface.as
+as3_RDEditorInterface_328,Church 1,教堂 1,RDEditorInterface.as
+as3_RDEditorInterface_329,Church 2,教堂 2,RDEditorInterface.as
+as3_RDEditorInterface_330,Bush 1,灌木 1,RDEditorInterface.as
+as3_RDEditorInterface_331,Bush 2,灌木 2,RDEditorInterface.as
+as3_RDEditorInterface_332,Bush 3,灌木 3,RDEditorInterface.as
+as3_RDEditorInterface_333,Tomb 1,坟墓 1,RDEditorInterface.as
+as3_RDEditorInterface_334,Tomb 2,坟墓 2,RDEditorInterface.as
+as3_RDEditorInterface_335,Tomb 3,坟墓 3,RDEditorInterface.as
+as3_RDEditorInterface_336,Watermelon,西瓜,RDEditorInterface.as
+as3_RDEditorInterface_337,Group ,分组 ,RDEditorInterface.as
+as3_RDEditorInterface_338,Page ,第 ,RDEditorInterface.as
+as3_RDEditorInterface_339,by ,按 ,RDEditorInterface.as
+as3_RDGame_124, KM, 公里,RDGame.as
+as3_RDGameModeCustom_6, KM, 公里,RDGameModeCustom.as
+as3_RDGameModeDistance_2, KM, 公里,RDGameModeDistance.as
+as3_RDGameModeMilitary_1, KM, 公里,RDGameModeMilitary.as
+as3_RDGameModeMutant_2, KM, 公里,RDGameModeMutant.as
+as3_RDGameModeTime_2, KM, 公里,RDGameModeTime.as
+as3_RDUnlockData_37,Garages,车库,RDUnlockData.as
+as3_RDUnlockData_38,Churches,教堂,RDUnlockData.as
+as3_RDUnlockData_39,Mines,地雷,RDUnlockData.as
+as3_RDUnlockData_40,Corpses,尸体,RDUnlockData.as
+as3_RDUnlockData_41,Feeders,暴食者,RDUnlockData.as
+as3_RDUnlockData_42,Ravagers,噬尸者,RDUnlockData.as
+as3_RDUnlockData_43,Brutes,壮尸,RDUnlockData.as
+as3_RDUnlockData_44,Grub,蛆尸,RDUnlockData.as
+as3_RDUnlockData_45,Mutants,变异体,RDUnlockData.as
+as3_RDUnlockData_46,Civilians,平民,RDUnlockData.as
+as3_RDUnlockData_47,Perks,特长,RDUnlockData.as
+as3_RDGame_125,Easter,复活节,RDGame.as
+as3_RDGame_126,Halloween,万圣节,RDGame.as
+as3_RDGame_127,Thanksgiving,感恩节,RDGame.as
+as3_RDGame_128,Christmas,圣诞节,RDGame.as
+as3_RDBuildingNew_3,Church,教堂,RDBuildingNew.as
+as3_RDBuildingNew_4,Garage,车库,RDBuildingNew.as
+as3_RDGameModeCustom_7,Distance,距离,RDGameModeCustom.as
+as3_RDGameModeGameplay_30,Distance,距离,RDGameModeGameplay.as

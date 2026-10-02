@@ -61,6 +61,17 @@ def strings(name: str) -> dict[str, str]:
     return {k: v["translation"] for k, v in load(name).items() if v["translation"]}
 
 
+def pairs(name: str) -> dict[str, tuple[str, str]]:
+    """``{key: (original, translation)}`` for every translated entry.
+
+    The subtitle system keeps both languages so the player can toggle between
+    English, Chinese and bilingual display; the English side is the platform's
+    ``original`` column.
+    """
+    return {k: (v["original"], v["translation"])
+            for k, v in load(name).items() if v["translation"]}
+
+
 def _ui_translations() -> dict[str, list[str]]:
     """``{DefineText id: [record, ...]}`` rebuilt from the translation column.
 
