@@ -552,7 +552,7 @@ as3_RDGame_87,Vehicle HP Factor,车辆生命值系数,RDGame.as
 as3_RDGame_88,"Visit Newgrounds.com, our sponsor, and play a ton more awesome games, watch amazing movies and check out their art and music portals as well!",访问我们的赞助商 Newgrounds.com，畅玩更多精彩游戏、观看精彩影片，还可以逛逛他们的美术和音乐门户！,RDGame.as
 as3_RDGame_89,Watermelon Day,西瓜日,RDGame.as
 as3_RDGame_90,Where do you wanna start\nHighway To Hell?,你想从哪儿开始\n地狱公路？,RDGame.as
-as3_RDGame_91,Where do you wanna start\nLost Guns?,你想从哪儿开始\n失落枪械？,RDGame.as
+as3_RDGame_91,Where do you wanna start\nLost Guns?,你想从哪儿开始\n亡命孤军？,RDGame.as
 as3_RDGame_92,"You\'re going rogue as the military operation is doomed to fail.  As deserters, you become the enemy.",军事行动注定失败，你将铤而走险。作为逃兵，你会沦为敌人。,RDGame.as
 as3_RDGame_93,Zombie HP Factor,丧尸生命值系数,RDGame.as
 as3_RDGame_94,Zombie Speed Factor,丧尸速度系数,RDGame.as
@@ -652,7 +652,7 @@ as3_RDHelp_49,Sometimes speed isn\'t everything. Slowing down in the right areas
 as3_RDHelp_50,"Stopping at garages allows you to repair your vehicle, free of charge and to purchase vehicle upgrades and perks with RP.",在车库停下可以免费修理车辆，并用RP购买车辆升级和特长。,RDHelp.as
 as3_RDHelp_51,Story Endings,故事结局,RDHelp.as
 as3_RDHelp_52,Swerving (default spacebar) into the side walls in alleyways and highways a couple times can knock off enemies on your hood.,在小巷和公路中急转（默认空格键）撞向侧墙几次，就能把引擎盖上的敌人甩下去。,RDHelp.as
-as3_RDHelp_53,"The Chopper Support perk is not available in the Lost Guns, Hardcore, Rescue Op and F.U.B.A.R. modes.",直升机支援特长在失落枪械、硬核、救援行动和 F.U.B.A.R. 模式中不可用。,RDHelp.as
+as3_RDHelp_53,"The Chopper Support perk is not available in the Lost Guns, Hardcore, Rescue Op and F.U.B.A.R. modes.",直升机支援特长在亡命孤军、硬核、救援行动和 F.U.B.A.R. 模式中不可用。,RDHelp.as
 as3_RDHelp_54,"The Delete key will delete objects, areas and patterns.\n\nThe C key will duplicate a selected object in the Pattern mode.",Delete键会删除对象、区域和模板。\n\nC键会在模板模式中复制选中的对象。,RDHelp.as
 as3_RDHelp_55,"The building blocks of Road of the Dead 2 are called Patterns. A pattern is a short section of road (90 meters/5 road strips long) that can contains obstacles, building, various road types, zombies, soldiers, trees, etc.  When you make one, you can save it, privately or publicly to use in your areas and to let other people use it in their own areas.",《Road of the Dead 2》的构建模块称为模板。一个模板是一段短路（长90米/5个路段），可以包含障碍物、建筑、各种路面类型、丧尸、士兵、树木等。制作完成后，你可以将其私有或公开保存，用于自己的区域，也让其他人能在他们的区域中使用。,RDHelp.as
 as3_RDHelp_56,"The editor allows you to build custom campaigns and to share them for others to play.\n\nThe editor involves 4 important concepts you must understand.  Patterns, Areas, Campaigns and Groups.  They each embed into each other and offers a modular system that makes patterns and areas reusable for everyone.\n\nAs a creator, you can make patterns and areas for you and other people to use as well build your own campaigns.",编辑器允许你构建自定义战役并分享给他人游玩。\n\n编辑器涉及你必须理解的4个重要概念：模板、区域、战役和组。它们层层嵌套，构成一套模块化系统，让模板和区域可供所有人重复使用。\n\n作为创作者，你可以制作供自己和他人使用的模板和区域，也可以构建自己的战役。,RDHelp.as

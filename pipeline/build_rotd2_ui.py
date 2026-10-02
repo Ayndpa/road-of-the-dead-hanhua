@@ -26,13 +26,19 @@ ROOT = Path(__file__).resolve().parent.parent
 os.environ.setdefault("ROT_TRANSLATIONS", str(ROOT / "data" / "paratranz2"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from build_all import text_tag_fonts, texts_using_font  # noqa: E402
+from build_all import (  # noqa: E402
+    export_plain_texts,
+    make_formatted_text,
+    text_tag_fonts,
+    texts_using_font,
+)
+from align_controls import export_formatted  # noqa: E402
 from translations import AS3, UI_TRANSLATIONS, load as load_translations  # noqa: E402
 
 FFDEC = ROOT / "tools" / "ffdec" / "ffdec-cli.jar"
 SEP = "--- RECORDSEPARATOR ---"
 DISPLAY_OLD = 93
-BODY_OLD = {1, 3, 95, 132, 134, 3066, 3099, 10419}
+BODY_OLD = {1, 3, 95, 132, 134, 3066, 3099, 10082, 10419}
 # Fonts used by DefineEditText (runtime text fields); they must be repointed to a
 # CJK face as well or Chinese set at runtime renders blank (no glyphs).
 EDIT_FONTS = {1, 3, 93, 95, 132, 134, 3066, 3099, 8705}
@@ -49,6 +55,19 @@ def run(args: list[str]) -> None:
 
 
 SRC_SCRIPTS = ROOT / "work2" / "scripts" / "scripts"
+
+
+def ui_segments(cid: int) -> list[str]:
+    """A tag's translated records, only truly empty lines removed.
+
+    Blank lines in ``ui.csv`` separate records, but a record may legitimately be
+    a single space (the original tags use whitespace records as spacers between
+    the small and large location lines).  Dropping those with ``.strip()``
+    collapsed the record count and left the extra original record in place, so
+    the tag imported garbage.  Only empty strings are separators.
+    """
+    segs = [s.strip("\r\n") for s in UI_TRANSLATIONS[str(cid)]]
+    return [s for s in segs if s]
 
 
 def apply_layout_patch(s: str) -> str:
@@ -273,12 +292,20 @@ def main() -> int:
     repl = [str(args.display_font_id), args.display_font,
             str(args.body_font_id), args.body_font]
     for cid in import_ids:
+        # Static DefineText stores one record after another and FFDec's plain
+        # import expects records joined by the separator; a DefineEditText holds
+        # a single string whose newlines are real, so its lines must be joined
+        # (and the exported separator collapsed) into an actual newline or every
+        # line after the first is dropped.
+        is_edit = tagfonts.get(cid, (False, set()))[0]
         if str(cid) in UI_TRANSLATIONS:
-            segs = [s.strip("\r\n") for s in UI_TRANSLATIONS[str(cid)]]
-            segs = [s for s in segs if s.strip()]
-            text = ("\n" + SEP + "\n").join(segs)
+            segs = ui_segments(cid)
+            text = "\n".join(segs) if is_edit else ("\n" + SEP + "\n").join(segs)
         else:
             text = texts[cid].read_text(encoding="utf-8")
+            if is_edit:
+                text = text.replace("\r\n", "\n").replace("\r", "\n")
+                text = text.replace("\n" + SEP + "\n", "\n").replace(SEP, "\n")
         p = outdir / f"{cid}.txt"
         p.write_text(text, encoding="utf-8")
         repl += [str(cid), str(p)]
@@ -290,19 +317,75 @@ def main() -> int:
     run(["java", "-Xmx4g", "-jar", str(FFDEC), "-replace",
          cur, str(args.out), str(argsfile)])
 
-    # Re-centre single-record labels the original centred: FFDec lays the shorter
-    # Chinese out from the tag's left origin, so they come out off-axis otherwise.
-    center_ids = sorted(int(k) for k in UI_TRANSLATIONS
-                        if len(UI_TRANSLATIONS[k]) == 1 and int(k) in texts
-                        and int(k) not in title_ids)
+    # FFDec's plain-text import round-trips the tag's original (Latin) kerning as
+    # per-record ``letterspacing``/``spacingpair`` entries.  Those pairs no longer
+    # describe the CJK glyphs, so they visibly squeeze the translated text on top
+    # of itself, and a pair that cannot round-trip (an empty/quote key) aborts and
+    # leaves the old glyph indices in place (garbage).  Detect both from a
+    # formatted dump of the imported tags and re-import them with every spacing
+    # entry dropped and the font forced to the CJK slot -- the same second pass
+    # the ROTD1 build uses.  Without it the PassportPanel, Newgrounds login and
+    # garage text render overlapped.
+    cur = str(args.out)
+    got = export_plain_texts(cur)
+    failed = [cid for cid in sorted(translated)
+              if ui_segments(cid) != got.get(cid, [])]
+    dumps = export_formatted(cur, sorted(translated))
+    spaced = [cid for cid in sorted(translated)
+              if cid not in failed
+              and ("spacing" in dumps.get(cid, "")
+                   or "letterspacing" in dumps.get(cid, ""))]
+    fix_ids = sorted(set(failed) | set(spaced))
+    if fix_ids:
+        print(f"re-importing {len(fix_ids)} kerning tags "
+              f"(garbled={len(failed)}, squeezed={len(spaced)})")
+        fmtdir = ROOT / "work2" / "fmt_texts"
+        fmtdir.mkdir(parents=True, exist_ok=True)
+        fixed = ROOT / "work2" / "ui_fixed.swf"
+        fix = ["-replace", cur, str(fixed)]
+        for cid in fix_ids:
+            slot = (args.display_font_id if cid in set(display_ids)
+                    else args.body_font_id)
+            text = make_formatted_text(dumps.get(cid, ""), ui_segments(cid), slot)
+            if text is not None:
+                p = fmtdir / f"{cid}.txt"
+                p.write_text(text, encoding="utf-8")
+                fix += [str(cid), str(p)]
+        if len(fix) > 3:
+            run(["java", "-Xmx4g", "-jar", str(FFDEC), *fix])
+            cur = str(fixed)
+
+    # Rescale the main-menu captions so the Chinese ink height matches the English
+    # it replaces (the CJK face at the Latin em is ~1.5x too tall, which flattens
+    # the menu hierarchy and pushes the longest caption off the stage).  Must run
+    # before the alignment pass, which measures the post-scale renders.
+    fitted = ROOT / "work2" / "menu_fit.swf"
+    run(["uv", "run", "python", str(ROOT / "pipeline" / "fit_menu_rotd2.py"),
+         "--swf", cur, "--orig", str(args.orig), "--out", str(fitted)])
+    if fitted.exists():
+        cur = str(fitted)
+
+    # Re-centre labels the original centred: FFDec lays the Chinese out from each
+    # English line's left origin, so single labels drift and multi-line blocks come
+    # out ragged/clipped.  Static DefineText only -- dynamic fields align themselves.
+    align_ids = sorted(cid for cid in translated
+                       if not tagfonts.get(cid, (False, set()))[0])
     aligned = Path(str(args.out) + ".aligned.swf")
     run(["uv", "run", "python", str(ROOT / "pipeline" / "align_rotd2.py"),
-         "--swf", str(args.out), "--orig", str(args.orig),
-         "--out", str(aligned), "--ids", ",".join(map(str, center_ids)),
+         "--swf", cur, "--orig", str(args.orig),
+         "--out", str(aligned), "--ids", ",".join(map(str, align_ids)),
          "--outdir", str(ROOT / "work2" / "aligned")])
     if aligned.exists():
         Path(args.out).unlink()
         aligned.rename(args.out)
+
+    # The Survival Guide book caption is vector art, not text; redraw it last.
+    booked = Path(str(args.out) + ".book.swf")
+    run(["uv", "run", "python", str(ROOT / "pipeline" / "book_labels_rotd2.py"),
+         "--swf", str(args.out), "--orig", str(args.orig), "--out", str(booked)])
+    if booked.exists():
+        Path(args.out).unlink()
+        booked.rename(args.out)
 
     print(f"built {args.out} ({Path(args.out).stat().st_size} bytes)")
     return 0
