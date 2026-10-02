@@ -45,7 +45,7 @@ data/                人工产物 / 缓存 / 翻译数据（可复用）
   as3_strings.json     AS3 里的候选用户可见字符串（来源）
   orig_texts/          SWF 导出的原始 UI 文本（224 个）
   fonts/               中文字体（RoadOfTheDeadCN.ttf 等，构建时裁子集）
-tools/               第三方工具（FFDec，用 pipeline/fetch-tools.ps1 下载）
+tools/               第三方工具（FFDec / whisper.cpp(Vulkan)，用 pipeline/fetch-tools.ps1、fetch-whisper.ps1 获取）
 ```
 
 `work/`、`menu-labels/`、`patch/` 与虚拟环境是构建中间件，**可重新生成，默认不保留**；`dist/`、`tools/`、虚拟环境都在 `.gitignore` 里（仓库不包含游戏本体与第三方工具）。
@@ -67,8 +67,12 @@ ASR 相关（可选，只在需要重新转写时用）：
 # CPU：faster-whisper
 uv run python pipeline/asr.py --no-vad --voice-only
 
-# AMD GPU：DirectML + openai-whisper（另建环境）
-uv venv gpuenv && uv pip install --python gpuenv\.venv torch-directml openai-whisper av numba tiktoken more-itertools
+# AMD GPU：whisper.cpp + Vulkan（全部走国内镜像，见 pipeline/fetch-whisper.ps1）
+pwsh -File pipeline/fetch-whisper.ps1    # 编译 whisper-cli(Vulkan) + 下载 ggml-large-v3
+uv run python pipeline/asr_vulkan.py --voice-only
+
+# 清理幻觉 / 非对白（输出 <out>_clean.json / .tsv / .dropped.json）
+uv run python pipeline/clean_asr.py --asr work/asr_gpu.json
 ```
 
 ---

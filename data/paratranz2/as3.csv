@@ -1,0 +1,833 @@
+key,original,translation,context
+as3_BasicGame_1,Could not load the ArmorGames API!\nArmorGames features are disabled.,无法加载 ArmorGames API！\nArmorGames 功能已禁用。,BasicGame.as
+as3_BasicGame_2,Could not load the ArmorGames Interface!\nArmorGames features are disabled.,无法加载 ArmorGames 接口！\nArmorGames 功能已禁用。,BasicGame.as
+as3_BasicGame_3,Could not load the Kongregate API!\nChallenges are disabled.,无法加载 Kongregate API！\n挑战已禁用。,BasicGame.as
+as3_Input_1,Caps Lock,大写锁定,Input.as
+as3_Input_2,Down Arrow,下方向键,Input.as
+as3_Input_3,Left Arrow,左方向键,Input.as
+as3_Input_4,Numpad Center,小键盘中央键,Input.as
+as3_Input_5,Page Down,下一页,Input.as
+as3_Input_6,Page Up,上一页,Input.as
+as3_Input_7,Right Arrow,右方向键,Input.as
+as3_MC_DistanceStatsScreen_1,High Scores,最高分,MC_DistanceStatsScreen.as
+as3_MC_DistanceStatsScreen_2,Out Of Time Distance,限时模式距离,MC_DistanceStatsScreen.as
+as3_RDAchievement_1,Acquire all guns,获得所有枪械,RDAchievement.as
+as3_RDAchievement_2,Acquire all perks,获得所有技能,RDAchievement.as
+as3_RDAchievement_3,Armed to the teeth,武装到牙齿,RDAchievement.as
+as3_RDAchievement_4,"Been there, Killed that",来过，杀过,RDAchievement.as
+as3_RDAchievement_5,Blow both arms and then the head off of a hood grappling zombie,炸掉一只连帽扑咬丧尸的双臂，再打掉它的头,RDAchievement.as
+as3_RDAchievement_6,Blow something up to kill 2 or more zombies,炸死至少2只丧尸,RDAchievement.as
+as3_RDAchievement_7,Blow up 100 vehicles with the mounted weapons,用车载武器炸毁100辆载具,RDAchievement.as
+as3_RDAchievement_8,Blunt Force Trauma,钝器重创,RDAchievement.as
+as3_RDAchievement_9,Close Encounter,近距离接触,RDAchievement.as
+as3_RDAchievement_10,Come with me if you want to live,想活命就跟我走,RDAchievement.as
+as3_RDAchievement_11,Complete story mode with atleast 1 rescued civilian still in your vehicle,通关剧情模式，且车上仍载有至少1名获救平民,RDAchievement.as
+as3_RDAchievement_12,Complete the Hardcore challenge mode.  You are a true survivor.,通关硬核挑战模式。你是真正的幸存者。,RDAchievement.as
+as3_RDAchievement_13,Complete the story mode,通关剧情模式,RDAchievement.as
+as3_RDAchievement_14,Create and share a custom campaign or challenge mode,创建并分享自定义战役或挑战模式,RDAchievement.as
+as3_RDAchievement_15,Dead on Time,准时赴死,RDAchievement.as
+as3_RDAchievement_16,Death Race,死亡竞速,RDAchievement.as
+as3_RDAchievement_17,Destroy a fire hydrant and use its water to extinguish your engine fire,摧毁消防栓，用喷出的水浇灭引擎上的火,RDAchievement.as
+as3_RDAchievement_18,Don\'t hit anything after sliding through an oil slick,滑过油渍后不撞到任何东西,RDAchievement.as
+as3_RDAchievement_19,Don\'t let any zombie reach your vehicle during a task stop,任务停留期间不让任何丧尸接触到你的车,RDAchievement.as
+as3_RDAchievement_20,Drive 3km with no wheels,在没有车轮的情况下行驶3公里,RDAchievement.as
+as3_RDAchievement_21,Drive through all location types,驶过所有类型的地点,RDAchievement.as
+as3_RDAchievement_22,Expert Marksman,神射手,RDAchievement.as
+as3_RDAchievement_23,First Blood,首杀,RDAchievement.as
+as3_RDAchievement_24,Free Ride,免费搭车,RDAchievement.as
+as3_RDAchievement_25,"Fully level up the hummer, all perk, all weapons and both characters",将悍马、所有技能、所有武器和两名角色全部升满级,RDAchievement.as
+as3_RDAchievement_26,Fully upgrade at least one weapon,至少将一把武器升满级,RDAchievement.as
+as3_RDAchievement_27,Gain 1 minute bonus time in Out of Time mode,在限时模式中获得1分钟奖励时间,RDAchievement.as
+as3_RDAchievement_28,Get 3 headshots in a row,连续3次爆头,RDAchievement.as
+as3_RDAchievement_29,Ground Beef,肉酱,RDAchievement.as
+as3_RDAchievement_30,Gun Slinger,快枪手,RDAchievement.as
+as3_RDAchievement_31,Hardcore Survival,硬核生存,RDAchievement.as
+as3_RDAchievement_32,Heaven Sent,天降神兵,RDAchievement.as
+as3_RDAchievement_33,Hydroficially Evolved,水力进化,RDAchievement.as
+as3_RDAchievement_34,I\'m state of the badass art!,我就是狠角色中的顶配！,RDAchievement.as
+as3_RDAchievement_35,I\'m the Alpha,我是老大,RDAchievement.as
+as3_RDAchievement_36,I\'ve seen things...,我见过不少世面……,RDAchievement.as
+as3_RDAchievement_37,"In F.U.B.A.R. mode, headshot a hood soldier right before he fires his pistol",在F.U.B.A.R.模式中，趁连帽士兵开枪前爆头击杀他,RDAchievement.as
+as3_RDAchievement_38,"In Rescue Op, don\'t let a single civilian die for 3 rounds in a row",在救援行动中，连续3轮不让任何平民死亡,RDAchievement.as
+as3_RDAchievement_39,Into the Wild Blue Yonder,飞向蓝天,RDAchievement.as
+as3_RDAchievement_40,Kill 100 zombies with your vehicle,用载具碾死100只丧尸,RDAchievement.as
+as3_RDAchievement_41,Kill an alpha mutant with a pistol,用手枪杀死一只阿尔法变异体,RDAchievement.as
+as3_RDAchievement_42,Kill one of each enemy type,杀死每一种敌人各一只,RDAchievement.as
+as3_RDAchievement_43,Knowledge is Survival,知识即生存,RDAchievement.as
+as3_RDAchievement_44,Locked and Loaded,子弹上膛,RDAchievement.as
+as3_RDAchievement_45,Maintain max speed for 0.5km,保持最高速度行驶0.5公里,RDAchievement.as
+as3_RDAchievement_46,Make a 5 kill combo with your vehicle and or gun,用载具或枪械完成5连杀,RDAchievement.as
+as3_RDAchievement_47,Merciless Road Kill,无情碾压,RDAchievement.as
+as3_RDAchievement_48,Metal Dragon,钢铁巨龙,RDAchievement.as
+as3_RDAchievement_49,Mutant Sandwich,变异体夹心,RDAchievement.as
+as3_RDAchievement_50,Mutant Stomp,踩踏变异体,RDAchievement.as
+as3_RDAchievement_51,Perfect Defense,完美防守,RDAchievement.as
+as3_RDAchievement_52,Perfect Soldiers,完美士兵,RDAchievement.as
+as3_RDAchievement_53,Piece By Piece,一块一块,RDAchievement.as
+as3_RDAchievement_54,Pills Here!,这里有药！,RDAchievement.as
+as3_RDAchievement_55,Quick Draw,拔枪神速,RDAchievement.as
+as3_RDAchievement_56,Rapid Response,快速反应,RDAchievement.as
+as3_RDAchievement_57,Reach 20km in Dead State,在死亡之州模式中到达20公里,RDAchievement.as
+as3_RDAchievement_58,Reach 20km in Mutant Meltdown,在变异体熔毁模式中到达20公里,RDAchievement.as
+as3_RDAchievement_59,Reach max levels on at least one character,至少让一名角色达到满级,RDAchievement.as
+as3_RDAchievement_60,Remove a mutant side grapple by grinding it off on a rail or wall,把侧向扑咬的变异体蹭到护栏或墙上甩掉,RDAchievement.as
+as3_RDAchievement_61,Rescue and secure a civilian,救出并保护一名平民,RDAchievement.as
+as3_RDAchievement_62,Save a total of 50 civilians in Rescue Op before failing,在救援行动失败前累计救出50名平民,RDAchievement.as
+as3_RDAchievement_63,Scenic Route,风景路线,RDAchievement.as
+as3_RDAchievement_64,"Skills, I have those",技能，我有的是,RDAchievement.as
+as3_RDAchievement_65,Slip and Slide,滑行漂移,RDAchievement.as
+as3_RDAchievement_66,Splatter 50 zombies with your vehicle or guns,用载具或枪械碾碎50只丧尸,RDAchievement.as
+as3_RDAchievement_67,Survive 2 mutants side grappling both characters,在两只变异体同时侧咬两名角色的情况下存活,RDAchievement.as
+as3_RDAchievement_68,Survive a mutant side grapple by punching or elbowing it off,用拳头或肘击甩掉侧向扑咬的变异体并存活,RDAchievement.as
+as3_RDAchievement_69,Unlock the entire survival guide,解锁整本生存指南,RDAchievement.as
+as3_RDAchievement_70,Unstoppable Force,势不可挡,RDAchievement.as
+as3_RDAchievement_71,Use a steroid shot to prevent incoming damage,使用类固醇针剂抵挡即将到来的伤害,RDAchievement.as
+as3_RDAchievement_72,Weaken a hood zombie with a weapon then switch weapon and one-shot kill it,用武器削弱一只连帽丧尸，然后换武器将其一击击杀,RDAchievement.as
+as3_RDAchievement_73,When Our Powers Combine,当我们的力量合体,RDAchievement.as
+as3_RDAchievement_74,"With 2 hood clingers, kill one then switch characters to kill the other",面对两只连帽攀附丧尸，先杀死一只，再切换角色杀死另一只,RDAchievement.as
+as3_RDAchievement_75,Zombie Slayer,丧尸屠夫,RDAchievement.as
+as3_RDAreaInfo_1,Black Screen Ending,黑屏结局,RDAreaInfo.as
+as3_RDAreaInfo_2,Chopper Escape Ending,直升机逃生结局,RDAreaInfo.as
+as3_RDAreaInfo_3,Drive Away Ending,驾车离去结局,RDAreaInfo.as
+as3_RDAreaInfo_4,Highway Transition Ending,公路过渡结局,RDAreaInfo.as
+as3_RDAreaInfo_5,Nuke Blast Ending,核爆结局,RDAreaInfo.as
+as3_RDAreaInfo_6,Red Screen Ending,红屏结局,RDAreaInfo.as
+as3_RDAreaInfo_7,White Screen Ending,白屏结局,RDAreaInfo.as
+as3_RDBuildingNew_1,Hidden Soldier,隐藏士兵,RDBuildingNew.as
+as3_RDBuildingNew_2,Police Station,警察局,RDBuildingNew.as
+as3_RDCampaignDialogs_1,Cocheta: Come in! (assertive),科切塔：请回答！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_2,Cocheta: Come on! (assertive),科切塔：来吧！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_3,Cocheta: Get ready! (assertive),科切塔：准备！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_4,Cocheta: Got it! (assertive),科切塔：明白！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_5,Cocheta: HELL YEAH! (assertive),科切塔：太棒了！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_6,Cocheta: Hurry up! (assertive),科切塔：快点！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_7,Cocheta: I dont know... (defeated),科切塔：我不知道……（沮丧）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_8,Cocheta: I read you (passive),科切塔：收到（平淡）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_9,Cocheta: Let\'s keep driving! (assertive),科切塔：继续开！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_10,Cocheta: Listen up (assertive),科切塔：听好了（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_11,Cocheta: Nice one! (assertive),科切塔：干得好！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_12,Cocheta: No can do! (assertive),科切塔：做不到！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_13,Cocheta: Not again! (annoyed),科切塔：别又来了！（烦躁）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_14,Cocheta: Not bad (neutral),科切塔：不错（中立）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_15,Cocheta: Stay alert! (assertive),科切塔：保持警惕！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_16,Cocheta: There\'s too many! (assertive),科切塔：太多了！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_17,Cocheta: You have GOT to be kidding ME! (assertive),科切塔：你在跟我开玩笑吧！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_18,Cocheta: You ok? (worried),科切塔：你没事吧？（担心）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_19,Diane: Come in! (assertive),黛安：请回答！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_20,Diane: Come on! (assertive),黛安：来吧！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_21,Diane: Get ready! (assertive),黛安：准备！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_22,Diane: Got it! (assertive),黛安：明白！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_23,Diane: Hell yeah! (assertive),黛安：太棒了！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_24,Diane: Hurry up! (assertive),黛安：快点！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_25,Diane: I dont know... (defeated),黛安：我不知道……（沮丧）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_26,Diane: I read you (passive),黛安：收到（平淡）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_27,Diane: Let\'s keep driving! (assertive),黛安：继续开！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_28,Diane: Listen up (assertive),黛安：听好了（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_29,Diane: Nice one! (assertive),黛安：干得好！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_30,Diane: No can do! (assertive),黛安：做不到！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_31,Diane: Not again! (annoyed),黛安：别又来了！（烦躁）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_32,Diane: Not bad (neutral),黛安：不错（中立）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_33,Diane: Stay alert! (assertive),黛安：保持警惕！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_34,Diane: There\'s too many! (assertive),黛安：太多了！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_35,Diane: You have GOT to be kidding ME! (assertive),黛安：你在跟我开玩笑吧！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_36,Diane: You ok? (worried),黛安：你没事吧？（担心）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_37,Female: Come in? (passive),女性：呼叫？（平淡）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_38,Female: Give me a sitrep! (affirmative),女性：给我战况报告！（肯定）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_39,Female: Humvee Unit! (assertive),女性：悍马小队！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_40,Female: Requesting update! (affirmative),女性：请求更新！（肯定）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_41,Female: Roger that! (affirmative),女性：收到！（肯定）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_42,Male: Come in? (passive),男性：呼叫？（平淡）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_43,Male: Give me a sitrep! (affirmative),男性：给我战况报告！（肯定）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_44,Male: Humvee Unit! (assertive),男性：悍马小队！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_45,Male: Requesting update! (affirmative),男性：请求更新！（肯定）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_46,Male: Roger that! (affirmative),男性：收到！（肯定）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_47,Radio Silence,无线电静默,RDCampaignDialogs.as
+as3_RDCampaignInfo_1,Civilians Killed,平民死亡,RDCampaignInfo.as
+as3_RDCampaignInfo_2,Civilians Saved,平民获救,RDCampaignInfo.as
+as3_RDCampaignInfo_3,Distance Reached,到达距离,RDCampaignInfo.as
+as3_RDCampaignInfo_4,Zombies Killed,丧尸击杀,RDCampaignInfo.as
+as3_RDEditorInterface_1,"A global impact speed loss multiplier that affects how much speed you lose when hitting objects. Be aware, this option is sensitive.",全局撞击速度损失倍率，影响撞击物体时损失的速度。注意，此选项非常敏感。,RDEditorInterface.as
+as3_RDEditorInterface_2,A global oil slipperiness multiplier that affects how long the slipperiness lasts and how much control you lose.,全局油渍打滑倍率，影响打滑持续时间和失控程度。,RDEditorInterface.as
+as3_RDEditorInterface_3,"A global player body HP multiplier where 0.5 means half HP, 1 means regular HP and 2 means double the HP.",全局玩家角色生命值倍率，0.5表示一半生命值，1表示正常生命值，2表示双倍生命值。,RDEditorInterface.as
+as3_RDEditorInterface_4,"A global player vehicle HP multiplier where 0.5 means half HP, 1 means regular HP and 2 means double the HP.",全局玩家载具生命值倍率，0.5表示一半生命值，1表示正常生命值，2表示双倍生命值。,RDEditorInterface.as
+as3_RDEditorInterface_5,"A global zombie HP multiplier where 0.5 means half HP, 1 means regular HP and 2 means double the HP.",全局丧尸生命值倍率，0.5表示一半生命值，1表示正常生命值，2表示双倍生命值。,RDEditorInterface.as
+as3_RDEditorInterface_6,"A global zombie speed multiplier where 0.5 means half speed, 1 means regular speed and 2 means double the speed.",全局丧尸速度倍率，0.5表示一半速度，1表示正常速度，2表示双倍速度。,RDEditorInterface.as
+as3_RDEditorInterface_7,"A multiplier for the player\'s speed where 0.5 means half speed, 1 means regular speed and 2 means double the speed.",玩家速度倍率，0.5表示一半速度，1表示正常速度，2表示双倍速度。,RDEditorInterface.as
+as3_RDEditorInterface_8,A player speed multipier that is also applied in combination with the campaign\'s Player Speed Factor.  0.5 means half the speed and 2 means twice the speed.,玩家速度倍率，会与战役的玩家速度系数叠加生效。0.5表示一半速度，2表示两倍速度。,RDEditorInterface.as
+as3_RDEditorInterface_9,Add a new dialog line.,添加一条新对话。,RDEditorInterface.as
+as3_RDEditorInterface_10,Additive Hellfire Delay,地狱火延迟增量,RDEditorInterface.as
+as3_RDEditorInterface_11,Additive Hellfire Level,地狱火等级增量,RDEditorInterface.as
+as3_RDEditorInterface_12,"Additive Hellfire difficulty level.  For exemple, 0.25 means Hellfire will be 1 level stronger every 5 difficulty levels.",地狱火难度等级增量。例如，0.25表示每5个难度等级，地狱火强度提升1级。,RDEditorInterface.as
+as3_RDEditorInterface_13,Additive Jet Bombings,战机轰炸次数增量,RDEditorInterface.as
+as3_RDEditorInterface_14,Additive Jet Delay,战机延迟增量,RDEditorInterface.as
+as3_RDEditorInterface_15,Additive Mutant Count,变异体数量增量,RDEditorInterface.as
+as3_RDEditorInterface_16,Additive Mutant Delay,变异体延迟增量,RDEditorInterface.as
+as3_RDEditorInterface_17,Additive Pattern Ratio,模式比例增量,RDEditorInterface.as
+as3_RDEditorInterface_18,Additive Spawn Rate,生成速率增量,RDEditorInterface.as
+as3_RDEditorInterface_19,"Additive delay, in seconds, before Hellfire is dispatched. Additive delays can be negative if you want Hellfire to come more often as the difficulty level increases.",地狱火出动前的延迟增量（秒）。若希望难度等级越高地狱火出现越频繁，此增量可为负。,RDEditorInterface.as
+as3_RDEditorInterface_20,"Additive delay, in seconds, before a jet is dispatched. Additive delays can be negative if you want to jets to come more often as the difficulty level increases.",战机出动前的延迟增量（秒）。若希望难度等级越高战机出现越频繁，此增量可为负。,RDEditorInterface.as
+as3_RDEditorInterface_21,"Additive delay, in seconds, before extra mutants are spawned.  Additive delays can be negative if you want to spawn mutants faster as the difficulty level increases.",额外变异体生成前的延迟增量（秒）。若希望难度等级越高变异体生成越快，此增量可为负。,RDEditorInterface.as
+as3_RDEditorInterface_22,"Additive value of how many bombings the jet does before leaving.  For exemple, 0.1 means there will be 1 extra bombing every 10 difficulty levels.",战机离开前进行轰炸次数的增量值。例如，0.1表示每10个难度等级额外增加1次轰炸。,RDEditorInterface.as
+as3_RDEditorInterface_23,"Additive value of how many mutants to spawn when the delay is reached.  For exemple, 0.25 means 1 more mutant will be spawned at level 5 and so on.",延迟到达时生成变异体数量的增量值。例如，0.25表示在第5级起多生成1只变异体，以此类推。,RDEditorInterface.as
+as3_RDEditorInterface_24,Additive value of how much of the patterns\'s content is spawned. Additive values are added to the base values with each difficulty level.,模式内容生成量的增量值。每个难度等级都会把增量值叠加到基础值上。,RDEditorInterface.as
+as3_RDEditorInterface_25,Additive value of the extra spawning.  Additive values are added to the base values with each difficulty level.,额外生成量的增量值。每个难度等级都会把增量值叠加到基础值上。,RDEditorInterface.as
+as3_RDEditorInterface_26,Adjusting Soldier,调整士兵,RDEditorInterface.as
+as3_RDEditorInterface_27,All Soldier Zombie,全士兵丧尸,RDEditorInterface.as
+as3_RDEditorInterface_28,All weapons are disabled and the player can only rely his driving skills to survive.,所有武器禁用，玩家只能依靠驾驶技巧求生。,RDEditorInterface.as
+as3_RDEditorInterface_29,Allows the area to use flipping to create more randomization.  That means patterns in the area will be flipped randomly.,允许该区域使用翻转来增加随机性。这意味着区域内的模式会随机翻转。,RDEditorInterface.as
+as3_RDEditorInterface_30,Allows you to select the ending type for the campaign.  Only the last area can specify the campaign\'s ending.,允许你选择战役的结局类型。只有最后一个区域能指定战役结局。,RDEditorInterface.as
+as3_RDEditorInterface_31,"Allows you to select which group can be spawned after this one.  This options allows you to create looping, structured and randomized challenge campaigns.",允许你选择本组之后可以生成哪一组。此选项可让你创建循环、结构化且随机的挑战战役。,RDEditorInterface.as
+as3_RDEditorInterface_32,Alpha Mutant Zombie,阿尔法变异体丧尸,RDEditorInterface.as
+as3_RDEditorInterface_33,Alternate Tree,交替树,RDEditorInterface.as
+as3_RDEditorInterface_34,Arcade Ammo Pickups,街机弹药拾取,RDEditorInterface.as
+as3_RDEditorInterface_35,Army Truck,军用卡车,RDEditorInterface.as
+as3_RDEditorInterface_36,Base Hellfire Delay,基地地狱火延迟,RDEditorInterface.as
+as3_RDEditorInterface_37,Base Hellfire Level,基地地狱火等级,RDEditorInterface.as
+as3_RDEditorInterface_38,"Base Hellfire difficulty level. The level is from 1 to 10 and determines how much they\'re shooting, if they use missiles, etc.",基地地狱火难度等级。等级范围为1到10，决定它们的射击强度、是否使用导弹等。,RDEditorInterface.as
+as3_RDEditorInterface_39,Base Jet Bombings,基地战机轰炸次数,RDEditorInterface.as
+as3_RDEditorInterface_40,Base Jet Delay,基地战机延迟,RDEditorInterface.as
+as3_RDEditorInterface_41,Base Mutant Count,基地变异体数量,RDEditorInterface.as
+as3_RDEditorInterface_42,Base Mutant Delay,基地变异体延迟,RDEditorInterface.as
+as3_RDEditorInterface_43,Base Pattern Ratio,基地模式比例,RDEditorInterface.as
+as3_RDEditorInterface_44,Base Soldier,基地士兵,RDEditorInterface.as
+as3_RDEditorInterface_45,Base Soldier Level,基地士兵等级,RDEditorInterface.as
+as3_RDEditorInterface_46,Base Spawn Rate,基地生成速率,RDEditorInterface.as
+as3_RDEditorInterface_47,"Base delay, in seconds, before Hellfire is dispatched to intercept and destroy the player.",派遣地狱火拦截并摧毁玩家前的基础延迟（秒）。,RDEditorInterface.as
+as3_RDEditorInterface_48,"Base delay, in seconds, before a jet is dispatched to carpet bomb the player\'s location.",派遣战机对玩家所在位置进行地毯式轰炸前的基础延迟（秒）。,RDEditorInterface.as
+as3_RDEditorInterface_49,"Base delay, in seconds, before extra mutants are spawned.  They will spawn randomly from behind, front, sides, etc.",生成额外变异体前的基础延迟（秒）。它们会随机从后方、前方、两侧等位置出现。,RDEditorInterface.as
+as3_RDEditorInterface_50,"Base value of how many bombings, between 1 and 3, the jet does before leaving.",战机离开前进行轰炸次数的基础值，范围1到3。,RDEditorInterface.as
+as3_RDEditorInterface_51,"Base value of how many mutants, betwee 1 and 4, to spawn when the delay is reached.",延迟结束时生成变异体数量的基础值，范围1到4。,RDEditorInterface.as
+as3_RDEditorInterface_52,Base value of how much extra zombies are spawned from behind buildings and cars. 0 means no extra spawning and 2 means double the regular spawning.,从建筑和汽车后方生成额外丧尸数量的基础值。0表示不额外生成，2表示生成量为常规的两倍。,RDEditorInterface.as
+as3_RDEditorInterface_53,"Base value of how much of the patterns\' content is spawned. 0 means nothing is spawned, 0.5 means half the pattern\'s content and 1 means the full pattern.",模式内容生成比例的基础值。0表示不生成任何内容，0.5表示生成模式内容的一半，1表示生成完整模式。,RDEditorInterface.as
+as3_RDEditorInterface_54,Beer Keg,啤酒桶,RDEditorInterface.as
+as3_RDEditorInterface_55,Bloody Sand Bags,染血的沙袋,RDEditorInterface.as
+as3_RDEditorInterface_56,Bomb Soldier,炸弹士兵,RDEditorInterface.as
+as3_RDEditorInterface_57,Bomb Soldier Level,炸弹士兵等级,RDEditorInterface.as
+as3_RDEditorInterface_58,Bounce Factor,弹跳系数,RDEditorInterface.as
+as3_RDEditorInterface_59,Burning Car 1,燃烧的汽车1,RDEditorInterface.as
+as3_RDEditorInterface_60,Burning Car 2,燃烧的汽车2,RDEditorInterface.as
+as3_RDEditorInterface_61,Can Be First,可首先生成,RDEditorInterface.as
+as3_RDEditorInterface_62,Civilian Going Left,向左走的平民,RDEditorInterface.as
+as3_RDEditorInterface_63,Civilian Going Right,向右走的平民,RDEditorInterface.as
+as3_RDEditorInterface_64,Civilian Hit Time,平民被撞时间,RDEditorInterface.as
+as3_RDEditorInterface_65,Civilian Shot Time,平民中枪时间,RDEditorInterface.as
+as3_RDEditorInterface_66,Clinger Off Time,攀附者脱落时间,RDEditorInterface.as
+as3_RDEditorInterface_67,Construction Sign,施工标志,RDEditorInterface.as
+as3_RDEditorInterface_68,Damaged Industrial Building 1,受损的工业建筑1,RDEditorInterface.as
+as3_RDEditorInterface_69,Damaged Industrial Building 2,受损的工业建筑2,RDEditorInterface.as
+as3_RDEditorInterface_70,Damaged Narrow Hummer,受损的窄款悍马,RDEditorInterface.as
+as3_RDEditorInterface_71,Damaged Residential Building 1,受损的居民楼1,RDEditorInterface.as
+as3_RDEditorInterface_72,Damaged Residential Building 2,受损的居民楼2,RDEditorInterface.as
+as3_RDEditorInterface_73,Damaged Town Building 1,受损的城镇建筑1,RDEditorInterface.as
+as3_RDEditorInterface_74,Damaged Town Building 2,受损的城镇建筑2,RDEditorInterface.as
+as3_RDEditorInterface_75,Damaged Wide Hummer,受损的宽款悍马,RDEditorInterface.as
+as3_RDEditorInterface_76,Dead Tree,枯树,RDEditorInterface.as
+as3_RDEditorInterface_77,"Delay, in seconds, before Hellfire is dispatched to intercept and destroy the player.",派遣地狱火拦截并摧毁玩家前的延迟（秒）。,RDEditorInterface.as
+as3_RDEditorInterface_78,"Delay, in seconds, before a jet is dispatched to carpet bomb the player\'s location.",派遣战机对玩家所在位置进行地毯式轰炸前的延迟（秒）。,RDEditorInterface.as
+as3_RDEditorInterface_79,"Delay, in seconds, before extra mutants are spawned.  They will spawn randomly from behind, front, sides, etc.",生成额外变异体前的延迟（秒）。它们会随机从后方、前方、两侧等位置出现。,RDEditorInterface.as
+as3_RDEditorInterface_80,"Determines how many bombings, between 1 and 3, the jet does before leaving.",决定战机离开前进行轰炸的次数，范围1到3。,RDEditorInterface.as
+as3_RDEditorInterface_81,"Determines how many mutants, between 1 and 4 to spawn when the delay is reached.",决定延迟结束时生成变异体的数量，范围1到4。,RDEditorInterface.as
+as3_RDEditorInterface_82,Determines how many patterns long the area is.  20 means the area will be 20 patterns long.,决定区域的模式长度。20表示该区域长度为20个模式。,RDEditorInterface.as
+as3_RDEditorInterface_83,Determines how many patterns you must drive through to increase the difficulty level. It starts at 0 and is applied to all the additive properties.,决定需要驶过多少个模式才能提升难度等级。初始为0，并作用于所有累加属性。,RDEditorInterface.as
+as3_RDEditorInterface_84,Determines how much extra zombies are spawned from behind buildings and cars. 0 means no extra spawning and 2 means double the regular spawning.,决定从建筑和汽车后方生成额外丧尸的数量。0表示不额外生成，2表示生成量为常规的两倍。,RDEditorInterface.as
+as3_RDEditorInterface_85,"Determines how much of the patterns\' content is spawned. 0 means nothing is spawned, 0.5 means half the pattern\'s content and 1 means the full pattern.",决定模式内容的生成比例。0表示不生成任何内容，0.5表示生成模式内容的一半，1表示生成完整模式。,RDEditorInterface.as
+as3_RDEditorInterface_86,Determines if the areas in the group will be randomized or in linear order.,决定该组中的区域是随机排列还是按线性顺序排列。,RDEditorInterface.as
+as3_RDEditorInterface_87,"Determines if this group can be spawned first in the campaign.  For exemple, you may not want to spawn in an alleyway.",决定该组是否可以在战役中最先出现。例如，你可能不希望一开始就出现在小巷里。,RDEditorInterface.as
+as3_RDEditorInterface_88,Determines the difficulty level at which this will be allowed to spawn.  0 means it will spawn from the start while 4 means it will spawn at level 4 onward.,决定允许该内容出现的难度等级。0表示从开局就可出现，4表示从等级4起才会出现。,RDEditorInterface.as
+as3_RDEditorInterface_89,Determines the goal target of the challenge.  This will be an indicator of what score to reach for the players.  Something to compare his own score with.,决定挑战的目标分数。它将为玩家指示需要达到的分数，供玩家与自己的得分进行比较。,RDEditorInterface.as
+as3_RDEditorInterface_90,Determines the lower value of how many patterns long the group is.,决定该组模式长度的下限值。,RDEditorInterface.as
+as3_RDEditorInterface_91,Determines the upper value of how many patterns long the group is.,决定该组模式长度的上限值。,RDEditorInterface.as
+as3_RDEditorInterface_92,Determines whether or not this can be spawned in this area.  Check Override Campaign Difficulty for this option to take effect.,决定该内容是否可在此区域生成。勾选「覆盖战役难度」后此选项才会生效。,RDEditorInterface.as
+as3_RDEditorInterface_93,Difficulty Level Length,难度等级长度,RDEditorInterface.as
+as3_RDEditorInterface_94,Disable all ammo points.  Ammo points are army trucks and hummers.,禁用所有弹药补给点。弹药补给点即军用卡车和悍马。,RDEditorInterface.as
+as3_RDEditorInterface_95,"Disable the brakes on the vehicle.  However, the player can still swerve, which slowly brakes.  See No Swerving below.",禁用车辆刹车。但玩家仍可通过转向来缓慢减速。参见下方的「禁止转向」。,RDEditorInterface.as
+as3_RDEditorInterface_96,Disable the replenish option in special locations like the Weapon Crates and Police Stations.,禁用武器箱、警察局等特殊地点的补给选项。,RDEditorInterface.as
+as3_RDEditorInterface_97,Disables the chopper support perk.  So the player will never be able to call in chopper support.,禁用直升机支援技能。玩家将永远无法呼叫直升机支援。,RDEditorInterface.as
+as3_RDEditorInterface_98,"Disables the city background, leaving only the sky layer as background.",禁用城市背景，仅保留天空层作为背景。,RDEditorInterface.as
+as3_RDEditorInterface_99,Electronic Sign,电子标志牌,RDEditorInterface.as
+as3_RDEditorInterface_100,"Enables the fog mode for the area.  Be aware than when the campaign\'s fog setting is on, this option has no effect.  Fog mode greatly reduces your visibility.",为该区域启用迷雾模式。注意，当战役的迷雾设置开启时，此选项无效。迷雾模式会大幅降低能见度。,RDEditorInterface.as
+as3_RDEditorInterface_101,"Enables the fog mode for the whole campaign.  When on, this option overrides all the area\'s fog setting.  Fog mode greatly reduces your visibility.",为整个战役启用迷雾模式。开启后，此选项将覆盖所有区域的迷雾设置。迷雾模式会大幅降低能见度。,RDEditorInterface.as
+as3_RDEditorInterface_102,Enemies Always Cling,敌人始终攀附,RDEditorInterface.as
+as3_RDEditorInterface_103,Enter save name...,输入存档名称...,RDEditorInterface.as
+as3_RDEditorInterface_104,Exploding Car,爆炸汽车,RDEditorInterface.as
+as3_RDEditorInterface_105,Exploding Car Level,爆炸汽车等级,RDEditorInterface.as
+as3_RDEditorInterface_106,Exploding Zombies,爆炸丧尸,RDEditorInterface.as
+as3_RDEditorInterface_107,Feeders Hit Time,进食者被撞时间,RDEditorInterface.as
+as3_RDEditorInterface_108,Fire Hydrant,消防栓,RDEditorInterface.as
+as3_RDEditorInterface_109,Fire Truck,消防车,RDEditorInterface.as
+as3_RDEditorInterface_110,Flowing Fire Hydrant,喷水消防栓,RDEditorInterface.as
+as3_RDEditorInterface_111,Fog Mode,迷雾模式,RDEditorInterface.as
+as3_RDEditorInterface_112,Forced Stop Duration,强制停止时长,RDEditorInterface.as
+as3_RDEditorInterface_113,Forces the player into full speed without brakes or speed loss.  Can be combinaed nicely with the Player Speed Factor.,强制玩家保持全速，不受刹车或速度损失影响。可与「玩家速度系数」良好搭配使用。,RDEditorInterface.as
+as3_RDEditorInterface_114,"Forces the player to a complete stop for the amount of seconds specified.  When set to zero, there is no forced stop.",强制玩家完全停止指定的秒数。设为0时则不强制停止。,RDEditorInterface.as
+as3_RDEditorInterface_115,Fuel Truck,油罐车,RDEditorInterface.as
+as3_RDEditorInterface_116,Full Speed Mode,全速模式,RDEditorInterface.as
+as3_RDEditorInterface_117,Garden Gnome,花园地精,RDEditorInterface.as
+as3_RDEditorInterface_118,"Gives infinite ammo to mounted weapons, whether there are given by default or installed from a weapon crate while playing.",为车载武器提供无限弹药，无论是默认配备还是游戏途中从武器箱安装的。,RDEditorInterface.as
+as3_RDEditorInterface_119,"Gives the player a mounted machine gun, installed by default on his vehicle.",为玩家配备车载机枪，默认安装在车辆上。,RDEditorInterface.as
+as3_RDEditorInterface_120,"Gives the player a mounted rocket launcher, installed by default on his vehicle.",为玩家配备车载火箭发射器，默认安装在车辆上。,RDEditorInterface.as
+as3_RDEditorInterface_121,Gives you infinite ammo for all your regular weapons.  Mounted weapons are unaffected by this option.,使你的所有常规武器获得无限弹药。此选项不影响车载武器。,RDEditorInterface.as
+as3_RDEditorInterface_122,Go to the next dialog line.,跳到下一行对话。,RDEditorInterface.as
+as3_RDEditorInterface_123,Go to the previous dialog line.,跳到上一行对话。,RDEditorInterface.as
+as3_RDEditorInterface_124,Grass Top,草地顶面,RDEditorInterface.as
+as3_RDEditorInterface_125,Grub Level,幼虫等级,RDEditorInterface.as
+as3_RDEditorInterface_126,Hard Feeding Zombie,强化进食丧尸,RDEditorInterface.as
+as3_RDEditorInterface_127,Hard Zombie,强化丧尸,RDEditorInterface.as
+as3_RDEditorInterface_128,Hellfire Defeated Time,地狱火被击败时间,RDEditorInterface.as
+as3_RDEditorInterface_129,Hellfire Delay,地狱火延迟,RDEditorInterface.as
+as3_RDEditorInterface_130,Hellfire Level,地狱火等级,RDEditorInterface.as
+as3_RDEditorInterface_131,"Hellfire difficulty level. The level is from 1 to 10 and determines how much they\'re shooting, if they use missiles, etc.",地狱火难度等级。等级范围为1到10，决定它们的射击强度、是否使用导弹等。,RDEditorInterface.as
+as3_RDEditorInterface_132,Industrial Building 1,工业建筑1,RDEditorInterface.as
+as3_RDEditorInterface_133,Industrial Building 2,工业建筑2,RDEditorInterface.as
+as3_RDEditorInterface_134,Industrial Building 3,工业建筑3,RDEditorInterface.as
+as3_RDEditorInterface_135,Industrial Building 4,工业建筑4,RDEditorInterface.as
+as3_RDEditorInterface_136,Infinite Ammo,无限弹药,RDEditorInterface.as
+as3_RDEditorInterface_137,Infinite Mounted Weapon,车载武器无限弹药,RDEditorInterface.as
+as3_RDEditorInterface_138,Invincible Hellfire,无敌地狱火,RDEditorInterface.as
+as3_RDEditorInterface_139,Jet Bombings,战机轰炸次数,RDEditorInterface.as
+as3_RDEditorInterface_140,Jet Delay,战机延迟,RDEditorInterface.as
+as3_RDEditorInterface_141,Large Car 1,大型汽车1,RDEditorInterface.as
+as3_RDEditorInterface_142,Large Car 10,大型汽车10,RDEditorInterface.as
+as3_RDEditorInterface_143,Large Car 11,大型汽车11,RDEditorInterface.as
+as3_RDEditorInterface_144,Large Car 12,大型汽车12,RDEditorInterface.as
+as3_RDEditorInterface_145,Large Car 13,大型汽车13,RDEditorInterface.as
+as3_RDEditorInterface_146,Large Car 14,大型汽车14,RDEditorInterface.as
+as3_RDEditorInterface_147,Large Car 15,大型汽车15,RDEditorInterface.as
+as3_RDEditorInterface_148,Large Car 16,大型汽车16,RDEditorInterface.as
+as3_RDEditorInterface_149,Large Car 17,大型汽车17,RDEditorInterface.as
+as3_RDEditorInterface_150,Large Car 2,大型汽车2,RDEditorInterface.as
+as3_RDEditorInterface_151,Large Car 3,大型汽车3,RDEditorInterface.as
+as3_RDEditorInterface_152,Large Car 4,大型汽车4,RDEditorInterface.as
+as3_RDEditorInterface_153,Large Car 5,大型汽车5,RDEditorInterface.as
+as3_RDEditorInterface_154,Large Car 6,大型汽车6,RDEditorInterface.as
+as3_RDEditorInterface_155,Large Car 7,大型汽车7,RDEditorInterface.as
+as3_RDEditorInterface_156,Large Car 8,大型汽车8,RDEditorInterface.as
+as3_RDEditorInterface_157,Large Car 9,大型汽车9,RDEditorInterface.as
+as3_RDEditorInterface_158,Lava Instant Kill,岩浆秒杀,RDEditorInterface.as
+as3_RDEditorInterface_159,Lava Mode,岩浆模式,RDEditorInterface.as
+as3_RDEditorInterface_160,"Lava mode turns the side of the road into burning lava for the entire area.  When touching the lava, it will greatly damage your vehicle until you explode.",岩浆模式会将整个区域的道路两侧变成燃烧的岩浆。碰到岩浆会严重损伤你的车辆，直至爆炸。,RDEditorInterface.as
+as3_RDEditorInterface_161,Lawn Flamingo,草坪火烈鸟,RDEditorInterface.as
+as3_RDEditorInterface_162,Makes the player start with all his four tires blown.  He can however fix them during the campaign if there is any garage.,让玩家开局时四个轮胎全部爆裂。不过如果战役中存在修车厂，玩家可以将其修复。,RDEditorInterface.as
+as3_RDEditorInterface_163,Maple Tree,枫树,RDEditorInterface.as
+as3_RDEditorInterface_164,Max Length,最大长度,RDEditorInterface.as
+as3_RDEditorInterface_165,Medium Car 1,中型汽车1,RDEditorInterface.as
+as3_RDEditorInterface_166,Medium Car 10,中型汽车10,RDEditorInterface.as
+as3_RDEditorInterface_167,Medium Car 11,中型汽车11,RDEditorInterface.as
+as3_RDEditorInterface_168,Medium Car 13,中型汽车13,RDEditorInterface.as
+as3_RDEditorInterface_169,Medium Car 14,中型汽车14,RDEditorInterface.as
+as3_RDEditorInterface_170,Medium Car 15,中型汽车15,RDEditorInterface.as
+as3_RDEditorInterface_171,Medium Car 2,中型汽车2,RDEditorInterface.as
+as3_RDEditorInterface_172,Medium Car 3,中型汽车3,RDEditorInterface.as
+as3_RDEditorInterface_173,Medium Car 4,中型汽车4,RDEditorInterface.as
+as3_RDEditorInterface_174,Medium Car 5,中型汽车5,RDEditorInterface.as
+as3_RDEditorInterface_175,Medium Car 6,中型汽车6,RDEditorInterface.as
+as3_RDEditorInterface_176,Medium Car 7,中型汽车7,RDEditorInterface.as
+as3_RDEditorInterface_177,Medium Car 8,中型汽车8,RDEditorInterface.as
+as3_RDEditorInterface_178,Medium Car 9,中型汽车9,RDEditorInterface.as
+as3_RDEditorInterface_179,Min Length,最小长度,RDEditorInterface.as
+as3_RDEditorInterface_180,Mine Level,地雷等级,RDEditorInterface.as
+as3_RDEditorInterface_181,Motion Mine,感应地雷,RDEditorInterface.as
+as3_RDEditorInterface_182,Mounted MG,车载机枪,RDEditorInterface.as
+as3_RDEditorInterface_183,Mounted Rocket Launcher,车载火箭发射器,RDEditorInterface.as
+as3_RDEditorInterface_184,Mutant Count,变异体数量,RDEditorInterface.as
+as3_RDEditorInterface_185,Mutant Delay,变异体延迟,RDEditorInterface.as
+as3_RDEditorInterface_186,Mutant Killed Time,变异体被击杀时间,RDEditorInterface.as
+as3_RDEditorInterface_187,Mutant Zombie,变异丧尸,RDEditorInterface.as
+as3_RDEditorInterface_188,Narrow Hummer,窄款悍马,RDEditorInterface.as
+as3_RDEditorInterface_189,No Ammo Points,无弹药补给点,RDEditorInterface.as
+as3_RDEditorInterface_190,No Ammo Replenish,无弹药补给,RDEditorInterface.as
+as3_RDEditorInterface_191,No Background City,无城市背景,RDEditorInterface.as
+as3_RDEditorInterface_192,No Chopper Support,无直升机支援,RDEditorInterface.as
+as3_RDEditorInterface_193,No Driver Switch,禁止切换驾驶员,RDEditorInterface.as
+as3_RDEditorInterface_194,No Soldier Zombie,无士兵丧尸,RDEditorInterface.as
+as3_RDEditorInterface_195,Normal Female Feeding Zombie,普通女性进食丧尸,RDEditorInterface.as
+as3_RDEditorInterface_196,Normal Female Zombie,普通女性丧尸,RDEditorInterface.as
+as3_RDEditorInterface_197,Normal Male Feeding Zombie,普通男性进食丧尸,RDEditorInterface.as
+as3_RDEditorInterface_198,Normal Male Zombie,普通男性丧尸,RDEditorInterface.as
+as3_RDEditorInterface_199,Oil Level,油量等级,RDEditorInterface.as
+as3_RDEditorInterface_200,Oil Slipperiness Factor,油滑度系数,RDEditorInterface.as
+as3_RDEditorInterface_201,Override Campaign Difficulty,覆盖战役难度,RDEditorInterface.as
+as3_RDEditorInterface_202,Override Campaign Spawning,覆盖战役生成,RDEditorInterface.as
+as3_RDEditorInterface_203,Overrides the campaign\'s difficulty parameters which are based on the difficulty progression.,覆盖战役的难度参数，这些参数基于难度进程。,RDEditorInterface.as
+as3_RDEditorInterface_204,Overrides the campaign\'s spawning parameters which are based on the difficulty progression.,覆盖战役的生成参数，这些参数基于难度进程。,RDEditorInterface.as
+as3_RDEditorInterface_205,Passing Car (goes on crossing streets),经过的汽车（行驶于横向街道）,RDEditorInterface.as
+as3_RDEditorInterface_206,Pattern Ratio,模式比例,RDEditorInterface.as
+as3_RDEditorInterface_207,Pine Tree,松树,RDEditorInterface.as
+as3_RDEditorInterface_208,Player Body HP Factor,玩家身体生命值系数,RDEditorInterface.as
+as3_RDEditorInterface_209,Player Car HP Factor,玩家车辆生命值系数,RDEditorInterface.as
+as3_RDEditorInterface_210,Player Speed Factor,玩家速度系数,RDEditorInterface.as
+as3_RDEditorInterface_211,Police Station 1,警察局1,RDEditorInterface.as
+as3_RDEditorInterface_212,Police Station 2,警察局2,RDEditorInterface.as
+as3_RDEditorInterface_213,Prevent any soldier zombie from spawning.  They will be replaced by random zombies or other types.,阻止任何士兵丧尸生成。它们将被随机丧尸或其他类型替代。,RDEditorInterface.as
+as3_RDEditorInterface_214,"Prevent the player from switching the driver and the gunner, restraining him to his initial driver choice.",防止玩家切换驾驶员和机枪手，将其限制在最初选择的驾驶员上。,RDEditorInterface.as
+as3_RDEditorInterface_215,Preview the selected audio cue for this dialog line.,预览此对话行所选音频提示。,RDEditorInterface.as
+as3_RDEditorInterface_216,Random Feeding Zombie,随机进食丧尸,RDEditorInterface.as
+as3_RDEditorInterface_217,Random Industrial Building,随机工业建筑,RDEditorInterface.as
+as3_RDEditorInterface_218,Random Narrow Large Car,随机窄型大型车,RDEditorInterface.as
+as3_RDEditorInterface_219,Random Narrow Medium Car,随机窄型中型车,RDEditorInterface.as
+as3_RDEditorInterface_220,Random Narrow Small Car,随机窄型小型车,RDEditorInterface.as
+as3_RDEditorInterface_221,Random Residential Building,随机居民建筑,RDEditorInterface.as
+as3_RDEditorInterface_222,Random Tomb,随机坟墓,RDEditorInterface.as
+as3_RDEditorInterface_223,Random Town Building,随机城镇建筑,RDEditorInterface.as
+as3_RDEditorInterface_224,Random Tree,随机树木,RDEditorInterface.as
+as3_RDEditorInterface_225,Random Wide Large Car,随机宽型大型车,RDEditorInterface.as
+as3_RDEditorInterface_226,Random Wide Medium Car,随机宽型中型车,RDEditorInterface.as
+as3_RDEditorInterface_227,Random Wide Small Car,随机宽型小型车,RDEditorInterface.as
+as3_RDEditorInterface_228,Random Zombie,随机丧尸,RDEditorInterface.as
+as3_RDEditorInterface_229,Randomize Spawning Values,随机化生成数值,RDEditorInterface.as
+as3_RDEditorInterface_230,Randomizes all the spawning values by adding +/- 10%.  So a total value of 20 will be randomized to a value between 18 and 22.,将所有生成数值随机化，浮动范围为 +/- 10%。例如总值为 20 时会随机到 18 至 22 之间。,RDEditorInterface.as
+as3_RDEditorInterface_231,Residential Building 1,居民建筑 1,RDEditorInterface.as
+as3_RDEditorInterface_232,Residential Building 2,居民建筑 2,RDEditorInterface.as
+as3_RDEditorInterface_233,Residential Building 3,居民建筑 3,RDEditorInterface.as
+as3_RDEditorInterface_234,Residential Building 4,居民建筑 4,RDEditorInterface.as
+as3_RDEditorInterface_235,Residential Building 5,居民建筑 5,RDEditorInterface.as
+as3_RDEditorInterface_236,Residential Building 6,居民建筑 6,RDEditorInterface.as
+as3_RDEditorInterface_237,Residential Building 7,居民建筑 7,RDEditorInterface.as
+as3_RDEditorInterface_238,Residential Building 8,居民建筑 8,RDEditorInterface.as
+as3_RDEditorInterface_239,Road Blood,路面血迹,RDEditorInterface.as
+as3_RDEditorInterface_240,Road Kill,路面尸体,RDEditorInterface.as
+as3_RDEditorInterface_241,Sand Bags,沙袋,RDEditorInterface.as
+as3_RDEditorInterface_242,Saving as public means the file will available for other people to load and use in their own creations.  Saving as private will make the file only visible to you.,保存为公开意味着其他人可以加载该文件并在自己的创作中使用。保存为私密则仅你可见。,RDEditorInterface.as
+as3_RDEditorInterface_243,Semi Truck,半挂卡车,RDEditorInterface.as
+as3_RDEditorInterface_244,Shopping Cart,购物车,RDEditorInterface.as
+as3_RDEditorInterface_245,Small Car 1,小型车 1,RDEditorInterface.as
+as3_RDEditorInterface_246,Small Car 10,小型车 10,RDEditorInterface.as
+as3_RDEditorInterface_247,Small Car 12,小型车 12,RDEditorInterface.as
+as3_RDEditorInterface_248,Small Car 13,小型车 13,RDEditorInterface.as
+as3_RDEditorInterface_249,Small Car 2,小型车 2,RDEditorInterface.as
+as3_RDEditorInterface_250,Small Car 3,小型车 3,RDEditorInterface.as
+as3_RDEditorInterface_251,Small Car 4,小型车 4,RDEditorInterface.as
+as3_RDEditorInterface_252,Small Car 5,小型车 5,RDEditorInterface.as
+as3_RDEditorInterface_253,Small Car 6,小型车 6,RDEditorInterface.as
+as3_RDEditorInterface_254,Small Car 7,小型车 7,RDEditorInterface.as
+as3_RDEditorInterface_255,Small Car 8,小型车 8,RDEditorInterface.as
+as3_RDEditorInterface_256,Small Car 9,小型车 9,RDEditorInterface.as
+as3_RDEditorInterface_257,Small Hill Top,小山顶,RDEditorInterface.as
+as3_RDEditorInterface_258,Soldier Clinger Off Time,士兵依附脱离时间,RDEditorInterface.as
+as3_RDEditorInterface_259,Soldier Hit Time,士兵受击时间,RDEditorInterface.as
+as3_RDEditorInterface_260,Soldier Shot Time,士兵射击时间,RDEditorInterface.as
+as3_RDEditorInterface_261,Soldier Zombie,士兵丧尸,RDEditorInterface.as
+as3_RDEditorInterface_262,Spawn Rate,生成频率,RDEditorInterface.as
+as3_RDEditorInterface_263,Spawns extra soldiers from the sides instead of zombies.  See Spawn Rate in the Difficulty tab.,从两侧生成额外的士兵而非丧尸。参见难度选项卡中的生成频率。,RDEditorInterface.as
+as3_RDEditorInterface_264,Speed Loss Factor,速度损失系数,RDEditorInterface.as
+as3_RDEditorInterface_265,Spike Level,尖刺等级,RDEditorInterface.as
+as3_RDEditorInterface_266,Spike Soldier,尖刺士兵,RDEditorInterface.as
+as3_RDEditorInterface_267,Spike Soldier Level,尖刺士兵等级,RDEditorInterface.as
+as3_RDEditorInterface_268,Starting Time,起始时间,RDEditorInterface.as
+as3_RDEditorInterface_269,Stationary Soldier,固定士兵,RDEditorInterface.as
+as3_RDEditorInterface_270,Strong Female Zombie,强壮女性丧尸,RDEditorInterface.as
+as3_RDEditorInterface_271,Strong Male Zombie,强壮男性丧尸,RDEditorInterface.as
+as3_RDEditorInterface_272,The bounce factor affects how much bouncing you get from hitting obstacles.  The driver\'s toughness level also reduces the bouncing.,弹跳系数影响你撞击障碍物时的弹跳程度。驾驶员的坚韧等级也会降低弹跳。,RDEditorInterface.as
+as3_RDEditorInterface_273,The enemy chopper cannot be destroyed.,敌方直升机无法被摧毁。,RDEditorInterface.as
+as3_RDEditorInterface_274,The goal type of the challenge determines how the player score will be determined.,挑战的目标类型决定玩家得分的计算方式。,RDEditorInterface.as
+as3_RDEditorInterface_275,"The starting time, in seconds, if you want to make your campaign a time trial. When set to 0, all the time values are unused.",起始时间（秒），用于将你的战役设为计时赛。设为 0 时，所有时间数值均不生效。,RDEditorInterface.as
+as3_RDEditorInterface_276,This option makes the Lava mode even more deadly and kills you as soon as you touch the lava.,此选项会让岩浆模式更加致命，一碰到岩浆就会死亡。,RDEditorInterface.as
+as3_RDEditorInterface_277,Tires Blown,轮胎爆裂,RDEditorInterface.as
+as3_RDEditorInterface_278,Town Building 1,城镇建筑 1,RDEditorInterface.as
+as3_RDEditorInterface_279,Town Building 10,城镇建筑 10,RDEditorInterface.as
+as3_RDEditorInterface_280,Town Building 11,城镇建筑 11,RDEditorInterface.as
+as3_RDEditorInterface_281,Town Building 12,城镇建筑 12,RDEditorInterface.as
+as3_RDEditorInterface_282,Town Building 2,城镇建筑 2,RDEditorInterface.as
+as3_RDEditorInterface_283,Town Building 3,城镇建筑 3,RDEditorInterface.as
+as3_RDEditorInterface_284,Town Building 4,城镇建筑 4,RDEditorInterface.as
+as3_RDEditorInterface_285,Town Building 5,城镇建筑 5,RDEditorInterface.as
+as3_RDEditorInterface_286,Town Building 6,城镇建筑 6,RDEditorInterface.as
+as3_RDEditorInterface_287,Town Building 7,城镇建筑 7,RDEditorInterface.as
+as3_RDEditorInterface_288,Town Building 8,城镇建筑 8,RDEditorInterface.as
+as3_RDEditorInterface_289,Town Building 9,城镇建筑 9,RDEditorInterface.as
+as3_RDEditorInterface_290,Traffic Barrel,交通桶,RDEditorInterface.as
+as3_RDEditorInterface_291,Traffic Cone,交通锥,RDEditorInterface.as
+as3_RDEditorInterface_292,Traffic Light,红绿灯,RDEditorInterface.as
+as3_RDEditorInterface_293,Trash Can,垃圾桶,RDEditorInterface.as
+as3_RDEditorInterface_294,Turns the ammo points into proximity pickups so all you need to do is drive nearby it to get the ammo instead of stopping and waiting for the ammo to be gathered.,将弹药点变为接近拾取，你只需开车靠近即可获得弹药，无需停车等待弹药被收集。,RDEditorInterface.as
+as3_RDEditorInterface_295,Valentine Table,情人节桌子,RDEditorInterface.as
+as3_RDEditorInterface_296,Vehicle HP Factor,载具生命值系数,RDEditorInterface.as
+as3_RDEditorInterface_297,Water Jug,水壶,RDEditorInterface.as
+as3_RDEditorInterface_298,Weapon Crate,武器箱,RDEditorInterface.as
+as3_RDEditorInterface_299,"When a zombie or soldier collides with your vehicle, he or she will always cling to your hood.",当丧尸或士兵与你的载具相撞时，他/她总会扒住你的引擎盖。,RDEditorInterface.as
+as3_RDEditorInterface_300,Wide Hummer,宽型悍马,RDEditorInterface.as
+as3_RDEditorInterface_301,"With this option on, all zombies will spawn as soldier zombies.",开启此选项后，所有丧尸都会以士兵丧尸的形式生成。,RDEditorInterface.as
+as3_RDEditorInterface_302,"With this option on, the player cannot steer and is doomed to driving in a straight line, at the mercy of all the obstacles in front of him.",开启此选项后，玩家无法转向，只能直线行驶，任由前方所有障碍摆布。,RDEditorInterface.as
+as3_RDEditorInterface_303,"With this option on, the player cannot swerve and is limited to using his regular brakes if they are enabled.",开启此选项后，玩家无法急转绕行，若已启用普通刹车则只能使用刹车。,RDEditorInterface.as
+as3_RDEditorInterface_304,You cannot mix highway and non-highway patterns.,你不能混用公路与非公路样式。,RDEditorInterface.as
+as3_RDEditorInterface_305,You need at least 1 area in all your area groups.,所有区域组中至少需要 1 个区域。,RDEditorInterface.as
+as3_RDEditorInterface_306,You need at least 1 chainable group for all area groups.,所有区域组至少需要 1 个可链接组。,RDEditorInterface.as
+as3_RDEditorInterface_307,You need at least 1 pattern in your area.,你的区域中至少需要 1 个样式。,RDEditorInterface.as
+as3_RDEditorInterface_308,You need at least 2 areas in a story campaign.,剧情战役中至少需要 2 个区域。,RDEditorInterface.as
+as3_RDEditorInterface_309,You need at least 2 areas.,至少需要 2 个区域。,RDEditorInterface.as
+as3_RDEditorInterface_310,Zombie HP Factor,丧尸生命值系数,RDEditorInterface.as
+as3_RDEditorInterface_311,Zombie Hit Time,丧尸受击时间,RDEditorInterface.as
+as3_RDEditorInterface_312,Zombie Level,丧尸等级,RDEditorInterface.as
+as3_RDEditorInterface_313,Zombie Shot Time,丧尸射击时间,RDEditorInterface.as
+as3_RDEditorInterface_314,Zombie Speed Factor,丧尸速度系数,RDEditorInterface.as
+as3_RDEditorInterface_315,Zombies will explode when destroyed or hit with the vehicle.  They will explode on the road and on your hood as well.,丧尸被消灭或被载具撞击时会爆炸。它们在路面上和你的引擎盖上也会爆炸。,RDEditorInterface.as
+as3_RDEditorInterface_316,a global vehicle HP multiplier where 0.5 is half the HP and 2 is twice the HP.  This option does not affect the player\'s HP.,全局载具生命值倍率，0.5 为一半生命值，2 为两倍生命值。此选项不影响玩家自身的生命值。,RDEditorInterface.as
+as3_RDGame_1,A file with that name already exists.\nDo you want to overwrite it?,已存在同名文件。\n是否要覆盖？,RDGame.as
+as3_RDGame_2,Abort your escape and\nreturn to the menu?,中止逃亡并\n返回菜单？,RDGame.as
+as3_RDGame_3,Add a touch of zombie apocalypse on your wall with this awesome Saga of the Dead poster. Thanks for the support!,用这张超赞的《Saga of the Dead》海报，为你的墙面增添一抹丧尸末日气息。感谢支持！,RDGame.as
+as3_RDGame_4,Apocalyptic Mettle,末日勇气,RDGame.as
+as3_RDGame_5,Arcade Ammo Pickups,街机弹药拾取,RDGame.as
+as3_RDGame_6,Are you sure you want to apply the changes to this area\'s pattern?,确定要将更改应用到该区域的样式吗？,RDGame.as
+as3_RDGame_7,Are you sure you want to apply the changes to this campaign\'s area?,确定要将更改应用到该战役的区域吗？,RDGame.as
+as3_RDGame_8,Are you sure you want to delete all the objects in this pattern?,确定要删除该样式中的所有对象吗？,RDGame.as
+as3_RDGame_9,Are you sure you want to delete the selected areas?,确定要删除选中的区域吗？,RDGame.as
+as3_RDGame_10,Are you sure you want to delete the selected patterns?,确定要删除选中的样式吗？,RDGame.as
+as3_RDGame_11,Are you sure you want to delete this area group?,确定要删除该区域组吗？,RDGame.as
+as3_RDGame_12,Are you sure you want to delete this file?,确定要删除该文件吗？,RDGame.as
+as3_RDGame_13,Are you sure you want to load this area?,确定要加载该区域吗？,RDGame.as
+as3_RDGame_14,Are you sure you want to load this campaign?,确定要加载该战役吗？,RDGame.as
+as3_RDGame_15,Are you sure you want to load this pattern?,确定要加载该样式吗？,RDGame.as
+as3_RDGame_16,Are you sure you want to play this user campaign?,确定要游玩该用户战役吗？,RDGame.as
+as3_RDGame_17,Are you sure you want to save this file?,确定要保存该文件吗？,RDGame.as
+as3_RDGame_18,Are you sure you want to start a new area?,确定要新建区域吗？,RDGame.as
+as3_RDGame_19,Are you sure you want to start a new campaign?,确定要新建战役吗？,RDGame.as
+as3_RDGame_20,Are you sure you want to start a new pattern?,确定要新建样式吗？,RDGame.as
+as3_RDGame_21,Behind The Wheel,手握方向盘,RDGame.as
+as3_RDGame_22,Bounce Factor,弹跳系数,RDGame.as
+as3_RDGame_23,Check out the team behind Road of the Dead 2 and click our names to visit our personal sites.  Thanks for your great support!,了解《Road of the Dead 2》背后的团队，点击我们的名字访问个人网站。感谢你们的大力支持！,RDGame.as
+as3_RDGame_24,Cinco De Mayo,五月五日节,RDGame.as
+as3_RDGame_25,Clear Save Data,清除存档数据,RDGame.as
+as3_RDGame_26,Could not save!,无法保存！,RDGame.as
+as3_RDGame_27,"Customize your controls, toggle sounds and music, adjust the visual quality and delete your save game.",自定义操作、开关音效与音乐、调整画质以及删除存档。,RDGame.as
+as3_RDGame_28,Cycle Next,循环下一个,RDGame.as
+as3_RDGame_29,Cycle Previous,循环上一个,RDGame.as
+as3_RDGame_30,Dead State Distance,死亡状态距离,RDGame.as
+as3_RDGame_31,Delete your save data?\nYou will lose all your progress,删除存档数据？\n你将失去所有进度,RDGame.as
+as3_RDGame_32,Enemies Always Cling,敌人总是依附,RDGame.as
+as3_RDGame_33,"Experience a whole new world of user campaigns, awesome stories created by users.",体验全新的用户战役世界，由玩家创作的精彩故事。,RDGame.as
+as3_RDGame_34,Experience the music from the Saga of the Dead games anytime and anywhere with this original soundtrack. Thanks for the support!,用这张原声带随时随地畅听《Saga of the Dead》系列游戏的音乐。感谢支持！,RDGame.as
+as3_RDGame_35,Exploding Zombies,自爆丧尸,RDGame.as
+as3_RDGame_36,Face the wrath of the mutants in this insane challenge mode.,在这个疯狂挑战模式中直面变异体的怒火。,RDGame.as
+as3_RDGame_37,Fog Mode,迷雾模式,RDGame.as
+as3_RDGame_38,Full Screen,全屏,RDGame.as
+as3_RDGame_39,"Get all kinds of insight about all kind of things to make your survival easier. As you play, you will unlock more topics.",获取各类知识，让你的生存更加轻松。随着游戏推进，你会解锁更多条目。,RDGame.as
+as3_RDGame_40,"Go as far as you can in this survival mode, trying to stay alive, battling the zombie hordes and driving through dangerous areas.",在这个生存模式中尽可能走得更远，努力活下来，与丧尸群战斗，穿越危险地带。,RDGame.as
+as3_RDGame_41,"If you want to be the greatest survivors, you must compete with the best!  Check out the best scores for all the challenge modes.",想成为最伟大的幸存者，就必须与最强者较量！查看所有挑战模式的最高分。,RDGame.as
+as3_RDGame_42,"In Hardcore mode, you must complete the story mode without ever dying.  Are you truly able to survive the zombie apocalypse?",在硬核模式中，你必须在全程不死的情况下通关剧情模式。你真的能在丧尸末日中活下来吗？,RDGame.as
+as3_RDGame_43,Infinite Ammo,无限弹药,RDGame.as
+as3_RDGame_44,Infinite Mounted Weapon,无限车载武器,RDGame.as
+as3_RDGame_45,Invincible Hellfire,无敌地狱火,RDGame.as
+as3_RDGame_46,Join the Saga of the Dead community to stay up to date with zombie news and the development of our upcoming zombie games.,加入《Saga of the Dead》社区，了解丧尸资讯以及我们即将推出的丧尸游戏的最新动态。,RDGame.as
+as3_RDGame_47,Killing Expertise,杀戮专精,RDGame.as
+as3_RDGame_48,Labor Day,劳动节,RDGame.as
+as3_RDGame_49,Madness Day,疯狂日,RDGame.as
+as3_RDGame_50,Make sure flash local storage is enabled.,请确保已启用 Flash 本地存储。,RDGame.as
+as3_RDGame_51,Mardi Gras,狂欢节,RDGame.as
+as3_RDGame_52,Martin Luther King Day,马丁·路德·金纪念日,RDGame.as
+as3_RDGame_53,Mounted MG,车载机枪,RDGame.as
+as3_RDGame_54,Mounted Rocket Launcher,车载火箭筒,RDGame.as
+as3_RDGame_55,Mutant Meltdown Distance,变异体熔毁距离,RDGame.as
+as3_RDGame_56,New Year,新年,RDGame.as
+as3_RDGame_57,No Ammo Points,无弹药点,RDGame.as
+as3_RDGame_58,No Ammo Replenish,无弹药补给,RDGame.as
+as3_RDGame_59,No Background City,无背景城市,RDGame.as
+as3_RDGame_60,No Chopper Support,无直升机支援,RDGame.as
+as3_RDGame_61,No Driver Switch,禁止切换驾驶员,RDGame.as
+as3_RDGame_62,Oil Slipperiness Factor,油渍打滑系数,RDGame.as
+as3_RDGame_63,Out Of Time Distance,超时距离,RDGame.as
+as3_RDGame_64,Pause Key,暂停键,RDGame.as
+as3_RDGame_65,Pico Day,Pico Day,RDGame.as
+as3_RDGame_66,Play as scientist Allen C. Tyler and experiment with zombies to find out what makes them tick in an attempt to find a solution to the zombie virus.,扮演科学家艾伦·C·泰勒，对丧尸进行实验，弄清它们的运作原理，试图找到丧尸病毒的解决办法。,RDGame.as
+as3_RDGame_67,Play as the gunner on a rescue chopper and rescue civilians from their sieged buildings.,扮演救援直升机上的机枪手，从被围困的建筑中营救平民。,RDGame.as
+as3_RDGame_68,Play as two soldiers trying to escape the quarantined city while the military operation fails to contain the outbreak.,扮演两名试图逃离隔离城市的士兵，此时军方的行动已无法控制疫情。,RDGame.as
+as3_RDGame_69,"Play the original award winning game!  Play as John Creasman, a local mechanic trying to escape the quarantined city through the highway.",游玩原版获奖游戏！扮演当地修理工约翰·克里斯曼，试图沿公路逃离隔离城市。,RDGame.as
+as3_RDGame_70,"Play the sequel to Lab of the Dead where Allen has left the lab and hones his long range shooting skills with his rifle, bow and grenades.",游玩《Lab of the Dead》的续作，艾伦离开了实验室，用步枪、弓箭和手雷磨炼自己的远程射击技巧。,RDGame.as
+as3_RDGame_71,Player Body HP Factor,玩家身体生命值系数,RDGame.as
+as3_RDGame_72,Player Car HP Factor,玩家车辆生命值系数,RDGame.as
+as3_RDGame_73,Player Speed Factor,玩家速度系数,RDGame.as
+as3_RDGame_74,Race against the clock in this intense game mode where killing zombies give you extra time to survive.,在这个紧张刺激的游戏模式中与时间赛跑，消灭丧尸可为你赢得额外的生存时间。,RDGame.as
+as3_RDGame_75,Rescue OP,救援行动,RDGame.as
+as3_RDGame_76,Robot Day,机器人日,RDGame.as
+as3_RDGame_77,Speed Loss Factor,速度损失系数,RDGame.as
+as3_RDGame_78,Stared Death In The Face. Death Blinked,直面死神，死神退缩了,RDGame.as
+as3_RDGame_79,Steer Left,左转,RDGame.as
+as3_RDGame_80,Steer Right,右转,RDGame.as
+as3_RDGame_81,Switch Driver,切换驾驶员,RDGame.as
+as3_RDGame_82,"Test your survival skills in 5 different challenge modes pitting you against time, the zombie hordes and the military.",在 5 种不同的挑战模式中考验你的生存技巧，与时间、丧尸群和军队对抗。,RDGame.as
+as3_RDGame_83,The Evans City zombie outbreak will put your survival skills to the test.  Are you up to the challenge?  Try and complete all the achievements!,埃文斯城的丧尸疫情将考验你的生存技巧。你准备好迎接挑战了吗？试着完成所有成就吧！,RDGame.as
+as3_RDGame_84,Tires Blown,轮胎爆裂,RDGame.as
+as3_RDGame_85,Toggle the full screen mode.  Be aware that playing the game in full screen mode requires a very good computer.,切换全屏模式。请注意，用全屏模式游玩游戏需要一台性能很好的电脑。,RDGame.as
+as3_RDGame_86,"Use the campaign editor to create your own campaigns, build and share patterns and areas to be used in user campaigns.",使用战役编辑器创建你自己的战役，制作并分享可供玩家战役使用的模板和区域。,RDGame.as
+as3_RDGame_87,Vehicle HP Factor,车辆生命值系数,RDGame.as
+as3_RDGame_88,"Visit Newgrounds.com, our sponsor, and play a ton more awesome games, watch amazing movies and check out their art and music portals as well!",访问我们的赞助商 Newgrounds.com，畅玩更多精彩游戏、观看精彩影片，还可以逛逛他们的美术和音乐门户！,RDGame.as
+as3_RDGame_89,Watermelon Day,西瓜日,RDGame.as
+as3_RDGame_90,Where do you wanna start\nHighway To Hell?,你想从哪儿开始\n地狱公路？,RDGame.as
+as3_RDGame_91,Where do you wanna start\nLost Guns?,你想从哪儿开始\n失落枪械？,RDGame.as
+as3_RDGame_92,"You\'re going rogue as the military operation is doomed to fail.  As deserters, you become the enemy.",军事行动注定失败，你将铤而走险。作为逃兵，你会沦为敌人。,RDGame.as
+as3_RDGame_93,Zombie HP Factor,丧尸生命值系数,RDGame.as
+as3_RDGame_94,Zombie Speed Factor,丧尸速度系数,RDGame.as
+as3_RDGame_95,Zombie Tints,丧尸肤色,RDGame.as
+as3_RDGame_96,"Zombie tints gives various skin tones to the zombies. It comes with a certain performance cost so if the game is running slow, turning this options off may help.",丧尸肤色会为丧尸赋予不同的肤色。该功能会带来一定的性能开销，如果游戏运行缓慢，关闭此选项可能会有所帮助。,RDGame.as
+as3_RDGame_97,[Press key],[按键],RDGame.as
+as3_RDGameModeChopperRescue_1,Best Operation,最佳行动,RDGameModeChopperRescue.as
+as3_RDGameModeChopperRescue_2,Civilians Saved,已救平民,RDGameModeChopperRescue.as
+as3_RDGameModeChopperRescue_3,Operation Result,行动结果,RDGameModeChopperRescue.as
+as3_RDGameModeChopperRescue_4,Rescue OP,救援行动,RDGameModeChopperRescue.as
+as3_RDGameModeCustom_1,Challenge Target,挑战目标,RDGameModeCustom.as
+as3_RDGameModeCustom_2,Civilians Killed,已杀平民,RDGameModeCustom.as
+as3_RDGameModeCustom_3,Civilians Saved,已救平民,RDGameModeCustom.as
+as3_RDGameModeCustom_4,Distance Reached,到达距离,RDGameModeCustom.as
+as3_RDGameModeCustom_5,Zombies Killed,已杀丧尸,RDGameModeCustom.as
+as3_RDGameModeDistance_1,Dead State Distance,死亡之州距离,RDGameModeDistance.as
+as3_RDGameModeDriverSelection_1,Not available,不可用,RDGameModeDriverSelection.as
+as3_RDGameModeDriverSelection_2,The Driving skill levels up as you play and affects how well you can steer in combination with your tires.,驾驶技能会随着游玩逐渐提升，它会影响你配合轮胎时的转向能力。,RDGameModeDriverSelection.as
+as3_RDGameModeDriverSelection_3,"Toughness levels up as you play and affects your control upon collisions and explosions, the explosion body damage and your strength against side grapplers.",坚韧会随着游玩逐渐提升，它影响你在碰撞和爆炸时的操控、爆炸造成的车身损伤，以及你对抗侧面抓附敌人的能力。,RDGameModeDriverSelection.as
+as3_RDGameModeEditor_1,"Content saved, id:",内容已保存，id：,RDGameModeEditor.as
+as3_RDGameModeGameplay_1,"Click the icons to use your meds.  You have a limited supply, use them wisely.",点击图标使用药品。药品数量有限，请谨慎使用。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_2,Cycle through your weapons with your cycle keys.,用切换键循环切换武器。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_3,Drop civilians at churches or police stations for extra RPs.,把平民送到教堂或警察局可获得额外RP。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_4,Equip your new weapon with the fourth weapon key.,用第四武器键装备你的新武器。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_5,Equip your new weapon with the third weapon key.,用第三武器键装备你的新武器。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_6,HOLD the swerve key to steer more abruptly and avoid obstacles easier.,按住急转键可以更猛地转向，更容易避开障碍物。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_7,Hold the swerve key to make sharp turns to avoid obstacles easier.,按住急转键进行急转弯，更容易避开障碍物。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_8,Mash the interact key to get out of a driver side grapple!,猛按互动键可挣脱驾驶座一侧的抓附！,RDGameModeGameplay.as
+as3_RDGameModeGameplay_9,Mash the mouse left button to get out of a gunner side grapple!,猛按鼠标左键可挣脱机枪手一侧的抓附！,RDGameModeGameplay.as
+as3_RDGameModeGameplay_10,"Stop at churches, weapon crates, etc for upgrades and supplies.",在教堂、武器箱等处停下可获取升级和补给。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_11,"Stop at garages, police stations, etc for vehicle and weapon upgrades and supplies.",在车库、警察局等处停下可获取车辆与武器升级和补给。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_12,"The chopper assist is available, call it by clicking the chopper icon when you need assistance.",直升机支援已可用，需要协助时点击直升机图标即可呼叫。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_13,Use the mounted weapon with the mounted weapon key.,用载具武器键使用车载武器。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_14,Use the number keys to equip a weapon.,用数字键装备武器。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_15,Use your accel key to move forward and your brake key to slow down and stop your vehicle.,用加速键前进，用刹车键减速并停下车辆。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_16,Use your direction keys to turn left and right.,用方向键左右转向。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_17,"Use your horn to call out civilians, they will move out of the way or get in your vehicle while you\'re stopped.",按喇叭招呼平民，他们会让开，或在你停车时上车。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_18,Use your mouse to aim and use left-click to fire your weapon.,用鼠标瞄准，用左键开火。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_19,Use your reload key to reload your weapon.,用装填键为武器装填弹药。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_20,"You can stop at locations such as garages, churches, weapon crates, etc to get supplies and upgrades.",你可以在车库、教堂、武器箱等地点停下，获取补给和升级。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_21,You can switch seats with the switch key if you want change who\'s driving and who\'s shooting.,如果想更换开车和射击的人，可以用切换键交换座位。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_22,"Your vehicle and weapons are ugpraded by stopping at locations in the city, look out for them!",在城市中停靠特定地点可以升级你的车辆和武器，留意它们！,RDGameModeGameplay.as
+as3_RDGameModeMutant_1,Mutant Meltdown Distance,变异体熔毁距离,RDGameModeMutant.as
+as3_RDGameModeStory_1,Candor Hill,坎多山,RDGameModeStory.as
+as3_RDGameModeStory_2,Evans City,埃文斯城,RDGameModeStory.as
+as3_RDGameModeStory_3,Meridian Avenue,子午线大道,RDGameModeStory.as
+as3_RDGameModeTime_1,Out Of Time Distance,时间耗尽距离,RDGameModeTime.as
+as3_RDHelp_1,All types of mine emit beeping sounds so be aware of the surrounding sounds through the chaos.,各类地雷都会发出嘟嘟声，所以在混乱中要留意周围的声音。,RDHelp.as
+as3_RDHelp_2,An armless zombie on your hood is much easier to knock off.,引擎盖上没有手臂的丧尸更容易被甩掉。,RDHelp.as
+as3_RDHelp_3,"As you encounter new things, important information will added to your survival guide, accessible in the main menu and pause menu.",随着你遇到新事物，重要信息会添加到生存指南中，可在主菜单和暂停菜单查看。,RDHelp.as
+as3_RDHelp_4,"At a higher level than the patterns, you have areas.  An area is a group of patterns bound together.  For exemple, a forest area would contain many forest related patterns, one with just trees, one with a table and some garbage bins, a pattern with a bushy area, etc.  That area can be saved for you and others to use in their campaigns.",在模板之上还有区域。区域是一组绑定在一起的模板。例如，一个森林区域会包含许多与森林相关的模板：一个只有树木的模板、一个带桌子和垃圾桶的模板、一个灌木丛生的模板等等。区域可以保存下来，供你和其他人在自己的战役中使用。,RDHelp.as
+as3_RDHelp_5,Base and Additive Values,基础值与附加值,RDHelp.as
+as3_RDHelp_6,"Base and Additive values are used to create a difficulty progression.  In the campaign properties, you can set the difficulty length, which determines how many patterns you must drive through for the difficulty level to go up.  Using the difficulty level, you can create a progression on different campaign parameters such as the Pattern Ratio, which controls how much of the patterns are actually spawned.  The Base value will be the default starting value and with each difficulty level, it will add the Additive value to the Base value.  So with a Base value of 0.5 and an Additive value of 0.1, the total value will be 0.9 at level 4 (0.5 + (4 x 0.1)).  The campaign always starts at level 0 and each subsequent level will add the additive value to the base value.  Experiment with those parameters to get a better hang of it.",基础值和附加值用于构建难度递进。在战役属性中，你可以设置难度长度，它决定你需要驶过多少个模板才会提升一级难度。利用难度等级，你可以为不同的战役参数（例如模板比例，它控制实际生成多少模板）创建递进。基础值是默认起始值，每提升一级难度，就会把附加值加到基础值上。因此，基础值为 0.5、附加值为 0.1 时，4 级的总值为 0.9（0.5 + (4 x 0.1)）。战役总是从 0 级开始，之后每一级都会把附加值加到基础值上。多试试这些参数就能更好地掌握。,RDHelp.as
+as3_RDHelp_7,"Blowing up mines, cars and fuel trucks is a good way to get rid of a group of nearby zombies and mutants.",炸毁地雷、汽车和油罐车是清除附近一群丧尸和变异体的好办法。,RDHelp.as
+as3_RDHelp_8,"By clicking the OPTIONS button in the main menu or in the pause (P) menu, you can adjust controls, volumes and performance.",点击主菜单或暂停（P）菜单中的「选项」按钮，即可调整操作、音量和性能。,RDHelp.as
+as3_RDHelp_9,Churches are drop points for civilians. They have perks and medications available for purchase with RP.,教堂是平民的下车点。那里可以用RP购买特长和药品。,RDHelp.as
+as3_RDHelp_10,Civilians will not get in your car if you have zombies on your vehicle.  Get rid of them first then honk the civilians again.,如果车上有丧尸，平民不会上车。先清除它们，再按喇叭招呼平民。,RDHelp.as
+as3_RDHelp_11,"Diane and Cocheta each have their own weapon loadouts and their personal stat levels. However, perks are shared.",黛安和科切塔各自拥有独立的武器配置和个人属性等级。但特长是共享的。,RDHelp.as
+as3_RDHelp_12,Dice Icon,骰子图标,RDHelp.as
+as3_RDHelp_13,Editor Flow,编辑器流程,RDHelp.as
+as3_RDHelp_14,Enemies that cling to your hood can have their attacks delayed by shooting them or by blowing their arms off.,扒在引擎盖上的敌人，可以通过射击或炸掉它们的手臂来拖延其攻击。,RDHelp.as
+as3_RDHelp_15,Feeding zombies will ignore you unless fired upon.,正在进食的丧尸不会理会你，除非你向它们开火。,RDHelp.as
+as3_RDHelp_16,Finish the story mode to unlock some of the challenge modes!,通关故事模式即可解锁部分挑战模式！,RDHelp.as
+as3_RDHelp_17,Firing on soldiers in the F.U.B.A.R. mode will suppress their position and cause them to run to a new firing position.,在 F.U.B.A.R. 模式中向士兵开火会压制他们的阵地，迫使他们转移到新的射击位置。,RDHelp.as
+as3_RDHelp_18,Getting low on ammo? Stop at ammo points or purchase a full ammo replenish at a police station or weapon crate.,弹药快用完了？在弹药点停下，或在警察局、武器箱购买全额弹药补给。,RDHelp.as
+as3_RDHelp_19,Highway Ramps,公路坡道,RDHelp.as
+as3_RDHelp_20,Honk your horn (deault F key) to pickup civilians when stopped or ward them away when moving.,停车时按喇叭（默认F键）接载平民，行驶时按喇叭则把他们赶开。,RDHelp.as
+as3_RDHelp_21,"Honking at civilians, letting them in your vehile and bringing them to a church or police station will give you RP rewards.",向平民按喇叭、让他们上车，并把他们送到教堂或警察局，就能获得RP奖励。,RDHelp.as
+as3_RDHelp_22,Hurting for resources? The Rescue Op challenge mode can help you earn some RPs if it\'s unlocked.,资源不足？如果已解锁，救援行动挑战模式可以帮你赚取一些RP。,RDHelp.as
+as3_RDHelp_23,"If the campaign editor confuses you, make sure you read the help files to understand the concepts you need to use it.",如果战役编辑器让你摸不着头脑，请务必阅读帮助文件，理解使用它所需的概念。,RDHelp.as
+as3_RDHelp_24,"If the game gradually becomes too laggy despite the low quality settings, try refreshing the browser and therefore the game.",如果游戏即使在低画质设置下也变得越来越卡，尝试刷新浏览器，从而刷新游戏。,RDHelp.as
+as3_RDHelp_25,"If the game is lagging for you, try reducing the quality and turning off Zombie Tints in the options.",如果游戏卡顿，尝试在选项中降低画质并关闭丧尸肤色。,RDHelp.as
+as3_RDHelp_26,"If you have trouble handling the hordes of zombies when you stop at locations, upgrade your Task Speed perk for shorter stops.",如果在停靠地点时难以应付成群的丧尸，升级你的任务速度特长以缩短停车时间。,RDHelp.as
+as3_RDHelp_27,"If your keys get stuck and you are unable to move, try pressing your direction keys and your swerve/interact key again.",如果按键卡住导致无法移动，尝试再次按下方向键和急转/互动键。,RDHelp.as
+as3_RDHelp_28,"In a story campaign, the ending is always on the last area and set on the area\'s properties.  The ending will be in the last pattern of the area.\n\nFor chopper escape and highway transition endings, the highway ramp, exit and rescue chopper will be spawned automatically.",在故事战役中，结局总是位于最后一个区域，并在该区域的属性中设置。结局会出现在该区域的最后一个模板中。\n\n对于直升机撤离和公路过渡结局，公路坡道、出口和救援直升机会自动生成。,RDHelp.as
+as3_RDHelp_29,"In the Rescue Op mode, you can slightly move the helicopter around to give yourself some space or close in on your enemies.",在救援行动模式中，你可以小幅移动直升机，为自己拉开空间或靠近敌人。,RDHelp.as
+as3_RDHelp_30,"Individual stats like weapon aiming, weapon handling, weapons reloading, toughness and driving automatically levels up as you play.",武器瞄准、武器操控、武器装填、坚韧和驾驶等个人属性会随着游玩自动提升。,RDHelp.as
+as3_RDHelp_31,"Make sure to click save after you finish making a pattern, area or campaign in the campaign editor.",在战役编辑器中制作完模板、区域或战役后，记得点击保存。,RDHelp.as
+as3_RDHelp_32,Make sure you have the latest flash player installed for an optimal playing experience.,为确保最佳游戏体验，请安装最新版 Flash Player。,RDHelp.as
+as3_RDHelp_33,Make sure your browser isn\'t set to clear your cache or your save file will be deleted!,确保浏览器没有设置为清除缓存，否则你的存档会被删除！,RDHelp.as
+as3_RDHelp_34,Mashing space as the driver and the left mouse button as the gunner will bash a side grappling mutant off!,驾驶员猛按空格键、机枪手猛按鼠标左键，就能把侧面抓附的变异体打下去！,RDHelp.as
+as3_RDHelp_35,"Mutants will sometimes run in packs of 3 or 4, one of them being an alpha mutant, beware!",变异体有时会3到4只结群行动，其中一只是首领变异体，小心！,RDHelp.as
+as3_RDHelp_36,"Once you have areas, you can start building campaigns.  There are two types of campaigns, Story and Challenge.  A story campaign is a linear series of aeras on which you can set parameters such as length, dialogs, etc.  They are usually more story driven and must have an ending.  The other type of campaign is the Challenge campaign which consists of a structured series of area groups (see Groups). Unlike story campaigns, challenge campaigns don\'t have an ending, they are infinite and have a goal and a goal target, like Kill 500 zombies.\n\nBeyond this simple description is a ton of options you can play with both in story and challenge campaigns.",有了区域之后，你就可以开始构建战役了。战役分为两种：故事和挑战。故事战役是一系列线性的区域，你可以为其设置长度、对话等参数。它们通常更注重剧情，且必须有结局。另一种是挑战战役，由一系列结构化的区域组组成（见「组」）。与故事战役不同，挑战战役没有结局，它们是无限的，有一个目标和目标数值，例如击杀500只丧尸。\n\n除了这些简单描述外，故事战役和挑战战役中还有大量选项可供你尝试。,RDHelp.as
+as3_RDHelp_37,"Pausing, along with other options can be accessed in-game by moving your mouse near the bottom of the screen.",在游戏中，把鼠标移到屏幕底部附近即可访问暂停和其他选项。,RDHelp.as
+as3_RDHelp_38,"Perks can be purchased at some locations and grant you helpful abilities such as lowering RP costs, faster character switches, etc.",特长可以在某些地点购买，能赋予你实用的能力，例如降低RP消耗、更快切换角色等。,RDHelp.as
+as3_RDHelp_39,"Police stations are a drop points for civilians. They have perks, weapons, weapon upgrades and ammo for purchase with RP.",警察局是平民的下车点。那里可以用RP购买特长、武器、武器升级和弹药。,RDHelp.as
+as3_RDHelp_40,Ramming your vehicle into an obstacle while a grub zombie is climbing up your bumper will cause it to splatter!,当蛆虫丧尸正在爬上车头保险杠时，驾车撞向障碍物能把它撞成肉泥！,RDHelp.as
+as3_RDHelp_41,Reaching high speeds grants you much higher chance of bashing or gibbing enemies away instead of them grappling onto your hood!,高速行驶能大幅提高把敌人撞飞或撞碎的概率，而不是让它们扒上你的引擎盖！,RDHelp.as
+as3_RDHelp_42,Reordering Areas,重排区域,RDHelp.as
+as3_RDHelp_43,"Road of The Dead 2 auto saves your progress but if your browser clears its cache, you may lose all your save data.",《Road of The Dead 2》会自动保存你的进度，但如果浏览器清除了缓存，你可能会丢失所有存档数据。,RDHelp.as
+as3_RDHelp_44,Saving Privately vs. Publicly,私有保存与公开保存,RDHelp.as
+as3_RDHelp_45,Shoot mines at the distance to avoid their destructive explosions and the possible chain reactions they can cause.,在远处射击地雷，以避开它们破坏性的爆炸以及可能引发的连锁反应。,RDHelp.as
+as3_RDHelp_46,Shooting a fire hydrant appart will create a geyser of water that can extinguish your burning engine.,打爆消防栓会喷出水柱，可以扑灭你起火的引擎。,RDHelp.as
+as3_RDHelp_47,"Shooting an intact vehicle enough will cause it to explode, causing area damage to everything around it.",对完好的车辆持续射击会使其爆炸，对周围一切造成范围伤害。,RDHelp.as
+as3_RDHelp_48,Soldier zombies wear armored helmets and vests that randomly block bullets.,士兵丧尸佩戴装甲头盔和护甲，能随机挡下子弹。,RDHelp.as
+as3_RDHelp_49,Sometimes speed isn\'t everything. Slowing down in the right areas can make the difference between life and death,有时速度并非一切。在合适的区域减速，可能就是生与死的差别。,RDHelp.as
+as3_RDHelp_50,"Stopping at garages allows you to repair your vehicle, free of charge and to purchase vehicle upgrades and perks with RP.",在车库停下可以免费修理车辆，并用RP购买车辆升级和特长。,RDHelp.as
+as3_RDHelp_51,Story Endings,故事结局,RDHelp.as
+as3_RDHelp_52,Swerving (default spacebar) into the side walls in alleyways and highways a couple times can knock off enemies on your hood.,在小巷和公路中急转（默认空格键）撞向侧墙几次，就能把引擎盖上的敌人甩下去。,RDHelp.as
+as3_RDHelp_53,"The Chopper Support perk is not available in the Lost Guns, Hardcore, Rescue Op and F.U.B.A.R. modes.",直升机支援特长在失落枪械、硬核、救援行动和 F.U.B.A.R. 模式中不可用。,RDHelp.as
+as3_RDHelp_54,"The Delete key will delete objects, areas and patterns.\n\nThe C key will duplicate a selected object in the Pattern mode.",Delete键会删除对象、区域和模板。\n\nC键会在模板模式中复制选中的对象。,RDHelp.as
+as3_RDHelp_55,"The building blocks of Road of the Dead 2 are called Patterns. A pattern is a short section of road (90 meters/5 road strips long) that can contains obstacles, building, various road types, zombies, soldiers, trees, etc.  When you make one, you can save it, privately or publicly to use in your areas and to let other people use it in their own areas.",《Road of the Dead 2》的构建模块称为模板。一个模板是一段短路（长90米/5个路段），可以包含障碍物、建筑、各种路面类型、丧尸、士兵、树木等。制作完成后，你可以将其私有或公开保存，用于自己的区域，也让其他人能在他们的区域中使用。,RDHelp.as
+as3_RDHelp_56,"The editor allows you to build custom campaigns and to share them for others to play.\n\nThe editor involves 4 important concepts you must understand.  Patterns, Areas, Campaigns and Groups.  They each embed into each other and offers a modular system that makes patterns and areas reusable for everyone.\n\nAs a creator, you can make patterns and areas for you and other people to use as well build your own campaigns.",编辑器允许你构建自定义战役并分享给他人游玩。\n\n编辑器涉及你必须理解的4个重要概念：模板、区域、战役和组。它们层层嵌套，构成一套模块化系统，让模板和区域可供所有人重复使用。\n\n作为创作者，你可以制作供自己和他人使用的模板和区域，也可以构建自己的战役。,RDHelp.as
+as3_RDHelp_57,"There are no garage or church on the highway. If you need repairs or medicine, stock up before taking the ramp!",公路上没有车库或教堂。如果需要修理或药品，上坡道前先补给好！,RDHelp.as
+as3_RDHelp_58,Timing your reloads and character switches can be the difference between life and death!,把握好装填和切换角色的时机，可能就是生与死的差别！,RDHelp.as
+as3_RDHelp_59,Try out user made campaigns and challenges by clicking User Campaigns in the main menu or make your own with the campaign editor!,点击主菜单中的「用户战役」即可体验玩家制作的战役和挑战，或者用战役编辑器制作你自己的！,RDHelp.as
+as3_RDHelp_60,Use any spare time you have to reload your weapons. A fully loaded arsenal can be the difference between life and death.,利用一切空闲时间给武器装填。满弹的武器库可能就是生与死的差别。,RDHelp.as
+as3_RDHelp_61,Use your swerve ability (default spacebar) to make sharp turns and dodge obstacles.,使用你的甩尾能力（默认空格键）急转弯并躲避障碍物。,RDHelp.as
+as3_RDHelp_62,"Vehicle mounted weapons can\'t be reloaded, so the weapon itself has to be repurchased to refill its ammo.",车载武器无法装填，只能重新购买该武器来补充弹药。,RDHelp.as
+as3_RDHelp_63,"Want a challenge? Try the various challenge modes, accessible from the main menu.",想挑战一下？试试主菜单里各种挑战模式吧。,RDHelp.as
+as3_RDHelp_64,Water will not only extinguish a burning engine but will also cool down a smoking one.,水不仅能扑灭着火的引擎，还能给冒烟的引擎降温。,RDHelp.as
+as3_RDHelp_65,"Weapon aiming, handling and reloading will automatically level up as you use each specific weapon.",使用每种特定武器时，其瞄准、操控和装填会自动升级。,RDHelp.as
+as3_RDHelp_66,"Weapon caches have weapons, weapon upgrades, ammo and mounted weapons for your vehicle available for purchase with RP.",武器箱里可以用 RP 购买武器、武器升级、弹药以及车载武器。,RDHelp.as
+as3_RDHelp_67,"When building your own campaign in the campaign editor, save time by loading and using other users\' patterns and areas.",在战役编辑器里制作自己的战役时，可以加载并使用其他玩家的图案和区域来节省时间。,RDHelp.as
+as3_RDHelp_68,"When getting ammo, all your weapons, except the one you\'re currently using, will be reloaded for you as well.",获取弹药时，除当前正在使用的武器外，你所有武器也会一并装填。,RDHelp.as
+as3_RDHelp_69,"When you fail, be aware of why you failed and upgrade your arsenal and vehicle accordingly.",失败时，想清楚失败的原因，并据此升级你的装备和车辆。,RDHelp.as
+as3_RDHelp_70,"When you save a file, you have the option to check the Public checkbox.  When checked, your file will be saved in the public section, available for everyone to see.  For patterns and areas, that means other users will be able to load them and use them in their own campaigns.  For campaigns, it means they\'ll see it in the User Campaigns section in the main menu.  Only you, however, can load your own campaign in the editor to modify it.  Private files are only seen by you, typically used for work in progress.",保存文件时，你可以勾选「公开」复选框。勾选后，文件会保存在公开区域，所有人可见。对于图案和区域，这意味着其他玩家可以加载并在自己的战役中使用它们。对于战役，这意味着它们会出现在主菜单的「玩家战役」区域中。不过，只有你自己能在编辑器中加载自己的战役来修改它。私有文件仅你自己可见，通常用于未完成的作品。,RDHelp.as
+as3_RDHelp_71,"When you see a Dice icon over an object, that means it\'s a randomized object. Some objects you can place like cars and zombies can be of random types, meaning everytime it loads it will be a different object.  Use them to create variety in your patterns.  You can use the Randomize button to see the effect of random objects.",当你看到某个物件上出现骰子图标，说明它是随机物件。有些可放置的物件，比如汽车和丧尸，可以是随机类型，也就是说每次加载时都会是不同物件。用它们让你的图案更加多样。你可以用「随机化」按钮查看随机物件的效果。,RDHelp.as
+as3_RDHelp_72,"When you see a mutant jump toward you, do a hard swerve to move out of his trajectory, otherwise he will land on your hood.",看到变异体朝你跳过来时，用力甩尾离开它的落点，否则它会扑到你的引擎盖上。,RDHelp.as
+as3_RDHelp_73,"When your vehicle is damaged, drive safely and try to reach a garage for repair.",车辆受损时，安全驾驶，尽量开到修车厂维修。,RDHelp.as
+as3_RDHelp_74,"While story campaigns have a single hidden area group, challenge campaigns make full use of the groups.  A group contains areas and can be set to randomize those areas or spawn them linearely.  Each group can be set to follow other groups using the Chainable Groups property.  That way you can make sure, for exemple, that a group with forest areas, isn\'t followed directly by a group with alleyway areas.\n\nUsing the chainable groups, you can make linear series of groups, randomized series of groups or all kind of structures you want.  When you click on a group, experiment with the Chainable Groups property, which is a crucial element to challenge campaigns.",剧情战役只有一个隐藏的区域组，而挑战战役可以充分利用区域组。一个组包含若干区域，可以设为随机排列或按顺序生成。每个组都可以通过「可链接组」属性来跟随其他组。这样你就能确保，比如，森林区域的组后面不会直接跟着小巷区域的组。\n\n利用可链接组，你可以做出线性排列的组、随机排列的组或任何你想要的结构。点击某个组时，多试试「可链接组」属性，它是挑战战役的关键要素。,RDHelp.as
+as3_RDHelp_75,"You can change all sorts of properties and crazy in-game settings in the campaign editor, accessible from the main menu. Give it a try!",在主菜单的战役编辑器里，你可以修改各种属性和疯狂的局内设置。试试看吧！,RDHelp.as
+as3_RDHelp_76,You can cycle your weapons with the mouse wheel.  This can be helpful when you need to switch weapon very quickly.,你可以用鼠标滚轮切换武器。需要快速换武器时很有用。,RDHelp.as
+as3_RDHelp_77,You can gather free ammunition by stopping at abandoned military vehicles scattered throughout the game.,在游戏中各处停靠被遗弃的军用车辆，就能收集免费弹药。,RDHelp.as
+as3_RDHelp_78,You can use the the left arrow and right arrow buttons on the areas at the bottom of the campaign view to reorder your areas.\n\nIt\'s especially useful in story campaigns where you wanna craft your campaign as you wish.,你可以用战役视图底部区域上的左右箭头按钮来重新排列区域。\n\n在你想要随心所欲编排战役的剧情战役中尤其有用。,RDHelp.as
+as3_RDHelp_79,"You don\'t need to place highway ramps and exits, they\'ll be spawned automatically when an non-highway area goes to a highway area and vice versa.",你不需要放置高速匝道和出口，当非高速区域连接到高速区域（反之亦然）时会自动生成。,RDHelp.as
+as3_RDHelp_80,You might want to give driving and gunning time to both characters to level them up equally.,不妨让两个角色轮流开车和射击，好让他们均衡升级。,RDHelp.as
+as3_RDHighwayRamp_1,Going Left,向左行驶,RDHighwayRamp.as
+as3_RDHud_1,Best Combo,最佳连击,RDHud.as
+as3_RDHud_2,Bullets Shot,射出子弹,RDHud.as
+as3_RDHud_3,Cars Blown By Mounted Gun,车载机枪摧毁车辆,RDHud.as
+as3_RDHud_4,Cars Exploded,爆炸车辆,RDHud.as
+as3_RDHud_5,Civilians Killed,杀死平民,RDHud.as
+as3_RDHud_6,Civilians Saved,拯救平民,RDHud.as
+as3_RDHud_7,Civilians Taken,接走平民,RDHud.as
+as3_RDHud_8,Clingers Shaken Off,甩掉攀附丧尸,RDHud.as
+as3_RDHud_9,Clingers Shot,射杀攀附丧尸,RDHud.as
+as3_RDHud_10,Collateral Kills,附带击杀,RDHud.as
+as3_RDHud_11,Deaths By Explosion,爆炸致死,RDHud.as
+as3_RDHud_12,Deaths By Zombie,丧尸致死,RDHud.as
+as3_RDHud_13,Fires Put Out,扑灭火灾,RDHud.as
+as3_RDHud_14,Fuel Trucks Shot,击中油罐车,RDHud.as
+as3_RDHud_15,Gib Kills,碎尸击杀,RDHud.as
+as3_RDHud_16,Jet Bombings Dodged,躲过战机轰炸,RDHud.as
+as3_RDHud_17,Mines Shot,击中地雷,RDHud.as
+as3_RDHud_18,Mutants Killed,杀死变异体,RDHud.as
+as3_RDHud_19,Prefered Driver,偏好司机,RDHud.as
+as3_RDHud_20,Prefered Weapon,偏好武器,RDHud.as
+as3_RDHud_21,Property Damage,财产损失,RDHud.as
+as3_RDHud_22,Rockets Shot,发射火箭,RDHud.as
+as3_RDHud_23,Slow Zombie Kills,击杀慢速丧尸,RDHud.as
+as3_RDHud_24,Successful Stops,成功停靠,RDHud.as
+as3_RDHud_25,Tires Blown,击爆轮胎,RDHud.as
+as3_RDHud_26,Total Clingers,攀附丧尸总数,RDHud.as
+as3_RDHud_27,Total Deaths,总死亡数,RDHud.as
+as3_RDHud_28,Total Driven Distance,总行驶距离,RDHud.as
+as3_RDHud_29,Zombies Hit,撞到丧尸,RDHud.as
+as3_RDHud_30,Zombies Shot,射杀丧尸,RDHud.as
+as3_RDObstacleCar_1,Hidden Soldier Left,隐藏士兵（左）,RDObstacleCar.as
+as3_RDObstacleCar_2,Hidden Soldier Right,隐藏士兵（右）,RDObstacleCar.as
+as3_RDObstacleCarMilitary_1,Ammo Point,弹药点,RDObstacleCarMilitary.as
+as3_RDObstacleWeaponCrate_1,Weapon Crates,武器箱,RDObstacleWeaponCrate.as
+as3_RDPlayer_1,Acquiring Chopper Support,获取直升机支援,RDPlayer.as
+as3_RDPlayer_2,Ammo Points,弹药点,RDPlayer.as
+as3_RDPlayer_3,Check church,检查教堂,RDPlayer.as
+as3_RDPlayer_4,Check garage,检查修车厂,RDPlayer.as
+as3_RDPlayer_5,Check police station,检查警察局,RDPlayer.as
+as3_RDPlayer_6,Check weapon crate,检查武器箱,RDPlayer.as
+as3_RDPlayer_7,Chopper Assist,直升机支援,RDPlayer.as
+as3_RDPlayer_8,Driver Switch Speed,司机换位速度,RDPlayer.as
+as3_RDPlayer_9,Gather ammo,收集弹药,RDPlayer.as
+as3_RDPlayer_10,Gathering Ammo,正在收集弹药,RDPlayer.as
+as3_RDPlayer_11,Getting Med Patch,正在获取医疗包,RDPlayer.as
+as3_RDPlayer_12,Getting Steroids,正在获取类固醇,RDPlayer.as
+as3_RDPlayer_13,Improving Ammo Pickups,强化弹药拾取,RDPlayer.as
+as3_RDPlayer_14,Improving Chopper Support,强化直升机支援,RDPlayer.as
+as3_RDPlayer_15,Increasing Driver Switch Speed,提升司机换位速度,RDPlayer.as
+as3_RDPlayer_16,Increasing Level Up Speed,提升升级速度,RDPlayer.as
+as3_RDPlayer_17,Increasing Task Speed,提升任务速度,RDPlayer.as
+as3_RDPlayer_18,Installing Mounted MG,安装车载机枪,RDPlayer.as
+as3_RDPlayer_19,Installing Rocket Launcher,安装火箭发射器,RDPlayer.as
+as3_RDPlayer_20,Leveling Speed,升级速度,RDPlayer.as
+as3_RDPlayer_21,Lowering Costs,降低花费,RDPlayer.as
+as3_RDPlayer_22,Med Patch,医疗包,RDPlayer.as
+as3_RDPlayer_23,Mounted MG,车载机枪,RDPlayer.as
+as3_RDPlayer_24,Repairing Bumper,正在维修保险杠,RDPlayer.as
+as3_RDPlayer_25,Repairing Engine,正在维修引擎,RDPlayer.as
+as3_RDPlayer_26,Repairing Radio,正在维修电台,RDPlayer.as
+as3_RDPlayer_27,Repairing Tires,正在维修轮胎,RDPlayer.as
+as3_RDPlayer_28,Replenishing Ammo,正在补充弹药,RDPlayer.as
+as3_RDPlayer_29,Rocket Launcher,火箭发射器,RDPlayer.as
+as3_RDPlayer_30,Secure civilian,保护平民,RDPlayer.as
+as3_RDPlayer_31,Securing Civilian,正在保护平民,RDPlayer.as
+as3_RDPlayer_32,Task Speed,任务速度,RDPlayer.as
+as3_RDPlayer_33,Upgrading Bumper,升级保险杠,RDPlayer.as
+as3_RDPlayer_34,Upgrading Engine,升级引擎,RDPlayer.as
+as3_RDPlayer_35,Upgrading Tires,升级轮胎,RDPlayer.as
+as3_RDUnlockData_1,Abandoned Vehicles,废弃车辆,RDUnlockData.as
+as3_RDUnlockData_2,Accuracy affects the bullet spread from firing and the kick back for shotguns. It also affects how fast the bullet spread and kick back recover.,精准度影响开火时的子弹散布和霰弹枪的后坐力，也影响子弹散布和后坐力恢复的速度。,RDUnlockData.as
+as3_RDUnlockData_3,Alpha Mutant Tactics,精英变异体战术,RDUnlockData.as
+as3_RDUnlockData_4,Alpha Mutants,精英变异体,RDUnlockData.as
+as3_RDUnlockData_5,Army Vehicles,军用车辆,RDUnlockData.as
+as3_RDUnlockData_6,Attack Choppers,武装直升机,RDUnlockData.as
+as3_RDUnlockData_7,Bomb Squad,拆弹小组,RDUnlockData.as
+as3_RDUnlockData_8,Bomber Jets,轰炸机,RDUnlockData.as
+as3_RDUnlockData_9,Capacity affects how many rounds/shells your weapon can hold and how many total rounds/shells you can carry for that weapon.,容量影响你的武器能装多少发子弹/弹药，以及该武器总共能携带多少发。,RDUnlockData.as
+as3_RDUnlockData_10,Common Undead,普通丧尸,RDUnlockData.as
+as3_RDUnlockData_11,"Damage, as the name implies, affects how much damage each bullet does on your target.",伤害，顾名思义，影响每发子弹对目标造成的伤害。,RDUnlockData.as
+as3_RDUnlockData_12,Driving Skills,驾驶技能,RDUnlockData.as
+as3_RDUnlockData_13,Enemy Soldiers,敌方士兵,RDUnlockData.as
+as3_RDUnlockData_14,Fire Hydrants,消防栓,RDUnlockData.as
+as3_RDUnlockData_15,Fuel Trucks,油罐车,RDUnlockData.as
+as3_RDUnlockData_16,Large Vehicles,大型车辆,RDUnlockData.as
+as3_RDUnlockData_17,Medical Shots,医疗针剂,RDUnlockData.as
+as3_RDUnlockData_18,Mounted Weapons,车载武器,RDUnlockData.as
+as3_RDUnlockData_19,Moving Cars,行驶中的车辆,RDUnlockData.as
+as3_RDUnlockData_20,Mutant Tactics,变异体战术,RDUnlockData.as
+as3_RDUnlockData_21,Oil Spills,漏油,RDUnlockData.as
+as3_RDUnlockData_22,Police Stations,警察局,RDUnlockData.as
+as3_RDUnlockData_23,Proximity Mines,感应地雷,RDUnlockData.as
+as3_RDUnlockData_24,Security Fences,安保围栏,RDUnlockData.as
+as3_RDUnlockData_25,Spike Soldiers,尖刺士兵,RDUnlockData.as
+as3_RDUnlockData_26,Spike Strips,尖刺路障,RDUnlockData.as
+as3_RDUnlockData_27,Support Choppers,支援直升机,RDUnlockData.as
+as3_RDUnlockData_28,The aiming levels up as you play and affects how responsive your aiming is with the weapon.,瞄准会随着游戏自动升级，影响你使用该武器瞄准时的响应速度。,RDUnlockData.as
+as3_RDUnlockData_29,"The handling levels up as you play and affects your equip/unequip speed, how much kick back you get from hard collisions and how fast you recover from those.",操控会随着游戏自动升级，影响你装备/卸下武器的速度、猛烈碰撞时的后坐颠簸程度以及从中恢复的速度。,RDUnlockData.as
+as3_RDUnlockData_30,The reloading levels up as you play and affects how fast you reload this weapon. This is crucial when dealing with a crowd of zombies.,装填会随着游戏自动升级，影响你装填该武器的速度。面对一群丧尸时至关重要。,RDUnlockData.as
+as3_RDUnlockData_31,Undead Soldier,亡灵士兵,RDUnlockData.as
+as3_RDUnlockData_32,Undead Tactics,亡灵战术,RDUnlockData.as
+as3_RDUnlockData_33,Water Barrels,水桶,RDUnlockData.as
+as3_RDUnlockData_34,Weapon Caches,武器箱,RDUnlockData.as
+as3_RDUpgradeScreen_1,A med patch will heal your wounds and let you live until the next life threatening event.  Using them at the right moment is crucial.,医疗包能治愈你的伤势，让你撑到下一次危及生命的时刻。在恰当时机使用至关重要。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_2,"A steroid shot will make you immune to bodily damage (bullets, explosions) for a moment.  Using it wisely can be the difference between life and death.",类固醇针剂能让你在短时间内免疫身体伤害（子弹、爆炸）。明智地使用它可能决定生死。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_3,Armor upgrades will add metal plating over your engine so you can handle a lot of collisions.  Better upgrades mean better protection.,装甲升级会在引擎上加装金属板，让你能承受大量碰撞。升级越好，防护越强。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_4,Assault Rifle,突击步枪,RDUpgradeScreen.as
+as3_RDUpgradeScreen_5,Assault SMG,突击冲锋枪,RDUpgradeScreen.as
+as3_RDUpgradeScreen_6,Auto Shotgun,自动霰弹枪,RDUpgradeScreen.as
+as3_RDUpgradeScreen_7,"Chopper Support lets you call in a chopper to assist you for a short moment.  Not available in Story Mode, Rescue Op and F.U.B.A.R.",直升机支援能让你呼叫一架直升机短暂协助你。剧情模式、救援行动和 F.U.B.A.R. 中不可用。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_8,Compact SMG,紧凑冲锋枪,RDUpgradeScreen.as
+as3_RDUpgradeScreen_9,Engine upgrades affect how fast you accelerate and how much punishement the engine can take.,引擎升级影响你的加速速度以及引擎能承受的损耗。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_10,Fires powerful rounds that will do massive damage. Watch the heat meter or it will overheat and stop functioning until it cools off. Cannot be reloaded.,发射威力强大的弹药，造成巨大伤害。注意热量表，否则会过热并停用，直到冷却为止。无法装填。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_11,Fires rockets that will blow up everything it touches.  It\'s the most destructive weapon in your arsenal. Cannot be reloaded.,发射火箭，摧毁所触碰的一切。是你武器库中破坏力最强的武器。无法装填。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_12,Install Weapon,安装武器,RDUpgradeScreen.as
+as3_RDUpgradeScreen_13,Repair Bumper,维修保险杠,RDUpgradeScreen.as
+as3_RDUpgradeScreen_14,Repair Engine,维修引擎,RDUpgradeScreen.as
+as3_RDUpgradeScreen_15,Repair Tires,维修轮胎,RDUpgradeScreen.as
+as3_RDUpgradeScreen_16,Repair your armor to maintain your protection from hard collisions.,维修装甲，以维持对猛烈碰撞的防护。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_17,Repair your engine now and avoid the eminent engine explosion.  This is crucial when you want to install armor.,立刻维修引擎，避免引擎即将爆炸。想安装装甲时尤其关键。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_18,Repair your tires and handle your vehicle as if they were brand new.,维修轮胎，让你的车辆操控如新。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_19,Replenish Ammo,补充弹药,RDUpgradeScreen.as
+as3_RDUpgradeScreen_20,The Ammo Pickup perk affects how much ammo you get from ammo points like abandonned hummers and army trucks.,弹药拾取技能影响你从弹药点（如废弃悍马和军用卡车）获得的弹药量。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_21,The Driver Switch perk will affect how fast you can switch seats when you want to switch your driver and your gunner.  It\'s crucial to survive zombie heavy areas.,司机换位技能影响你想在司机和射手之间换座时的速度。在丧尸密集的区域生存至关重要。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_22,"The Level Up perk will make your characters level up their personal stats faster, driving skill, weapon handling, weapon reloading, etc.",升级技能能让你的角色更快提升个人属性，如驾驶技能、武器操控、武器装填等。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_23,"The Lower Cost perk does what it says, it lowers the RP costs of all the things you can purchase and upgrade.",降低花费技能顾名思义，能降低你所有可购买和升级项目的 RP 花费。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_24,"The Task Speed perk will affect how fast you perform tasks when you stop at special locations like the garages, weapon crates, police stations, etc.",任务速度技能影响你在修车厂、武器箱、警察局等特殊地点停靠时执行任务的速度。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_25,This will fully replenish your ammunition for all weapons except the mounted weapon installed on your vehicle.,这会为你所有武器补满弹药，但车上安装的车载武器除外。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_26,"Tire upgrades affect how fast you can steer in combination with the driver\'s driving skill, how fast you brake and how well you can handle spike strips and oil spills.",轮胎升级结合司机的驾驶技能，影响你的转向速度、刹车速度以及应对尖刺路障和漏油的能力。,RDUpgradeScreen.as
+as3_RDUpgradeScreen_27,Upgrade Bumper,升级保险杠,RDUpgradeScreen.as
+as3_RDUpgradeScreen_28,Upgrade Engine,升级引擎,RDUpgradeScreen.as
+as3_RDUpgradeScreen_29,Upgrade Tires,升级轮胎,RDUpgradeScreen.as
+as3_RDWeaponM16_1,Assault Rifle,突击步枪,RDWeaponM16.as
+as3_RDWeaponM16_2,The Assault Rifle is a well rounded military issued weapon.  It offers good precision on medium bursts but isn\'t the most easy to handle weapon.,突击步枪是一款均衡的军用制式武器。中距离点射精度不错，但算不上最易操控的武器。,RDWeaponM16.as
+as3_RDWeaponM60_1,The Large Machine Gun (LMG) doesn\'t have good accuracy but makes up for it in fire power and magazine size. Reloading is slow so be careful.,大型机枪（LMG）精度不高，但以火力和弹匣容量弥补。装填较慢，务必小心。,RDWeaponM60.as
+as3_RDWeaponMAC11_1,Compact SMG,紧凑冲锋枪,RDWeaponMAC11.as
+as3_RDWeaponMAC11_2,"The Compact SMG is a light weight weapon that is easy to handle but doesn\'t have the best accuracy, it works best with small bursts.",紧凑冲锋枪是一款轻便易操控的武器，但精度不算最佳，最好采用短点射。,RDWeaponMAC11.as
+as3_RDWeaponMP5_1,Assault SMG,突击冲锋枪,RDWeaponMP5.as
+as3_RDWeaponMP5_2,"The Assault SMG is a responsive weapon that offers a good balance between aiming speed, handling, damage and mag size.",突击冲锋枪是一款响应灵敏的武器，在瞄准速度、操控、伤害和弹匣容量之间平衡良好。,RDWeaponMP5.as
+as3_RDWeaponMountedMG_1,Mounted MG,车载机枪,RDWeaponMountedMG.as
+as3_RDWeaponPistol_1,"The pistol offers a great aiming speed but low damage and hard handling on collisions.  However, in dire situations, you can always count on this hand weapon.",手枪瞄准速度极快，但伤害低，碰撞时操控困难。不过危急时刻，这把随身武器总能派上用场。,RDWeaponPistol.as
+as3_RDWeaponRocketLauncher_1,Rocket Launcher,火箭发射器,RDWeaponRocketLauncher.as
+as3_RDWeaponSPAS12_1,Auto Shotgun,自动霰弹枪,RDWeaponSPAS12.as
+as3_RDWeaponSPAS12_2,The auto shotgun delivers quick and powerful shots at short range. Very inaccurate at long range. Torso shots have a chance to splatter the zombie.,自动霰弹枪在近距离射速快、威力大。远距离极不精准。击中躯干有一定几率把丧尸打爆。,RDWeaponSPAS12.as
+as3_RDWeaponShotgun_1,"The Shotgun is powerful at close range. Be mindful, reloading is slow but can be interrupted. Torso shots have a chance to splatter the zombie.",霰弹枪在近距离威力巨大。注意，装弹速度慢，但可以中断。击中躯干有一定几率把丧尸打爆。,RDWeaponShotgun.as
+as3_RDZombie_1,FUCK: StartCling already taken,妈的：StartCling 已被占用,RDZombie.as
+as3_RoadOfTheDead_fla_HighScoreDeadOnTime_2559_1,High Scores,最高分,RoadOfTheDead_fla\HighScoreDeadOnTime_2559.as
+as3_RoadOfTheDead_fla_HighScoreDeadOnTime_2559_2,Out Of Time Distance,限时距离,RoadOfTheDead_fla\HighScoreDeadOnTime_2559.as
+as3_RoadOfTheDead_fla_MainTimeline_1,Flash Ad Only,仅 Flash 广告,RoadOfTheDead_fla\MainTimeline.as
+as3_RoadOfTheDead_fla_MainTimeline_2,Simulate Logged-in User,模拟已登录用户,RoadOfTheDead_fla\MainTimeline.as

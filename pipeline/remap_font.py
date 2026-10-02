@@ -96,21 +96,22 @@ def text_font_offsets(body: bytes, code: int) -> list[int]:
         b.byte += 1
         if flags == 0:
             break
-        if flags & 0x80:
-            if flags & 0x08:
-                offsets.append(b.byte)
-                b.byte += 2
-            if flags & 0x04:
-                b.byte += 4 if code == 33 else 3
-            if flags & 0x02:
-                b.byte += 2
-            if flags & 0x01:
-                b.byte += 2
-            if flags & 0x10:
-                b.byte += 2
-        else:
-            total = flags * (glyph_bits + advance_bits)
-            b.byte += (total + 7) // 8
+        if flags & 0x08:
+            offsets.append(b.byte)      # FontID
+            b.byte += 2
+        if flags & 0x04:
+            b.byte += 4 if code == 33 else 3   # TextColor (RGBA in DefineText2)
+        if flags & 0x01:
+            b.byte += 2                 # XOffset
+        if flags & 0x02:
+            b.byte += 2                 # YOffset
+        if flags & 0x08:
+            b.byte += 2                 # TextHeight
+        count = body[b.byte]            # GlyphCount
+        b.byte += 1
+        if count == 0:
+            break
+        b.byte += (count * (glyph_bits + advance_bits) + 7) // 8
     return offsets
 
 

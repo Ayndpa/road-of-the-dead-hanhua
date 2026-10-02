@@ -101,6 +101,7 @@ IMPORT_BLOCK = """package
    import flash.display.Stage;
    import flash.events.Event;
    import flash.events.KeyboardEvent;
+   import flash.events.SampleDataEvent;
    import flash.events.TimerEvent;
    import flash.filters.GlowFilter;
    import flash.media.Sound;
@@ -110,6 +111,7 @@ IMPORT_BLOCK = """package
    import flash.text.TextField;
    import flash.text.TextFormat;
    import flash.text.TextFormatAlign;
+   import flash.utils.ByteArray;
    import flash.utils.Timer;
    import flash.utils.getQualifiedClassName;
    import flash.utils.getTimer;
@@ -157,7 +159,7 @@ STATIC_VARS = """
       
       internal static var m_fFps:Number = 30;
       
-      internal static var m_fStreamOffset:Number = 1.58;
+      internal static var m_fStreamOffset:Number = __STREAM_OFFSET__;
       
       internal static var m_iStreamSeg:int = -2;
       
@@ -859,10 +861,14 @@ METHODS = r"""
       }
 """
 
-PLAY_ANCHOR = """         m_SoundChannel = m_Sound.play(fPosition * 1000,bLooping ? 99999999 : 0);
-         m_bLooping = bLooping;
-"""
-PLAY_REPLACEMENT = PLAY_ANCHOR + "         SubtitleOnPlay(this);\n"
+PLAY_ANCHORS = [
+    # ROTD2: DTSound uses explicit `this.` on the fields
+    "         this.m_SoundChannel = this.m_Sound.play(fPosition * 1000,bLooping ? 99999999 : 0);\n"
+    "         this.m_bLooping = bLooping;\n",
+    # ROTD1
+    "         m_SoundChannel = m_Sound.play(fPosition * 1000,bLooping ? 99999999 : 0);\n"
+    "         m_bLooping = bLooping;\n",
+]
 
 
 def as3_literal(text: str) -> str:
@@ -1051,6 +1057,76 @@ def build_timed_chunks(
     return entries, (" + ".join(pieces) if pieces else '""')
 
 
+def generate(original, out, durations=None, stream_timing=None, swf=None,
+             min_split_secs: float = 7.5, debug: bool = False,
+             stream_offset: float = 1.58) -> Path:
+    subs = VOICE
+    items = sorted((k, v) for k, v in subs.items() if v)
+    chunks = build_chunks(items)
+    print(f"voice subtitle entries: {len(items)}; ", end="")
+
+    durations_map: dict[str, float] = {}
+    segments: dict[str, list[dict]] = {}
+    if durations and Path(durations).exists():
+        for v in json.loads(Path(durations).read_text(encoding="utf-8")).values():
+            cls = str(v.get("cls"))
+            durations_map[cls] = float(v.get("duration") or 0.0)
+            segs = v.get("segments")
+            if segs:
+                segments[cls] = segs
+    timed, timed_chunks = build_timed_chunks(
+        subs, durations_map, min_split_secs, segments
+    )
+    print(f"{len(timed)} timed clips; ", end="")
+
+    stream: list[dict] = []
+    if stream_timing and Path(stream_timing).exists():
+        timing = json.loads(Path(stream_timing).read_text(encoding="utf-8"))
+        for i, seg in enumerate(timing):
+            zh = STREAM.get(f"stream_{i:02d}")
+            if zh:
+                stream.append({"start": seg["start"], "end": seg["end"], "zh": zh})
+    stream_chunks = build_stream_chunks(stream) if stream else '""'
+    print(f"{len(stream)} stream entries")
+
+    src = Path(original).read_text(encoding="utf-8")
+
+    # 1. swap import block + class declaration
+    head = "   internal class DTSound extends BasicObject\n   {\n"
+    head_end = src.index(head) + len(head)
+    src = IMPORT_BLOCK + STATIC_VARS + src[head_end:]
+
+    # 2. hook Play()
+    for anchor in PLAY_ANCHORS:
+        if anchor in src:
+            src = src.replace(anchor, anchor + "         SubtitleOnPlay(this);\n", 1)
+            break
+    else:
+        raise SystemExit("Play() anchor not found")
+
+    # 3. append subtitle methods before the trailing braces
+    tail = "   }\n}\n"
+    idx = src.rindex(tail)
+    methods = METHODS.replace("__SUBTITLE_CHUNKS__", chunks)
+    methods = methods.replace("__STREAM_CHUNKS__", stream_chunks)
+    methods = methods.replace("__TIMED_CHUNKS__", timed_chunks)
+    src = src[:idx] + methods + src[idx:]
+
+    design_w, design_h = swf_stage_size(Path(swf)) if swf else (0.0, 0.0)
+    src = src.replace("__DESIGN_W__", f"{design_w:.1f}")
+    src = src.replace("__DESIGN_H__", f"{design_h:.1f}")
+    print(f"design stage size: {design_w:g}x{design_h:g}")
+
+    src = src.replace("__DBG_MODE__", "true" if debug else "false")
+    src = src.replace("__STREAM_OFFSET__", f"{stream_offset:.4f}")
+
+    out_path = Path(out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(src, encoding="utf-8")
+    print(f"wrote {out_path} ({len(src)} chars)")
+    return out_path
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--durations", default=str(ROOT / "data" / "asr_all.json"),
@@ -1063,68 +1139,11 @@ def main() -> int:
     ap.add_argument("--swf", default=str(ROOT / "dist" / "Road-Of-The-Dead.swf"),
                     help="original SWF, used to read the native design stage size")
     ap.add_argument("--debug", action="store_true")
+    ap.add_argument("--stream-offset", type=float, default=1.58,
+                    help="seconds between timeline frame 1 and the stream's t=0")
     args = ap.parse_args()
-
-    subs = VOICE
-    items = sorted((k, v) for k, v in subs.items() if v)
-    chunks = build_chunks(items)
-    print(f"voice subtitle entries: {len(items)}; ", end="")
-
-    durations: dict[str, float] = {}
-    segments: dict[str, list[dict]] = {}
-    if args.durations and Path(args.durations).exists():
-        for v in json.loads(Path(args.durations).read_text(encoding="utf-8")).values():
-            cls = str(v.get("cls"))
-            durations[cls] = float(v.get("duration") or 0.0)
-            segs = v.get("segments")
-            if segs:
-                segments[cls] = segs
-    timed, timed_chunks = build_timed_chunks(
-        subs, durations, args.min_split_secs, segments
-    )
-    print(f"{len(timed)} timed clips; ", end="")
-
-    stream: list[dict] = []
-    if args.stream_timing and Path(args.stream_timing).exists():
-        timing = json.loads(Path(args.stream_timing).read_text(encoding="utf-8"))
-        for i, seg in enumerate(timing):
-            zh = STREAM.get(f"stream_{i:02d}")
-            if zh:
-                stream.append({"start": seg["start"], "end": seg["end"], "zh": zh})
-    stream_chunks = build_stream_chunks(stream) if stream else '""'
-    print(f"{len(stream)} stream entries")
-
-    src = Path(args.original).read_text(encoding="utf-8")
-
-    # 1. swap import block + class declaration
-    head_end = src.index("   internal class DTSound extends BasicObject\n   {\n")
-    head_end += len("   internal class DTSound extends BasicObject\n   {\n")
-    src = IMPORT_BLOCK + STATIC_VARS + src[head_end:]
-
-    # 2. hook Play()
-    if PLAY_ANCHOR not in src:
-        raise SystemExit("Play() anchor not found")
-    src = src.replace(PLAY_ANCHOR, PLAY_REPLACEMENT, 1)
-
-    # 3. append subtitle methods before the trailing braces
-    tail = "   }\n}\n"
-    idx = src.rindex(tail)
-    methods = METHODS.replace("__SUBTITLE_CHUNKS__", chunks)
-    methods = methods.replace("__STREAM_CHUNKS__", stream_chunks)
-    methods = methods.replace("__TIMED_CHUNKS__", timed_chunks)
-    src = src[:idx] + methods + src[idx:]
-
-    design_w, design_h = swf_stage_size(Path(args.swf))
-    src = src.replace("__DESIGN_W__", f"{design_w:.1f}")
-    src = src.replace("__DESIGN_H__", f"{design_h:.1f}")
-    print(f"design stage size: {design_w:g}x{design_h:g}")
-
-    src = src.replace("__DBG_MODE__", "true" if args.debug else "false")
-
-    out = Path(args.out)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(src, encoding="utf-8")
-    print(f"wrote {out} ({len(src)} chars)")
+    generate(args.original, args.out, args.durations, args.stream_timing,
+             args.swf, args.min_split_secs, args.debug, args.stream_offset)
     return 0
 
 
