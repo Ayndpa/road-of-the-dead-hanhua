@@ -188,6 +188,8 @@ as3_RDGameModeGarage_004,"""Firearm""","""枪械""",RDGameModeGarage.as
 as3_RDGameModeGarage_005,"""Windshield""","""挡风玻璃""",RDGameModeGarage.as
 as3_RDGameModeGarage_006,"""Engine""","""引擎""",RDGameModeGarage.as
 as3_RDGameModeGarage_007,"""Bumper""","""保险杠""",RDGameModeGarage.as
+as3_RDGameModeGarage_008,"""Tires""","""轮胎""",RDGameModeGarage.as
+as3_RDGameModeGarage_009,"""Horn""","""喇叭""",RDGameModeGarage.as
 as3_RDGameModeMilitary_000,Police State Distance,《警察国家》距离,RDGameModeMilitary.as
 as3_RDGameModeMilitary_001,Dead On Time Distance,《准时赴死》距离,RDGameModeMilitary.as
 as3_RDGameModeStory_000,Evans City,埃文斯城,RDGameModeStory.as

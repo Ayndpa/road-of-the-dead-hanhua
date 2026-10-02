@@ -109,6 +109,12 @@ RIGHT_ALIGN_IDS = [
     3958,  # 枪械      Firearm
     3959,  # 保险杠    Bumper
     3967,  # 喇叭      Horn
+    # garage bottom-right "Drive To" -> "前往".  The static label sits to the left
+    # of the dynamic destination name, so the (shorter) Chinese must hug the
+    # destination on its right instead of sitting at the English box's left origin,
+    # which left the two characters floating with a gap before the destination.
+    4019,  # idle
+    4020,  # over
 ]
 
 
@@ -137,8 +143,21 @@ def svg_ink(txt: str) -> tuple[float, float, float, float] | None:
         if xs:
             glyphs[m.group(1)] = (min(xs), max(xs), min(ys), max(ys))
     gs = re.findall(r'<g transform="matrix\(([^)]*)\)"', txt)[:2]
-    gx = sum(float(g.split(",")[4]) for g in gs)
-    gy = sum(float(g.split(",")[5]) for g in gs)
+
+    def _grp(i: int) -> tuple[float, float, float, float]:
+        # (scaleX, scaleY, translateX, translateY) of the i-th wrapping ``<g>``.
+        if i < len(gs):
+            v = [float(x) for x in gs[i].split(",")]
+            return v[0], v[3], v[4], v[5]
+        return 1.0, 1.0, 0.0, 0.0
+
+    # The outer group shifts the tag bounds; the inner one is the text matrix.
+    # The matrix scale (FFDec's ``scalexf``/``scaleyf``) has to be folded in or a
+    # horizontally stretched run is measured at its unstretched width.
+    a0, d0, e0, f0 = _grp(0)
+    a1, d1, e1, f1 = _grp(1)
+    gxs, gys = a0 * a1, d0 * d1
+    gx, gy = e0 + a0 * e1, f0 + d0 * f1
     box = [None, None, None, None]
     for use in re.findall(r'<use\b[^>]*>', txt):
         m = re.search(r'transform="matrix\(([^)]*)\)"', use)
@@ -150,8 +169,10 @@ def svg_ink(txt: str) -> tuple[float, float, float, float] | None:
         bounds = glyphs.get(href.group(1))
         if bounds is None:
             continue
-        vals = (gx + ex + sx * bounds[0], gx + ex + sx * bounds[1],
-                gy + ey + sy * bounds[2], gy + ey + sy * bounds[3])
+        vals = (gx + gxs * (ex + sx * bounds[0]),
+                gx + gxs * (ex + sx * bounds[1]),
+                gy + gys * (ey + sy * bounds[2]),
+                gy + gys * (ey + sy * bounds[3]))
         for i, v in enumerate(vals):
             box[i] = v if box[i] is None else (
                 min(box[i], v) if i % 2 == 0 else max(box[i], v))
@@ -259,7 +280,12 @@ def svg_line_boxes(txt: str) -> list[tuple[float, float]]:
         if xs:
             glyphs[m.group(1)] = (min(xs), max(xs))
     gs = re.findall(r'<g transform="matrix\(([^)]*)\)"', txt)[:2]
-    gx = sum(float(g.split(",")[4]) for g in gs)
+    a0 = float(gs[0].split(",")[0]) if gs else 1.0
+    e0 = float(gs[0].split(",")[4]) if gs else 0.0
+    a1 = float(gs[1].split(",")[0]) if len(gs) > 1 else 1.0
+    e1 = float(gs[1].split(",")[4]) if len(gs) > 1 else 0.0
+    gxs = a0 * a1
+    gx = e0 + a0 * e1
     lines: dict[int, list[float]] = {}
     for use in re.findall(r'<use\b[^>]*>', txt):
         m = re.search(r'transform="matrix\(([^)]*)\)"', use)
@@ -271,8 +297,8 @@ def svg_line_boxes(txt: str) -> list[tuple[float, float]]:
         b = glyphs.get(href.group(1))
         if b is None:
             continue
-        left = gx + ex + sx * b[0]
-        right = gx + ex + sx * b[1]
+        left = gx + gxs * (ex + sx * b[0])
+        right = gx + gxs * (ex + sx * b[1])
         d = lines.setdefault(round(ey / 10), [None, None])  # type: ignore[arg-type]
         d[0] = left if d[0] is None else min(d[0], left)
         d[1] = right if d[1] is None else max(d[1], right)

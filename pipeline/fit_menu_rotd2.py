@@ -8,10 +8,17 @@ right edge of the stage.
 
 This pass shrinks each label's ``height`` so the rendered Chinese ink height
 equals the original English ink height, and shifts its baseline ``y`` so the
-Chinese stays vertically centred on the original English ink.  Horizontal
-placement is left alone -- ``align_rotd2.py`` right-aligns these ids onto the
-original English right edge afterwards (it needs the *rendered* post-scale ink,
-which is why the two passes are separate).
+Chinese stays vertically centred on the original English ink.
+
+Chinese is more compact than the Latin originals (a few 字 replacing a long
+English word), so matching the height still leaves a short label filling only a
+small slice of the button.  Following ROTD1's ``menu_labels.py``, the run is then
+widened horizontally -- the text matrix ``scalexf`` is stretched toward the
+original English ink width, capped at ``MAX_H_STRETCH`` so the strokes do not
+smear, and the wide English button therefore comes out filled instead of
+collapsing to a few tiny characters in the middle.  Horizontal placement is left
+alone -- ``align_rotd2.py`` re-centres these ids afterwards (it needs the
+*rendered* post-scale ink, which is why the two passes are separate).
 
 Usage:
     python pipeline/fit_menu_rotd2.py --swf <in.swf> --orig <orig.swf> \
@@ -44,12 +51,28 @@ MENU_IDS = {
     3264, 3265, 3267, 3268, 3270, 3271, 3273, 3274, 3276, 3277,
 }
 
+# Widest the run may be stretched horizontally, as a multiple of its natural
+# (height-matched) width.  Mirrors ROTD1's menu_labels.MAX_H_STRETCH: short
+# captions are widened to fill the English button instead of leaving a couple of
+# square glyphs lost in the middle, and the cap keeps the strokes from smearing.
+MAX_H_STRETCH = 2.5
+# Once the stretch is capped, the remaining slack is spread between the glyphs;
+# the largest inter-character gap is this fraction of the line height (ROTD1's
+# menu_labels.MAX_GAP_RATIO).  ``letterspacing`` is in twips (1/20 px) and the tag
+# matrix scales it with the glyphs, so 1 unit adds 0.05*sx px to each gap.
+MAX_GAP_RATIO = 0.6
+
 
 def _svg_gy(svg: str) -> float | None:
     """Vertical origin of an FFDec ``text:svg`` dump (sum of the first two groups)."""
     gs = re.findall(r'<g transform="matrix\(([^)]*)\)"', svg)[:2]
     vals = [float(g.split(",")[5]) for g in gs if g.count(",") >= 5]
     return sum(vals) if vals else None
+
+
+def _header_float(header: str, key: str) -> float | None:
+    m = re.search(rf"(?m)^{key} (-?\d+(?:\.\d+)?)", header)
+    return float(m.group(1)) if m else None
 
 
 def fit_label(famt: str, ofamt: str, o, b, gy, segs) -> str | None:
@@ -64,8 +87,9 @@ def fit_label(famt: str, ofamt: str, o, b, gy, segs) -> str | None:
     zh_h = b[3] - b[2]
     if zh_h <= 0 or en_h <= 0:
         return None
-    # Only ever shrink: Chinese read at the Latin em is already too tall.
-    scale = min(1.0, en_h / zh_h)
+    # Match the English ink height exactly: Chinese read at the Latin em is ~1.5x
+    # too tall, so this normally shrinks, but a short label may still grow to fill.
+    scale = en_h / zh_h
     new_h = max(1, int(round(cur_h * scale)))
     # The ink centre moves with the height because the baseline is fixed; the
     # per-height slope of the ink centre about the baseline is measured from the
@@ -76,8 +100,42 @@ def fit_label(famt: str, ofamt: str, o, b, gy, segs) -> str | None:
     slope = (c_old - gy - baseline) / cur_h
     c_pred = gy + baseline + new_h * slope
     new_y = int(round(cur_y + (c_en - c_pred) * 20))
+    # Horizontal fill (ROTD1's menu_labels.py): the run after the height change is
+    # ``zh_w * (new_h/cur_h)`` wide, because glyph advances scale with the record
+    # height.  Stretch it toward the English ink width -- never shrinking, and
+    # capped so the strokes stay clean.  A tag may already carry a scale/tracking
+    # from an earlier run (this pass is re-runnable), so undo those first: the SVG
+    # ink is measured *after* them and would otherwise be divided twice.
+    n = len(segs[0].strip())
+    prev_sx = _header_float(famt, "scalexf") or 1.0
+    prev_ls = header_int(famt, "letterspacing") or 0
+    prev_track = (n - 1) * prev_ls * 0.05 * prev_sx if n > 1 else 0.0
+    zh_w_natural = max(0.0, (b[1] - b[0]) - prev_track) / prev_sx
+    en_w = o[1] - o[0]
+    zh_w_scaled = zh_w_natural * (new_h / cur_h)
+    if en_w > 0 and zh_w_scaled > 0:
+        sx = max(1.0, min(MAX_H_STRETCH, en_w / zh_w_scaled))
+    else:
+        sx = 1.0
     out = re.sub(r"(?m)^height -?\d+", f"height {new_h}", famt)
     out = re.sub(r"(?m)^y -?\d+", f"y {new_y}", out)
+    # Tag-level text-matrix scale.  ``scaleyf`` is written even at 1.0 because
+    # FFDec reads a missing scaleyf as 0 and would flatten the glyphs.
+    out = re.sub(r"(?m)^scalexf .*\n?", "", out)
+    out = re.sub(r"(?m)^scaleyf .*\n?", "", out)
+    out = re.sub(r"(?m)^letterspacing .*\n?", "", out)
+    end = out.index("]")
+    out = out[:end] + f"scalexf {sx:.4f}\nscaleyf 1.0000\n" + out[end:]
+    # Tracking: when the stretch is capped the run is still short, so spread the
+    # remainder evenly between the glyphs (ROTD1's menu_labels.py) -- this fills
+    # even a two-character caption without smearing the strokes any further.
+    if n > 1 and sx >= MAX_H_STRETCH - 1e-6:
+        slack = en_w - sx * zh_w_scaled
+        if slack > 0:
+            ls = int(round(slack / ((n - 1) * 0.05 * sx)))
+            ls = min(ls, int(round(MAX_GAP_RATIO * en_h / (0.05 * sx))))
+            rec = out.index("]", end + 1)      # end of the record header
+            out = out[:rec] + f"letterspacing {ls}\n" + out[rec:]
     return out
 
 

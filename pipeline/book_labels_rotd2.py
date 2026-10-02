@@ -103,6 +103,12 @@ COVER = "#ad9a5f"
 # Glyph height relative to the original caption line box (slight overshoot reads
 # better for CJK, whose ink is denser than the Latin caps).
 GROW = 1.15
+# The Chinese caption is far more compact than the English it replaces, so each
+# line is widened to fill the book cover like ROTD1's menu_labels.py: glyphs are
+# stretched up to MAX_H_STRETCH and the remainder absorbed as even, capped
+# tracking (MAX_GAP_RATIO of the line height), then the run is centred.
+MAX_H_STRETCH = 2.5
+MAX_GAP_RATIO = 0.6
 LABEL_KEY = "SurvivalGuide"
 
 
@@ -132,31 +138,57 @@ def _line_boxes(d: str) -> list[tuple[float, float, float, float]]:
     return [box(g) for g in groups if g]
 
 
-def _line_path(font: TTFont, text: str, cx: float, top: float,
-               ink_h: float) -> str:
-    """A path string for ``text`` centred on ``cx`` with its ink top at ``top``."""
+def _line_path(font: TTFont, text: str, box_left: float, box_w: float,
+               top: float, ink_h: float) -> str:
+    """A path filling the caption line box ``box_left..box_left+box_w``.
+
+    The ink fills ``ink_h`` vertically.  Horizontally the run is widened toward
+    the box width -- each glyph stretched up to ``MAX_H_STRETCH``, the remainder
+    spread as even, capped tracking, and the whole run centred in the box -- so
+    the short Chinese caption fills the cover instead of floating in the middle.
+    """
     items, _upm = glyph_data(font, text)
-    pen = 0.0
-    contours = []
-    for cs, adv in items:
-        for c in cs:
-            contours.append([(x + pen, y) for x, y in c])
-        pen += adv
-    pts = [p for c in contours for p in c]
-    if not pts:
+    ys = [p[1] for cs, _adv in items for c in cs for p in c]
+    if not ys:
         return ""
-    xmin = min(p[0] for p in pts); xmax = max(p[0] for p in pts)
-    ymax = max(p[1] for p in pts); ymin = min(p[1] for p in pts)
-    s = ink_h / (ymax - ymin)
-    baseline = top + ymax * s
-    xoff = cx - (xmin + xmax) / 2 * s
+    s = ink_h / (max(ys) - min(ys))
+    baseline = top + max(ys) * s
+
+    glyphs: list[tuple[list[list[tuple[float, float]]], float, float]] = []
+    natural: list[float] = []
+    for cs, _adv in items:
+        if cs:
+            gx0 = min(p[0] for c in cs for p in c)
+            gx1 = max(p[0] for c in cs for p in c)
+        else:
+            gx0 = gx1 = 0.0
+        glyphs.append((cs, gx0, gx1))
+        natural.append((gx1 - gx0) * s)
+
+    n = len(glyphs)
+    total = sum(natural)
+    extra = 0.0
+    if n and total < box_w:
+        extra = min((box_w - total) / n, (MAX_H_STRETCH - 1.0) * (total / n))
+    total += extra * n
+    if n == 1 or total >= box_w:
+        gap, cursor = 0.0, (box_w - total) / 2
+    else:
+        gap = min((box_w - total) / (n - 1), MAX_GAP_RATIO * ink_h)
+        cursor = (box_w - (total + gap * (n - 1))) / 2
+
     parts = []
-    for c in contours:
-        p2 = [(xoff + x * s, baseline - y * s) for x, y in c]
-        if len(p2) < 3:
-            continue
-        parts.append(f"M{p2[0][0]:.2f} {p2[0][1]:.2f} " + " ".join(
-            f"L{p[0]:.2f} {p[1]:.2f}" for p in p2[1:]) + "Z")
+    for (cs, gx0, gx1), nat in zip(glyphs, natural):
+        ink_w = gx1 - gx0
+        sx = (nat + extra) / ink_w if ink_w else 0.0
+        x0 = box_left + cursor - gx0 * sx
+        for c in cs:
+            p2 = [(x0 + x * sx, baseline - y * s) for x, y in c]
+            if len(p2) < 3:
+                continue
+            parts.append(f"M{p2[0][0]:.2f} {p2[0][1]:.2f} " + " ".join(
+                f"L{p[0]:.2f} {p[1]:.2f}" for p in p2[1:]) + "Z")
+        cursor += nat + extra + gap
     return " ".join(parts)
 
 
@@ -177,10 +209,10 @@ def build_shape_svg(shape_svg: str, font: TTFont, text: str) -> str | None:
     for line, box in zip(lines, boxes):
         if not line:
             continue
-        cx = (box[0] + box[1]) / 2
         h = (box[3] - box[2])
         top = box[2] - h * (GROW - 1) / 2
-        paths.append(_line_path(font, line, cx, top, h * GROW))
+        paths.append(_line_path(font, line, box[0], box[1] - box[0],
+                                top, h * GROW))
     filled = m.group(0).replace('fill="#000000"', f'fill="{COVER}"')
     cn = ('<path d="' + " ".join(paths)
           + '" fill="#000000" fill-rule="evenodd" stroke="none"/>')

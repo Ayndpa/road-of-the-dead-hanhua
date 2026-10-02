@@ -46,19 +46,13 @@ PAD = 20
 # longer overflows the English box.
 RIGHT_ALIGN_IDS = {10186, 10187}
 
-# Four short captions (Options / Achievements / Highscores / Credits) sit in a
-# full-width bar, but the original art right-aligns the English inside it, so
-# centring the Chinese on the English ink still leaves it crowded against the
-# bar's right side.  These per-state offsets (button-local px, 1px = 20 twips)
-# move each ink centre onto the bar centre, measured state by state from the
-# original button art (band centre minus English ink centre).  Idle and hover
-# keep different English positions, so they need different nudges.
-MENU_BAR_DELTA = {
-    3270: -56.0, 3271: -49.5,   # Options (idle / hover)
-    3267: -14.0, 3268: -4.5,    # Achievements
-    3264: -32.0, 3265: -21.5,   # Highscores
-    3261: -57.5, 3262: -48.0,   # Credits
-}
+# NOTE: the four short captions that sit in full-width bars (Options /
+# Achievements / Highscores / Credits) used to need a per-state nudge onto the
+# bar centre, because the narrow Chinese was centred on the (right-aligned)
+# English ink and ended up crowded against the bar's right side.  The fit pass
+# now widens those captions to the English ink width, so centring on the English
+# ink already fills the bar and the nudges would push the run off the English
+# geometry again -- they are intentionally gone.
 
 
 def _ink_record_indices(records: list[tuple[str, str]]) -> list[int]:
@@ -202,10 +196,7 @@ def main() -> int:
                 desired = oxmin + o[1] * 20      # original English right edge
                 built_edge = bxmin + b[1] * 20
             else:
-                # Nudge short captions from the English ink centre onto the
-                # centre of their (full-width) idle bar, when we measured one.
-                delta = MENU_BAR_DELTA.get(sid, 0.0) * 20
-                desired = oxmin + (o[0] + o[1]) / 2 * 20 + delta
+                desired = oxmin + (o[0] + o[1]) / 2 * 20   # English ink centre
                 built_edge = bxmin + (b[0] + b[1]) / 2 * 20
             new_tx = int(round(tx - (built_edge - desired)))
             if new_tx == tx:
