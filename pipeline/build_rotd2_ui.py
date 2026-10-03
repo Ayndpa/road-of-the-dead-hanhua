@@ -743,7 +743,16 @@ def main() -> int:
     # blank.  Rename the preserved face (body + metadata) so "Arial" only ever
     # reaches a CJK slot.
     if 10082 in REPLACED_SLOTS:
-        fixed_names = {95: "Arial Legacy", 10082: "Arial"}
+        fixed_names = {
+            3: "Arial Italic",
+            93: "Dirty Ego Legacy",
+            95: "Arial Legacy",
+            132: "Arial Bold Italic",
+            134: "Verdana Legacy",
+            3066: "Arial Bold",
+            8705: "Dirty Ego",
+            10082: "Arial",
+        }
         face = Path(str(args.out) + ".face.swf")
         set_font_face(str(args.out), str(face), fixed_names)
         Path(args.out).unlink()
