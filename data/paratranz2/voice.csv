@@ -1188,7 +1188,7 @@ SND_Story06_B_4C,It's staff people deciding for field units. No wonder we're thi
 SND_Story06_C_1R,"Dispatch to Air Squadron, we need a carpet bombing west of Juneau Street.",调度呼叫空军中队，我们需要对朱诺街以西进行地毯式轰炸。,voice
 SND_Story06_C_2D,"Whoa, shit! That's right on us!",我靠！正冲着我们来了！,voice
 SND_Story06_C_3C,Call it off!,取消！,voice
-SND_Story06_C_4D,"Kilo-5 to Dispatch, we're near Juneau Street! Call off the carpet bombing!",Kilo-5呼叫调度，我们在朱诺街附近！取消地毯式轰炸！,voice
+SND_Story06_C_4D,"Kilo-5 to Dispatch, we're near Juneau Street! Call off the carpet bombing! Dispatch, call off the Juno Street bombing!",Kilo-5呼叫调度，我们在朱诺街附近！取消地毯式轰炸！调度，取消朱诺街的轰炸！,voice
 SND_Story06_D,Fuck! Here they come! Brace yourself!,妈的！它们来了！准备迎战！,voice
 SND_Story07_10D,Thank you so much!,太感谢你了！,voice
 SND_Story07_11R,Hold on tight. It's gonna be rough. You're going straight through a hot zone. I'll help you as much as I can.,抓稳了。会很难熬。你们要直接穿过危险区。我会尽量帮你们。,voice
