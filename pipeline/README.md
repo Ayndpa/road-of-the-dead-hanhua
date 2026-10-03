@@ -26,9 +26,9 @@ uv run python pipeline/build.py                     # 一代完整构建
 uv run python pipeline/ui/build_rotd2_ui.py         # 二代 UI 汉化
 uv run python pipeline/tools/...                    # 见 tools/（pwsh -File ...）
 
-# ASR（可选，仅在重新转写时用）
-uv run python pipeline/asr/asr.py --no-vad --voice-only
-uv run python pipeline/asr/asr_vulkan.py --voice-only
+# ASR（可选，仅在重新转写时用；下面是常驻 whisper-server，模型只加载一次）
+uv run python pipeline/asr/asr_vulkan.py --voice-only --concurrency 4
+uv run python pipeline/asr/asr.py --no-vad --voice-only --concurrency 4
 uv run python pipeline/asr/clean_asr.py --asr work/asr_gpu.json
 ```
 
@@ -44,9 +44,10 @@ uv run python pipeline/asr/clean_asr.py --asr work/asr_gpu.json
 ### asr/ — 语音转写
 | 模块 | 用途 |
 |---|---|
-| `asr.py` | faster-whisper（CPU）转写 |
-| `asr_vulkan.py` | whisper.cpp Vulkan（AMD GPU）转写 |
-| `asr_segments.py` | VAD 分段 + 逐段增益归一化转写 |
+| `whisper_server.py` | 常驻 whisper-server 客户端（模型只加载一次，供下面各流程共用） |
+| `asr.py` | 全文件转写（Silero VAD 可选，走 server） |
+| `asr_vulkan.py` | 批量 GPU 转写（走 server，`--concurrency` 并发、`--shards/--shard` 分片） |
+| `asr_segments.py` | VAD 分段 + 逐段增益归一化转写（走 server） |
 | `asr_filter.py` | ASR 文本侧清理规则（供 `clean_asr` 复用） |
 | `clean_asr.py` | 丢弃幻觉 / 非对白片段 |
 | `merge_asr.py` | 合并 CPU / GPU 分片结果 |

@@ -1,15 +1,13 @@
 """GPU transcription with whisper.cpp's Vulkan backend (AMD on Windows).
 
 Replaces the old ``asr_gpu.py`` (torch-directml + openai-whisper), which was
-CPU-bound by DirectML's operator-by-operator fallbacks.  This drives the
-``whisper-cli`` binary built with ``GGML_VULKAN=ON`` (see
-``pipeline/tools/fetch-whisper.ps1``) and writes the exact same schema as
-``pipeline/asr/asr.py`` / the former ``asr_gpu.py`` so results can be merged and the
-cache reused.
+CPU-bound by DirectML's operator-by-operator fallbacks.
 
-The CLI is invoked once per clip; audio is decoded to 16 kHz mono s16 WAV with
-PyAV first because whisper-cli only reads WAV.  Segment timestamps come from
-whisper-cli's ``--output-json`` (``offsets`` are milliseconds).
+A single ``whisper-server`` process keeps the model resident on the GPU for the
+whole run; clips are decoded to 16 kHz mono s16 WAV with PyAV and POSTed to the
+server from a small worker pool (``--concurrency``), so the GPU never idles
+waiting on a fresh 3 GB model load.  The result schema matches
+``pipeline/asr/asr.py`` / the former ``asr_gpu.py`` so caches can be merged.
 """
 from __future__ import annotations
 
@@ -18,7 +16,6 @@ import io
 import json
 import os
 import re
-import subprocess
 import sys
 import tempfile
 import time
@@ -28,11 +25,17 @@ from pathlib import Path
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from pipeline.asr.whisper_server import (  # noqa: E402
+    DEFAULT_MODEL,
+    DEFAULT_SERVER,
+    WhisperServer,
+    parse_segments,
+)
+
 SOUNDS = ROOT / "work" / "sounds"
 OUT = ROOT / "work" / "asr_gpu.json"
-
-DEFAULT_WHISPER = ROOT / "tools" / "whisper.cpp" / "build" / "bin" / "whisper-cli.exe"
-DEFAULT_MODEL = ROOT / "tools" / "whisper.cpp" / "models" / "ggml-large-v3.bin"
 
 NAME_RE = re.compile(r"^(?P<chid>-?\d+)_(?P<cls>.+)\.mp3$")
 
@@ -77,54 +80,13 @@ def write_wav(path: Path, audio: np.ndarray, sr: int = 16000) -> None:
         fh.writeframes(pcm.tobytes())
 
 
-def run_whisper_batch(whisper: str, model: str, pairs: list[tuple[Path, Path]], args) -> str:
-    """Run one whisper-cli invocation over many clips (model loaded once).
-
-    ``pairs`` is a list of (wav, output-prefix); each pair becomes a ``-f`` /
-    ``-of`` couple.  Loading the model once per batch instead of once per clip
-    is what makes the whole run fast -- the 3GB model reload otherwise dominates
-    for short dialogue clips.
-    """
-    cmd = [whisper, "-m", model, "-l", args.language, "-oj", "-np"]
-    if not args.no_suppress_nst:
-        cmd.append("-sns")  # suppress non-speech tokens (music notes, [noise], ...)
-    if args.threads:
-        cmd += ["-t", str(args.threads)]
-    if args.beam > 0:
-        cmd += ["-bs", str(args.beam)]
-    for wav, prefix in pairs:
-        cmd += ["-f", str(wav), "-of", str(prefix)]
-    # whisper.cpp/ggml selects the Vulkan device through the environment (the
-    # CUDA_VISIBLE_DEVICES equivalent); the CLI has no --device flag.
-    env = None
-    if args.device >= 0:
-        env = os.environ.copy()
-        env["GGML_VK_VISIBLE_DEVICES"] = str(args.device)
-    proc = subprocess.run(
-        cmd, capture_output=True, text=True, encoding="utf-8", errors="replace", env=env
-    )
-    if proc.returncode != 0:
-        print(
-            f"  !! whisper-cli exited {proc.returncode}: "
-            f"{(proc.stderr or proc.stdout).strip()[-300:]}",
-            flush=True,
-        )
-    return proc.stdout or ""
-
-
-def parse_result(data: dict) -> tuple[str, list[dict]]:
-    segs = []
-    for seg in data.get("transcription", []):
-        off = seg.get("offsets", {})
-        segs.append(
-            {
-                "start": round(float(off.get("from", 0)) / 1000.0, 2),
-                "end": round(float(off.get("to", 0)) / 1000.0, 2),
-                "text": str(seg.get("text", "")).strip(),
-            }
-        )
-    text = " ".join(s["text"] for s in segs).strip()
-    return text, segs
+def resolve_server(args) -> Path:
+    if args.server:
+        return Path(args.server)
+    if args.whisper:
+        # Backwards compatibility: derive whisper-server next to the given CLI.
+        return Path(args.whisper).with_name("whisper-server.exe")
+    return DEFAULT_SERVER
 
 
 def main() -> int:
@@ -136,7 +98,10 @@ def main() -> int:
         except Exception:  # noqa: BLE001
             pass
     ap = argparse.ArgumentParser()
-    ap.add_argument("--whisper", default=os.environ.get("WHISPER_CLI", str(DEFAULT_WHISPER)))
+    ap.add_argument("--server", default=os.environ.get("WHISPER_SERVER", ""),
+                    help=f"whisper-server binary (default: {DEFAULT_SERVER})")
+    ap.add_argument("--whisper", default=os.environ.get("WHISPER_CLI", ""),
+                    help="deprecated whisper-cli path; its folder is used to find whisper-server")
     ap.add_argument("--model", default=os.environ.get("WHISPER_MODEL", str(DEFAULT_MODEL)))
     ap.add_argument("--sounds", default=str(SOUNDS))
     ap.add_argument("--out", default=str(OUT))
@@ -148,11 +113,14 @@ def main() -> int:
     ap.add_argument("--beam", type=int, default=5)
     ap.add_argument("--threads", type=int, default=0)
     ap.add_argument("--device", type=int, default=-1, help="Vulkan device index (-1 = default)")
-    ap.add_argument("--batch",
-        type=int,
-        default=100,
-        help="clips per whisper-cli invocation (the model is loaded once per batch)",
-    )
+    ap.add_argument("--concurrency", type=int, default=4,
+                    help="client inference requests in flight (the server queues them)")
+    ap.add_argument("--processors", type=int, default=1,
+                    help="server processor count; >1 crashes this Vulkan build, so leave at 1")
+    ap.add_argument("--batch", type=int, default=0,
+                    help="deprecated; kept for compatibility (0 = default)")
+    ap.add_argument("--port", type=int, default=0, help="whisper-server port (0 = auto)")
+    ap.add_argument("--server-log", default="", help="write server log to this file")
     ap.add_argument(
         "--no-suppress-nst",
         action="store_true",
@@ -165,11 +133,8 @@ def main() -> int:
     ap.add_argument("--dump", nargs="*", default=None, help="print raw ASR text only")
     args = ap.parse_args()
 
-    whisper, model = Path(args.whisper), Path(args.model)
-    if not whisper.exists():
-        raise SystemExit(f"whisper-cli not found: {whisper}\nrun pipeline/tools/fetch-whisper.ps1 first")
-    if not model.exists():
-        raise SystemExit(f"model not found: {model}\nrun pipeline/tools/fetch-whisper.ps1 first")
+    server_bin = resolve_server(args)
+    model = Path(args.model)
 
     out_path = Path(args.out)
     items = build_manifest(Path(args.sounds))
@@ -177,7 +142,6 @@ def main() -> int:
         rx = re.compile(args.filter)
         items = [i for i in items if rx.search(i["cls"])]
     if args.voice_only:
-        sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
         from pipeline.asr.pick_voice import NOISE_RE, VOICE_RE
 
         items = [
@@ -201,69 +165,77 @@ def main() -> int:
         todo = [x for j, x in enumerate(todo) if j % args.shards == args.shard]
     print(
         f"items={len(items)} cached={len(res)} todo={len(todo)} "
-        f"shard={args.shard}/{args.shards}",
+        f"shard={args.shard}/{args.shards} concurrency={args.concurrency}",
         flush=True,
     )
     if not todo:
         return 0
 
     t0 = time.time()
-    batch_size = max(1, args.batch)
-    n = 0
+    extra = ["-bs", str(args.beam)] if args.beam > 0 else []
     with tempfile.TemporaryDirectory() as td:
         tmpdir = Path(td)
-        for start in range(0, len(todo), batch_size):
-            batch = todo[start : start + batch_size]
-            prepared: list[tuple[dict, Path, Path, float]] = []
-            for i, item in enumerate(batch):
-                try:
-                    audio = decode16k(item["path"])
-                    wav = tmpdir / f"a{start + i}.wav"
-                    write_wav(wav, audio)
-                except Exception as exc:  # noqa: BLE001
-                    n += 1
-                    print(f"  !! {item['cls']}: {type(exc).__name__}: {exc}", flush=True)
-                    continue
-                prepared.append((item, wav, tmpdir / f"a{start + i}", len(audio) / 16000.0))
-            if not prepared:
+        prepared: list[tuple[dict, Path, float]] = []
+        for i, item in enumerate(todo):
+            try:
+                audio = decode16k(item["path"])
+                wav = tmpdir / f"a{i}.wav"
+                write_wav(wav, audio)
+            except Exception as exc:  # noqa: BLE001
+                print(f"  !! {item['cls']}: {type(exc).__name__}: {exc}", flush=True)
                 continue
+            prepared.append((item, wav, len(audio) / 16000.0))
+        if not prepared:
+            return 0
+
+        with WhisperServer(
+            server=server_bin,
+            model=model,
+            language=args.language,
+            threads=args.threads,
+            processors=args.processors,
+            suppress_nst=not args.no_suppress_nst,
+            device=args.device,
+            port=args.port or None,
+            extra_args=tuple(extra),
+            log_file=(args.server_log or None),
+        ) as srv:
             t1 = time.time()
-            run_whisper_batch(
-                str(whisper), str(model), [(w, p) for _, w, p, _ in prepared], args
+            outcomes = srv.transcribe_many(
+                [(wav, None, item["file"]) for item, wav, _ in prepared],
+                concurrency=args.concurrency,
+                language=args.language,
             )
             per_item = round((time.time() - t1) / len(prepared), 2)
-            saved = 0
-            for item, _wav, prefix, duration in prepared:
-                n += 1
-                js = prefix.with_suffix(".json")
-                if not js.exists():
-                    print(f"  !! {item['cls']}: no json from whisper-cli", flush=True)
-                    continue
-                try:
-                    data = json.loads(js.read_text(encoding="utf-8"))
-                    text, segs = parse_result(data)
-                except Exception as exc:  # noqa: BLE001
-                    print(f"  !! {item['cls']}: {type(exc).__name__}: {exc}", flush=True)
-                    continue
-                res[item["file"]] = {
-                    "cls": item["cls"],
-                    "text": text,
-                    "segments": segs,
-                    "duration": round(duration, 2),
-                    "elapsed": per_item,
-                }
-                saved += 1
-                if saved % 20 == 0:
-                    out_path.write_text(
-                        json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8"
-                    )
-                print(
-                    f"[{n}/{len(todo)}] {item['cls']} ({duration:.1f}s, "
-                    f"{per_item:.1f}s) -> {text[:90]!r}",
-                    flush=True,
-                )
+
+        by_file = {item["file"]: (item, wav, dur) for item, wav, dur in prepared}
+        n = 0
+        for key, data in outcomes:
+            item, _wav, duration = by_file[key]
+            n += 1
+            if isinstance(data, Exception):
+                print(f"  !! {item['cls']}: {type(data).__name__}: {data}", flush=True)
+                continue
+            try:
+                segs = parse_segments(data)
+            except Exception as exc:  # noqa: BLE001
+                print(f"  !! {item['cls']}: {type(exc).__name__}: {exc}", flush=True)
+                continue
+            text = " ".join(s["text"] for s in segs).strip()
+            res[item["file"]] = {
+                "cls": item["cls"],
+                "text": text,
+                "segments": segs,
+                "duration": round(duration, 2),
+                "elapsed": per_item,
+            }
             out_path.write_text(
                 json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8"
+            )
+            print(
+                f"[{n}/{len(prepared)}] {item['cls']} ({duration:.1f}s, "
+                f"{per_item:.1f}s) -> {text[:90]!r}",
+                flush=True,
             )
     out_path.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"done in {time.time() - t0:.1f}s", flush=True)

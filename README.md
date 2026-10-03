@@ -74,12 +74,12 @@ pwsh -File pipeline/tools/fetch-tools.ps1 -Proxy http://127.0.0.1:7897   # 下�
 ASR 相关（可选，只在需要重新转写时用）：
 
 ```powershell
-# CPU：faster-whisper
-uv run python pipeline/asr/asr.py --no-vad --voice-only
-
 # AMD GPU：whisper.cpp + Vulkan（全部走国内镜像，见 pipeline/tools/fetch-whisper.ps1）
-pwsh -File pipeline/tools/fetch-whisper.ps1    # 编译 whisper-cli(Vulkan) + 下载 ggml-large-v3
-uv run python pipeline/asr/asr_vulkan.py --voice-only
+pwsh -File pipeline/tools/fetch-whisper.ps1    # 编译 whisper-server/cli(Vulkan) + 下载 ggml-large-v3
+
+# 所有转写流程都常驻一个 whisper-server：模型只加载一次，请求并发跑
+uv run python pipeline/asr/asr_vulkan.py --voice-only --concurrency 4
+uv run python pipeline/asr/asr.py --no-vad --voice-only --concurrency 4
 
 # 清理幻觉 / 非对白（输出 <out>_clean.json / .tsv / .dropped.json）
 uv run python pipeline/asr/clean_asr.py --asr work/asr_gpu.json
