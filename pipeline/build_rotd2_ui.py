@@ -57,6 +57,7 @@ from remap_font import (  # noqa: E402
     copy_font_layout,
     set_font_face,
     set_font_name,
+    shift_sprite_placements,
 )
 from translations import AS3, UI_TRANSLATIONS, load as load_translations  # noqa: E402
 
@@ -242,6 +243,41 @@ def apply_layout_patch(s: str) -> str:
     return s
 
 
+def apply_start_guard_patch(s: str) -> str:
+    """Stop ``DoStartGame`` from running twice and replaying the logo intro.
+
+    ``Start`` arms a 5s "waiting for the API" timer *and* listens for
+    ``API_CONNECTED``.  The Newgrounds shim dispatches ``API_CONNECTED`` even
+    when the connection fails (host-blocked / no metadata), so both the event
+    and the still-armed timer call ``DoStartGame``.  The second call runs
+    ``StartCinematic("NGIntro", true)`` again, so the logo sequence restarts
+    right after the player skipped it -- the reported "skipped but replays"
+    bug.  Guard the entry point so the game only ever starts once.
+    """
+    s = s.replace("\r\n", "\n").replace("\r", "\n")
+    var_anchor = "      internal var m_fWaitingForAPITimer:Number = 0;\n"
+    if "m_bDidStart" in s:
+        return s
+    if var_anchor not in s:
+        raise SystemExit("DoStartGame guard: m_fWaitingForAPITimer anchor not found")
+    s = s.replace(
+        var_anchor,
+        var_anchor + "      internal var m_bDidStart:Boolean = false;\n", 1)
+
+    entry = "      internal function DoStartGame() : *\n      {\n"
+    if entry not in s:
+        raise SystemExit("DoStartGame guard: DoStartGame entry anchor not found")
+    guard = entry + (
+        "         if(this.m_bDidStart)\n"
+        "         {\n"
+        "            return;\n"
+        "         }\n"
+        "         this.m_bDidStart = true;\n"
+        "         this.m_fWaitingForAPITimer = 0;\n"
+    )
+    return s.replace(entry, guard, 1)
+
+
 def as3_script_patches() -> dict[str, str]:
     """Apply the translated AS3 string literals (``as3.csv``) to the sources."""
     from translations import AS3
@@ -263,9 +299,11 @@ def as3_script_patches() -> dict[str, str]:
             elif old.startswith('"') and old.endswith('"') and old in txt:
                 txt = txt.replace(old, new)
                 applied += 1
-        if not applied:
-            continue
         name = ctx.replace("\\", "/")[:-3].replace("/", ".")
+        if name == "RDGame":
+            txt = apply_start_guard_patch(txt)
+        if not applied and name != "RDGame":
+            continue
         p = dst / f"{name}.as"
         p.write_text(txt, encoding="utf-8")
         patches[name] = str(p)
@@ -761,6 +799,20 @@ def main() -> int:
         set_font_name(str(args.out), str(named), fixed_names)
         Path(args.out).unlink()
         named.rename(args.out)
+
+    # The in-game options bar (``MC_Hud.OptionsMenu``, sprite 8668) pairs static
+    # captions (Full Screen / Sounds / Music / Quality) with dynamic
+    # ``DefineEditText`` values.  A CJK face's taller ascent lays the EditText
+    # first line ~3px lower than the Latin original, and moving a DefineEditText
+    # tag's bounds does not move its text, so nudge the four value fields back up
+    # onto the caption baseline by rewriting their placement matrices.
+    shifted = Path(str(args.out) + ".hudshift.swf")
+    moved = shift_sprite_placements(str(args.out), str(shifted), 8668,
+                                    {8652, 8656, 8660, 8664}, -60)
+    if shifted.exists():
+        Path(args.out).unlink()
+        shifted.rename(args.out)
+    print(f"aligned {moved} in-game option value fields")
 
     # Every step above rewrites the SWF uncompressed (FWS), while the original
     # ships zlib-compressed (CWS).  Re-compressing the finished file is the

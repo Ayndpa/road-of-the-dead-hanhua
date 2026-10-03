@@ -65,6 +65,18 @@ UTILITY_VISUAL_CENTER_SHIFT_PX = {
     3270: -63.5, 3271: -63.5,       # Options
 }
 
+# The pause menu's Resume/Abort captions sit in the same left-anchored bar
+# artwork as the utility buttons, but the bar is drawn in the road's perspective
+# so its rendered bounding box reads far right of the bar the player sees; the
+# "centred on the artwork" axis used for the utility buttons is therefore wrong
+# here.  The original English "Resume" already sits on the bar's visual axis, so
+# keep Resume on its English centre and pull Abort left onto that same axis (the
+# English pair was right-aligned at a shared edge, which reads off-centre).
+PAUSE_BUTTON_VISUAL_CENTER_SHIFT_PX = {
+    3173: -10.3, 3174: -10.3,       # Abort -> Resume's axis
+    3177: 0.0, 3178: 0.0,           # Resume -> original English centre
+}
+
 # The menu bars share a visible right edge at x=3250 twips.  The Lost Guns
 # trapezoid extends past that edge, so its visual centre must exclude the right
 # overflow instead of using the full stored DefineText bounds.
@@ -239,6 +251,7 @@ def main() -> int:
                 built_edge = bxmin + (b[0] + b[1]) / 2 * 20
             else:
                 desired = oxmin + (o[0] + o[1]) / 2 * 20   # English ink centre
+                desired += PAUSE_BUTTON_VISUAL_CENTER_SHIFT_PX.get(sid, 0.0) * 20
                 built_edge = bxmin + (b[0] + b[1]) / 2 * 20
             new_tx = int(round(tx - (built_edge - desired)))
             if new_tx == tx:

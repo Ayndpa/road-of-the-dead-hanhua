@@ -367,5 +367,172 @@ def main() -> int:
     return 0
 
 
+def _first_tag_pos(data: bytes) -> int:
+    pos = 8
+    nbits = data[pos] >> 3
+    pos += (5 + nbits * 4 + 7) // 8
+    pos += 4
+    return pos
+
+
+def _iter_swf_tags(buf, start):
+    """Yield ``(tag_start, code, body)`` for the top-level tag stream."""
+    pos = start
+    while pos < len(buf):
+        code_len = struct.unpack_from("<H", buf, pos)[0]
+        p = pos + 2
+        code = code_len >> 6
+        length = code_len & 0x3F
+        if length == 0x3F:
+            length = struct.unpack_from("<I", buf, p)[0]
+            p += 4
+        yield pos, code, buf[p : p + length]
+        pos = p + length
+
+
+def _signed_bits(v: int) -> int:
+    if v >= 0:
+        return max(1, v.bit_length() + 1)
+    return max(1, (~v).bit_length() + 1)
+
+
+class _BitWriter:
+    def __init__(self):
+        self.bits: list[int] = []
+
+    def u(self, v: int, n: int) -> None:
+        for i in range(n - 1, -1, -1):
+            self.bits.append((v >> i) & 1)
+
+    def si(self, v: int, n: int) -> None:
+        if v < 0:
+            v += 1 << n
+        self.u(v, n)
+
+    def align(self) -> None:
+        while len(self.bits) % 8:
+            self.bits.append(0)
+
+    def bytes(self) -> bytes:
+        out = bytearray()
+        for i in range(0, len(self.bits), 8):
+            b = 0
+            for j in range(8):
+                b = (b << 1) | self.bits[i + j]
+            out.append(b)
+        return bytes(out)
+
+
+def _read_matrix(body: bytes, bitpos: int) -> dict:
+    st = {"p": bitpos}
+
+    def u(n):
+        v = 0
+        for _ in range(n):
+            v = (v << 1) | ((body[st["p"] >> 3] >> (7 - (st["p"] & 7))) & 1)
+            st["p"] += 1
+        return v
+
+    def si(n):
+        if n == 0:
+            return 0
+        v = u(n)
+        return v - (1 << n) if v & (1 << (n - 1)) else v
+
+    m = {"has_scale": u(1)}
+    if m["has_scale"]:
+        sb = u(5)
+        m["sx"] = si(sb)
+        m["sy"] = si(sb)
+    m["has_rot"] = u(1)
+    if m["has_rot"]:
+        rb = u(5)
+        m["r0"] = si(rb)
+        m["r1"] = si(rb)
+    tb = u(5)
+    m["tx"] = si(tb)
+    m["ty"] = si(tb)
+    st["p"] = (st["p"] + 7) & ~7      # MATRIX is byte-aligned at its end
+    m["end"] = st["p"] // 8
+    return m
+
+
+def _encode_matrix(m: dict) -> bytes:
+    w = _BitWriter()
+    w.u(1 if m.get("has_scale") else 0, 1)
+    if m.get("has_scale"):
+        sb = max(_signed_bits(m["sx"]), _signed_bits(m["sy"]))
+        w.u(sb, 5)
+        w.si(m["sx"], sb)
+        w.si(m["sy"], sb)
+    w.u(1 if m.get("has_rot") else 0, 1)
+    if m.get("has_rot"):
+        rb = max(_signed_bits(m["r0"]), _signed_bits(m["r1"]))
+        w.u(rb, 5)
+        w.si(m["r0"], rb)
+        w.si(m["r1"], rb)
+    tb = max(_signed_bits(m["tx"]), _signed_bits(m["ty"]))
+    w.u(tb, 5)
+    w.si(m["tx"], tb)
+    w.si(m["ty"], tb)
+    w.align()
+    return w.bytes()
+
+
+def shift_sprite_placements(infile: str, outfile: str, sprite_id: int,
+                            target_ids: set[int], dy: int) -> int:
+    """Move chosen children of ``sprite_id`` ``dy`` twips on Y.
+
+    The in-game options bar places its dynamic ``DefineEditText`` values through
+    the same left-anchored bar artwork as the static captions, but an EditText
+    lays its first line out from the *font ascent*, so swapping the Latin face
+    for a CJK one with a taller ascent pushes the values ~3px below the static
+    names.  ``FCW``'s text import keeps the tag bounds, and bounds do not move an
+    EditText's text, so the fix is to rewrite the child's placement matrix.
+    """
+    data, _ = load_swf_raw(infile)
+    count = 0
+    for tag_start, code, body in _iter_swf_tags(data, _first_tag_pos(data)):
+        if code == 0:
+            break
+        if code != 39 or len(body) < 2:
+            continue
+        if struct.unpack_from("<H", body, 0)[0] != sprite_id:
+            continue
+        out = bytearray(body[:4])      # SpriteID + FrameCount
+        for st, scode, tb in _iter_swf_tags(body, 4):
+            if scode not in (26, 70) or len(tb) < 5:
+                out += encode_tag(scode, bytes(tb))
+                continue
+            f1 = tb[0]
+            f2 = tb[1] if scode == 70 else 0
+            off = 4 if scode == 70 else 3
+            if scode == 70 and (f2 & 0x80):
+                off = tb.index(b"\x00", off) + 1
+            cid = None
+            if f1 & 0x02:
+                cid = struct.unpack_from("<H", tb, off)[0]
+                off += 2
+            if cid in target_ids and (f1 & 0x04):
+                m = _read_matrix(tb, off * 8)
+                m["ty"] += dy
+                tb = tb[:off] + _encode_matrix(m) + tb[m["end"]:]
+                count += 1
+            out += encode_tag(scode, bytes(tb))
+        new_body = bytes(out)
+        new_tag = encode_tag(39, new_body)
+        # body_end is the byte after the original sprite tag's body
+        p = tag_start + 2
+        cl = struct.unpack_from("<H", data, tag_start)[0]
+        length = cl & 0x3F
+        if length == 0x3F:
+            length = struct.unpack_from("<I", data, p)[0]
+            p += 4
+        data = data[:tag_start] + new_tag + data[p + length:]
+        break
+    write_swf_fws(data, outfile)
+    return count
+
+
 if __name__ == "__main__":
     sys.exit(main())
