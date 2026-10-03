@@ -49,7 +49,25 @@ MENU_IDS = {
     3241, 3242, 3244,
     3247, 3249, 3251, 3252, 3254, 3255, 3258, 3259, 3261, 3262,
     3264, 3265, 3267, 3268, 3270, 3271, 3273, 3274, 3276, 3277,
+    3283, 3285, 3289, 3291, 3295, 3297, 3300, 3304, 3308, 3310,
+    3314, 3317, 3325, 3328,
 }
+
+# Main-menu carousel copy is intended to run across the full promo strip.  Use
+# tracking for these labels so the CJK glyphs keep their natural proportions.
+AD_IDS = {
+    3283, 3285, 3295, 3297, 3300, 3304, 3308, 3310,
+    3314, 3317, 3325, 3328,
+}
+
+# The lower-right utility buttons share one fixed label width.  Shorter labels
+# receive the missing width as even inter-character space.
+CENTER_SPACED_IDS = {3261, 3262, 3264, 3265, 3267, 3268, 3270, 3271}
+
+# These two menu entries are paired in the original layout.  User Campaigns
+# should use the Challenge Modes horizontal scale, while each label keeps its
+# own vertical height and alignment.
+SHARED_WIDTH_SCALE = {3247: 3273, 3249: 3274}
 
 # Widest the run may be stretched horizontally, as a multiple of its natural
 # (height-matched) width.  Mirrors ROTD1's menu_labels.MAX_H_STRETCH: short
@@ -75,7 +93,9 @@ def _header_float(header: str, key: str) -> float | None:
     return float(m.group(1)) if m else None
 
 
-def fit_label(famt: str, ofamt: str, o, b, gy, segs) -> str | None:
+def fit_label(famt: str, ofamt: str, o, b, gy, segs, sid: int,
+              shared_sx: float | None = None,
+              utility_width: float | None = None) -> str | None:
     if (not famt or not ofamt or "align" in famt or "align" in ofamt
             or o is None or b is None or gy is None or len(segs) != 1):
         return None
@@ -113,7 +133,11 @@ def fit_label(famt: str, ofamt: str, o, b, gy, segs) -> str | None:
     zh_w_natural = max(0.0, (b[1] - b[0]) - prev_track) / prev_sx
     en_w = o[1] - o[0]
     zh_w_scaled = zh_w_natural * (new_h / cur_h)
-    if en_w > 0 and zh_w_scaled > 0:
+    if sid in CENTER_SPACED_IDS:
+        sx = 1.0
+    elif shared_sx is not None:
+        sx = shared_sx
+    elif en_w > 0 and zh_w_scaled > 0:
         sx = max(1.0, min(MAX_H_STRETCH, en_w / zh_w_scaled))
     else:
         sx = 1.0
@@ -124,12 +148,26 @@ def fit_label(famt: str, ofamt: str, o, b, gy, segs) -> str | None:
     out = re.sub(r"(?m)^scalexf .*\n?", "", out)
     out = re.sub(r"(?m)^scaleyf .*\n?", "", out)
     out = re.sub(r"(?m)^letterspacing .*\n?", "", out)
+    out = re.sub(r"(?m)^spacing(?:pair)? .*\n?", "", out)
     end = out.index("]")
     out = out[:end] + f"scalexf {sx:.4f}\nscaleyf 1.0000\n" + out[end:]
     # Tracking: when the stretch is capped the run is still short, so spread the
     # remainder evenly between the glyphs (ROTD1's menu_labels.py) -- this fills
     # even a two-character caption without smearing the strokes any further.
-    if n > 1 and sx >= MAX_H_STRETCH - 1e-6:
+    if n > 1 and sid in AD_IDS:
+        slack = en_w - sx * zh_w_scaled
+        if slack > 0:
+            ls = int(round(slack / ((n - 1) * 0.05 * sx)))
+            ls = min(ls, int(round(MAX_GAP_RATIO * en_h / (0.05 * sx))))
+            rec = out.index("]", end + 1)
+            out = out[:rec] + f"letterspacing {ls}\n" + out[rec:]
+    elif n > 1 and sid in CENTER_SPACED_IDS and utility_width is not None:
+        slack = max(0.0, utility_width - zh_w_scaled)
+        ls = int(round(slack / ((n - 1) * 0.05 * sx)))
+        rec = out.index("]", end + 1)
+        if ls > 0:
+            out = out[:rec] + f"letterspacing {ls}\n" + out[rec:]
+    elif n > 1 and sx >= MAX_H_STRETCH - 1e-6:
         slack = en_w - sx * zh_w_scaled
         if slack > 0:
             ls = int(round(slack / ((n - 1) * 0.05 * sx)))
@@ -164,12 +202,55 @@ def main() -> int:
     bink = export_svg_ink(args.swf, ids)
     raw = export_svg_raw(args.swf, ids)
 
+    # Use the widest translated utility caption as a shared slot width.  This
+    # keeps Options / Achievements / Highscores aligned with Credits without
+    # stretching the glyphs themselves.
+    utility_width: float | None = None
+    for sid in sorted(CENTER_SPACED_IDS & set(ids)):
+        famt = cur.get(sid, "")
+        o = oink.get(sid)
+        b = bink.get(sid)
+        cur_h = header_int(famt, "height") if famt else None
+        if not famt or o is None or b is None or cur_h is None or cur_h <= 0:
+            continue
+        zh_h = b[3] - b[2]
+        en_h = o[3] - o[2]
+        if zh_h <= 0 or en_h <= 0:
+            continue
+        n = len(UI_TRANSLATIONS[str(sid)][0].strip())
+        prev_sx = _header_float(famt, "scalexf") or 1.0
+        prev_ls = header_int(famt, "letterspacing") or 0
+        prev_track = (n - 1) * prev_ls * 0.05 * prev_sx if n > 1 else 0.0
+        natural = max(0.0, (b[1] - b[0]) - prev_track) / prev_sx
+        width = natural * en_h / zh_h
+        utility_width = width if utility_width is None else max(utility_width, width)
+
+    shared_sx: dict[int, float] = {}
+    for target, source in SHARED_WIDTH_SCALE.items():
+        famt = cur.get(source, "")
+        ofamt = orig.get(source, "")
+        o = oink.get(source)
+        b = bink.get(source)
+        if not famt or not ofamt or o is None or b is None:
+            continue
+        cur_h = header_int(famt, "height")
+        prev_sx = _header_float(famt, "scalexf") or 1.0
+        prev_ls = header_int(famt, "letterspacing") or 0
+        n = len(UI_TRANSLATIONS[str(source)][0].strip())
+        prev_track = (n - 1) * prev_ls * 0.05 * prev_sx if n > 1 else 0.0
+        zh_w_natural = max(0.0, (b[1] - b[0]) - prev_track) / prev_sx
+        en_w = o[1] - o[0]
+        if cur_h and zh_w_natural > 0 and en_w > 0:
+            zh_w_scaled = zh_w_natural * (o[3] - o[2]) / max(1, b[3] - b[2])
+            shared_sx[target] = max(1.0, min(MAX_H_STRETCH, en_w / zh_w_scaled))
+
     repl = ["-replace", args.swf, args.out]
     n = 0
     for sid in ids:
         famt = fit_label(cur.get(sid, ""), orig.get(sid, ""),
-                         oink.get(sid), bink.get(sid),
-                         _svg_gy(raw.get(sid, "")), UI_TRANSLATIONS[str(sid)])
+                 oink.get(sid), bink.get(sid),
+                         _svg_gy(raw.get(sid, "")), UI_TRANSLATIONS[str(sid)], sid,
+                 shared_sx.get(sid), utility_width)
         if famt is None:
             continue
         p = outdir / f"{sid}.txt"

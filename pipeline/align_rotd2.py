@@ -44,20 +44,53 @@ PAD = 20
 # edge (see ROTD1's RIGHT_ALIGN_IDS).  The main-menu captions are centred like
 # every other label; the fit pass has already shortened them so their ink no
 # longer overflows the English box.
-RIGHT_ALIGN_IDS = {10186, 10187}
+RIGHT_ALIGN_IDS = {
+    10186, 10187,
+}
 
-# NOTE: the four short captions that sit in full-width bars (Options /
-# Achievements / Highscores / Credits) used to need a per-state nudge onto the
-# bar centre, because the narrow Chinese was centred on the (right-aligned)
-# English ink and ended up crowded against the bar's right side.  The fit pass
-# now widens those captions to the English ink width, so centring on the English
-# ink already fills the bar and the nudges would push the run off the English
-# geometry again -- they are intentionally gone.
+# These four utility buttons are centred within their full-width bars, not on
+# the original English ink (which is offset inside the bar).
+CENTER_ALIGN_IDS = {
+    3247, 3249, 3251, 3252, 3261, 3262, 3264, 3265, 3267, 3268,
+    3270, 3271, 3273, 3274, 3276, 3277,
+}
+
+# The button artwork is left-anchored in the exported button frame while the
+# original English captions were right-aligned.  Once the Chinese captions
+# share one width, move each pair back onto the artwork's visual centre.
+UTILITY_VISUAL_CENTER_SHIFT_PX = {
+    3261: -65.0, 3262: -65.0,       # Credits
+    3264: -39.0, 3265: -39.0,       # Highscores
+    3267: -21.5, 3268: -21.5,       # Achievements
+    3270: -63.5, 3271: -63.5,       # Options
+}
+
+# The menu bars share a visible right edge at x=3250 twips.  The Lost Guns
+# trapezoid extends past that edge, so its visual centre must exclude the right
+# overflow instead of using the full stored DefineText bounds.
+MENU_RIGHT_TWIPS = 3250
+
+# The four utility captions (Options / Achievements / Highscores / Credits) are
+# centred by the normal path; their shared character-sized tracking is added by
+# ``fit_menu_rotd2.py`` before this pass measures the rendered ink.
 
 
 def _ink_record_indices(records: list[tuple[str, str]]) -> list[int]:
     """Indices of the records that actually draw visible glyphs."""
     return [i for i, (_h, text) in enumerate(records) if text.strip()]
+
+
+def visible_center(dump: str) -> float | None:
+    """Return the centre after clipping the menu's right-side overflow."""
+    xmin = header_int(dump, "xmin")
+    xmax = header_int(dump, "xmax")
+    if xmin is None or xmax is None:
+        return None
+    left = xmin
+    right = min(MENU_RIGHT_TWIPS, xmax)
+    if right <= left:
+        return (xmin + xmax) / 2
+    return (left + right) / 2
 
 
 def align_multi(dump: str, odump: str, osvg: str, bsvg: str) -> str | None:
@@ -189,12 +222,21 @@ def main() -> int:
             bymin = header_int(famt, "ymin")
             bymax = header_int(famt, "ymax")
             oxmin = header_int(ofamt, "xmin")
+            oxmax = header_int(ofamt, "xmax")
             tx = header_int(famt, "translatex")
-            if None in (bxmin, bxmax, bymin, bymax, oxmin, tx):
+            if None in (bxmin, bxmax, bymin, bymax, oxmin, oxmax, tx):
                 continue
             if sid in RIGHT_ALIGN_IDS:
                 desired = oxmin + o[1] * 20      # original English right edge
                 built_edge = bxmin + b[1] * 20
+            elif sid in CENTER_ALIGN_IDS:
+                # The DefineText bounds include empty space and are not the
+                # button's visual axis.  Use the rendered English ink just as
+                # the normal centring path does; otherwise short CJK labels
+                # drift right toward the shared clipped bound.
+                desired = oxmin + (o[0] + o[1]) / 2 * 20
+                desired += UTILITY_VISUAL_CENTER_SHIFT_PX.get(sid, 0.0) * 20
+                built_edge = bxmin + (b[0] + b[1]) / 2 * 20
             else:
                 desired = oxmin + (o[0] + o[1]) / 2 * 20   # English ink centre
                 built_edge = bxmin + (b[0] + b[1]) / 2 * 20
