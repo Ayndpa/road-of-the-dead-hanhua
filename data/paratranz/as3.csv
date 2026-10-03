@@ -68,7 +68,7 @@ as3_RDAchievement_031,Wise Man,智者,RDAchievement.as
 as3_RDAchievement_032,Top Gun,顶级飞行员,RDAchievement.as
 as3_RDAchievement_033,"""Drive ""","""行驶 """,RDAchievement.as
 as3_RDAchievement_034,""" KM in Dead On Time""",""" 公里（《准时赴死》）""",RDAchievement.as
-as3_RDAchievement_035,""" KM in Police State""",""" 公里（《警察国家》）""",RDAchievement.as
+as3_RDAchievement_035,""" KM in Police State""",""" 公里（《警察国度》）""",RDAchievement.as
 as3_RDAchievement_036,""" KM at maximum speed""",""" 公里（最高速度）""",RDAchievement.as
 as3_RDAchievement_037,""" KM with all 4 tires blown""",""" 公里（四条轮胎全爆）""",RDAchievement.as
 as3_RDAchievement_038,"""Do a ""","""完成 """,RDAchievement.as
@@ -92,7 +92,7 @@ as3_RDAchievement_055,"""Exit the city with at least ""","""至少提前 """,RDA
 as3_RDAchievement_056,""" seconds to spare""",""" 秒逃出城市""",RDAchievement.as
 as3_RDGame_000,Highway 65\n\nWelcome To Evans City\n\nCity Exit\n60km,65号公路\n\n欢迎来到埃文斯城\n\n出城口\n60公里,RDGame.as
 as3_RDGame_001,Dead On Time Distance,《准时赴死》距离,RDGame.as
-as3_RDGame_002,Police State Distance,《警察国家》距离,RDGame.as
+as3_RDGame_002,Police State Distance,《警察国度》距离,RDGame.as
 as3_RDGame_003,Highest Hit Combo,最高连击,RDGame.as
 as3_RDGame_004,Highest Flip Flop,最多翻转,RDGame.as
 as3_RDGame_005,Speed through the zombie apocalypse and escape the quarantined city!\n\nNormal difficulty,在僵尸末日中疾驰，逃出被隔离的城市！\n\n普通难度,RDGame.as
@@ -106,7 +106,7 @@ as3_RDGame_012,SickDeathFiend.com\n\nCheck out more movies and art by SickDeathF
 as3_RDGame_013,Music made by\nSymphony of Specters\n\nVisit their website for more amazing music!,音乐制作\nSymphony of Specters\n\n访问他们的网站收听更多精彩音乐！,RDGame.as
 as3_RDGame_014,Surviving the zombie apocalypse requires a complete set of skills.\nDo You have what it takes to complete all the achievements?,在僵尸末日中求生需要全面的技能。\n你有本事完成所有成就吗？,RDGame.as
 as3_RDGame_015,"In options, you can:\nCustomize your controls\nToggle sound and music\nSet graphic quality\nEnable/Disable buildings\nDelete your save data",在选项中，你可以：\n自定义按键\n开关音效与音乐\n设置画质\n开关建筑显示\n删除存档数据,RDGame.as
-as3_RDGame_016,Are you trying to be the greatest survivor?\n\nCheck the high scores for the Dead On Time and Police State modes!,想成为最伟大的幸存者吗？\n\n来看看《准时赴死》和《警察国家》模式的排行榜！,RDGame.as
+as3_RDGame_016,Are you trying to be the greatest survivor?\n\nCheck the high scores for the Dead On Time and Police State modes!,想成为最伟大的幸存者吗？\n\n来看看《准时赴死》和《警察国度》模式的排行榜！,RDGame.as
 as3_RDGame_017,Well done!,干得漂亮！,RDGame.as
 as3_RDGame_018,Delete your save data?\nYou will lose all your progress,要删除存档数据吗？\n你将失去全部进度,RDGame.as
 as3_RDGame_019,Where do you wanna start\nThe Great Escape?,要从哪里开始\n《亡命大逃亡》？,RDGame.as
@@ -181,7 +181,7 @@ as3_RDGameModeGameplay_056,Perception,感知,RDGameModeGameplay.as
 as3_RDGameModeGameplay_057,Perception Toggle Key: ,感知切换键：,RDGameModeGameplay.as
 as3_RDGameModeGameplay_058,"\nWith perception, you will see a fixed top down view of the road, yourself as the white icon and the icons for the incoming hazards and enemies.\nKeep an eye on your perceptions to survive the day.",\n开启感知后，你会看到道路的固定俯视图：你自己是白色图标，正在接近的危险和敌人也各有图标。\n时刻留意感知，才能活过这一天。,RDGameModeGameplay.as
 as3_RDGameModeGarage_000,"""Dead On Time""","""准时赴死""",RDGameModeGarage.as
-as3_RDGameModeGarage_001,"""Police State""","""警察国家""",RDGameModeGarage.as
+as3_RDGameModeGarage_001,"""Police State""","""警察国度""",RDGameModeGarage.as
 as3_RDGameModeGarage_002,"""Body Armor""","""防弹衣""",RDGameModeGarage.as
 as3_RDGameModeGarage_003,"""Perception""","""感知""",RDGameModeGarage.as
 as3_RDGameModeGarage_004,"""Firearm""","""枪械""",RDGameModeGarage.as
@@ -190,7 +190,7 @@ as3_RDGameModeGarage_006,"""Engine""","""引擎""",RDGameModeGarage.as
 as3_RDGameModeGarage_007,"""Bumper""","""保险杠""",RDGameModeGarage.as
 as3_RDGameModeGarage_008,"""Tires""","""轮胎""",RDGameModeGarage.as
 as3_RDGameModeGarage_009,"""Horn""","""喇叭""",RDGameModeGarage.as
-as3_RDGameModeMilitary_000,Police State Distance,《警察国家》距离,RDGameModeMilitary.as
+as3_RDGameModeMilitary_000,Police State Distance,《警察国度》距离,RDGameModeMilitary.as
 as3_RDGameModeMilitary_001,Dead On Time Distance,《准时赴死》距离,RDGameModeMilitary.as
 as3_RDGameModeStory_000,Evans City,埃文斯城,RDGameModeStory.as
 as3_RDGameModeStory_001,Monroeville,门罗维尔,RDGameModeStory.as
@@ -205,7 +205,7 @@ as3_RDGameModeStory_009,West Ridge,西岭,RDGameModeStory.as
 as3_RDGameModeStory_010,Tunnel Drive,隧道大道,RDGameModeStory.as
 as3_RDGameModeStory_011,Progress Saved...,进度已保存……,RDGameModeStory.as
 as3_RDGameModeTime_000,Dead On Time Distance,《准时赴死》距离,RDGameModeTime.as
-as3_RDGameModeTime_001,Police State Distance,《警察国家》距离,RDGameModeTime.as
+as3_RDGameModeTime_001,Police State Distance,《警察国度》距离,RDGameModeTime.as
 as3_RDGameModeTime_002,"""Dead On Time""","""准时赴死""",RDGameModeTime.as
 as3_RDGameModeTime_003,Horn Key: ,喇叭键：,RDGameModeTime.as
 as3_RDGameModeTime_004,"\n\nIn Dead On Time, the horn is an essential way to attract the zombies in your way and get the civilians out of the way.",\n\n在《准时赴死》里，喇叭是吸引僵尸、驱散平民的关键手段。,RDGameModeTime.as

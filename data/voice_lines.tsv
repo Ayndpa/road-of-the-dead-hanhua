@@ -1,73 +1,73 @@
-SND_ApproachAlignSoldier01	7.7	This is Highway Unit. Target headed my way and not stopping. Engage and neutralize the target. Don't let him through.
+SND_ApproachAlignSoldier01	7.7	This is highway unit! Target heading my way and not stopping! Engage and neutralize the target! Don't let him through!
 SND_ApproachAlignSoldier02	5.7	Target is approaching on highway. Intercept and neutralize! Roger that.
 SND_ApproachAlignSoldier03	5.4	Highway unit to base. Target inbound. Adjust your position and engage!
-SND_ApproachAlignSoldier04	6.7	Highway Unit 12, you're to intercept your target at all costs. Roger that. I'll move and shoot. Over.
+SND_ApproachAlignSoldier04	6.7	Highway unit 12, you are to intercept your target at all costs. Roger that. I'll move and shoot. Over.
 SND_ApproachBombSoldier01	5.9	Highway unit to base. Explosives are ready to detonate. Destroy that vehicle! Over!
 SND_ApproachBombSoldier02	6.8	Base to Bomb Unit 5, you must stop this vehicle. Explosives are in place! Target is coming!
 SND_ApproachBombSoldier03	6.3	Sir, I'm in position. Explosives are a go. Blow him up, soldier! Will do.
 SND_ApproachBombSoldier04	6.0	Base to B unit, are you done setting up the charges? Yes, sir! I can see the target! I'm ready!
-SND_ApproachHiddenSoldier01	6.5	Unit 7 to base. I'm behind cover, awaiting target. Proceed with caution! Don't let him see you!
+SND_ApproachHiddenSoldier01	6.5	Unit 7 to Base. I'm behind cover and awaiting target. Proceed with caution. Don't let him see you.
 SND_ApproachHiddenSoldier02	7.0	Sir, the target can't see me. I'm about to engage. Roger that. Use the element of surprise. Over.
-SND_ApproachHiddenSoldier03	6.3	Base to Highway Unit, stay hidden. Prepare to engage. Affirmative. Target is approaching.
+SND_ApproachHiddenSoldier03	6.3	Base to highway units, stay hidden. Prepare to engage. Affirmative. Target is approaching.
 SND_ApproachHiddenSoldier04	7.0	Sir, he's coming! What are your orders? Stay behind cover. Engage as he passes. Got it!
 SND_ApproachSpikeSoldier01	7.9	Update on highway target requested. Spike strip deployed. Target approaching. Roger that. You must stop this vehicle.
 SND_ApproachSpikeSoldier02	4.2	Sir, spikes are ready! Roger that! Stop your target!
 SND_ApproachSpikeSoldier03	5.4	Spikes unit to base. Target coming my way. Blow his tires! Stop him! Over!
-SND_ApproachSpikeSoldier04	9.3	I weigh you to nine. Is the spike strip deployed? Yes, sir! The target is approaching! You must stop that car, soldier! Yes, sir!
+SND_ApproachSpikeSoldier04	9.3	Highway unit 9. Is the spike strip deployed? Yes, sir! Target is approaching! You must stop that car, soldier! Yes, sir!
 SND_ApproachStationarySoldier01	4.1	Target is in my sights! Your orders are to shoot him down!
 SND_ApproachStationarySoldier02	3.9	Target is heading my way! Shoot that bastard!
-SND_ApproachStationarySoldier03	2.7	Here he comes! Light him up!
+SND_ApproachStationarySoldier03	2.7	Here he comes! Light 'em up!
 SND_ApproachStationarySoldier04	3.0	I see him! Shoot that bastard!
-SND_ApproachStationarySoldier05	4.5	Target in sight! Orders? What do you think? Kill him!
-SND_CheckPoint0Post	11.3	Dispatch, give me a report on the highway checkpoint deployments. All highway units are in position. Traffic is stopped and the city exits are secured. Roger that. Over.
-SND_CheckPoint10Post	56.8	Phantom Eagle to base, approaching the drop zone. Roger that. Unit 16 to base, we're currently holed up in the shopping mall. Can we get a transport out of here? Unit 16, your transport will be there in five minutes. Just keep those people safe until then. Sir, there's a lot of civilian and personnel on ground in the city. We can't do this. We can and we are going to do this. If this virus or whatever it is spreads, we could lose the whole country. The entire world. They will be a fair sacrifice. Over. Checkpoint dying to base. We missed our transport and are heading to the Uriachi River on foot. We'll be there in about ten minutes. Good man. You make me proud. Carry on. Phantom Eagle to base. Target in sight. God forgive us.
-SND_CheckPoint10Pre	20.3	Chairman DeFantom Eagle, we have the President's approval. You are go for the drop. I repeat, you are go for the drop. Affirmative. Nuclear head armed, ready to drop. Heading to target, over. Sir, all transports are on ground. We're evacuating the riverbank. Roger that. Do it fast. We're pulling out, now.
-SND_CheckPoint1Post	44.9	Checkpoint to base. We're unable to stop our target. It's continuing its route on Highway 65. You couldn't stop a single car. Give me a visual report. Sorry, sir. We're low on personnel here. The target is driving a black sports car with tinted glass. The driver's visual is still unknown. Draw checkpoint on Highway 65. We have a moving black sports car. It must be stopped. Stay alert. Outpost 7 to base. We're facing a massive crowd of undead here. We're holding, but we might have to pull back if more show up. Maintain your position. They're dead and slow for Christ's sakes. Just kill them all. They're hard to kill, sir. Just do your job. Yes, sir!
+SND_ApproachStationarySoldier05	4.5	Target in sight. Orders? What do you think?! KILL HIM!
+SND_CheckPoint0Post	11.3	Dispatch, give me a report on the highway checkpoint points. All highway units are in position. Traffic has stopped and the city exits are secured. Roger that. Over.
+SND_CheckPoint10Post	56.8	Phantom Eagle to Base, approaching the drop zone. Roger that. Unit 16 to Base! We're currently holed up in the shopping mall. Can we get a transport out of here? Unit 16. Your transport will be there in. five minutes. Just keep those people safe until then. Sir, there's a lot of civilian and personnel on the ground in the city. We can't do this. We can and we are gonna do this. If this virus or whatever it is spreads, we could lose the whole country. The entire world! They will be a fair sacrifice. Over. Checkpoint 9 to Base! We missed our transport and are heading to the Iache River on foot. We'll be there in about ten minutes. Good man. You make me proud. Carry on. Phantom Eagle to Base, target in sight. God forgive us.
+SND_CheckPoint10Pre	20.3	Sherman to Phantom Eagle. We have the President's approval. You are go for the drop. I repeat, you are go for the drop. Affirmative. Nuclear head armed, ready to drop. Heading to target, over. Sir, all transports are on ground. We're evacuating the riverbank. Roger that. Do it fast. We're pulling out, now.
+SND_CheckPoint1Post	44.9	Checkpoint to Base! We're unable to stop our target! It's continuing its run on Highway 65! You couldn't stop a single car. Give me a visual report! Sorry, sir. We're low on personnel here. The target is driving a black sports car with tinted glass. The driver's visual is still unknown. To all checkpoints on Highway 65, we have a moving black sports car. It must be stopped! Stay alert. Outpost 7 to Base! We're facing a massive crowd of undead here! We're holding but we might have to pull back if more show up! Maintain your position. They're dead and slow for Christ's sake. Just kill 'em all! They're hard to kill, sir! Just do your job. Yes, sir!
 SND_CheckPoint1Pre	10.3	Checkpoint to base! We have a moving vehicle headed our way! Neutralize the vehicle! The driver could be infected or even dead for all we know! Roger that!
-SND_CheckPoint2Post	44.2	Checkpoint to base. Uh, the target is still going. Are you kidding me? Maintain your position. The next checkpoint will handle it. To all ground troops on Highway 65, you are to intercept and shoot down the target. Over. Outpost 10, I need a sitrep. We're holding, but damn, there's a lot of... Hold on. There's a lot of them. We're almost surrounded. If they cover our east front, we're in trouble. Hang in there. Outpost 7, what's your status? We were overrun minutes ago. We're still on the move to South Square Park to make a stand there. We're killing them, but more keep coming. Roger that. Don't lose South Square Park. Over.
+SND_CheckPoint2Post	44.2	Checkpoint to Base. Uh... the target is still going. Are you kidding me?! Maintain your position. The next checkpoint will handle him. To all ground troops on Highway 65, you are to intercept and shoot down the target. Over. Outpost 10. I need a sit rep. We're holding, but damn, there's a lot of them. Hold on. There's a LOT of them! We're almost surrounded! If they cover our east front, we're in trouble! Hang in there. Outpost 7, what's your status? We were overrun minutes ago. We're still on the move to South Square Park to make stand there. We're killing them, but more keep coming! Roger that. Don't lose South Square Park. Over.
 SND_CheckPoint2Pre	5.9	Checkpoint to base. We confirm a black car coming our way. Orders are to take him out? Affirmative.
 SND_CheckPoint3Post	24.5	Target has been identified as John Creasman, a local mechanic. Has a prior history of disorderly conduct. Nothing special. He's a freaking nobody. He's obviously trying to reach the tunnel to exit the city. We can't let that happen. Nobody gets out of the quarantined area. Base to Highway 65 personnel. Use spike strips to stop him. Over.
 SND_CheckPoint3Pre	8.2	Sir, the target is approaching. We have a visual on his front plate. Sending the data your way. Over. Data received. Over.
-SND_CheckPoint4Post	47.1	Uh, it's a negative, sir. Target's still going. This is a bad joke! Damn it! Face the Hellfire. Change your course and head towards Highway 65. We have a civilian on the run. He must be stopped. Affirmative. Heading towards Highway 65 now. Over. To all highway units, dispatch some men behind cars and try using the element of surprise to stop the target. Sir, we have reports that 12 of our forward posts were completely overrun in the last 10 minutes. Where are the troops now? Scattered. Trying to regroup, sir. Damn it. Uh, have them fall back and, uh, regroup northwest near the Brighton Bridge. Yes, sir.
-SND_CheckPoint4Pre	5.2	Face to checkpoint four. Stop this prick, will ya? Will try, sir!
-SND_CheckPoint5Post	48.7	Sir, our fences are down! Zombies are marching in! I can't! We can't hold them! Hey, watch out behind! Come in, Checkpoint 5. Checkpoint 5. Shit. Base to Highway 65 units. Bring in the bomb squads. If this John Creaseman gets out, this could mean a statewide epidemic. We have to stop him. Yes, sir! He's not the first jackass to try to get out. We'll blow him to pieces. Over. Unit 11 to base! Brighton Bridge is completely overrun! We need a new fallback position, now! Uh, set up the fence at the Chinatown Plaza. Sir? We just came from there! Uh, goddammit! Just move north! Just move freaking north! Yes, sir!
-SND_CheckPoint5Pre	21.1	2.5 to base! We have a problem here! We're facing a lot of deadheads! Our fences are holding, but if that Kriesman guy runs them over, we're in deep shit! It's your job to stop this freaking car, soldier! Do not let him pass! Do not let the zombies through! You hear me? Uh, yes! Yes, sir!
-SND_CheckPoint6Post	35.8	Attention all troops. This is General Sherman. I am taking command of this operation. We're facing an enemy like we've never seen before. But keep your heads cool, and we're gonna get through this. Now follow my orders carefully. All ground personnel are to converge to a defensive line along the Aachi River. Our backs to the water. We'll make a final stand in one single direction. We also have reports that some zombies have mutated. Be aware they are very strong and should be avoided at all costs.
-SND_CheckPoint6Pre	16.0	Checkpoint to base. We're in trouble here. We need orders. Maintain current strategy. We're about to be overrun. The current strategy is shit. I repeat, maintain current strategy. What? What the hell is going on?
-SND_CheckPoint7Post	35.1	Checkpoint 7 to base. The target has gone beyond our checkpoint, but now we're overrun by zombies! We're moving out! Fall back to the Ayachi River with the other units. Now! Yes, sir! General Sherman to air support. Head over to Highway 65 for a carpet bombing on the target's location. Roger that. Unit 5 to base. We're currently sieged by a huge crowd of zombies. We'll try to circle around the river, but we've lost a lot of men. 75, don't fight them. Just get your ass to the river. ASAP. Yes, sir.
-SND_CheckPoint7Pre	13.9	Checkpoint 7 to base! We have the highway target approaching! What are your orders? Let him through! Sir? Let. Him. Through. I have a surprise for you. Yes, sir!
-SND_CheckPoint8Post	23.4	Sir, he got through. Sorry, sir. It's okay, son. To all Highway 65 personnel, prepare for a pullout. Terminate the dispatch. Send transports to all the highway checkpoints. Yes, sir. Hillfire units, arm your air-to-ground missiles and keep pursuing the target. Over. Affirmative.
-SND_CheckPoint8Pre	7.8	Sherman to Checkpoint 8, you are our last round effort to stop John Creaseman. Do your best. Sir, yes sir!
-SND_CheckPoint9Post	38.3	Dispatch, send all transport choppers to the Ayachi River bank. We're evacuating the area. Yes, sir. Phantom Eagle, what is your position? Phantom Eagle to base, I'm currently at 64.7 and 32.4, heading to 79, over. Roger that. Maintain current course, over. Sir, we're at the Ayachi River. There are literally millions of Z-Heads slowly coming our way, but we're holding out for now. I see the transport's coming. Hold position, and don't start evacuating until all the transports have landed. We'll need a synchronized retreat. Yes, sir!
-SND_CheckPoint9Pre	16.1	General, sir, we're going to try and stop Creasman. What the hell are you still doing there? We're pulling out! Sir, we'll complete the mission. Good man. Do it and then get your ass to the Aachi River ASAP! Sir, yes sir!
-SND_FailStringer_1_V4	12.1	Thank you for watching.
-SND_GarageChatter01	12.6	We're taking heavy losses on the west ridge. We're sending backup right away. What's your exact position? Uh, G-32, M-51. Roger that. Sending backup now.
+SND_CheckPoint4Post	47.1	Uh, it's a negative, sir. Target's still going. This is a bad joke! Damn it! Base to Hellfire. Change your course and head towards Highway 65. We have a civilian on the run. He must be stopped. Affirmative. Heading towards Highway 65 now. Over. To all highway units, dispatch some men behind cars and try using the element of surprise to stop the target. Sir, we have reports that 12 of our forward posts were completely overrun in the last 10 minutes. Where are the troops now? Scattered. Trying to regroup, sir. Damn it. Uh, have them fall back and, uh, regroup northwest near the Brighton Bridge. Yes, sir.
+SND_CheckPoint4Pre	5.2	Base to Checkpoint 4! Stop this prick, will ya?! We'll try, sir!
+SND_CheckPoint5Post	48.7	Sir, our fences are down! Zombies are marching in! I can't! We can't hold them! Hey, watch out behind! Come in, Checkpoint 5. Checkpoint 5. Shit. Base to Highway 65 units. Bring in the bomb squads. If this John Creasman gets out, this could mean a statewide epidemic. We have to stop him. Yes, sir! He's not the first jackass to try to get out. We'll blow him to pieces. Over. Unit 11 to base! Brighton Bridge is completely overrun! We need a new fallback position, now! Uh, set up a defense at the Chinatown Plaza! Sir? We just came from there! Uh, goddammit! Just move north! Just move freaking north! Yes, sir!
+SND_CheckPoint5Pre	21.1	Checkpoint 5 to Base! We have a problem here! We're facing a lot of deadheads. Our fences are holding but if that Creasman guy runs them over, we're in deep shit! It's your job to stop this freaking car, soldier! Do not let him pass! Do not let the zombies through! You hear me? Uh, yes! Yes, sir!
+SND_CheckPoint6Post	35.8	Attention, all troops. This is General Sherman. I am taking command of this operation. We're facing an enemy like we've never seen before. But keep your heads cool, and we're gonna get through. Now follow my orders carefully. All ground personnel are to converge to a defensive line along the Iache River. Our backs to the water, we'll make a final stand, in one single direction. We also have reports that some zombies have mutated. Be aware they are very strong and should be avoided at all costs.
+SND_CheckPoint6Pre	16.0	Checkpoint to Base! We're in trouble here! We need orders! Maintain current strategy. We're about to be overrun. Current strategy is shit! I repeat, maintain current strategy. What?! What the hell is going on?!
+SND_CheckPoint7Post	35.1	Checkpoint 7 to base. The target has gone beyond our checkpoint, but now we're overrun by zombies! We're moving out! Fall back to the Iache River with the other units. Now! Yes, sir! General Sherman to air support. Head over to Highway 65 for a carpet bombing on the target's location. Roger that. Unit 5 to base. We're currently sieged by a huge crowd of zombies. We'll try to circle around the river, but we've lost a lot of men. Unit 5, don't fight them. Just get your ass to the river. ASAP. Yes, sir.
+SND_CheckPoint7Pre	13.9	Checkpoint 7 to Base. We have the highway target approaching. What are your orders? Let him through. Sir? Let. Him. Through. I have a surprise for him. Yes, sir!
+SND_CheckPoint8Post	23.4	Sir, he got through. Sorry, sir. It's okay, son. To all Highway 65 personnel, prepare for a pullout. Sherman to Dispatch, send transports to all the highway checkpoints. Yes, sir. Hellfire units, arm your air-to-ground missiles and keep pursuing the target. Over. Affirmative.
+SND_CheckPoint8Pre	7.8	Sherman to Checkpoint 8, you are our last ground effort to stop John Creasman. Do your greatest. Sir, yes sir!
+SND_CheckPoint9Post	38.3	Dispatch, send all transport choppers to the Iache River bank. We're evacuating the area. Yes, sir. Phantom Eagle, what is your position? Phantom Eagle to base, I'm currently at 64.7 and 32.4, heading to 79, over. Roger that. Maintain current course, over. Sir, we're at the Iache River. There are literally millions of zed heads slowly coming our way, but we're holding up for now. I see the transports coming. Hold position, and don't start evacuating until all the transports have landed. We'll need a synchronized retreat. Yes, sir!
+SND_CheckPoint9Pre	16.1	General, sir, we're going to try and stop Creasman. What the hell are you still doing there? We're pulling out! Sir, we'll complete the mission. Good man. Do it and then get your ass to the Iache River ASAP! Sir, yes sir!
+SND_FailStringer_1_V4	12.1	
+SND_GarageChatter01	12.6	We're taking heavy losses at the West Ridge! We're sending backup right away. What's your exact position? Uh... G32, E51! Roger that, sending backup now!
 SND_GarageChatter02	5.0	Base is secure. Requesting orders. Maintain position.
-SND_GarageChatter03	6.7	Base to 4, Base Delta. Relocate to south front. Roger that! Relocating now!
-SND_GarageChatter04	10.0	Unit 8 to base! We need artillery fire on the north side part now! Negative, Unit 8. Artillery has been proven ineffective against the undead. Maintain current strategy.
-SND_GarageChatter05	22.2	WE HAVE HUNDREDS OF CIVILIANS REQUESTING TO LEAVE THE CHECKPOINT! PERMISSION DENIED! Permission denied. Secure position. No one gets out. BUT SIR! THE HORNS ARE CLOSING IN AND... OH GOD! Secure the position. No one leaves, you understand? Your orders are to neutralize the civilians. YES SIR! FIRE! FIRE!
+SND_GarageChatter03	6.7	Base to 4-Base-Delta. Relocate south front. Roger that! Relocating now!
+SND_GarageChatter04	10.0	Unit 8 to Base! We need artillery fire on Northside Park now! Negative, Unit 8. Our artillery has been proven ineffective against the undead. Maintain current strategy.
+SND_GarageChatter05	22.2	WE HAVE HUNDREDS OF CIVILIANS REQUESTING TO LEAVE THE CHECKPOINT! PERMISSION TO- Permission denied. Secure position, no one gets out. BUT SIR! THE HORDES ARE CLOSING IN AND- Oh, God! Secure the position! No one leaves, you understand? Your orders are to neutralize the civilians! YES SIR! FIRE! FIRE!
 SND_GarageChatter06	7.6	Unit 4, you are to begin neutralizing civilians at your checkpoint. Over. Orders received.
-SND_GarageChatter07	12.9	Unit 10 to base! We're surrounded on the east side factory! Requesting airlift now! Over! Denied. Secure position and await orders. Requesting airlift ASAP! We're getting in with...
-SND_GarageChatter08	13.1	Approaching area Delta Tango. The rabbit is almost in the hole. Are you out of your mind? Forget the freaking code, son. We're fighting dead people. Uh, sorry, sir.
-SND_GarageChatter09	21.4	We need backup! This is Unit 12 on Burgundy Street! The Humvee has turned over and we're... surrounded! Ah! Shit! Please repeat that, Unit 12! What is your position? Oh my god! Ah! Shit! The tracks are down in heat! Unit 12! Unit 12! Please respond!
-SND_GarageChatter10	12.0	This is Unit 9! We have a bitten civilian, requesting aid! Permission to assist! Denied. Neutralize civilian and burn the courts. Over. Orders received.
-SND_GarageChatter11	7.7	Highway sweeps in progress. Spike strips have been installed. All traffic has been stopped. Roger that. Carry on.
+SND_GarageChatter07	12.9	Unit 10 to Base! We're surrounded on the East Site factory! Requesting airlift out! Over! Denied. Secure position and await orders. Requesting airlift ASAP! THEY'RE GETTING IN WE-!
+SND_GarageChatter08	13.1	Approaching area Delta Tango. The rabbit is almost in the hole. Are you out of your mind? Forget the freaking codes, son! We're fighting dead people. Uh, sorry, sir.
+SND_GarageChatter09	21.4	We need backup! This is Unit 12 on Burgony Street! Our humvee has turned over to our- we're surrounded! Agh! Shit! Please repeat that, Unit 12! What is your position? Oh my god! Ah, shit! They're attracted out on me-! Unit 12! Unit 12! Please respond!
+SND_GarageChatter10	12.0	This is Unit 9! We have a bitten civilian, requesting aid! Permission to assist! Denied. Neutralize civilian and burn the corpse, over. Orders received.
+SND_GarageChatter11	7.7	Highway sweep's in progress. Spike strips have been installed, all traffic has been stopped. Roger that. Carry on!
 SND_GarageChatter12	7.1	Yeah! Light those fuckers up! Woo! Nice shooting! Cut the chatter.
 SND_GarageChatter13	15.3	Base to Phantom Eagle. Is the load ready and hot for a drop? Phantom Eagle to Base. Affirmative. Circling the city, awaiting the order. Let's pray we don't need to give this order. Over. Affirmative. Over.
-SND_GarageChatter14	15.3	Central Plaza is completely overrun! We need to pull back everybody! Pull back to Central now! Denied. You are to hold positions. They're killing everyone! It's all over! We've lost Central! I repeat, we have lost Central!
+SND_GarageChatter14	15.3	Central Plaza is completely overrun! We need to pull back everybody! Pull back from Central, now! Denied! You are to hold position! They're killing everyone! It's all over! We've lost Central, I repeat, we have lost Central!
 SND_GarageChatter15	15.2	Road Unit 3, why aren't you at your position yet? The road is filled with debris and vehicles. We're having problems getting the convoy through. Get your ass to your designated position ASAP! Sir, yes sir!
-SND_GarageChatter16	14.4	This is Unit 17! The ZENs are spilling through the barricades! Our position is completely compromised! Over! Pull back to Section 11 and hold position, Unit 17! Orders received! We are pulling back!
-SND_GarageChatter17	8.3	Unit 5, we need a status report! There's a lot of them, but we're holding! Keep me posted! Will do!
+SND_GarageChatter16	14.4	This is Unit 17! The zeds are spilling through the barricades! Our position is completely compromised! Over! Pull back to Sector 11. And hold position, Unit 17. Orders received! We are pulling back!
+SND_GarageChatter17	8.3	Unit 5, we need a status report. There's a lot of them, but- but we're holding! Keep me posted. Will do!
 SND_GarageChatter18	5.1	Initiating carpet bombing on all designated targets. Over. Acknowledged.
 SND_GarageChatter19	14.6	Base to Air Unit 6, visual feed requested. Visual feed going online in 3, 2, 1. Visual feed is up. Over. Data received. Over.
 SND_GarageChatter20	9.1	This is Unit 19 on Rikers Street, requesting new supplies. There's too many of them! Request received, Unit 19. Supplies are en route.
-SND_HelicopterBrokenAlert	0.4	Thanks for watching!
+SND_HelicopterBrokenAlert	0.4	
 SND_HelicopterDefeated01	7.2	This is Hellfire. My chopper is heavily damaged. I must abort. Return to base immediately. Over.
 SND_HelicopterDefeated02	7.9	Hellfire to base! We've taken heavy damage! Retreating for emergency landing! Roger that. Proceed to east side base.
-SND_HelicopterDispatch01	6.3	Face to Hellfire. Engage target. Take him down! Roger that. Engaging target.
+SND_HelicopterDispatch01	6.3	Base to Hellfire. Engage target. Take him down! Roger that. Engaging target.
 SND_HelicopterDispatch02	9.3	This is Hellfire. I've spotted the target heading up Highway 65. Permission to engage the target. Over. Permission granted. Engage the target. Over.
 SND_HelicopterMissileRequest01	6.1	Hellfire to base! I request permission to use air-to-ground missiles! Granted. Over.
-SND_HelicopterMissileRequest02	6.7	Base to Hellfire, take your target down now. You have permission to use air-to-ground missiles. Affirmative. Over.
+SND_HelicopterMissileRequest02	6.7	Base to Hellfire, take the target down now! You have permission to use air-to-ground missiles. Affirmative. Over.
 SND_HelicopterWarning01	3.8	This is futile! Your escape attempt will get you killed!
 SND_HelicopterWarning02	2.1	YOU CANNOT EXIT THE CITY!
 SND_HelicopterWarning03	3.1	Stop, or your vehicle will be destroyed!
@@ -77,21 +77,21 @@ SND_HelicopterWarning06	2.8	There's no way out. Stop and surrender!
 SND_HelicopterWarning07	1.9	STOP YOUR CAR NOW!
 SND_HelicopterWarning08	3.3	The city is quarantined. You can't leave.
 SND_HelicopterWarning09	2.3	Stop your vehicle immediately!
-SND_JetDispatch01	8.9	Face to air support. Highway target is not stopping. We need a carpet bombing on his location. Affirmative. Approaching target.
+SND_JetDispatch01	8.9	Base to Air Support. Highway target is not stopping. We need a carpet bombing on his location. Affirmative. Approaching target.
 SND_JetDispatch02	6.8	This is air support approaching drop zone. Permission to engage. Over. Permission granted. Engage.
 SND_JetHit01	5.8	Target hit, but not neutralized. Roger that. Return to base for refueling.
-SND_JetHit02	9.0	It's a hit! It's a hit! Target is still going though. That should slow him down. Let the ground unit handle the rest. Return to base.
-SND_JetMissAndLeave01	7.7	Target missed. I repeat, target missed. I'm out of ammo. Damn it! Return to base. Over.
-SND_JetMissAndLeave02	6.2	Air support to base. I missed. Come back to base for a refill. Roger that.
+SND_JetHit02	9.0	It's a hit! It's a hit! Target is still going though. That should slow him down. Let the ground units handle the rest. Return to base.
+SND_JetMissAndLeave01	7.7	Target missed. I repeat, target missed. I'm. out of ammo. Dammit! Return to base. Over.
+SND_JetMissAndLeave02	6.2	Air support to base. I missed. Come back to base for a refuel. Roger that.
 SND_JetMissAndRepeat01	6.5	That's a miss. Target still going. Circle around and hit him again. Roger that.
-SND_JetMissAndRepeat02	6.4	No hit, sir. The target is alive. Hit him once more, now! Yes, sir!
-SND_JetMissAndRepeat03	6.1	I need a sit-rep. Target missed, sir. Hit him again. Affirmative.
-SND_JetPassBy	6.1	Transcription by ESO. Translation by —
+SND_JetMissAndRepeat02	6.4	No hit sir. Target is alive. Hit him once more! NOW! Yes, sir!
+SND_JetMissAndRepeat03	6.1	Need a sit rep! Target missed, sir. Hit 'em again! Affirmative.
+SND_JetPassBy	6.1	
 SND_JohnSoldierGetOff01	0.7	YAH!
 SND_JohnSoldierGetOff02	0.8	NO!
 SND_JohnSoldierGetOff03	0.7	AHHHHH!
 SND_JohnSoldierGetOff04	0.8	FUUUUUUUUUUUUUUUUUUUUUUU
-SND_JohnSoldierThreat01	2.0	You are gonna get us all killed!
+SND_JohnSoldierThreat01	2.0	You're gonna get us all killed!
 SND_JohnSoldierThreat02	1.7	YOU ARE GONNA DIE!
 SND_JohnSoldierThreat03	1.3	Pull over!
 SND_JohnSoldierThreat04	1.9	STOP! STOP NOW!
@@ -103,7 +103,7 @@ SND_JohnSoldierThreat09	1.9	Stop your vehicle right now!
 SND_JohnSoldierThreat10	1.1	Stop the car!
 SND_MaleCivilian01Plea02	3.1	God, stop the car! Let me in! Please!
 SND_MaleCivilian01Plea04	3.0	Ah! Ahaha! Ahaha!
-SND_MaleCivilian01Plea05	2.8	HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA
+SND_MaleCivilian01Plea05	2.8	
 SND_MaleCivilian02Hit01	1.2	BAH!
 SND_MaleCivilian02Hit02	1.4	
 SND_MaleCivilian02Hit03	0.9	Gah!
@@ -119,56 +119,56 @@ SND_MaleCivilian02Plea02	3.2	THEY'RE EVERYWHERE! THEY'RE- THEY'RE EVERYWHERE!
 SND_MaleCivilian02Plea03	4.0	THERE'S NO WAY TO RUN! THERE'S NO WAY TO RUN!
 SND_MaleCivilian02Plea04	2.0	They're killing everyone!
 SND_MaleCivilian02Plea05	5.0	I CAN'T FIND MY CAR KEYS! AHHHHH!
-SND_MaleCivilian02Plea06	4.1	THEY HATE MY KIDS!
-SND_MaleCivilian02Plea07	4.3	HOLY MOTHER OF JESUS WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+SND_MaleCivilian02Plea06	4.1	They ate my kid!
+SND_MaleCivilian02Plea07	4.3	Holy mother of Jesus, why?!
 SND_MaleCivilian02Plea08	3.3	OH MY GOD! AHHHHH!
 SND_MaleCivilian02Plea09	4.2	No! No! No!
-SND_MaleCivilian02Plea10	3.3	AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+SND_MaleCivilian02Plea10	3.3	
 SND_MaleCivilian02Plea11	3.0	NOOOOOOOOOOOOOOOOOOOOO!!!
-SND_MaleCivilian02Plea12	2.0	THEY GOT BARBRA!
-SND_MaleCivilian02Plea13	3.2	There's too many of them! Whatever survived!
+SND_MaleCivilian02Plea12	2.0	They got Barbara!
+SND_MaleCivilian02Plea13	3.2	There's too many of them! We'll never survive!
 SND_MaleCivilian02Plea14	3.5	They're coming! Please stop! Pick me up, please!
 SND_MaleCivilian02Plea15	4.2	My wife and family are dead! They're dead!
-SND_MaleCivilian02Plea16	3.4	They're shooting everyone! They won't let anybody leave!
-SND_MaleCivilian02Plea17	2.5	DON'T LET HIM KILL US NOOOOOO!
+SND_MaleCivilian02Plea16	3.4	They're shooting everyone! They won't let anyone to leave!
+SND_MaleCivilian02Plea17	2.5	DON'T LET THEM KILL US! NO!
 SND_MaleCivilian02Plea18	3.6	No, you can't leave! No, my family will be killed!
 SND_MaleCivilian02Plea19	3.2	NO! THEY'LL GET US IF YOU LEAVE US HERE!
 SND_MaleCivilian02Plea20	3.6	Stop! Wait! Don't leave without us!
 SND_NukeRunCount1	0.9	One.
-SND_NukeRunCount10	0.5	10.
+SND_NukeRunCount10	0.5	Ten.
 SND_NukeRunCount2	0.8	Two.
-SND_NukeRunCount3	0.6	3.
-SND_NukeRunCount4	0.5	4
-SND_NukeRunCount5	0.6	Bye.
+SND_NukeRunCount3	0.6	Three.
+SND_NukeRunCount4	0.5	Four.
+SND_NukeRunCount5	0.6	Five.
 SND_NukeRunCount6	0.9	Six.
-SND_NukeRunCount7	0.7	7.
-SND_NukeRunCount8	0.7	8.
-SND_NukeRunCount9	0.5	Not.
+SND_NukeRunCount7	0.7	Seven.
+SND_NukeRunCount8	0.7	Eight.
+SND_NukeRunCount9	0.5	Nine.
 SND_NukeRunCountStart	3.9	Phantom Eagle to base. The drop is airborne. Detonation in...
 SND_PlayerBlownTires01	2.7	Ah, great! Driving on rails!
 SND_PlayerBlownTires02	2.1	Just grinding metal now.
 SND_PlayerBlownTires03	2.8	I can't control this piece of junk!
 SND_PlayerDeathCrash1	4.1	The highway will be filled with debris. I need to take that into account.
-SND_PlayerDeathCrash2	4.0	I'll need mad skills to get through the highway with all that chaos.
+SND_PlayerDeathCrash2	4.0	I'll need mad skills to get through the highway, with all of that chaos.
 SND_PlayerDeathCrash3	4.4	It's a highway. There's gonna be tons of abandoned cars and accidents when I get there.
 SND_PlayerDeathCrash4	6.6	Cars, people, and chaos. That's what I must expect. I just can't crash my car out there or I'm dead.
-SND_PlayerDeathHelicopter1	4.9	They're going to send everything they've got at me. Even helicopters. That's going to be tough.
+SND_PlayerDeathHelicopter1	4.9	They're going to send everything they got at me, even helicopters. That's gonna be tough.
 SND_PlayerDeathHelicopter2	5.4	They're going to have choppers. I'll need to dodge them or destroy them. It's not going to be a walk in the park.
 SND_PlayerDeathJet1	4.0	If they can't stop me, they'll send bombing jets. Gotta keep that in mind.
 SND_PlayerDeathJet2	4.2	I'm pretty sure they'll send jets if I get too far. I gotta be ready for that.
-SND_PlayerDeathMilitary1	2.8	With the military involved, I'd better be prepared.
+SND_PlayerDeathMilitary1	2.8	With the military involved, I better be prepared.
 SND_PlayerDeathMilitary2	4.7	The military will do everything they can to stop me. I must be better prepared.
 SND_PlayerDeathMilitary3	2.4	They're gonna blast me to pieces if I let them.
-SND_PlayerDeathMilitary4	3.5	I know they'll bring all they've got for me. Can't let them get me, though.
-SND_PlayerDeathNuke1	6.3	When the shit hits the fan, they'll nuke the place. I'm sure of it. I better get my ass out of here as fast as I can.
-SND_PlayerDeathNuke2	4.9	Ah, that's not gonna work. If they decide to drop a nuke, I need to haul my ass out of there.
-SND_PlayerDeathZombie1	2.9	This is not going to work with all those zombies.
+SND_PlayerDeathMilitary4	3.5	I know they'll bring all they got on me. Can't let them get me though.
+SND_PlayerDeathNuke1	6.3	When the shit hits the fan, they'll nuke the place. I'm sure of it. I'd better get my ass out of here as fast as I can.
+SND_PlayerDeathNuke2	4.9	Ugh. That's not gonna work. They decide to drop a nuke, I need to hop my ass out of here.
+SND_PlayerDeathZombie1	2.9	This is not gonna work with all those zombies.
 SND_PlayerDeathZombie2	3.2	These things will fill the road. I need to be more prepared.
 SND_PlayerDeathZombie3	4.7	I bet there are tons of dead people walking around out there. I need to plan this better.
 SND_PlayerDeathZombie4	5.1	Zombies. Freaking zombies, man. How can I survive this nightmare?
-SND_PlayerDevoured01	7.8	I did it! I did it!
-SND_PlayerDevoured02	6.2	AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
-SND_PlayerDevoured03	6.2	YOU KNEW THE CREATURE!
+SND_PlayerDevoured01	7.8	
+SND_PlayerDevoured02	6.2	
+SND_PlayerDevoured03	6.2	
 SND_PlayerExtinguishFire01	1.5	Ah, that's better.
 SND_PlayerExtinguishFire02	1.2	Gotta be careful!
 SND_PlayerExtinguishFire03	1.4	That was close.
@@ -180,15 +180,15 @@ SND_PlayerFatalBullet05	2.7	Eek! Yeah.
 SND_PlayerFatalBullet06	2.4	Ah!
 SND_PlayerFatalBullet07	1.6	
 SND_PlayerFatalBullet08	4.3	UGH!
-SND_PlayerFatalBullet09	3.1	Grrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+SND_PlayerFatalBullet09	3.1	
 SND_PlayerFatalBullet10	2.9	
 SND_PlayerFatalBullet11	2.2	I am...
 SND_PlayerFatalBullet12	1.5	AHH!
 SND_PlayerFire01	1.4	This is not good.
 SND_PlayerFire02	1.2	It's gonna blow!
 SND_PlayerFire03	1.0	I'm on fire!
-SND_PlayerFirstTimeInGarage	4.5	I gotta make it through the highway. That's probably my best bet to get out of the city.
-SND_PlayerGunEmpty01	1.9	Shit no more bullets
+SND_PlayerFirstTimeInGarage	4.5	I gotta make it to the highway. It's probably my best bet to get out of the city.
+SND_PlayerGunEmpty01	1.9	Shit, no more bullets.
 SND_PlayerGunEmpty02	1.7	That was the last one!
 SND_PlayerGunEmpty03	1.8	Damn it! I'm out!
 SND_PlayerHelicopterReaction01	1.6	Come on, let's play!
@@ -197,7 +197,7 @@ SND_PlayerHelicopterReaction03	2.0	Shit, this is intense.
 SND_PlayerHelicopterReaction04	3.4	No way! I'm not stopping for these chumps!
 SND_PlayerHelicopterReaction05	1.6	A freaking helicopter?
 SND_PlayerHelicopterReaction06	1.7	You've gotta be kidding me!
-SND_PlayerHitCiv01	1.6	You bunch of yo-yos!
+SND_PlayerHitCiv01	1.6	You bunch of Yo-Yo's!
 SND_PlayerHitCiv02	0.9	Shit!
 SND_PlayerHitCiv03	0.6	Shit!
 SND_PlayerHitCiv04	0.6	DAMMIT!
@@ -228,13 +228,13 @@ SND_PlayerNoAmmo02	1.5	Damn, out of ammo!
 SND_PlayerNoAmmo03	1.8	I don't have any more bullets!
 SND_PlayerNoGun01	2.1	Damn it! I didn't bring a gun!
 SND_PlayerNoGun02	1.7	I don't have a freaking gun!
-SND_PlayerNoGun03	1.6	Could use a gun right now!
+SND_PlayerNoGun03	1.6	I could use a gun right now.
 SND_PlayerPreciseHit01	1.4	Boom! Headshot!
 SND_PlayerPreciseHit02	1.1	Hell yeah!
 SND_PlayerPreciseHit03	1.9	Yeah, nice!
 SND_PlayerShootHoodEnemy01	1.6	OFF OF MY CAR!
 SND_PlayerShootHoodEnemy02	1.1	GET OFF!
-SND_PlayerShootHoodEnemy03	1.5	CHOCODNESS!
+SND_PlayerShootHoodEnemy03	1.5	Choke on this!
 SND_PlayerShootHoodEnemy04	1.6	YOU DESERVE THAT!
 SND_PlayerShootHoodEnemy05	1.3	OPEN WIDE!
 SND_PlayerShootHoodEnemy06	2.2	Get off my car, jackass!
@@ -269,7 +269,7 @@ SND_PlayerUpgradeWindshield2	3.1	That should help against whatever tries to smas
 SND_PlayerUpgradeWindshield3	3.3	Fully reinforced glass. That should stop them for a while.
 SND_SoldierGetOff01	2.2	Fuck's sake!
 SND_SoldierGetOff02	2.6	Ah, shit!
-SND_SoldierGetOff03	2.4	URGHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+SND_SoldierGetOff03	2.4	
 SND_SoldierGetOff04	3.1	Son of a bitch!
 SND_SoldierGetOff05	2.6	Oh, damn it!
 SND_SoldierGetOff06	2.2	Mama!
@@ -281,19 +281,31 @@ SND_SoldierThreat05	3.6	When I stop this car, you're going down, dirtbag!
 SND_SoldierThreat06	1.6	STOP THE CAR!
 SND_SoldierThreat07	2.4	You're wasting your time, you piece of shit!
 SND_SoldierThreat08	3.0	I'm gonna enjoy ripping your face off!
-SND_UpgradeBodyArmor	1.2	Thank you for watching.
-SND_UpgradeBumper1	1.7	Thank you for watching.
+SND_UpgradeBodyArmor	1.2	
+SND_UpgradeBumper1	1.7	
 SND_UpgradeBumper2	1.6	
-SND_UpgradeBumper3	1.8	Thanks for watching!
-SND_UpgradeEngine0	3.1	Transcription by ESO. Translation by —
-SND_UpgradeEngine1	2.7	Transcription by ESO. Translation by —
-SND_UpgradeEngine2	2.4	Thank you for watching.
-SND_UpgradeEngine3	2.1	Subtitles by the Amara.org community
-SND_UpgradeFirearm	0.6	Thanks for watching!
-SND_UpgradeFirearmBullet	0.8	Thank you for watching.
-SND_UpgradeHorn1	0.9	Thanks for watching!
-SND_UpgradeHorn2	0.9	Ah
-SND_UpgradeHorn3	0.9	Ah
-SND_UpgradePerception	0.9	Thanks for watching!
-SND_UpgradeTire	1.8	Boop! Boop! Boop!
+SND_UpgradeBumper3	1.8	
+SND_UpgradeEngine0	3.1	
+SND_UpgradeEngine1	2.7	
+SND_UpgradeEngine2	2.4	
+SND_UpgradeEngine3	2.1	
+SND_UpgradeFirearm	0.6	
+SND_UpgradeFirearmBullet	0.8	
+SND_UpgradeHorn1	0.9	
+SND_UpgradeHorn2	0.9	
+SND_UpgradeHorn3	0.9	
+SND_UpgradePerception	0.9	
+SND_UpgradeTire	1.8	
 SND_UpgradeWindshield	0.6	
+SND_FemaleCivilianPlea06	6.03	Somebody! Please, help us!
+SND_FemaleCivilianPlea07	2.59	I gotta get out of here!
+SND_FemaleCivilianPlea08	4.0	They're trying to kill me!
+SND_FemaleCivilianPlea09	3.55	I must be dreaming! I must be dreaming!
+SND_FemaleCivilianPlea10	3.21	This ain't happening!
+SND_FemaleCivilianPlea11	3.13	I ain't done nothing wrong!
+SND_FemaleCivilianPlea12	2.19	They're trying to kill me!
+SND_FemaleCivilianPlea13	1.88	God help us!
+SND_FemaleCivilianPlea15	2.06	This is the end of the world!
+SND_FemaleCivilianPlea17	3.5	Please! Somebody help me! Oh, god!
+SND_FemaleCivilianPlea18	4.13	Please, stop! Help me!
+SND_FemaleCivilianPlea19	3.13	They ate my baby! My baby!

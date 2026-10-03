@@ -177,7 +177,7 @@ as3_RDEditorInterface_28,All weapons are disabled and the player can only rely h
 as3_RDEditorInterface_29,Allows the area to use flipping to create more randomization.  That means patterns in the area will be flipped randomly.,允许该区域使用翻转来增加随机性。这意味着区域内的模式会随机翻转。,RDEditorInterface.as
 as3_RDEditorInterface_30,Allows you to select the ending type for the campaign.  Only the last area can specify the campaign\'s ending.,允许你选择战役的结局类型。只有最后一个区域能指定战役结局。,RDEditorInterface.as
 as3_RDEditorInterface_31,"Allows you to select which group can be spawned after this one.  This options allows you to create looping, structured and randomized challenge campaigns.",允许你选择本组之后可以生成哪一组。此选项可让你创建循环、结构化且随机的挑战战役。,RDEditorInterface.as
-as3_RDEditorInterface_32,Alpha Mutant Zombie,阿尔法变异体丧尸,RDEditorInterface.as
+as3_RDEditorInterface_32,Alpha Mutant Zombie,阿尔法变异体,RDEditorInterface.as
 as3_RDEditorInterface_33,Alternate Tree,交替树,RDEditorInterface.as
 as3_RDEditorInterface_34,Arcade Ammo Pickups,街机弹药拾取,RDEditorInterface.as
 as3_RDEditorInterface_35,Army Truck,军用卡车,RDEditorInterface.as
@@ -634,7 +634,7 @@ as3_RDHelp_31,"Make sure to click save after you finish making a pattern, area o
 as3_RDHelp_32,Make sure you have the latest flash player installed for an optimal playing experience.,为确保最佳游戏体验，请安装最新版 Flash Player。,RDHelp.as
 as3_RDHelp_33,Make sure your browser isn\'t set to clear your cache or your save file will be deleted!,确保浏览器没有设置为清除缓存，否则你的存档会被删除！,RDHelp.as
 as3_RDHelp_34,Mashing space as the driver and the left mouse button as the gunner will bash a side grappling mutant off!,驾驶员猛按空格键、机枪手猛按鼠标左键，就能把侧面抓附的变异体打下去！,RDHelp.as
-as3_RDHelp_35,"Mutants will sometimes run in packs of 3 or 4, one of them being an alpha mutant, beware!",变异体有时会3到4只结群行动，其中一只是首领变异体，小心！,RDHelp.as
+as3_RDHelp_35,"Mutants will sometimes run in packs of 3 or 4, one of them being an alpha mutant, beware!",变异体有时会3到4只结群行动，其中一只是阿尔法变异体，小心！,RDHelp.as
 as3_RDHelp_36,"Once you have areas, you can start building campaigns.  There are two types of campaigns, Story and Challenge.  A story campaign is a linear series of aeras on which you can set parameters such as length, dialogs, etc.  They are usually more story driven and must have an ending.  The other type of campaign is the Challenge campaign which consists of a structured series of area groups (see Groups). Unlike story campaigns, challenge campaigns don\'t have an ending, they are infinite and have a goal and a goal target, like Kill 500 zombies.\n\nBeyond this simple description is a ton of options you can play with both in story and challenge campaigns.",有了区域之后，你就可以开始构建战役了。战役分为两种：故事和挑战。故事战役是一系列线性的区域，你可以为其设置长度、对话等参数。它们通常更注重剧情，且必须有结局。另一种是挑战战役，由一系列结构化的区域组组成（见「组」）。与故事战役不同，挑战战役没有结局，它们是无限的，有一个目标和目标数值，例如击杀500只丧尸。\n\n除了这些简单描述外，故事战役和挑战战役中还有大量选项可供你尝试。,RDHelp.as
 as3_RDHelp_37,"Pausing, along with other options can be accessed in-game by moving your mouse near the bottom of the screen.",在游戏中，把鼠标移到屏幕底部附近即可访问暂停和其他选项。,RDHelp.as
 as3_RDHelp_38,"Perks can be purchased at some locations and grant you helpful abilities such as lowering RP costs, faster character switches, etc.",特长可以在某些地点购买，能赋予你实用的能力，例如降低RP消耗、更快切换角色等。,RDHelp.as
@@ -752,11 +752,11 @@ as3_RDPlayer_34,Upgrading Engine,升级引擎,RDPlayer.as
 as3_RDPlayer_35,Upgrading Tires,升级轮胎,RDPlayer.as
 as3_RDUnlockData_1,Abandoned Vehicles,废弃车辆,RDUnlockData.as
 as3_RDUnlockData_2,Accuracy affects the bullet spread from firing and the kick back for shotguns. It also affects how fast the bullet spread and kick back recover.,精准度影响开火时的子弹散布和霰弹枪的后坐力，也影响子弹散布和后坐力恢复的速度。,RDUnlockData.as
-as3_RDUnlockData_3,Alpha Mutant Tactics,精英变异体战术,RDUnlockData.as
-as3_RDUnlockData_4,Alpha Mutants,精英变异体,RDUnlockData.as
+as3_RDUnlockData_3,Alpha Mutant Tactics,阿尔法变异体战术,RDUnlockData.as
+as3_RDUnlockData_4,Alpha Mutants,阿尔法变异体,RDUnlockData.as
 as3_RDUnlockData_5,Army Vehicles,军用车辆,RDUnlockData.as
-as3_RDUnlockData_6,Attack Choppers,武装直升机,RDUnlockData.as
-as3_RDUnlockData_7,Bomb Squad,拆弹小组,RDUnlockData.as
+as3_RDUnlockData_6,Attack Choppers,攻击直升机,RDUnlockData.as
+as3_RDUnlockData_7,Bomb Squad,排爆小组,RDUnlockData.as
 as3_RDUnlockData_8,Bomber Jets,轰炸机,RDUnlockData.as
 as3_RDUnlockData_9,Capacity affects how many rounds/shells your weapon can hold and how many total rounds/shells you can carry for that weapon.,容量影响你的武器能装多少发子弹/弹药，以及该武器总共能携带多少发。,RDUnlockData.as
 as3_RDUnlockData_10,Common Undead,普通丧尸,RDUnlockData.as
@@ -768,22 +768,22 @@ as3_RDUnlockData_15,Fuel Trucks,油罐车,RDUnlockData.as
 as3_RDUnlockData_16,Large Vehicles,大型车辆,RDUnlockData.as
 as3_RDUnlockData_17,Medical Shots,医疗针剂,RDUnlockData.as
 as3_RDUnlockData_18,Mounted Weapons,车载武器,RDUnlockData.as
-as3_RDUnlockData_19,Moving Cars,行驶中的车辆,RDUnlockData.as
+as3_RDUnlockData_19,Moving Cars,行驶中的汽车,RDUnlockData.as
 as3_RDUnlockData_20,Mutant Tactics,变异体战术,RDUnlockData.as
 as3_RDUnlockData_21,Oil Spills,漏油,RDUnlockData.as
 as3_RDUnlockData_22,Police Stations,警察局,RDUnlockData.as
 as3_RDUnlockData_23,Proximity Mines,感应地雷,RDUnlockData.as
-as3_RDUnlockData_24,Security Fences,安保围栏,RDUnlockData.as
-as3_RDUnlockData_25,Spike Soldiers,尖刺士兵,RDUnlockData.as
-as3_RDUnlockData_26,Spike Strips,尖刺路障,RDUnlockData.as
+as3_RDUnlockData_24,Security Fences,安全围栏,RDUnlockData.as
+as3_RDUnlockData_25,Spike Soldiers,钉刺兵,RDUnlockData.as
+as3_RDUnlockData_26,Spike Strips,钉刺带,RDUnlockData.as
 as3_RDUnlockData_27,Support Choppers,支援直升机,RDUnlockData.as
 as3_RDUnlockData_28,The aiming levels up as you play and affects how responsive your aiming is with the weapon.,瞄准会随着游戏自动升级，影响你使用该武器瞄准时的响应速度。,RDUnlockData.as
 as3_RDUnlockData_29,"The handling levels up as you play and affects your equip/unequip speed, how much kick back you get from hard collisions and how fast you recover from those.",操控会随着游戏自动升级，影响你装备/卸下武器的速度、猛烈碰撞时的后坐颠簸程度以及从中恢复的速度。,RDUnlockData.as
 as3_RDUnlockData_30,The reloading levels up as you play and affects how fast you reload this weapon. This is crucial when dealing with a crowd of zombies.,装填会随着游戏自动升级，影响你装填该武器的速度。面对一群丧尸时至关重要。,RDUnlockData.as
-as3_RDUnlockData_31,Undead Soldier,亡灵士兵,RDUnlockData.as
-as3_RDUnlockData_32,Undead Tactics,亡灵战术,RDUnlockData.as
+as3_RDUnlockData_31,Undead Soldier,丧尸士兵,RDUnlockData.as
+as3_RDUnlockData_32,Undead Tactics,丧尸战术,RDUnlockData.as
 as3_RDUnlockData_33,Water Barrels,水桶,RDUnlockData.as
-as3_RDUnlockData_34,Weapon Caches,武器箱,RDUnlockData.as
+as3_RDUnlockData_34,Weapon Caches,武器补给点,RDUnlockData.as
 as3_RDUpgradeScreen_1,A med patch will heal your wounds and let you live until the next life threatening event.  Using them at the right moment is crucial.,医疗包能治愈你的伤势，让你撑到下一次危及生命的时刻。在恰当时机使用至关重要。,RDUpgradeScreen.as
 as3_RDUpgradeScreen_2,"A steroid shot will make you immune to bodily damage (bullets, explosions) for a moment.  Using it wisely can be the difference between life and death.",类固醇针剂能让你在短时间内免疫身体伤害（子弹、爆炸）。明智地使用它可能决定生死。,RDUpgradeScreen.as
 as3_RDUpgradeScreen_3,Armor upgrades will add metal plating over your engine so you can handle a lot of collisions.  Better upgrades mean better protection.,装甲升级会在引擎上加装金属板，让你能承受大量碰撞。升级越好，防护越强。,RDUpgradeScreen.as

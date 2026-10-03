@@ -117,7 +117,7 @@
  {
   "start": 144.65,
   "end": 146.39,
-  "en": "The patients are still too high, sir."
+  "en": "Radiations are still too high, sir."
  },
  {
   "start": 146.51,
@@ -125,8 +125,38 @@
   "en": "Status ETA, 10 seconds."
  },
  {
-  "start": 160.72,
-  "end": 161.48,
-  "en": "There's a lot of undead movement."
+  "start": 150.0,
+  "end": 154.6,
+  "en": "Let's pray to whoever's still up there that we did the right thing."
+ },
+ {
+  "start": 154.6,
+  "end": 158.8,
+  "en": "No!"
+ },
+ {
+  "start": 158.8,
+  "end": 161.5,
+  "en": "Sir, we see a lot of undead movement."
+ },
+ {
+  "start": 161.5,
+  "end": 162.6,
+  "en": "Shit!"
+ },
+ {
+  "start": 162.6,
+  "end": 164.0,
+  "en": "It didn't work!"
+ },
+ {
+  "start": 164.0,
+  "end": 165.3,
+  "en": "It didn't work!"
+ },
+ {
+  "start": 165.3,
+  "end": 168.4,
+  "en": "Then we failed, son."
  }
 ]

@@ -1,13 +1,13 @@
 {
  "SND_GarageChatter01": {
   "file": "1145_SND_GarageChatter01.mp3",
-  "text": "We're taking heavy losses on the west ridge. We're sending backup right away. What's your exact position? Uh, G-32, M-51. Roger that. Sending backup now.",
+  "text": "We're taking heavy losses at the West Ridge! We're sending backup right away. What's your exact position? Uh... G32, E51! Roger that, sending backup now!",
   "duration": 12.62,
   "segments": [
    {
     "start": 0.0,
     "end": 2.12,
-    "text": "We're taking heavy losses on the west ridge."
+    "text": "We're taking heavy losses at the West Ridge!"
    },
    {
     "start": 2.92,
@@ -17,17 +17,17 @@
    {
     "start": 4.68,
     "end": 5.66,
-    "text": "What's your exact position?"
+    "text": "What's your exact positiat?"
    },
    {
     "start": 6.46,
     "end": 9.12,
-    "text": "Uh, G-32, M-51."
+    "text": "Uh, G32, E51!"
    },
    {
     "start": 10.34,
     "end": 12.26,
-    "text": "Roger that. Sending backup now."
+    "text": "Roger that, sending backup now!"
    }
   ],
   "hallucination": false
@@ -47,36 +47,36 @@
  },
  "SND_ApproachAlignSoldier01": {
   "file": "1148_SND_ApproachAlignSoldier01.mp3",
-  "text": "This is Highway Unit. Target headed my way and not stopping. Engage and neutralize the target. Don't let him through.",
+  "text": "This is highway unit! Target heading my way and not stopping! Engage and neutralize the target! Don't let him through!",
   "duration": 7.68,
   "segments": [
    {
     "start": 0.0,
     "end": 3.36,
-    "text": "This is Highway Unit. Target headed my way and not stopping."
+    "text": "This is highway unit! Target heading my way and not stopping!"
    },
    {
     "start": 4.22,
     "end": 7.18,
-    "text": "Engage and neutralize the target. Don't let him through."
+    "text": "Engage and neutralize the target! Don't let him through!"
    }
   ],
   "hallucination": false
  },
  "SND_CheckPoint0Post": {
   "file": "1149_SND_CheckPoint0Post.mp3",
-  "text": "Dispatch, give me a report on the highway checkpoint deployments. All highway units are in position. Traffic is stopped and the city exits are secured. Roger that. Over.",
+  "text": "Dispatch, give me a report on the highway checkpoint points. All highway units are in position. Traffic has stopped and the city exits are secured. Roger that. Over.",
   "duration": 11.26,
   "segments": [
    {
     "start": 0.22,
     "end": 3.14,
-    "text": "Dispatch, give me a report on the highway checkpoint deployments."
+    "text": "Dhaspatch, give me a report on the highway checkpoint points."
    },
    {
     "start": 4.12,
     "end": 8.64,
-    "text": "All highway units are in position. Traffic is stopped and the city exits are secured."
+    "text": "All highway units are in position. Traffic has stopped and the city exits are secured."
    },
    {
     "start": 9.68,
@@ -88,13 +88,13 @@
  },
  "SND_JetDispatch01": {
   "file": "1150_SND_JetDispatch01.mp3",
-  "text": "Face to air support. Highway target is not stopping. We need a carpet bombing on his location. Affirmative. Approaching target.",
+  "text": "Base to Air Support. Highway target is not stopping. We need a carpet bombing on his location. Affirmative. Approaching target.",
   "duration": 8.93,
   "segments": [
    {
     "start": 0.0,
     "end": 5.58,
-    "text": "Face to air support. Highway target is not stopping. We need a carpet bombing on his location."
+    "text": "Base to Air Support. Highway target is not stopping. We need a carpet bombing on his location."
    },
    {
     "start": 6.96,
@@ -173,43 +173,43 @@
  },
  "SND_CheckPoint1Post": {
   "file": "1164_SND_CheckPoint1Post.mp3",
-  "text": "Checkpoint to base. We're unable to stop our target. It's continuing its route on Highway 65. You couldn't stop a single car. Give me a visual report. Sorry, sir. We're low on personnel here. The target is driving a black sports car with tinted glass. The driver's visual is still unknown. Draw checkpoint on Highway 65. We have a moving black sports car. It must be stopped. Stay alert. Outpost 7 to base. We're facing a massive crowd of undead here. We're holding, but we might have to pull back if more show up. Maintain your position. They're dead and slow for Christ's sakes. Just kill them all. They're hard to kill, sir. Just do your job. Yes, sir!",
+  "text": "Checkpoint to Base! We're unable to stop our target! It's continuing its run on Highway 65! You couldn't stop a single car. Give me a visual report! Sorry, sir. We're low on personnel here. The target is driving a black sports car with tinted glass. The driver's visual is still unknown. To all checkpoints on Highway 65, we have a moving black sports car. It must be stopped! Stay alert. Outpost 7 to Base! We're facing a massive crowd of undead here! We're holding but we might have to pull back if more show up! Maintain your position. They're dead and slow for Christ's sake. Just kill 'em all! They're hard to kill, sir! Just do your job. Yes, sir!",
   "duration": 44.88,
   "segments": [
    {
     "start": 0.0,
     "end": 5.12,
-    "text": "Checkpoint to base. We're unable to stop our target. It's continuing its route on Highway 65."
+    "text": "Checkpoint to Base! We're unable to stop our target! It's continuing its run on Highway 65!"
    },
    {
     "start": 6.34,
     "end": 10.42,
-    "text": "You couldn't stop a single car. Give me a visual report."
+    "text": "You couldn't stop a single car. Give me a visual report!"
    },
    {
     "start": 11.32,
     "end": 19.06,
-    "text": "Sorry, sir. We're low on personnel here. The target is driving a black sports car with tinted glass. The driver's visual is still unknown."
+    "text": "Sorry, sir! We're low on personnel here! The target is driving a black sports car with tinted glass. The driver's visual is still unknown."
    },
    {
     "start": 20.46,
     "end": 26.08,
-    "text": "Draw checkpoint on Highway 65. We have a moving black sports car. It must be stopped. Stay alert."
+    "text": "To all checkpoints on Highway 65, we have a moving black sports car. It must be stopped! Stay alert."
    },
    {
     "start": 26.08,
     "end": 33.48,
-    "text": "Outpost 7 to base. We're facing a massive crowd of undead here. We're holding, but we might have to pull back if more show up."
+    "text": "Outpost 7 to Base! We're facing a massive crowd of undead here! We're holding but we might have to pull back if more show up!"
    },
    {
     "start": 34.36,
     "end": 38.66,
-    "text": "Maintain your position. They're dead and slow for Christ's sakes. Just kill them all."
+    "text": "Maintain your position. They're dead and slow for Christ's sake. Just kill 'em all!"
    },
    {
     "start": 39.52,
     "end": 40.76,
-    "text": "They're hard to kill, sir."
+    "text": "They're hard to kill, sir!"
    },
    {
     "start": 41.66,
@@ -257,13 +257,13 @@
  },
  "SND_GarageChatter03": {
   "file": "1175_SND_GarageChatter03.mp3",
-  "text": "Base to 4, Base Delta. Relocate to south front. Roger that! Relocating now!",
+  "text": "Base to 4-Base-Delta. Relocate south front. Roger that! Relocating now!",
   "duration": 6.74,
   "segments": [
    {
     "start": 0.0,
     "end": 3.36,
-    "text": "Base to 4, Base Delta. Relocate to south front."
+    "text": "Base to 4-Base-Delta. Relocate south front."
    },
    {
     "start": 4.3,
@@ -360,31 +360,31 @@
  },
  "SND_GarageChatter04": {
   "file": "1190_SND_GarageChatter04.mp3",
-  "text": "Unit 8 to base! We need artillery fire on the north side part now! Negative, Unit 8. Artillery has been proven ineffective against the undead. Maintain current strategy.",
+  "text": "Unit 8 to Base! We need artillery fire on Northside Park now! Negative, Unit 8. Our artillery has been proven ineffective against the undead. Maintain current strategy.",
   "duration": 9.98,
   "segments": [
    {
     "start": 0.0,
     "end": 3.58,
-    "text": "Unit 8 to base! We need artillery fire on the north side part now!"
+    "text": "Unit 8 to Base! We need artillery fire on the Northside Park now!"
    },
    {
     "start": 4.48,
     "end": 9.58,
-    "text": "Negative, Unit 8. Artillery has been proven ineffective against the undead. Maintain current strategy."
+    "text": "Negative, Unit 8. Our artillery has been proven ineffective against the undead. Maintain current strategy."
    }
   ],
   "hallucination": false
  },
  "SND_ApproachAlignSoldier04": {
   "file": "1193_SND_ApproachAlignSoldier04.mp3",
-  "text": "Highway Unit 12, you're to intercept your target at all costs. Roger that. I'll move and shoot. Over.",
+  "text": "Highway unit 12, you are to intercept your target at all costs. Roger that. I'll move and shoot. Over.",
   "duration": 6.74,
   "segments": [
    {
     "start": 0.0,
     "end": 3.5,
-    "text": "Highway Unit 12, you're to intercept your target at all costs."
+    "text": "Highway unit 12, you are to intercept your target at all costs."
    },
    {
     "start": 4.28,
@@ -396,18 +396,18 @@
  },
  "SND_CheckPoint2Post": {
   "file": "1194_SND_CheckPoint2Post.mp3",
-  "text": "Checkpoint to base. Uh, the target is still going. Are you kidding me? Maintain your position. The next checkpoint will handle it. To all ground troops on Highway 65, you are to intercept and shoot down the target. Over. Outpost 10, I need a sitrep. We're holding, but damn, there's a lot of... Hold on. There's a lot of them. We're almost surrounded. If they cover our east front, we're in trouble. Hang in there. Outpost 7, what's your status? We were overrun minutes ago. We're still on the move to South Square Park to make a stand there. We're killing them, but more keep coming. Roger that. Don't lose South Square Park. Over.",
+  "text": "Checkpoint to Base. Uh... the target is still going. Are you kidding me?! Maintain your position. The next checkpoint will handle him. To all ground troops on Highway 65, you are to intercept and shoot down the target. Over. Outpost 10. I need a sit rep. We're holding, but damn, there's a lot of them. Hold on. There's a LOT of them! We're almost surrounded! If they cover our east front, we're in trouble! Hang in there. Outpost 7, what's your status? We were overrun minutes ago. We're still on the move to South Square Park to make stand there. We're killing them, but more keep coming! Roger that. Don't lose South Square Park. Over.",
   "duration": 44.23,
   "segments": [
    {
     "start": 0.44,
     "end": 4.12,
-    "text": "Checkpoint to base. Uh, the target is still going."
+    "text": "Checkpoint to Base. Uh. the target is still going."
    },
    {
     "start": 5.26,
     "end": 10.16,
-    "text": "Are you kidding me? Maintain your position. The next checkpoint will handle it."
+    "text": "Are you kidding me?!! Maintain your position. The next checkpoint will handle him."
    },
    {
     "start": 10.82,
@@ -417,17 +417,17 @@
    {
     "start": 17.36,
     "end": 19.24,
-    "text": "Outpost 10, I need a sitrep."
+    "text": "Outpost 10. I need a sit rep."
    },
    {
     "start": 20.02,
     "end": 22.86,
-    "text": "We're holding, but damn, there's a lot of... Hold on."
+    "text": "We're holding, but damn, there's a LOT of them! Hold on."
    },
    {
     "start": 23.78,
     "end": 28.7,
-    "text": "There's a lot of them. We're almost surrounded. If they cover our east front, we're in trouble."
+    "text": "There's a LOT of them! We're almost surrounded! If they cover our east front, we're in trouble!"
    },
    {
     "start": 29.64,
@@ -442,7 +442,7 @@
    {
     "start": 38.02,
     "end": 39.76,
-    "text": "We're killing them, but more keep coming."
+    "text": "We're killing them, but more keep coming!"
    },
    {
     "start": 40.7,
@@ -454,7 +454,7 @@
  },
  "SND_JetHit02": {
   "file": "1195_SND_JetHit02.mp3",
-  "text": "It's a hit! It's a hit! Target is still going though. That should slow him down. Let the ground unit handle the rest. Return to base.",
+  "text": "It's a hit! It's a hit! Target is still going though. That should slow him down. Let the ground units handle the rest. Return to base.",
   "duration": 8.99,
   "segments": [
    {
@@ -470,7 +470,7 @@
    {
     "start": 4.28,
     "end": 8.36,
-    "text": "That should slow him down. Let the ground unit handle the rest. Return to base."
+    "text": "That should slow him down. Let the ground unitss handle the rest. Return to base."
    }
   ],
   "hallucination": false
@@ -490,28 +490,28 @@
  },
  "SND_GarageChatter05": {
   "file": "1206_SND_GarageChatter05.mp3",
-  "text": "WE HAVE HUNDREDS OF CIVILIANS REQUESTING TO LEAVE THE CHECKPOINT! PERMISSION DENIED! Permission denied. Secure position. No one gets out. BUT SIR! THE HORNS ARE CLOSING IN AND... OH GOD! Secure the position. No one leaves, you understand? Your orders are to neutralize the civilians. YES SIR! FIRE! FIRE!",
+  "text": "WE HAVE HUNDREDS OF CIVILIANS REQUESTING TO LEAVE THE CHECKPOINT! PERMISSION TO- Permission denied. Secure position, no one gets out. BUT SIR! THE HORDES ARE CLOSING IN AND- Oh, God! Secure the position! No one leaves, you understand? Your orders are to neutralize the civilians! YES SIR! FIRE! FIRE!",
   "duration": 22.2,
   "segments": [
    {
     "start": 0.0,
     "end": 3.8,
-    "text": "WE HAVE HUNDREDS OF CIVILIANS REQUESTING TO LEAVE THE CHECKPOINT! PERMISSION DENIED!"
+    "text": "WE HAVE HUNDREDS OF CIVILIANS REQUESTING TO LEAVE THE CHECKPOINT! PERMISSION TO-"
    },
    {
     "start": 3.8,
     "end": 7.5,
-    "text": "Permission denied. Secure position. No one gets out."
+    "text": "Permission denied. Secure position, no one gets out."
    },
    {
     "start": 7.5,
     "end": 11.8,
-    "text": "BUT SIR! THE HORNS ARE CLOSING IN AND... OH GOD!"
+    "text": "BUT SIR! THE HORDES ARE CLOSING IN AND- Oh, God!"
    },
    {
     "start": 11.8,
     "end": 18.3,
-    "text": "Secure the position. No one leaves, you understand? Your orders are to neutralize the civilians."
+    "text": "Secure the position, no one leaves, you understand? Your orders are to neutralize the civilians!"
    },
    {
     "start": 18.3,
@@ -564,31 +564,31 @@
  },
  "SND_JetMissAndLeave01": {
   "file": "1211_SND_JetMissAndLeave01.mp3",
-  "text": "Target missed. I repeat, target missed. I'm out of ammo. Damn it! Return to base. Over.",
+  "text": "Target missed. I repeat, target missed. I'm. out of ammo. Dammit! Return to base. Over.",
   "duration": 7.73,
   "segments": [
    {
     "start": 0.0,
     "end": 3.88,
-    "text": "Target missed. I repeat, target missed. I'm out of ammo."
+    "text": "Target missed. I repeat, target missed. I'm.. out of ammo."
    },
    {
     "start": 4.66,
     "end": 7.24,
-    "text": "Damn it! Return to base. Over."
+    "text": "Dammit! Return to base. Over."
    }
   ],
   "hallucination": false
  },
  "SND_PlayerDeathCrash2": {
   "file": "1212_SND_PlayerDeathCrash2.mp3",
-  "text": "I'll need mad skills to get through the highway with all that chaos.",
+  "text": "I'll need mad skills to get through the highway, with all of that chaos.",
   "duration": 4.02,
   "segments": [
    {
     "start": 0.0,
     "end": 3.52,
-    "text": "I'll need mad skills to get through the highway with all that chaos."
+    "text": "I'll need mad skills to get through the highway,, with all that chaos."
    }
   ],
   "hallucination": false
@@ -689,7 +689,7 @@
  },
  "SND_JetMissAndLeave02": {
   "file": "1227_SND_JetMissAndLeave02.mp3",
-  "text": "Air support to base. I missed. Come back to base for a refill. Roger that.",
+  "text": "Air support to base. I missed. Come back to base for a refuel. Roger that.",
   "duration": 6.19,
   "segments": [
    {
@@ -700,7 +700,7 @@
    {
     "start": 2.74,
     "end": 4.32,
-    "text": "Come back to base for a refill."
+    "text": "Come back to base for a refuel."
    },
    {
     "start": 5.22,
@@ -725,13 +725,13 @@
  },
  "SND_GarageChatter07": {
   "file": "1236_SND_GarageChatter07.mp3",
-  "text": "Unit 10 to base! We're surrounded on the east side factory! Requesting airlift now! Over! Denied. Secure position and await orders. Requesting airlift ASAP! We're getting in with...",
+  "text": "Unit 10 to Base! We're surrounded on the East Site factory! Requesting airlift out! Over! Denied. Secure position and await orders. Requesting airlift ASAP! THEY'RE GETTING IN WE-!",
   "duration": 12.9,
   "segments": [
    {
     "start": 0.0,
     "end": 5.26,
-    "text": "Unit 10 to base! We're surrounded on the east side factory! Requesting airlift now! Over!"
+    "text": "Unit 10 to Base! We're surrounded on the East Site factory! Requesting airlift out! Over!"
    },
    {
     "start": 6.12,
@@ -741,7 +741,7 @@
    {
     "start": 9.9,
     "end": 12.84,
-    "text": "Requesting airlift ASAP! We're getting in with..."
+    "text": "Requesting airlift ASAP! THEY'RE GETTING IN WE-!"
    }
   ],
   "hallucination": false
@@ -825,7 +825,7 @@
  },
  "SND_GarageChatter08": {
   "file": "1251_SND_GarageChatter08.mp3",
-  "text": "Approaching area Delta Tango. The rabbit is almost in the hole. Are you out of your mind? Forget the freaking code, son. We're fighting dead people. Uh, sorry, sir.",
+  "text": "Approaching area Delta Tango. The rabbit is almost in the hole. Are you out of your mind? Forget the freaking codes, son! We're fighting dead people. Uh, sorry, sir.",
   "duration": 13.11,
   "segments": [
    {
@@ -836,7 +836,7 @@
    {
     "start": 4.36,
     "end": 10.26,
-    "text": "Are you out of your mind? Forget the freaking code, son. We're fighting dead people."
+    "text": "Are you out of your mind? Forget the freaking codes, son! We're fighting dead people."
    },
    {
     "start": 11.32,
@@ -866,7 +866,7 @@
  },
  "SND_CheckPoint4Post": {
   "file": "1255_SND_CheckPoint4Post.mp3",
-  "text": "Uh, it's a negative, sir. Target's still going. This is a bad joke! Damn it! Face the Hellfire. Change your course and head towards Highway 65. We have a civilian on the run. He must be stopped. Affirmative. Heading towards Highway 65 now. Over. To all highway units, dispatch some men behind cars and try using the element of surprise to stop the target. Sir, we have reports that 12 of our forward posts were completely overrun in the last 10 minutes. Where are the troops now? Scattered. Trying to regroup, sir. Damn it. Uh, have them fall back and, uh, regroup northwest near the Brighton Bridge. Yes, sir.",
+  "text": "Uh, it's a negative, sir. Target's still going. This is a bad joke! Damn it! Base to Hellfire. Change your course and head towards Highway 65. We have a civilian on the run. He must be stopped. Affirmative. Heading towards Highway 65 now. Over. To all highway units, dispatch some men behind cars and try using the element of surprise to stop the target. Sir, we have reports that 12 of our forward posts were completely overrun in the last 10 minutes. Where are the troops now? Scattered. Trying to regroup, sir. Damn it. Uh, have them fall back and, uh, regroup northwest near the Brighton Bridge. Yes, sir.",
   "duration": 47.12,
   "segments": [
    {
@@ -882,7 +882,7 @@
    {
     "start": 7.76,
     "end": 11.5,
-    "text": "Face the Hellfire. Change your course and head towards Highway 65."
+    "text": "Base to Hellfire. Change your course and head towards Highway 65."
    },
    {
     "start": 12.12,
@@ -929,18 +929,18 @@
  },
  "SND_JetMissAndRepeat02": {
   "file": "1256_SND_JetMissAndRepeat02.mp3",
-  "text": "No hit, sir. The target is alive. Hit him once more, now! Yes, sir!",
+  "text": "No hit sir. Target is alive. Hit him once more! NOW! Yes, sir!",
   "duration": 6.43,
   "segments": [
    {
     "start": 0.0,
     "end": 2.4,
-    "text": "No hit, sir. The target is alive."
+    "text": "No hit sir. Target is alive."
    },
    {
     "start": 3.18,
     "end": 4.62,
-    "text": "Hit him once more, now!"
+    "text": "Hit him once more! NOW!"
    },
    {
     "start": 5.32,
@@ -952,13 +952,13 @@
  },
  "SND_PlayerDeathHelicopter1": {
   "file": "1257_SND_PlayerDeathHelicopter1.mp3",
-  "text": "They're going to send everything they've got at me. Even helicopters. That's going to be tough.",
+  "text": "They're going to send everything they got at me, even helicopters. That's gonna be tough.",
   "duration": 4.86,
   "segments": [
    {
     "start": 0.0,
     "end": 4.52,
-    "text": "They're going to send everything they've got at me. Even helicopters. That's going to be tough."
+    "text": "They're gonna send everything they got at me, even helicopters. That's gonna be tough."
    }
   ],
   "hallucination": false
@@ -983,23 +983,23 @@
  },
  "SND_GarageChatter09": {
   "file": "1266_SND_GarageChatter09.mp3",
-  "text": "We need backup! This is Unit 12 on Burgundy Street! The Humvee has turned over and we're... surrounded! Ah! Shit! Please repeat that, Unit 12! What is your position? Oh my god! Ah! Shit! The tracks are down in heat! Unit 12! Unit 12! Please respond!",
+  "text": "We need backup! This is Unit 12 on Burgony Street! Our humvee has turned over to our- we're surrounded! Agh! Shit! Please repeat that, Unit 12! What is your position? Oh my god! Ah, shit! They're attracted out on me-! Unit 12! Unit 12! Please respond!",
   "duration": 21.39,
   "segments": [
    {
     "start": 0.0,
     "end": 4.0,
-    "text": "We need backup! This is Unit 12 on Burgundy Street!"
+    "text": "We need backup! This is Unit 12 on Burgony Street!"
    },
    {
     "start": 4.0,
     "end": 7.0,
-    "text": "The Humvee has turned over and we're... surrounded!"
+    "text": "Our humvee has turned over to our- we're surrounded!"
    },
    {
     "start": 7.0,
     "end": 9.0,
-    "text": "Ah! Shit!"
+    "text": "Agh! Shit!"
    },
    {
     "start": 9.0,
@@ -1009,7 +1009,7 @@
    {
     "start": 13.0,
     "end": 18.0,
-    "text": "Oh my god! Ah! Shit! The tracks are down in heat!"
+    "text": "Oh my god! Ah, shit! They're attracted out on me-!"
    },
    {
     "start": 18.0,
@@ -1021,31 +1021,31 @@
  },
  "SND_ApproachHiddenSoldier01": {
   "file": "1269_SND_ApproachHiddenSoldier01.mp3",
-  "text": "Unit 7 to base. I'm behind cover, awaiting target. Proceed with caution! Don't let him see you!",
+  "text": "Unit 7 to Base. I'm behind cover and awaiting target. Proceed with caution. Don't let him see you.",
   "duration": 6.53,
   "segments": [
    {
     "start": 0.0,
     "end": 3.3,
-    "text": "Unit 7 to base. I'm behind cover, awaiting target."
+    "text": "Unit 7 to Base. I'm behind cover and awaiting target."
    },
    {
     "start": 4.08,
     "end": 6.22,
-    "text": "Proceed with caution! Don't let him see you!"
+    "text": "Proceed with caution. Don't let him see you."
    }
   ],
   "hallucination": false
  },
  "SND_CheckPoint4Pre": {
   "file": "1270_SND_CheckPoint4Pre.mp3",
-  "text": "Face to checkpoint four. Stop this prick, will ya? Will try, sir!",
+  "text": "Base to Checkpoint 4! Stop this prick, will ya?! We'll try, sir!",
   "duration": 5.17,
   "segments": [
    {
     "start": 0.0,
     "end": 3.06,
-    "text": "Face to checkpoint four. Stop this prick, will ya?"
+    "text": "Base to Checkpoint 4! Stop this prick, will ya?"
    },
    {
     "start": 3.7,
@@ -1057,13 +1057,13 @@
  },
  "SND_JetMissAndRepeat03": {
   "file": "1271_SND_JetMissAndRepeat03.mp3",
-  "text": "I need a sit-rep. Target missed, sir. Hit him again. Affirmative.",
+  "text": "Need a sit rep! Target missed, sir. Hit 'em again! Affirmative.",
   "duration": 6.09,
   "segments": [
    {
     "start": 0.0,
     "end": 1.14,
-    "text": "I need a sit-rep."
+    "text": "Need a sit rep!"
    },
    {
     "start": 1.84,
@@ -1073,7 +1073,7 @@
    {
     "start": 3.62,
     "end": 4.44,
-    "text": "Hit him again."
+    "text": "Hit 'em again!"
    },
    {
     "start": 5.22,
@@ -1121,7 +1121,7 @@
  },
  "SND_GarageChatter10": {
   "file": "1281_SND_GarageChatter10.mp3",
-  "text": "This is Unit 9! We have a bitten civilian, requesting aid! Permission to assist! Denied. Neutralize civilian and burn the courts. Over. Orders received.",
+  "text": "This is Unit 9! We have a bitten civilian, requesting aid! Permission to assist! Denied. Neutralize civilian and burn the corpse, over. Orders received.",
   "duration": 12.02,
   "segments": [
    {
@@ -1132,7 +1132,7 @@
    {
     "start": 5.5,
     "end": 9.5,
-    "text": "Denied. Neutralize civilian and burn the courts. Over."
+    "text": "Denied. Neutralize civilian and burn the corpse, over."
    },
    {
     "start": 10.5,
@@ -1162,7 +1162,7 @@
  },
  "SND_CheckPoint5Post": {
   "file": "1285_SND_CheckPoint5Post.mp3",
-  "text": "Sir, our fences are down! Zombies are marching in! I can't! We can't hold them! Hey, watch out behind! Come in, Checkpoint 5. Checkpoint 5. Shit. Base to Highway 65 units. Bring in the bomb squads. If this John Creaseman gets out, this could mean a statewide epidemic. We have to stop him. Yes, sir! He's not the first jackass to try to get out. We'll blow him to pieces. Over. Unit 11 to base! Brighton Bridge is completely overrun! We need a new fallback position, now! Uh, set up the fence at the Chinatown Plaza. Sir? We just came from there! Uh, goddammit! Just move north! Just move freaking north! Yes, sir!",
+  "text": "Sir, our fences are down! Zombies are marching in! I can't! We can't hold them! Hey, watch out behind! Come in, Checkpoint 5. Checkpoint 5. Shit. Base to Highway 65 units. Bring in the bomb squads. If this John Creasman gets out, this could mean a statewide epidemic. We have to stop him. Yes, sir! He's not the first jackass to try to get out. We'll blow him to pieces. Over. Unit 11 to base! Brighton Bridge is completely overrun! We need a new fallback position, now! Uh, set up a defense at the Chinatown Plaza! Sir? We just came from there! Uh, goddammit! Just move north! Just move freaking north! Yes, sir!",
   "duration": 48.72,
   "segments": [
    {
@@ -1193,7 +1193,7 @@
    {
     "start": 16.0,
     "end": 21.32,
-    "text": "If this John Creaseman gets out, this could mean a statewide epidemic. We have to stop him."
+    "text": "If this John Creasman gets out, this could mean a statewide epidemic. We have to stop him."
    },
    {
     "start": 21.98,
@@ -1208,7 +1208,7 @@
    {
     "start": 34.22,
     "end": 38.44,
-    "text": "Uh, set up the fence at the Chinatown Plaza."
+    "text": "Uh, set up a defense at the Chinatown Plaza!"
    },
    {
     "start": 39.18,
@@ -1261,31 +1261,31 @@
  },
  "SND_GarageChatter11": {
   "file": "1294_SND_GarageChatter11.mp3",
-  "text": "Highway sweeps in progress. Spike strips have been installed. All traffic has been stopped. Roger that. Carry on.",
+  "text": "Highway sweep's in progress. Spike strips have been installed, all traffic has been stopped. Roger that. Carry on!",
   "duration": 7.68,
   "segments": [
    {
     "start": 0.0,
     "end": 5.04,
-    "text": "Highway sweeps in progress. Spike strips have been installed. All traffic has been stopped."
+    "text": "Highway sweep's in progress. Spike strips have been installed, all traffic has been stopped."
    },
    {
     "start": 5.74,
     "end": 7.3,
-    "text": "Roger that. Carry on."
+    "text": "Roger that. Carry on!"
    }
   ],
   "hallucination": false
  },
  "SND_ApproachHiddenSoldier03": {
   "file": "1297_SND_ApproachHiddenSoldier03.mp3",
-  "text": "Base to Highway Unit, stay hidden. Prepare to engage. Affirmative. Target is approaching.",
+  "text": "Base to highway units, stay hidden. Prepare to engage. Affirmative. Target is approaching.",
   "duration": 6.35,
   "segments": [
    {
     "start": 0.0,
     "end": 3.52,
-    "text": "Base to Highway Unit, stay hidden. Prepare to engage."
+    "text": "Base to highway units, stay hidden. Prepare to engage."
    },
    {
     "start": 4.3,
@@ -1297,13 +1297,13 @@
  },
  "SND_CheckPoint5Pre": {
   "file": "1298_SND_CheckPoint5Pre.mp3",
-  "text": "2.5 to base! We have a problem here! We're facing a lot of deadheads! Our fences are holding, but if that Kriesman guy runs them over, we're in deep shit! It's your job to stop this freaking car, soldier! Do not let him pass! Do not let the zombies through! You hear me? Uh, yes! Yes, sir!",
+  "text": "Checkpoint 5 to Base! We have a problem here! We're facing a lot of deadheads. Our fences are holding but if that Creasman guy runs them over, we're in deep shit! It's your job to stop this freaking car, soldier! Do not let him pass! Do not let the zombies through! You hear me? Uh, yes! Yes, sir!",
   "duration": 21.13,
   "segments": [
    {
     "start": 0.0,
     "end": 9.46,
-    "text": "2.5 to base! We have a problem here! We're facing a lot of deadheads! Our fences are holding, but if that Kriesman guy runs them over, we're in deep shit!"
+    "text": "Checkpoint 5 to Base! We have a problem here! We're facing a lot of deadheads. Our fences are holding but if that Creasman guy runs them over, we're in deep shit!"
    },
    {
     "start": 10.16,
@@ -1333,13 +1333,13 @@
  },
  "SND_HelicopterMissileRequest02": {
   "file": "1303_SND_HelicopterMissileRequest02.mp3",
-  "text": "Base to Hellfire, take your target down now. You have permission to use air-to-ground missiles. Affirmative. Over.",
+  "text": "Base to Hellfire, take the target down now! You have permission to use air-to-ground missiles. Affirmative. Over.",
   "duration": 6.74,
   "segments": [
    {
     "start": 0.0,
     "end": 4.52,
-    "text": "Base to Hellfire, take your target down now. You have permission to use air-to-ground missiles."
+    "text": "Base to Hellfire, take the target down now! You have permission to use air-to-ground missiles."
    },
    {
     "start": 5.42,
@@ -1387,15 +1387,9 @@
  },
  "SND_UpgradeHorn2": {
   "file": "1309_SND_UpgradeHorn2.mp3",
-  "text": "Ah",
+  "text": "",
   "duration": 0.89,
-  "segments": [
-   {
-    "start": 0.0,
-    "end": 2.0,
-    "text": "Ah"
-   }
-  ],
+  "segments": [],
   "hallucination": false
  },
  "SND_ApproachHiddenSoldier04": {
@@ -1423,13 +1417,13 @@
  },
  "SND_CheckPoint6Post": {
   "file": "1312_SND_CheckPoint6Post.mp3",
-  "text": "Attention all troops. This is General Sherman. I am taking command of this operation. We're facing an enemy like we've never seen before. But keep your heads cool, and we're gonna get through this. Now follow my orders carefully. All ground personnel are to converge to a defensive line along the Aachi River. Our backs to the water. We'll make a final stand in one single direction. We also have reports that some zombies have mutated. Be aware they are very strong and should be avoided at all costs.",
+  "text": "Attention, all troops. This is General Sherman. I am taking command of this operation. We're facing an enemy like we've never seen before. But keep your heads cool, and we're gonna get through. Now follow my orders carefully. All ground personnel are to converge to a defensive line along the Iache River. Our backs to the water, we'll make a final stand, in one single direction. We also have reports that some zombies have mutated. Be aware they are very strong and should be avoided at all costs.",
   "duration": 35.76,
   "segments": [
    {
     "start": 0.0,
     "end": 5.5,
-    "text": "Attention all troops. This is General Sherman. I am taking command of this operation."
+    "text": "Attention,,, all troops. This is General Sherman. I am taking command of this operation."
    },
    {
     "start": 6.18,
@@ -1439,7 +1433,7 @@
    {
     "start": 10.18,
     "end": 13.32,
-    "text": "But keep your heads cool, and we're gonna get through this."
+    "text": "But keep your heads cool, and we're gonna get through."
    },
    {
     "start": 13.62,
@@ -1449,12 +1443,12 @@
    {
     "start": 15.94,
     "end": 20.48,
-    "text": "All ground personnel are to converge to a defensive line along the Aachi River."
+    "text": "All ground personnel are to converge to a defensive line along the Iache River."
    },
    {
     "start": 21.14,
     "end": 26.88,
-    "text": "Our backs to the water. We'll make a final stand in one single direction."
+    "text": "Our backs to the water, we'll make a final stand,,, in one single direction."
    },
    {
     "start": 27.58,
@@ -1471,13 +1465,13 @@
  },
  "SND_PlayerDeathMilitary1": {
   "file": "1313_SND_PlayerDeathMilitary1.mp3",
-  "text": "With the military involved, I'd better be prepared.",
+  "text": "With the military involved, I better be prepared.",
   "duration": 2.82,
   "segments": [
    {
     "start": 0.0,
     "end": 2.44,
-    "text": "With the military involved, I'd better be prepared."
+    "text": "With the military involved, I better be prepared."
    }
   ],
   "hallucination": false
@@ -1525,15 +1519,9 @@
  },
  "SND_UpgradeHorn3": {
   "file": "1322_SND_UpgradeHorn3.mp3",
-  "text": "Ah",
+  "text": "",
   "duration": 0.86,
-  "segments": [
-   {
-    "start": 0.0,
-    "end": 2.0,
-    "text": "Ah"
-   }
-  ],
+  "segments": [],
   "hallucination": false
  },
  "SND_ApproachSpikeSoldier01": {
@@ -1561,13 +1549,13 @@
  },
  "SND_CheckPoint6Pre": {
   "file": "1325_SND_CheckPoint6Pre.mp3",
-  "text": "Checkpoint to base. We're in trouble here. We need orders. Maintain current strategy. We're about to be overrun. The current strategy is shit. I repeat, maintain current strategy. What? What the hell is going on?",
+  "text": "Checkpoint to Base! We're in trouble here! We need orders! Maintain current strategy. We're about to be overrun. Current strategy is shit! I repeat, maintain current strategy. What?! What the hell is going on?!",
   "duration": 16.04,
   "segments": [
    {
     "start": 0.0,
     "end": 3.04,
-    "text": "Checkpoint to base. We're in trouble here. We need orders."
+    "text": "Checkpoint to Base! We're in trouble here! We need orders!"
    },
    {
     "start": 4.0,
@@ -1577,7 +1565,7 @@
    {
     "start": 6.06,
     "end": 9.22,
-    "text": "We're about to be overrun. The current strategy is shit."
+    "text": "We're about to be overrun. Current strategy is shit!"
    },
    {
     "start": 9.92,
@@ -1587,7 +1575,7 @@
    {
     "start": 13.44,
     "end": 15.74,
-    "text": "What? What the hell is going on?"
+    "text": "What?!! What the hell is going on?!!"
    }
   ],
   "hallucination": false
@@ -1633,23 +1621,23 @@
  },
  "SND_GarageChatter14": {
   "file": "1335_SND_GarageChatter14.mp3",
-  "text": "Central Plaza is completely overrun! We need to pull back everybody! Pull back to Central now! Denied. You are to hold positions. They're killing everyone! It's all over! We've lost Central! I repeat, we have lost Central!",
+  "text": "Central Plaza is completely overrun! We need to pull back everybody! Pull back from Central, now! Denied! You are to hold position! They're killing everyone! It's all over! We've lost Central, I repeat, we have lost Central!",
   "duration": 15.31,
   "segments": [
    {
     "start": 0.0,
     "end": 5.9,
-    "text": "Central Plaza is completely overrun! We need to pull back everybody! Pull back to Central now!"
+    "text": "Central Plaza is completely overrun! We need to pull back everybody! Pull back from Central, now!"
    },
    {
     "start": 6.78,
     "end": 8.62,
-    "text": "Denied. You are to hold positions."
+    "text": "Denied! You are to hold position!"
    },
    {
     "start": 9.24,
     "end": 14.76,
-    "text": "They're killing everyone! It's all over! We've lost Central! I repeat, we have lost Central!"
+    "text": "They're killing everyone! It's all over! We've lost Central, I repeat, we have lost Central,"
    }
   ],
   "hallucination": false
@@ -1674,7 +1662,7 @@
  },
  "SND_CheckPoint7Post": {
   "file": "1339_SND_CheckPoint7Post.mp3",
-  "text": "Checkpoint 7 to base. The target has gone beyond our checkpoint, but now we're overrun by zombies! We're moving out! Fall back to the Ayachi River with the other units. Now! Yes, sir! General Sherman to air support. Head over to Highway 65 for a carpet bombing on the target's location. Roger that. Unit 5 to base. We're currently sieged by a huge crowd of zombies. We'll try to circle around the river, but we've lost a lot of men. 75, don't fight them. Just get your ass to the river. ASAP. Yes, sir.",
+  "text": "Checkpoint 7 to base. The target has gone beyond our checkpoint, but now we're overrun by zombies! We're moving out! Fall back to the Iache River with the other units. Now! Yes, sir! General Sherman to air support. Head over to Highway 65 for a carpet bombing on the target's location. Roger that. Unit 5 to base. We're currently sieged by a huge crowd of zombies. We'll try to circle around the river, but we've lost a lot of men. Unit 5, don't fight them. Just get your ass to the river. ASAP. Yes, sir.",
   "duration": 35.13,
   "segments": [
    {
@@ -1685,7 +1673,7 @@
    {
     "start": 7.0,
     "end": 11.0,
-    "text": "Fall back to the Ayachi River with the other units. Now!"
+    "text": "Fall back to the Iache River with the other units. Now!"
    },
    {
     "start": 11.0,
@@ -1710,7 +1698,7 @@
    {
     "start": 28.56,
     "end": 30.5,
-    "text": "75, don't fight them."
+    "text": "Unit 5, don't fight them."
    },
    {
     "start": 30.82,
@@ -1786,15 +1774,9 @@
  },
  "SND_UpgradeTire": {
   "file": "1350_SND_UpgradeTire.mp3",
-  "text": "Boop! Boop! Boop!",
+  "text": "",
   "duration": 1.8,
-  "segments": [
-   {
-    "start": 0.0,
-    "end": 1.56,
-    "text": "Boop! Boop! Boop!"
-   }
-  ],
+  "segments": [],
   "hallucination": false
  },
  "SND_ApproachSpikeSoldier03": {
@@ -1817,18 +1799,18 @@
  },
  "SND_CheckPoint7Pre": {
   "file": "1353_SND_CheckPoint7Pre.mp3",
-  "text": "Checkpoint 7 to base! We have the highway target approaching! What are your orders? Let him through! Sir? Let. Him. Through. I have a surprise for you. Yes, sir!",
+  "text": "Checkpoint 7 to Base. We have the highway target approaching. What are your orders? Let him through. Sir? Let. Him. Through. I have a surprise for him. Yes, sir!",
   "duration": 13.95,
   "segments": [
    {
     "start": 0.0,
     "end": 4.8,
-    "text": "Checkpoint 7 to base! We have the highway target approaching! What are your orders?"
+    "text": "Checkpoint 7 to Base. We have the highway target approaching. What are your orders?"
    },
    {
     "start": 4.8,
     "end": 6.8,
-    "text": "Let him through!"
+    "text": "Let him through."
    },
    {
     "start": 6.8,
@@ -1838,7 +1820,7 @@
    {
     "start": 8.0,
     "end": 12.5,
-    "text": "Let. Him. Through. I have a surprise for you."
+    "text": "Let. Him. Through. I have a surprise for him."
    },
    {
     "start": 12.5,
@@ -1850,13 +1832,13 @@
  },
  "SND_PlayerDeathMilitary4": {
   "file": "1354_SND_PlayerDeathMilitary4.mp3",
-  "text": "I know they'll bring all they've got for me. Can't let them get me, though.",
+  "text": "I know they'll bring all they got on me. Can't let them get me though.",
   "duration": 3.5,
   "segments": [
    {
     "start": 0.02,
     "end": 3.28,
-    "text": "I know they'll bring all they've got for me. Can't let them get me, though."
+    "text": "I know they'll bring all they got on me. Can't let them get me though."
    }
   ],
   "hallucination": false
@@ -1889,18 +1871,18 @@
  },
  "SND_GarageChatter16": {
   "file": "1363_SND_GarageChatter16.mp3",
-  "text": "This is Unit 17! The ZENs are spilling through the barricades! Our position is completely compromised! Over! Pull back to Section 11 and hold position, Unit 17! Orders received! We are pulling back!",
+  "text": "This is Unit 17! The zeds are spilling through the barricades! Our position is completely compromised! Over! Pull back to Sector 11. And hold position, Unit 17. Orders received! We are pulling back!",
   "duration": 14.37,
   "segments": [
    {
     "start": 0.0,
     "end": 6.4,
-    "text": "This is Unit 17! The ZENs are spilling through the barricades! Our position is completely compromised! Over!"
+    "text": "This is Unit 17. The zeds are spilling through the barricades! Our position is completely compromised! Over!"
    },
    {
     "start": 7.3,
     "end": 11.2,
-    "text": "Pull back to Section 11 and hold position, Unit 17!"
+    "text": "Pull back to Sector 11. And hold position, Unit 17."
    },
    {
     "start": 11.8,
@@ -1912,18 +1894,18 @@
  },
  "SND_ApproachSpikeSoldier04": {
   "file": "1366_SND_ApproachSpikeSoldier04.mp3",
-  "text": "I weigh you to nine. Is the spike strip deployed? Yes, sir! The target is approaching! You must stop that car, soldier! Yes, sir!",
+  "text": "Highway unit 9. Is the spike strip deployed? Yes, sir! Target is approaching! You must stop that car, soldier! Yes, sir!",
   "duration": 9.35,
   "segments": [
    {
     "start": 0.0,
     "end": 3.0,
-    "text": "I weigh you to nine. Is the spike strip deployed?"
+    "text": "Highway unit 9. Is the spike strip deployed?"
    },
    {
     "start": 3.0,
     "end": 5.0,
-    "text": "Yes, sir! The target is approaching!"
+    "text": "Yes, sir! Target is approaching!"
    },
    {
     "start": 5.0,
@@ -1940,7 +1922,7 @@
  },
  "SND_CheckPoint8Post": {
   "file": "1367_SND_CheckPoint8Post.mp3",
-  "text": "Sir, he got through. Sorry, sir. It's okay, son. To all Highway 65 personnel, prepare for a pullout. Terminate the dispatch. Send transports to all the highway checkpoints. Yes, sir. Hillfire units, arm your air-to-ground missiles and keep pursuing the target. Over. Affirmative.",
+  "text": "Sir, he got through. Sorry, sir. It's okay, son. To all Highway 65 personnel, prepare for a pullout. Sherman to Dispatch, send transports to all the highway checkpoints. Yes, sir. Hellfire units, arm your air-to-ground missiles and keep pursuing the target. Over. Affirmative.",
   "duration": 23.35,
   "segments": [
    {
@@ -1961,7 +1943,7 @@
    {
     "start": 10.04,
     "end": 14.16,
-    "text": "Terminate the dispatch. Send transports to all the highway checkpoints."
+    "text": "Sherman to Dispatch, send transports to all the highway checkpoints."
    },
    {
     "start": 14.96,
@@ -1971,7 +1953,7 @@
    {
     "start": 16.74,
     "end": 21.84,
-    "text": "Hillfire units, arm your air-to-ground missiles and keep pursuing the target. Over."
+    "text": "Hellfire units, arm your air-to-ground missiles and keep pursuing the target. Over."
    },
    {
     "start": 22.32,
@@ -1983,18 +1965,18 @@
  },
  "SND_PlayerDeathNuke1": {
   "file": "1368_SND_PlayerDeathNuke1.mp3",
-  "text": "When the shit hits the fan, they'll nuke the place. I'm sure of it. I better get my ass out of here as fast as I can.",
+  "text": "When the shit hits the fan, they'll nuke the place. I'm sure of it. I'd better get my ass out of here as fast as I can.",
   "duration": 6.32,
   "segments": [
    {
     "start": 0.0,
     "end": 3.2,
-    "text": "When the shit hits the fan, they'll nuke the place. I'm sure of it."
+    "text": "When the shit hits the fan, they'll nuke the place. I'd'd'm sure of it."
    },
    {
     "start": 3.6,
     "end": 5.98,
-    "text": "I better get my ass out of here as fast as I can."
+    "text": "I'd'd better get my ass out of here as fast as I'd'd can."
    }
   ],
   "hallucination": false
@@ -2014,13 +1996,13 @@
  },
  "SND_GarageChatter17": {
   "file": "1377_SND_GarageChatter17.mp3",
-  "text": "Unit 5, we need a status report! There's a lot of them, but we're holding! Keep me posted! Will do!",
+  "text": "Unit 5, we need a status report. There's a lot of them, but- but we're holding! Keep me posted. Will do!",
   "duration": 8.33,
   "segments": [
    {
     "start": 0.0,
     "end": 2.16,
-    "text": "Unit 5, we need a status report!"
+    "text": "Unit 5, we need a status report."
    },
    {
     "start": 3.02,
@@ -2030,7 +2012,7 @@
    {
     "start": 5.42,
     "end": 6.34,
-    "text": "Keep me posted!"
+    "text": "Keep me posted."
    },
    {
     "start": 7.32,
@@ -2060,13 +2042,13 @@
  },
  "SND_CheckPoint8Pre": {
   "file": "1380_SND_CheckPoint8Pre.mp3",
-  "text": "Sherman to Checkpoint 8, you are our last round effort to stop John Creaseman. Do your best. Sir, yes sir!",
+  "text": "Sherman to Checkpoint 8, you are our last ground effort to stop John Creasman. Do your greatest. Sir, yes sir!",
   "duration": 7.76,
   "segments": [
    {
     "start": 0.0,
     "end": 6.12,
-    "text": "Sherman to Checkpoint 8, you are our last round effort to stop John Creaseman. Do your best."
+    "text": "Sherman to Checkpoint 8, you are our last ggground effort to stop John Creasman. Do your greatest."
    },
    {
     "start": 6.68,
@@ -2078,13 +2060,13 @@
  },
  "SND_PlayerDeathNuke2": {
   "file": "1381_SND_PlayerDeathNuke2.mp3",
-  "text": "Ah, that's not gonna work. If they decide to drop a nuke, I need to haul my ass out of there.",
+  "text": "Ugh. That's not gonna work. They decide to drop a nuke, I need to hop my ass out of here.",
   "duration": 4.91,
   "segments": [
    {
     "start": 0.0,
     "end": 4.61,
-    "text": "Ah, that's not gonna work. If they decide to drop a nuke, I need to haul my ass out of there."
+    "text": "Ugh. That's not gonna work. They decide to drop a nuke, I need to hop my ass out of here."
    }
   ],
   "hallucination": false
@@ -2153,13 +2135,13 @@
  },
  "SND_CheckPoint9Post": {
   "file": "1392_SND_CheckPoint9Post.mp3",
-  "text": "Dispatch, send all transport choppers to the Ayachi River bank. We're evacuating the area. Yes, sir. Phantom Eagle, what is your position? Phantom Eagle to base, I'm currently at 64.7 and 32.4, heading to 79, over. Roger that. Maintain current course, over. Sir, we're at the Ayachi River. There are literally millions of Z-Heads slowly coming our way, but we're holding out for now. I see the transport's coming. Hold position, and don't start evacuating until all the transports have landed. We'll need a synchronized retreat. Yes, sir!",
+  "text": "Dispatch, send all transport choppers to the Iache River bank. We're evacuating the area. Yes, sir. Phantom Eagle, what is your position? Phantom Eagle to base, I'm currently at 64.7 and 32.4, heading to 79, over. Roger that. Maintain current course, over. Sir, we're at the Iache River. There are literally millions of zed heads slowly coming our way, but we're holding up for now. I see the transports coming. Hold position, and don't start evacuating until all the transports have landed. We'll need a synchronized retreat. Yes, sir!",
   "duration": 38.27,
   "segments": [
    {
     "start": 0.0,
     "end": 6.0,
-    "text": "Dispatch, send all transport choppers to the Ayachi River bank. We're evacuating the area."
+    "text": "Dispatch, send all transport choppers to the Iache River bank. We're evacuating the area."
    },
    {
     "start": 6.0,
@@ -2184,7 +2166,7 @@
    {
     "start": 20.0,
     "end": 29.5,
-    "text": "Sir, we're at the Ayachi River. There are literally millions of Z-Heads slowly coming our way, but we're holding out for now. I see the transport's coming."
+    "text": "Sir, we're at the Iache River. There are literally millions of zed heads slowly coming our way, but we're holding up for now. I see the transports coming."
    },
    {
     "start": 29.5,
@@ -2206,13 +2188,13 @@
  },
  "SND_PlayerDeathZombie1": {
   "file": "1393_SND_PlayerDeathZombie1.mp3",
-  "text": "This is not going to work with all those zombies.",
+  "text": "This is not gonna work with all those zombies.",
   "duration": 2.9,
   "segments": [
    {
     "start": 0.0,
     "end": 2.42,
-    "text": "This is not going to work with all those zombies."
+    "text": "This is not gonna work with all those zombies."
    }
   ],
   "hallucination": false
@@ -2273,20 +2255,20 @@
  },
  "SND_JohnSoldierThreat01": {
   "file": "1402_SND_JohnSoldierThreat01.mp3",
-  "text": "You are gonna get us all killed!",
+  "text": "You're gonna get us all killed!",
   "duration": 1.96,
   "segments": [
    {
     "start": 0.0,
     "end": 1.74,
-    "text": "You are gonna get us all killed!"
+    "text": "You're gonna get us all killed!"
    }
   ],
   "hallucination": false
  },
  "SND_ApproachStationarySoldier03": {
   "file": "1403_SND_ApproachStationarySoldier03.mp3",
-  "text": "Here he comes! Light him up!",
+  "text": "Here he comes! Light 'em up!",
   "duration": 2.72,
   "segments": [
    {
@@ -2297,14 +2279,14 @@
    {
     "start": 1.72,
     "end": 2.46,
-    "text": "Light him up!"
+    "text": "Light 'em up!"
    }
   ],
   "hallucination": false
  },
  "SND_CheckPoint9Pre": {
   "file": "1404_SND_CheckPoint9Pre.mp3",
-  "text": "General, sir, we're going to try and stop Creasman. What the hell are you still doing there? We're pulling out! Sir, we'll complete the mission. Good man. Do it and then get your ass to the Aachi River ASAP! Sir, yes sir!",
+  "text": "General, sir, we're going to try and stop Creasman. What the hell are you still doing there? We're pulling out! Sir, we'll complete the mission. Good man. Do it and then get your ass to the Iache River ASAP! Sir, yes sir!",
   "duration": 16.09,
   "segments": [
    {
@@ -2325,7 +2307,7 @@
    {
     "start": 9.66,
     "end": 14.04,
-    "text": "Good man. Do it and then get your ass to the Aachi River ASAP!"
+    "text": "Good man. Do it and then get your ass to the Iache River ASAP!"
    },
    {
     "start": 14.78,
@@ -2412,13 +2394,13 @@
  },
  "SND_CheckPoint10Post": {
   "file": "1415_SND_CheckPoint10Post.mp3",
-  "text": "Phantom Eagle to base, approaching the drop zone. Roger that. Unit 16 to base, we're currently holed up in the shopping mall. Can we get a transport out of here? Unit 16, your transport will be there in five minutes. Just keep those people safe until then. Sir, there's a lot of civilian and personnel on ground in the city. We can't do this. We can and we are going to do this. If this virus or whatever it is spreads, we could lose the whole country. The entire world. They will be a fair sacrifice. Over. Checkpoint dying to base. We missed our transport and are heading to the Uriachi River on foot. We'll be there in about ten minutes. Good man. You make me proud. Carry on. Phantom Eagle to base. Target in sight. God forgive us.",
+  "text": "Phantom Eagle to Base, approaching the drop zone. Roger that. Unit 16 to Base! We're currently holed up in the shopping mall. Can we get a transport out of here? Unit 16. Your transport will be there in. five minutes. Just keep those people safe until then. Sir, there's a lot of civilian and personnel on the ground in the city. We can't do this. We can and we are gonna do this. If this virus or whatever it is spreads, we could lose the whole country. The entire world! They will be a fair sacrifice. Over. Checkpoint 9 to Base! We missed our transport and are heading to the Iache River on foot. We'll be there in about ten minutes. Good man. You make me proud. Carry on. Phantom Eagle to Base, target in sight. God forgive us.",
   "duration": 56.84,
   "segments": [
    {
     "start": 0.0,
     "end": 2.62,
-    "text": "Phantom Eagle to base, approaching the drop zone."
+    "text": "Phantom Eagle to Base, approachin..g the drop zone."
    },
    {
     "start": 3.44,
@@ -2428,22 +2410,22 @@
    {
     "start": 4.94,
     "end": 10.22,
-    "text": "Unit 16 to base, we're currently holed up in the shopping mall. Can we get a transport out of here?"
+    "text": "Unit 16 to Base, we're currently holed up in.. the shoppin..g mall. Can we get a transport out of here?"
    },
    {
     "start": 11.08,
     "end": 18.58,
-    "text": "Unit 16, your transport will be there in five minutes. Just keep those people safe until then."
+    "text": "Unit 16. Your transport will be there in.. five min..utes. Just keep those people safe until then."
    },
    {
     "start": 19.5,
     "end": 24.6,
-    "text": "Sir, there's a lot of civilian and personnel on ground in the city. We can't do this."
+    "text": "Sir, there's a lot of civilian and personnel on ground in.. the city. We can't do this."
    },
    {
     "start": 25.58,
     "end": 28.56,
-    "text": "We can and we are going to do this."
+    "text": "We can and we are goin..g to do this."
    },
    {
     "start": 28.92,
@@ -2453,7 +2435,7 @@
    {
     "start": 33.72,
     "end": 35.34,
-    "text": "The entire world."
+    "text": "The entire world!"
    },
    {
     "start": 35.82,
@@ -2468,17 +2450,17 @@
    {
     "start": 39.74,
     "end": 40.92,
-    "text": "Checkpoint dying to base."
+    "text": "Checkpoin..t 9 to Base!"
    },
    {
     "start": 41.36,
     "end": 44.8,
-    "text": "We missed our transport and are heading to the Uriachi River on foot."
+    "text": "We missed our transport and are headin..g to the Iache River on foot."
    },
    {
     "start": 45.24,
     "end": 46.48,
-    "text": "We'll be there in about ten minutes."
+    "text": "We'll be there in.. about ten min..utes."
    },
    {
     "start": 47.4,
@@ -2498,12 +2480,12 @@
    {
     "start": 52.0,
     "end": 52.92,
-    "text": "Phantom Eagle to base."
+    "text": "Phantom Eagle to Base!"
    },
    {
     "start": 53.26,
     "end": 54.18,
-    "text": "Target in sight."
+    "text": "Target in.. sight."
    },
    {
     "start": 54.6,
@@ -2567,13 +2549,13 @@
  },
  "SND_ApproachStationarySoldier05": {
   "file": "1424_SND_ApproachStationarySoldier05.mp3",
-  "text": "Target in sight! Orders? What do you think? Kill him!",
+  "text": "Target in sight. Orders? What do you think?! KILL HIM!",
   "duration": 4.52,
   "segments": [
    {
     "start": 0.0,
     "end": 0.96,
-    "text": "Target in sight!"
+    "text": "Target in sight."
    },
    {
     "start": 1.16,
@@ -2595,13 +2577,13 @@
  },
  "SND_CheckPoint10Pre": {
   "file": "1425_SND_CheckPoint10Pre.mp3",
-  "text": "Chairman DeFantom Eagle, we have the President's approval. You are go for the drop. I repeat, you are go for the drop. Affirmative. Nuclear head armed, ready to drop. Heading to target, over. Sir, all transports are on ground. We're evacuating the riverbank. Roger that. Do it fast. We're pulling out, now.",
+  "text": "Sherman to Phantom Eagle. We have the President's approval. You are go for the drop. I repeat, you are go for the drop. Affirmative. Nuclear head armed, ready to drop. Heading to target, over. Sir, all transports are on ground. We're evacuating the riverbank. Roger that. Do it fast. We're pulling out, now.",
   "duration": 20.32,
   "segments": [
    {
     "start": 0.0,
     "end": 3.62,
-    "text": "Chairman DeFantom Eagle, we have the President's approval."
+    "text": "Sherman to Phantom Eagle. We have the President's approval."
    },
    {
     "start": 3.62,
@@ -2641,13 +2623,13 @@
  },
  "SND_HelicopterDispatch01": {
   "file": "1429_SND_HelicopterDispatch01.mp3",
-  "text": "Face to Hellfire. Engage target. Take him down! Roger that. Engaging target.",
+  "text": "Base to Hellfire. Engage target. Take him down! Roger that. Engaging target.",
   "duration": 6.35,
   "segments": [
    {
     "start": 0.0,
     "end": 3.38,
-    "text": "Face to Hellfire. Engage target. Take him down!"
+    "text": "Base to Hellfire. Engage target. Take him down!"
    },
    {
     "start": 4.16,
@@ -2698,20 +2680,9 @@
  },
  "SND_PlayerDevoured01": {
   "file": "1435_SND_PlayerDevoured01.mp3",
-  "text": "I did it! I did it!",
+  "text": "",
   "duration": 7.76,
-  "segments": [
-   {
-    "start": 0.0,
-    "end": 2.0,
-    "text": "I did it!"
-   },
-   {
-    "start": 2.0,
-    "end": 4.0,
-    "text": "I did it!"
-   }
-  ],
+  "segments": [],
   "hallucination": false
  },
  "SND_HelicopterDispatch02": {
@@ -2773,28 +2744,22 @@
  },
  "SND_NukeRunCount3": {
   "file": "1451_SND_NukeRunCount3.mp3",
-  "text": "3.",
+  "text": "Three.",
   "duration": 0.6,
   "segments": [
    {
     "start": 0.0,
     "end": 0.4,
-    "text": "3."
+    "text": "Three."
    }
   ],
   "hallucination": false
  },
  "SND_PlayerDevoured03": {
   "file": "1452_SND_PlayerDevoured03.mp3",
-  "text": "YOU KNEW THE CREATURE!",
+  "text": "",
   "duration": 6.19,
-  "segments": [
-   {
-    "start": 0.0,
-    "end": 2.58,
-    "text": "YOU KNEW THE CREATURE!"
-   }
-  ],
+  "segments": [],
   "hallucination": false
  },
  "SND_JohnSoldierThreat07": {
@@ -2812,13 +2777,13 @@
  },
  "SND_NukeRunCount4": {
   "file": "1459_SND_NukeRunCount4.mp3",
-  "text": "4",
+  "text": "Four.",
   "duration": 0.47,
   "segments": [
    {
     "start": 0.0,
     "end": 0.5,
-    "text": "4"
+    "text": "Four."
    }
   ],
   "hallucination": false
@@ -2869,13 +2834,13 @@
  },
  "SND_NukeRunCount5": {
   "file": "1467_SND_NukeRunCount5.mp3",
-  "text": "Bye.",
+  "text": "Five.",
   "duration": 0.55,
   "segments": [
    {
     "start": 0.0,
     "end": 0.36,
-    "text": "Bye."
+    "text": "Five."
    }
   ],
   "hallucination": false
@@ -2983,13 +2948,13 @@
  },
  "SND_NukeRunCount7": {
   "file": "1483_SND_NukeRunCount7.mp3",
-  "text": "7.",
+  "text": "Seven.",
   "duration": 0.65,
   "segments": [
    {
     "start": 0.0,
     "end": 0.46,
-    "text": "7."
+    "text": "Seven."
    }
   ],
   "hallucination": false
@@ -3045,13 +3010,13 @@
  },
  "SND_NukeRunCount8": {
   "file": "1491_SND_NukeRunCount8.mp3",
-  "text": "8.",
+  "text": "Eight.",
   "duration": 0.65,
   "segments": [
    {
     "start": 0.0,
     "end": 0.38,
-    "text": "8."
+    "text": "Eight."
    }
   ],
   "hallucination": false
@@ -3102,13 +3067,13 @@
  },
  "SND_NukeRunCount9": {
   "file": "1499_SND_NukeRunCount9.mp3",
-  "text": "Not.",
+  "text": "Nine.",
   "duration": 0.52,
   "segments": [
    {
     "start": 0.0,
     "end": 0.5,
-    "text": "Not."
+    "text": "Nine."
    }
   ],
   "hallucination": false
@@ -3128,39 +3093,33 @@
  },
  "SND_MaleCivilian02Plea06": {
   "file": "1505_SND_MaleCivilian02Plea06.mp3",
-  "text": "THEY HATE MY KIDS!",
+  "text": "They ate my kid!",
   "duration": 4.07,
   "segments": [
    {
     "start": 0.0,
     "end": 1.76,
-    "text": "THEY HATE MY KIDS!"
+    "text": "They ate my kid!"
    }
   ],
   "hallucination": false
  },
  "SND_SoldierGetOff03": {
   "file": "1506_SND_SoldierGetOff03.mp3",
-  "text": "URGHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+  "text": "",
   "duration": 2.35,
-  "segments": [
-   {
-    "start": 0.0,
-    "end": 2.35,
-    "text": "URGHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
-   }
-  ],
+  "segments": [],
   "hallucination": false
  },
  "SND_NukeRunCount10": {
   "file": "1507_SND_NukeRunCount10.mp3",
-  "text": "10.",
+  "text": "Ten.",
   "duration": 0.52,
   "segments": [
    {
     "start": 0.0,
     "end": 0.36,
-    "text": "10."
+    "text": "Ten."
    }
   ],
   "hallucination": false
@@ -3185,13 +3144,13 @@
  },
  "SND_MaleCivilian02Plea07": {
   "file": "1513_SND_MaleCivilian02Plea07.mp3",
-  "text": "HOLY MOTHER OF JESUS WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY",
+  "text": "Holy mother of Jesus, why?!",
   "duration": 4.34,
   "segments": [
    {
     "start": 0.0,
     "end": 4.33,
-    "text": "HOLY MOTHER OF JESUS WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"
+    "text": "Holy mother of Jesus, why?!"
    }
   ],
   "hallucination": false
@@ -3325,20 +3284,20 @@
  },
  "SND_MaleCivilian02Plea12": {
   "file": "1549_SND_MaleCivilian02Plea12.mp3",
-  "text": "THEY GOT BARBRA!",
+  "text": "They got Barbara!",
   "duration": 1.98,
   "segments": [
    {
     "start": 0.0,
     "end": 2.0,
-    "text": "THEY GOT BARBRA!"
+    "text": "They got Barbara!"
    }
   ],
   "hallucination": false
  },
  "SND_MaleCivilian02Plea13": {
   "file": "1556_SND_MaleCivilian02Plea13.mp3",
-  "text": "There's too many of them! Whatever survived!",
+  "text": "There's too many of them! We'll never survive!",
   "duration": 3.19,
   "segments": [
    {
@@ -3349,7 +3308,7 @@
    {
     "start": 1.7,
     "end": 2.62,
-    "text": "Whatever survived!"
+    "text": "We'll never survive!"
    }
   ],
   "hallucination": false
@@ -3426,7 +3385,7 @@
  },
  "SND_MaleCivilian02Plea16": {
   "file": "1573_SND_MaleCivilian02Plea16.mp3",
-  "text": "They're shooting everyone! They won't let anybody leave!",
+  "text": "They're shooting everyone! They won't let anyone to leave!",
   "duration": 3.37,
   "segments": [
    {
@@ -3437,7 +3396,7 @@
    {
     "start": 1.66,
     "end": 3.16,
-    "text": "They won't let anybody leave!"
+    "text": "They won't let anyone to leave!"
    }
   ],
   "hallucination": false
@@ -3457,13 +3416,13 @@
  },
  "SND_MaleCivilian02Plea17": {
   "file": "1578_SND_MaleCivilian02Plea17.mp3",
-  "text": "DON'T LET HIM KILL US NOOOOOO!",
+  "text": "DON'T LET THEM KILL US! NO!",
   "duration": 2.53,
   "segments": [
    {
     "start": 0.0,
     "end": 2.48,
-    "text": "DON'T LET HIM KILL US NOOOOOO!"
+    "text": "DON'T LET THEM KILL US! NO!"
    }
   ],
   "hallucination": false
@@ -3496,13 +3455,13 @@
  },
  "SND_PlayerFirstTimeInGarage": {
   "file": "1585_SND_PlayerFirstTimeInGarage.mp3",
-  "text": "I gotta make it through the highway. That's probably my best bet to get out of the city.",
+  "text": "I gotta make it to the highway. It's probably my best bet to get out of the city.",
   "duration": 4.49,
   "segments": [
    {
     "start": 0.0,
     "end": 4.1,
-    "text": "I gotta make it through the highway. That's probably my best bet to get out of the city."
+    "text": "I gotta make it to the highway. It's probably my best bet to get out of the city."
    }
   ],
   "hallucination": false
@@ -3613,13 +3572,13 @@
  },
  "SND_PlayerGunEmpty01": {
   "file": "1647_SND_PlayerGunEmpty01.mp3",
-  "text": "Shit no more bullets",
+  "text": "Shit, no more bullets.",
   "duration": 1.93,
   "segments": [
    {
     "start": 0.0,
     "end": 2.0,
-    "text": "Shit no more bullets"
+    "text": "Shit,,,, no more bullets...."
    }
   ],
   "hallucination": false
@@ -3756,13 +3715,13 @@
  },
  "SND_PlayerHitCiv01": {
   "file": "1673_SND_PlayerHitCiv01.mp3",
-  "text": "You bunch of yo-yos!",
+  "text": "You bunch of Yo-Yo's!",
   "duration": 1.57,
   "segments": [
    {
     "start": 0.0,
     "end": 1.24,
-    "text": "You bunch of yo-yos!"
+    "text": "You bunch of Yo-Yo's!"
    }
   ],
   "hallucination": false
@@ -4159,13 +4118,13 @@
  },
  "SND_PlayerNoGun03": {
   "file": "1718_SND_PlayerNoGun03.mp3",
-  "text": "Could use a gun right now!",
+  "text": "I could use a gun right now.",
   "duration": 1.59,
   "segments": [
    {
     "start": 0.0,
     "end": 1.28,
-    "text": "Could use a gun right now!"
+    "text": "I could use a gun right now."
    }
   ],
   "hallucination": false
@@ -4237,13 +4196,13 @@
  },
  "SND_PlayerShootHoodEnemy03": {
   "file": "1724_SND_PlayerShootHoodEnemy03.mp3",
-  "text": "CHOCODNESS!",
+  "text": "Choke on this!",
   "duration": 1.51,
   "segments": [
    {
     "start": 0.0,
     "end": 2.0,
-    "text": "CHOCODNESS!"
+    "text": "Choke on this!"
    }
   ],
   "hallucination": false
@@ -4667,6 +4626,90 @@
     "text": "Fully reinforced glass. That should stop them for a while."
    }
   ],
+  "hallucination": false
+ },
+ "SND_FemaleCivilianPlea06": {
+  "file": "1622_SND_FemaleCivilianPlea06.mp3",
+  "text": "Somebody! Please, help us!",
+  "duration": 6.03,
+  "segments": [],
+  "hallucination": false
+ },
+ "SND_FemaleCivilianPlea07": {
+  "file": "1626_SND_FemaleCivilianPlea07.mp3",
+  "text": "I gotta get out of here!",
+  "duration": 2.59,
+  "segments": [],
+  "hallucination": false
+ },
+ "SND_FemaleCivilianPlea08": {
+  "file": "1630_SND_FemaleCivilianPlea08.mp3",
+  "text": "They're trying to kill me!",
+  "duration": 4.0,
+  "segments": [],
+  "hallucination": false
+ },
+ "SND_FemaleCivilianPlea09": {
+  "file": "1633_SND_FemaleCivilianPlea09.mp3",
+  "text": "I must be dreaming! I must be dreaming!",
+  "duration": 3.55,
+  "segments": [],
+  "hallucination": false
+ },
+ "SND_FemaleCivilianPlea10": {
+  "file": "1636_SND_FemaleCivilianPlea10.mp3",
+  "text": "This ain't happening!",
+  "duration": 3.21,
+  "segments": [],
+  "hallucination": false
+ },
+ "SND_FemaleCivilianPlea11": {
+  "file": "1639_SND_FemaleCivilianPlea11.mp3",
+  "text": "I ain't done nothing wrong!",
+  "duration": 3.13,
+  "segments": [],
+  "hallucination": false
+ },
+ "SND_FemaleCivilianPlea12": {
+  "file": "1642_SND_FemaleCivilianPlea12.mp3",
+  "text": "They're trying to kill me!",
+  "duration": 2.19,
+  "segments": [],
+  "hallucination": false
+ },
+ "SND_FemaleCivilianPlea13": {
+  "file": "1645_SND_FemaleCivilianPlea13.mp3",
+  "text": "God help us!",
+  "duration": 1.88,
+  "segments": [],
+  "hallucination": false
+ },
+ "SND_FemaleCivilianPlea15": {
+  "file": "1648_SND_FemaleCivilianPlea15.mp3",
+  "text": "This is the end of the world!",
+  "duration": 2.06,
+  "segments": [],
+  "hallucination": false
+ },
+ "SND_FemaleCivilianPlea17": {
+  "file": "1654_SND_FemaleCivilianPlea17.mp3",
+  "text": "Please! Somebody help me! Oh, god!",
+  "duration": 3.5,
+  "segments": [],
+  "hallucination": false
+ },
+ "SND_FemaleCivilianPlea18": {
+  "file": "1656_SND_FemaleCivilianPlea18.mp3",
+  "text": "Please, stop! Help me!",
+  "duration": 4.13,
+  "segments": [],
+  "hallucination": false
+ },
+ "SND_FemaleCivilianPlea19": {
+  "file": "1658_SND_FemaleCivilianPlea19.mp3",
+  "text": "They ate my baby! My baby!",
+  "duration": 3.13,
+  "segments": [],
   "hallucination": false
  }
 }

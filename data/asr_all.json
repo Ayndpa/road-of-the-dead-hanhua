@@ -6075,5 +6075,89 @@
   ],
   "duration": 3.34,
   "elapsed": 1.78
+ },
+ "1622_SND_FemaleCivilianPlea06.mp3": {
+  "cls": "SND_FemaleCivilianPlea06",
+  "text": "Somebody! Please, help us!",
+  "segments": [],
+  "duration": 6.03,
+  "elapsed": 0.0
+ },
+ "1626_SND_FemaleCivilianPlea07.mp3": {
+  "cls": "SND_FemaleCivilianPlea07",
+  "text": "I gotta get out of here!",
+  "segments": [],
+  "duration": 2.59,
+  "elapsed": 0.0
+ },
+ "1630_SND_FemaleCivilianPlea08.mp3": {
+  "cls": "SND_FemaleCivilianPlea08",
+  "text": "They're trying to kill me!",
+  "segments": [],
+  "duration": 4.0,
+  "elapsed": 0.0
+ },
+ "1633_SND_FemaleCivilianPlea09.mp3": {
+  "cls": "SND_FemaleCivilianPlea09",
+  "text": "I must be dreaming! I must be dreaming!",
+  "segments": [],
+  "duration": 3.55,
+  "elapsed": 0.0
+ },
+ "1636_SND_FemaleCivilianPlea10.mp3": {
+  "cls": "SND_FemaleCivilianPlea10",
+  "text": "This ain't happening!",
+  "segments": [],
+  "duration": 3.21,
+  "elapsed": 0.0
+ },
+ "1639_SND_FemaleCivilianPlea11.mp3": {
+  "cls": "SND_FemaleCivilianPlea11",
+  "text": "I ain't done nothing wrong!",
+  "segments": [],
+  "duration": 3.13,
+  "elapsed": 0.0
+ },
+ "1642_SND_FemaleCivilianPlea12.mp3": {
+  "cls": "SND_FemaleCivilianPlea12",
+  "text": "They're trying to kill me!",
+  "segments": [],
+  "duration": 2.19,
+  "elapsed": 0.0
+ },
+ "1645_SND_FemaleCivilianPlea13.mp3": {
+  "cls": "SND_FemaleCivilianPlea13",
+  "text": "God help us!",
+  "segments": [],
+  "duration": 1.88,
+  "elapsed": 0.0
+ },
+ "1648_SND_FemaleCivilianPlea15.mp3": {
+  "cls": "SND_FemaleCivilianPlea15",
+  "text": "This is the end of the world!",
+  "segments": [],
+  "duration": 2.06,
+  "elapsed": 0.0
+ },
+ "1654_SND_FemaleCivilianPlea17.mp3": {
+  "cls": "SND_FemaleCivilianPlea17",
+  "text": "Please! Somebody help me! Oh, god!",
+  "segments": [],
+  "duration": 3.5,
+  "elapsed": 0.0
+ },
+ "1656_SND_FemaleCivilianPlea18.mp3": {
+  "cls": "SND_FemaleCivilianPlea18",
+  "text": "Please, stop! Help me!",
+  "segments": [],
+  "duration": 4.13,
+  "elapsed": 0.0
+ },
+ "1658_SND_FemaleCivilianPlea19.mp3": {
+  "cls": "SND_FemaleCivilianPlea19",
+  "text": "They ate my baby! My baby!",
+  "segments": [],
+  "duration": 3.13,
+  "elapsed": 0.0
  }
 }
