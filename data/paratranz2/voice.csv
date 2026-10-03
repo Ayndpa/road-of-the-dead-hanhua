@@ -34,11 +34,11 @@ SND_ApproachSpikeSoldier01,Update requested! Spike strip deployed. Target approa
 SND_ApproachSpikeSoldier02,"Sir, spikes are ready! Roger that! Stop your target!",长官，破胎钉准备好了！收到！拦下你的目标！,voice
 SND_ApproachSpikeSoldier03,Spike's unit to base. Target coming my way. Blow his tires! Stop him! Over!,破胎钉小队呼叫总部。目标朝我来了。打爆他的轮胎！拦住他！完毕！,voice
 SND_ApproachSpikeSoldier04,"Unit 9, is the Spike Strip deployed? Yes, sir! The target is approaching! You must stop that car, soldier! Yes, sir!",9号小队，破胎钉部署了吗？是的，长官！目标正在接近！必须拦下那辆车，士兵！是，长官！,voice
-SND_ApproachStationarySoldier01,S.T.A.R.G.E.T. is in my sights! S.T.A.R.G.E.T. Your orders are to shoot him down!,目标进入我的瞄准镜！目标。命令是把他打下来！,voice
+SND_ApproachStationarySoldier01,Target is in my sights! Your orders are to shoot him down!,目标进入我的瞄准镜！命令是把他打下来！,voice
 SND_ApproachStationarySoldier02,TARGET IS HEADING MY WAY! Shoot that bastard!,目标朝我来了！打死那王八蛋！,voice
 SND_ApproachStationarySoldier03,Here he comes! Light him up!,他来了！开火把他打成筛子！,voice
 SND_ApproachStationarySoldier04,I see him! Shoot that bastard!,我看见他了！打死那王八蛋！,voice
-SND_ApproachStationarySoldier05,Target in sight. Orders? What do you think?,目标进入视野。有何指示？你说呢？,voice
+SND_ApproachStationarySoldier05,Target in sight. Orders? What do you think?! KILL HIM!,目标进入视野。什么命令？你说呢？！杀了他！,voice
 SND_BigCollision01,,,voice
 SND_BigCollision02,,,voice
 SND_BigCollision03,,,voice
@@ -76,29 +76,29 @@ SND_BurningCar,,,voice
 SND_BurningEngine,,,voice
 SND_ButtonSound,,,voice
 SND_CampaignCochetaAlright_Annoyed,ALRIGHT!,行了！,voice
-SND_CampaignCochetaAlright_Neutral,,,voice
+SND_CampaignCochetaAlright_Neutral,All right.,好吧。,voice
 SND_CampaignCochetaBastard_Assertive,BASTARD!,混蛋！,voice
 SND_CampaignCochetaComeIn_Assertive,Come in!,回话！,voice
-SND_CampaignCochetaComeOn_Assertive,,,voice
+SND_CampaignCochetaComeOn_Assertive,Come on!,快点！,voice
 SND_CampaignCochetaDamn_Exclamation,DAMN!,该死！,voice
 SND_CampaignCochetaDiane_Angry,DIANE!,黛安！,voice
 SND_CampaignCochetaDiane_Neutral,Diane!,黛安！,voice
 SND_CampaignCochetaDiane_Questioning,Again?,又来？,voice
 SND_CampaignCochetaDispatch_Angry,DISPATCH!,调度！,voice
 SND_CampaignCochetaDispatch_Neutral,Dispatch!,调度！,voice
-SND_CampaignCochetaDont_Assertive,,,voice
+SND_CampaignCochetaDont_Assertive,Don't!,别！,voice
 SND_CampaignCochetaGetReady_Assertive,GET READY!,准备！,voice
 SND_CampaignCochetaGoAhead_Assertive,Go ahead!,请讲！,voice
-SND_CampaignCochetaGotIt_Assertive,,,voice
+SND_CampaignCochetaGotIt_Assertive,Got it!,明白了！,voice
 SND_CampaignCochetaHello_Assertive,Hello!,喂！,voice
-SND_CampaignCochetaHello_Neutral,,,voice
+SND_CampaignCochetaHello_Neutral,Hello?,喂？,voice
 SND_CampaignCochetaHellYeah_Assertive,HELL YEAH!,太棒了！,voice
 SND_CampaignCochetaHey_Angry,HEY!,喂！,voice
-SND_CampaignCochetaHey_Neutral,,,voice
-SND_CampaignCochetaHey_Tense,,,voice
+SND_CampaignCochetaHey_Neutral,Hey!,嘿！,voice
+SND_CampaignCochetaHey_Tense,Hey!,嘿！,voice
 SND_CampaignCochetaHow_Assertive,HOW?!,怎么可能？！,voice
 SND_CampaignCochetaHow_Passive,Ho!,嚯！,voice
-SND_CampaignCochetaHurryUp_Assertive,,,voice
+SND_CampaignCochetaHurryUp_Assertive,Hurry up!,快点！,voice
 SND_CampaignCochetaIDontKnow_Defeated,I don't know!,我不知道！,voice
 SND_CampaignCochetaIReadYou_Passive,I read you!,收到！,voice
 SND_CampaignCochetaLaughter_Genuine,Ha ha ha ha ha!,哈哈哈！,voice
@@ -107,7 +107,7 @@ SND_CampaignCochetaLetsKeepDriving_Assertive,Let's keep driving!,继续开！,vo
 SND_CampaignCochetaListen_Assertive,LISTEN!,听着！,voice
 SND_CampaignCochetaListenUp_Assertive,LISTEN UP!,都听好了！,voice
 SND_CampaignCochetaNiceOne_Assertive,Nice one!,干得漂亮！,voice
-SND_CampaignCochetaNo_Assertive,,,voice
+SND_CampaignCochetaNo_Assertive,No!,不！,voice
 SND_CampaignCochetaNo_Defeated,No!,不！,voice
 SND_CampaignCochetaNoCanDo_Assertive,No can do!,办不到！,voice
 SND_CampaignCochetaNotAgain_Annoyed,Not again!,别又来了！,voice
@@ -124,77 +124,77 @@ SND_CampaignCochetaShit_Exclamation,SHIT!,妈的！,voice
 SND_CampaignCochetaSobbing,,,voice
 SND_CampaignCochetaStayAlert_Assertive,STAY ALERT!,保持警惕！,voice
 SND_CampaignCochetaTheresTooMany_Assertive,There's too many!,太多了！,voice
-SND_CampaignCochetaWhat_Assertive,,,voice
-SND_CampaignCochetaWhat_Passive,,,voice
+SND_CampaignCochetaWhat_Assertive,What?!,什么？！,voice
+SND_CampaignCochetaWhat_Passive,What?,什么？,voice
 SND_CampaignCochetaWoah_Surprised,WHOA!,哇！,voice
-SND_CampaignCochetaYeah_Assertive,,,voice
-SND_CampaignCochetaYeah_Neutral,,,voice
+SND_CampaignCochetaYeah_Assertive,Yeah!,是啊！,voice
+SND_CampaignCochetaYeah_Neutral,Yeah.,是啊。,voice
 SND_CampaignCochetaYouHaveGotToBeKiddingMe_Assertive,You have got to be kidding me!,你他妈在逗我吧！,voice
 SND_CampaignCochetaYouOk_Worried,You okay?,你还好吗？,voice
 SND_CampaignCochetaYoureKidding_Defeated,You're kidding!,你在开玩笑！,voice
 SND_CampaignCochetaYoureOk_Assertive,You're okay!,你没事！,voice
 SND_CampaignDianeAlright_Annoyed,All right!,好啦！,voice
-SND_CampaignDianeAlright_Neutral,,,voice
-SND_CampaignDianeBastard_Assertive,,,voice
-SND_CampaignDianeCocheta_Angry,,,voice
-SND_CampaignDianeCocheta_Neutral,,,voice
-SND_CampaignDianeCocheta_Questioning,,,voice
-SND_CampaignDianeComeIn_Assertive,,,voice
-SND_CampaignDianeComeOn_Assertive,,,voice
-SND_CampaignDianeDamn_Exclamation,,,voice
+SND_CampaignDianeAlright_Neutral,All right.,好吧。,voice
+SND_CampaignDianeBastard_Assertive,Bastard!,混蛋！,voice
+SND_CampaignDianeCocheta_Angry,Cocheta!,科切塔！,voice
+SND_CampaignDianeCocheta_Neutral,Cocheta.,科切塔。,voice
+SND_CampaignDianeCocheta_Questioning,Cocheta?,科切塔？,voice
+SND_CampaignDianeComeIn_Assertive,Come in!,请回话！,voice
+SND_CampaignDianeComeOn_Assertive,Come on!,快点！,voice
+SND_CampaignDianeDamn_Exclamation,Damn!,该死！,voice
 SND_CampaignDianeDispatch_Angry,Dispatch!,调度！,voice
 SND_CampaignDianeDispatch_Neutral,Dispatch!,调度！,voice
-SND_CampaignDianeDont_Assertive,,,voice
-SND_CampaignDianeGetReady_Assertive,,,voice
-SND_CampaignDianeGoAhead_Assertive,,,voice
-SND_CampaignDianeGotIt_Assertive,,,voice
-SND_CampaignDianeHello_Assertive,,,voice
-SND_CampaignDianeHello_Passive,,,voice
+SND_CampaignDianeDont_Assertive,Don't!,别！,voice
+SND_CampaignDianeGetReady_Assertive,Get ready.,准备。,voice
+SND_CampaignDianeGoAhead_Assertive,Go ahead.,开始吧。,voice
+SND_CampaignDianeGotIt_Assertive,Got it!,明白了！,voice
+SND_CampaignDianeHello_Assertive,Hello?,喂？,voice
+SND_CampaignDianeHello_Passive,Hello?,喂？,voice
 SND_CampaignDianeHellYeah_Assertive,Hell yeah!,太棒了！,voice
-SND_CampaignDianeHey_Angry,,,voice
-SND_CampaignDianeHey_Neutral,,,voice
-SND_CampaignDianeHey_Tense,,,voice
+SND_CampaignDianeHey_Angry,Hey!,嘿！,voice
+SND_CampaignDianeHey_Neutral,Hey.,嘿。,voice
+SND_CampaignDianeHey_Tense,Hey!,嘿！,voice
 SND_CampaignDianeHow_Assertive,HOW?!,怎么可能？！,voice
-SND_CampaignDianeHow_Neutral,,,voice
+SND_CampaignDianeHow_Neutral,How?,怎么？,voice
 SND_CampaignDianeHurryUp_Assertive,Hurry up!,快点！,voice
 SND_CampaignDianeIDontKnow_Defeated,I don't know!,我不知道！,voice
 SND_CampaignDianeIReadYou_Passive,I read you.,收到。,voice
 SND_CampaignDianeLaughter_Genuine,"Ha, ha, ha, ha.",哈哈哈。,voice
 SND_CampaignDianeLaughter_Sarcastic,Ha ha.,呵呵。,voice
 SND_CampaignDianeLetsKeepDriving_Assertive,Let's keep driving!,继续开！,voice
-SND_CampaignDianeListen_Assertive,,,voice
-SND_CampaignDianeListenUp_Assertive,,,voice
-SND_CampaignDianeNiceOne_Assertive,,,voice
-SND_CampaignDianeNo_Assertive,,,voice
-SND_CampaignDianeNo_Defeated,,,voice
+SND_CampaignDianeListen_Assertive,Listen!,听着！,voice
+SND_CampaignDianeListenUp_Assertive,Listen up!,都听好！,voice
+SND_CampaignDianeNiceOne_Assertive,Nice one!,干得好！,voice
+SND_CampaignDianeNo_Assertive,No!,不！,voice
+SND_CampaignDianeNo_Defeated,No!,不！,voice
 SND_CampaignDianeNoCanDo_Assertive,No can do!,办不到！,voice
 SND_CampaignDianeNotAgain_Annoyed,Not again!,别又来了！,voice
-SND_CampaignDianeNotBad_Neutral,,,voice
+SND_CampaignDianeNotBad_Neutral,Not bad.,不错。,voice
 SND_CampaignDianeNoWay_Assertive,No way!,不行！,voice
-SND_CampaignDianeNoWay_Defeated,,,voice
+SND_CampaignDianeNoWay_Defeated,No way!,不行！,voice
 SND_CampaignDianeOhCrap_Assertive,"Oh, crap!",糟了！,voice
 SND_CampaignDianeOhCrap_Defeated,"Oh, crap.",哦，糟了。,voice
-SND_CampaignDianeOhNo_Defeated,,,voice
+SND_CampaignDianeOhNo_Defeated,Oh no!,哦，不！,voice
 SND_CampaignDianePlease_Assertive,Please!,求你了！,voice
-SND_CampaignDianePlease_Defeated,,,voice
+SND_CampaignDianePlease_Defeated,Please.,求你了。,voice
 SND_CampaignDianeShit_Defeated,Shit!,妈的！,voice
-SND_CampaignDianeShit_Exclamation,,,voice
+SND_CampaignDianeShit_Exclamation,Shit!,该死！,voice
 SND_CampaignDianeSobbing,"Oh, God.",哦，天哪。,voice
 SND_CampaignDianeStayAlert_Assertive,Stay alert!,保持警惕！,voice
 SND_CampaignDianeTheresTooMany_Assertive,There's too many!,太多了！,voice
-SND_CampaignDianeWhat_Assertive,,,voice
-SND_CampaignDianeWhat_Passive,,,voice
-SND_CampaignDianeWoah_Surprised,,,voice
-SND_CampaignDianeYeah_Assertive,,,voice
-SND_CampaignDianeYeah_Neutral,,,voice
+SND_CampaignDianeWhat_Assertive,What?,什么？,voice
+SND_CampaignDianeWhat_Passive,What?,什么？,voice
+SND_CampaignDianeWoah_Surprised,Whoa!,哇！,voice
+SND_CampaignDianeYeah_Assertive,Yeah!,是啊！,voice
+SND_CampaignDianeYeah_Neutral,Yeah.,是啊。,voice
 SND_CampaignDianeYouHaveGotToBeKiddingMe_Assertive,You have got to be kidding me!,你他妈在逗我吧！,voice
-SND_CampaignDianeYouOk_Worried,,,voice
+SND_CampaignDianeYouOk_Worried,You okay?,你没事吧？,voice
 SND_CampaignDianeYoureKidding_Defeated,You're kidding!,你在开玩笑！,voice
 SND_CampaignDianeYoureOk_Assertive,You're okay!,你没事！,voice
 SND_CampaignDispatchNoise,,,voice
 SND_CampaignFemaleDispatchAffermative,Affirmative.,确认。,voice
 SND_CampaignFemaleDispatchComeIn,Come in.,请回话。,voice
-SND_CampaignFemaleDispatchCopy,,,voice
+SND_CampaignFemaleDispatchCopy,Copy.,收到。,voice
 SND_CampaignFemaleDispatchGiveMeASitRep,Give me a sitrep.,给我战况报告。,voice
 SND_CampaignFemaleDispatchHey,Hey!,喂！,voice
 SND_CampaignFemaleDispatchHumveeUnit,Humvee unit.,悍马小队。,voice
@@ -207,12 +207,12 @@ SND_CampaignFemaleDispatchStatus,Status.,状况。,voice
 SND_CampaignFemaleDispatchUnderstood,Understood.,明白。,voice
 SND_CampaignFemaleDispatchWereOverwhelmed,WE'RE OVERWHELMED!,我们顶不住了！,voice
 SND_CampaignMaleDispatchAffirmative,Affirmative!,确认！,voice
-SND_CampaignMaleDispatchComeIn,,,voice
-SND_CampaignMaleDispatchCopy,,,voice
+SND_CampaignMaleDispatchComeIn,Come in.,请回话。,voice
+SND_CampaignMaleDispatchCopy,Copy.,收到。,voice
 SND_CampaignMaleDispatchGiveMeASitRep,Give me a sitrep!,给我战况报告！,voice
-SND_CampaignMaleDispatchHey,,,voice
+SND_CampaignMaleDispatchHey,Hey!,嘿！,voice
 SND_CampaignMaleDispatchHumveeUnit,HUMVEE UNIT!,悍马小队！,voice
-SND_CampaignMaleDispatchNegative,,,voice
+SND_CampaignMaleDispatchNegative,Negative.,否认。,voice
 SND_CampaignMaleDispatchNoWay,No way.,不行。,voice
 SND_CampaignMaleDispatchReport,Report!,报告！,voice
 SND_CampaignMaleDispatchRequestingUpdate,REQUESTING UPDATE!,请求最新情况！,voice
@@ -297,7 +297,7 @@ SND_CochetaDriverHoodZombie1,SHOOT! SHOOT!,开枪！开枪！,voice
 SND_CochetaDriverHoodZombie2,Kill it now!,快干掉它！,voice
 SND_CochetaDriverHoodZombie3,"Come on, blast it off!",快，把它打下去！,voice
 SND_CochetaDriverHoodZombieOff1,,,voice
-SND_CochetaDriverHoodZombieOff2,Don't let him on the hood!,别让他爬上引擎盖！,voice
+SND_CochetaDriverHoodZombieOff2,Don't let 'em on the hood!,别让他爬上引擎盖！,voice
 SND_CochetaDriverHoodZombieOff3,This one got close!,这家伙差点得手！,voice
 SND_CochetaDriverLowHealth01,"Diane, hold on. Shake it off.",黛安，撑住。振作点。,voice
 SND_CochetaDriverLowHealth02,Hey! HEY! Keep it together! You're not dead!,喂！喂！给我撑住！你还没死！,voice
@@ -319,20 +319,20 @@ SND_CochetaFireOut1,That's better.,好多了。,voice
 SND_CochetaFireOut2,We're good now!,现在没事了！,voice
 SND_CochetaGibHit1,HOLY SHIT!,我操！,voice
 SND_CochetaGibHit2,Oh-ho!,嚯！,voice
-SND_CochetaGibHit3,,,voice
+SND_CochetaGibHit3,OHHHHH!,哦哦哦哦！,voice
 SND_CochetaGibHit4,BOOM!,轰！,voice
 SND_CochetaGibHit5,Boom!,砰！,voice
 SND_CochetaGunnerAlleyway1,DRIVE STRAIGHT THROUGH!,直接冲过去！,voice
 SND_CochetaGunnerDeath,AAAAAAAAGH! FUCK! GET IT OFF ME! AAH FUCK! AAAAAAAAGH! AAAAAAAAGH! AAAAAAAAGH! AAH! AAH! OUCH!,啊啊啊啊！操！把它弄下去！啊操！啊啊啊啊！啊啊啊啊！啊啊啊啊！啊！啊！疼！,voice
-SND_CochetaGunnerHardCollision1,,,voice
-SND_CochetaGunnerHardCollision2,,,voice
-SND_CochetaGunnerHardCollision3,,,voice
+SND_CochetaGunnerHardCollision1,AGH! Keep your eyes open!,啊！看着点！,voice
+SND_CochetaGunnerHardCollision2,"Ugh! Hold the wheel, lady!",呃！女士，抓稳方向盘！,voice
+SND_CochetaGunnerHardCollision3,Ah! Goddammit! Open your eyes!,啊！该死！睁大眼睛！,voice
 SND_CochetaGunnerHitCivilian1,Go around them!,绕开他们！,voice
 SND_CochetaGunnerHitCivilian2,YOU JUST KILLED SOMEONE!,你刚撞死了一个人！,voice
 SND_CochetaGunnerHitCivilian3,"Watch out, Diane!",小心，黛安！,voice
 SND_CochetaGunnerHitZombie1,Nice driving!,开得漂亮！,voice
 SND_CochetaGunnerHitZombie2,Yeah!,好耶！,voice
-SND_CochetaGunnerHoodZombie1,,,voice
+SND_CochetaGunnerHoodZombie1,Damn it!,该死！,voice
 SND_CochetaGunnerHoodZombie2,We got a clinger!,有个家伙扒上来了！,voice
 SND_CochetaGunnerHoodZombie3,WATCH OUT!,小心！,voice
 SND_CochetaGunnerHoodZombieOff1,Get off the hood!,滚下引擎盖！,voice
@@ -422,18 +422,18 @@ SND_CochetaTaskAmmoPoint,I'm picking up some ammo!,我捡点弹药！,voice
 SND_CochetaTaskMeds,I'll get some of these meds!,我去拿些药！,voice
 SND_CochetaTaskMountedWeapon,I'm installing this mounted weapon!,我在装这个车载武器！,voice
 SND_CochetaTaskPerk,This is useful! Hold on!,这个有用！等等！,voice
-SND_CochetaTaskRepairBumper,The armor's banged up! I'll put it back together!,装甲被撞坏了！我来修好它！,voice
-SND_CochetaTaskRepairEngine,,,voice
+SND_CochetaTaskRepairBumper,The armor is banged up! I'll put it back together!,装甲被撞坏了！我来修好它！,voice
+SND_CochetaTaskRepairEngine,Gotta work on the engine!,得修修引擎！,voice
 SND_CochetaTaskRepairRadio,I'm on it!,我来搞定！,voice
 SND_CochetaTaskRepairTire,Hey! I'm putting on new tires!,喂！我在换新轮胎！,voice
 SND_CochetaTaskReplenishWeapon,Replenishing her ammunition and guns!,给车补充弹药和机枪！,voice
 SND_CochetaTaskUnlockWeapon,"Hey, new weapon here! Let me get it!",喂，这儿有新武器！我去拿！,voice
 SND_CochetaTaskUpgradeBumper,I'll reinforce our bumper! We won't make it otherwise!,我来加固车头！不然我们撑不下去！,voice
-SND_CochetaTaskUpgradeEngine,,,voice
+SND_CochetaTaskUpgradeEngine,"I'm no mechanic, but I think I can tune up this engine!",我不是修理工，但我想我能把这引擎调校一下！,voice
 SND_CochetaTaskUpgradeTire,We need better tires! Gimme a sec!,我们需要更好的轮胎！等我一下！,voice
 SND_CochetaTaskUpgradeWeapon,Give me a sec! I'll tune up this weapon!,等我一下！我来调校这把武器！,voice
 SND_CochetaTiresBlown1,We're grinding metal now!,轮胎磨没了，铁都蹭地了！,voice
-SND_CochetaTiresBlown2,Damn it! Wills are gone!,妈的！轮胎没了！,voice
+SND_CochetaTiresBlown2,Damn it! Wheels are gone!,妈的！轮胎没了！,voice
 SND_ConcreteDestroy,,,voice
 SND_DianeBashClinger01,,,voice
 SND_DianeBashClinger02,,,voice
@@ -450,7 +450,7 @@ SND_DianeBulletHit09,,,voice
 SND_DianeBulletHit10,,,voice
 SND_DianeCallChopperSupport01,WE NEED AIR SUPPORT NOW!,我们现在需要空中支援！,voice
 SND_DianeCallChopperSupport02,"Hellfire, we need assistance!",地狱火，我们需要支援！,voice
-SND_DianeChopperBackward01,,,voice
+SND_DianeChopperBackward01,Move back!,往后退！,voice
 SND_DianeChopperBackward02,Back off! Back off!,退后！退后！,voice
 SND_DianeChopperBackward03,I need space!,我需要空间！,voice
 SND_DianeChopperFailure01,Damn! We failed! Let's go!,该死！我们失败了！走吧！,voice
@@ -474,9 +474,9 @@ SND_DianeClingerComingBack03,It's still after us!,它还在追我们！,voice
 SND_DianeClingerComingBack04,"Damn, they're tough!",妈的，这些家伙真硬！,voice
 SND_DianeDriverAlleyway1,I'm going through the alleyway!,我从巷子里穿过去！,voice
 SND_DianeDriverDeath,Help me! Push it off! No! Push it off! Help!,帮我！把它推下去！不！把它推下去！救命！,voice
-SND_DianeDriverDied01,Cochenna! No! Cochenna!,科切塔！不！科切塔！,voice
+SND_DianeDriverDied01,Cocheta! No! Cocheta!,科切塔！不！科切塔！,voice
 SND_DianeDriverDied02,"DON'T DIE ON ME, COCHETTA! COCHETTA, COME ON! NOOOO!",别死在我面前，科切塔！科切塔，醒醒！不——！,voice
-SND_DianeDriverDied03,No! Stay with me! Stay with me! Coachella!,不！撑住！撑住！科切塔！,voice
+SND_DianeDriverDied03,No! Stay with me! Stay with me! Cocheta!,不！撑住！撑住！科切塔！,voice
 SND_DianeDriverHitCivilian1,God damn it!,妈的！,voice
 SND_DianeDriverHitCivilian2,NO!,不！,voice
 SND_DianeDriverHitCivilian3,UGH! SORRY!,呃！对不起！,voice
@@ -488,8 +488,8 @@ SND_DianeDriverHoodZombie3,SHOOT IT!,开枪打它！,voice
 SND_DianeDriverHoodZombieOff1,Just in time!,来得正好！,voice
 SND_DianeDriverHoodZombieOff2,"Ugh, that was stupid!",呃，刚才真蠢！,voice
 SND_DianeDriverHoodZombieOff3,That was a close one!,好险！,voice
-SND_DianeDriverLowHealth01,"Coachella, you okay? Stay with me.",科切塔，你还好吗？撑住。,voice
-SND_DianeDriverLowHealth02,"Come on, get it together! You're right!",快点，振作起来！你没事的！,voice
+SND_DianeDriverLowHealth01,"Cocheta, you okay? Stay with me.",科切塔，你还好吗？撑住。,voice
+SND_DianeDriverLowHealth02,Come on. Get it together! You're alright!,快点，振作起来！你没事的！,voice
 SND_DianeDriverShootZombie1,"Damn, good shot!",妈的，好枪法！,voice
 SND_DianeDriverShootZombie2,You're good at this.,你很在行。,voice
 SND_DianeDriverSwitchSeat,Let's switch. I'll shoot.,我们换一下。我来射击。,voice
@@ -509,11 +509,11 @@ SND_DianeFireOut2,"Damn, that was close!",妈的，好险！,voice
 SND_DianeGibHit1,Whoa!,哇！,voice
 SND_DianeGibHit2,That's gotta hurt!,那肯定很疼！,voice
 SND_DianeGibHit3,Damn!,该死！,voice
-SND_DianeGunnerAlleyway1,Coachita! The alleyway!,科切塔！走巷子！,voice
+SND_DianeGunnerAlleyway1,Cocheta! The alleyway!,科切塔！走巷子！,voice
 SND_DianeGunnerDeath,"- Ah! Ah! - Diane, no! - Ah! Help! - Ah!",- 啊！啊！ - 黛安，不要！ - 啊！救命！ - 啊！,voice
-SND_DianeGunnerHardCollision1,,,voice
-SND_DianeGunnerHardCollision2,,,voice
-SND_DianeGunnerHardCollision3,,,voice
+SND_DianeGunnerHardCollision1,"Ugh, dammit! Want me to drive?!",呃，该死！要不我来开？！,voice
+SND_DianeGunnerHardCollision2,Ah! Look where you're going!,啊！看着点路！,voice
+SND_DianeGunnerHardCollision3,Grr! Be careful!,啧！小心点！,voice
 SND_DianeGunnerHitCivilian1,"God, be careful!",天哪，小心点！,voice
 SND_DianeGunnerHitCivilian2,You killed an innocent!,你撞死了一个无辜的人！,voice
 SND_DianeGunnerHitCivilian3,Can't you avoid them?,你就不能躲开他们吗？,voice
@@ -521,18 +521,18 @@ SND_DianeGunnerHitZombie1,Whoa!,哇！,voice
 SND_DianeGunnerHitZombie2,"Oh, yeah!",哦耶！,voice
 SND_DianeGunnerHoodZombie1,SHIT!,妈的！,voice
 SND_DianeGunnerHoodZombie2,On the hood!,在引擎盖上！,voice
-SND_DianeGunnerHoodZombie3,,,voice
+SND_DianeGunnerHoodZombie3,Careful!,小心！,voice
 SND_DianeGunnerHoodZombieOff1,Bye-bye.,再见咯。,voice
 SND_DianeGunnerHoodZombieOff2,That one's gone.,那个搞定了。,voice
 SND_DianeGunnerHoodZombieOff3,Avoid them if you can!,能躲就躲开它们！,voice
-SND_DianeGunnerShootZombie1,That's a goner!,这个死透了！,voice
+SND_DianeGunnerShootZombie1,That's a gunner!,那是个枪手！,voice
 SND_DianeGunnerShootZombie2,One more down!,又干掉一个！,voice
 SND_DianeGunnerSwitchSeat,I'll take the wheel now!,现在我来开车！,voice
-SND_DianeGunnerTaskCancel1,"We can't stay here, Cochita.",我们不能待在这儿，科切塔。,voice
+SND_DianeGunnerTaskCancel1,"We can't stay here, Cocheta.",我们不能待在这儿，科切塔。,voice
 SND_DianeGunnerTaskCancel2,Grab the wheel! We're leaving!,抓住方向盘！我们走了！,voice
 SND_DianeGunnerTaskInProgress1,We're not safe here! Are you done?,这儿不安全！你弄完了吗？,voice
 SND_DianeGunnerTaskInProgress2,Hurry up! Get it done!,快点！赶紧搞定！,voice
-SND_DianeGunnerTaskInProgress3,"Move it, Cochita!",快点，科切塔！,voice
+SND_DianeGunnerTaskInProgress3,"Move it, Cocheta!",快点，科切塔！,voice
 SND_DianeHardCollision1,,,voice
 SND_DianeHardCollision2,,,voice
 SND_DianeHardCollision3,,,voice
@@ -567,7 +567,7 @@ SND_DianeMediumCollision9,,,voice
 SND_DianeMedShot01,,,voice
 SND_DianeMothersDay,"Mom, I love you!",妈妈，我爱你！,voice
 SND_DianeMutantArrived01,Watch out! Mutant!,小心！变异体！,voice
-SND_DianeMutantArrived02,Here comes the mutated one!,变异体来了！,voice
+SND_DianeMutantArrived02,Here comes the mutated ones!,变异体来了！,voice
 SND_DianeMutantArrived03,We got a mutant!,来了个变异体！,voice
 SND_DianeNotMoving1,"Come on, drive!",快，开车！,voice
 SND_DianeNotMoving2,Let's go! We can't stay here!,走啊！我们不能待在这儿！,voice
@@ -578,7 +578,7 @@ SND_DianeOutOfAmmo1,I'm out.,我打光了。,voice
 SND_DianeOutOfAmmo2,I'm out!,我打光了！,voice
 SND_DianeOutOfAmmo3,No more ammo!,没弹药了！,voice
 SND_DianeOutOfAmmo4,No more ammo!,没弹药了！,voice
-SND_DianeOutOfAmmo5,,,voice
+SND_DianeOutOfAmmo5,I'm out.,没子弹了。,voice
 SND_DianeOutOfAmmo6,No more ammo!,没弹药了！,voice
 SND_DianeOutOfAmmo7,No more ammo!,没弹药了！,voice
 SND_DianeOutOfAmmo8,Out of ammo!,没弹药了！,voice
@@ -588,7 +588,7 @@ SND_DianeProtectTask03,"Yeah, I'll buy you some time.",好，我给你争取点�
 SND_DianeRamp01,Get on the highway!,上高速！,voice
 SND_DianeRamp02,I'm taking the highway ramp!,我上高速匝道了！,voice
 SND_DianeReload1,I'm reloading!,我在换弹！,voice
-SND_DianeReload10,,,voice
+SND_DianeReload10,Reloading!,换弹！,voice
 SND_DianeReload11,RELOADING!,换弹！,voice
 SND_DianeReload2,"All right, reloading!",好，换弹！,voice
 SND_DianeReload3,RELOADING!,换弹！,voice
@@ -609,12 +609,12 @@ SND_DianeSeeRamp,There! The ramp!,那儿！匝道！,voice
 SND_DianeSideClingLoop01,"Come on, get off!",快，下去！,voice
 SND_DianeSideClingLoop02,"No, no, no, no!",不，不，不，不！,voice
 SND_DianeSideClingLoop03,"DAMN IT, UH, GET OFF, GET OFF, UH, GET OFF, UH, UH, GET OFF OF ME, UH, UH!",妈的，呃，下去，下去，呃，下去，呃，呃，从我身上下去，呃，呃！,voice
-SND_DianeSideClingStart01,,,voice
+SND_DianeSideClingStart01,Fuck!,操！,voice
 SND_DianeSideClingStart02,UGH! AGH! SHIT!,呃！啊！妈的！,voice
 SND_DianeSideClingStart03,Ah! Get off me!,啊！从我身上下去！,voice
 SND_DianeStory02_1,"Well, stop the car and see if you can fix it. I'll keep him away.",那就停车，看能不能修好。我来挡住他。,voice
 SND_DianeStory02_2,"Hey, stop the car! Gotta fix the radio!",喂，停车！得修电台！,voice
-SND_DianeStory02_3,"Cochita, stop the car, damn it!",科切塔，把车停下，妈的！,voice
+SND_DianeStory02_3,"Cocheta, stop the car, damn it!",科切塔，把车停下，妈的！,voice
 SND_DianeStory03,"Alright, got it. The frequency range is narrow, though. We'll only get some of the comms.",好，搞定了。不过频率范围很窄，只能收到部分通讯。,voice
 SND_DianeTakeCiv1,We gotcha!,别怕，有我们！,voice
 SND_DianeTakeCiv2,Get in the back!,到后面去！,voice
@@ -624,18 +624,18 @@ SND_DianeTaskMeds,There are meds here. I'll get some.,这儿有药。我去拿�
 SND_DianeTaskMountedWeapon,I'll mount this weapon on the Hummer.,我把这个武器装到悍马上。,voice
 SND_DianeTaskPerk,Give me some time. This'll help.,给我点时间。这个会有用。,voice
 SND_DianeTaskRepairBumper,Our armor plating needs some work! I'm on it!,我们的装甲板得修修了！我来搞定！,voice
-SND_DianeTaskRepairEngine,,,voice
+SND_DianeTaskRepairEngine,Our engine is a mess! I'll fix it!,我们的引擎一团糟！我来修。,voice
 SND_DianeTaskRepairRadio,I'm fixing it.,我在修。,voice
 SND_DianeTaskRepairTire,Swapping fresh tires!,换新轮胎！,voice
 SND_DianeTaskReplenishWeapon,Time to restock and reload.,该补充弹药了。,voice
 SND_DianeTaskUnlockWeapon,"Wait, I'm getting a new weapon!",等等，我去拿个新武器！,voice
 SND_DianeTaskUpgradeBumper,We need a stronger armor plating if we want to survive!,想活命就得要更结实的装甲板！,voice
-SND_DianeTaskUpgradeEngine,,,voice
+SND_DianeTaskUpgradeEngine,I'll tune up the engine for more performance.,我来调校引擎，提升性能。,voice
 SND_DianeTaskUpgradeTire,"Hey, got some better tires here. I'll put them on.",喂，这儿有更好的轮胎。我来换上。,voice
 SND_DianeTaskUpgradeWeapon,I can get more out of this gun! Hold on!,我能让这把枪发挥更大威力！等等！,voice
 SND_DianeTiresBlown1,TIRES ARE GONE!,轮胎没了！,voice
 SND_DianeTiresBlown2,SHIT! DRIVING ON RAILS!,妈的！铁圈在蹭地了！,voice
-SND_DoorBashing,Thank you.,谢谢。,voice
+SND_DoorBashing,,,voice
 SND_DoorClose,,,voice
 SND_DoorOpen,,,voice
 SND_DudeBroScream,ROAR!,吼！,voice
@@ -654,27 +654,27 @@ SND_Ending05,Prevail? What the fuck are you talking about?,获胜？你他妈在
 SND_Ending06,Hope is the best I can give them right now.,现在我能给他们的，只有希望了。,voice
 SND_Ending07,- Let go! - I'm fine.,- 放开！ - 我没事。,voice
 SND_Ending08,"Sherman to Prescott, do you copy?",谢尔曼呼叫普雷斯科特，是否收到？,voice
-SND_Ending09,"Preston, come in.",普雷斯顿，请回话。,voice
-SND_Ending10,Sherman HQ!,谢尔曼总部！,voice
+SND_Ending09,"Prescott, come in.",普雷斯科特，请回话。,voice
+SND_Ending10,Sherman to HQ!,谢尔曼呼叫总部！,voice
 SND_Ending12,Sherman to Transport Unit 1. What is your position?,谢尔曼呼叫运输1号小队。你们在什么位置？,voice
-SND_Ending13,"Sherman to anti-transport, come in!",谢尔曼呼叫反运输小队，请回话！,voice
+SND_Ending13,"Sherman to any transport, come in!",谢尔曼呼叫任何运输单位，请回话！,voice
 SND_Ending14,You really think they had time? You sacrificed them all for nothing.,你真觉得他们来得及？你白白牺牲了他们所有人。,voice
 SND_Ending15,Sherman to Powell! Do you copy?!,谢尔曼呼叫鲍威尔！是否收到？！,voice
 SND_Ending16,Damn! Can't reach any of the other cities.,该死！联系不上其他任何城市。,voice
 SND_Ending17,This is happening in other cities?,其他城市也在发生这种事？,voice
-SND_Ending18,"Sherman to Casper, come in.",谢尔曼呼叫卡斯珀，请回话。,voice
-SND_Ending20,Full retreat! Save your man now!,全体撤退！马上救你的人！,voice
-SND_Ending22,"Outbreaks started all over the country. Cities were cut off. Media blockouts put in place. It hit us so fast in so many places, we spread too thin. It was all on a need-to-know basis. Now HQ's gone. We're scattered.",疫情在全国各地爆发。城市被封锁。媒体全面屏蔽。它来得太快，波及太广，我们兵力太分散。一切都按需知密进行。现在总部没了，我们四分五裂。,voice
-SND_Ending23,"Folesky, how much fuel we got?",福莱斯基，我们还有多少燃料？,voice
+SND_Ending18,"Sherman to Caspar, come in.",谢尔曼呼叫卡斯珀，请回话。,voice
+SND_Ending20,"Full retreat! Save your men, now!",全体撤退！马上救你的人！,voice
+SND_Ending22,"Outbreaks started all over the country. Cities were cut off. Media blackouts put in place. It hit us so fast in so many places, we spread too thin. It was all on a need-to-know basis. Now HQ's gone. We're scattered.",疫情在全国各地爆发。城市被封锁。媒体全面屏蔽。它来得太快，波及太广，我们兵力太分散。一切都按需知密进行。现在总部没了，我们四分五裂。,voice
+SND_Ending23,"Baliski, how much fuel we got?",巴利斯基，我们还有多少燃料？,voice
 SND_Ending25,Can't you contact more people?,你就不能联系更多的人吗？,voice
-SND_Ending26,"I had my people down the chain of command, HQ had theirs. We're cut off now. Casper is my only remaining unit. I want to fly north, meet with them outside of Alliance. A small town we could scout, take back if need be, fortify and defend. What do you say, boys?",我的人分布在指挥链下方，总部也有他们的人。现在我们被切断了。卡斯珀是我仅剩的部队。我想往北飞，在阿莱恩斯城外与他们会合。那是个小镇，我们可以侦察，必要时夺回来，加固防御。你们觉得呢，小伙子们？,voice
+SND_Ending26,"I had my people down the chain of command, HQ had theirs. We're cut off now. Caspar is my only remaining unit. I want to fly north, meet with them outside of Alliance. A small town we could scout, take back if need be, fortify and defend. What do you say, boys?",我的人分布在指挥链下方，总部也有他们的人。现在我们被切断了。卡斯珀是我仅剩的部队。我想往北飞，在阿莱恩斯城外与他们会合。那是个小镇，我们可以侦察，必要时夺回来，加固防御。你们觉得呢，小伙子们？,voice
 SND_Ending28,"Is it a good plan, ma'am?",这计划行吗，长官？,voice
-SND_Ending29,"I think so, yeah.",我觉得行，是的。,voice
-SND_Ending30,"Coach Ada, you're with me?",科切塔，跟我一起吗？,voice
-SND_Ending31,,,voice
-SND_Ending32,"Casper, get out of the city and head north. Get your men to the outskirts of Alliance. We're flying to you.",卡斯珀，出城往北走。带你的部队到阿莱恩斯郊外。我们飞过去与你们会合。,voice
-SND_Ending_CochetaGrunt,,,voice
-SND_Ending_CochetaStruggle,,,voice
+SND_Ending29,I... I think so. Yeah.,我觉得行，是的。,voice
+SND_Ending30,"Cocheta, you're with me?",科切塔，跟我一起吗？,voice
+SND_Ending31,Yeah.,是啊。,voice
+SND_Ending32,"Caspar, get out of the city and head north. Get your men to the outskirts of Alliance. We're flying to you.",卡斯珀，出城往北走。带你的部队到阿莱恩斯郊外。我们飞过去与你们会合。,voice
+SND_Ending_CochetaGrunt,You son of a bitch!,你这混蛋！,voice
+SND_Ending_CochetaStruggle,"Oh, God.",哦，天哪。,voice
 SND_EndingChopper,,,voice
 SND_EndingNuke,,,voice
 SND_EndingNukeWave,,,voice
@@ -710,7 +710,7 @@ SND_FemaleCivilianPlea04,,,voice
 SND_FemaleCivilianPlea05,,,voice
 SND_FemaleCivilianPlea06,"SOMEBODY, PLEASE HELP US!",来人啊，求求你们帮帮我们！,voice
 SND_FemaleCivilianPlea07,I gotta get out of here!,我得离开这儿！,voice
-SND_FemaleCivilianPlea08,NO! THEY'RE TRYING TO KILL ME!,不！他们想杀我！,voice
+SND_FemaleCivilianPlea08,They're trying to kill me!,不！他们想杀我！,voice
 SND_FemaleCivilianPlea09,I must be dreaming! I must be dreaming!,我一定是在做梦！我一定是在做梦！,voice
 SND_FemaleCivilianPlea10,This ain't happening!,这不是真的！,voice
 SND_FemaleCivilianPlea11,I ain't done nothin' wrong!,我什么都没做错！,voice
@@ -768,9 +768,9 @@ SND_FemaleZombieThreat03,,,voice
 SND_FenceHit,,,voice
 SND_FireHydrantFlowing,,,voice
 SND_FireHydrantWaterImpact,,,voice
-SND_FirstHeadShot_1D,Don't they die from a bullet to the head?,它们不是爆头就会死吗？,voice
-SND_FirstHeadShot_2C,"Yeah, but I heard you have to hit specific parts of the brain to flip their switch off.",是啊，但我听说得打中大脑的特定部位才能让它们彻底断电。,voice
-SND_FirstHeadShot_3D,,,voice
+SND_FirstHeadShot_1D,Don't they die from bullets to the head?,它们不是爆头就会死吗？,voice
+SND_FirstHeadShot_2C,"Yeah, but I heard you have to hit specific parts of their brain to flip their switch off.",是啊，但我听说得打中大脑的特定部位才能让它们彻底断电。,voice
+SND_FirstHeadShot_3D,Damn!,该死！,voice
 SND_FootStepDirt1,,,voice
 SND_FootStepDirt2,,,voice
 SND_FootStepDirt3,,,voice
@@ -779,11 +779,11 @@ SND_FootStepPavement1,,,voice
 SND_FootStepPavement2,,,voice
 SND_FootStepPavement3,,,voice
 SND_FootStepPavement4,,,voice
-SND_GarageChatter04,"UNIT 8 to base! We need artillery fire on the north side part now! Negative, UNIT 8. Artillery has been proven ineffective against the undead. Maintain current strategy.",8号小队呼叫总部！我们需要炮火支援北区，现在就要！否定，8号小队。炮击已被证明对丧尸无效。维持当前战术。,voice
-SND_GarageChatter07,Unit 10 to base! We're surrounded on the east side factory! Requesting airlift now! Over! Denied. Secure position and await orders. Requesting airlift ASAP! We're getting in with...,10号小队呼叫总部！我们在东区工厂被包围了！请求立即空运撤离！完毕！驳回。守住阵地，等待命令。请求尽快空运！我们快顶不住了……,voice
-SND_GarageChatter09,"We need back up! This is Unit 12 on Burgundy Street! The Humvee has turned over and we're... surrounded! Ah! Shit! Please repeat that, Unit 12! What is your position? Oh my God! Ah! Shit! The tracks are down in heat! Unit 12! Unit 12! Please respond!",我们需要增援！我是勃艮第街上的12号小队！悍马翻了，我们……被包围了！啊！妈的！请重复，12号小队！你在什么位置？天哪！啊！妈的！车队被火力压制！12号小队！12号小队！请回答！,voice
-SND_GarageChatter14,"Central Plaza is completely overrun! We need to pull back everybody! Pull back to Central now! Denied. You are to hold positions. They're killing everyone! It's all over! We've lost Central! I repeat, we have lost Central!",中央广场彻底失守了！我们必须全员后撤！立刻撤到中央！驳回。你们必须守住阵地。它们在杀光所有人！全完了！我们丢了中央！重复，我们丢掉了中央！,voice
-SND_GarageChatter16,"This is Unit 17! Descends are spilling through the barricades! Our position is completely compromised! Over! Pull back to Section 11 and hold position, Unit 17! Orders received! We are pulling back!",我是17号小队！丧尸正涌过路障！我方阵地彻底暴露！完毕！撤到11区守住阵地，17号小队！收到命令！我们正在后撤！,voice
+SND_GarageChatter04,"Unit 8 to Base! We need artillery fire on Northside Park, now! Negative, Unit 8. Artillery has been proven ineffective against the undead. Maintain current strategy.",8号小队呼叫总部！我们需要炮火支援北区，现在就要！否定，8号小队。炮击已被证明对丧尸无效。维持当前战术。,voice
+SND_GarageChatter07,"Unit 10 to Base! We're surrounded on the East Site factory! Requesting airlift out! Over! Denied. Secure position, and await orders. REQUESTING AIRLIFT, ASAP! THEY'RE GETTING IN WE-",10号小队呼叫总部！我们在东区工厂被包围了！请求立即空运撤离！完毕！驳回。守住阵地，等待命令。请求尽快空运！它们挤进来了，我们——！,voice
+SND_GarageChatter09,"We need backup! This is Unit 12 on Burgony Street! Our humvee has turned over to our- we're surrounded! Agh! Shit! Please repeat that, Unit 12! What is your position? Oh my god! Ah, shit! They're attracted out on me-! Unit 12! Unit 12! Please respond!",我们需要支援！这里是勃艮第街的12号！我们的悍马翻了，我们被……包围了！啊！妈的！12号，请重复！你的位置在哪？我的天哪！啊，妈的！它们被我吸引过来了！12号！12号！请回答！,voice
+SND_GarageChatter14,"Central Plaza is completely overrun! We need to pull back everybody! Pull back from Central, now! Denied! You are to hold position! They're killing everyone! It's all over! We've lost Central, I repeat, we have lost Central!",中央广场彻底失守了！我们必须全员后撤！立刻从中央撤回来！驳回。你们必须守住阵地。它们在杀光所有人！全完了！我们丢了中央！重复，我们丢掉了中央！,voice
+SND_GarageChatter16,"This is Unit 17! The zeds are spilling through the barricades! Our position is completely compromised! Over! Pull back to Section 11 and hold position, Unit 17! Orders received! We are pulling back!",我是17号小队！丧尸正从路障间涌进来！我方阵地彻底暴露！完毕！撤到11区守住阵地，17号小队！收到命令！我们正在后撤！,voice
 SND_GarageChatter18,Initiating carpet bombing on all designated targets. Over. Acknowledged.,开始对所有指定目标实施地毯式轰炸。完毕。确认收到。,voice
 SND_GibHit,,,voice
 SND_HardCollision01,,,voice
@@ -796,7 +796,7 @@ SND_HeavyWind,,,voice
 SND_HelicopterBrokenAlert,,,voice
 SND_HelicopterDefeated01,This is Hellfire. My chopper is heavily damaged. I must abort. Return to base immediately. Over.,我是地狱火。我的直升机严重受损，必须中止行动。立即返回基地。完毕。,voice
 SND_HelicopterDefeated02,Hellfire to base! We've taken heavy damage! Retreating for emergency landing! Roger that. Proceed to east side base.,地狱火呼叫总部！我们受损严重！撤退进行紧急迫降！收到。前往东区基地。,voice
-SND_HelicopterDispatch01,Face to Hellfire! Engage target! Take him down! Roger that! Engaging target!,总部呼叫地狱火！开火攻击目标！把他打下来！收到！正在攻击目标！,voice
+SND_HelicopterDispatch01,Base to Hellfire! Engage target! Take him down! Roger that! Engaging target!,总部呼叫地狱火！开火攻击目标！把他打下来！收到！正在攻击目标！,voice
 SND_HelicopterDispatch02,This is Hellfire. Permission to engage the target. Over. Permission granted. Engage the target. Over.,我是地狱火。请求允许攻击目标。完毕。准许。攻击目标。完毕。,voice
 SND_HelicopterFireLoop,,,voice
 SND_HelicopterLoop,,,voice
@@ -824,7 +824,7 @@ SND_HugeCollision01,,,voice
 SND_HugeCollision02,,,voice
 SND_IdleCling,,,voice
 SND_IntroCarMaxSpeed,,,voice
-SND_JetDispatch01,"Face to air support, highway target is not stopping. We need a carpet bombing on his location. Affirmative. Approaching target.",总部呼叫空中支援，高速上的目标没有停车。我们需要对他的位置实施地毯式轰炸。收到。正在接近目标。,voice
+SND_JetDispatch01,"Base to Air Support, highway target is not stopping. We need a carpet bombing on his location. Affirmative. Approaching target.",总部呼叫空中支援，高速上的目标没有停车。我们需要对他的位置实施地毯式轰炸。收到。正在接近目标。,voice
 SND_JetDispatch02,"This is air support approaching drop zone. Permission to engage, over. Permission granted. Engage.",我是空中支援，正在接近投放区。请求允许攻击，完毕。准许。攻击。,voice
 SND_JetHit01,"Target hit, but not neutralized. Roger that. Return to base for refueling.",击中目标，但未消灭。收到。返回基地加油。,voice
 SND_JetHit02,"It's a hit! It's a hit! Target is still going, though. That should slow him down. Let the ground unit handle the rest. Return to base.",击中了！击中了！不过目标还在前进。这应该能拖慢他。剩下的交给地面部队。返回基地。,voice
@@ -834,7 +834,7 @@ SND_JetMissAndRepeat01,That's a miss. Target still going. Circle around and hit 
 SND_JetMissAndRepeat02,"No hit, sir. The target is alive. Hit him once more. Now! Yes, sir!",没打中，长官。目标还活着。再打他一次。现在！是，长官！,voice
 SND_JetMissAndRepeat03,"I need a sit-rep. Target missed, sir. Hit him again!",我需要战况报告。没打中，长官。再打他一次！,voice
 SND_JetPassBy,,,voice
-SND_JohnCameo,"Yee-haw! Smile, baby!",耶哈！笑一个，宝贝！,voice
+SND_JohnCameo,"Yee-ha! Smile, baby!",耶哈！笑一个，宝贝！,voice
 SND_JohnSoldierGetOff01,,,voice
 SND_JohnSoldierGetOff02,,,voice
 SND_JohnSoldierGetOff03,,,voice
@@ -912,21 +912,21 @@ SND_MaleCivilian02Plea03,THERE'S NOWHERE TO RUN! THERE'S NOWHERE TO RUN!,没地�
 SND_MaleCivilian02Plea04,THEY'RE KILLING EVERYONE!,他们在杀所有人！,voice
 SND_MaleCivilian02Plea05,I CAN'T FIND MY CAR KEYS! AHHHHH!,我找不到车钥匙了！啊啊啊啊！,voice
 SND_MaleCivilian02Plea06,They ate my kid!,他们吃了我的孩子！,voice
-SND_MaleCivilian02Plea07,HOLY MOTHER OF JESUS WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY,我的圣母玛利亚啊，为什么啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊,voice
+SND_MaleCivilian02Plea07,"Holy mother of Jesus, why?!",圣母玛利亚啊，为什么？！,voice
 SND_MaleCivilian02Plea08,"Oh, my God!",哦，我的天哪！,voice
 SND_MaleCivilian02Plea09,No! No! No!,不！不！不！,voice
 SND_MaleCivilian02Plea10,,,voice
 SND_MaleCivilian02Plea11,NOOOOOO!,不——！,voice
-SND_MaleCivilian02Plea12,THEY GOT BARBRA!,他们抓走了芭芭拉！,voice
-SND_MaleCivilian02Plea13,THERE'S TOO MANY OF THEM WILL EVER SURVIVE!,他们太多了，没人能活下来！,voice
+SND_MaleCivilian02Plea12,They got Barbara!,他们抓走了芭芭拉！,voice
+SND_MaleCivilian02Plea13,There's too many of them! We'll never survive!,他们太多了，没人能活下来！,voice
 SND_MaleCivilian02Plea14,"THEY'RE COMING! PLEASE STOP! PICK ME UP, PLEASE!",他们来了！求求你停下！载上我，求你了！,voice
 SND_MaleCivilian02Plea15,MY WIFE AND FAMILY ARE DEAD! THEY'RE DEAD!,我老婆和家人全死了！全死了！,voice
 SND_MaleCivilian02Plea16,THEY'RE SHOOTING EVERYONE! THEY WON'T LET ANYBODY LEAVE!,他们见人就开枪！不让任何人离开！,voice
-SND_MaleCivilian02Plea17,Don't let him kill us now!,别让他现在杀了我们！,voice
+SND_MaleCivilian02Plea17,DON'T LET THEM KILL US! NO!,别让他们杀了我们！不！,voice
 SND_MaleCivilian02Plea18,"No, you can't leave! No, my family will be killed!",不，你不能走！不，我家人会被杀的！,voice
-SND_MaleCivilian02Plea19,No! Don't get us if you leave us here!,不！你走了就是把我们丢在这儿等死！,voice
+SND_MaleCivilian02Plea19,No! They'll get us if you leave us here!,不！你走了就是把我们丢在这儿等死！,voice
 SND_MaleCivilian02Plea20,Stop! Wait! Don't leave without us!,停下！等等！别丢下我们！,voice
-SND_MaleCivilianGetIn1,I can't feel my legs!,我的腿没知觉了！,voice
+SND_MaleCivilianGetIn1,I can't feel my leg!,我的腿没知觉了！,voice
 SND_MaleCivilianGetIn2,You're good people.,你们是好人。,voice
 SND_MaleCivilianGetIn3,"Oh, I'm safe!",哦，我安全了！,voice
 SND_MaleCivilianGetIn4,"It stopped! Oh, my God!",停了！哦，我的天哪！,voice
@@ -1009,7 +1009,7 @@ SND_ModeIntroDistance_2D,"Yeah, let's get out of here.",对，我们离开这儿
 SND_ModeIntroMilitary_1R,"For the last time, you have to regroup with the other units!",最后一次警告，你必须和其他部队重新集结！,voice
 SND_ModeIntroMilitary_2C,"No way! Going south is a death sentence! We're going west, out of the city!",不可能！往南就是送死！我们要往西，撤出城！,voice
 SND_ModeIntroMilitary_3R,"ATTENTION ALL UNITS, WE HAVE A HOSTILE VEHICLE IN SECTOR 629 GOING WEST, POSSIBLY INFECTED, INTERCEPT AND SHOOT ON SIGHT.",所有部队注意，629区域有一辆向西行驶的敌对车辆，可能已被感染，拦截并见即开火。,voice
-SND_ModeIntroMilitary_4C,,,voice
+SND_ModeIntroMilitary_4C,Dammit!,该死！,voice
 SND_ModeIntroMutant_1D,How could this happen?,怎么会这样？,voice
 SND_ModeIntroMutant_2C,I don't know! We're in serious trouble!,我不知道！我们麻烦大了！,voice
 SND_ModeIntroMutant_3D,I don't want to die!,我不想死！,voice
@@ -1124,9 +1124,9 @@ SND_SPAS12Empty,,,voice
 SND_SPAS12Fire,,,voice
 SND_SpikeExplode,,,voice
 SND_SpikeSlide,,,voice
-SND_Story01_1D,"Thank you. We crashed our Humvee. I was with the Kilo-5 patrol unit. Got surrounded so fast, they... they all died. What's your name?",谢谢。我们的悍马翻了。我是Kilo-5巡逻队的。被包围得太快，他们……他们都死了。你叫什么名字？,voice
-SND_Story01_2C,"Protector Solomon Delta 2 unit, and you?",守护者所罗门，三角洲2号小队。你呢？,voice
-SND_Story01_3D,"I'm Diane, Diane Resworth.",我是黛安，黛安·雷斯沃斯。,voice
+SND_Story01_1D,"Thank you! We crashed our Humvee. I was with a Kilo-5 patrol unit. We got surrounded so fast, they... they all died. What's your name?",谢谢。我们的悍马翻了。我是Kilo-5巡逻队的。被包围得太快，他们……他们都死了。你叫什么名字？,voice
+SND_Story01_2C,"Cocheta Solomon, Delta-2 unit. And you?",科切塔·所罗门，三角洲2号小队。你呢？,voice
+SND_Story01_3D,"I'm Diane, Diane Roseworth.",我是黛安，黛安·罗斯沃斯。,voice
 SND_Story01_4C,Are you okay?,你还好吗？,voice
 SND_Story01_5D,"Yeah, I'm better. Where are we going? What's going on?",嗯，好多了。我们去哪？到底怎么回事？,voice
 SND_Story01_6C,We're losing control! Gotta get out of the city!,局面失控了！必须撤出城！,voice
@@ -1137,7 +1137,7 @@ SND_Story02_1D,"Cocheta, your radio.",科切塔，你的电台。,voice
 SND_Story02_2C,It's busted!,坏了！,voice
 SND_Story02_3D,Would be good to have contact with our people. Can we fix it?,能和弟兄们联系上就好了。能修好吗？,voice
 SND_Story02_4C,I think so.,应该能。,voice
-SND_Story03_1R,"Unit 11 to base! Brighton Bridge is completely overrun! We need a new fallback position, NOW! Uh, set up the fence... at the... Chinatown Plaza. Sir? We just came from there! Ugh, goddammit! Just move north! Just move freaking north! Yes, sir!",11号小队呼叫基地！布莱顿大桥已完全失守！我们需要新的撤退集结点，立刻！呃，把防线设在……唐人街广场。长官？我们刚从那儿来！呃，真他妈的！就往北撤！就往北撤！是，长官！,voice
+SND_Story03_1R,"Unit 11 to base! Brighton Bridge is completely overrun! We need a new fallback position, NOW! Uh, set up a defense at the... Chinatown Plaza! Sir? We just came from there! Ugh, goddammit! Just move north! Just move freaking north! Yes, sir!",11号小队呼叫基地！布莱顿大桥已完全失守！我们需要新的撤退集结点，立刻！呃，在……唐人街广场设防！长官？我们刚从那儿来！呃，真他妈的！就往北撤！就往北撤！是，长官！,voice
 SND_Story03_2C,"Told ya, we lost control!",跟你说了，局面失控了！,voice
 SND_Story03_3D,So what do we do? Do we go north?,那我们怎么办？往北撤吗？,voice
 SND_Story03_4C,Are you crazy? They're panicked. They're saying anything.,你疯了吗？他们都慌了，什么都说得出来。,voice
@@ -1148,62 +1148,62 @@ SND_Story03_B_1D,Were you part of the Flatline operation? We've been fighting th
 SND_Story03_B_2C,"No, I came in two days ago. It was pretty bad already.",没有，我两天前才到。那时就已经很糟了。,voice
 SND_Story03_B_3D,"But it seemed like we were still in control, even this morning. Still got coherent orders and all.",但看起来我们还在掌控局面，今天早上都还是。命令也还算清楚。,voice
 SND_Story03_B_4C,That's what HQ wanted you to think. This is way over their head.,那是总部想让你以为的。这早超出他们的能力了。,voice
-SND_Story03_B_5D,Doesn't make sense. I never thought we'd be overwhelmed like this.,说不通。我从没想过我们会这样被击溃。,voice
+SND_Story03_B_5D,It doesn't make sense. Never thought we'd be overwhelmed like this.,说不通。我从没想过我们会这样被击溃。,voice
 SND_Story03_B_6C,WE'VE NEVER FOUGHT A BATTLE LIKE THIS!,我们从没打过这样的仗！,voice
 SND_Story03_B_7D,It's crazy.,太疯狂了。,voice
 SND_Story04_10C,Then we don't!,那我们就不打！,voice
-SND_Story04_1D,"Listen, I know you think we're better off by ourselves, but I'm going to contact HQ to get a clear picture.",听着，我知道你觉得我们单独行动更好，但我要联系总部，弄清情况。,voice
+SND_Story04_1D,"Listen, I know you think we're better off by ourselves, but I'm gonna contact HQ to get a clear picture.",听着，我知道你觉得我们单独行动更好，但我要联系总部，弄清情况。,voice
 SND_Story04_2C,Suit yourself!,随你便！,voice
 SND_Story04_3D,"HQ, this is Kilo-5 reporting. Do you copy? HQ, this is Kilo-5 reporting. Do you copy?",总部，这里是Kilo-5报到。收到吗？总部，这里是Kilo-5报到。收到吗？,voice
 SND_Story04_4R,"Kilo 5, uh, go ahead.",Kilo-5，呃，请讲。,voice
-SND_Story04_5D,"My squad is dead. I gotta pick up. We need orders. We're near, uh, Burlington and Lake. Over.",我的小队全死了。我得重新收拢。我们需要命令。我们在，呃，伯灵顿和莱克附近。完毕。,voice
+SND_Story04_5D,"My squad is dead. I got a pickup. We need orders. We're near, uh... Burlington and Lake. Over.",我的小队全死了。我接到了接应任务。我们在，呃……伯灵顿和莱克附近。完毕。,voice
 SND_Story04_6R,"Um, move north to regroup, over",呃，往北撤，重新集结，完毕。,voice
-SND_Story04_7D,"Regroup where, with who? Kilo-5 to HQ, regroup where? HQ, do you copy?",在哪集结，和谁集结？Kilo-5呼叫总部，在哪集结？总部，收到吗？,voice
+SND_Story04_7D,"Regroup where? Where to? Kilo-5 to HQ, regroup where? HQ, do you copy?",在哪集结？集结到哪里？Kilo-5呼叫总部，在哪集结？总部，收到吗？,voice
 SND_Story04_8C,SATISFIED! YOU WANNA GO NORTH?,满意了吧！想往北去了？,voice
 SND_Story04_9D,I don't know!,我不知道！,voice
-SND_Story04_B_1D,"""Kocheta, you know most of the city has been covered with spike strips and mines three days ago, right?""",「科切塔，你知道三天前城里大部分地方都布满了钉刺带和地雷，对吧？」,voice
+SND_Story04_B_1D,"""Cocheta, you know most of the city has been covered with spike strips and mines three days ago, right?""",「科切塔，你知道三天前城里大部分地方都布满了钉刺带和地雷，对吧？」,voice
 SND_Story04_B_2C,"Yeah, it was in the briefing. This is gonna be a problem.",知道，简报里提过。这会是个麻烦。,voice
 SND_Story04_B_3D,"Yeah, gotta be real careful.",是啊，得格外小心。,voice
-SND_Story05_1R,"Checkpoint to base. We're in trouble here. We need orders. Maintain current strategy. We're about to be overrun. The current strategy is shit. I repeat, maintain current strategy. What? What the hell is going on?",检查站呼叫基地。我们这边有麻烦了。我们需要命令。维持现有策略。我们快被击溃了。现有策略就是狗屎。重复，维持现有策略。什么？到底怎么回事？,voice
+SND_Story05_1R,"Checkpoint to Base! We're in trouble here! We need orders! Maintain current strategy. We're about to be overrun. Current strategy is shit! I repeat, maintain current strategy. What?! What the hell is going on?!",检查站呼叫基地。我们这边有麻烦了。我们需要命令。维持现有策略。我们快被击溃了。现有策略就是狗屎。重复，维持现有策略。什么？到底怎么回事？,voice
 SND_Story05_2D,This is insane!,这太疯狂了！,voice
 SND_Story05_3C,We thought we could be arrogant. Turn this planet into a dump and not pay-,我们自以为可以狂妄。把这星球当垃圾场糟蹋，还不付——,voice
-SND_Story05_4D,"Don't give me that nature-loving bullshit, Cochita. This is not karma or whatever you want to call it. Let's just focus on getting the hell out of here, all right?",别跟我扯什么热爱自然那套鬼话，科切塔。这不是报应，也不是你想叫的什么。我们还是专心逃出这鬼地方，行吗？,voice
+SND_Story05_4D,"Don't give me that nature-loving bullshit, Cocheta! This is not karma, or whatever you want to call it! Let's just focus on getting the hell out of here, all right?",别跟我扯什么热爱自然那套鬼话，科切塔！这不是报应，也不是你想叫的什么！我们还是专心逃出这鬼地方，行吗？,voice
 SND_Story05_B_1C,Did we just go through Greater Renton?,我们刚才是穿过大伦顿了吗？,voice
 SND_Story05_B_2D,"Yeah, I think so. Why?",嗯，应该是。怎么了？,voice
 SND_Story05_B_3C,I had a buddy from P-Squad who told me they were neutralizing the civilians beyond this area with motion detection mines.,我有个P-Squad的兄弟告诉我，他们用运动感应地雷在消灭这片区域外的平民。,voice
 SND_Story05_B_4D,What?!,什么？！,voice
 SND_Story05_B_5C,It blows up when you get close. A last-ditch effort to keep people from moving all around the city. Stop traffic and all that.,你一靠近它就会炸。这是最后的办法，防止人们在全城乱跑。阻断交通之类的。,voice
 SND_Story05_B_6D,Damn!,该死！,voice
-SND_Story06_1R,"Attention all troops. This is General Sherman. I am taking command of this operation. We're facing an enemy like we've never seen before. But keep your heads cool, and we're going to get through this. Now follow my orders carefully. All ground personnel are to converge to a defensive line along the Aachi River. Our backs to the water. We'll meet a final stand in one single direction. We also have reports that some zombies have mutated. Be aware they are very strong and should be avoided at all costs.",全体部队注意。我是谢尔曼将军。我现在接管这次行动。我们面对的敌人前所未见。但要保持冷静，我们一定能挺过去。现在仔细听从我的命令。所有地面人员向阿奇河沿岸的防线集结。背水一战。我们要朝着一个方向做最后的死守。另外有报告称，部分丧尸已经发生变异。注意，它们非常强悍，务必不惜一切代价避开。,voice
+SND_Story06_1R,"Attention, all troops. This is General Sherman. I am taking command of this operation. We're facing an enemy like we've never seen before. But keep your heads cool, and we're gonna get through this. Now follow my orders carefully. All ground personnel are to converge to a defensive line along the Iache River. Our backs to the water, we'll make a final stand, one single direction. We also have reports that some zombies have mutated. Be aware they are very strong and should be avoided at all costs.",全体部队注意。我是谢尔曼将军。我现在接管这次行动。我们面对的敌人前所未见。但要保持冷静，我们一定能挺过去。现在仔细听从我的命令。所有地面人员向艾奇河沿岸的防线集结。背水列阵，朝同一个方向做最后的死守。另外有报告称，部分丧尸已经发生变异。注意，它们非常强悍，务必不惜一切代价避开。,voice
 SND_Story06_2D,Mutated? What is he talking about?,变异？他在说什么？,voice
-SND_Story06_3C,"I don't know, and the Achi River is on the other side of the city.",我不知道，而且阿奇河在城的另一头。,voice
+SND_Story06_3C,I don't know! The Iache River is on the other side of the city.,我不知道！而且艾奇河在城的另一头。,voice
 SND_Story06_4D,Do we turn back?,要掉头回去吗？,voice
-SND_Story06_5C,No way! We'll never make it alive!,绝不可能！我们根本活不到那儿！,voice
+SND_Story06_5C,No way. We'd never make it alive.,绝不可能！我们根本活不到那儿！,voice
 SND_Story06_6D,"Well, what do we do?",那我们怎么办？,voice
 SND_Story06_7C,We keep going west. It's our best bet. We're not that far.,继续往西。这是我们最好的选择。我们不远了。,voice
 SND_Story06_B_1D,"Hey, I think we're in Clifton Square. Isn't that where they tried to make a stand yesterday?",嘿，我想我们到克利夫顿广场了。不就是昨天他们想死守的地方吗？,voice
 SND_Story06_B_2C,"Yeah, you're right! Look at this place! It was a massacre!",对，你说得没错！看看这地方！简直是一场屠杀！,voice
 SND_Story06_B_3D,What were they thinking doing this here? We lost so many people!,他们怎么会在这儿打？我们折了那么多人！,voice
-SND_Story06_B_4C,It's test people deciding for field units. No wonder we're this steep in shit.,是些坐办公室的在替前线部队做决定。难怪我们陷得这么深。,voice
-SND_Story06_C_1R,Dispatch to air squadron. We need a carpet bombing west of Juno Street. Affirmative. We're on our way.,调度呼叫空军中队。我们需要对朱诺街以西进行地毯式轰炸。收到。我们马上出发。,voice
+SND_Story06_B_4C,It's staff people deciding for field units. No wonder we're this deep in shit!,是些坐办公室的在替前线部队做决定。难怪我们陷得这么深！,voice
+SND_Story06_C_1R,"Dispatch to Air Squadron, we need a carpet bombing west of Juneau Street.",调度呼叫空军中队，我们需要对朱诺街以西进行地毯式轰炸。,voice
 SND_Story06_C_2D,"Whoa, shit! That's right on us!",我靠！正冲着我们来了！,voice
 SND_Story06_C_3C,Call it off!,取消！,voice
-SND_Story06_C_4D,"Kilo 5 to Dispatch, we're near Juno Street. Call off the carpet bombing. Dispatch, call off the Juno Street bombing.",Kilo-5呼叫调度，我们在朱诺街附近。取消地毯式轰炸。调度，取消朱诺街的轰炸。,voice
+SND_Story06_C_4D,"Kilo-5 to Dispatch, we're near Juneau Street! Call off the carpet bombing!",Kilo-5呼叫调度，我们在朱诺街附近！取消地毯式轰炸！,voice
 SND_Story06_D,Fuck! Here they come! Brace yourself!,妈的！它们来了！准备迎战！,voice
 SND_Story07_10D,Thank you so much!,太感谢你了！,voice
-SND_Story07_11R,Hold on tight. It's gonna be rough. You're going straight to a hot zone. I'll help you as much as I can.,抓稳了。会很难熬。你们这是直接往火坑里冲。我会尽量帮你们。,voice
-SND_Story07_1D,"Cochita, a chopper!",科切塔，一架直升机！,voice
+SND_Story07_11R,Hold on tight. It's gonna be rough. You're going straight through a hot zone. I'll help you as much as I can.,抓稳了。会很难熬。你们要直接穿过危险区。我会尽量帮你们。,voice
+SND_Story07_1D,Cocheta! A chopper!,科切塔！一架直升机！,voice
 SND_Story07_2R,"Hellfire 26 to Humvee, do you copy?",地狱火26呼叫悍马，收到吗？,voice
 SND_Story07_3D,"Yes, we copy. This is Kilo-5. Can you help us?",收到。这里是Kilo-5。你能帮我们吗？,voice
-SND_Story07_4R,What the hell are you doing out here? You're supposed to regroup at the Aachi River!,你们到底在外面干什么？你们本该去阿奇河集结！,voice
+SND_Story07_4R,What the hell are you doing out here?! You're supposed to regroup at the Iache River!,你们到底在外面干什么？！你们本该去艾奇河集结！,voice
 SND_Story07_5C,"We're going west, can you help us or not?",我们要往西走，你到底帮不帮？,voice
 SND_Story07_6R,West Side is completely overrun. Going further is suicide. There's a transport operation on Highway 65 right now. Can you make it there?,西区已完全失守。再往前就是送死。65号公路上现在有个运输行动。你们能赶到吗？,voice
 SND_Story07_7D,We'll try.,我们试试。,voice
 SND_Story07_8C,There's a highway ramp a couple kilometers ahead. Can you give us air support?,前面几公里有个公路匝道。能给我们空中支援吗？,voice
-SND_Story07_9R,Only for a little while. I got a rendezvous with the Highway Troops ASAP.,只能一小会儿。我得尽快和公路部队会合。,voice
+SND_Story07_9R,Only for a little while. I gotta rendezvous with the highway troops ASAP.,只能一小会儿。我得尽快和公路部队会合。,voice
 SND_Story08_1R,That's all I can do right now. Get to the highway as fast as you can. Most transports are en route or on their way back already. Good luck. Over.,我现在只能做到这些。尽快赶到公路。大部分运输机已经在途中，或者已经返航了。祝你们好运。完毕。,voice
-SND_Story08_2C,The wrap should be close by now.,匝道应该就在附近了。,voice
-SND_Story09,"Alright, let's find us a transport out of here!",好了，我们找架运输机离开这儿！,voice
+SND_Story08_2C,The ramp should be close by now!,匝道应该就在附近了！,voice
+SND_Story09,"All right, let's find us a transport out of here!",好了，我们找架运输机离开这儿！,voice
 SND_Story10_1D,"Whoa, check out this jacked-up car.",哇，看看这辆改装过的车。,voice
 SND_Story10_2C,Ha! He's crazy!,哈！他疯了！,voice
 SND_Story10_3D,But he's still alive.,可他还活着。,voice
@@ -1211,36 +1211,36 @@ SND_Story11,WHERE ARE THE DAMN TRANSPORTS?!,该死的运输机都去哪了？！
 SND_Story12_1D,"Kilo 5 to Hellfire 26, do you copy?",Kilo-5呼叫地狱火26，收到吗？,voice
 SND_Story12_2R,"Kilo-5, please tell me you're on a transport.",Kilo-5，求你别告诉我你们没上运输机。,voice
 SND_Story12_3C,"THERE WAS NO TRANSPORT, YOU ASSHOLE!",根本就没有运输机，你这混蛋！,voice
-SND_Story12_4R,You were too late! We're all en route to Ayachi River! I'm very sorry.,你们来晚了！我们全都在前往阿奇河的路上！非常抱歉。,voice
+SND_Story12_4R,You were too late! We're all en route to Iache River! I'm very sorry...,你们来晚了！我们全都在前往艾奇河的路上！非常抱歉……,voice
 SND_Story12_5D,Sorry ain't gonna help us!,道歉救不了我们！,voice
-SND_Story12_6R,i'm i i can't help you good luck stay alive over,我……我帮不了你们，祝好运，活下来。完毕。,voice
-SND_Story13_1D,"Cochita, what do we do?",科切塔，我们怎么办？,voice
+SND_Story12_6R,I'm... I can't help you. Good luck. Stay alive. Over.,我……我帮不了你们。祝好运。活下来。完毕。,voice
+SND_Story13_1D,Cocheta! What do we do?,科切塔！我们怎么办？,voice
 SND_Story13_2C,There's a tunnel at the end of this highway. It's probably what our jackass was going for.,这条公路尽头有个隧道。那混蛋八成就是冲着那儿去的。,voice
 SND_Story13_3D,"Okay, let's do it.",好，就这么办。,voice
-SND_Story14_1R,"Dispatch, send all transport choppers to the Aiachi River Bank. We're evacuating the area. Yes, sir. Phantom Eagle, what is your position? Phantom Eagle to base. I'm currently at 64.7 and 32.4, heading to 79, over. Roger that. Maintain current course, over.",调度，把所有运输直升机派到阿奇河岸。我们要撤离这一带。是，长官。幻影鹰，你的位置？幻影鹰呼叫基地。我目前在64.7和32.4，正前往79，完毕。收到。保持当前航向，完毕。,voice
+SND_Story14_1R,"Dispatch! Send all transport choppers to the Iache River bank. We're evacuating the area! Yes, sir. Phantom Eagle! What is your position? Phantom Eagle to Base, I'm currently at 64.7 and 32.4, heading to 79, over. Roger that! Maintain current order. Over.",调度，把所有运输直升机派到艾奇河岸。我们要撤离这一带。是，长官。幻影鹰，你的位置？幻影鹰呼叫基地。我目前在64.7和32.4，正前往79，完毕。收到。保持当前航向，完毕。,voice
 SND_Story14_2C,SHIT! YOU KNOW WHAT THAT MEANS?,妈的！你知道那意味着什么吗？,voice
-SND_Story14_3D,,,voice
+SND_Story14_3D,What?,什么？,voice
 SND_Story14_4C,They're gonna nuke the city!,他们要核平这座城市！,voice
 SND_Story14_5D,No way.,不可能。,voice
-SND_Story14_6C,"We probably don't have much time. 20 minutes tops. At this speed, we're not going to make it to the tunnel. We're not going to make it anywhere.",我们估计没多少时间了。最多20分钟。照这速度，我们到不了隧道。哪儿都到不了。,voice
+SND_Story14_6C,"We probably don't have much time. Twenty minutes, tops. At this speed, we're not gonna make it to the tunnel. We're not gonna make it anywhere!",我们估计没多少时间了。最多二十分钟。照这速度，我们到不了隧道。哪儿都到不了！,voice
 SND_Story14_7D,"Then what, huh? What?!",那怎么办？啊？到底怎么办？！,voice
 SND_Story14_8C,I DON'T KNOW!,我不知道！,voice
 SND_Story15_1D,"If you didn't insist on going west, we'd be above ground right now.",要不是你非要往西，我们现在都在地面上了。,voice
-SND_Story15_2C,,,voice
-SND_Story15_3D,We could have went north like everyone else! We could have gotten a transport in time!,我们本可以像别人一样往北撤！本可以及时登上运输机的！,voice
+SND_Story15_2C,Maybe...,也许吧……,voice
+SND_Story15_3D,We could've went north like everyone else! We could have gotten a transport in time!,我们本可以像别人一样往北撤！本可以及时登上运输机的！,voice
 SND_Story15_4C,"For all we know, they're all dead!",说不定他们全死了！,voice
 SND_Story15_5D,And we're gonna fry! That's much better!,而我们要被烧成灰！那可好多了！,voice
-SND_Story16_10D,"Why, Coach Ava?!",为什么，科切塔？！,voice
-SND_Story16_11C,Because we're going east through Northside Park. We'll find another transport. There has to be a topper in range.,因为我们要往东穿过北区公园。我们会找到另一架运输机。附近肯定还有直升机。,voice
-SND_Story16_1C,"Delta 2 to Hellfire 26, do copy!",三角洲2号呼叫地狱火26，收到吗！,voice
+SND_Story16_10D,"Why, Cocheta?!",为什么，科切塔？！,voice
+SND_Story16_11C,Cause we're going east to Northside Park! We'll find another transport! There has to be a chopper in range!,因为我们要往东去北区公园！我们会找到另一架运输机！附近肯定还有直升机！,voice
+SND_Story16_1C,"Delta-2 to Hellfire 26, do you copy?",三角洲2号呼叫地狱火26，收到吗？,voice
 SND_Story16_2D,He can't help us!,他帮不了我们！,voice
 SND_Story16_3C,"Delta 2 to Hellfire 26, come in!",三角洲2号呼叫地狱火26，请回答！,voice
 SND_Story16_4D,What are you doing? He's gone!,你在干什么？他已经走了！,voice
-SND_Story16_5C,"DELTATUNE HQ, COME IN!",三角洲2号呼叫总部，请回答！,voice
+SND_Story16_5C,Delta-2 to HQ! Come in!,三角洲2号呼叫总部！请回答！,voice
 SND_Story16_6D,WE'RE WAY TOO DEEP IN ENEMY TERRITORY!,我们深入敌区太远了！,voice
 SND_Story16_7C,Let's get out of the highway!,我们离开公路！,voice
 SND_Story16_8D,Why?,为什么？,voice
-SND_Story16_9C,DELTA TUNE HQ! COME IN!,三角洲2号呼叫总部！请回答！,voice
+SND_Story16_9C,DELTA-2 TO HQ! COME IN!,三角洲2号呼叫总部！请回答！,voice
 SND_Story17_1C,"HQ answer, goddammit!",总部回答，他妈的！,voice
 SND_Story17_2R,What? Who's this?,什么？你是谁？,voice
 SND_Story17_3C,"Delta 2, we need a pickup near Northside Park.",三角洲2号，我们需要在北区公园附近接应。,voice
@@ -1251,8 +1251,8 @@ SND_Story17_7C,No! Fuck!,不！操！,voice
 SND_Story18_1R,This is HQ. Hello?,这里是总部。喂？,voice
 SND_Story18_2D,"Send us a pickup, please!",派架飞机来接我们，求你了！,voice
 SND_Story18_3C,We're in Northside Park!,我们在北区公园！,voice
-SND_Story18_4R,I don't think I can help you.,我恐怕帮不了你。,voice
-SND_Story18_5C,THINK IT'S SOMEBODY WHO CAN!,那找个能帮的人来！,voice
+SND_Story18_4R,I... I don't think I can help you.,我恐怕帮不了你。,voice
+SND_Story18_5C,Then get somebody who can!,那找个能帮的人来！,voice
 SND_Story19_1D,We're not going to make it.,我们逃不掉了。,voice
 SND_Story19_2C,"You don't know that, Diane!",你别乱下结论，黛安！,voice
 SND_Story20_1R,This is HQ. You need a pickup near Northside Park?,这里是总部。你们需要在北区公园附近接应？,voice
@@ -1261,7 +1261,7 @@ SND_Story20_3C,We're in Northside Park now!,我们现在就在北区公园！,vo
 SND_Story20_4R,Please hold.,请稍等。,voice
 SND_Story20_5C,DON'T WAIT! YOU FUCKING BITCH!,别等！你这婊子养的！,voice
 SND_Story21_1R,The closest chopper we've got is 20 miles away.,我们最近的直升机在20英里外。,voice
-SND_Story21_2C,PUNCH ME THROUGH NOW!,现在就把我接过去！,voice
+SND_Story21_2C,"Patch me through, now!",现在就把我接过去！,voice
 SND_Story21_3R,"Uh, yes, sir.",呃，是，长官。,voice
 SND_Story21_4D,"Oh, thank God!",哦，谢天谢地！,voice
 SND_Story21_5C,God has nothing to do with this.,这跟上帝没半点关系。,voice
@@ -1269,33 +1269,33 @@ SND_Story22_10R,Where are you exactly?,你们具体在什么位置？,voice
 SND_Story22_11D,We just got out of Northside Park by the East Gate.,我们刚从北区公园东门出来。,voice
 SND_Story22_12R,I don't think we can reach you in time and land in a hot zone.,我觉得我们没法及时赶到你们那儿，还在交火区降落。,voice
 SND_Story22_13C,"Yes, you can! We drive to you! You fly to us! We meet in the middle! Fairview Mall's main parking lot! Come on! Are your medals and pins worth anything, sir? Or are you the biggest coward I've ever met in my life?",你们能！我们开车过去！你们飞过来！我们在中间碰头！费尔维尤购物中心的主停车场！来啊！长官，你那些勋章胸章到底值不值钱？还是说，你是我这辈子见过最大的懦夫？,voice
-SND_Story22_14R,"You've got heart, son. I'll give you that. Okay. Alright. Let's do it. But we're not gonna wait for you. If you're not there in five minutes, we're flying out.",你有种，小子，这点我认。好吧。行。就这么办。但我们不会等你们。五分钟内不到，我们就起飞。,voice
+SND_Story22_14R,"...You've got heart, son, I'll give you that. Okay. All right. Let's do it! But we're not gonna wait for you! If you're not there in five minutes, we're flying out!",你有种，小子，这点我认。好吧。行。就这么办。但我们不会等你们。五分钟内不到，我们就起飞。,voice
 SND_Story22_15C,"We'll be there, and you better be too! Over!",我们一定到，你最好也到！完毕！,voice
-SND_Story22_1R,"This is Flyboy One, do you copy?",这里是飞行小子一号，收到吗？,voice
+SND_Story22_1R,"This is Flyboy 1, do you copy?",这里是飞行小子一号，收到吗？,voice
 SND_Story22_2C,We need pick up immediately! We're in Northside Park!,我们需要立刻接应！我们在北区公园！,voice
-SND_Story22_3R,"We're currently flying away from your location, but hold your ground for 30 minutes, soldier. A transport will rendezvous with you.",我们目前正飞离你们的位置，但坚持住30分钟，士兵。会有架运输机来接应你们。,voice
+SND_Story22_3R,"We're currently flying away from your location, but hold your ground for thirty minutes, soldier. Our transport will rendezvous with-",我们目前正飞离你们的位置，但坚持住三十分钟，士兵。我们的运输机会来接应——,voice
 SND_Story22_4C,DON'T GIVE ME YOUR BULLSHIT ROUTINE! WHO IS THIS?!,少跟我来这套鬼话！你是谁？！,voice
 SND_Story22_5R,This is General Sherman. What's your name?,我是谢尔曼将军。你叫什么名字？,voice
 SND_Story22_6C,"Fuck you, that's my name! You're gonna nuke the city, you son of a bitch!",去你妈的，这就是我的名字！你要核平这座城市，你这狗娘养的！,voice
-SND_Story22_7D,"Kushida, no!",科切塔，不要！,voice
-SND_Story22_8R,"Yes, I am, Coachada. We lost control of the city and we don't have a choice.",是的，科切塔。我们失去了对城市的控制，别无选择。,voice
+SND_Story22_7D,"Cocheta, no!",科切塔，不要！,voice
+SND_Story22_8R,"Yes I am, Cocheta. We lost control of the city and we don't have a choi-",是的，科切塔。我们失去了对城市的控制，别无选——,voice
 SND_Story22_9C,We're here! We're alive! Get us out of here!,我们到了！我们还活着！带我们离开这儿！,voice
 SND_Story23_1D,"You have to take as many shortcuts as we can, or we're not going to make it.",你得多抄近路，能抄多少抄多少，否则我们赶不上。,voice
 SND_Story23_2C,"We'll make it, Diane!",我们赶得上，黛安！,voice
-SND_Story24_1R,"Sherman and Coach Jaden, we've landed and we're not alone. When you're done cruising around, get your ass over here.",谢尔曼和科切塔，我们已降落，而且这儿不止我们。你们兜完风就赶紧滚过来。,voice
+SND_Story24_1R,"Sherman to Cocheta, we've landed and- We're not alone! Are you done cruising around? Get your ass over here!",谢尔曼呼叫科切塔，我们已降落，而且这儿不止我们。你们兜完了吗？赶紧滚过来！,voice
 SND_Story24_2D,"We're almost there! Wait for us, sir!",我们快到了！等等我们，长官！,voice
 SND_Story24_3R,Goddammit! We'll wait as long as we can! Hurry up! Over!,他妈的！我们尽量等！快点！完毕！,voice
 SND_Story25_1D,Look! The chopper's there!,看！直升机在那儿！,voice
 SND_Story25_2C,We've done it!,我们成功了！,voice
-SND_Story26_1R,"What's the problem? Something's wrong with the... Talk and move at the same time, son! It's the hydraulic system, sir. Gotta check the pressure relief valves.",什么问题？……有点不对……边干边说，小子！是液压系统，长官。得检查泄压阀。,voice
+SND_Story26_1R,"What's the problem? Something's wrong with the- Talk and move at the same time, son! It's the hydraulics system, sir! Gotta check the pressure relief valves!",什么问题？……有点不对……边干边说，小子！是液压系统，长官。得检查泄压阀。,voice
 SND_Story26_2C,What's going on?,怎么回事？,voice
 SND_Story26_3R,WE'RE STUCK ON THE GROUND!,我们被困在地面了！,voice
-SND_Story27,"Boleski, give me an ETA. Five minutes, sir. You have two. They have the green light to drop the bomb. It's gonna blow whether we're here or not.",博莱斯基，给我个预计到达时间。五分钟，长官。你只有两分钟。他们已获准投弹。不管我们在不在，它都会炸。,voice
-SND_Story27_B_1C,"Come on, we gotta go!",快点，我们得走了！,voice
+SND_Story27,"Baliski, give me an ETA. Five minutes, sir. You have two. They have the green light to drop the bomb. It's gonna blow whether we're here or not.",巴利斯基，给我个预计到达时间。五分钟，长官。你只有两分钟。他们已获准投弹。不管我们在不在，它都会炸。,voice
+SND_Story27_B_1C,Come on! We've gotta go!,快点，我们得走了！,voice
 SND_Story27_B_2R,We're working on it! You two just keep covering your side!,我们在修了！你们俩守好自己那边！,voice
-SND_Story28,"Valesky! I got it, sir! Just gotta tighten this one up and reset- Just do it!",瓦列斯基！我搞定了，长官！只要把这个拧紧，再重启——快动手！,voice
+SND_Story28,"Baliski! I've got it, sir! Just gotta tighten this one up and reset- Just do it!",巴利斯基！我搞定了，长官！只要把这个拧紧，再重启——快动手！,voice
 SND_Story28_B_1D,Leaving now would be a great idea!,现在就走是个好主意！,voice
-SND_Story28_B_2R,"Valesky, come on!",瓦列斯基，快点！,voice
+SND_Story28_B_2R,"Baliski, come on!",巴利斯基，快点！,voice
 SND_SuperZombieAttack01,,,voice
 SND_SuperZombieAttack02,,,voice
 SND_SuperZombieAttack03,,,voice
@@ -1329,13 +1329,13 @@ SND_TankCarDeccelBrake6,,,voice
 SND_TankCarDeccelNoBrake,,,voice
 SND_TankCarIdle,,,voice
 SND_TankCarMaxSpeed,,,voice
-SND_TaskAmmo,Thank you.,谢谢。,voice
+SND_TaskAmmo,,,voice
 SND_TaskBumper,,,voice
 SND_TaskEngine,,,voice
 SND_TaskMount,,,voice
 SND_TaskRepairRadio,,,voice
 SND_TaskTires,,,voice
-SND_TaskUpgradeGun,Thank you.,谢谢。,voice
+SND_TaskUpgradeGun,,,voice
 SND_TireAlreadyBlown,,,voice
 SND_TireBlow,,,voice
 SND_TireBlownScraping,,,voice
