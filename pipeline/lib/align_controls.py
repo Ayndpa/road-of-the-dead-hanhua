@@ -64,6 +64,10 @@ TARGET_IDS = [
     4026,
     # loading screen "click here to play" (PlayButton idle / hover)
     1762, 1763,
+    # ending credits (sprite 4234): roles + thanks lines
+    4214, 4216, 4218, 4220, 4222, 4224, 4225, 4227, 4229, 4231, 4232,
+    # ending credits "Music by" lines
+    4335, 4338,
 ]
 
 # Controls list (sprite 4404).  The original English action names were all
