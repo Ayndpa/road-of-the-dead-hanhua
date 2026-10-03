@@ -231,7 +231,7 @@ UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
 |---|---|---|---|
 | Dirty Ego (93) | 菜单 / HUD / 提示（占绝大多数） | 8705 | `RoadOfTheDeadCN.ttf`（展示体） |
 | DESTRUCCION (10419) / DS-Digital (10315) | 制作名单 / 节日提示 | 8705 | 同上（做旧展示体） |
-| Arial (95) / Verdana (134) | 加载 / 提示 / 帮助正文 | 95 | Noto Sans SC |
+| Arial (95) / Verdana (134) | 加载 / 提示 / 帮助正文 | 10082 | Noto Sans SC（克隆 95 的 layout，见下） |
 | Arial Black (1) | "Day N" 大标题 | 1 | Noto Sans SC Black |
 | Arial Bold (3066, 10082) / Euromode Bold (8705) | 关卡名 / 帮助 | 3066 | Noto Sans SC Bold |
 | Arial Italic (3) | 新闻稿正文 | 3 | Noto Sans SC + 合成斜体 |
@@ -242,7 +242,8 @@ UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
 - 每个字体只包含**它自己那些标签会画到的字**（再加 ASCII 与 AS3 运行时可能赋给任意文本框的中文），不再把整份字集塞进全部字体；同时丢弃 `GSUB/GPOS/GDEF/post` 等 SWF 用不到的表；
 - 只有**翻译过的标签**才改指到中文槽；原版 Dirty Ego 的标题 logo / HUD 数字 / 制作名单保持字节一致；
 - 斜体槽（3、132）**保留 italic 标志**，FFDec 会把中文字形烘焙成斜体，与被替换的英文斜体一致；其余槽清掉 bold/italic，避免叠加合成样式；
-- 槽必须自带 layout（advance）表（`DefineEditText` 靠它排版），所选的 7 个原版槽都满足。
+- 槽必须自带 layout（advance）表（`DefineEditText` 靠它排版）。原版 Arial（95）被保留给未翻译的标题/版本号（"Road of the Dead" / "v1.24.0"），正文改指到 **10082**，而 10082（11 字形 Arial Bold）原本 **没有 layout**；FFDec 导入字体时会保留这个 `HasLayout` 标志，于是中文字形也没有 advance，所有落在该槽上的动态 `DefineEditText` 宽度塌成 0、整页空白（选项 / 成就页）。因此构建在换字体前用 `remap_font.copy_font_layout(cur, ..., 10082, 95)` 把 95 的 `DefineFont` 标签体**克隆**到 10082（只改 FontID），让 FFDec 重新生成 advance 表。
+- **字体名不能撞车（本体 FontName，不是 `DefineFontName` 标签）**：运行时文本框重排会走 `defaultTextFormat.font`（字符串名），`embedFonts` 下 Flash 按**名字**在嵌入字体里查找，而这个名字取自 **`DefineFont` 本体里的 `FontName`**（3/95/132/3066/10082 原版都叫 “Arial”）。把原版 Arial（95）保留后，它是唯一带拉丁字形的 “Arial”，于是 94 个作者期写死 `face="Arial"` 的选项/成就/帮助文本框全部命中它，中文变空白（拉丁快捷键字母却正常显示）。所以构建最后用 `remap_font.set_font_face(...)` 改**本体 FontName**、再用 `set_font_name(...)` 同步 `DefineFontName` 标签：`{95: "Arial Legacy", 10082: "Arial"}`，让 “Arial” 只命中中文字体。
 
 **构建注意**：FFDec 换字体时会**按字符**把已有 `DefineText` 的字形索引重映射到新字体，遇到没有 Unicode 映射的字形（Dirty Ego 里有几个）会算出越界索引并让整个导入崩溃；新中文比英文短时还会在标签里留下多余的旧字形（显示为尾部空格）。因此构建先把静态标签**截成空记录（保留每条记录的样式与条数）**，再用 `-format text:formatted` 逐记录写回译文 —— 多行文本的分行原样保留。
 

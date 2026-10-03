@@ -52,7 +52,12 @@ from build_all import (  # noqa: E402
     texts_using_font,
 )
 from align_controls import build_formatted, export_formatted, parse_formatted  # noqa: E402
-from remap_font import clear_font_style  # noqa: E402
+from remap_font import (  # noqa: E402
+    clear_font_style,
+    copy_font_layout,
+    set_font_face,
+    set_font_name,
+)
 from translations import AS3, UI_TRANSLATIONS, load as load_translations  # noqa: E402
 
 FFDEC = ROOT / "tools" / "ffdec" / "ffdec-cli.jar"
@@ -71,8 +76,8 @@ FONT_MAP: dict[int, int] = {
     10315: DISPLAY_SLOT,  # DS-Digital
     1: 1,                 # Arial Black -> sans black
     3: 3,                 # Arial Italic -> sans italic
-    95: 95,               # Arial -> sans
-    134: 95,              # Verdana -> sans
+    95: 10082,            # Arial -> sans (keep slot 95 for the original title)
+    134: 10082,           # Verdana -> sans (keep the original page face)
     3066: 3066,           # Arial Bold -> sans bold
     10082: 3066,          # Arial Bold -> sans bold
     8705: 3066,           # Euromode Bold -> sans bold
@@ -81,13 +86,13 @@ FONT_MAP: dict[int, int] = {
 }
 
 # Slots whose DefineFont is replaced with a (subset) CJK face.
-REPLACED_SLOTS: set[int] = {DISPLAY_SLOT, 1, 3, 95, 3066, 132, 3099}
+REPLACED_SLOTS: set[int] = {DISPLAY_SLOT, 1, 3, 10082, 3066, 132, 3099}
 
 SLOT_FACE: dict[int, str] = {
     DISPLAY_SLOT: "display",
     1: "sans_black",
     3: "sans_italic",
-    95: "sans",
+    10082: "sans",
     3066: "sans_bold",
     132: "sans_bold_italic",
     3099: "serif",
@@ -98,7 +103,7 @@ SLOT_CLEAR: dict[int, tuple[bool, bool]] = {
     DISPLAY_SLOT: (True, True),
     1: (True, True),
     3: (True, False),
-    95: (True, True),
+    10082: (True, True),
     3066: (True, True),
     132: (True, False),
     3099: (True, True),
@@ -140,7 +145,11 @@ def run(args: list[str]) -> None:
         print("   ", ln)
 
 
-SRC_SCRIPTS = ROOT / "work2" / "scripts" / "scripts"
+BUILD_WORK = ROOT / "work2"
+SRC_SCRIPTS = BUILD_WORK / "scripts" / "scripts"
+SOURCE_SWF = ROOT / "dist" / "Road-Of-The-Dead2.swf"
+ASR_DURATIONS = BUILD_WORK / "asr_gpu.json"
+STREAM_TIMING = BUILD_WORK / "stream_timing.json"
 
 
 def ui_segments(cid: int) -> list[str]:
@@ -237,7 +246,7 @@ def as3_script_patches() -> dict[str, str]:
     """Apply the translated AS3 string literals (``as3.csv``) to the sources."""
     from translations import AS3
 
-    dst = ROOT / "work2" / "patch" / "as3"
+    dst = BUILD_WORK / "patch" / "as3"
     dst.mkdir(parents=True, exist_ok=True)
     patches: dict[str, str] = {}
     for ctx, mapping in AS3.items():
@@ -272,10 +281,10 @@ def build_script_patches() -> list[tuple[str, str]]:
 
     patches["DTSound"] = str(make_dtsound.generate(
         original=SRC_SCRIPTS / "DTSound.as",
-        out=ROOT / "work2" / "patch" / "DTSound.as",
-        durations=ROOT / "work2" / "asr_gpu.json",
-        stream_timing=ROOT / "work2" / "stream_timing.json",
-        swf=ROOT / "dist" / "Road-Of-The-Dead2.swf",
+        out=BUILD_WORK / "patch" / "DTSound.as",
+        durations=ASR_DURATIONS,
+        stream_timing=STREAM_TIMING,
+        swf=SOURCE_SWF,
         min_split_secs=7.5,
         debug=False,
         # ROTD2's root audio stream starts at timeline frame 75 at 30 fps, and
@@ -292,7 +301,7 @@ def build_script_patches() -> list[tuple[str, str]]:
         if anchor not in bg_text:
             raise SystemExit("BasicGame.Init() anchor not found for subtitle hook")
         bg_text = bg_text.replace(anchor, anchor + "         DTSound.InitSubtitles();\n", 1)
-    bg = ROOT / "work2" / "patch" / "BasicGame.as"
+    bg = BUILD_WORK / "patch" / "BasicGame.as"
     bg.write_text(bg_text, encoding="utf-8")
     patches["BasicGame"] = str(bg)
 
@@ -300,7 +309,7 @@ def build_script_patches() -> list[tuple[str, str]]:
     mt_text = Path(patches.get(
         mt_name, SRC_SCRIPTS / "RoadOfTheDead_fla" / "MainTimeline.as")).read_text(
         encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n")
-    mt = ROOT / "work2" / "patch" / "MainTimeline.as"
+    mt = BUILD_WORK / "patch" / "MainTimeline.as"
     mt.write_text(apply_layout_patch(mt_text), encoding="utf-8")
     patches[mt_name] = str(mt)
 
@@ -464,11 +473,19 @@ def compress_swf(path: str, level: int = 9) -> int:
 
 
 def main() -> int:
+    global BUILD_WORK, SRC_SCRIPTS, SOURCE_SWF, ASR_DURATIONS, STREAM_TIMING
     ap = argparse.ArgumentParser()
-    ap.add_argument("--orig", default=str(ROOT / "dist" / "Road-Of-The-Dead2.swf"))
-    ap.add_argument("--texts", default=str(ROOT / "work2" / "scripts" / "texts"))
+    ap.add_argument("--orig", default=str(SOURCE_SWF))
+    ap.add_argument("--texts", default=str(BUILD_WORK / "scripts" / "texts"))
+    ap.add_argument("--scripts", default=str(BUILD_WORK / "scripts" / "scripts"))
+    ap.add_argument("--workdir", default=str(BUILD_WORK))
     ap.add_argument("--out", default=str(ROOT / "dist" / "rotd2-zh-ui.swf"))
     args = ap.parse_args()
+    BUILD_WORK = Path(args.workdir)
+    SRC_SCRIPTS = Path(args.scripts)
+    SOURCE_SWF = Path(args.orig)
+    ASR_DURATIONS = BUILD_WORK / "asr_gpu.json"
+    STREAM_TIMING = BUILD_WORK / "stream_timing.json"
 
     texts = {int(p.stem): p for p in Path(args.texts).glob("*.txt")}
     # The game title keeps its original face and English wording (ROTD2 standard):
@@ -510,18 +527,30 @@ def main() -> int:
     remap = ROOT / "pipeline" / "remap_font.py"
     cur = args.orig
     for f, target, tags in remap_steps:
-        out = ROOT / "work2" / f"ui_remap_{f}_to_{target}.swf"
+        out = BUILD_WORK / f"ui_remap_{f}_to_{target}.swf"
         run(["uv", "run", "python", str(remap), str(cur), str(out),
              "--old", str(f), "--new", str(target),
              "--only", ",".join(map(str, tags))])
         cur = str(out)
         print(f"   font {f} -> slot {target}: {len(tags)} tags")
 
+    # FFDec preserves the repurposed tag's HasLayout bit when it imports a font.
+    # Slot 10082 (11-glyph Arial Bold) had none, so the sans CJK face would land
+    # without an advance table and every dynamic DefineEditText on it would
+    # collapse to zero width and vanish (the blank Options/Achievements pages).
+    # Clone a layout-bearing Arial body (slot 95) onto it first; FFDec then
+    # regenerates the advances from the imported face.
+    if 10082 in REPLACED_SLOTS:
+        layout_fixed = BUILD_WORK / "ui_layout.swf"
+        copy_font_layout(cur, str(layout_fixed), 10082, 95)
+        cur = str(layout_fixed)
+        print("cloned font 95 layout onto slot 10082")
+
     # Slots 1/3/95/132/3066/3099/8705 are repurposed from styled originals.
     # Clear the style bits FFDec would otherwise bake into the CJK outlines,
     # except on the italic slots (3, 132), whose italic bit gives the slant.
     spec = {slot: SLOT_CLEAR[slot] for slot in sorted(REPLACED_SLOTS)}
-    unstyled = ROOT / "work2" / "ui_unstyled.swf"
+    unstyled = BUILD_WORK / "ui_unstyled.swf"
     touched = clear_font_style(cur, str(unstyled), spec)
     if touched:
         print("font style flags -> " + ", ".join(
@@ -575,7 +604,7 @@ def main() -> int:
 
     # Empty the static tags before the font swap (see truncate_static_texts),
     # then rebuild them from formatted text so each record/line survives.
-    truncated = ROOT / "work2" / "ui_truncated.swf"
+    truncated = BUILD_WORK / "ui_truncated.swf"
     print(f"emptied {truncate_static_texts(cur, str(truncated), set(static_ids))} "
           f"static tags before the font swap")
     cur = str(truncated)
@@ -587,7 +616,7 @@ def main() -> int:
         raw = texts[cid].read_text(encoding="utf-8")
         return [s.strip() for s in raw.split(SEP) if s.strip()]
 
-    outdir = ROOT / "work2" / "ui_texts"
+    outdir = BUILD_WORK / "ui_texts"
     outdir.mkdir(parents=True, exist_ok=True)
     repl: list[str] = []
     for slot in sorted(REPLACED_SLOTS):
@@ -619,7 +648,7 @@ def main() -> int:
     for name, path in build_script_patches():
         repl += [name, path]
     # 900+ pairs overflow the Windows command line, so pass them via an argsfile.
-    argsfile = ROOT / "work2" / "ui_replace_args.txt"
+    argsfile = BUILD_WORK / "ui_replace_args.txt"
     argsfile.write_text("\n".join(repl), encoding="utf-8")
     run(["java", "-Xmx4g", "-jar", str(FFDEC), "-replace",
          cur, str(args.out), str(argsfile)])
@@ -653,9 +682,9 @@ def main() -> int:
     if fix_ids:
         print(f"re-importing {len(fix_ids)} kerning tags "
               f"(garbled={len(failed)}, squeezed={len(spaced)})")
-        fmtdir = ROOT / "work2" / "fmt_texts"
+        fmtdir = BUILD_WORK / "fmt_texts"
         fmtdir.mkdir(parents=True, exist_ok=True)
-        fixed = ROOT / "work2" / "ui_fixed.swf"
+        fixed = BUILD_WORK / "ui_fixed.swf"
         fix = ["-replace", cur, str(fixed)]
         for cid in fix_ids:
             text = make_formatted_text(dumps.get(cid, ""), ui_segments(cid),
@@ -672,7 +701,7 @@ def main() -> int:
     # it replaces (the CJK face at the Latin em is ~1.5x too tall, which flattens
     # the menu hierarchy and pushes the longest caption off the stage).  Must run
     # before the alignment pass, which measures the post-scale renders.
-    fitted = ROOT / "work2" / "menu_fit.swf"
+    fitted = BUILD_WORK / "menu_fit.swf"
     run(["uv", "run", "python", str(ROOT / "pipeline" / "fit_menu_rotd2.py"),
          "--swf", cur, "--orig", str(args.orig), "--out", str(fitted)])
     if fitted.exists():
@@ -687,7 +716,7 @@ def main() -> int:
     run(["uv", "run", "python", str(ROOT / "pipeline" / "align_rotd2.py"),
          "--swf", cur, "--orig", str(args.orig),
          "--out", str(aligned), "--ids", ",".join(map(str, align_ids)),
-         "--outdir", str(ROOT / "work2" / "aligned")])
+         "--outdir", str(BUILD_WORK / "aligned")])
     if aligned.exists():
         Path(args.out).unlink()
         aligned.rename(args.out)
@@ -699,6 +728,30 @@ def main() -> int:
     if booked.exists():
         Path(args.out).unlink()
         booked.rename(args.out)
+
+    # Runtime TextFields re-format through ``defaultTextFormat.font`` (a *name*),
+    # and Flash resolves that against the embedded faces.  The preserved Arial
+    # (95) and the repurposed sans slot (10082) were both named "Arial", so the
+    # 94 option/achievement fields whose authoring HTML says ``face="Arial"``
+    # resolved back to the Latin-only 95 and rendered blank.  Rename the
+    # preserved face and give the CJK slot the expected "Arial" name.
+    # The embedded-font registry Flash uses for runtime ``defaultTextFormat``
+    # lookups keys on the **FontName stored inside DefineFont2/3**, not the
+    # separate DefineFontName tag.  Preserving slot 95 as Latin Arial while the
+    # repurposed slots 3/132/3066/10082 are CJK but also called "Arial" makes
+    # "Arial" resolve to the Latin face, and every runtime Chinese field goes
+    # blank.  Rename the preserved face (body + metadata) so "Arial" only ever
+    # reaches a CJK slot.
+    if 10082 in REPLACED_SLOTS:
+        fixed_names = {95: "Arial Legacy", 10082: "Arial"}
+        face = Path(str(args.out) + ".face.swf")
+        set_font_face(str(args.out), str(face), fixed_names)
+        Path(args.out).unlink()
+        face.rename(args.out)
+        named = Path(str(args.out) + ".named.swf")
+        set_font_name(str(args.out), str(named), fixed_names)
+        Path(args.out).unlink()
+        named.rename(args.out)
 
     # Every step above rewrites the SWF uncompressed (FWS), while the original
     # ships zlib-compressed (CWS).  Re-compressing the finished file is the
