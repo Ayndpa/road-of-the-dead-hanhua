@@ -7,7 +7,7 @@ Steps
   4. generate the translated baked UI text tags + the CJK font subsets
   5. splice everything back into the SWF and compile
 
-Translations are read from `data/paratranz/*.csv` (see pipeline/translations.py);
+Translations are read from `data/paratranz/*.csv` (see pipeline/lib/translations.py);
 drop the files downloaded from the ParaTranz project in there to rebuild.
 
 Usage:
@@ -57,13 +57,13 @@ def main() -> int:
             "export scripts/texts",
         )
 
-    run(py("pipeline/make_dtsound.py", "--out", "patch/DTSound.as"), "DTSound (subtitles)")
-    run(py("pipeline/patch_as3.py"), "gameplay ActionScript")
-    run(py("pipeline/build_ui.py"), "UI text tags")
+    run(py("pipeline/subtitles/make_dtsound.py", "--out", "patch/DTSound.as"), "DTSound (subtitles)")
+    run(py("pipeline/runtime/patch_as3.py"), "gameplay ActionScript")
+    run(py("pipeline/ui/build_ui.py"), "UI text tags")
 
     # build_all.py now derives the per-face charsets, instantiates the Noto Sans
     # SC weights and subsets every CJK face itself (see the font map there).
-    run(py("pipeline/build_all.py", "--orig", args.orig), "splice + compile")
+    run(py("pipeline/ui/build_all.py", "--orig", args.orig), "splice + compile")
     print(f"\ndone -> {ROOT / 'dist' / 'rotl-zh-full.swf'}")
     return 0
 

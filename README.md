@@ -30,7 +30,16 @@
 dist/                游戏文件（统一放这里）
   Road-Of-The-Dead.swf 原版游戏
   rotl-zh-full.swf     汉化版（构建产物）
-pipeline/            所有脚本（分析 + 构建）
+pipeline/            所有脚本（按功能分包，见 pipeline/README.md）
+  build.py             一代完整构建入口
+  lib/                 共享库（翻译读取 / 字体重映射 / 标签对齐）
+  asr/                 语音转写 / 清理 / 合并
+  swf/                 SWF 只读分析工具
+  ui/                  UI 汉化构建（字体 / 烘焙文本 / 主菜单 / 二代）
+  runtime/             运行时 AS3 文本替换
+  subtitles/           游戏内字幕生成（DTSound 补丁）
+  paratranz/           ParaTranz 导入 / 回传
+  tools/               第三方工具拉取脚本（fetch-*.ps1）
 data/                人工产物 / 缓存 / 翻译数据（可复用）
   paratranz/           翻译数据（ParaTranz 平台格式，构建直接读取）
     voice.csv            对白字幕（SND_* 类名 → 中文）
@@ -46,7 +55,7 @@ data/                人工产物 / 缓存 / 翻译数据（可复用）
   as3_strings.json     AS3 里的候选用户可见字符串（来源）
   orig_texts/          SWF 导出的原始 UI 文本（224 个）
   fonts/               中文字体（RoadOfTheDeadCN.ttf 等，构建时裁子集）
-tools/               第三方工具（FFDec / whisper.cpp(Vulkan)，用 pipeline/fetch-tools.ps1、fetch-whisper.ps1 获取）
+tools/               第三方工具（FFDec / whisper.cpp(Vulkan)，用 pipeline/tools/fetch-tools.ps1、pipeline/tools/fetch-whisper.ps1 获取）
 ```
 
 `work/`、`menu-labels/`、`patch/` 与虚拟环境是构建中间件，**可重新生成，默认不保留**；`dist/`、`tools/`、虚拟环境都在 `.gitignore` 里（仓库不包含游戏本体与第三方工具）。
@@ -57,7 +66,7 @@ tools/               第三方工具（FFDec / whisper.cpp(Vulkan)，用 pipelin
 
 ```powershell
 uv sync                       # 主环境：FFDec 调用 / 导出分析 / 构建
-pwsh -File pipeline/fetch-tools.ps1 -Proxy http://127.0.0.1:7897   # 下载 FFDec
+pwsh -File pipeline/tools/fetch-tools.ps1 -Proxy http://127.0.0.1:7897   # 下载 FFDec
 ```
 
 需要原版游戏 SWF（默认路径 `dist/Road-Of-The-Dead.swf`，可用 `--orig` 指定）。
@@ -66,14 +75,14 @@ ASR 相关（可选，只在需要重新转写时用）：
 
 ```powershell
 # CPU：faster-whisper
-uv run python pipeline/asr.py --no-vad --voice-only
+uv run python pipeline/asr/asr.py --no-vad --voice-only
 
-# AMD GPU：whisper.cpp + Vulkan（全部走国内镜像，见 pipeline/fetch-whisper.ps1）
-pwsh -File pipeline/fetch-whisper.ps1    # 编译 whisper-cli(Vulkan) + 下载 ggml-large-v3
-uv run python pipeline/asr_vulkan.py --voice-only
+# AMD GPU：whisper.cpp + Vulkan（全部走国内镜像，见 pipeline/tools/fetch-whisper.ps1）
+pwsh -File pipeline/tools/fetch-whisper.ps1    # 编译 whisper-cli(Vulkan) + 下载 ggml-large-v3
+uv run python pipeline/asr/asr_vulkan.py --voice-only
 
 # 清理幻觉 / 非对白（输出 <out>_clean.json / .tsv / .dropped.json）
-uv run python pipeline/clean_asr.py --asr work/asr_gpu.json
+uv run python pipeline/asr/clean_asr.py --asr work/asr_gpu.json
 ```
 
 ---
@@ -100,6 +109,16 @@ uv run python pipeline/build.py
 1. 在 ParaTranz 上翻译 / 校对；
 2. 从平台下载文件（或导出的压缩包），把 `voice.csv`、`stream.csv`、`ui.csv`、`as3.csv`、`menu.csv` 放回 `data/paratranz/`（也可用环境变量 `ROT_TRANSLATIONS` 指向导出目录，不动仓库里的文件）；
 3. `uv run python pipeline/build.py` 重新构建 —— 字幕、UI、运行时文本、主菜单矢量标签都会按平台内容更新。
+
+反向同步（本地改了原文 / 译文后回传平台覆盖旧数据）：
+
+```powershell
+$env:PARATRANZ_TOKEN = "<ParaTranz API Token>"
+uv run python pipeline/paratranz/push_translations.py                 # 一代 20958 + 二代 20962 全部文件
+uv run python pipeline/paratranz/push_translations.py --project 20962 --file as3.csv   # 也可只推单个项目 / 文件
+```
+
+脚本会先把仓库里的 CSV 作为**源文件**重新上传（补上平台缺失的词条），再按 key 通过词条 API 覆盖译文；`--dry-run` 只打印不提交。
 
 | 文件 | 对应内容 | key | 原文列 |
 |---|---|---|---|
@@ -147,7 +166,7 @@ SubtitleOnPlay(this);          // 用 getQualifiedClassName(m_SoundClass) 查表
 t = (currentFrame - 1) / frameRate - 1.58
 ```
 
-`1.58s` 是实测偏移 —— `pipeline/stream_timing.py` 解析全部 `SoundStreamBlock` 的 MP3 帧头，算出每帧的真实音频时间，整条时间轴偏移恒定。
+`1.58s` 是实测偏移 —— `pipeline/swf/stream_timing.py` 解析全部 `SoundStreamBlock` 的 MP3 帧头，算出每帧的真实音频时间，整条时间轴偏移恒定。
 
 ### 3. UI 文本
 UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
@@ -157,7 +176,7 @@ UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
 文本里 `--- RECORDSEPARATOR ---` 是记录分隔符，翻译时**段数必须一致**。
 
 ### 4. 字体（按原版字形逐个适配）
-原版 UI 不止两种字形：15 个 `DefineFont` 标签、约 10 种字形名，其中**有译文**的就有 Dirty Ego、Modern No. 20、Arial（26/32/1758）、Arial Black（46/558）、Verdana（87/88/94）、Arial Narrow（4013）、FFF Calypso（1103）、FFF Business Bold（1106）。汉化按每个字形的视觉角色各配一套中文字形（`pipeline/build_all.py` 的 `G1_FONT_MAP`）：
+原版 UI 不止两种字形：15 个 `DefineFont` 标签、约 10 种字形名，其中**有译文**的就有 Dirty Ego、Modern No. 20、Arial（26/32/1758）、Arial Black（46/558）、Verdana（87/88/94）、Arial Narrow（4013）、FFF Calypso（1103）、FFF Business Bold（1106）。汉化按每个字形的视觉角色各配一套中文字形（`pipeline/ui/build_all.py` 的 `G1_FONT_MAP`）：
 
 | 原版字形 | 用在哪 | 中文槽 | 汉化字体 |
 |---|---|---|---|
@@ -174,14 +193,14 @@ UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
 - 成品最后 `compress_swf()` 重新 zlib 压缩成 CWS（中间步骤输出的是未压缩 FWS）：30.19MB → 27.43MB。
 
 ### 5. 运行时文本
-成就、提示框、关卡介绍、地点名等在 AS3 字符串里，用 `pipeline/patch_as3.py` 按**字面量精确替换**（用词法扫描提取，避免正则把代码当成字符串）。中英对照表来自 `data/paratranz/as3.csv`（`context` 列即文件名），只替换在反编译源码里实际存在的字面量，对不上的条目会打印告警而不是改坏代码。
+成就、提示框、关卡介绍、地点名等在 AS3 字符串里，用 `pipeline/runtime/patch_as3.py` 按**字面量精确替换**（用词法扫描提取，避免正则把代码当成字符串）。中英对照表来自 `data/paratranz/as3.csv`（`context` 列即文件名），只替换在反编译源码里实际存在的字面量，对不上的条目会打印告警而不是改坏代码。
 
 ---
 
 ### 6. 对齐
 英文换中文后字变短，FFDec 导入文本时会**在原标签的左原点重新左对齐**，于是原本居中或右对齐的行都会偏离原来的位置：选项面板的设置标题（建筑 / 画质 / 存档数据 …）和大标题（操作 / 选项）会左偏，操作列表（左转 / 右转 / 加速 / 刹车 …）则会参差不齐。
 
-`pipeline/align_controls.py` 只改静态 `DefineText` 标签（动态文本框自带 `align`，不动），用 FFDec 的 SVG 导出**实测原版英文与新中文的实际墨迹轴**（不受存储 `xmin/xmax` 比字形宽、字体不同、FFDec 给中文加的字距对的影响），再重写 `translatex`：
+`pipeline/lib/align_controls.py` 只改静态 `DefineText` 标签（动态文本框自带 `align`，不动），用 FFDec 的 SVG 导出**实测原版英文与新中文的实际墨迹轴**（不受存储 `xmin/xmax` 比字形宽、字体不同、FFDec 给中文加的字距对的影响），再重写 `translatex`：
 
 - `TARGET_IDS`（选项面板各标签、两个大标题、警告标题）—— 让中文墨迹中心落在**原英文墨迹中心**上；原版标签的存储框比字形宽，框中心并不等于视觉中心，所以不能直接用框中心。
 - `LIST_CENTER_IDS`（操作列表）—— 原版英文是**右对齐**在同一右边界，中文更短时会贴在按键列上、左边空一大片；按需求改成**统一列居中**：以原版英文标签整体的左边界到公共右边界的**中轴**为轴，各行按自己在 sprite 内的摆放矩阵分别居中（各行的摆放矩阵不同）。
@@ -207,7 +226,7 @@ UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
 | `Achievements` | 4318 | 4315 | 4316 | ACHIEVEMENTS |
 | `HighScores` | 4322 | 4319 | 4320 | HIGH SCORES |
 
-`pipeline/menu_labels.py` 把这些标签用**透视投影后**的中文字体轮廓生成矢量 SVG，再让 FFDec 替换对应 shape：
+`pipeline/ui/menu_labels.py` 把这些标签用**透视投影后**的中文字体轮廓生成矢量 SVG，再让 FFDec 替换对应 shape：
 
 - 原版按钮文字是**手绘透视字**（像铺在路面上由近及远：上边窄、笔画后仰），不是简单斜体；
 - **每个标签的透视都不一样**：按钮分布在路面不同位置，越靠下（越近）左边越接近竖直（OPTIONS `L 0.00`、HIGH SCORES `0.01`），越靠上（越远）内收越强（POLICE STATE `0.15`）。所以程序和原版一样**逐标签**取透视（`LABEL_NORM`，用 Theil–Sen 对原版逐行墨迹边界做稳健拟合），不再共用一套平均透视 —— 旧做法（单一 `SHARED_NORM`）会把下方短标签的左边过度倾斜，看起来比英文更「歪」；
@@ -217,7 +236,7 @@ UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
 - **字号**：中文比英文紧凑得多（5 字顶 14 个字母），若只按原字高绘制，标签只占按钮宽的 20–36%，看起来比英文小很多。现在**字形按标签高度放大后，再横向加宽（上限 `MAX_H_STRETCH = 2.5` 倍自然宽）**去接近按钮宽度，剩下的用**有上限的字距**（`MAX_GAP_RATIO = 0.6` × 高）补足并整体居中 —— 短词会占满按钮框，且不会把两个字甩到按钮两端（旧做法是「按墨迹盒子均分铺满整宽」，2 字标签会变成左右两个几乎贴边的小字，看起来是坏的）；
 - **关键**：FFDec 会把替换 SVG 的 *viewport* 按原始 shape 的包围盒 1:1 映射，所以 SVG 的 `width/height` 必须与原始 shape 完全一致；已用实验验证；
 - 保留每个状态原本的**颜色和透明度**（Story 是红色 `#cb0000`、其余白色；常态透明度直接取自原版 shape 的填充 alpha：白色 `0.40`、红色 `0.60`，悬停为 `1.0` —— 旧值偏暗，会让中文比旁边英文更淡）；
-- 纯矢量，缩放不糊。用例：`python pipeline/menu_labels.py --swf in.swf --out out.swf --orig 原版.swf`
+- 纯矢量，缩放不糊。用例：`python pipeline/ui/menu_labels.py --swf in.swf --out out.swf --orig 原版.swf`
 
 品牌字样（Newgrounds / Evil-Dog / SickDeathFiend）保持原样。
 
@@ -225,7 +244,7 @@ UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
 
 ## 二代（ROTD2）多字体适配
 
-一代 UI 的原版字形其实也不止两种（见上一节，已按 5 套中文字形适配），二代的 `DefineFont` 里更有 **12 种真实字形**（Arial 常规/粗体/黑体/斜体/粗斜体、Verdana、Typenoksidi、Euromode Bold、Dirty Ego、DESTRUCCION、DS-Digital）。二代按每个原版字形的**视觉角色**各配一套中文字形，不能像旧版那样把 Arial 正文塞进思源宋体、斜体新闻稿变正体。`pipeline/build_rotd2_ui.py` 的映射：
+一代 UI 的原版字形其实也不止两种（见上一节，已按 5 套中文字形适配），二代的 `DefineFont` 里更有 **12 种真实字形**（Arial 常规/粗体/黑体/斜体/粗斜体、Verdana、Typenoksidi、Euromode Bold、Dirty Ego、DESTRUCCION、DS-Digital）。二代按每个原版字形的**视觉角色**各配一套中文字形，不能像旧版那样把 Arial 正文塞进思源宋体、斜体新闻稿变正体。`pipeline/ui/build_rotd2_ui.py` 的映射：
 
 | 原版字形 | 用在哪 | 中文槽 | 中文字体 |
 |---|---|---|---|
@@ -249,7 +268,7 @@ UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
 
 **体积**：构建的中间步骤都用未压缩 SWF（FWS）读写，最后的 `compress_swf()` 会把成品重新 zlib 压缩成游戏原版的 CWS——这一步就把 57.6MB 降到 49.1MB，再叠加逐字体裁剪才算回到接近原版的体积；中文多字体本身仍会比英文原版多几 MB 的字形数据。
 
-- 重新拉取字体：`pwsh -File pipeline/fetch-fonts.ps1 -Proxy http://127.0.0.1:7897`（Noto Sans SC 可变字体，构建时实例化为 Regular/Bold/Black）。
+- 重新拉取字体：`pwsh -File pipeline/tools/fetch-fonts.ps1 -Proxy http://127.0.0.1:7897`（Noto Sans SC 可变字体，构建时实例化为 Regular/Bold/Black）。
 
 ---
 
@@ -257,17 +276,17 @@ UI 文字是**烘焙的 `DefineText`**（没有运行时字符串）。
 
 | 脚本 | 用途 |
 |---|---|
-| `swf_labels.py` | 主时间轴帧标签 / 场景 / 流式音轨覆盖范围 |
-| `stream_timing.py` | 帧 → 真实音频时间的精确换算 |
-| `swf_text_fonts.py` | 每个 `DefineText` 用的字体 |
-| `frame_chars.py` | 某一帧上放置了哪些 character |
-| `walk_sprite.py` | 递归展开 sprite 结构 |
-| `scan_strings.py` / `dump_as3_strings.py` | AS3 里用户可见字符串 |
-| `remap_font.py` | 改文本指向的字体 id（支持一次改多个旧 id → 一个槽） |
-| `menu_labels.py` | 主菜单矢量按钮标签 → 中文矢量 SVG 并替换 shape |
-| `align_controls.py` | 按原版墨迹轴重排静态标签：选项面板与标题居中、操作列表统一列居中、SKIP/车库右对齐 |
-| `collect_menu_shapes.py` | 导出菜单 Shape 供重绘 |
-| `multiget.py` | 多线程分段下载（模型/大文件） |
+| `swf/swf_labels.py` | 主时间轴帧标签 / 场景 / 流式音轨覆盖范围 |
+| `swf/stream_timing.py` | 帧 → 真实音频时间的精确换算 |
+| `swf/swf_text_fonts.py` | 每个 `DefineText` 用的字体 |
+| `swf/frame_chars.py` | 某一帧上放置了哪些 character |
+| `swf/walk_sprite.py` | 递归展开 sprite 结构 |
+| `swf/scan_strings.py` / `swf/dump_as3_strings.py` | AS3 里用户可见字符串 |
+| `lib/remap_font.py` | 改文本指向的字体 id（支持一次改多个旧 id → 一个槽） |
+| `ui/menu_labels.py` | 主菜单矢量按钮标签 → 中文矢量 SVG 并替换 shape |
+| `lib/align_controls.py` | 按原版墨迹轴重排静态标签：选项面板与标题居中、操作列表统一列居中、SKIP/车库右对齐 |
+| `swf/collect_menu_shapes.py` | 导出菜单 Shape 供重绘 |
+| `paratranz/multiget.py` | 多线程分段下载（模型/大文件） |
 
 ---
 

@@ -1,0 +1,1 @@
+"""Runtime ActionScript string localisation."""
