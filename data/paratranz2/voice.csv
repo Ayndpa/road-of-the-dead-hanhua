@@ -1151,7 +1151,7 @@ SND_Story03_B_4C,That's what HQ wanted you to think. This is way over their head
 SND_Story03_B_5D,It doesn't make sense. Never thought we'd be overwhelmed like this.,说不通。我从没想过我们会这样被击溃。,voice
 SND_Story03_B_6C,WE'VE NEVER FOUGHT A BATTLE LIKE THIS!,我们从没打过这样的仗！,voice
 SND_Story03_B_7D,It's crazy.,太疯狂了。,voice
-SND_Story04_10C,Then we don't!,那我们就不打！,voice
+SND_Story04_10C,Then we don't!,那我们就不要去！,voice
 SND_Story04_1D,"Listen, I know you think we're better off by ourselves, but I'm gonna contact HQ to get a clear picture.",听着，我知道你觉得我们单独行动更好，但我要联系总部，弄清情况。,voice
 SND_Story04_2C,Suit yourself!,随你便！,voice
 SND_Story04_3D,"HQ, this is Kilo-5 reporting. Do you copy? HQ, this is Kilo-5 reporting. Do you copy?",总部，这里是Kilo-5报到。收到吗？总部，这里是Kilo-5报到。收到吗？,voice
@@ -1161,7 +1161,7 @@ SND_Story04_6R,"Um, move north to regroup, over",呃，往北撤，重新集结�
 SND_Story04_7D,"Regroup where? Where to? Kilo-5 to HQ, regroup where? HQ, do you copy?",在哪集结？集结到哪里？Kilo-5呼叫总部，在哪集结？总部，收到吗？,voice
 SND_Story04_8C,SATISFIED! YOU WANNA GO NORTH?,满意了吧！想往北去了？,voice
 SND_Story04_9D,I don't know!,我不知道！,voice
-SND_Story04_B_1D,"""Cocheta, you know most of the city has been covered with spike strips and mines three days ago, right?""",「科切塔，你知道三天前城里大部分地方都布满了钉刺带和地雷，对吧？」,voice
+SND_Story04_B_1D,"""Cocheta, you know most of the city has been covered with spike strips and mines three days ago, right?""",科切塔，你知道三天前城里大部分地方都布满了钉刺带和地雷，对吧？,voice
 SND_Story04_B_2C,"Yeah, it was in the briefing. This is gonna be a problem.",知道，简报里提过。这会是个麻烦。,voice
 SND_Story04_B_3D,"Yeah, gotta be real careful.",是啊，得格外小心。,voice
 SND_Story05_1R,"Checkpoint to Base! We're in trouble here! We need orders! Maintain current strategy. We're about to be overrun. Current strategy is shit! I repeat, maintain current strategy. What?! What the hell is going on?!",检查站呼叫基地。我们这边有麻烦了。我们需要命令。维持现有策略。我们快被击溃了。现有策略就是狗屎。重复，维持现有策略。什么？到底怎么回事？,voice
