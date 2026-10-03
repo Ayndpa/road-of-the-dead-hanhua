@@ -167,11 +167,7 @@ STATIC_VARS = """
       
       internal static var m_TimedTable:Object = null;
       
-      internal static var m_TimedClip:Array = null;
-      
-      internal static var m_iTimedBase:int = 0;
-      
-      internal static var m_iTimedSeg:int = -1;
+      internal static var m_TimedClips:Object = null;
       
       internal static var m_Subs:Array = null;
       
@@ -282,41 +278,76 @@ METHODS = r"""
          return m_TimedTable;
       }
       
-      internal static function UpdateTimedClip() : *
+      internal static function HasTimedClips() : Boolean
       {
+         var key:String = null;
+         if(m_TimedClips == null)
+         {
+            return false;
+         }
+         for(key in m_TimedClips)
+         {
+            return true;
+         }
+         return false;
+      }
+      
+      internal static function UpdateTimedClips() : *
+      {
+         var keys:Array = null;
+         var i:int = 0;
+         var key:String = null;
+         var rec:Array = null;
+         var data:Array = null;
          var el:Number = 0;
          var j:int = -1;
          var k:int = 0;
          var seg:Array = null;
-         if(m_TimedClip == null)
+         if(m_TimedClips == null)
          {
             return;
          }
-         el = (getTimer() - m_iTimedBase) / 1000;
-         for(k = 0; k < m_TimedClip.length; k++)
+         keys = new Array();
+         for(key in m_TimedClips)
          {
-            if(el >= Number(m_TimedClip[k][0]) - 0.15 && el <= Number(m_TimedClip[k][1]) + 0.25)
+            keys.push(key);
+         }
+         for(i = 0; i < keys.length; i++)
+         {
+            key = String(keys[i]);
+            rec = m_TimedClips[key] as Array;
+            if(rec == null)
             {
-               j = k;
-               break;
+               continue;
             }
+            data = rec[0] as Array;
+            el = (getTimer() - int(rec[1])) / 1000;
+            if(el > Number(data[data.length - 1][1]) + 0.8)
+            {
+               delete m_TimedClips[key];
+               continue;
+            }
+            j = -1;
+            for(k = 0; k < data.length; k++)
+            {
+               if(el >= Number(data[k][0]) - 0.15 && el <= Number(data[k][1]) + 0.25)
+               {
+                  j = k;
+                  break;
+               }
+            }
+            if(j == int(rec[2]))
+            {
+               continue;
+            }
+            rec[2] = j;
+            if(j < 0)
+            {
+               continue;
+            }
+            seg = data[j] as Array;
+            ShowSubtitleOn(key,String(seg[2]),String(seg[3]),(Number(seg[1]) - Number(seg[0]) + 0.45) * 1000);
          }
-         if(el > Number(m_TimedClip[m_TimedClip.length - 1][1]) + 0.8)
-         {
-            m_TimedClip = null;
-            return;
-         }
-         if(j == m_iTimedSeg)
-         {
-            return;
-         }
-         m_iTimedSeg = j;
-         if(j < 0)
-         {
-            return;
-         }
-         seg = m_TimedClip[j];
-         ShowSubtitleOn("_clip",String(seg[2]),String(seg[3]),(Number(seg[1]) - Number(seg[0]) + 0.45) * 1000);
       }
       
       internal static function GetStreamSegments() : Array
@@ -392,8 +423,8 @@ METHODS = r"""
          {
             return;
          }
-         UpdateTimedClip();
-         if(m_TimedClip != null)
+         UpdateTimedClips();
+         if(HasTimedClips())
          {
             return;
          }
@@ -1303,10 +1334,12 @@ METHODS = r"""
          timed = GetTimedTable();
          if(timed[szName] != null && m_bSubOn)
          {
-            m_TimedClip = timed[szName] as Array;
-            m_iTimedBase = getTimer();
-            m_iTimedSeg = -1;
-            UpdateTimedClip();
+            if(m_TimedClips == null)
+            {
+               m_TimedClips = new Object();
+            }
+            m_TimedClips[szName] = [timed[szName] as Array,getTimer(),-1];
+            UpdateTimedClips();
             return;
          }
          if(sound.m_Sound != null)
@@ -1450,6 +1483,227 @@ def split_sentences_en(text: str) -> list[str]:
     return [p for p in out if p]
 
 
+# Tokens that survive translation (numbers, callsigns, place names). They anchor
+# a Chinese sentence to the English sentence it translates even when the two
+# languages break sentences differently.
+_ANCHOR_RE = re.compile(r"[A-Za-z]{2,}|\d+(?:\.\d+)?")
+
+
+def _anchor_tokens(text: str) -> list[str]:
+    return _ANCHOR_RE.findall(text.lower())
+
+
+def _shared_anchors(zh_sents: list[str], en_sents: list[str],
+                    max_occ: int = 4) -> list[tuple[int, int]]:
+    """Monotonic ``(zh_index, en_index)`` pairs from shared Latin/number tokens.
+
+    Occurrences of a token are paired in order (a translation may drop or repeat
+    one), reduced to the furthest English sentence per Chinese sentence, then
+    kept only while they stay strictly increasing. Tokens repeated more than
+    ``max_occ`` times are ignored as noise.
+    """
+    ztok: dict[str, list[int]] = {}
+    for i, s in enumerate(zh_sents):
+        for t in _anchor_tokens(s):
+            ztok.setdefault(t, []).append(i)
+    etok: dict[str, list[int]] = {}
+    for j, s in enumerate(en_sents):
+        for t in _anchor_tokens(s):
+            etok.setdefault(t, []).append(j)
+    # One anchor per Chinese sentence: the furthest English sentence its shared
+    # tokens point at. A Chinese sentence that merges two English ones shares a
+    # token with each; anchoring it to the later one keeps the following lines
+    # from sliding back. Deterministic (tokens sorted) so the build is stable.
+    cand: dict[int, int] = {}
+    for t in sorted(set(ztok) & set(etok)):
+        zl, el = ztok[t], etok[t]
+        if len(zl) > max_occ or len(el) > max_occ:
+            continue
+        for zi, ej in zip(zl, el):
+            if zi not in cand or ej > cand[zi]:
+                cand[zi] = ej
+    anchors: list[tuple[int, int]] = []
+    last_e = -1
+    for zi in sorted(cand):
+        if cand[zi] <= last_e:
+            continue
+        anchors.append((zi, cand[zi]))
+        last_e = cand[zi]
+    return anchors
+
+
+def _sentence_alignment(zh_sents: list[str],
+                        en_sents: list[str]) -> list[int] | None:
+    """Align each Chinese sentence to one English sentence (monotonic).
+
+    Chinese and English rarely break sentences at the same place. Aligning one
+    English sentence per Chinese sentence (and vice versa, via gaps) keeps a
+    sentence the translator merged or split with its English counterpart instead
+    of pushing every later Chinese line one slot down -- the "收到" pinned to the
+    previous line bug. Sentences sharing a token (number, callsign, place name)
+    are pinned to each other, so those anchors are never crossed. Returns the
+    English index per Chinese sentence, or ``None`` when it cannot be aligned.
+    """
+    m, n = len(zh_sents), len(en_sents)
+    if not m or not n:
+        return None
+    zl = [max(1, len(s)) for s in zh_sents]
+    el = [max(1, len(s)) for s in en_sents]
+    az, ae = sum(zl) / m, sum(el) / n
+    pinned = dict(_shared_anchors(zh_sents, en_sents))
+
+    def exclam(s: str) -> int:
+        return s.count("!") + s.count("?") + s.count("！") + s.count("？")
+
+    def cost(i: int, j: int) -> float:
+        c = abs(zl[i] / az - el[j] / ae)
+        if exclam(zh_sents[i]) != exclam(en_sents[j]):
+            c += 0.4
+        c -= 0.5 * len(set(_anchor_tokens(zh_sents[i]))
+                       & set(_anchor_tokens(en_sents[j])))
+        return c
+
+    gap = 0.9
+    inf = float("inf")
+    dist = [[inf] * (n + 1) for _ in range(m + 1)]
+    back: list[list[tuple[int, int] | None]] = [[None] * (n + 1)
+                                                for _ in range(m + 1)]
+    dist[0][0] = 0
+    for i in range(m + 1):
+        for j in range(n + 1):
+            cur = dist[i][j]
+            if cur == inf:
+                continue
+            forced = pinned.get(i)
+            if i < m and j < n and (forced is None or forced == j):
+                c = cur + cost(i, j)
+                if c < dist[i + 1][j + 1]:
+                    dist[i + 1][j + 1] = c
+                    back[i + 1][j + 1] = (i, j)
+            if j < n and (forced is None or forced > j):
+                c = cur + gap
+                if c < dist[i][j + 1]:
+                    dist[i][j + 1] = c
+                    back[i][j + 1] = (i, j)
+            if i < m and forced is None:
+                c = cur + gap
+                if c < dist[i + 1][j]:
+                    dist[i + 1][j] = c
+                    back[i + 1][j] = (i, j)
+    if dist[m][n] == inf or back[m][n] is None:
+        return None
+    match: list[int | None] = [None] * m
+    i, j = m, n
+    while i > 0 or j > 0:
+        back_ptr = back[i][j]
+        if back_ptr is None:
+            break
+        pi, pj = back_ptr
+        if i > pi and j > pj:
+            match[pi] = pj
+        i, j = pi, pj
+    for r in range(m):
+        if match[r] is None:
+            prev = next((match[k] for k in range(r - 1, -1, -1)
+                         if match[k] is not None), None)
+            nxt = next((match[k] for k in range(r + 1, m)
+                        if match[k] is not None), None)
+            match[r] = prev if prev is not None else (nxt if nxt is not None else 0)
+    return [int(x) for x in match]
+
+
+def _aligned_zh_segments(zh_sents: list[str], en_sents: list[str],
+                         seg_of_en: list[int], nsegs: int) -> list[int] | None:
+    """ASR segment index per Chinese sentence, or ``None`` if unalignable."""
+    if nsegs <= 0 or not zh_sents or not en_sents:
+        return None
+    match = _sentence_alignment(zh_sents, en_sents)
+    if match is None:
+        return None
+    return [max(0, min(nsegs - 1, seg_of_en[e])) for e in match]
+
+
+def _proportional_zh_segments(zh_sents: list[str], en_sents: list[str],
+                              seg_of_en: list[int], nsegs: int) -> list[int]:
+    """Spread Chinese across segments in proportion to their English sentences."""
+    m = len(zh_sents)
+    if nsegs <= 0 or m == 0:
+        return [0] * m
+    if not en_sents:
+        return [min(nsegs - 1, r * nsegs // m) for r in range(m)]
+    import bisect
+    en_count = [0] * nsegs
+    for e in seg_of_en:
+        en_count[e] += 1
+    cum = [0]
+    for c in en_count:
+        cum.append(cum[-1] + c)
+    out = []
+    for r in range(m):
+        target = (r + 0.5) * len(en_sents) / m
+        out.append(max(0, min(nsegs - 1, bisect.bisect_right(cum, target) - 1)))
+    return out
+
+
+def _zh_distribution_score(zh_seg: list[int], zh_sents: list[str],
+                           en_chars: list[int], tot_zh: int, tot_en: int,
+                           anchors: list[tuple[int, int]],
+                           seg_of_en: list[int]) -> float:
+    """How evenly a Chinese assignment tracks the English content per segment.
+
+    Adds a penalty for a line that carries only one language and for a sentence
+    whose shared-token anchor declares a different segment.
+    """
+    nsegs = len(en_chars)
+    zh_chars = [0] * nsegs
+    for r, s in enumerate(zh_sents):
+        zh_chars[zh_seg[r]] += max(1, len(s))
+    score = 0.0
+    for i in range(nsegs):
+        if en_chars[i] and not zh_chars[i]:
+            score += 1.0
+        elif zh_chars[i] and not en_chars[i]:
+            score += 0.5
+        score += abs(zh_chars[i] / tot_zh - en_chars[i] / tot_en)
+    for zi, ej in anchors:
+        if zh_seg[zi] != seg_of_en[ej]:
+            score += 5.0
+    return score
+
+
+def _best_zh_segments(zh_sents: list[str], en_sents: list[str],
+                      seg_of_en: list[int], nsegs: int) -> list[int]:
+    """Pick the Chinese->segment spread that best matches the English.
+
+    Tries the proportional spread and the word/length sentence alignment, then
+    keeps whichever distributes Chinese content across segments most like the
+    English (and honours shared-token anchors). This avoids both the drift of a
+    pure proportion and the over-eager gaps of a pure length alignment.
+    """
+    m = len(zh_sents)
+    if nsegs <= 0 or m == 0:
+        return [0] * m
+    prop = _proportional_zh_segments(zh_sents, en_sents, seg_of_en, nsegs)
+    candidates = [prop]
+    aligned = _aligned_zh_segments(zh_sents, en_sents, seg_of_en, nsegs)
+    if aligned is not None and aligned != prop:
+        candidates.append(aligned)
+    tot_zh = sum(max(1, len(s)) for s in zh_sents) or 1
+    en_chars = [0] * nsegs
+    for j, e in enumerate(seg_of_en):
+        en_chars[e] += max(1, len(en_sents[j]))
+    tot_en = sum(en_chars) or 1
+    anchors = _shared_anchors(zh_sents, en_sents)
+    best = prop
+    best_score = None
+    for cand in candidates:
+        score = _zh_distribution_score(cand, zh_sents, en_chars, tot_zh, tot_en,
+                                       anchors, seg_of_en)
+        if best_score is None or score < best_score - 1e-9:
+            best_score, best = score, cand
+    return best
+
+
 def _linear_times(
     sents: list[str], total: int, dur: float
 ) -> list[tuple[float, float, str]]:
@@ -1462,6 +1716,102 @@ def _linear_times(
         en = acc / total * dur
         timed.append((round(st, 2), round(en, 2), s))
     return timed
+
+
+_WORD_RE = None
+
+
+def _words(text: str) -> list[str]:
+    import re as _re
+    global _WORD_RE
+    if _WORD_RE is None:
+        _WORD_RE = _re.compile(r"[A-Za-z0-9']+")
+    return _WORD_RE.findall(text.lower())
+
+
+def _asr_aligned_times(
+    sents: list[str], segments: list[dict], dur: float
+) -> list[tuple[float, float, str]] | None:
+    """Time each English sentence from the ASR segments it actually overlaps.
+
+    The ASR segments are the real speech windows; align the (cleaned) English
+    sentences to the segment text word-by-word so a sentence gets the window of
+    the words it contains instead of a proportional guess.  Returns ``None`` when
+    alignment is too weak to trust.
+    """
+    import difflib
+
+    ref: list[tuple[str, int]] = []       # (word, segment index)
+    for si, seg in enumerate(segments):
+        for w in _words(str(seg.get("text") or "")):
+            ref.append((w, si))
+    drv: list[tuple[str, int]] = []       # (word, sentence index)
+    for ti, s in enumerate(sents):
+        for w in _words(s):
+            drv.append((w, ti))
+    if not ref or not drv:
+        return None
+
+    seg_idx: dict[int, list[int]] = {}
+    for i, (_w, si) in enumerate(ref):
+        seg_idx.setdefault(si, []).append(i)
+
+    def ref_time(ri: int) -> float:
+        _w, si = ref[ri]
+        idxs = seg_idx[si]
+        k = idxs.index(ri)
+        a = float(segments[si].get("start") or 0.0)
+        b = float(segments[si].get("end") or 0.0)
+        frac = 0.0 if len(idxs) <= 1 else k / (len(idxs) - 1)
+        return a + frac * (b - a)
+
+    sm = difflib.SequenceMatcher(a=[w for w, _ in drv], b=[w for w, _ in ref],
+                                 autojunk=False)
+    blk = {i: -1 for i in range(len(drv))}
+    matched = 0
+    for a, b, size in sm.get_matching_blocks():
+        for k in range(size):
+            blk[a + k] = b + k
+            matched += 1
+    if matched < max(4, len(drv) // 3):
+        return None
+
+    bounds: list[tuple[float | None, float | None]] = []
+    for ti in range(len(sents)):
+        pts = [ref_time(blk[i]) for i, (_w, t) in enumerate(drv)
+               if t == ti and blk[i] >= 0]
+        bounds.append((min(pts), max(pts)) if pts else (None, None))
+
+    times: list[tuple[float, float]] = []
+    for i, (st, en) in enumerate(bounds):
+        if st is None:
+            # interpolate from the nearest known sentences
+            prev = next((j for j in range(i - 1, -1, -1) if bounds[j][1] is not None), None)
+            nxt = next((j for j in range(i + 1, len(bounds)) if bounds[j][0] is not None), None)
+            if prev is None and nxt is None:
+                return None
+            if prev is None:
+                st = max(0.0, float(bounds[nxt][0]) - 0.4 * (nxt - i))
+            elif nxt is None:
+                st = float(bounds[prev][1]) + 0.4 * (i - prev)
+            else:
+                a = float(bounds[prev][1]); b = float(bounds[nxt][0])
+                st = a + (b - a) * (i - prev) / (nxt - prev)
+            en = st + 0.4
+        times.append((float(st), float(en)))
+
+    out: list[tuple[float, float, str]] = []
+    prev_end = 0.0
+    for s, (st, en) in zip(sents, times):
+        if st < prev_end:
+            st = prev_end
+        if en <= st:
+            en = st + 0.2
+        if dur > 0 and en > dur:
+            en = dur
+        prev_end = en
+        out.append((round(st, 2), round(en, 2), s))
+    return out
 
 
 def _warped_times(
@@ -1518,6 +1868,103 @@ def _warped_times(
     return timed
 
 
+def _sentence_segments(sents: list[str], segments: list[dict]) -> list[int] | None:
+    """Map each sentence to the ASR segment its words best match.
+
+    Word-level alignment against the ASR transcripts; returns ``None`` when the
+    overlap is too weak to trust (caller then falls back to proportional order).
+    """
+    import difflib
+    from collections import Counter
+
+    ref: list[tuple[str, int]] = []       # (word, segment index)
+    for si, seg in enumerate(segments):
+        for w in _words(str(seg.get("text") or "")):
+            ref.append((w, si))
+    drv: list[tuple[str, int]] = []       # (word, sentence index)
+    for ti, s in enumerate(sents):
+        for w in _words(s):
+            drv.append((w, ti))
+    if not ref or not drv:
+        return None
+    sm = difflib.SequenceMatcher(a=[w for w, _ in drv], b=[w for w, _ in ref],
+                                 autojunk=False)
+    votes: dict[int, list[int]] = {}
+    matched = 0
+    for a, b, size in sm.get_matching_blocks():
+        for k in range(size):
+            votes.setdefault(drv[a + k][1], []).append(ref[b + k][1])
+            matched += 1
+    if matched < max(3, len(drv) // 4):
+        return None
+    res: list[int | None] = [None] * len(sents)
+    for ti, sis in votes.items():
+        res[ti] = Counter(sis).most_common(1)[0][0]
+    last = 0
+    for ti in range(len(sents)):
+        if res[ti] is None:
+            nxt = next((j for j in range(ti + 1, len(sents)) if res[j] is not None), None)
+            res[ti] = res[nxt] if nxt is not None else last
+        if res[ti] < last:
+            res[ti] = last
+        last = res[ti]
+    return [int(x) for x in res]
+
+
+def _merged_segment_groups(sents: list[str],
+                           segments: list[dict]) -> list[tuple[int, int]]:
+    """Inclusive ``(lo, hi)`` ASR-segment ranges to show as one subtitle line.
+
+    The recognizer splits speech at pauses, so one CSV sentence often covers
+    several ASR windows. Showing one line per window repeats the sentence on the
+    later window; instead those windows are merged into one line spanning them.
+    Returns every segment exactly once, in order.
+    """
+    n = len(segments)
+    if not sents or n == 0:
+        return [(i, i) for i in range(n)]
+    import difflib
+
+    ref: list[tuple[str, int]] = []       # (word, segment index)
+    for si, seg in enumerate(segments):
+        for w in _words(str(seg.get("text") or "")):
+            ref.append((w, si))
+    drv: list[tuple[str, int]] = []       # (word, sentence index)
+    for ti, s in enumerate(sents):
+        for w in _words(s):
+            drv.append((w, ti))
+    if not ref or not drv:
+        return [(i, i) for i in range(n)]
+    sm = difflib.SequenceMatcher(a=[w for w, _ in drv], b=[w for w, _ in ref],
+                                 autojunk=False)
+    per_sent: dict[int, dict[int, int]] = {}
+    for a, b, size in sm.get_matching_blocks():
+        for k in range(size):
+            counts = per_sent.setdefault(drv[a + k][1], {})
+            si = ref[b + k][1]
+            counts[si] = counts.get(si, 0) + 1
+    hi_of = [-1] * n
+    for counts in per_sent.values():
+        # A sentence has to land with at least two words in two windows before
+        # we merge them; a lone coincidental word must not join distant lines.
+        hit = [si for si, c in counts.items() if c >= 2]
+        if len(hit) >= 2:
+            lo, hi = min(hit), max(hit)
+            for x in range(lo, hi):
+                hi_of[x] = max(hi_of[x], hi)
+    groups: list[tuple[int, int]] = []
+    i = 0
+    while i < n:
+        end = i
+        j = i
+        while j <= end:
+            end = max(end, hi_of[j])
+            j += 1
+        groups.append((i, end))
+        i = end + 1
+    return groups
+
+
 def build_timed_chunks(
     subs: dict[str, str],
     durations: dict[str, float],
@@ -1525,55 +1972,77 @@ def build_timed_chunks(
     min_secs: float = 7.5,
     segments: dict[str, list[dict]] | None = None,
 ) -> tuple[list[tuple[str, list[tuple[float, float, str, str]]]], str]:
-    """Long lines become several timed sub-lines so they aren't one wall of text.
+    """Build one subtitle line per ASR segment, timed by the ASR windows.
 
-    Each sub-line carries the Chinese sentence *and* the matching English
-    sentence, so bilingual display stays aligned line-for-line.  The number of
-    sub-lines is driven by whichever language splits into more sentences (English
-    often has more, e.g. several short sentences the Chinese merges into one), so
-    neither language is left as a single block; the coarser language repeats its
-    sentence across the extra slots instead of dropping it.
+    Each line carries the Chinese and English text that falls inside that ASR
+    segment, so bilingual display stays aligned.  Neighbouring segments that the
+    recognizer split out of a single CSV sentence are shown as one line spanning
+    both windows.  The chat/stream/subtitle timing is exactly the ASR segment
+    start/end -- there is no per-character inference, which drifts whenever a
+    sentence is spoken faster or slower than its text length suggests.  Clips
+    without ASR data collapse to a single line.
     """
     segments = segments or {}
     originals = originals or {}
     entries: list[tuple[str, list[tuple[float, float, str, str]]]] = []
     for cls, text in sorted(subs.items()):
-        dur = float(durations.get(cls, 0.0))
-        if not text or dur < min_secs:
+        if not text:
             continue
         zh_sents = split_sentences(text)
         if not zh_sents:
             continue
+        dur = float(durations.get(cls, 0.0))
         en = str(originals.get(cls) or "").strip()
         en_sents = split_sentences_en(en) if en else []
-        # Drive the timeline with the language that has finer sentences so both
-        # sides advance; if they are equal this is an exact 1:1 pairing.
-        driver = en_sents if len(en_sents) > len(zh_sents) else zh_sents
-        if len(driver) < 2:
-            continue
-        total = sum(len(s) for s in driver) or 1
         segs = [
             s
             for s in (segments.get(cls) or [])
             if float(s.get("end") or 0.0) > float(s.get("start") or 0.0)
         ]
-        timed = (
-            _warped_times(driver, total, segs, dur)
-            if segs
-            else _linear_times(driver, total, dur)
-        )
-        n = len(timed)
         pairs: list[tuple[float, float, str, str]] = []
-        for i, (st, en_t, _driver_text) in enumerate(timed):
-            zi = i * len(zh_sents) // n
-            if zi > len(zh_sents) - 1:
-                zi = len(zh_sents) - 1
-            ei = i * len(en_sents) // n if en_sents else -1
-            if ei > len(en_sents) - 1:
-                ei = len(en_sents) - 1
-            pairs.append((st, en_t, zh_sents[zi],
-                          en_sents[ei] if ei >= 0 else ""))
-        entries.append((cls, pairs))
+        if segs:
+            # One subtitle line per ASR segment, using the segment's own start/end
+            # verbatim -- exactly like a video subtitle track.  English sentences
+            # are attached to the segment whose transcribed words they match;
+            # Chinese follows sentence order.  No character-count interpolation is
+            # used, so a fast or slow delivery no longer drifts out of sync.
+            seg_of_en = _sentence_segments(en_sents, segs)
+            if seg_of_en is None:
+                seg_of_en = [
+                    min(len(segs) - 1, i * len(segs) // len(en_sents))
+                    for i in range(len(en_sents))
+                ] if en_sents else []
+            en_groups: list[list[str]] = [[] for _ in segs]
+            for i, s in enumerate(en_sents):
+                en_groups[seg_of_en[i]].append(s)
+            zh_groups: list[list[str]] = [[] for _ in segs]
+            # Spread Chinese across the segments so its content lands on the
+            # same lines as its English counterpart. This keeps a merged/split
+            # sentence with its own line instead of shifting every later line
+            # (the "收到" pinned to the previous line bug).
+            zh_seg = _best_zh_segments(zh_sents, en_sents, seg_of_en, len(segs))
+            for r, s in enumerate(zh_sents):
+                zh_groups[zh_seg[r]].append(s)
+            for lo, hi in _merged_segment_groups(en_sents, segs):
+                st = round(float(segs[lo].get("start") or 0.0), 2)
+                en_t = round(float(segs[hi].get("end") or 0.0), 2)
+                zt = "".join("".join(zh_groups[k]) for k in range(lo, hi + 1))
+                et = " ".join(" ".join(en_groups[k])
+                              for k in range(lo, hi + 1)).strip()
+                if not et and not en:
+                    # No translation source at all: fall back to the recognizer's
+                    # own English so the line is not silently dropped.
+                    et = " ".join(str(segs[k].get("text") or "").strip()
+                                  for k in range(lo, hi + 1)).strip()
+                if not zt and not et:
+                    continue
+                pairs.append((st, en_t, zt, et))
+        else:
+            # No ASR segment for this clip: fall back to a single line spanning it.
+            pairs.append((0.0, round(dur, 2) if dur > 0 else 0.0,
+                          "".join(zh_sents), " ".join(en_sents)))
+        if pairs:
+            entries.append((cls, pairs))
 
     pieces: list[str] = []
     cur: list[str] = []
