@@ -816,16 +816,19 @@ as3_RDUpgradeScreen_29,Upgrade Tires,升级轮胎,RDUpgradeScreen.as
 as3_RDWeaponM16_1,Assault Rifle,突击步枪,RDWeaponM16.as
 as3_RDWeaponM16_2,The Assault Rifle is a well rounded military issued weapon.  It offers good precision on medium bursts but isn\'t the most easy to handle weapon.,突击步枪是一款均衡的军用制式武器。中距离点射精度不错，但算不上最易操控的武器。,RDWeaponM16.as
 as3_RDWeaponM60_1,The Large Machine Gun (LMG) doesn\'t have good accuracy but makes up for it in fire power and magazine size. Reloading is slow so be careful.,大型机枪（LMG）精度不高，但以火力和弹匣容量弥补。装填较慢，务必小心。,RDWeaponM60.as
+as3_RDWeaponM60_2,LMG,轻机枪,RDWeaponM60.as
 as3_RDWeaponMAC11_1,Compact SMG,紧凑冲锋枪,RDWeaponMAC11.as
 as3_RDWeaponMAC11_2,"The Compact SMG is a light weight weapon that is easy to handle but doesn\'t have the best accuracy, it works best with small bursts.",紧凑冲锋枪是一款轻便易操控的武器，但精度不算最佳，最好采用短点射。,RDWeaponMAC11.as
 as3_RDWeaponMP5_1,Assault SMG,突击冲锋枪,RDWeaponMP5.as
 as3_RDWeaponMP5_2,"The Assault SMG is a responsive weapon that offers a good balance between aiming speed, handling, damage and mag size.",突击冲锋枪是一款响应灵敏的武器，在瞄准速度、操控、伤害和弹匣容量之间平衡良好。,RDWeaponMP5.as
 as3_RDWeaponMountedMG_1,Mounted MG,车载机枪,RDWeaponMountedMG.as
 as3_RDWeaponPistol_1,"The pistol offers a great aiming speed but low damage and hard handling on collisions.  However, in dire situations, you can always count on this hand weapon.",手枪瞄准速度极快，但伤害低，碰撞时操控困难。不过危急时刻，这把随身武器总能派上用场。,RDWeaponPistol.as
+as3_RDWeaponPistol_2,Pistol,手枪,RDWeaponPistol.as
 as3_RDWeaponRocketLauncher_1,Rocket Launcher,火箭发射器,RDWeaponRocketLauncher.as
 as3_RDWeaponSPAS12_1,Auto Shotgun,自动霰弹枪,RDWeaponSPAS12.as
 as3_RDWeaponSPAS12_2,The auto shotgun delivers quick and powerful shots at short range. Very inaccurate at long range. Torso shots have a chance to splatter the zombie.,自动霰弹枪在近距离射速快、威力大。远距离极不精准。击中躯干有一定几率把丧尸打爆。,RDWeaponSPAS12.as
 as3_RDWeaponShotgun_1,"The Shotgun is powerful at close range. Be mindful, reloading is slow but can be interrupted. Torso shots have a chance to splatter the zombie.",霰弹枪在近距离威力巨大。注意，装弹速度慢，但可以中断。击中躯干有一定几率把丧尸打爆。,RDWeaponShotgun.as
+as3_RDWeaponShotgun_2,Shotgun,霰弹枪,RDWeaponShotgun.as
 as3_RDZombie_1,FUCK: StartCling already taken,妈的：StartCling 已被占用,RDZombie.as
 as3_RoadOfTheDead_fla_HighScoreDeadOnTime_2559_1,High Scores,最高分,RoadOfTheDead_fla\HighScoreDeadOnTime_2559.as
 as3_RoadOfTheDead_fla_HighScoreDeadOnTime_2559_2,Out Of Time Distance,限时距离,RoadOfTheDead_fla\HighScoreDeadOnTime_2559.as
@@ -943,6 +946,8 @@ as3_RDGameModeGameplay_29,Toughness,坚韧,RDGameModeGameplay.as
 as3_RDHud_36,Headshots,爆头,RDHud.as
 as3_RDHud_37,RP Earned,获得 RP,RDHud.as
 as3_RDHud_38,"\""\nadded!","\""\n已添加！",RDHud.as
+as3_RDHud_39,Diane,黛安,RDHud.as
+as3_RDHud_40,Cocheta,科切塔,RDHud.as
 as3_RDGameModeStory_25,Progress Saved...,进度已保存……,RDGameModeStory.as
 as3_RDGameModeChopperRescue_5, Civilian, 名平民,RDGameModeChopperRescue.as
 as3_RDGameModeChopperRescue_6, Rescued.,获救。,RDGameModeChopperRescue.as
