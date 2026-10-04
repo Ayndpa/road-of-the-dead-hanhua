@@ -39,25 +39,25 @@ as3_RDAchievement_002,Beat The Great Escape,通关《亡命大逃亡》,RDAchiev
 as3_RDAchievement_003,Beat Highway To Hell,通关《地狱公路》,RDAchievement.as
 as3_RDAchievement_004,"""Dead On Time""","""准时赴死""",RDAchievement.as
 as3_RDAchievement_005,One Man Army,孤胆英雄,RDAchievement.as
-as3_RDAchievement_006,Tank,铁甲战车,RDAchievement.as
-as3_RDAchievement_007,Buy all the upgrades,购买全部升级,RDAchievement.as
-as3_RDAchievement_008,Hood Shaker,甩盖高手,RDAchievement.as
+as3_RDAchievement_006,Tank,坦克,RDAchievement.as
+as3_RDAchievement_007,Buy all the upgrades,购买全部升级选项,RDAchievement.as
+as3_RDAchievement_008,Hood Shaker,引擎盖振动器,RDAchievement.as
 as3_RDAchievement_009,Knock an enemy off your hood by hitting the side walls,撞击侧墙，把敌人从引擎盖上甩下去,RDAchievement.as
 as3_RDAchievement_010,Gunslinger,神枪手,RDAchievement.as
-as3_RDAchievement_011,Shoot an enemy off your hood with the pistol,用手枪把引擎盖上的敌人打下去,RDAchievement.as
+as3_RDAchievement_011,Shoot an enemy off your hood with the pistol,用手枪把引擎盖上的敌人干下去,RDAchievement.as
 as3_RDAchievement_012,Hydroficial Intelligence,水攻智取,RDAchievement.as
-as3_RDAchievement_013,Use a water jug to put off your burning engine,用水壶浇灭着火的引擎,RDAchievement.as
+as3_RDAchievement_013,Use a water jug to put off your burning engine,用水桶熄灭着火的引擎,RDAchievement.as
 as3_RDAchievement_014,Road Warrior,公路战士,RDAchievement.as
-as3_RDAchievement_015,Defeat a helicopter,击落一架直升机,RDAchievement.as
+as3_RDAchievement_015,Defeat a helicopter,击落一架地狱火直升机,RDAchievement.as
 as3_RDAchievement_016,Blunt Force Trauma,钝器创伤,RDAchievement.as
 as3_RDAchievement_017,Flip Flop,翻个底朝天,RDAchievement.as
 as3_RDAchievement_018,Meticulous,一丝不苟,RDAchievement.as
 as3_RDAchievement_019,Quick Draw,快枪手,RDAchievement.as
-as3_RDAchievement_020,Shoot a soldier while he\'s pointing his gun at you and before he shoots,在士兵举枪瞄准你、还没开枪时射杀他,RDAchievement.as
+as3_RDAchievement_020,Shoot a soldier while he\'s pointing his gun at you and before he shoots,在士兵举枪瞄准你、还没开枪之前射杀他,RDAchievement.as
 as3_RDAchievement_021,Speed Racer,飙车手,RDAchievement.as
 as3_RDAchievement_022,Don\'t Need Wheels,不需要轮子,RDAchievement.as
 as3_RDAchievement_023,Pinball,弹珠机,RDAchievement.as
-as3_RDAchievement_024,Nuke Watcher,核弹见证者,RDAchievement.as
+as3_RDAchievement_024,Nuke Watcher,核弹守望者,RDAchievement.as
 as3_RDAchievement_025,Time To Spare,时间充裕,RDAchievement.as
 as3_RDAchievement_026,Road Dominator,公路霸主,RDAchievement.as
 as3_RDAchievement_027,Zombie Sniper,僵尸狙击手,RDAchievement.as
@@ -72,14 +72,14 @@ as3_RDAchievement_035,""" KM in Police State""",""" 公里（《警察国度》�
 as3_RDAchievement_036,""" KM at maximum speed""",""" 公里（最高速度）""",RDAchievement.as
 as3_RDAchievement_037,""" KM with all 4 tires blown""",""" 公里（四条轮胎全爆）""",RDAchievement.as
 as3_RDAchievement_038,"""Do a ""","""完成 """,RDAchievement.as
-as3_RDAchievement_039,""" hits combo with zombies only""",""" 次纯僵尸连击""",RDAchievement.as
-as3_RDAchievement_040,""" hits vehicle collision combo""",""" 次车辆撞击连击""",RDAchievement.as
+as3_RDAchievement_039,""" hits combo with zombies only""",""" 僵尸连击""",RDAchievement.as
+as3_RDAchievement_040,""" hits vehicle collision combo""",""" 车辆撞击连击""",RDAchievement.as
 as3_RDAchievement_041,"""Do ""","""完成 """,RDAchievement.as
-as3_RDAchievement_042,""" zombie splatter hits""",""" 次僵尸飞溅命中""",RDAchievement.as
+as3_RDAchievement_042,""" zombie splatter hits""",""" 僵尸飞溅命中""",RDAchievement.as
 as3_RDAchievement_043,"""Hit ""","""撞击 """,RDAchievement.as
-as3_RDAchievement_044,""" enemies, alternating between zombie and soldier or vice versa""",""" 个敌人，在僵尸和士兵之间交替""",RDAchievement.as
-as3_RDAchievement_045,""" highway soldiers""",""" 名公路士兵""",RDAchievement.as
-as3_RDAchievement_046,""" civilians""",""" 名平民""",RDAchievement.as
+as3_RDAchievement_044,""" enemies, alternating between zombie and soldier or vice versa""",""" 在僵尸和士兵之间交替撞击""",RDAchievement.as
+as3_RDAchievement_045,""" highway soldiers""",""" 公路士兵""",RDAchievement.as
+as3_RDAchievement_046,""" civilians""",""" 平民""",RDAchievement.as
 as3_RDAchievement_047,"""Kill ""","""在单次逃亡中低速撞死 """,RDAchievement.as
 as3_RDAchievement_048,""" zombies at low speed in a single run""",""" 只僵尸""",RDAchievement.as
 as3_RDAchievement_049,"""Avoid ""","""躲开 """,RDAchievement.as
@@ -188,19 +188,17 @@ as3_RDGameModeGarage_004,"""Firearm""","""枪械""",RDGameModeGarage.as
 as3_RDGameModeGarage_005,"""Windshield""","""挡风玻璃""",RDGameModeGarage.as
 as3_RDGameModeGarage_006,"""Engine""","""引擎""",RDGameModeGarage.as
 as3_RDGameModeGarage_007,"""Bumper""","""保险杠""",RDGameModeGarage.as
-as3_RDGameModeGarage_008,"""Tires""","""轮胎""",RDGameModeGarage.as
-as3_RDGameModeGarage_009,"""Horn""","""喇叭""",RDGameModeGarage.as
 as3_RDGameModeMilitary_000,Police State Distance,《警察国度》距离,RDGameModeMilitary.as
 as3_RDGameModeMilitary_001,Dead On Time Distance,《准时赴死》距离,RDGameModeMilitary.as
 as3_RDGameModeStory_000,Evans City,埃文斯城,RDGameModeStory.as
 as3_RDGameModeStory_001,Monroeville,门罗维尔,RDGameModeStory.as
 as3_RDGameModeStory_002,Red Ridge,红岭,RDGameModeStory.as
-as3_RDGameModeStory_003,Burgony Street,勃艮第街,RDGameModeStory.as
-as3_RDGameModeStory_004,Central City,中央城,RDGameModeStory.as
+as3_RDGameModeStory_003,Burgony Street,布鲁根街,RDGameModeStory.as
+as3_RDGameModeStory_004,Central City,市中央,RDGameModeStory.as
 as3_RDGameModeStory_005,Down Town,市中心,RDGameModeStory.as
 as3_RDGameModeStory_006,Chinatown,唐人街,RDGameModeStory.as
 as3_RDGameModeStory_007,Brighton Square,布莱顿广场,RDGameModeStory.as
-as3_RDGameModeStory_008,North Side Park,北区公园,RDGameModeStory.as
+as3_RDGameModeStory_008,North Side Park,城北公园,RDGameModeStory.as
 as3_RDGameModeStory_009,West Ridge,西岭,RDGameModeStory.as
 as3_RDGameModeStory_010,Tunnel Drive,隧道大道,RDGameModeStory.as
 as3_RDGameModeStory_011,Progress Saved...,进度已保存……,RDGameModeStory.as
@@ -233,3 +231,5 @@ as3_RDUnlockItem_020,Tires 3,轮胎 3,RDUnlockItem.as
 as3_RDUnlockItem_021,Horn 1,喇叭 1,RDUnlockItem.as
 as3_RDUnlockItem_022,Horn 2,喇叭 2,RDUnlockItem.as
 as3_RDUnlockItem_023,Horn 3,喇叭 3,RDUnlockItem.as
+as3_RDGameModeGarage_008,"""Tires""","""轮胎""",RDGameModeGarage.as
+as3_RDGameModeGarage_009,"""Horn""","""喇叭""",RDGameModeGarage.as

@@ -64,7 +64,7 @@ def main() -> int:
     # build_all.py now derives the per-face charsets, instantiates the Noto Sans
     # SC weights and subsets every CJK face itself (see the font map there).
     run(py("pipeline/ui/build_all.py", "--orig", args.orig), "splice + compile")
-    print(f"\ndone -> {ROOT / 'dist' / 'rotl-zh-full.swf'}")
+    print(f"\ndone -> {ROOT / 'dist' / 'rotd-zh.swf'}")
     return 0
 
 

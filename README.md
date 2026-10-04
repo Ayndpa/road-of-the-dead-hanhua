@@ -20,7 +20,7 @@
 | 标题 logo、制作名单、数字保持原始字体设计 | ✅ 逐字节未改动 |
 | 主菜单按钮（矢量图形文字） | ✅ 已用 Dirty Ego 风格中文矢量重绘 |
 
-构建产物：`dist/rotl-zh-full.swf`
+构建产物：`dist/rotd-zh.swf`
 
 ---
 
@@ -29,7 +29,7 @@
 ```
 dist/                游戏文件（统一放这里）
   Road-Of-The-Dead.swf 原版游戏
-  rotl-zh-full.swf     汉化版（构建产物）
+  rotd-zh.swf     汉化版（构建产物）
 pipeline/            所有脚本（按功能分包，见 pipeline/README.md）
   build.py             一代完整构建入口
   lib/                 共享库（翻译读取 / 字体重映射 / 标签对齐）

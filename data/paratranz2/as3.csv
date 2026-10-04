@@ -1,4 +1,3 @@
-key,original,translation,context
 as3_BasicGame_1,Could not load the ArmorGames API!\nArmorGames features are disabled.,无法加载 ArmorGames API！\nArmorGames 功能已禁用。,BasicGame.as
 as3_BasicGame_2,Could not load the ArmorGames Interface!\nArmorGames features are disabled.,无法加载 ArmorGames 接口！\nArmorGames 功能已禁用。,BasicGame.as
 as3_BasicGame_3,Could not load the Kongregate API!\nChallenges are disabled.,无法加载 Kongregate API！\n挑战已禁用。,BasicGame.as
@@ -13,9 +12,9 @@ as3_MC_DistanceStatsScreen_1,High Scores,最高分,MC_DistanceStatsScreen.as
 as3_MC_DistanceStatsScreen_2,Out Of Time Distance,限时模式距离,MC_DistanceStatsScreen.as
 as3_RDAchievement_1,Acquire all guns,获得所有枪械,RDAchievement.as
 as3_RDAchievement_2,Acquire all perks,获得所有技能,RDAchievement.as
-as3_RDAchievement_3,Armed to the teeth,武装到牙齿,RDAchievement.as
+as3_RDAchievement_3,Armed to the teeth,全副武装,RDAchievement.as
 as3_RDAchievement_4,"Been there, Killed that",来过，杀过,RDAchievement.as
-as3_RDAchievement_5,Blow both arms and then the head off of a hood grappling zombie,炸掉一只连帽扑咬丧尸的双臂，再打掉它的头,RDAchievement.as
+as3_RDAchievement_5,Blow both arms and then the head off of a hood grappling zombie,打掉一只爬上车的丧尸双臂，再打掉它的头,RDAchievement.as
 as3_RDAchievement_6,Blow something up to kill 2 or more zombies,炸死至少2只丧尸,RDAchievement.as
 as3_RDAchievement_7,Blow up 100 vehicles with the mounted weapons,用车载武器炸毁100辆载具,RDAchievement.as
 as3_RDAchievement_8,Blunt Force Trauma,钝器重创,RDAchievement.as
@@ -29,7 +28,7 @@ as3_RDAchievement_15,Dead on Time,准时赴死,RDAchievement.as
 as3_RDAchievement_16,Death Race,死亡竞速,RDAchievement.as
 as3_RDAchievement_17,Destroy a fire hydrant and use its water to extinguish your engine fire,摧毁消防栓，用喷出的水浇灭引擎上的火,RDAchievement.as
 as3_RDAchievement_18,Don\'t hit anything after sliding through an oil slick,滑过油渍后不撞到任何东西,RDAchievement.as
-as3_RDAchievement_19,Don\'t let any zombie reach your vehicle during a task stop,任务停留期间不让任何丧尸接触到你的车,RDAchievement.as
+as3_RDAchievement_19,Don\'t let any zombie reach your vehicle during a task stop,在互动物品期间不让任何丧尸接触到你的车,RDAchievement.as
 as3_RDAchievement_20,Drive 3km with no wheels,在没有车轮的情况下行驶3公里,RDAchievement.as
 as3_RDAchievement_21,Drive through all location types,驶过所有类型的地点,RDAchievement.as
 as3_RDAchievement_22,Expert Marksman,神射手,RDAchievement.as
@@ -43,16 +42,16 @@ as3_RDAchievement_29,Ground Beef,肉酱,RDAchievement.as
 as3_RDAchievement_30,Gun Slinger,快枪手,RDAchievement.as
 as3_RDAchievement_31,Hardcore Survival,硬核生存,RDAchievement.as
 as3_RDAchievement_32,Heaven Sent,天降神兵,RDAchievement.as
-as3_RDAchievement_33,Hydroficially Evolved,水力进化,RDAchievement.as
+as3_RDAchievement_33,Hydroficially Evolved,消防进化,RDAchievement.as
 as3_RDAchievement_34,I\'m state of the badass art!,我就是狠角色中的顶配！,RDAchievement.as
 as3_RDAchievement_35,I\'m the Alpha,我是老大,RDAchievement.as
 as3_RDAchievement_36,I\'ve seen things...,我见过不少世面……,RDAchievement.as
-as3_RDAchievement_37,"In F.U.B.A.R. mode, headshot a hood soldier right before he fires his pistol",在F.U.B.A.R.模式中，趁连帽士兵开枪前爆头击杀他,RDAchievement.as
+as3_RDAchievement_37,"In F.U.B.A.R. mode, headshot a hood soldier right before he fires his pistol",在F.U.B.A.R.模式中，趁爬上车的士兵开枪前爆头击杀他,RDAchievement.as
 as3_RDAchievement_38,"In Rescue Op, don\'t let a single civilian die for 3 rounds in a row",在救援行动中，连续3轮不让任何平民死亡,RDAchievement.as
 as3_RDAchievement_39,Into the Wild Blue Yonder,飞向蓝天,RDAchievement.as
 as3_RDAchievement_40,Kill 100 zombies with your vehicle,用载具碾死100只丧尸,RDAchievement.as
-as3_RDAchievement_41,Kill an alpha mutant with a pistol,用手枪杀死一只阿尔法变异体,RDAchievement.as
-as3_RDAchievement_42,Kill one of each enemy type,杀死每一种敌人各一只,RDAchievement.as
+as3_RDAchievement_41,Kill an alpha mutant with a pistol,用手枪杀死一只阿尔法突变体,RDAchievement.as
+as3_RDAchievement_42,Kill one of each enemy type,杀死每一种敌人.,RDAchievement.as
 as3_RDAchievement_43,Knowledge is Survival,知识即生存,RDAchievement.as
 as3_RDAchievement_44,Locked and Loaded,子弹上膛,RDAchievement.as
 as3_RDAchievement_45,Maintain max speed for 0.5km,保持最高速度行驶0.5公里,RDAchievement.as
@@ -67,8 +66,8 @@ as3_RDAchievement_53,Piece By Piece,一块一块,RDAchievement.as
 as3_RDAchievement_54,Pills Here!,这里有药！,RDAchievement.as
 as3_RDAchievement_55,Quick Draw,拔枪神速,RDAchievement.as
 as3_RDAchievement_56,Rapid Response,快速反应,RDAchievement.as
-as3_RDAchievement_57,Reach 20km in Dead State,在死亡之州模式中到达20公里,RDAchievement.as
-as3_RDAchievement_58,Reach 20km in Mutant Meltdown,在变异体熔毁模式中到达20公里,RDAchievement.as
+as3_RDAchievement_57,Reach 20km in Dead State,在死亡国度模式中到达20公里,RDAchievement.as
+as3_RDAchievement_58,Reach 20km in Mutant Meltdown,在突变体危机模式中到达20公里,RDAchievement.as
 as3_RDAchievement_59,Reach max levels on at least one character,至少让一名角色达到满级,RDAchievement.as
 as3_RDAchievement_60,Remove a mutant side grapple by grinding it off on a rail or wall,把侧向扑咬的变异体蹭到护栏或墙上甩掉,RDAchievement.as
 as3_RDAchievement_61,Rescue and secure a civilian,救出并保护一名平民,RDAchievement.as
@@ -553,7 +552,7 @@ as3_RDGame_88,"Visit Newgrounds.com, our sponsor, and play a ton more awesome ga
 as3_RDGame_89,Watermelon Day,西瓜日,RDGame.as
 as3_RDGame_90,Where do you wanna start\nHighway To Hell?,你想从哪儿开始\n地狱公路？,RDGame.as
 as3_RDGame_91,Where do you wanna start\nLost Guns?,你想从哪儿开始\n亡命孤军？,RDGame.as
-as3_RDGame_92,"You\'re going rogue as the military operation is doomed to fail.  As deserters, you become the enemy.",军事行动注定失败，你将铤而走险。作为逃兵，你会沦为敌人。,RDGame.as
+as3_RDGame_92,"You\'re going rogue as the military operation is doomed to fail.  As deserters, you become the enemy.",在一场注定失败的军事行动里，你选择作为了逃兵，那自然你也会沦为敌人。,RDGame.as
 as3_RDGame_93,Zombie HP Factor,丧尸生命值系数,RDGame.as
 as3_RDGame_94,Zombie Speed Factor,丧尸速度系数,RDGame.as
 as3_RDGame_95,Zombie Tints,丧尸肤色,RDGame.as
@@ -598,7 +597,7 @@ as3_RDGameModeGameplay_22,"Your vehicle and weapons are ugpraded by stopping at 
 as3_RDGameModeMutant_1,Mutant Meltdown Distance,变异体熔毁距离,RDGameModeMutant.as
 as3_RDGameModeStory_1,Candor Hill,坎多山,RDGameModeStory.as
 as3_RDGameModeStory_2,Evans City,埃文斯城,RDGameModeStory.as
-as3_RDGameModeStory_3,Meridian Avenue,子午线大道,RDGameModeStory.as
+as3_RDGameModeStory_3,Meridian Avenue,子午大道,RDGameModeStory.as
 as3_RDGameModeTime_1,Out Of Time Distance,时间耗尽距离,RDGameModeTime.as
 as3_RDHelp_1,All types of mine emit beeping sounds so be aware of the surrounding sounds through the chaos.,各类地雷都会发出嘟嘟声，所以在混乱中要留意周围的声音。,RDHelp.as
 as3_RDHelp_2,An armless zombie on your hood is much easier to knock off.,引擎盖上没有手臂的丧尸更容易被甩掉。,RDHelp.as
@@ -752,7 +751,7 @@ as3_RDPlayer_34,Upgrading Engine,升级引擎,RDPlayer.as
 as3_RDPlayer_35,Upgrading Tires,升级轮胎,RDPlayer.as
 as3_RDUnlockData_1,Abandoned Vehicles,废弃车辆,RDUnlockData.as
 as3_RDUnlockData_2,Accuracy affects the bullet spread from firing and the kick back for shotguns. It also affects how fast the bullet spread and kick back recover.,精准度影响开火时的子弹散布和霰弹枪的后坐力，也影响子弹散布和后坐力恢复的速度。,RDUnlockData.as
-as3_RDUnlockData_3,Alpha Mutant Tactics,阿尔法变异体战术,RDUnlockData.as
+as3_RDUnlockData_3,Alpha Mutant Tactics,阿尔法突变体战术,RDUnlockData.as
 as3_RDUnlockData_4,Alpha Mutants,阿尔法变异体,RDUnlockData.as
 as3_RDUnlockData_5,Army Vehicles,军用车辆,RDUnlockData.as
 as3_RDUnlockData_6,Attack Choppers,攻击直升机,RDUnlockData.as
@@ -816,19 +815,16 @@ as3_RDUpgradeScreen_29,Upgrade Tires,升级轮胎,RDUpgradeScreen.as
 as3_RDWeaponM16_1,Assault Rifle,突击步枪,RDWeaponM16.as
 as3_RDWeaponM16_2,The Assault Rifle is a well rounded military issued weapon.  It offers good precision on medium bursts but isn\'t the most easy to handle weapon.,突击步枪是一款均衡的军用制式武器。中距离点射精度不错，但算不上最易操控的武器。,RDWeaponM16.as
 as3_RDWeaponM60_1,The Large Machine Gun (LMG) doesn\'t have good accuracy but makes up for it in fire power and magazine size. Reloading is slow so be careful.,大型机枪（LMG）精度不高，但以火力和弹匣容量弥补。装填较慢，务必小心。,RDWeaponM60.as
-as3_RDWeaponM60_2,LMG,轻机枪,RDWeaponM60.as
 as3_RDWeaponMAC11_1,Compact SMG,紧凑冲锋枪,RDWeaponMAC11.as
 as3_RDWeaponMAC11_2,"The Compact SMG is a light weight weapon that is easy to handle but doesn\'t have the best accuracy, it works best with small bursts.",紧凑冲锋枪是一款轻便易操控的武器，但精度不算最佳，最好采用短点射。,RDWeaponMAC11.as
 as3_RDWeaponMP5_1,Assault SMG,突击冲锋枪,RDWeaponMP5.as
 as3_RDWeaponMP5_2,"The Assault SMG is a responsive weapon that offers a good balance between aiming speed, handling, damage and mag size.",突击冲锋枪是一款响应灵敏的武器，在瞄准速度、操控、伤害和弹匣容量之间平衡良好。,RDWeaponMP5.as
 as3_RDWeaponMountedMG_1,Mounted MG,车载机枪,RDWeaponMountedMG.as
 as3_RDWeaponPistol_1,"The pistol offers a great aiming speed but low damage and hard handling on collisions.  However, in dire situations, you can always count on this hand weapon.",手枪瞄准速度极快，但伤害低，碰撞时操控困难。不过危急时刻，这把随身武器总能派上用场。,RDWeaponPistol.as
-as3_RDWeaponPistol_2,Pistol,手枪,RDWeaponPistol.as
 as3_RDWeaponRocketLauncher_1,Rocket Launcher,火箭发射器,RDWeaponRocketLauncher.as
 as3_RDWeaponSPAS12_1,Auto Shotgun,自动霰弹枪,RDWeaponSPAS12.as
 as3_RDWeaponSPAS12_2,The auto shotgun delivers quick and powerful shots at short range. Very inaccurate at long range. Torso shots have a chance to splatter the zombie.,自动霰弹枪在近距离射速快、威力大。远距离极不精准。击中躯干有一定几率把丧尸打爆。,RDWeaponSPAS12.as
 as3_RDWeaponShotgun_1,"The Shotgun is powerful at close range. Be mindful, reloading is slow but can be interrupted. Torso shots have a chance to splatter the zombie.",霰弹枪在近距离威力巨大。注意，装弹速度慢，但可以中断。击中躯干有一定几率把丧尸打爆。,RDWeaponShotgun.as
-as3_RDWeaponShotgun_2,Shotgun,霰弹枪,RDWeaponShotgun.as
 as3_RDZombie_1,FUCK: StartCling already taken,妈的：StartCling 已被占用,RDZombie.as
 as3_RoadOfTheDead_fla_HighScoreDeadOnTime_2559_1,High Scores,最高分,RoadOfTheDead_fla\HighScoreDeadOnTime_2559.as
 as3_RoadOfTheDead_fla_HighScoreDeadOnTime_2559_2,Out Of Time Distance,限时距离,RoadOfTheDead_fla\HighScoreDeadOnTime_2559.as
@@ -889,22 +885,22 @@ as3_RDGameModeStory_4,Thornhill Road,桑希尔路,RDGameModeStory.as
 as3_RDGameModeStory_5,Woodmere,伍德米尔,RDGameModeStory.as
 as3_RDGameModeStory_6,North Logan,北洛根,RDGameModeStory.as
 as3_RDGameModeStory_7,Greater Renton,大伦顿,RDGameModeStory.as
-as3_RDGameModeStory_8,Bonaventure Plaza,博纳文图拉广场,RDGameModeStory.as
+as3_RDGameModeStory_8,Bonaventure Plaza,柏文顿广场,RDGameModeStory.as
 as3_RDGameModeStory_9,Burnaby Street,本拿比街,RDGameModeStory.as
 as3_RDGameModeStory_10,Clifton Square,克利夫顿广场,RDGameModeStory.as
-as3_RDGameModeStory_11,Juneau Street,朱诺街,RDGameModeStory.as
-as3_RDGameModeStory_12,West Middletown,西米德尔敦,RDGameModeStory.as
+as3_RDGameModeStory_11,Juneau Street,朱诺大街,RDGameModeStory.as
+as3_RDGameModeStory_12,West Middletown,西镇,RDGameModeStory.as
 as3_RDGameModeStory_13,Madera District,马德拉区,RDGameModeStory.as
 as3_RDGameModeStory_14,Down Town,市中心,RDGameModeStory.as
 as3_RDGameModeStory_15,Chinatown,唐人街,RDGameModeStory.as
 as3_RDGameModeStory_16,Brighton Square,布莱顿广场,RDGameModeStory.as
 as3_RDGameModeStory_17,Sylmar Avenue,西尔玛大道,RDGameModeStory.as
-as3_RDGameModeStory_18,Northside Park,北区公园,RDGameModeStory.as
+as3_RDGameModeStory_18,Northside Park,城北公园,RDGameModeStory.as
 as3_RDGameModeStory_19,Northside Cemetery,北区公墓,RDGameModeStory.as
-as3_RDGameModeStory_20,East Entrance,东入口,RDGameModeStory.as
+as3_RDGameModeStory_20,East Entrance,东区入口,RDGameModeStory.as
 as3_RDGameModeStory_21,Clearwater,克利尔沃特,RDGameModeStory.as
 as3_RDGameModeStory_22,East Finchley,东芬奇利,RDGameModeStory.as
-as3_RDGameModeStory_23,Fairview Mall,费尔维尤购物中心,RDGameModeStory.as
+as3_RDGameModeStory_23,Fairview Mall,绵修商场,RDGameModeStory.as
 as3_RDGameModeStory_24,Flyboy One,飞行小子一号,RDGameModeStory.as
 as3_RDUpgradeScreen_30,Damage,伤害,RDUpgradeScreen.as
 as3_RDUpgradeScreen_31,Accuracy,精准度,RDUpgradeScreen.as
@@ -946,8 +942,6 @@ as3_RDGameModeGameplay_29,Toughness,坚韧,RDGameModeGameplay.as
 as3_RDHud_36,Headshots,爆头,RDHud.as
 as3_RDHud_37,RP Earned,获得 RP,RDHud.as
 as3_RDHud_38,"\""\nadded!","\""\n已添加！",RDHud.as
-as3_RDHud_39,Diane,黛安,RDHud.as
-as3_RDHud_40,Cocheta,科切塔,RDHud.as
 as3_RDGameModeStory_25,Progress Saved...,进度已保存……,RDGameModeStory.as
 as3_RDGameModeChopperRescue_5, Civilian, 名平民,RDGameModeChopperRescue.as
 as3_RDGameModeChopperRescue_6, Rescued.,获救。,RDGameModeChopperRescue.as
@@ -1015,10 +1009,10 @@ as3_RDUnlockData_38,Churches,教堂,RDUnlockData.as
 as3_RDUnlockData_39,Mines,地雷,RDUnlockData.as
 as3_RDUnlockData_40,Corpses,尸体,RDUnlockData.as
 as3_RDUnlockData_41,Feeders,暴食者,RDUnlockData.as
-as3_RDUnlockData_42,Ravagers,噬尸者,RDUnlockData.as
-as3_RDUnlockData_43,Brutes,壮尸,RDUnlockData.as
-as3_RDUnlockData_44,Grub,蛆尸,RDUnlockData.as
-as3_RDUnlockData_45,Mutants,变异体,RDUnlockData.as
+as3_RDUnlockData_42,Ravagers,掠夺者,RDUnlockData.as
+as3_RDUnlockData_43,Brutes,鬼面兽,RDUnlockData.as
+as3_RDUnlockData_44,Grub,蛴螬,RDUnlockData.as
+as3_RDUnlockData_45,Mutants,突变体,RDUnlockData.as
 as3_RDUnlockData_46,Civilians,平民,RDUnlockData.as
 as3_RDUnlockData_47,Perks,特长,RDUnlockData.as
 as3_RDGame_125,Easter,复活节,RDGame.as
@@ -1029,3 +1023,8 @@ as3_RDBuildingNew_3,Church,教堂,RDBuildingNew.as
 as3_RDBuildingNew_4,Garage,车库,RDBuildingNew.as
 as3_RDGameModeCustom_7,Distance,距离,RDGameModeCustom.as
 as3_RDGameModeGameplay_30,Distance,距离,RDGameModeGameplay.as
+as3_RDWeaponM60_2,LMG,轻机枪,RDWeaponM60.as
+as3_RDWeaponPistol_2,Pistol,手枪,RDWeaponPistol.as
+as3_RDWeaponShotgun_2,Shotgun,霰弹枪,RDWeaponShotgun.as
+as3_RDHud_39,Diane,戴安娜,RDHud.as
+as3_RDHud_40,Cocheta,科切塔,RDHud.as

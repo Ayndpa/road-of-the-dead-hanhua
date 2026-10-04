@@ -341,7 +341,7 @@ def compress_swf(path: str, level: int = 9) -> int:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--orig", default=str(ORIG))
-    ap.add_argument("--out", default=str(ROOT / "dist" / "rotl-zh-full.swf"))
+    ap.add_argument("--out", default=str(ROOT / "dist" / "rotd-zh.swf"))
     ap.add_argument("--texts", default=str(ROOT / "work" / "ui_texts"))
     ap.add_argument("--orig-texts", default=str(ROOT / "work" / "scripts" / "texts"))
     args = ap.parse_args()
