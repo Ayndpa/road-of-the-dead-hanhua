@@ -121,12 +121,15 @@ def align_multi(dump: str, odump: str, osvg: str, bsvg: str) -> str | None:
     if "align" in dump or "align" in odump:
         return None
     tag, pre, recs = parse_formatted(dump)
-    _otag, _opre, orecs = parse_formatted(odump)
     ink = _ink_record_indices(recs)
-    oink = _ink_record_indices(orecs)
     olines = svg_line_boxes(osvg)
     blines = svg_line_boxes(bsvg)
-    if not (len(ink) == len(oink) == len(olines) == len(blines)):
+    # A hand-re-flowed translation may use a different number of records than
+    # the original, and the original may itself split one visual line across
+    # several records (a continuation record carries no new x/y).  So do not
+    # require a one-to-one record match: align every built line to the original
+    # block's common axis.
+    if not ink or len(ink) != len(blines) or not olines:
         return None
     bxmin = header_int(dump, "xmin")
     bxmax = header_int(dump, "xmax")
@@ -145,20 +148,22 @@ def align_multi(dump: str, odump: str, osvg: str, bsvg: str) -> str | None:
     sc = max(centres) - min(centres)
     if sl <= sr and sl <= sc - 1.0:
         mode = "left"
+        axis = min(lefts)
     elif sr <= sl and sr <= sc - 1.0:
         mode = "right"
+        axis = max(rights)
     else:
         mode = "center"
+        axis = sum(centres) / len(centres)
 
     deltas: dict[int, float] = {}
-    for k, ridx in enumerate(ink):
+    for ridx, bline in zip(ink, blines):
         if mode == "left":
-            want, have = olines[k][0], blines[k][0]
+            want, have = axis, bline[0]
         elif mode == "right":
-            want, have = olines[k][1], blines[k][1]
+            want, have = axis, bline[1]
         else:
-            want = (olines[k][0] + olines[k][1]) / 2
-            have = (blines[k][0] + blines[k][1]) / 2
+            want, have = axis, (bline[0] + bline[1]) / 2
         d = (want - have) * 20
         if abs(d) >= 1:
             deltas[ridx] = d

@@ -51,7 +51,9 @@ from pipeline.ui.build_all import (  # noqa: E402
     text_tag_fonts,
     texts_using_font,
 )
-from pipeline.lib.align_controls import build_formatted, export_formatted, parse_formatted  # noqa: E402
+from pipeline.lib.align_controls import (  # noqa: E402
+    build_formatted, export_formatted, header_int, parse_formatted, set_header_int,
+)
 from pipeline.lib.remap_font import (  # noqa: E402
     clear_font_style,
     copy_font_layout,
@@ -167,19 +169,38 @@ def ui_segments(cid: int) -> list[str]:
 
 
 def formatted_import(dump: str, segs: list[str], slot: int) -> str | None:
-    """Rebuild a truncated static tag's formatted text with translated records.
+    """Rebuild a static tag from the translated lines, at *their* record count.
 
     ``make_formatted_text`` in ``build_all`` early-outs when the dump has no
     spacing pairs (the fix pass only re-imports squeezed tags); the initial
     import needs the same record-by-record rebuild unconditionally.
+
+    FFDec's plain import rejects a text whose record count differs from the tag
+    (and the old fallback then overwrote the tag with a single clipped record).
+    A *formatted* import, however, can change the record count, so build one
+    record per translated line: keep the original records' style/position while
+    they last, and for any extra lines continue the last line's position
+    downward (widening the tag's clip rect so nothing is cut).  This lets a
+    hand-re-flowed translation keep its own line breaks even when they no longer
+    match the baked layout.
     """
     if not dump or not segs:
         return None
     tag, pre, records = parse_formatted(dump)
-    if len(records) != len(segs):
+    if not records:
         return None
+    ys = [y for y in (header_int(h, "y") for h, _ in records) if y is not None]
+    spacing = (ys[-1] - ys[-2]) if len(ys) >= 2 else 0
+    if spacing <= 0:
+        spacing = int((header_int(records[-1][0], "height") or 280) * 1.2)
     new_records: list[tuple[str, str]] = []
-    for (hdr, _old), text in zip(records, segs):
+    for i, text in enumerate(segs):
+        if i < len(records):
+            hdr = records[i][0]
+        else:
+            hdr = set_header_int(records[-1][0], "y",
+                                 ys[-1] + (i - len(records) + 1) * spacing) \
+                if ys else records[-1][0]
         keep = [ln for ln in hdr.splitlines()
                 if not ln.strip().startswith(("spacing", "letterspacing", "font"))]
         h = "\n".join(keep)
@@ -187,6 +208,11 @@ def formatted_import(dump: str, segs: list[str], slot: int) -> str | None:
             h += "\n"
         h += f"font {slot}\n"
         new_records.append((h, text.strip("\r\n")))
+    if ys and len(segs) > len(records):
+        bottom = ys[-1] + (len(segs) - len(records)) * spacing \
+            + (header_int(records[-1][0], "height") or 280)
+        if (header_int(tag, "ymax") or 0) < bottom:
+            tag = set_header_int(tag, "ymax", bottom)
     return build_formatted(tag, pre, new_records)
 
 
@@ -725,8 +751,9 @@ def main() -> int:
         fixed = BUILD_WORK / "ui_fixed.swf"
         fix = ["-replace", cur, str(fixed)]
         for cid in fix_ids:
-            text = make_formatted_text(dumps.get(cid, ""), ui_segments(cid),
-                                       slot_for(cid))
+            segs = (ui_segments(cid) if tagfonts.get(cid, (False, set()))[0]
+                    else records_for(cid))
+            text = make_formatted_text(dumps.get(cid, ""), segs, slot_for(cid))
             if text is not None:
                 p = fmtdir / f"{cid}.txt"
                 p.write_text(text, encoding="utf-8")
@@ -759,6 +786,31 @@ def main() -> int:
         Path(args.out).unlink()
         aligned.rename(args.out)
 
+    # The True Hell MOD leaves a tall gap between the passport logo and the
+    # description below it (the mod places the whole text/button block lower than
+    # the base game).  Keep the mod's text/button positions and lower the logo to
+    # hug the description.  The "True Hell MOD by DELW_" credit keeps the mod's
+    # position but is shifted right onto the screen and set a little smaller (its
+    # CJK display face renders larger than the original Latin face at the same
+    # 700 height).
+    if "TRUE HELL" in Path(args.orig).name.upper():
+        nudged = Path(str(args.out) + ".nudge.swf")
+        run(["uv", "run", "python", str(ROOT / "pipeline" / "ui" / "nudge_rotd2_layout.py"),
+             "--swf", str(args.out), "--out", str(nudged),
+             "--nudge", "11180:0:850:500",
+             "--nudge", "11181:0:850:500",
+             "--nudge", "11182:0:850:500"])
+        if nudged.exists():
+            Path(args.out).unlink()
+            nudged.rename(args.out)
+        # Lower the passport logo (sprite 102) to close the gap above the text.
+        # The mod places it 720 twips higher than the base game.
+        logo = Path(str(args.out) + ".logoshift.swf")
+        shift_sprite_placements(str(args.out), str(logo), 117, {102}, 720)
+        if logo.exists():
+            Path(args.out).unlink()
+            logo.rename(args.out)
+
     # The Survival Guide book caption is vector art, not text; redraw it last.
     booked = Path(str(args.out) + ".book.swf")
     run(["uv", "run", "python", str(ROOT / "pipeline" / "ui" / "book_labels_rotd2.py"),
@@ -766,6 +818,15 @@ def main() -> int:
     if booked.exists():
         Path(args.out).unlink()
         booked.rename(args.out)
+
+    # The Newgrounds passport Login caption ("LET'S DO THIS!") is baked vector
+    # art on a bitmap button, so the font swap leaves it English; redraw it.
+    passport = Path(str(args.out) + ".passport.swf")
+    run(["uv", "run", "python", str(ROOT / "pipeline" / "ui" / "passport_labels_rotd2.py"),
+         "--swf", str(args.out), "--orig", str(args.orig), "--out", str(passport)])
+    if passport.exists():
+        Path(args.out).unlink()
+        passport.rename(args.out)
 
     # Runtime TextFields re-format through ``defaultTextFormat.font`` (a *name*),
     # and Flash resolves that against the embedded faces.  The preserved Arial
