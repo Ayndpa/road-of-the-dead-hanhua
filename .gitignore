@@ -29,6 +29,12 @@ release/
 # --- game files (dist holds the original + localised SWFs) --------------
 dist/
 
+# --- wiki (VitePress) ---------------------------------------------------
+wiki/node_modules/
+wiki/.vitepress/dist/
+wiki/.vitepress/cache/
+wiki/.vitepress/.temp/
+
 # --- OS / editor --------------------------------------------------------
 Thumbs.db
 desktop.ini
