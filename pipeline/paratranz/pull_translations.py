@@ -7,6 +7,10 @@ CSV layout (CRLF, no BOM) so the build reads exactly what is on ParaTranz:
 
     GET /projects/{id}/files/{fileId}/translation
 
+``stream.csv`` rows whose original is only a stage direction (Whisper's
+``*Dramatic Music*`` over an instrumental bed) are dropped, so they are never
+offered to translators or built into a subtitle.
+
 Usage:
     $env:PARATRANZ_TOKEN = "<token>"
     uv run python pipeline/paratranz/pull_translations.py [--project 20962] [--file voice.csv] [--dry-run]
@@ -24,6 +28,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 API = "https://paratranz.cn/api"
+
+sys.path.insert(0, str(ROOT))
+
+from pipeline.asr.asr_filter import is_stage_direction  # noqa: E402
 
 # project id -> local folder
 PROJECTS: dict[str, Path] = {
@@ -60,15 +68,24 @@ def render_csv(rows: list[dict]) -> bytes:
 
 def pull_file(pid: str, fid: int, name: str, path: Path, token: str, dry_run: bool) -> None:
     rows = api_get(f"{API}/projects/{pid}/files/{fid}/translation", token)
+    # A stream clip that is only a stage direction (Whisper's "*Dramatic Music*"
+    # over an instrumental bed) has no dialogue: keep it out of the local CSVs so
+    # it is never exposed to translators or turned into a subtitle.
+    skipped = 0
+    if name == "stream.csv":
+        kept = [r for r in rows if not is_stage_direction(r.get("original") or "")]
+        skipped = len(rows) - len(kept)
+        rows = kept
     data = render_csv(rows)
     translated = sum(1 for r in rows if (r.get("translation") or "").strip())
+    note = f", skipped {skipped} non-dialogue" if skipped else ""
     if dry_run:
-        print(f"  {name}: {len(rows)} keys ({translated} translated), "
+        print(f"  {name}: {len(rows)} keys ({translated} translated){note}, "
               f"{len(data)} bytes [dry-run]")
         return
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(data)
-    print(f"  {name}: {len(rows)} keys ({translated} translated) -> {path.relative_to(ROOT)}")
+    print(f"  {name}: {len(rows)} keys ({translated} translated){note} -> {path.relative_to(ROOT)}")
 
 
 def main() -> int:

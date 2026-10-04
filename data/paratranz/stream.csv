@@ -1,32 +1,32 @@
 stream_00,This is an emergency alert system broadcast.,这里是紧急警报系统广播。,开场流式音轨 48.33-50.71s
 stream_01,This is not a test.,这不是演习。,开场流式音轨 51.39-52.79s
-stream_02,"Hello, citizen.",市民您好。,开场流式音轨 58.41-59.25s
-stream_03,"Due to unforeseen and unexplained events, the city has been quarantined.",由于发生无法预见、无法解释的事件，本城已实施隔离。,开场流式音轨 59.66-63.52s
+stream_02,"Hello, citizen.",您好，市民,开场流式音轨 58.41-59.25s
+stream_03,"Due to unforeseen and unexplained events, the city has been quarantined.",由于发生无可预料且无法解释的事件，本市目前已成为隔离区,开场流式音轨 59.66-63.52s
 stream_04,Please stay home.,请留在家中。,开场流式音轨 64.12-64.86s
 stream_05,Lock all your doors and windows.,锁好所有门窗。,开场流式音轨 64.9-67.06s
-stream_06,Stay out of sight until further notice.,在另行通知前，不要露面。,开场流式音轨 67.6-69.16s
+stream_06,Stay out of sight until further notice.,在另行通知前，不要外出。,开场流式音轨 67.6-69.16s
 stream_07,Repeat.,重复一遍。,开场流式音轨 69.68-70.14s
-stream_08,It is crucial that you stay in your home and out of sight.,务必留在家中，不要露面。,开场流式音轨 70.38-73.7s
-stream_09,"Martial law is now in effect, and anyone trying to exit the city will be shot on sight.",戒严令现已生效，任何试图出城者将被当场击毙。,开场流式音轨 74.3-78.82s
+stream_08,It is crucial that you stay in your home and out of sight.,务必留在家中，不要外出。,开场流式音轨 70.38-73.7s
+stream_09,"Martial law is now in effect, and anyone trying to exit the city will be shot on sight.",戒严令现已生效，任何试图出城者将格杀勿论。,开场流式音轨 74.3-78.82s
 stream_10,This is not an exercise. Stay home until further notice.,这不是演习。在另行通知前，请留在家中。,开场流式音轨 78.9-82.86s
 stream_11,This is bad.,情况不妙。,开场流式音轨 92.62-93.92s
-stream_12,It's not an isolated case.,这不是孤立病例。,开场流式音轨 100.08-102.76s
-stream_13,It just got up and started walking.,它刚刚站起来，接着就开始走了。,开场流式音轨 105.26-107.52s
+stream_12,It's not an isolated case.,这不是个别案例。,开场流式音轨 100.08-102.76s
+stream_13,It just got up and started walking.,他又站起来开始走了。,开场流式音轨 105.26-107.52s
 stream_14,[unit] to base.,……呼叫基地。,开场流式音轨 108.86-109.72s
-stream_15,Sector C was already overwhelmed.,C区早就被冲垮了。,开场流式音轨 110.14-111.44s
-stream_16,What do you want us to do?,你要我们怎么做？,开场流式音轨 111.88-112.82s
-stream_17,"They're freaking dead and still walking, goddammit.",它们他妈的已经死了，还在走，该死的。,开场流式音轨 113.34-115.28s
-stream_18,Get a hold of yourself.,你冷静点。,开场流式音轨 115.32-116.28s
-stream_19,We're trained to handle anything.,我们受过训练，什么都能应付。,开场流式音轨 116.72-118.58s
-stream_20,"What the hell? Walking dead? Shit, I'm not staying here.",搞什么鬼？活死人？妈的，我才不待在这儿。,开场流式音轨 118.83-123.75s
+stream_15,Sector C was already overwhelmed.,C区早就已经沦陷了。,开场流式音轨 110.14-111.44s
+stream_16,What do you want us to do?,我们应该怎么办？,开场流式音轨 111.88-112.82s
+stream_17,"They're freaking dead and still walking, goddammit.",它们他妈的已经死了，却还能走，真他妈操了！,开场流式音轨 113.34-115.28s
+stream_18,Get a hold of yourself.,保持冷静。,开场流式音轨 115.32-116.28s
+stream_19,We're trained to handle anything.,我们受过训练，能应付得了。,开场流式音轨 116.72-118.58s
+stream_20,"What the hell? Walking dead? Shit, I'm not staying here.",搞什么鬼？行尸？妈的，不能待在这了。,开场流式音轨 118.83-123.75s
 stream_21,Detonation confirmed.,确认引爆！,开场流式音轨 139.69-140.45s
-stream_22,What's the status on the undead activity?,亡灵活动的情况如何？,开场流式音轨 141.68-143.34s
-stream_23,"Radiations are still too high, sir.",长官，辐射还是太高。,开场流式音轨 144.65-146.39s
-stream_24,"Status ETA, 10 seconds.",预计抵达时间，10秒。,开场流式音轨 146.51-148.63s
-stream_25,Let's pray to whoever's still up there that we did the right thing.,祈祷上头还看着我们的人，我们做的是对的。,开场流式音轨 150.0-154.6s
+stream_22,What's the status on the undead activity?,丧尸活动的情况如何？,开场流式音轨 141.68-143.34s
+stream_23,"Radiations are still too high, sir.",长官，辐射值还是太高。,开场流式音轨 144.65-146.39s
+stream_24,"Status ETA, 10 seconds.",预计等待时间，10秒。,开场流式音轨 146.51-148.63s
+stream_25,Let's pray to whoever's still up there that we did the right thing.,希望我们做了正确的事，为那些没出城的人祈祷吧。,开场流式音轨 150.0-154.6s
 stream_26,No!,不！,开场流式音轨 154.6-158.8s
 stream_27,"Sir, we see a lot of undead movement.",长官，我们发现大量尸群在移动。,开场流式音轨 158.8-161.5s
 stream_28,Shit!,该死！,开场流式音轨 161.5-162.6s
-stream_29,It didn't work!,没用！,开场流式音轨 162.6-164.0s
-stream_30,It didn't work!,根本没用！,开场流式音轨 164.0-165.3s
-stream_31,"Then we failed, son.",那我们失败了，孩子。,开场流式音轨 165.3-168.4s
+stream_29,It didn't work!,核弹没有生效！,开场流式音轨 162.6-164.0s
+stream_30,It didn't work!,核弹没有生效！,开场流式音轨 164.0-165.3s
+stream_31,"Then we failed, son.",我们失败了。小子。,开场流式音轨 165.3-168.4s

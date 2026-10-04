@@ -44,7 +44,7 @@ as3_RDAchievement_31,Hardcore Survival,硬核生存,RDAchievement.as
 as3_RDAchievement_32,Heaven Sent,天降神兵,RDAchievement.as
 as3_RDAchievement_33,Hydroficially Evolved,消防进化,RDAchievement.as
 as3_RDAchievement_34,I\'m state of the badass art!,我就是狠角色中的顶配！,RDAchievement.as
-as3_RDAchievement_35,I\'m the Alpha,我是老大,RDAchievement.as
+as3_RDAchievement_35,I\'m the Alpha,我才是阿尔法突变体,RDAchievement.as
 as3_RDAchievement_36,I\'ve seen things...,我见过不少世面……,RDAchievement.as
 as3_RDAchievement_37,"In F.U.B.A.R. mode, headshot a hood soldier right before he fires his pistol",在F.U.B.A.R.模式中，趁爬上车的士兵开枪前爆头击杀他,RDAchievement.as
 as3_RDAchievement_38,"In Rescue Op, don\'t let a single civilian die for 3 rounds in a row",在救援行动中，连续3轮不让任何平民死亡,RDAchievement.as
@@ -58,8 +58,8 @@ as3_RDAchievement_45,Maintain max speed for 0.5km,保持最高速度行驶0.5公
 as3_RDAchievement_46,Make a 5 kill combo with your vehicle and or gun,用载具或枪械完成5连杀,RDAchievement.as
 as3_RDAchievement_47,Merciless Road Kill,无情碾压,RDAchievement.as
 as3_RDAchievement_48,Metal Dragon,钢铁巨龙,RDAchievement.as
-as3_RDAchievement_49,Mutant Sandwich,变异体夹心,RDAchievement.as
-as3_RDAchievement_50,Mutant Stomp,踩踏变异体,RDAchievement.as
+as3_RDAchievement_49,Mutant Sandwich,突变体三明治,RDAchievement.as
+as3_RDAchievement_50,Mutant Stomp,踩踏突变体,RDAchievement.as
 as3_RDAchievement_51,Perfect Defense,完美防守,RDAchievement.as
 as3_RDAchievement_52,Perfect Soldiers,完美士兵,RDAchievement.as
 as3_RDAchievement_53,Piece By Piece,一块一块,RDAchievement.as
@@ -69,14 +69,14 @@ as3_RDAchievement_56,Rapid Response,快速反应,RDAchievement.as
 as3_RDAchievement_57,Reach 20km in Dead State,在死亡国度模式中到达20公里,RDAchievement.as
 as3_RDAchievement_58,Reach 20km in Mutant Meltdown,在突变体危机模式中到达20公里,RDAchievement.as
 as3_RDAchievement_59,Reach max levels on at least one character,至少让一名角色达到满级,RDAchievement.as
-as3_RDAchievement_60,Remove a mutant side grapple by grinding it off on a rail or wall,把侧向扑咬的变异体蹭到护栏或墙上甩掉,RDAchievement.as
+as3_RDAchievement_60,Remove a mutant side grapple by grinding it off on a rail or wall,把车门侧边袭击的突变体蹭到护栏或墙上甩掉,RDAchievement.as
 as3_RDAchievement_61,Rescue and secure a civilian,救出并保护一名平民,RDAchievement.as
 as3_RDAchievement_62,Save a total of 50 civilians in Rescue Op before failing,在救援行动失败前累计救出50名平民,RDAchievement.as
 as3_RDAchievement_63,Scenic Route,风景路线,RDAchievement.as
 as3_RDAchievement_64,"Skills, I have those",技能，我有的是,RDAchievement.as
 as3_RDAchievement_65,Slip and Slide,滑行漂移,RDAchievement.as
 as3_RDAchievement_66,Splatter 50 zombies with your vehicle or guns,用载具或枪械碾碎50只丧尸,RDAchievement.as
-as3_RDAchievement_67,Survive 2 mutants side grappling both characters,在两只变异体同时侧咬两名角色的情况下存活,RDAchievement.as
+as3_RDAchievement_67,Survive 2 mutants side grappling both characters,在两只突变体同时在车边袭击两名角色的情况下活下来,RDAchievement.as
 as3_RDAchievement_68,Survive a mutant side grapple by punching or elbowing it off,用拳头或肘击甩掉侧向扑咬的变异体并存活,RDAchievement.as
 as3_RDAchievement_69,Unlock the entire survival guide,解锁整本生存指南,RDAchievement.as
 as3_RDAchievement_70,Unstoppable Force,势不可挡,RDAchievement.as
@@ -115,8 +115,8 @@ as3_RDCampaignDialogs_18,Cocheta: You ok? (worried),科切塔：你没事吧？�
 as3_RDCampaignDialogs_19,Diane: Come in! (assertive),黛安：请回答！（强势）,RDCampaignDialogs.as
 as3_RDCampaignDialogs_20,Diane: Come on! (assertive),黛安：来吧！（强势）,RDCampaignDialogs.as
 as3_RDCampaignDialogs_21,Diane: Get ready! (assertive),黛安：准备！（强势）,RDCampaignDialogs.as
-as3_RDCampaignDialogs_22,Diane: Got it! (assertive),黛安：明白！（强势）,RDCampaignDialogs.as
-as3_RDCampaignDialogs_23,Diane: Hell yeah! (assertive),黛安：太棒了！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_22,Diane: Got it! (assertive),黛安娜：明白！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_23,Diane: Hell yeah! (assertive),黛安娜：太棒了！（强势）,RDCampaignDialogs.as
 as3_RDCampaignDialogs_24,Diane: Hurry up! (assertive),黛安：快点！（强势）,RDCampaignDialogs.as
 as3_RDCampaignDialogs_25,Diane: I dont know... (defeated),黛安：我不知道……（沮丧）,RDCampaignDialogs.as
 as3_RDCampaignDialogs_26,Diane: I read you (passive),黛安：收到（平淡）,RDCampaignDialogs.as
@@ -127,7 +127,7 @@ as3_RDCampaignDialogs_30,Diane: No can do! (assertive),黛安：做不到！（�
 as3_RDCampaignDialogs_31,Diane: Not again! (annoyed),黛安：别又来了！（烦躁）,RDCampaignDialogs.as
 as3_RDCampaignDialogs_32,Diane: Not bad (neutral),黛安：不错（中立）,RDCampaignDialogs.as
 as3_RDCampaignDialogs_33,Diane: Stay alert! (assertive),黛安：保持警惕！（强势）,RDCampaignDialogs.as
-as3_RDCampaignDialogs_34,Diane: There\'s too many! (assertive),黛安：太多了！（强势）,RDCampaignDialogs.as
+as3_RDCampaignDialogs_34,Diane: There\'s too many! (assertive),黛安娜：太多了！（强势）,RDCampaignDialogs.as
 as3_RDCampaignDialogs_35,Diane: You have GOT to be kidding ME! (assertive),黛安：你在跟我开玩笑吧！（强势）,RDCampaignDialogs.as
 as3_RDCampaignDialogs_36,Diane: You ok? (worried),黛安：你没事吧？（担心）,RDCampaignDialogs.as
 as3_RDCampaignDialogs_37,Female: Come in? (passive),女性：呼叫？（平淡）,RDCampaignDialogs.as
@@ -159,8 +159,8 @@ as3_RDEditorInterface_11,Additive Hellfire Level,地狱火等级增量,RDEditorI
 as3_RDEditorInterface_12,"Additive Hellfire difficulty level.  For exemple, 0.25 means Hellfire will be 1 level stronger every 5 difficulty levels.",地狱火难度等级增量。例如，0.25表示每5个难度等级，地狱火强度提升1级。,RDEditorInterface.as
 as3_RDEditorInterface_13,Additive Jet Bombings,战机轰炸次数增量,RDEditorInterface.as
 as3_RDEditorInterface_14,Additive Jet Delay,战机延迟增量,RDEditorInterface.as
-as3_RDEditorInterface_15,Additive Mutant Count,变异体数量增量,RDEditorInterface.as
-as3_RDEditorInterface_16,Additive Mutant Delay,变异体延迟增量,RDEditorInterface.as
+as3_RDEditorInterface_15,Additive Mutant Count,突变体数量增量,RDEditorInterface.as
+as3_RDEditorInterface_16,Additive Mutant Delay,突变体延迟增量,RDEditorInterface.as
 as3_RDEditorInterface_17,Additive Pattern Ratio,模式比例增量,RDEditorInterface.as
 as3_RDEditorInterface_18,Additive Spawn Rate,生成速率增量,RDEditorInterface.as
 as3_RDEditorInterface_19,"Additive delay, in seconds, before Hellfire is dispatched. Additive delays can be negative if you want Hellfire to come more often as the difficulty level increases.",地狱火出动前的延迟增量（秒）。若希望难度等级越高地狱火出现越频繁，此增量可为负。,RDEditorInterface.as
@@ -609,7 +609,7 @@ as3_RDHelp_7,"Blowing up mines, cars and fuel trucks is a good way to get rid of
 as3_RDHelp_8,"By clicking the OPTIONS button in the main menu or in the pause (P) menu, you can adjust controls, volumes and performance.",点击主菜单或暂停（P）菜单中的「选项」按钮，即可调整操作、音量和性能。,RDHelp.as
 as3_RDHelp_9,Churches are drop points for civilians. They have perks and medications available for purchase with RP.,教堂是平民的下车点。那里可以用RP购买特长和药品。,RDHelp.as
 as3_RDHelp_10,Civilians will not get in your car if you have zombies on your vehicle.  Get rid of them first then honk the civilians again.,如果车上有丧尸，平民不会上车。先清除它们，再按喇叭招呼平民。,RDHelp.as
-as3_RDHelp_11,"Diane and Cocheta each have their own weapon loadouts and their personal stat levels. However, perks are shared.",黛安和科切塔各自拥有独立的武器配置和个人属性等级。但特长是共享的。,RDHelp.as
+as3_RDHelp_11,"Diane and Cocheta each have their own weapon loadouts and their personal stat levels. However, perks are shared.",黛安娜和科切塔各自拥有独立的武器配置和个人属性等级。但特长是共享的。,RDHelp.as
 as3_RDHelp_12,Dice Icon,骰子图标,RDHelp.as
 as3_RDHelp_13,Editor Flow,编辑器流程,RDHelp.as
 as3_RDHelp_14,Enemies that cling to your hood can have their attacks delayed by shooting them or by blowing their arms off.,扒在引擎盖上的敌人，可以通过射击或炸掉它们的手臂来拖延其攻击。,RDHelp.as
@@ -633,7 +633,7 @@ as3_RDHelp_31,"Make sure to click save after you finish making a pattern, area o
 as3_RDHelp_32,Make sure you have the latest flash player installed for an optimal playing experience.,为确保最佳游戏体验，请安装最新版 Flash Player。,RDHelp.as
 as3_RDHelp_33,Make sure your browser isn\'t set to clear your cache or your save file will be deleted!,确保浏览器没有设置为清除缓存，否则你的存档会被删除！,RDHelp.as
 as3_RDHelp_34,Mashing space as the driver and the left mouse button as the gunner will bash a side grappling mutant off!,驾驶员猛按空格键、机枪手猛按鼠标左键，就能把侧面抓附的变异体打下去！,RDHelp.as
-as3_RDHelp_35,"Mutants will sometimes run in packs of 3 or 4, one of them being an alpha mutant, beware!",变异体有时会3到4只结群行动，其中一只是阿尔法变异体，小心！,RDHelp.as
+as3_RDHelp_35,"Mutants will sometimes run in packs of 3 or 4, one of them being an alpha mutant, beware!",突变体有时会3到4只结群行动，其中一只是阿尔法突变体，小心！,RDHelp.as
 as3_RDHelp_36,"Once you have areas, you can start building campaigns.  There are two types of campaigns, Story and Challenge.  A story campaign is a linear series of aeras on which you can set parameters such as length, dialogs, etc.  They are usually more story driven and must have an ending.  The other type of campaign is the Challenge campaign which consists of a structured series of area groups (see Groups). Unlike story campaigns, challenge campaigns don\'t have an ending, they are infinite and have a goal and a goal target, like Kill 500 zombies.\n\nBeyond this simple description is a ton of options you can play with both in story and challenge campaigns.",有了区域之后，你就可以开始构建战役了。战役分为两种：故事和挑战。故事战役是一系列线性的区域，你可以为其设置长度、对话等参数。它们通常更注重剧情，且必须有结局。另一种是挑战战役，由一系列结构化的区域组组成（见「组」）。与故事战役不同，挑战战役没有结局，它们是无限的，有一个目标和目标数值，例如击杀500只丧尸。\n\n除了这些简单描述外，故事战役和挑战战役中还有大量选项可供你尝试。,RDHelp.as
 as3_RDHelp_37,"Pausing, along with other options can be accessed in-game by moving your mouse near the bottom of the screen.",在游戏中，把鼠标移到屏幕底部附近即可访问暂停和其他选项。,RDHelp.as
 as3_RDHelp_38,"Perks can be purchased at some locations and grant you helpful abilities such as lowering RP costs, faster character switches, etc.",特长可以在某些地点购买，能赋予你实用的能力，例如降低RP消耗、更快切换角色等。,RDHelp.as
@@ -670,7 +670,7 @@ as3_RDHelp_68,"When getting ammo, all your weapons, except the one you\'re curre
 as3_RDHelp_69,"When you fail, be aware of why you failed and upgrade your arsenal and vehicle accordingly.",失败时，想清楚失败的原因，并据此升级你的装备和车辆。,RDHelp.as
 as3_RDHelp_70,"When you save a file, you have the option to check the Public checkbox.  When checked, your file will be saved in the public section, available for everyone to see.  For patterns and areas, that means other users will be able to load them and use them in their own campaigns.  For campaigns, it means they\'ll see it in the User Campaigns section in the main menu.  Only you, however, can load your own campaign in the editor to modify it.  Private files are only seen by you, typically used for work in progress.",保存文件时，你可以勾选「公开」复选框。勾选后，文件会保存在公开区域，所有人可见。对于图案和区域，这意味着其他玩家可以加载并在自己的战役中使用它们。对于战役，这意味着它们会出现在主菜单的「玩家战役」区域中。不过，只有你自己能在编辑器中加载自己的战役来修改它。私有文件仅你自己可见，通常用于未完成的作品。,RDHelp.as
 as3_RDHelp_71,"When you see a Dice icon over an object, that means it\'s a randomized object. Some objects you can place like cars and zombies can be of random types, meaning everytime it loads it will be a different object.  Use them to create variety in your patterns.  You can use the Randomize button to see the effect of random objects.",当你看到某个物件上出现骰子图标，说明它是随机物件。有些可放置的物件，比如汽车和丧尸，可以是随机类型，也就是说每次加载时都会是不同物件。用它们让你的图案更加多样。你可以用「随机化」按钮查看随机物件的效果。,RDHelp.as
-as3_RDHelp_72,"When you see a mutant jump toward you, do a hard swerve to move out of his trajectory, otherwise he will land on your hood.",看到变异体朝你跳过来时，用力甩尾离开它的落点，否则它会扑到你的引擎盖上。,RDHelp.as
+as3_RDHelp_72,"When you see a mutant jump toward you, do a hard swerve to move out of his trajectory, otherwise he will land on your hood.",看到突变体朝你跳过来时，想办法不要让他跳上车，否则它会扑到你的引擎盖上。,RDHelp.as
 as3_RDHelp_73,"When your vehicle is damaged, drive safely and try to reach a garage for repair.",车辆受损时，安全驾驶，尽量开到修车厂维修。,RDHelp.as
 as3_RDHelp_74,"While story campaigns have a single hidden area group, challenge campaigns make full use of the groups.  A group contains areas and can be set to randomize those areas or spawn them linearely.  Each group can be set to follow other groups using the Chainable Groups property.  That way you can make sure, for exemple, that a group with forest areas, isn\'t followed directly by a group with alleyway areas.\n\nUsing the chainable groups, you can make linear series of groups, randomized series of groups or all kind of structures you want.  When you click on a group, experiment with the Chainable Groups property, which is a crucial element to challenge campaigns.",剧情战役只有一个隐藏的区域组，而挑战战役可以充分利用区域组。一个组包含若干区域，可以设为随机排列或按顺序生成。每个组都可以通过「可链接组」属性来跟随其他组。这样你就能确保，比如，森林区域的组后面不会直接跟着小巷区域的组。\n\n利用可链接组，你可以做出线性排列的组、随机排列的组或任何你想要的结构。点击某个组时，多试试「可链接组」属性，它是挑战战役的关键要素。,RDHelp.as
 as3_RDHelp_75,"You can change all sorts of properties and crazy in-game settings in the campaign editor, accessible from the main menu. Give it a try!",在主菜单的战役编辑器里，你可以修改各种属性和疯狂的局内设置。试试看吧！,RDHelp.as
@@ -697,7 +697,7 @@ as3_RDHud_14,Fuel Trucks Shot,击中油罐车,RDHud.as
 as3_RDHud_15,Gib Kills,碎尸击杀,RDHud.as
 as3_RDHud_16,Jet Bombings Dodged,躲过战机轰炸,RDHud.as
 as3_RDHud_17,Mines Shot,击中地雷,RDHud.as
-as3_RDHud_18,Mutants Killed,杀死变异体,RDHud.as
+as3_RDHud_18,Mutants Killed,已杀掉的突变体,RDHud.as
 as3_RDHud_19,Prefered Driver,偏好司机,RDHud.as
 as3_RDHud_20,Prefered Weapon,偏好武器,RDHud.as
 as3_RDHud_21,Property Damage,财产损失,RDHud.as
@@ -752,7 +752,7 @@ as3_RDPlayer_35,Upgrading Tires,升级轮胎,RDPlayer.as
 as3_RDUnlockData_1,Abandoned Vehicles,废弃车辆,RDUnlockData.as
 as3_RDUnlockData_2,Accuracy affects the bullet spread from firing and the kick back for shotguns. It also affects how fast the bullet spread and kick back recover.,精准度影响开火时的子弹散布和霰弹枪的后坐力，也影响子弹散布和后坐力恢复的速度。,RDUnlockData.as
 as3_RDUnlockData_3,Alpha Mutant Tactics,阿尔法突变体战术,RDUnlockData.as
-as3_RDUnlockData_4,Alpha Mutants,阿尔法变异体,RDUnlockData.as
+as3_RDUnlockData_4,Alpha Mutants,阿尔法突变体,RDUnlockData.as
 as3_RDUnlockData_5,Army Vehicles,军用车辆,RDUnlockData.as
 as3_RDUnlockData_6,Attack Choppers,攻击直升机,RDUnlockData.as
 as3_RDUnlockData_7,Bomb Squad,排爆小组,RDUnlockData.as
@@ -828,8 +828,8 @@ as3_RDWeaponShotgun_1,"The Shotgun is powerful at close range. Be mindful, reloa
 as3_RDZombie_1,FUCK: StartCling already taken,妈的：StartCling 已被占用,RDZombie.as
 as3_RoadOfTheDead_fla_HighScoreDeadOnTime_2559_1,High Scores,最高分,RoadOfTheDead_fla\HighScoreDeadOnTime_2559.as
 as3_RoadOfTheDead_fla_HighScoreDeadOnTime_2559_2,Out Of Time Distance,限时距离,RoadOfTheDead_fla\HighScoreDeadOnTime_2559.as
-as3_RoadOfTheDead_fla_MainTimeline_1,Flash Ad Only,仅 Flash 广告,RoadOfTheDead_fla\MainTimeline.as
-as3_RoadOfTheDead_fla_MainTimeline_2,Simulate Logged-in User,模拟已登录用户,RoadOfTheDead_fla\MainTimeline.as
+as3_RoadOfTheDead_fla_MainTimeline_1,Flash Ad Only,Flash Ad Only,RoadOfTheDead_fla\MainTimeline.as
+as3_RoadOfTheDead_fla_MainTimeline_2,Simulate Logged-in User,Simulate Logged-in User,RoadOfTheDead_fla\MainTimeline.as
 as3_Input_8,Space,空格,Input.as
 as3_Input_9,Up Arrow,上方向键,Input.as
 as3_Input_10,Backspace,退格,Input.as
@@ -900,7 +900,7 @@ as3_RDGameModeStory_19,Northside Cemetery,北区公墓,RDGameModeStory.as
 as3_RDGameModeStory_20,East Entrance,东区入口,RDGameModeStory.as
 as3_RDGameModeStory_21,Clearwater,克利尔沃特,RDGameModeStory.as
 as3_RDGameModeStory_22,East Finchley,东芬奇利,RDGameModeStory.as
-as3_RDGameModeStory_23,Fairview Mall,绵修商场,RDGameModeStory.as
+as3_RDGameModeStory_23,Fairview Mall,绵秀商场,RDGameModeStory.as
 as3_RDGameModeStory_24,Flyboy One,飞行小子一号,RDGameModeStory.as
 as3_RDUpgradeScreen_30,Damage,伤害,RDUpgradeScreen.as
 as3_RDUpgradeScreen_31,Accuracy,精准度,RDUpgradeScreen.as
@@ -920,7 +920,7 @@ as3_RDAchievement_80,Reach 20km in F.U.B.A.R.,在 F.U.B.A.R. 中达到 20 公里
 as3_RDAchievement_81,Gibs n Gravy,血肉横飞,RDAchievement.as
 as3_RDAchievement_82,Mastermind,幕后黑手,RDAchievement.as
 as3_RDGame_111,\nComplete Lost Guns to unlock.,\n完成“亡命孤军”以解锁。,RDGame.as
-as3_RDGame_112,\nEncounter the mutants in Lost Guns to unlock.,\n在“亡命孤军”中遭遇变异体以解锁。,RDGame.as
+as3_RDGame_112,\nEncounter the mutants in Lost Guns to unlock.,\n在“亡命孤军”中遭遇突变体以解锁。,RDGame.as
 as3_RDGame_113, (NEW),（新）,RDGame.as
 as3_RDGame_114,Page ,第 ,RDGame.as
 as3_RDGame_115,No Weapons,无武器,RDGame.as
@@ -935,7 +935,7 @@ as3_RDGame_123,Father\'s Day,父亲节,RDGame.as
 as3_RDGameModeGameplay_23,Aiming,瞄准,RDGameModeGameplay.as
 as3_RDGameModeGameplay_24,Handling,操控,RDGameModeGameplay.as
 as3_RDGameModeGameplay_25,Reloading,装弹,RDGameModeGameplay.as
-as3_RDGameModeGameplay_26,Diane,黛安,RDGameModeGameplay.as
+as3_RDGameModeGameplay_26,Diane,黛安娜,RDGameModeGameplay.as
 as3_RDGameModeGameplay_27,Cocheta,科切塔,RDGameModeGameplay.as
 as3_RDGameModeGameplay_28,Driving,驾驶,RDGameModeGameplay.as
 as3_RDGameModeGameplay_29,Toughness,坚韧,RDGameModeGameplay.as
@@ -973,7 +973,7 @@ as3_RDPlayer_59, Accuracy, 精准度,RDPlayer.as
 as3_RDPlayer_60, Capacity, 容量,RDPlayer.as
 as3_RDPlayer_61,Acquiring ,正在获取 ,RDPlayer.as
 as3_RDUnlockData_35,Cocheta\'s Weapons,科切塔的武器,RDUnlockData.as
-as3_RDUnlockData_36,Diane\'s Weapons,黛安的武器,RDUnlockData.as
+as3_RDUnlockData_36,Diane\'s Weapons,黛安娜的武器,RDUnlockData.as
 as3_RDAreaInfo_8,No Ending,无结局,RDAreaInfo.as
 as3_RDEditorInterface_317,F.U.B.A.R. Mode,F.U.B.A.R. 模式,RDEditorInterface.as
 as3_RDEditorInterface_318,Fog,雾,RDEditorInterface.as

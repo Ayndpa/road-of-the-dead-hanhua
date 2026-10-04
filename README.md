@@ -128,7 +128,7 @@ uv run python pipeline/paratranz/push_translations.py --project 20962 --file as3
 | `as3.csv` | 成就 / 提示 / 关卡等运行时文本 | `as3_<文件>_<序号>` | FFDec 反编译出的字面量 |
 | `menu.csv` | 主菜单手绘按钮标签 | 标签名（如 `StoryMode`） | 按钮英文 |
 
-> `ui.csv` 里一条词条就是整段 UI 文本，多段用换行分隔，翻译时**段数必须与原版一致**（对应下文 `--- RECORDSEPARATOR ---`）。
+> `ui.csv` 里一条词条就是整段 UI 文本，多段用换行分隔（对应下文 `--- RECORDSEPARATOR ---`）。段数最好与原版一致；若某条译文被整段重写、行数与原版不同（例如开场页「第 N 天」的新闻稿），二代构建会**完全保留译文的换行**：按译文行数增删 `DefineText` 记录（多余记录会被删除，多出的行沿用上一行的位置向下延伸并放宽裁剪框），再逐行居中。
 
 ---
 

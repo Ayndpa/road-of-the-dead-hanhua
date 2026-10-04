@@ -3,11 +3,11 @@ ui_4,"Small isolated events of an unknown
 
 illness and violence are reported in and 
 
-around Evans City.","埃文斯城及周边传出零星孤立的
+around Evans City.","有小部分来自埃文斯市的报道：
 
-未知疾病与暴力事件，
+埃文斯城及周边传出零星孤立的
 
-报道地点在埃文斯城。",DefineText 4
+未知疾病与暴力事件.",DefineText 4
 ui_7,Continue reading...,继续阅读...,DefineText 7
 ui_9,Continue reading...,继续阅读...,DefineText 9
 ui_12,Day 2,第2天,DefineText 12
@@ -23,7 +23,7 @@ violence and chaos ensued.","有报道称一名男子死于一种
 
 埃文斯城医院，随后那里爆发了
 
-血腥的暴力与混乱。",DefineText 13
+极度的血腥暴力与混乱。",DefineText 13
 ui_15,Day 3,第3天,DefineText 15
 ui_16,"More reports of sick, seemingly dead 
 
@@ -33,15 +33,13 @@ violence in the city. Cannibalism is also
 
 witnessed but grisly details are being 
 
-withheld to reduce panic.","更多报道称，患病、看似已死的人
+withheld to reduce panic.","更多报道称，原本死去的人们忽然复活，
 
-在城市中犯下随机的暴力行为。
+并且袭击他人和可怕的食人狂潮等现象的目击事件频发，
 
-还目击到食人行为，但骇人的细节
+但为了阻止进一步的恐慌，
 
-因过于血腥被压下，
-
-以减少恐慌。",DefineText 16
+新闻媒体和官方选择了掩盖此类事情相关报道",DefineText 16
 ui_18,Day 4,第4天,DefineText 18
 ui_19,"The CDC moves in, setting up 
 
@@ -57,21 +55,15 @@ The infected victims are clinically dead
 
 but still move and attack violently, in 
 
-larger and larger numbers.","疾控中心介入，搭建
+larger and larger numbers.","疾控中心进驻市区
 
-临时隔离区，试图控制这种
+设立临时区域意图隔离未知疾病
 
-未知疾病。据报道，咬伤
+有报道说咬伤和深度创伤会传染疾病，
 
-和深度抓伤都能传播
+被诊断为临床死亡却仍能进行移动
 
-这种疾病。
-
-被感染者临床已死亡，
-
-却仍会行动并凶猛地攻击，
-
-且数量越来越多。",DefineText 19
+和暴力攻击的尸体数量日益增多.",DefineText 19
 ui_21,Day 5,第5天,DefineText 21
 ui_22,"All news channels are forced off the air. 
 
@@ -95,29 +87,21 @@ being cleaned up. The truth of the
 
 mysterious illness is being withheld from 
 
-the public under government order.","所有新闻频道被迫停播。
+the public under government order.","所有新闻媒体被迫停播
 
-军队进驻并开始
+军队进驻市区实行隔离检疫.
 
-对整座城市实施隔离检疫。
+所有人未经允许皆不得进出市区.
 
-任何人不得进出城市。
+军方通过广播宣布如下戒严规定：
 
-军方广播宣布了
+保持镇定，呆在室内.
 
-隔离规定：保持冷静，
+所有新闻媒体皆报道此次事件由化学品泄漏所致，
 
-待在家中。
+目前正在进行清理中
 
-所有外部新闻频道报道称，
-
-这里发生了一起化学品泄漏，
-
-正在被清理。关于这种神秘疾病的
-
-真相，正遵照政府命令
-
-对公众隐瞒。",DefineText 22
+而事实则是政府决定向民众隐藏这一神秘疾病的真相.",DefineText 22
 ui_24,Day 6,第6天,DefineText 24
 ui_25,"Riots and panic break out as people try 
 
@@ -145,33 +129,19 @@ being killed. Military open fire on anyone
 
 approaching checkpoints. The CDC 
 
-begins burning large piles of bodies.","人们试图逃离城市，暴乱与恐慌爆发，
+begins burning large piles of bodies.","因民众试图擅离城市引发骚乱，
 
-数百人被捕，被关进当地
+数以百计的人因此被捕，被移送至隔离区内的学校与监狱中关押.
 
-学校和监狱改成的临时营地。
+军队与疾控中心于隔离区域内设置隔离检查点，意图以此维持隔离区现状
 
-军方和疾控中心在整个埃文斯城
+教堂与警察局成为临时疏散区域内最后的安全据点。
 
-设立隔离检查站，
+更多民众受到攻击进而发生感染，数千人员因此丧命.
 
-以维持检疫。
+军方开始对接近检查点的人员进行无差别开火。
 
-教堂和警察局被设为
-
-最后的疏散点。
-
-更多人被感染，
-
-并暴力发作。
-
-数千人丧生。军方对任何
-
-接近检查站的人开火。
-
-疾控中心开始焚烧
-
-成堆的尸体。",DefineText 25
+疾控中心开始进行尸体焚烧工作。",DefineText 25
 ui_27,Day 7,第7天,DefineText 27
 ui_28,"The infected walking corpses start to 
 
@@ -195,29 +165,15 @@ Communication breaks down
 
 throughout military channels as the 
 
-military is thrown into disarray.","被感染的行走尸体数量开始
+military is thrown into disarray.","市内被感染的僵尸数量超过平民.
 
-超过城中的活人。
+检查站覆灭速度日益加快.
 
-检查站正以越来越快的速度
+被无数僵尸尾随的数百名民众包围中央指挥所及交通中心检查站.
 
-被攻陷。一个中央指挥
+在混乱中一台高权限指挥的军用无线电装置失窃.
 
-与通信检查站
-
-被数百名惊慌的平民
-
-发动的暴乱攻陷，
-
-紧随其后的是一大群不死者。
-
-混乱中，一台高安全级别的
-
-广播电台被抢走。
-
-随着军方陷入混乱，
-
-各军事频道之间的通信彻底中断。",DefineText 28
+因军用通讯频道遭到中断，城市内的军队各单位陷入混乱。",DefineText 28
 ui_37,More games and movies by Evil-Dog and SickDeathFiend,Evil-Dog 和 SickDeathFiend 的更多游戏与影片！,DefineText 37
 ui_94,"R
 
@@ -456,8 +412,8 @@ from your files.","首先，新建一个战役，
 加载现有的战役。",DefineText 2659
 ui_2662,Cocheta,科切塔,DefineText 2662
 ui_2664,Cocheta,科切塔,DefineText 2664
-ui_2667,Diane,黛安,DefineText 2667
-ui_2669,Diane,黛安,DefineText 2669
+ui_2667,Diane,黛安娜,DefineText 2667
+ui_2669,Diane,黛安娜,DefineText 2669
 ui_2671,Radio,电台,DefineText 2671
 ui_2672,Radio,电台,DefineText 2672
 ui_2674,Close,关闭,DefineText 2674
@@ -1137,7 +1093,7 @@ ui_3431,"Oil spills are on the streets, leaking from vehicles and other debris. 
 ui_3433,Corpses,尸体,DefineText 3433
 ui_3434,"After the failed containment of the epidemic, most of Evans city&apos;s population has perished, either from the infected undead, military interventions or even suicide and panicked vehicular homicide. Littering the streets are many corpses or what&apos;s left of them after being devoured by the undead. &nbsp;Running over these corpses will temporarily slow your vehicle down.",疫情控制失败后，埃文斯市的大部分人口已经死亡，有的死于被感染的丧尸，有的死于军方干预，甚至有人自杀或在恐慌中驾车撞人。街上到处是尸体，或是被丧尸啃食后剩下的残骸。碾过这些尸体会让你的车辆暂时减速。,DefineText 3434
 ui_3436,Spike Strips,钉刺带,DefineText 3436
-ui_3437,"The military and police have deployed numerous spike strips on roads and highways around Evans City to enforce the quarantine. Civilians trying to escape in their vehicle don&apos;t get very far when they run over one of these, causing all their tires to go flat.You can use your SWERVE ability to dodge these traps, explosions and rockets to blow them up and upgraded tires to resist them better.",军方和警方在埃文斯市周边的道路和高速公路上布设了大量钉刺带，以强制执行隔离。试图驾车逃离的平民一旦碾上，所有轮胎都会爆胎，跑不了多远。你可以使用 SWERVE 能力闪避这些陷阱，用爆炸和火箭弹将其炸毁，或升级轮胎以更好地抵御它们。,DefineText 3437
+ui_3437,"The military and police have deployed numerous spike strips on roads and highways around Evans City to enforce the quarantine. Civilians trying to escape in their vehicle don&apos;t get very far when they run over one of these, causing all their tires to go flat.You can use your SWERVE ability to dodge these traps, explosions and rockets to blow them up and upgraded tires to resist them better.",军方和警方在埃文斯市周边的道路和高速公路上布设了大量钉刺带，以强制执行隔离。试图驾车逃离的平民一旦碾上，所有轮胎都会爆胎，跑不了多远。你可以使用能力闪避这些陷阱，用爆炸和火箭弹将其炸毁，或升级轮胎以更好地抵御它们。,DefineText 3437
 ui_3439,Bomber Jets,轰炸机,DefineText 3439
 ui_3440,"Near the final days and hours, the military, in full panic, issued the use of aircraft to bomb large parts of Evans City. &nbsp;In this vain attempt to stop the undead plague from spreading, many innocent civilians were caught in these jets bombings while trying to escape the city or simply by being held up in buildings in the bombings&apos; path. During the breakdown of communications, the jets are known to accidentally bomb other military personnel who happen to be in the wrong place at the wrong time. The jets can only bomb in a straight line so SWERVE out of the bombing lane or stay out of that lane if you see a jet flying over it. Their bombs can cause chain reaction explosions, so be aware of your surroundings.",在最后的日子里，军方陷入极度恐慌，下令出动飞机轰炸埃文斯市的大片区域。这种阻止丧尸瘟疫蔓延的徒劳尝试中，许多无辜平民在试图逃离城市时被这些轰炸机波及，或仅仅因为被困在轰炸路径上的建筑里而遭殃。通信中断期间，这些飞机会误炸恰好在错误时间身处错误地点的其他军人。飞机只能沿直线轰炸，所以看到飞机从某条线路上方飞过时，就 SWERVE 离开轰炸带或待在带外。它们的炸弹会引发连锁爆炸，注意观察四周。,DefineText 3440
 ui_3442,Security Fences,安全围栏,DefineText 3442
@@ -1147,22 +1103,22 @@ ui_3447,"The people of Evans City have been infected by an unknown, mysterious p
 ui_3449,Feeders,暴食者,DefineText 3449
 ui_3450,"The undead have an insatiable appetite, devouring everyone they can reach. Usually they will eat a small portion of a victim and then lose interest as the meat turns cold and starts to reanimate into another undead. Sometimes however, they enter into a feeding frenzy, stuffing themselves with as much of a body as they can fit inside their stomach, often causing their internal organs to burst and leak whatever they are eating back onto the ground.Common and ravager undead can often be seen in a feeding frenzy. They will ignore other living people around them, unless shot at or provoked, then they will stand up and come after you. Running over a feeder will grind lots of gore into your wheels, temporarily slowing you down quite a lot.",丧尸有着永不满足的食欲，见到够得着的人就吞食。通常它们会吃掉受害者的一小部分，随后肉变冷并开始变异成另一只丧尸，它们便失去兴趣。但有时它们会陷入疯狂进食，尽量把尸体塞进胃里，常常撑破内脏，把正在吃的东西漏回地面。普通丧尸和噬尸者常常会陷入疯狂进食。它们会无视周围其他活人，除非遭到射击或挑衅，才会站起来追你。碾过一个暴食者会把大量血肉绞进车轮，让你暂时大幅减速。,DefineText 3450
 ui_3452,Ravagers,掠夺者,DefineText 3452
-ui_3453,"Ravagers, a slightly less common undead type, its name coined by some military personnel for being &apos;ravaged&apos;, half eaten and rotten looking. These undead have slightly mutated and suffer horrible wounds from being eaten when they were killed originally.They tend to be slightly stronger than common undead and are able to take more punishment before being destroyed.",噬尸者是较为少见的丧尸类型，这个名字是一些军人起的，因为它们看上去被啃食过一半、腐烂不堪。这些丧尸发生了轻微变异，身上带着最初被杀死时被啃咬留下的可怕伤口。它们通常比普通丧尸稍强，被消灭前能承受更多伤害。,DefineText 3453
+ui_3453,"Ravagers, a slightly less common undead type, its name coined by some military personnel for being &apos;ravaged&apos;, half eaten and rotten looking. These undead have slightly mutated and suffer horrible wounds from being eaten when they were killed originally.They tend to be slightly stronger than common undead and are able to take more punishment before being destroyed.",掠夺者是较为少见的丧尸类型，这个名字是一些军人起的，因为它们看上去被啃食过一半、腐烂不堪。这些丧尸发生了轻微变异，身上带着最初被杀死时被啃咬留下的可怕伤口。它们通常比普通丧尸稍强，被消灭前能承受更多伤害。,DefineText 3453
 ui_3455,Brutes,鬼面兽,DefineText 3455
-ui_3456,"The Brutes are zombies that were large physically fit individuals in life. The plague seemed to amplify these particular infected&apos;s testosterone and adrenalin levels, making them slightly faster and tougher than common undead and ravagers. They also show signs of slight mutation and some believe they are the infected types that eventually transform into rampaging mutants but no one is sure.These undead are some of the toughest to take down, being stronger than both common undead and ravagers and requiring a little more firepower to take down.",鬼面兽生前是体格健壮的大块头。瘟疫似乎放大了这类感染者体内的睾酮和肾上腺素水平，使它们比普通丧尸和噬尸者更快、更耐打。它们也显示出轻微变异的迹象，有人认为它们最终会转变为狂暴的变异体，但没人确定。这些丧尸是最难消灭的种类之一，比普通丧尸和噬尸者都更强，需要更强的火力才能干掉。,DefineText 3456
+ui_3456,"The Brutes are zombies that were large physically fit individuals in life. The plague seemed to amplify these particular infected&apos;s testosterone and adrenalin levels, making them slightly faster and tougher than common undead and ravagers. They also show signs of slight mutation and some believe they are the infected types that eventually transform into rampaging mutants but no one is sure.These undead are some of the toughest to take down, being stronger than both common undead and ravagers and requiring a little more firepower to take down.",鬼面兽生前是体格健壮的大块头。瘟疫似乎放大了这类感染者体内的睾酮和肾上腺素水平，使它们比普通丧尸和掠夺者更快、更耐打。它们也显示出轻微变异的迹象，有人认为它们最终会转变为狂暴的变异体，但没人确定。这些丧尸是最难消灭的种类之一，比普通丧尸和噬尸者都更强，需要更强的火力才能干掉。,DefineText 3456
 ui_3458,Undead Soldier,丧尸士兵,DefineText 3458
 ui_3459,"Military personnel that have been killed trying to keep the quarantine upheld in Evans City. &nbsp;They can be seen all around the city, but more concentrated in overrun checkpoints.They are on par with Brutes in toughness and speed but they still wear their military gear and armor, providing more protection. Their helmet and body armor has a small chance to cause bullets to ricochet off them, dealing zero damage.",这些是试图维持埃文斯市隔离时被杀的军人。城中到处都能见到它们，在被攻陷的检查站里尤为集中。它们的耐打程度和速度与壮尸相当，但仍然穿着军装和护甲，因此防护更好。它们的头盔和防弹衣有小概率使子弹弹开，造成零伤害。,DefineText 3459
 ui_3461,Grub,蛴螬,DefineText 3461
 ui_3462,"Grubs, their name coined due to their moist and see through skin, are types of undead that lie in wait among the many dead. These victims took much longer to reanimate than all the others, sometimes rotting and bloating in the streets or body piles for days before the virus took over and reanimated them. &nbsp;Stinking, rotting and suffering from the early stages of putrification, these rancid horrors are able to spread the plague much faster with its sloshing bodily fluids constantly oozing and falling off of their bodies.After they fully renanimate, the putrification and rotting halts like the other types of undead but the damage is done already. They will typically lay motionless, waiting for a victim to walk within grasping distance. Driving directly over a grub corpse will automatically result in a hood grapple, so keep your eyes peeled for them. &nbsp;They are slightly tougher than ravagers but weaker than brutes.",蛴螬因皮肤湿滑透明而得名，是潜伏在众多死者之间的一种丧尸。这些受害者的苏醒时间比所有其他丧尸都长得多，有时在街上或尸堆里腐烂膨胀好几天，病毒才接管并令其苏醒。这些恶臭的恐怖之物散发着臭味、正在腐烂、处于腐败初期，它们不断渗出并掉落的黏滑体液能让瘟疫传播得更快。完全苏醒后，腐败和腐烂会像其他丧尸一样停止，但伤害早已造成。它们通常一动不动地躺着，等待受害者走进伸手可及的范围内。直接碾过一具蛆尸会立即引发引擎盖缠斗，所以要留意它们。它们比噬尸者稍耐打，但比壮尸弱。,DefineText 3462
 ui_3479,Mutants,突变体,DefineText 3479
-ui_3480,"It&apos;s unknown how much the virus can alter the human body but these types of undead are the most dangerous by far. The infected body&apos;s bones have mutated and enlarged until they burst from the skin, somtimes in large shards. The muscle tissue has expanded, making a single mutant as strong as several men. It&apos;s not known what happened to their skin but some military personnel claimed they witnessed one rip its own skin off and devour it, in a raged frenzy, before it tore down a barricade. These undead seem to be hyped up on adrenalin and rage and with the addition of enhanced strength, they leave little time to deal with them before they devastate entire checkpoints, bases and fortifications within minutes.These types of infected are much tougher and can take much more damage than any other types of undead. They can outrun vehicles, power-slam onto hoods and reach through side windows and pull drivers out onto the street.",目前尚不清楚病毒能在多大程度上改变人体，但这类丧尸是目前为止最危险的。感染者的骨骼发生变异并不断增大，直到刺破皮肤，有时是巨大的骨刺。肌肉组织膨胀，使一个变异体的力量堪比数人。它们的皮肤发生了什么无人知晓，但一些军人声称目睹过一个变异体在狂怒中将自身的皮肤撕下吞食，随后拆毁了一座路障。这些丧尸似乎被肾上腺素和愤怒冲昏了头，再加上增强的力量，它们能在几分钟内摧毁整个检查站、基地和防御工事，让人几乎没有时间应对。这类感染者比任何其他丧尸都更强壮，能承受更多伤害。它们能跑过车辆，猛扑砸上引擎盖，还能从侧窗伸手把驾驶员拽到街上。,DefineText 3480
+ui_3480,"It&apos;s unknown how much the virus can alter the human body but these types of undead are the most dangerous by far. The infected body&apos;s bones have mutated and enlarged until they burst from the skin, somtimes in large shards. The muscle tissue has expanded, making a single mutant as strong as several men. It&apos;s not known what happened to their skin but some military personnel claimed they witnessed one rip its own skin off and devour it, in a raged frenzy, before it tore down a barricade. These undead seem to be hyped up on adrenalin and rage and with the addition of enhanced strength, they leave little time to deal with them before they devastate entire checkpoints, bases and fortifications within minutes.These types of infected are much tougher and can take much more damage than any other types of undead. They can outrun vehicles, power-slam onto hoods and reach through side windows and pull drivers out onto the street.",目前尚不清楚病毒能在多大程度上改变人体，但这类丧尸是目前为止最危险的。感染者的骨骼发生变异并不断增大，直到刺破皮肤，有时是巨大的骨刺。肌肉组织膨胀，使一个突变体的力量堪比数人。它们的皮肤发生了什么无人知晓，但一些军人声称目睹过一个变异体在狂怒中将自身的皮肤撕下吞食，随后拆毁了一座路障。这些丧尸似乎被肾上腺素和愤怒冲昏了头，再加上增强的力量，它们能在几分钟内摧毁整个检查站、基地和防御工事，让人几乎没有时间应对。这类感染者比任何其他丧尸都更强壮，能承受更多伤害。它们能跑过车辆，猛扑砸上引擎盖，还能从侧窗伸手把驾驶员拽到街上。,DefineText 3480
 ui_3482,Civilians,平民,DefineText 3482
 ui_3483,"The few civilians remaining alive in Evans City are in a last desperate attempt to escape the plague after the military quarantine failed and power structures fell apart.Many tried to leave in their cars &nbsp;but were blocked at gunpoint on the highways and streets by military personnel. During the final chaos, many abandoned their cars, trapped in traffic and panic, to escape the oncoming hordes of undead, running anywhere they could, but most often to their death.Civilians can be rescued by stopping your vehicle and honking your horn at them. They will then run to you and get inside if you don&apos;t have any zombie on your hood. Your Vehicle can hold up to 5 civilians at a time. While driving on the road, you can honk your horn to make civilians run out of the way in hopes not to hit them. Dropping them off at police stations and churches can grant bonus RP. Accidently killing a civilian will result in a RP penalty!",军方隔离失败、权力体系崩溃后，埃文斯市仅存的少数平民在做最后的绝望挣扎，试图逃离瘟疫。许多人想开车离开，却在高速公路和街道上被军方持枪拦下。在最后的混乱中，许多人困在车流和恐慌里，弃车逃生，躲避涌来的丧尸群，四处奔逃，但多半是奔向死亡。只要停下车并按喇叭，就能救助平民。若你的引擎盖上没有丧尸，他们就会跑过来上车。你的车辆一次最多可载 5 名平民。在路上行驶时，你可以按喇叭让平民闪开，以免撞到他们。把他们送到警察局和教堂可获得额外 RP。意外撞死平民会导致 RP 惩罚！,DefineText 3483
 ui_3485,Enemy Soldiers,敌方士兵,DefineText 3485
 ui_3486,"In the F.U.B.A.R. challenge mode, you will have to fight enemy soldiers.They will fire fully automatic rifles at you with progressive aiming.If you&apos;re not in their lane, they will continue to fire and gradually correct their aim. There are 3 standard soldier behaviors: stationary, alignment and hidden.Hidden soldiers will pop out from behind cars and blast you.Fire at soldiers to kill them, obviously, but also to suppress their position and make them find another firing position.\Soldiers are normal humans and can be killed with a few gun shots but their body armor has a small chance to block bullets as well.",在 F.U.B.A.R. 挑战模式中，你必须与敌方士兵交战。他们会用全自动步枪射击你，并逐步修正瞄准。如果你不在他们的射击线上，他们会持续开火并逐渐校正准星。士兵有 3 种标准行为：驻守、横向移动和隐藏。隐藏的士兵会从车后窜出向你开火。向士兵开火既能杀死他们，也能压制其位置，迫使他们另寻射击点。\士兵是普通人，几枪就能打死，但他们的防弹衣也有小概率挡下子弹。,DefineText 3486
 ui_3488,Spike Soldiers,钉刺兵,DefineText 3488
 ui_3489,"In the F.U.B.A.R. challenge mode, some soldiers will control spike strips and pull the spike strip toward them to try to rip your tires. You can attempt to fake them out by swerving out of the way while driving to the empty space where they would eventually pull the spikes to.",在 F.U.B.A.R. 挑战模式中，有些士兵会操作钉刺带，把钉刺带拉向自己，试图扎破你的轮胎。你可以试着虚晃一招：驾驶时拐向一旁，驶入他们最终会把钉刺拉向的空当。,DefineText 3489
-ui_3491,Bomb Squad,排爆小队,DefineText 3491
+ui_3491,Bomb Squad,炸弹小组,DefineText 3491
 ui_3492,"In the F.U.B.A.R. challenge mode, bomb squads will lie in wait with their line of remote controlled bombs ready to go off. When you get close enough to them, they will set them off. &nbsp;The bombs can blow from left to right or from right to left so pay attention. &nbsp;Swerving toward the starting point of the explosions is usually the best way to dodge the line of bombs.",在 F.U.B.A.R. 挑战模式中，排爆小队会埋伏起来，摆好一排遥控炸弹随时引爆。等你靠得足够近，他们就会引爆。炸弹可能从左往右炸，也可能从右往左，所以要注意。朝爆炸起始点打方向，通常是躲避这排炸弹的最佳方法。,DefineText 3492
 ui_3494,Mounted Weapons,车载武器,DefineText 3494
 ui_3495,"Mounted weapons can only be purchased with RP at Weapon Caches.You can only have one type of weapon installed at a time.There are 2 types, the mounted machinegun and the rocket launcher.Both weapons can cause cars to blow up, although the mounted machinegun takes a few shots while the rocket launcher only requires 1 direct hit.Rocket explosions have a large area of damage that can also cause chain reaction explosions. Rockets can also easily blast through other obstacles such as barricades, trees and very large vehicles.Ammunition for these mounted weapons cannot be replenished and therefore need to be repurchased when they run out of ammo.",车载武器只能在武器库用 RP 购买。同一时间只能安装一种武器。共有 2 种：车载机枪和火箭发射器。两种武器都能把车炸毁，不过车载机枪需要几发，而火箭发射器只需 1 发直接命中。火箭爆炸杀伤范围大，还能引发连锁爆炸。火箭也能轻易炸穿路障、树木和大型车辆等其他障碍物。这些车载武器的弹药无法补充，因此打光后需要重新购买。,DefineText 3495
@@ -1171,15 +1127,15 @@ ui_3498,"Diane has 4 personal weapons she can acquire. She will start with the P
 ui_3500,Cocheta&apos;s Weapons,科切塔的武器,DefineText 3500
 ui_3501,"Cocheta has 4 personal weapons he can acquire. He will start with the Pistol and Assault SMG and can purchase the last 2 weapons at a Weapon Cache or Police Station for RP. He can also upgrade each weapon&apos;s Damage, Accuracy and Bullet Capacity.Gun Aiming, Handling and Reloading will also gradually level up as you use them.",科切塔可以获取 4 种个人武器。他初始拥有手枪和突击冲锋枪，另外 2 种可以在武器库或警察局用 RP 购买。他还能升级每种武器的伤害、精准度和弹容量。枪械瞄准、操控和装弹也会随着使用逐渐升级。,DefineText 3501
 ui_3503,Driving Skills,驾驶技能,DefineText 3503
-ui_3504,"Both Diane and Cocheta can level up individual skills as they use them.The more each character drives, the better they will get at it.They will also get better Toughness as they survive impacts and explosions, making them better suited to handle collisions, explosions and mutant side grapples.",黛安娜和科切塔都能在使用中提升各自的技能。角色开车越多，驾驶技术就越好。他们在承受撞击和爆炸后还会提升韧性，从而更能应对碰撞、爆炸和变异体的侧面缠斗。,DefineText 3504
+ui_3504,"Both Diane and Cocheta can level up individual skills as they use them.The more each character drives, the better they will get at it.They will also get better Toughness as they survive impacts and explosions, making them better suited to handle collisions, explosions and mutant side grapples.",黛安娜和科切塔都能在使用中提升各自的技能。角色开车越多，驾驶技术就越好。他们在承受撞击和爆炸后还会提升韧性，从而更能应对碰撞、爆炸和突变体的侧面缠斗。,DefineText 3504
 ui_3506,Perks,特长,DefineText 3506
 ui_3507,"Perks can be purchased at location stops with RP.Each Perk, once purchased, grants a permanent ability, although the chopper assist Perk will not work in the story mode nor in the Rescue Op and F.U.B.A.R. challenge modes.Each perk works for both Diane and Cocheta with 5 tiers to make them more powerful.",特长可以在沿途站点用 RP 购买。每个特长一旦购买，就会提供一项永久能力，不过直升机支援特长在剧情模式以及救援行动和 F.U.B.A.R. 挑战模式中无效。每个特长对黛安和科切塔都生效，共有 5 个等级，可让它们更强。,DefineText 3507
 ui_3509,Medical Shots,医疗针剂,DefineText 3509
 ui_3510,"Medical shots can be purchased with RP at Churches. You can purchase the shots up to 5 times each.The steroid shot will grant both characters a temporary personal resistance to damage, allowing them to go through explosions unscathed.Med Patch shots are a cocktail of many things that will alleviate your characters&apos; suffering (indictated by the screen flashing red) and restore their health.",医疗针剂可以在教堂用 RP 购买。每种针剂最多可购买 5 次。类固醇针剂会让两个角色暂时获得个人伤害抗性，能安然穿过爆炸。医疗包针剂是多种成分的混合剂，能缓解角色的痛苦（屏幕闪红即表示处于痛苦中）并恢复生命值。,DefineText 3510
 ui_3512,Alpha Mutants,阿尔法突变体,DefineText 3512
-ui_3513,"Alpha Mutants are an off-shoot of the typical mutants seen rampaging the streets of Evans City.They have a distinctly darker skull color and exhibit greater speed, strength and hostility.They were coined &apos;Alphas&apos; not just because they are more dangerous but because there is never more than one seen together and is usually followed around by several regular mutants, acting almost as a pack, hunting and destroying everything in their paths.Alphas will often go into a rage and bash the hood of your car, damaging your engine and disrupting your aim temporarily.",阿尔法变异体是埃文斯市街头肆虐的普通变异体的一个分支。它们的头骨颜色明显更深，速度、力量和攻击性都更强。它们被称为「阿尔法」，不仅因为更危险，还因为从不会同时出现两只，而且通常有几只普通变异体跟随左右，几乎像一群野兽，猎杀并摧毁沿途的一切。阿尔法变异体常常会暴怒，猛砸你汽车的引擎盖，损坏引擎并暂时干扰你的瞄准。,DefineText 3513
+ui_3513,"Alpha Mutants are an off-shoot of the typical mutants seen rampaging the streets of Evans City.They have a distinctly darker skull color and exhibit greater speed, strength and hostility.They were coined &apos;Alphas&apos; not just because they are more dangerous but because there is never more than one seen together and is usually followed around by several regular mutants, acting almost as a pack, hunting and destroying everything in their paths.Alphas will often go into a rage and bash the hood of your car, damaging your engine and disrupting your aim temporarily.",阿尔法突变体是埃文斯市街头肆虐的普通突变体的一个分支。它们的头骨颜色明显更深，速度、力量和攻击性都更强。它们被称为「阿尔法」，不仅因为更危险，还因为从不会同时出现两只，而且通常有几只普通变异体跟随左右，几乎像一群野兽，猎杀并摧毁沿途的一切。阿尔法变异体常常会暴怒，猛砸你汽车的引擎盖，损坏引擎并暂时干扰你的瞄准。,DefineText 3513
 ui_3515,Mutant Tactics,突变体战术,DefineText 3515
-ui_3516,"1. Extreme speed: Mutants can leap long distances and over obstacles.2. Power-Slam: A mutant can leap and slam onto the hood, causing massive shaking.3. Mutants have the highest Health after Alpha mutants.4: They will run along side your vehicle, sometimes in front, attacking randomly. They will leap off the hood if they take too much damage but will continue to chase you.5: They can side grapple you through your side window, grabbing hold of the driver or gunner. The driver can mash the interact (space) key to break out of it, like wise the gunner can mash the fire button (mouse) to win the struggle. If the Driver is side grappled, the gunner can also shoot the grappling mutant in the head to kill it, ending the grapple. If the gunner is side grappled, the driver can grind the side walls in alleyways and on highways, to grind the mutant off, ending the grapple.",1. 极速：突变体能远距离跳跃并越过障碍物。2. 猛扑：突变体能跃起砸上引擎盖，造成剧烈震动。3. 变异体的生命值仅次于阿尔法突变体。4. 它们会跑在你车辆旁边，有时在前方，随机发动攻击。受到太多伤害时它们会跳下引擎盖，但仍会继续追赶你。5. 它们能从侧窗发动侧面缠斗，抓住驾驶员或枪手。驾驶员可以猛按互动（空格）键挣脱，枪手同样可以猛按开火（鼠标）键赢得挣扎。如果驾驶员被侧面缠斗，枪手还能射击缠斗中的突变体头部将其击杀，结束缠斗。如果枪手被侧面缠斗，驾驶员可以把车蹭向小巷和高速公路的侧墙，将变异体磨掉，结束缠斗。,DefineText 3516
+ui_3516,"1. Extreme speed: Mutants can leap long distances and over obstacles.2. Power-Slam: A mutant can leap and slam onto the hood, causing massive shaking.3. Mutants have the highest Health after Alpha mutants.4: They will run along side your vehicle, sometimes in front, attacking randomly. They will leap off the hood if they take too much damage but will continue to chase you.5: They can side grapple you through your side window, grabbing hold of the driver or gunner. The driver can mash the interact (space) key to break out of it, like wise the gunner can mash the fire button (mouse) to win the struggle. If the Driver is side grappled, the gunner can also shoot the grappling mutant in the head to kill it, ending the grapple. If the gunner is side grappled, the driver can grind the side walls in alleyways and on highways, to grind the mutant off, ending the grapple.",1. 极速：突变体能远距离跳跃并越过障碍物。2. 猛扑：突变体能跃起砸上引擎盖，造成剧烈震动。3. 突变体的生命值仅次于阿尔法突变体。4. 它们会跑在你车辆旁边，有时在前方，随机发动攻击。受到太多伤害时它们会跳下引擎盖，但仍会继续追赶你。5. 它们能从侧窗发动侧面缠斗，抓住驾驶员或枪手。驾驶员可以猛按互动（空格）键挣脱，枪手同样可以猛按开火（鼠标）键赢得挣扎。如果驾驶员被侧面缠斗，枪手还能射击缠斗中的突变体头部将其击杀，结束缠斗。如果枪手被侧面缠斗，驾驶员可以把车蹭向小巷和高速公路的侧墙，将变异体磨掉，结束缠斗。,DefineText 3516
 ui_3518,Alpha Mutant Tactics,阿尔法突变体战术,DefineText 3518
 ui_3519,"The alpha mutant uses the same tactics as the regular mutants but does so in an even more brutal way. &nbsp;It&apos;s stronger, faster and tougher. When an alpha mutant is on your hood, they will sometimes go into a frenzy, slamming the hood, causing damage and shaking the vehicle, ruining your aim.There is never 2 alpha mutants together but a single alpha will usually have a small group of regular mutants following it around, like a pack.",阿尔法突变体采用与普通突变体相同的行动逻辑，但方式更加凶残。它更强、更快、更耐打。当阿尔法变异体趴在你的引擎盖上时，它有时会陷入狂暴，猛砸引擎盖，造成损伤并震动车辆，扰乱你的瞄准。从不会同时出现 2 只阿尔法突变体，但单独一只通常带着一小群普通突变体，像一伙兽群。,DefineText 3519
 ui_3521,Undead Tactics,丧尸战术,DefineText 3521
@@ -1222,13 +1178,13 @@ ui_3638,"John Creasman's
 Car is now available","约翰·克里斯曼的
 
 车现已可用",DefineText 3638
-ui_3641,Diane,黛安,DefineText 3641
-ui_3642,Diane,黛安,DefineText 3642
+ui_3641,Diane,黛安娜,DefineText 3641
+ui_3642,Diane,黛安娜,DefineText 3642
 ui_3645,Her WeaponS,她的武器,DefineText 3645
 ui_3647,Her WeaponS,她的武器,DefineText 3647
 ui_3649,His WeaponS,他的武器,DefineText 3649
 ui_3650,His WeaponS,他的武器,DefineText 3650
-ui_3654,Diane,黛安,DefineText 3654
+ui_3654,Diane,黛安娜,DefineText 3654
 ui_3655,Toughness,韧性,DefineText 3655
 ui_3666,Cocheta,科切塔,DefineText 3666
 ui_3669,Capacity,容量,DefineText 3669
@@ -1286,7 +1242,7 @@ ui_3791,250 RP,250 RP,DefineText 3791
 ui_3794,Faster Switch,切换更快,DefineText 3794
 ui_3795,250 RP,250 RP,DefineText 3795
 ui_3800,Steroids,兴奋剂,DefineText 3800
-ui_3801,Med Patch,医疗贴,DefineText 3801
+ui_3801,Med Patch,医疗针,DefineText 3801
 ui_3802,250 RP,250 RP,DefineText 3802
 ui_3803,250 RP,250 RP,DefineText 3803
 ui_3804,Perks,技能,DefineText 3804

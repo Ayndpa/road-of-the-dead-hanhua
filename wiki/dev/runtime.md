@@ -21,6 +21,19 @@ as3_<文件>_<序号>,<FFDec 反编译出的字面量>,<中文>,<文件名>
 
 加载后重建为 `{文件名: {英文字面量: 中文}}`。
 
+**不要把引擎枚举值当文案翻译。** `MainTimeline.as` 里给 Newgrounds 组件设置的两个值是
+`APIConnector` 内部按英文字面量 `switch` 的枚举，不是界面文本：
+
+- `debugMode = "Simulate Logged-in User"` → `_apiConnect` 匹配后设为
+  `DEBUG_MODE_LOGGED_IN`，伪造登录会话，`API.hasUserSession` 为真，
+  `TestSession()` 不显示护照/登录框；
+- `connectorType = "Flash Ad Only"` → `initAd` 用来切换广告帧。
+
+一旦译成中文就匹配不到：`debugMode` 掉进 `default`（`Off` → `RELEASE_MODE`），
+本地没有真实 Newgrounds 会话时 `hasUserSession` 为假，每次启动都会弹出登录提示。
+`pipeline/lib/translations.py` 用 `_NON_TRANSLATABLE_AS3` 强制跳过这两条，
+`data/paratranz2/as3.csv` 里也保持英文。
+
 ## 二代附带的运行时修复
 
 在替换字面量的同时，`build_rotd2_ui.py` 还对 `RDGame` 与 `MainTimeline` 打了几个

@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 from .constants import ORIGINAL, ROOT
+from pipeline.asr.asr_filter import is_stage_direction  # noqa: E402
 from pipeline.lib.translations import pairs  # noqa: E402
 
 from .as3 import build_chunks, build_stream_chunks
@@ -18,7 +19,12 @@ def generate(original, out, durations=None, stream_timing=None, swf=None,
              min_split_secs: float = 7.5, debug: bool = False,
              stream_offset: float = 1.58) -> Path:
     subs = pairs("voice")            # {cls: (english, chinese)}
-    stream_subs = pairs("stream")    # {stream_NN: (english, chinese)}
+    # {stream_NN: (english, chinese)}; drop stage directions such as Whisper's
+    # "*Dramatic Music*" so an instrumental bed never shows a subtitle.
+    all_stream = pairs("stream")
+    stream_subs = {k: (en, zh) for k, (en, zh) in all_stream.items()
+                   if not is_stage_direction(en)}
+    dropped_stream = len(all_stream) - len(stream_subs)
     items = sorted((k, zh, en) for k, (en, zh) in subs.items() if zh)
     chunks = build_chunks(items)
     print(f"voice subtitle entries: {len(items)}; ", end="")
@@ -51,7 +57,8 @@ def generate(original, out, durations=None, stream_timing=None, swf=None,
                 stream.append({"start": seg["start"], "end": seg["end"],
                                "zh": zh, "en": en})
     stream_chunks = build_stream_chunks(stream) if stream else '""'
-    print(f"{len(stream)} stream entries")
+    print(f"{len(stream)} stream entries"
+          + (f" ({dropped_stream} non-dialogue skipped)" if dropped_stream else ""))
 
     src = Path(original).read_text(encoding="utf-8")
 

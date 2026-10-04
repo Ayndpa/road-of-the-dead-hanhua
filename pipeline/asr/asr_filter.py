@@ -58,6 +58,16 @@ NON_DIALOGUE_RE = re.compile(
 UNNAMED_CLASS = re.compile(r"^\d+$")
 
 
+def is_stage_direction(text: str) -> bool:
+    """True when the whole line is a bracketed sound/music tag, not dialogue.
+
+    Whisper writes ``*Dramatic Music*`` over an instrumental bed.  Such a stream
+    clip must never become a subtitle, and its key should not be handed to
+    translators either, so both the CSV sync and the subtitle build drop it.
+    """
+    return bool(BRACKET_TAG.match((text or "").strip()))
+
+
 def is_hallucination(text: str) -> bool:
     """True for output that is not usable dialogue."""
     t = (text or "").strip()

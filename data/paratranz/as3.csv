@@ -37,7 +37,7 @@ as3_RDAchievement_000,Survivor,幸存者,RDAchievement.as
 as3_RDAchievement_001,Hell\'s Angel,地狱天使,RDAchievement.as
 as3_RDAchievement_002,Beat The Great Escape,通关《亡命大逃亡》,RDAchievement.as
 as3_RDAchievement_003,Beat Highway To Hell,通关《地狱公路》,RDAchievement.as
-as3_RDAchievement_004,"""Dead On Time""","""准时赴死""",RDAchievement.as
+as3_RDAchievement_004,"""Dead On Time""","""死亡计时""",RDAchievement.as
 as3_RDAchievement_005,One Man Army,孤胆英雄,RDAchievement.as
 as3_RDAchievement_006,Tank,坦克,RDAchievement.as
 as3_RDAchievement_007,Buy all the upgrades,购买全部升级选项,RDAchievement.as
@@ -67,15 +67,15 @@ as3_RDAchievement_030,Get all 5 enemy types off your hood,把 5 种敌人都从�
 as3_RDAchievement_031,Wise Man,智者,RDAchievement.as
 as3_RDAchievement_032,Top Gun,顶级飞行员,RDAchievement.as
 as3_RDAchievement_033,"""Drive ""","""行驶 """,RDAchievement.as
-as3_RDAchievement_034,""" KM in Dead On Time""",""" 公里（《准时赴死》）""",RDAchievement.as
+as3_RDAchievement_034,""" KM in Dead On Time""",""" 公里（《死亡计时》）""",RDAchievement.as
 as3_RDAchievement_035,""" KM in Police State""",""" 公里（《警察国度》）""",RDAchievement.as
 as3_RDAchievement_036,""" KM at maximum speed""",""" 公里（最高速度）""",RDAchievement.as
 as3_RDAchievement_037,""" KM with all 4 tires blown""",""" 公里（四条轮胎全爆）""",RDAchievement.as
 as3_RDAchievement_038,"""Do a ""","""完成 """,RDAchievement.as
-as3_RDAchievement_039,""" hits combo with zombies only""",""" 僵尸连击""",RDAchievement.as
-as3_RDAchievement_040,""" hits vehicle collision combo""",""" 车辆撞击连击""",RDAchievement.as
+as3_RDAchievement_039,""" hits combo with zombies only""",""" 次纯僵尸连击""",RDAchievement.as
+as3_RDAchievement_040,""" hits vehicle collision combo""",""" 次车辆撞击连击""",RDAchievement.as
 as3_RDAchievement_041,"""Do ""","""完成 """,RDAchievement.as
-as3_RDAchievement_042,""" zombie splatter hits""",""" 僵尸飞溅命中""",RDAchievement.as
+as3_RDAchievement_042,""" zombie splatter hits""",""" 次僵尸飞溅命中""",RDAchievement.as
 as3_RDAchievement_043,"""Hit ""","""撞击 """,RDAchievement.as
 as3_RDAchievement_044,""" enemies, alternating between zombie and soldier or vice versa""",""" 在僵尸和士兵之间交替撞击""",RDAchievement.as
 as3_RDAchievement_045,""" highway soldiers""",""" 公路士兵""",RDAchievement.as
@@ -90,8 +90,8 @@ as3_RDAchievement_053,"""Reach up to ""","""在《准时赴死》中最多获得
 as3_RDAchievement_054,""" seconds bonus time in Dead On Time""",""" 秒奖励时间""",RDAchievement.as
 as3_RDAchievement_055,"""Exit the city with at least ""","""至少提前 """,RDAchievement.as
 as3_RDAchievement_056,""" seconds to spare""",""" 秒逃出城市""",RDAchievement.as
-as3_RDGame_000,Highway 65\n\nWelcome To Evans City\n\nCity Exit\n60km,65号公路\n\n欢迎来到埃文斯城\n\n出城口\n60公里,RDGame.as
-as3_RDGame_001,Dead On Time Distance,《准时赴死》距离,RDGame.as
+as3_RDGame_000,Highway 65\n\nWelcome To Evans City\n\nCity Exit\n60km,65号公路\n\n欢迎来到埃文斯市\n\n出城口\n60公里,RDGame.as
+as3_RDGame_001,Dead On Time Distance,《死亡计时》距离,RDGame.as
 as3_RDGame_002,Police State Distance,《警察国度》距离,RDGame.as
 as3_RDGame_003,Highest Hit Combo,最高连击,RDGame.as
 as3_RDGame_004,Highest Flip Flop,最多翻转,RDGame.as
@@ -99,14 +99,14 @@ as3_RDGame_005,Speed through the zombie apocalypse and escape the quarantined ci
 as3_RDGame_006,This is the road for survivors with something to prove!\n\nHard difficulty,这条路属于想要证明自己的幸存者！\n\n困难难度,RDGame.as
 as3_RDGame_007,This is for survivors with something to prove!\n\nHard difficulty\nComplete The Great Escape to unlock this mode!,这是为想要证明自己的幸存者准备的！\n\n困难难度\n通关《亡命大逃亡》即可解锁此模式！,RDGame.as
 as3_RDGame_008,You\'re living on borrowed time.\n\nGet as far as you can by killing zombies to earn extra time!,你已经时日无多。\n\n尽可能走得更远，靠杀僵尸换取额外时间！,RDGame.as
-as3_RDGame_009,This is war and you are a one man army on wheels!\n\nGet as far as you can while facing brutal military resistance!,这是战争，而你是车轮上的一人军团！\n\n在军队的残酷阻击下尽可能走得更远！,RDGame.as
+as3_RDGame_009,This is war and you are a one man army on wheels!\n\nGet as far as you can while facing brutal military resistance!,这是战争，而你是车上的一人军团！\n\n在军队的残酷阻击下尽可能走得更远！,RDGame.as
 as3_RDGame_010,"Play more games at newgrounds.com, where artists, programmers, musicians, writers and voice actors join forces to make pure awesomeness!",在 newgrounds.com 玩更多游戏——画家、程序员、音乐人、作者和配音演员在这里合力创造纯粹的好东西！,RDGame.as
 as3_RDGame_011,"Evil-Dog.com\n\nCheck out my other games, my music and my movies on my official website!",Evil-Dog.com\n\n在我的官网查看我的其他游戏、音乐和影片！,RDGame.as
 as3_RDGame_012,SickDeathFiend.com\n\nCheck out more movies and art by SickDeathFiend on his official website!,SickDeathFiend.com\n\n在 SickDeathFiend 的官网查看更多影片和美术作品！,RDGame.as
 as3_RDGame_013,Music made by\nSymphony of Specters\n\nVisit their website for more amazing music!,音乐制作\nSymphony of Specters\n\n访问他们的网站收听更多精彩音乐！,RDGame.as
 as3_RDGame_014,Surviving the zombie apocalypse requires a complete set of skills.\nDo You have what it takes to complete all the achievements?,在僵尸末日中求生需要全面的技能。\n你有本事完成所有成就吗？,RDGame.as
 as3_RDGame_015,"In options, you can:\nCustomize your controls\nToggle sound and music\nSet graphic quality\nEnable/Disable buildings\nDelete your save data",在选项中，你可以：\n自定义按键\n开关音效与音乐\n设置画质\n开关建筑显示\n删除存档数据,RDGame.as
-as3_RDGame_016,Are you trying to be the greatest survivor?\n\nCheck the high scores for the Dead On Time and Police State modes!,想成为最伟大的幸存者吗？\n\n来看看《准时赴死》和《警察国度》模式的排行榜！,RDGame.as
+as3_RDGame_016,Are you trying to be the greatest survivor?\n\nCheck the high scores for the Dead On Time and Police State modes!,想成为最伟大的幸存者吗？\n\n来看看《死亡计时》和《警察国度》模式的排行榜！,RDGame.as
 as3_RDGame_017,Well done!,干得漂亮！,RDGame.as
 as3_RDGame_018,Delete your save data?\nYou will lose all your progress,要删除存档数据吗？\n你将失去全部进度,RDGame.as
 as3_RDGame_019,Where do you wanna start\nThe Great Escape?,要从哪里开始\n《亡命大逃亡》？,RDGame.as
@@ -152,16 +152,16 @@ as3_RDGameModeGameplay_027,Quality Key: ,画质键：,RDGameModeGameplay.as
 as3_RDGameModeGameplay_028,"\n\nIf the game runs slow, try cycling through the quality settings to find the best one for you.  You can also disable the buildings in the options.",\n\n如果游戏运行缓慢，可以循环切换画质设置，找到最适合你的那一档。你也可以在选项中关闭建筑显示。,RDGameModeGameplay.as
 as3_RDGameModeGameplay_029,"""Hand Brake""","""手刹""",RDGameModeGameplay.as
 as3_RDGameModeGameplay_030,Hand Brake Key: ,手刹键：,RDGameModeGameplay.as
-as3_RDGameModeGameplay_031,"\n\nIn order to survive this nightmare, you\'ll need to use your hand brake to avoid object with better control.",\n\n想在这场噩梦里活下来，你需要用手刹更精准地避开障碍物。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_031,"\n\nIn order to survive this nightmare, you\'ll need to use your hand brake to avoid object with better control.",\n\n想在这场噩梦里活下来，你需要用手刹用来漂移更精准地避开障碍物。,RDGameModeGameplay.as
 as3_RDGameModeGameplay_032,Wipers Key: ,雨刷键：,RDGameModeGameplay.as
 as3_RDGameModeGameplay_033,"\n\nBetter get ready to get bloody!  With all these zombies, soldiers and civilians splattering their blood in your windshield, it\'s a good idea to use your wipers once in a while.",\n\n准备好溅一身血吧！僵尸、士兵和平民的血会糊满挡风玻璃，隔一阵子开一下雨刷是个好主意。,RDGameModeGameplay.as
 as3_RDGameModeGameplay_034,Horn Key: ,喇叭键：,RDGameModeGameplay.as
 as3_RDGameModeGameplay_035,\n\nThere is chaos on the highway and the civilians are running scared.  Running over civilians is bad so you should warn them with your horn to get them out of the way.,\n\n公路上一片混乱，平民吓得四散奔逃。撞到平民可不是好事，所以该按喇叭提醒他们让路。,RDGameModeGameplay.as
 as3_RDGameModeGameplay_036,Punching,挥拳,RDGameModeGameplay.as
 as3_RDGameModeGameplay_037,Punch Key: ,挥拳键：,RDGameModeGameplay.as
-as3_RDGameModeGameplay_038,"\n\nThrough your escape, you\'ll end up with a shattered windshield.  If it\'s ruining your vision, you can punch it off.  You can\'t punch zombies, the risk of being infected is too great.",\n\n逃亡途中挡风玻璃难免会被打碎。如果它挡住了视线，你可以一拳把它打掉。但你不能打僵尸——被感染的代价太大。,RDGameModeGameplay.as
-as3_RDGameModeGameplay_039,Splatter Hits,飞溅命中,RDGameModeGameplay.as
-as3_RDGameModeGameplay_040,"When you hit someone, dead or alive, right in the center of your car and at high speed, you will get a splatter hit.  They will give you an extra Road Point multiplier.  Use the horn for easier zombie splatter hits!  Civilians will NOT give a bonus.",当你高速用车头正中撞上任何人——死的活的都算——就会触发飞溅命中，获得额外的公路点数倍率。用喇叭更容易撞出僵尸飞溅命中！撞平民没有奖励。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_038,"\n\nThrough your escape, you\'ll end up with a shattered windshield.  If it\'s ruining your vision, you can punch it off.  You can\'t punch zombies, the risk of being infected is too great.",\n\n逃亡途中挡风玻璃难免会被打碎。如果它挡住了视线，你可以一拳把它打掉。但你不能打僵尸——被感染的风险太大。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_039,Splatter Hits,飞溅撞击,RDGameModeGameplay.as
+as3_RDGameModeGameplay_040,"When you hit someone, dead or alive, right in the center of your car and at high speed, you will get a splatter hit.  They will give you an extra Road Point multiplier.  Use the horn for easier zombie splatter hits!  Civilians will NOT give a bonus.",当你高速用车头正中撞上任何人——死的活的都算——就会触发飞溅命中，获得额外的公路点数倍率。用喇叭更容易撞出僵尸飞溅撞击！撞平民没有奖励。,RDGameModeGameplay.as
 as3_RDGameModeGameplay_041,Hit Combos,连击,RDGameModeGameplay.as
 as3_RDGameModeGameplay_042,"A good way to earn Road Points is to make hit combos.  By hitting multiple enemies in a row in a timely fashion, you will get more Road Points than regular hits.  The bigger the combo, the more points you get!  Be careful, hitting a civilian will break your combo.",赚取公路点数的好办法是打出连击。在短时间内连续撞到多个敌人，你得到的点数会比普通撞击更多。连击越长，得分越高！注意，撞到平民会中断连击。,RDGameModeGameplay.as
 as3_RDGameModeGameplay_043,Pistol,手枪,RDGameModeGameplay.as
@@ -169,10 +169,10 @@ as3_RDGameModeGameplay_044,Pistol Key: ,手枪键：,RDGameModeGameplay.as
 as3_RDGameModeGameplay_045,"\nYou have brought a pistol with you.  When there is an enemy clinging to your hood, you can get it off quickly by shooting it.  Be aware that using the pistol will blast the windshield to pieces in a couple shots.",\n你随身带了一把手枪。有敌人扒在引擎盖上时，开枪能快速把它打下去。注意，手枪几发子弹就会把挡风玻璃打碎。,RDGameModeGameplay.as
 as3_RDGameModeGameplay_046,Helicopters,直升机,RDGameModeGameplay.as
 as3_RDGameModeGameplay_047,"If you really piss the military off, they\'ll send helicopters to take you down for sure.  When a helicopter is after you, you\'ll have to make it crash into the big highway signs a couple of times to take it down.  Nobody said it would be easy!",如果你真把军队惹毛了，他们一定会派直升机来收拾你。直升机追你时，你得让它撞上几次高速公路上那些大路牌才能把它干掉。没人说这会很容易！,RDGameModeGameplay.as
-as3_RDGameModeGameplay_048,Mutated Zombies,变异僵尸,RDGameModeGameplay.as
-as3_RDGameModeGameplay_049,What caused the zombie outbreak is still unknown but it could be chemical since mutations have occured.  Mutated zombies are extremely strong and resistant.  They will cling to your hood no matter how hard you hit them.  It\'s better to avoid them if you don\'t want to have a lousy afternoon.,僵尸疫情的起因仍然不明，但既然出现了变异，可能是化学因素。变异僵尸极其强壮、抗打击。无论你怎么撞，它们都会死死扒住你的引擎盖。如果不想下午过得很糟，最好避开它们。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_048,Mutated Zombies,突变体,RDGameModeGameplay.as
+as3_RDGameModeGameplay_049,What caused the zombie outbreak is still unknown but it could be chemical since mutations have occured.  Mutated zombies are extremely strong and resistant.  They will cling to your hood no matter how hard you hit them.  It\'s better to avoid them if you don\'t want to have a lousy afternoon.,僵尸疫情的起因仍然不明，但既然出现了变异，可能是化学品泄露。突变体极其强壮、抗打击。无论你怎么撞，它们都会死死扒住你的引擎盖。如果不想下午过得很糟，最好避开它们。,RDGameModeGameplay.as
 as3_RDGameModeGameplay_050,Water Jugs,水桶,RDGameModeGameplay.as
-as3_RDGameModeGameplay_051,"When you\'re on the verge of exploding and your car is on fire, try to hit these big blue water jugs to put out the fire and give you a chance at surviving this hell a little longer.  Hitting water jugs also washes the blood off your windshield.",当车子即将爆炸、已经着火时，试着撞上这些蓝色的大水桶，既能灭火，也能让你在这地狱里多活一会儿。撞水桶还能冲掉挡风玻璃上的血。,RDGameModeGameplay.as
+as3_RDGameModeGameplay_051,"When you\'re on the verge of exploding and your car is on fire, try to hit these big blue water jugs to put out the fire and give you a chance at surviving this hell a little longer.  Hitting water jugs also washes the blood off your windshield.",当车子引擎已经着火，即将爆炸时，试着撞上这些蓝色的大水桶，既能灭火，也能让你在这地狱里多活一会儿。撞水桶还能冲掉挡风玻璃上的血。,RDGameModeGameplay.as
 as3_RDGameModeGameplay_052,Enemies On Hood,引擎盖上的敌人,RDGameModeGameplay.as
 as3_RDGameModeGameplay_053,"If you\'re not driving fast enough, zombies and soldiers will get a chance to cling to your hood when you hit them.  You\'ll have to shake them off by hitting the side walls HARD (by using the hand brake) or by hitting abandoned cars.  A pistol is also a great way to get them off your hood quickly.",如果你开得不够快，撞上僵尸和士兵时，他们就有机会扒住你的引擎盖。你必须用手刹狠狠撞侧墙，或者撞上废弃车辆，才能把他们甩下去。用手枪也是快速清掉引擎盖上敌人的好办法。,RDGameModeGameplay.as
 as3_RDGameModeGameplay_054,No Windshield,没有挡风玻璃,RDGameModeGameplay.as
@@ -180,7 +180,7 @@ as3_RDGameModeGameplay_055,"Without a windshield, a zombie on your hood is a ver
 as3_RDGameModeGameplay_056,Perception,感知,RDGameModeGameplay.as
 as3_RDGameModeGameplay_057,Perception Toggle Key: ,感知切换键：,RDGameModeGameplay.as
 as3_RDGameModeGameplay_058,"\nWith perception, you will see a fixed top down view of the road, yourself as the white icon and the icons for the incoming hazards and enemies.\nKeep an eye on your perceptions to survive the day.",\n开启感知后，你会看到道路的固定俯视图：你自己是白色图标，正在接近的危险和敌人也各有图标。\n时刻留意感知，才能活过这一天。,RDGameModeGameplay.as
-as3_RDGameModeGarage_000,"""Dead On Time""","""准时赴死""",RDGameModeGarage.as
+as3_RDGameModeGarage_000,"""Dead On Time""","""死亡计时""",RDGameModeGarage.as
 as3_RDGameModeGarage_001,"""Police State""","""警察国度""",RDGameModeGarage.as
 as3_RDGameModeGarage_002,"""Body Armor""","""防弹衣""",RDGameModeGarage.as
 as3_RDGameModeGarage_003,"""Perception""","""感知""",RDGameModeGarage.as
@@ -189,24 +189,24 @@ as3_RDGameModeGarage_005,"""Windshield""","""挡风玻璃""",RDGameModeGarage.as
 as3_RDGameModeGarage_006,"""Engine""","""引擎""",RDGameModeGarage.as
 as3_RDGameModeGarage_007,"""Bumper""","""保险杠""",RDGameModeGarage.as
 as3_RDGameModeMilitary_000,Police State Distance,《警察国度》距离,RDGameModeMilitary.as
-as3_RDGameModeMilitary_001,Dead On Time Distance,《准时赴死》距离,RDGameModeMilitary.as
-as3_RDGameModeStory_000,Evans City,埃文斯城,RDGameModeStory.as
+as3_RDGameModeMilitary_001,Dead On Time Distance,《死亡计时》距离,RDGameModeMilitary.as
+as3_RDGameModeStory_000,Evans City,埃文斯市,RDGameModeStory.as
 as3_RDGameModeStory_001,Monroeville,门罗维尔,RDGameModeStory.as
-as3_RDGameModeStory_002,Red Ridge,红岭,RDGameModeStory.as
+as3_RDGameModeStory_002,Red Ridge,赤岭,RDGameModeStory.as
 as3_RDGameModeStory_003,Burgony Street,布鲁根街,RDGameModeStory.as
-as3_RDGameModeStory_004,Central City,市中央,RDGameModeStory.as
+as3_RDGameModeStory_004,Central City,市中心,RDGameModeStory.as
 as3_RDGameModeStory_005,Down Town,市中心,RDGameModeStory.as
 as3_RDGameModeStory_006,Chinatown,唐人街,RDGameModeStory.as
 as3_RDGameModeStory_007,Brighton Square,布莱顿广场,RDGameModeStory.as
 as3_RDGameModeStory_008,North Side Park,城北公园,RDGameModeStory.as
 as3_RDGameModeStory_009,West Ridge,西岭,RDGameModeStory.as
-as3_RDGameModeStory_010,Tunnel Drive,隧道大道,RDGameModeStory.as
+as3_RDGameModeStory_010,Tunnel Drive,山涧隧道,RDGameModeStory.as
 as3_RDGameModeStory_011,Progress Saved...,进度已保存……,RDGameModeStory.as
-as3_RDGameModeTime_000,Dead On Time Distance,《准时赴死》距离,RDGameModeTime.as
+as3_RDGameModeTime_000,Dead On Time Distance,《死亡计时》距离,RDGameModeTime.as
 as3_RDGameModeTime_001,Police State Distance,《警察国度》距离,RDGameModeTime.as
-as3_RDGameModeTime_002,"""Dead On Time""","""准时赴死""",RDGameModeTime.as
+as3_RDGameModeTime_002,"""Dead On Time""","""死亡计时""",RDGameModeTime.as
 as3_RDGameModeTime_003,Horn Key: ,喇叭键：,RDGameModeTime.as
-as3_RDGameModeTime_004,"\n\nIn Dead On Time, the horn is an essential way to attract the zombies in your way and get the civilians out of the way.",\n\n在《准时赴死》里，喇叭是吸引僵尸、驱散平民的关键手段。,RDGameModeTime.as
+as3_RDGameModeTime_004,"\n\nIn Dead On Time, the horn is an essential way to attract the zombies in your way and get the civilians out of the way.",\n\n在《死亡计时》里，喇叭是吸引僵尸、驱散平民的关键手段。,RDGameModeTime.as
 as3_RDUnlockItem_000,Perception 1,感知 1,RDUnlockItem.as
 as3_RDUnlockItem_001,Perception 2,感知 2,RDUnlockItem.as
 as3_RDUnlockItem_002,Perception 3,感知 3,RDUnlockItem.as

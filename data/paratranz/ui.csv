@@ -99,13 +99,13 @@ You will spot soldiers, oil spills and
 
 feeding zombies in the distance.","升级 1
 你将能在远处发现士兵、漏油
-以及正在进食的僵尸。",DefineText 角色 3982
+以及进食者。",DefineText 角色 3982
 ui_3983,"Upgrade 2
 
 You will spot water jugs, spike strips and 
 
 hidden soldiers in the distance.","升级 2
-你将能在远处发现水壶、钉刺带以及
+你将能在远处发现水桶、钉刺带以及
 埋伏的士兵。",DefineText 角色 3983
 ui_3984,"Upgrade 3
 
@@ -244,7 +244,7 @@ be.","升级 2
 更好的引擎带来更好的加速
 和最高速度。你越快
 逃离这座城市，
-就越好。",DefineText 角色 3995
+就越快。",DefineText 角色 3995
 ui_3996,"Upgrade 3
 
 This monster engine will give you the 
@@ -265,9 +265,9 @@ The road will be littered with debris.
 This metal reinforcement will take the 
 
 impacts for a little while.","升级 1
-路上会堆满残骸。
-这层金属加固能替你
-抵挡一阵冲击。",DefineText 角色 3997
+路上会堆满汽车残骸。
+这层加固保险杠能替你
+抵挡一些撞击。",DefineText 角色 3997
 ui_3998,"Upgrade 2
 
 With this metal plating, you'll be able to 
@@ -382,7 +382,7 @@ violence that may not be suited
 
 for a younger audience.","《Road of the dead》包含
 可能不适合
-年轻观众的暴力内容。",DefineText 角色 4025
+青少年的暴力内容。",DefineText 角色 4025
 ui_4026,Warning,警告,DefineText 角色 4026
 ui_4084,POWERED BY,技术支持,DefineText 角色 4084
 ui_4086,FLASH GAME ENGINE,FLASH 游戏引擎,DefineText 角色 4086
@@ -417,8 +417,8 @@ in the right panel","Kongregate.com
 排行榜
 位于
 右侧面板",DefineText 角色 4364
-ui_4366,Dead On Time,准时赴死,DefineText 角色 4366
-ui_4367,Dead On Time,准时赴死,DefineText 角色 4367
+ui_4366,Dead On Time,死亡计时,DefineText 角色 4366
+ui_4367,Dead On Time,死亡计时,DefineText 角色 4367
 ui_4369,Police State,警察国度,DefineText 角色 4369
 ui_4370,Police State,警察国度,DefineText 角色 4370
 ui_4372,Hit Combo,连击,DefineText 角色 4372

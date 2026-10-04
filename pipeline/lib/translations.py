@@ -90,11 +90,27 @@ def _ui_translations() -> dict[str, list[str]]:
     return out
 
 
+# AS3 literals that are *engine control values*, not user-visible text.  The
+# Newgrounds classes compare them against fixed English case labels
+# (``APIConnector._apiConnect`` switches on ``debugMode``; ``initAd`` switches
+# on ``connectorType``).  Translating them makes the component fall through to
+# its default -- ``debugMode`` "Off" -> ``RELEASE_MODE`` -- which drops the
+# simulated user session and makes the passport/login prompt pop up on every
+# launch of ROTD2.  Keyed by (context, original) so only these exact values are
+# skipped; see ``data/paratranz2/as3.csv``.
+_NON_TRANSLATABLE_AS3 = {
+    ("RoadOfTheDead_fla\\MainTimeline.as", "Flash Ad Only"),
+    ("RoadOfTheDead_fla\\MainTimeline.as", "Simulate Logged-in User"),
+}
+
+
 def _as3_translations() -> dict[str, dict[str, str]]:
     """``{filename: {original literal: translation}}`` for the runner patch."""
     out: dict[str, dict[str, str]] = {}
     for row in load("as3").values():
         if not row["translation"]:
+            continue
+        if (row["context"], row["original"]) in _NON_TRANSLATABLE_AS3:
             continue
         out.setdefault(row["context"], {})[row["original"]] = row["translation"]
     return out

@@ -16,6 +16,11 @@ The platform's own "Import Translation" endpoint rejects this CSV layout
 (``text.translation`` has no default on insert), so translations are written
 through the strings API instead.
 
+``stream.csv`` is uploaded with stage-direction rows (e.g. Whisper's
+``*Dramatic Music*``) removed.  Because the source upload is non-incremental,
+this also deletes those keys from the project, keeping them out of the
+translators' queue.
+
 Usage:
     $env:PARATRANZ_TOKEN = "<token>"
     uv run python pipeline/paratranz/push_translations.py [--project 20962] [--file voice.csv] [--dry-run]
@@ -24,6 +29,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import io
 import json
 import os
 import sys
@@ -33,6 +39,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 API = "https://paratranz.cn/api"
+
+sys.path.insert(0, str(ROOT))
+
+from pipeline.asr.asr_filter import is_stage_direction  # noqa: E402
 
 # project id -> local folder
 PROJECTS: dict[str, Path] = {
@@ -102,18 +112,44 @@ def read_local(path: Path) -> dict[str, str]:
     return out
 
 
+def read_stream_source(path: Path) -> tuple[bytes, int]:
+    """Local ``stream.csv`` as platform bytes with non-dialogue rows removed.
+
+    The upload is non-incremental, so the platform's key set becomes exactly what
+    is sent: dropping the stage-direction rows here also removes them from the
+    project, keeping them out of the translators' queue.
+    """
+    rows: list[list[str]] = []
+    skipped = 0
+    with path.open(encoding="utf-8-sig", newline="") as fh:
+        for row in csv.reader(fh):
+            if not row or not row[0].strip():
+                continue
+            if is_stage_direction(row[1] if len(row) > 1 else ""):
+                skipped += 1
+                continue
+            rows.append(row)
+    buf = io.StringIO(newline="")
+    csv.writer(buf, lineterminator="\r\n").writerows(rows)
+    return buf.getvalue().encode("utf-8"), skipped
+
+
 def push_file(pid: str, fid: int, name: str, path: Path, token: str, dry_run: bool) -> None:
-    content = path.read_bytes()
     local = read_local(path)
+    if name == "stream.csv":
+        content, skipped = read_stream_source(path)
+    else:
+        content, skipped = path.read_bytes(), 0
+    note = f", skipped {skipped} non-dialogue" if skipped else ""
     if dry_run:
-        print(f"  {name}: {len(local)} local keys, {path.stat().st_size} bytes "
+        print(f"  {name}: {len(local)} local keys, {len(content)} bytes{note} "
               f"-> file {fid} [dry-run]")
         return
 
     src = api_post_source(pid, fid, name, content, token)
     rev = src.get("revision", {}) if isinstance(src, dict) else {}
     print(f"  {name}: source synced (insert={rev.get('insert')} update={rev.get('update')} "
-          f"remove={rev.get('remove')})")
+          f"remove={rev.get('remove')}){note}")
 
     rows = api_get(f"{API}/projects/{pid}/files/{fid}/translation", token)
     changed = [
