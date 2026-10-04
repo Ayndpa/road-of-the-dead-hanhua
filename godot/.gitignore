@@ -1,0 +1,13 @@
+# Godot editor / import cache
+.godot/
+.import/
+
+# Generated SWF asset bundle (regenerate with exporter/swf_to_godot.py)
+assets/swf/
+
+# Export / build output
+build/
+export/
+*.pck
+*.exe
+*.zip
