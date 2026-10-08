@@ -50,6 +50,7 @@ IMAGE_TAGS = {
 TEXT_TAGS = {"DefineTextTag", "DefineText2Tag", "DefineEditTextTag"}
 BUTTON_TAGS = {"DefineButtonTag", "DefineButton2Tag"}
 PLACE_TAGS = {"PlaceObject2Tag", "PlaceObject3Tag"}
+PATTERN_PREFIX = "MC_LevelPattern_"
 
 
 # --------------------------------------------------------------------------
@@ -95,8 +96,8 @@ def _matrix_op(el: ET.Element | None) -> list | None:
     return None
 
 
-def _button_up_ops(el: ET.Element) -> list:
-    """Up-state placements of a DefineButton/DefineButton2 as one frame."""
+def _button_state_ops(el: ET.Element, want_over: bool) -> list:
+    """Placements of a DefineButton's up (or over/down) state as one frame."""
     records = el.find("characters")
     if records is None:
         return []
@@ -104,9 +105,10 @@ def _button_up_ops(el: ET.Element) -> list:
     for rec in records.findall("item"):
         if rec.get("type") != "BUTTONRECORD":
             continue
-        if rec.get("buttonStateHitTest") == "true" and rec.get("buttonStateUp") != "true":
-            continue
-        if rec.get("buttonStateUp") != "true":
+        if want_over:
+            if rec.get("buttonStateOver") != "true" and rec.get("buttonStateDown") != "true":
+                continue
+        elif rec.get("buttonStateUp") != "true":
             continue
         cid = rec.get("characterId")
         if not cid:
@@ -122,6 +124,14 @@ def _button_up_ops(el: ET.Element) -> list:
                 op["ct"] = ct
         ops.append(op)
     return ops
+
+
+def _button_states(el: ET.Element) -> dict:
+    """Up and over/down frames of a DefineButton/DefineButton2."""
+    return {
+        "up": _button_state_ops(el, False),
+        "over": _button_state_ops(el, True),
+    }
 
 
 def _html_to_text(html: str) -> str:
@@ -140,24 +150,30 @@ def _parse_static_text(el: ET.Element) -> dict:
     records: list[dict] = []
     font_ids: set[int] = set()
     total_adv = 0.0
+    cur_color = [0, 0, 0, 255]
+    cur_font = 0
+    cur_size = 12.0
     records_el = el.find("textRecords")
     if records_el is not None:
         for rec in records_el.findall("item"):
             if rec.get("type") != "TEXTRECORD":
                 continue
-            fid = int(rec.get("fontId", "0") or 0)
+            if rec.get("styleFlagsHasFont") == "true":
+                cur_font = int(rec.get("fontId", "0") or 0)
+                cur_size = float(rec.get("textHeight", "1200") or 1200) / TWIP
+            fid = cur_font
             font_ids.add(fid)
-            size = float(rec.get("textHeight", "1200") or 1200) / TWIP
-            color = [0, 0, 0, 255]
+            size = cur_size
             if rec.get("styleFlagsHasColor") == "true":
                 c = rec.find("textColor")
                 if c is not None:
-                    color = [
+                    cur_color = [
                         int(c.get("red", "0")),
                         int(c.get("green", "0")),
                         int(c.get("blue", "0")),
                         int(c.get("alpha", "255")),
                     ]
+            color = list(cur_color)
             x = None
             if rec.get("styleFlagsHasXOffset") == "true":
                 x = float(rec.get("xOffset", "0") or 0) / TWIP
@@ -212,6 +228,8 @@ def _parse_place(el: ET.Element) -> dict | None:
     op: dict = {"op": "p" if has_char else "m", "d": int(el.get("depth", "0"))}
     if has_char:
         op["c"] = int(el.get("characterId", "0"))
+    if el.get("placeFlagMove") == "true":
+        op["mv"] = 1
 
     mat = _matrix_op(el.find("matrix"))
     if mat:
@@ -227,9 +245,49 @@ def _parse_place(el: ET.Element) -> dict | None:
         op["n"] = el.get("name")
     if el.get("placeFlagHasClipDepth") == "true":
         op["clip"] = int(el.get("clipDepth", "0"))
+    if el.get("placeFlagHasRatio") == "true" and el.get("ratio") is not None:
+        op["ratio"] = int(el.get("ratio", "0"))
     if el.get("placeFlagHasVisible") == "true" and el.get("visible") == "false":
         op["v"] = 0
     return op
+
+
+def resolve_inherited_transforms(frames: list) -> None:
+    """Bake Flash's retained placements into every frame.
+
+    A PlaceObject tag only carries a matrix/colour when that transform changes;
+    a ``Move`` that swaps the character at a depth (e.g. one info panel for the
+    next) omits them and Flash keeps the depth's previous transform.  Our
+    per-frame delta export dropped those inherited values, so seeking straight
+    to such a frame started from the identity matrix and the object drifted
+    outside its background.  Copy the retained fields onto the move so each
+    frame is self-contained, then drop the temporary ``mv`` marker.
+    """
+    state: dict[int, dict] = {}
+    for frame in frames:
+        for op in frame:
+            d = int(op.get("d", 0))
+            kind = op.get("op")
+            if kind == "r":
+                state.pop(d, None)
+                continue
+            if kind == "m":
+                cur = state.setdefault(d, {})
+                for field in ("m", "ct", "ratio"):
+                    if field in op:
+                        cur[field] = op[field]
+                continue
+            moved = bool(op.pop("mv", False))
+            prev = state.get(d)
+            if moved and prev is not None:
+                for field in ("m", "ct", "ratio"):
+                    if field not in op and field in prev:
+                        op[field] = prev[field]
+            nxt: dict = {}
+            for field in ("m", "ct", "ratio"):
+                if field in op:
+                    nxt[field] = op[field]
+            state[d] = nxt
 
 
 def _rect(el: ET.Element) -> tuple[float, float, float, float]:
@@ -253,7 +311,8 @@ def parse_swf_xml(xml_path: Path) -> dict:
     symbols: dict[int, str] = {}
     header: dict = {}
     labels: dict[str, int] = {}
-    root_ctx: dict = {"id": 0, "frames": [[]]}
+    sprite_labels: dict[int, dict[str, int]] = {}
+    root_ctx: dict = {"id": 0, "frames": [[]], "labels": {}}
     sprite_stack: list[dict] = [root_ctx]
 
     for event, el in ET.iterparse(str(xml_path), events=("start", "end")):
@@ -261,7 +320,7 @@ def parse_swf_xml(xml_path: Path) -> dict:
             if el.tag == "swf":
                 header = dict(el.attrib)
             elif el.tag == "item" and el.get("type") == "DefineSpriteTag":
-                sprite_stack.append({"id": int(el.get("spriteId", "0")), "frames": [[]]})
+                sprite_stack.append({"id": int(el.get("spriteId", "0")), "frames": [[]], "labels": {}})
             continue
 
         if el.tag != "item":
@@ -276,6 +335,13 @@ def parse_swf_xml(xml_path: Path) -> dict:
         if t == "DefineSpriteTag":
             ctx = sprite_stack.pop()
             sprites[ctx["id"]] = ctx["frames"]
+            if ctx["labels"]:
+                sprite_labels[ctx["id"]] = ctx["labels"]
+        elif t == "FrameLabelTag":
+            if sprite_stack:
+                fname = el.get("name")
+                if fname:
+                    sprite_stack[-1]["labels"][fname] = max(len(sprite_stack[-1]["frames"]) - 1, 0)
         elif t == "DefineSceneAndFrameLabelDataTag":
             nums_el = el.find("frameNums")
             names_el = el.find("frameNames")
@@ -321,7 +387,7 @@ def parse_swf_xml(xml_path: Path) -> dict:
                 text_defs[cid] = _parse_static_text(el)
         elif t in BUTTON_TAGS:
             bid = int(el.get("buttonId", el.get("characterId", el.get("characterID", "0"))))
-            buttons_def[bid] = _button_up_ops(el)
+            buttons_def[bid] = _button_states(el)
             buttons.add(bid)
         elif t in PLACE_TAGS and sprite_stack:
             op = _parse_place(el)
@@ -335,6 +401,8 @@ def parse_swf_xml(xml_path: Path) -> dict:
         el.clear()
 
     sprites[0] = root_ctx["frames"]
+    for frames in sprites.values():
+        resolve_inherited_transforms(frames)
     return {
         "header": header,
         "sprites": sprites,
@@ -347,6 +415,7 @@ def parse_swf_xml(xml_path: Path) -> dict:
         "buttons_def": buttons_def,
         "symbols": symbols,
         "labels": labels,
+        "sprite_labels": sprite_labels,
     }
 
 
@@ -478,6 +547,17 @@ def resolve_frame(value: str, labels: dict[str, int], frame_count: int) -> int:
         raise SystemExit(f"unknown frame label/number: {value!r} (labels: {', '.join(labels)})")
 
 
+def resolve_segment_range(parsed: dict, name: str) -> tuple[int, int]:
+    labels: dict[str, int] = parsed["labels"]
+    frame_count = len(parsed["sprites"].get(0, []))
+    if name not in labels:
+        raise SystemExit(f"unknown segment label {name!r} (labels: {', '.join(labels)})")
+    start = labels[name]
+    following = [f for f in labels.values() if f > start]
+    end = (min(following) - 1) if following else frame_count
+    return start, min(max(start, end), frame_count)
+
+
 def resolve_root_range(parsed: dict, args) -> tuple[int, int]:
     labels: dict[str, int] = parsed["labels"]
     frame_count = len(parsed["sprites"].get(0, []))
@@ -512,14 +592,12 @@ def _ranges(ids: set[int]) -> str:
     return ",".join(out)
 
 
-def _run_ffdec_export(java: str, ffdec: Path, item: str, fmt: str, outdir: Path, swf: Path, ids: set[int]) -> None:
+def _run_ffdec_export(java: str, ffdec: Path, item: str, fmt: str | None, outdir: Path, swf: Path, ids: set[int]) -> None:
     outdir.mkdir(parents=True, exist_ok=True)
-    cmd = [
-        java, "-jar", str(ffdec),
-        "-selectid", _ranges(ids),
-        "-format", fmt,
-        "-export", item, str(outdir), str(swf),
-    ]
+    cmd = [java, "-jar", str(ffdec), "-selectid", _ranges(ids)]
+    if fmt:
+        cmd += ["-format", fmt]
+    cmd += ["-export", item, str(outdir), str(swf)]
     proc = subprocess.run(cmd, capture_output=True, text=True)
     if proc.returncode != 0:
         print(proc.stdout[-2000:])
@@ -586,8 +664,123 @@ def export_leaves(parsed: dict, needed: dict, args, godot_dir: Path) -> dict[int
     for cid in needed["buttons"]:
         characters[cid] = {"type": "button"}
     for cid in needed["sprites"]:
-        characters[cid] = {"type": "sprite", "frames": len(parsed["sprites"].get(cid, []))}
+        entry: dict = {"type": "sprite", "frames": len(parsed["sprites"].get(cid, []))}
+        if cid in parsed.get("buttons", set()):
+            entry["button"] = True
+        characters[cid] = entry
     return characters
+
+
+def export_morphs(morph_ids: set[int], parsed: dict, args, godot_dir: Path) -> dict[int, dict]:
+    """Export DefineMorphShape ids as PNG frame sequences (interpolated by FFDec)."""
+    chars: dict[int, dict] = {}
+    if not morph_ids:
+        return chars
+    seq_root = godot_dir / "assets" / "swf" / "seq"
+    with tempfile.TemporaryDirectory(prefix="rotl_morph_") as tmp:
+        tmp = Path(tmp)
+        _run_ffdec_export(args.java, args.ffdec, "morphshape", "morphshape:png_frames", tmp, args.swf, morph_ids)
+        for folder in tmp.iterdir():
+            if not folder.is_dir() or not folder.name.isdigit():
+                continue
+            mid = int(folder.name)
+            if mid not in morph_ids:
+                continue
+            pngs = sorted(folder.glob("*.png"), key=lambda p: int(p.name.split("_")[0]))
+            dest_dir = seq_root / str(mid)
+            shutil.rmtree(dest_dir, ignore_errors=True)
+            dest_dir.mkdir(parents=True, exist_ok=True)
+            for i, png in enumerate(pngs, 1):
+                shutil.copyfile(png, dest_dir / f"{i}.png")
+            b = parsed["bounds"].get(mid, (0.0, 0.0, 0.0, 0.0))
+            chars[mid] = {
+                "type": "morph",
+                "dir": f"res://assets/swf/seq/{mid}",
+                "frames": len(pngs),
+                "x": round(b[0] / TWIP, 4),
+                "y": round(b[1] / TWIP, 4),
+            }
+    return chars
+
+
+def export_sounds(sound_ids: set[int], args, godot_dir: Path) -> dict[int, dict]:
+    """Export DefineSound ids as MP3 and return {id: {name, res}}."""
+    out: dict[int, dict] = {}
+    if not sound_ids:
+        return out
+    snd_dir = godot_dir / "assets" / "swf" / "sounds"
+    snd_dir.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="rotl_snd_") as tmp:
+        tmp = Path(tmp)
+        _run_ffdec_export(args.java, args.ffdec, "sound", "sound:mp3", tmp, args.swf, sound_ids)
+        for mp3 in tmp.rglob("*.mp3"):
+            head = mp3.stem.split("_", 1)[0]
+            if head.isdigit() and int(head) in sound_ids:
+                shutil.copyfile(mp3, snd_dir / mp3.name)
+                out[int(head)] = {
+                    "name": mp3.stem.split("_", 1)[1] if "_" in mp3.stem else "",
+                    "res": f"res://assets/swf/sounds/{mp3.name}",
+                }
+    return out
+
+
+def resolve_sound_ids(parsed: dict, spec: str) -> set[int]:
+    ids: set[int] = set()
+    for token in (spec or "").split(","):
+        token = token.strip()
+        if not token:
+            continue
+        if token.isdigit():
+            ids.add(int(token))
+        else:
+            for cid, name in parsed["symbols"].items():
+                if _short_name(name) == token:
+                    ids.add(cid)
+    return ids
+
+
+def export_patterns(parsed: dict, godot_dir: Path) -> dict:
+    """Extract MC_LevelPattern_* layout markers (positions, alpha, color offsets).
+
+    The pattern symbols are MovieClips whose direct children are MC_LevelObject_*
+    marker clips. The loader in ROTD1 only reads the child's class, x, y, alpha
+    and colour-transform offsets, so those are all we export.
+    """
+    symbols: dict[int, str] = parsed["symbols"]
+    patterns: dict[str, list] = {}
+    for cid, name in symbols.items():
+        short = _short_name(name)
+        if not short.startswith(PATTERN_PREFIX):
+            continue
+        frames = parsed["sprites"].get(cid)
+        if not frames:
+            continue
+        markers: list = []
+        for op in frames[0]:
+            if op.get("op") != "p" or "c" not in op:
+                continue
+            m = op.get("m", [1.0, 0.0, 0.0, 1.0, 0.0, 0.0])
+            ct = op.get("ct")
+            alpha = 1.0
+            red = 0
+            blue = 0
+            if ct is not None and len(ct) >= 8:
+                alpha = float(ct[3])
+                red = int(round(float(ct[4]) * 255.0))
+                blue = int(round(float(ct[6]) * 255.0))
+            markers.append({
+                "x": float(m[4]),
+                "y": float(m[5]),
+                "marker": _short_name(symbols.get(int(op["c"]), "")),
+                "alpha": round(alpha, 3),
+                "red": red,
+                "blue": blue,
+            })
+        if markers:
+            patterns[short] = markers
+    out = godot_dir / "assets" / "swf" / "patterns.json"
+    out.write_text(json.dumps(patterns, separators=(",", ":")), encoding="utf-8")
+    return patterns
 
 
 def export_fonts(font_ids: set[int], args, godot_dir: Path) -> dict[int, str]:
@@ -609,12 +802,41 @@ def export_fonts(font_ids: set[int], args, godot_dir: Path) -> dict[int, str]:
     return mapping
 
 
-def build_texts_payload(parsed: dict, needed_texts: set[int], font_map: dict[int, str]) -> dict:
+def export_text_strings(text_ids: set[int], args) -> dict[int, list[str]]:
+    """Per-record strings for DefineText tags (FFDec splits records)."""
+    out: dict[int, list[str]] = {}
+    if not text_ids:
+        return out
+    with tempfile.TemporaryDirectory(prefix="rotl_txt_") as tmp:
+        tmp = Path(tmp)
+        _run_ffdec_export(args.java, args.ffdec, "text", None, tmp, args.swf, text_ids)
+        for txt in tmp.rglob("*.txt"):
+            if not txt.stem.isdigit() or int(txt.stem) not in text_ids:
+                continue
+            raw = txt.read_text(encoding="utf-8", errors="replace")
+            parts = re.split(r"\r?\n--- RECORDSEPARATOR ---\r?\n", raw)
+            if len(parts) == 1:
+                parts = raw.split("--- RECORDSEPARATOR ---")
+            out[int(txt.stem)] = [p.rstrip("\r\n") for p in parts]
+    return out
+
+
+def build_texts_payload(parsed: dict, needed_texts: set[int], font_map: dict[int, str],
+                        strings: dict[int, list[str]]) -> dict:
     texts: dict[str, dict] = {}
     for tid in sorted(needed_texts):
         td = parsed["text_defs"].get(tid)
-        if td is not None:
-            texts[str(tid)] = td
+        if td is None:
+            continue
+        if td.get("kind") == "static" and tid in strings:
+            records = []
+            parts = strings[tid]
+            for i, rec in enumerate(td.get("records", [])):
+                rec = dict(rec)
+                rec["text"] = parts[i] if i < len(parts) else ""
+                records.append(rec)
+            td = {**td, "records": records}
+        texts[str(tid)] = td
     return {
         "fonts": {str(k): v for k, v in sorted(font_map.items())},
         "texts": texts,
@@ -638,6 +860,11 @@ def build_arg_parser() -> argparse.ArgumentParser:
     p.add_argument("--min-frames", type=int, default=2, help="skip sprites shorter than this many frames")
     p.add_argument("--root", help="export a slice of the main timeline, e.g. 'Menu', '6265', 'Menu..Game'")
     p.add_argument("--root-end", help="end frame/label for --root (default: next frame label - 1)")
+    p.add_argument(
+        "--segments",
+        help="comma list of main-timeline labels to export as separate top-level segments "
+             "(e.g. 'Preloading,Disclaimer,NGIntro,EngineIntro,GameIntro,Menu')",
+    )
     p.add_argument("--root-name", help="display name for the root slice (default: ROOT <spec>)")
     p.add_argument(
         "--hide",
@@ -645,8 +872,11 @@ def build_arg_parser() -> argparse.ArgumentParser:
         help="comma-separated substrings of symbol class names to drop (default: Newgrounds shims)",
     )
     p.add_argument("--hide-ids", default="", help="comma-separated character ids to drop (e.g. script-hidden overlays)")
+    p.add_argument("--sounds", default="", help="comma list of DefineSound ids/class names to export as MP3 (e.g. SND_Music_MenuMusic)")
+    p.add_argument("--patterns", action="store_true", help="extract MC_LevelPattern_* layout markers to patterns.json")
     p.add_argument("--list-labels", action="store_true", help="list main-timeline frame labels and exit")
     p.add_argument("--list", action="store_true", help="list candidate sprites and exit")
+    p.add_argument("--dry-run", action="store_true", help="parse and report dependencies, but do not export")
     return p
 
 
@@ -669,11 +899,17 @@ def ensure_xml(args) -> Path:
 
 
 def inject_buttons(parsed: dict) -> None:
-    """Turn each DefineButton into a single-frame pseudo-sprite (its up state)."""
+    """Turn each DefineButton into a pseudo-sprite: frame 0 = up, frame 1 = over/down."""
     sprites: dict[int, list] = parsed["sprites"]
-    for bid, ops in parsed.get("buttons_def", {}).items():
-        if bid not in sprites:
-            sprites[bid] = [ops]
+    for bid, states in parsed.get("buttons_def", {}).items():
+        if bid in sprites:
+            continue
+        up = states.get("up", []) if isinstance(states, dict) else states
+        over = states.get("over", []) if isinstance(states, dict) else []
+        frames: list = [up]
+        if over:
+            frames.append(over)
+        sprites[bid] = frames
 
 
 def main() -> None:
@@ -694,6 +930,11 @@ def main() -> None:
         f"texts={len(parsed['texts'])} symbols={len(parsed['symbols'])} fps={fps}"
     )
     inject_buttons(parsed)
+    if args.patterns:
+        pats = export_patterns(parsed, args.godot)
+        print(f"[patterns] {len(pats)} patterns -> patterns.json")
+        if not (args.sprites or args.named or args.root or args.segments):
+            return
     hidden_ids: set[int] = set()
     hide_patterns = [p.strip().lower() for p in (args.hide or "").split(",") if p.strip()]
     if hide_patterns:
@@ -728,6 +969,7 @@ def main() -> None:
         return
 
     root_entry: dict | None = None
+    synth_names: dict[int, str] = {}
     if args.root:
         start1, end1 = resolve_root_range(parsed, args)
         parsed["sprites"][0] = slice_timeline(parsed["sprites"].get(0, []), start1 - 1, end1 - 1)
@@ -738,12 +980,29 @@ def main() -> None:
         }
         print(f"[root] {args.root} -> frames {start1}..{end1} ({len(parsed['sprites'][0])} frames)")
 
-    if args.root and not args.sprites and not args.named:
-        selected = []
+    segment_ids: list[int] = []
+    segment_entries: list[dict] = []
+    if args.segments:
+        root_frames = parsed["sprites"].get(0, [])
+        for i, name in enumerate(s.strip() for s in args.segments.split(",") if s.strip()):
+            s1, e1 = resolve_segment_range(parsed, name)
+            sid = 900000 + i
+            parsed["sprites"][sid] = slice_timeline(root_frames, s1 - 1, e1 - 1)
+            synth_names[sid] = name
+            entry = {"id": sid, "name": name, "frameCount": len(parsed["sprites"][sid])}
+            segment_ids.append(sid)
+            segment_entries.append(entry)
+            print(f"[segment] {name}: frames {s1}..{e1} -> id {sid} ({entry['frameCount']} frames)")
+
+    if args.segments:
+        selected = segment_ids + (resolve_selection(parsed, args) if (args.sprites or args.named) else [])
     else:
-        selected = resolve_selection(parsed, args)
-    if root_entry is not None:
-        selected = [0] + selected
+        if args.root and not args.sprites and not args.named:
+            selected = []
+        else:
+            selected = resolve_selection(parsed, args)
+        if root_entry is not None:
+            selected = [0] + selected
     if not selected:
         raise SystemExit("no sprites selected")
     print(f"[select] {len(selected)} top-level sprites")
@@ -754,12 +1013,15 @@ def main() -> None:
         f"images={len(needed['images'])} morphs={len(needed['morphs'])} "
         f"texts={len(needed['texts'])} buttons={len(needed['buttons'])}"
     )
+    if args.dry_run:
+        return
 
     godot_dir: Path = args.godot
     swf_dir = godot_dir / "assets" / "swf"
     sprites_out = swf_dir / "sprites"
     sprites_out.mkdir(parents=True, exist_ok=True)
     characters = export_leaves(parsed, needed, args, godot_dir)
+    characters.update(export_morphs(needed["morphs"], parsed, args, godot_dir))
 
     symbols_out: dict[str, str] = {}
     index: list[dict] = []
@@ -769,6 +1031,8 @@ def main() -> None:
         name = _short_name(parsed["symbols"].get(cid, "")) or None
         if cid == 0 and root_entry is not None:
             name = root_entry["name"]
+        if cid in synth_names:
+            name = synth_names[cid]
         if name:
             symbols_out[str(cid)] = name
         payload = {
@@ -778,12 +1042,21 @@ def main() -> None:
             "frameCount": len(frames),
             "frames": frames,
         }
+        if cid in parsed["sprite_labels"]:
+            payload["labels"] = parsed["sprite_labels"][cid]
         (sprites_out / f"{cid}.json").write_text(json.dumps(payload, separators=(",", ":")), encoding="utf-8")
         total_frames += len(frames)
 
     for cid in selected:
         if cid == 0 and root_entry is not None:
             index.append(root_entry)
+            continue
+        if cid in synth_names:
+            index.append({
+                "id": cid,
+                "name": synth_names[cid],
+                "frameCount": len(parsed["sprites"].get(cid, [])),
+            })
             continue
         frames = parsed["sprites"].get(cid, [])
         index.append({
@@ -803,6 +1076,24 @@ def main() -> None:
     }
     (swf_dir / "characters.json").write_text(json.dumps(chars_payload, separators=(",", ":")), encoding="utf-8")
     (swf_dir / "index.json").write_text(json.dumps(index, separators=(",", ":")), encoding="utf-8")
+
+    font_ids: set[int] = set()
+    for tid in needed["texts"]:
+        font_ids.update(parsed["text_defs"].get(tid, {}).get("fonts", []))
+    static_text_ids = {t for t in needed["texts"] if parsed["text_defs"].get(t, {}).get("kind") == "static"}
+    strings = export_text_strings(static_text_ids, args)
+    font_map = export_fonts(font_ids, args, godot_dir)
+    texts_payload = build_texts_payload(parsed, needed["texts"], font_map, strings)
+    (swf_dir / "texts.json").write_text(json.dumps(texts_payload, separators=(",", ":")), encoding="utf-8")
+    print(f"[text] {len(texts_payload['texts'])} texts, {len(font_map)} fonts -> texts.json")
+
+    sound_ids = resolve_sound_ids(parsed, args.sounds)
+    sound_map = export_sounds(sound_ids, args, godot_dir)
+    (swf_dir / "sounds.json").write_text(
+        json.dumps({str(k): v for k, v in sorted(sound_map.items())}, separators=(",", ":")), encoding="utf-8"
+    )
+    if sound_map:
+        print(f"[sound] {len(sound_map)} sounds -> sounds.json")
 
     print(
         f"[done] {len(needed['sprites'])} sprite timelines, {total_frames} frames, "
